@@ -1,13 +1,13 @@
 "use client"
-import Link from "next/link";
-import { use, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { AlignJustify, Search, X } from "lucide-react";
-import Image from "next/image";
-import { logo } from "@/assets/index";
+import Link from "next/link"
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { AlignJustify, Search, X } from "lucide-react"
+import Image from "next/image"
+import { logo } from "@/assets/index"
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background transition-all duration-100 ease-in-out">
@@ -53,9 +53,9 @@ export default function Header() {
             aria-label="Toggle Menu"
           >
             {menuOpen ? (
-              <X className="h-6 w-6 text-muted-foreground" />
+              <X className="h-5 w-5 sm:h-6 sm:w-6 text-muted-foreground" />
             ) : (
-              <AlignJustify className="h-6 w-6 text-muted-foreground" />
+              <AlignJustify className="h-5 w-5 sm:h-6 sm:w-6 text-muted-foreground" />
             )}
           </button>
         </div>
@@ -81,5 +81,5 @@ export default function Header() {
         </div>
       )}
     </header>
-  );
+  )
 }
