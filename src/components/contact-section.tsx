@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, type RefObject } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -9,9 +9,9 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { personImage } from "@/assets"
 import { motion, useAnimation } from "framer-motion"
 
-// Custom hook to detect when an element is in view
-function useInView(options = {}) {
-  const ref = useRef(null)
+// Custom hook to detect when an element is in view with proper typing
+function useInView(options = {}): [RefObject<HTMLDivElement | null>, boolean, boolean] {
+  const ref = useRef<HTMLDivElement>(null)
   const [isInView, setIsInView] = useState(false)
   const [hasTriggered, setHasTriggered] = useState(false)
 
@@ -102,14 +102,6 @@ const buttonVariants = {
       stiffness: 200,
     },
   },
-  hover: {
-    scale: 1.05,
-    transition: {
-      type: "spring",
-      stiffness: 400,
-      damping: 10,
-    },
-  },
   tap: {
     scale: 0.95,
   },
@@ -122,7 +114,7 @@ const MotionCard = motion(Card)
 
 export default function ContactSection() {
   const controls = useAnimation()
-  const [ref, isInView, hasTriggered] = useInView({
+  const [containerRef, isInView, hasTriggered] = useInView({
     threshold: 0.2,
   })
 
@@ -136,7 +128,7 @@ export default function ContactSection() {
     <section className="py-12 md:py-20 bg-white overflow-hidden" id="contactus">
       <div className="container px-4 md:px-6">
         <motion.div
-          ref={ref}
+          ref={containerRef}
           variants={containerVariants}
           initial="hidden"
           animate={controls}
@@ -155,11 +147,7 @@ export default function ContactSection() {
               </motion.p>
             </motion.div>
 
-            <MotionCard
-              variants={itemVariants}
-              whileHover={{ y: -5, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)" }}
-              transition={{ type: "spring", stiffness: 100 }}
-            >
+            <MotionCard variants={itemVariants} transition={{ type: "spring", stiffness: 100 }}>
               <CardHeader className="pb-2">
                 <motion.h3 variants={itemVariants} className="text-lg font-medium">
                   Contact Us
@@ -218,7 +206,6 @@ export default function ContactSection() {
                   </motion.div>
                   <MotionButton
                     variants={buttonVariants}
-                    whileHover="hover"
                     whileTap="tap"
                     className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] hover:opacity-90 text-white rounded-lg w-full sm:w-auto border-none"
                   >
@@ -230,13 +217,7 @@ export default function ContactSection() {
           </motion.div>
 
           <motion.div variants={imageVariants} className="relative lg:flex hidden items-center justify-center p-20">
-            <motion.div
-              whileHover={{
-                scale: 1.05,
-                rotate: 2,
-                transition: { type: "spring", stiffness: 300 },
-              }}
-            >
+            <motion.div>
               <Image
                 src={personImage || "/placeholder.svg?height=500&width=400&query=business person"}
                 alt="Contact Us"
