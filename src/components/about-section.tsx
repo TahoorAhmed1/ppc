@@ -64,8 +64,7 @@ export default function AboutSection() {
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
     >
-      <div className="container grid grid-cols-1 lg:grid-cols-3 items-start gap-6">
-        {/* About Text Section */}
+      <div className="container grid grid-cols-1 lg:grid-cols-3 items-start gap-4">
         <motion.div
           className="flex flex-col items-start gap-3 w-full max-w-sm mx-auto lg:mx-0"
           variants={containerVariants}
@@ -73,25 +72,32 @@ export default function AboutSection() {
           <motion.div variants={itemVariants}>
             <Image
               src={logo || "/placeholder.svg"}
-              alt="Advora Studio"
+              alt="Creative Agency"
               width={160}
               height={40}
               className="h-10 w-auto"
             />
           </motion.div>
 
-          <motion.h2 className="text-4xl md:text-5xl font-bold leading-tight" variants={itemVariants}>
-            <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">About</span>{" "}
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold leading-tight"
+            variants={itemVariants}
+          >
+            <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
+              About
+            </span>{" "}
             <span className="text-[#1F9BED]">US</span>
           </motion.h2>
 
-          <motion.p className="text-sm md:text-base text-[#1C2D44] leading-relaxed" variants={itemVariants}>
-            Productive agents are happy agents. Give them all the support tools and information they need to best serve
-            your customers.
+          <motion.p
+            className="text-sm md:text-base text-[#1C2D44] leading-relaxed"
+            variants={itemVariants}
+          >
+            Productive agents are happy agents. Give them all the support tools
+            and information they need to best serve your customers.
           </motion.p>
         </motion.div>
 
-        {/* Cards Section */}
         <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[aboutCardIcon1, aboutCardIcon2, aboutCardIcon3].map((icon, i) => (
             <motion.div
@@ -108,15 +114,26 @@ export default function AboutSection() {
                     <motion.div
                       className="flex mb-4"
                       initial={{ scale: 0.8, opacity: 0 }}
-                      animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
+                      animate={
+                        isInView
+                          ? { scale: 1, opacity: 1 }
+                          : { scale: 0.8, opacity: 0 }
+                      }
                       transition={{ delay: 0.4 + i * 0.1, duration: 0.5 }}
                     >
-                      <Image src={icon || "/placeholder.svg"} alt={`Card ${i + 1}`} width={120} height={120} />
+                      <Image
+                        src={icon || "/placeholder.svg"}
+                        alt={`Card ${i + 1}`}
+                        width={120}
+                        height={120}
+                      />
                     </motion.div>
                     <motion.h3
                       className="xl:text-2xl md:text-lg sm:text-xl font-semibold mb-2 xl:w-50"
                       initial={{ x: -20, opacity: 0 }}
-                      animate={isInView ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
+                      animate={
+                        isInView ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }
+                      }
                       transition={{ delay: 0.5 + i * 0.1, duration: 0.4 }}
                     >
                       {i === 0 && "Constant Client Coordination"}
@@ -126,7 +143,9 @@ export default function AboutSection() {
                     <motion.p
                       className="text-sm"
                       initial={{ x: -20, opacity: 0 }}
-                      animate={isInView ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
+                      animate={
+                        isInView ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }
+                      }
                       transition={{ delay: 0.6 + i * 0.1, duration: 0.4 }}
                     >
                       {i === 0 &&
@@ -144,5 +163,5 @@ export default function AboutSection() {
         </div>
       </div>
     </motion.section>
-  )
+  );
 }

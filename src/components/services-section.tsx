@@ -32,7 +32,11 @@ export default function ServicesSection({
   backgroundColor = "#f9f9f9",
 }: ServicesSectionProps) {
   return (
-    <section id="services" className="py-12 md:py-20 overflow-hidden" style={{ backgroundColor }}>
+    <section
+      id="services"
+      className="py-12 md:py-20 overflow-hidden"
+      style={{ backgroundColor }}
+    >
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-3 text-center">
           <motion.h2
@@ -55,7 +59,7 @@ export default function ServicesSection({
           </motion.h3>
         </div>
 
-        <div className="grid gap-8 sm:gap-10 md:gap-12 mt-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4  sm:gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <MotionCard
               key={index}
@@ -94,11 +98,15 @@ export default function ServicesSection({
                       className="w-14 h-14 object-contain"
                     />
                   </motion.div>
-                  <CardTitle className="text-lg sm:text-xl md:text-2xl">{service.title}</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl md:text-2xl">
+                    {service.title}
+                  </CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="mt-4">
-                <p className="text-sm sm:text-base leading-relaxed">{service.description}</p>
+                <p className="text-sm sm:text-base leading-relaxed">
+                  {service.description}
+                </p>
               </CardContent>
             </MotionCard>
           ))}
@@ -125,7 +133,7 @@ export default function ServicesSection({
         )}
       </div>
     </section>
-  )
+  );
 }
 
 const defaultServices: ServiceItem[] = [

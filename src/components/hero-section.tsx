@@ -130,8 +130,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative overflow-hidden container">
-      {/* Background circles with popups */}
+    <section className="relative overflow-hidden ">
       <motion.div
         initial="hidden"
         animate={isLoaded ? "visible" : "hidden"}
@@ -139,7 +138,7 @@ export default function HeroSection() {
         className="absolute md:top-[5%] top-[70%] left-[5%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] opacity-50 cursor-pointer hover:opacity-70 transition-opacity"
         onClick={() => {
           // Add a slight delay before opening the popup
-          setTimeout(() => setActivePopup(1), 150)
+          setTimeout(() => setActivePopup(1), 150);
         }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -151,7 +150,7 @@ export default function HeroSection() {
         transition={{ delay: 0.3 }}
         className="absolute md:top-[30%] top-[60%] right-[2%] w-[8vw] h-[8vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] opacity-50 cursor-pointer hover:opacity-70 transition-opacity"
         onClick={() => {
-          setTimeout(() => setActivePopup(2), 150)
+          setTimeout(() => setActivePopup(2), 150);
         }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -163,7 +162,7 @@ export default function HeroSection() {
         transition={{ delay: 0.6 }}
         className="absolute md:top-[15%] top-[54%] right-[35%] w-[8vw] h-[8vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] opacity-50 cursor-pointer hover:opacity-70 transition-opacity"
         onClick={() => {
-          setTimeout(() => setActivePopup(3), 150)
+          setTimeout(() => setActivePopup(3), 150);
         }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -175,7 +174,7 @@ export default function HeroSection() {
         transition={{ delay: 0.9 }}
         className="absolute top-[54.5%] right-[37%] w-[4vw] h-[4vw] md:w-[3vw] md:h-[3vw] rounded-full bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] opacity-50 flex items-center justify-center cursor-pointer hover:opacity-70 transition-opacity"
         onClick={() => {
-          setTimeout(() => setActivePopup(4), 150)
+          setTimeout(() => setActivePopup(4), 150);
         }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -236,7 +235,11 @@ export default function HeroSection() {
                 >
                   {popupData[activePopup - 1]?.description}
                 </motion.p>
-                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                >
                   <Button
                     className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] hover:opacity-90 text-white rounded-full border-none"
                     onClick={() => setActivePopup(null)}
@@ -265,7 +268,9 @@ export default function HeroSection() {
           }}
         >
           <CardContent className="flex flex-col justify-between h-full p-0">
-            <h2 className="font-medium text-[10px] sm:text-sm">Monthly Visitor</h2>
+            <h2 className="font-medium text-[10px] sm:text-sm">
+              Monthly Visitor
+            </h2>
 
             <div className="flex items-end gap-[6px] sm:gap-2 mt-1 sm:mt-2">
               {/* Y-axis labels */}
@@ -314,7 +319,10 @@ export default function HeroSection() {
             variants={staggerChildren}
             className="flex flex-col justify-center space-y-4 md:space-y-6"
           >
-            <motion.div variants={slideRight} className="space-y-2 md:space-y-4">
+            <motion.div
+              variants={slideRight}
+              className="space-y-2 md:space-y-4"
+            >
               <motion.h1
                 variants={slideRight}
                 className="text-2xl sm:text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl"
@@ -327,12 +335,17 @@ export default function HeroSection() {
                 variants={slideRight}
                 className="max-w-[600px] text-[#1C2D44] text-sm sm:text-base md:text-lg lg:text-base xl:text-xl"
               >
-                A team of UI/UX experts, web and mobile app developers, copywriters and digital marketers who deliver
-                real-world solutions for today's dynamic landscape.
+                A team of UI/UX experts, web and mobile app developers,
+                copywriters and digital marketers who deliver real-world
+                solutions for today's dynamic landscape.
               </motion.p>
             </motion.div>
 
-            <motion.div variants={fadeIn} transition={{ delay: 0.3 }} className="w-full">
+            <motion.div
+              variants={fadeIn}
+              transition={{ delay: 0.3 }}
+              className="w-full"
+            >
               <Image
                 src={firmsLogos || "/placeholder.svg"}
                 alt="logos"
@@ -342,15 +355,24 @@ export default function HeroSection() {
               />
             </motion.div>
 
-            <motion.div variants={slideUp} className="flex flex-col gap-2 min-[400px]:flex-row">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div
+              variants={slideUp}
+              className="flex flex-col gap-2 min-[400px]:flex-row"
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Button className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] hover:opacity-90 text-white rounded-full border-none">
                   Get Started
                 </Button>
               </motion.div>
             </motion.div>
 
-            <motion.div variants={slideUp} className="flex gap-2 text-[#1a3d7c]">
+            <motion.div
+              variants={slideUp}
+              className="flex gap-2 text-[#1a3d7c]"
+            >
               <motion.div variants={scaleUp} className="flex-shrink-0">
                 <Image
                   src={mailIcon || "/placeholder.svg"}
@@ -361,7 +383,9 @@ export default function HeroSection() {
                 />
               </motion.div>
               <motion.div variants={slideRight}>
-                <p className="font-medium text-lg sm:text-xl md:text-2xl text-[#1C2D44]">(888) 321-7452</p>
+                <p className="font-medium text-lg sm:text-xl md:text-2xl text-[#1C2D44]">
+                  (888) 321-7452
+                </p>
                 <p className="text-xs sm:text-sm">info@advora.com</p>
               </motion.div>
             </motion.div>
@@ -536,5 +560,5 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

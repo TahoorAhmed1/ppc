@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 .container{
-  @apply !container mx-auto p-4 md:px-8
+  @apply !container mx-auto px-3 md:px-6
 }
 
 @theme inline {
