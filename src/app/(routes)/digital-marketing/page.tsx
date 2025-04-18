@@ -36,7 +36,7 @@ export default function Home() {
             <PricingPackage />
             <TestimonialsSection />
             <ContactSection />
-            <FaqSection />
+            <FaqSection enableGradientBackground={true} />
             <CtaSection />
             <Footer />
         </main>

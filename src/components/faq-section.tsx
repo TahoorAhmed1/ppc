@@ -18,7 +18,11 @@ const MotionInput = motion(Input)
 const MotionButton = motion(Button)
 const MotionLink = motion(Link)
 
-export default function AnimatedFaqSection() {
+export default function AnimatedFaqSection({
+  enableGradientBackground = false,
+}: {
+  enableGradientBackground?: boolean
+}) {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
@@ -117,7 +121,9 @@ export default function AnimatedFaqSection() {
 
   return (
     <motion.section
-      className="py-12 md:py-20 bg-[#f9f9f9]"
+      className={`py-12 md:py-20 ${
+        enableGradientBackground ? "bg-gradient-to-br from-[#4aa399] to-[#0c131d]" : "bg-[#f9f9f9]"
+      }`}
       initial="hidden"
       animate={isLoaded ? "visible" : "hidden"}
       variants={containerVariants}
@@ -126,7 +132,11 @@ export default function AnimatedFaqSection() {
         <motion.div className="grid gap-12 lg:grid-cols-2 items-start" variants={sectionVariants}>
           {/* LEFT - FAQ */}
           <motion.div className="space-y-6" variants={sectionVariants}>
-            <Accordion type="single" collapsible className="w-full space-y-2">
+            <Accordion
+              type="single"
+              collapsible
+              className={`w-full space-y-2 ${enableGradientBackground ? "text-white" : ""}`}
+            >
               <MotionAccordionItem
                 value="item-1"
                 className="border-b border-gray-200"
@@ -134,8 +144,12 @@ export default function AnimatedFaqSection() {
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <AccordionTrigger className="text-lg font-medium">How do I sign up for the project?</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-sm">
+                <AccordionTrigger className={`text-lg font-medium ${enableGradientBackground ? "text-white" : ""}`}>
+                  How do I sign up for the project?
+                </AccordionTrigger>
+                <AccordionContent
+                  className={`${enableGradientBackground ? "text-white/80" : "text-muted-foreground"} text-sm`}
+                >
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -153,10 +167,12 @@ export default function AnimatedFaqSection() {
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <AccordionTrigger className="text-lg font-medium">
+                <AccordionTrigger className={`text-lg font-medium ${enableGradientBackground ? "text-white" : ""}`}>
                   What should I prepare before starting?
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-sm">
+                <AccordionContent
+                  className={`${enableGradientBackground ? "text-white/80" : "text-muted-foreground"} text-sm`}
+                >
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -174,10 +190,12 @@ export default function AnimatedFaqSection() {
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <AccordionTrigger className="text-lg font-medium">
+                <AccordionTrigger className={`text-lg font-medium ${enableGradientBackground ? "text-white" : ""}`}>
                   Does my company need help with marketing advice?
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-sm">
+                <AccordionContent
+                  className={`${enableGradientBackground ? "text-white/80" : "text-muted-foreground"} text-sm`}
+                >
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -194,7 +212,11 @@ export default function AnimatedFaqSection() {
           <MotionCard className="bg-transparent border-none shadow-none" variants={cardVariants}>
             <MotionCardHeader className="px-0" variants={itemVariants}>
               <motion.h2
-                className="text-4xl font-extrabold bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text"
+                className={`text-4xl font-extrabold ${
+                  enableGradientBackground
+                    ? "text-white"
+                    : "bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text"
+                }`}
                 variants={itemVariants}
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 10 }}
@@ -203,7 +225,10 @@ export default function AnimatedFaqSection() {
               </motion.h2>
             </MotionCardHeader>
             <MotionCardContent className="px-0 space-y-6" variants={itemVariants}>
-              <motion.p className="text-[#1C2D44] text-base leading-relaxed" variants={itemVariants}>
+              <motion.p
+                className={`${enableGradientBackground ? "text-white/80" : "text-[#1C2D44]"} text-base leading-relaxed`}
+                variants={itemVariants}
+              >
                 Follow our newsletter. We'll regularly update you with our latest projects and availability.
               </motion.p>
 
@@ -230,7 +255,11 @@ export default function AnimatedFaqSection() {
               <motion.div className="pt-2" variants={itemVariants}>
                 <MotionLink
                   href="#"
-                  className="inline-flex items-center bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text font-semibold hover:underline"
+                  className={`inline-flex items-center ${
+                    enableGradientBackground
+                      ? "text-white font-semibold hover:underline"
+                      : "bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text font-semibold hover:underline"
+                  }`}
                   variants={itemVariants}
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -241,7 +270,9 @@ export default function AnimatedFaqSection() {
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   >
-                    <ArrowRight className="ml-1 h-4 w-4 text-[#1F9BED]" />
+                    <ArrowRight
+                      className={`ml-1 h-4 w-4 ${enableGradientBackground ? "text-white" : "text-[#1F9BED]"}`}
+                    />
                   </motion.span>
                 </MotionLink>
               </motion.div>
