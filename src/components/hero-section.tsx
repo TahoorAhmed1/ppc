@@ -130,7 +130,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative overflow-hidden ">
+    <section className="relative container overflow-hidden ">
       <motion.div
         initial="hidden"
         animate={isLoaded ? "visible" : "hidden"}
@@ -182,7 +182,6 @@ export default function HeroSection() {
         <AiFillSafetyCertificate className="text-white w-full h-full p-[15%]" />
       </motion.div>
 
-      {/* Popup overlay */}
       <AnimatePresence>
         {activePopup !== null && (
           <motion.div
@@ -253,7 +252,6 @@ export default function HeroSection() {
         )}
       </AnimatePresence>
 
-      {/* Monthly Visitor Card - made responsive */}
       <motion.div
         initial="hidden"
         animate={isLoaded ? "visible" : "hidden"}
@@ -264,7 +262,7 @@ export default function HeroSection() {
         <Card
           className="rounded-lg shadow-md bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-white w-fit h-fit p-2 sm:p-3"
           style={{
-            maxHeight: "150px", // optional limit on large screens
+            maxHeight: "150px",
           }}
         >
           <CardContent className="flex flex-col justify-between h-full p-0">
@@ -273,14 +271,12 @@ export default function HeroSection() {
             </h2>
 
             <div className="flex items-end gap-[6px] sm:gap-2 mt-1 sm:mt-2">
-              {/* Y-axis labels */}
               <div className="flex flex-col justify-between leading-none text-white/90 text-[8px] sm:text-[10px] gap-[2px] sm:gap-[6px]">
                 <p>30</p>
                 <p>20</p>
                 <p>10</p>
               </div>
 
-              {/* Bars with fixed heights */}
               {[
                 { height: "16px", mdHeight: "24px" },
                 { height: "24px", mdHeight: "36px" },
@@ -311,7 +307,7 @@ export default function HeroSection() {
         </Card>
       </motion.div>
 
-      <div className="container px-4 md:px-6 py-6 md:py-12">
+      <div className="  py-6 md:py-12">
         <div className="grid gap-6 md:gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16 items-center">
           <motion.div
             initial="hidden"
@@ -386,7 +382,9 @@ export default function HeroSection() {
                 <p className="font-medium text-lg sm:text-xl md:text-2xl text-[#1C2D44]">
                   (888) 321-7452
                 </p>
-                <p className="text-xs sm:text-sm">info@advora.com</p>
+                <p className="text-xs sm:text-sm">
+                  info@Creative Agency 360.com
+                </p>
               </motion.div>
             </motion.div>
           </motion.div>

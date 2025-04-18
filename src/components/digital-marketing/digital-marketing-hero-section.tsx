@@ -87,13 +87,21 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
         className="relative z-10 container mx-auto py-4 flex flex-col sm:flex-row justify-between items-center gap-4"
         variants={stagger}
       >
-        <motion.div className="flex justify-center items-center" variants={slideRight} transition={{ duration: 0.6 }}>
+        <motion.div
+          className="flex justify-center items-center"
+          variants={slideRight}
+          transition={{ duration: 0.6 }}
+        >
           <p className="text-sm sm:text-base md:text-lg max-w-md my-auto text-center sm:text-left">
-            Our Focus Is Leveraging PPC Ads That Deliver Targeted Traffic, Increased Conversions, And Measurable ROI For
-            Your Online Storefront.
+            Our Focus Is Leveraging PPC Ads That Deliver Targeted Traffic,
+            Increased Conversions, And Measurable ROI For Your Online
+            Storefront.
           </p>
         </motion.div>
-        <motion.div className="flex flex-wrap justify-center sm:justify-end gap-3 sm:gap-6" variants={stagger}>
+        <motion.div
+          className="flex flex-wrap justify-center sm:justify-end gap-3 sm:gap-6"
+          variants={stagger}
+        >
           <motion.div
             className="hidden sm:block md:block"
             variants={slideLeft}
@@ -101,7 +109,9 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
             whileHover={{ y: -2, x: -2 }}
           >
             <div className="text-xs">Email</div>
-            <div className="font-semibold text-sm">info.advora@gmail.com</div>
+            <div className="font-semibold text-sm">
+              info.Creative Agency 360@gmail.com
+            </div>
           </motion.div>
 
           <motion.div
@@ -131,7 +141,10 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
         className="relative z-10 container mx-auto px-3 py-8 sm:py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10"
         variants={stagger}
       >
-        <motion.div className="flex flex-col py-3 sm:py-5 text-center md:text-left" variants={stagger}>
+        <motion.div
+          className="flex flex-col py-3 sm:py-5 text-center md:text-left"
+          variants={stagger}
+        >
           <motion.h1
             className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-13 font-bold"
             variants={slideUp}
@@ -148,7 +161,8 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
               </span>
             </motion.div>{" "}
             We build <br className="hidden sm:block" />
-            digital experiences <br className="hidden sm:block" /> that make brands unforgettable.
+            digital experiences <br className="hidden sm:block" /> that make
+            brands unforgettable.
           </motion.h1>
           <motion.div
             className="flex flex-wrap gap-3 items-center justify-center md:justify-start my-4"
@@ -166,7 +180,10 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
               </Button>
             </motion.div>
 
-            <motion.div className="flex gap-1 sm:gap-2 items-center justify-center" variants={stagger}>
+            <motion.div
+              className="flex gap-1 sm:gap-2 items-center justify-center"
+              variants={stagger}
+            >
               {awards.map((awardImage, i) => (
                 <motion.div
                   key={i}
@@ -188,7 +205,11 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
           </motion.div>
         </motion.div>
 
-        <motion.div className="flex items-center justify-center" variants={slideLeft} transition={{ duration: 0.8 }}>
+        <motion.div
+          className="flex items-center justify-center"
+          variants={slideLeft}
+          transition={{ duration: 0.8 }}
+        >
           <CompactRequestQuoteForm />
         </motion.div>
       </motion.div>
@@ -210,14 +231,18 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
           >
             {repeatedServices.map((service, i) => (
               <div key={i} className="snap-start shrink-0">
-                <ServiceCategory icon={service.icon} title={service.title} subtitle={service.subtitle} />
+                <ServiceCategory
+                  icon={service.icon}
+                  title={service.title}
+                  subtitle={service.subtitle}
+                />
               </div>
             ))}
           </motion.div>
         </div>
       </motion.div>
     </motion.div>
-  )
+  );
 }
 
 // Update CompactRequestQuoteForm to use motion components

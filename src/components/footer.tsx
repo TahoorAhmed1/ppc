@@ -55,12 +55,21 @@ export default function Footer() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <Image src={logo || "/placeholder.svg"} alt="Logo" width={200} height={200} />
+            <Image
+              src={logo || "/placeholder.svg"}
+              alt="Logo"
+              width={200}
+              height={200}
+            />
           </motion.div>
 
-          <motion.p className="text-gray-700 font-medium leading-relaxed" variants={itemVariants}>
-            "We're a results-driven digital marketing agency focused on helping brands grow in a digital-first
-            world."We're a results-driven digital marketing agency focused on helping brands grow in a digital-first
+          <motion.p
+            className="text-gray-700 font-medium leading-relaxed"
+            variants={itemVariants}
+          >
+            "We're a results-driven digital marketing agency focused on helping
+            brands grow in a digital-first world."We're a results-driven digital
+            marketing agency focused on helping brands grow in a digital-first
             world.
           </motion.p>
         </motion.div>
@@ -71,7 +80,10 @@ export default function Footer() {
           variants={containerVariants}
         >
           {/* Our Link */}
-          <AnimatedFooterColumn title="Our Link" links={["About Us", "Careers", "We're Hiring", "Press & Media"]} />
+          <AnimatedFooterColumn
+            title="Our Link"
+            links={["About Us", "Careers", "We're Hiring", "Press & Media"]}
+          />
 
           {/* Our Service */}
           <AnimatedFooterColumn
@@ -85,7 +97,10 @@ export default function Footer() {
           />
 
           {/* Resources */}
-          <AnimatedFooterColumn title="Resources" links={["Blog", "Case Studies", "eBooks", "FAQ"]} />
+          <AnimatedFooterColumn
+            title="Resources"
+            links={["Blog", "Case Studies", "eBooks", "FAQ"]}
+          />
         </motion.div>
       </motion.div>
 
@@ -96,10 +111,10 @@ export default function Footer() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.5 }}
       >
-        © 2025 Advora, Inc. All rights reserved.
+        © 2025 Creative Agency 360, Inc. All rights reserved.
       </motion.div>
     </motion.footer>
-  )
+  );
 }
 
 function AnimatedFooterColumn({ title, links }: { title: string; links: string[] }) {

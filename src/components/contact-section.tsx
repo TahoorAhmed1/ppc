@@ -125,16 +125,19 @@ export default function ContactSection() {
   }, [controls, isInView, hasTriggered])
 
   return (
-    <section className="py-12 md:py-20 bg-white overflow-hidden" id="contactus">
+    <section className="py-10 md:py-16 bg-white overflow-hidden" id="contactus">
       <div className="container px-4 md:px-6">
         <motion.div
           ref={containerRef}
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center"
+          className="grid gap-6 lg:grid-cols-2 lg:gap-8  items-center"
         >
-          <motion.div variants={containerVariants} className="flex flex-col justify-center space-y-4">
+          <motion.div
+            variants={containerVariants}
+            className="flex flex-col justify-center space-y-4"
+          >
             <motion.div variants={itemVariants} className="space-y-3">
               <motion.h2
                 variants={itemVariants}
@@ -143,64 +146,109 @@ export default function ContactSection() {
                 Ready to Get Started?
               </motion.h2>
               <motion.p variants={itemVariants} className="max-w-[600px]">
-                Let us know what you're looking for, and we'll help make a difference.
+                Let us know what you're looking for, and we'll help make a
+                difference.
               </motion.p>
             </motion.div>
 
-            <MotionCard variants={itemVariants} transition={{ type: "spring", stiffness: 100 }}>
+            <MotionCard
+              variants={itemVariants}
+              transition={{ type: "spring", stiffness: 100 }}
+            >
               <CardHeader className="pb-2">
-                <motion.h3 variants={itemVariants} className="text-lg font-medium">
+                <motion.h3
+                  variants={itemVariants}
+                  className="text-lg font-medium"
+                >
                   Contact Us
                 </motion.h3>
               </CardHeader>
               <CardContent>
                 <motion.form variants={containerVariants} className="space-y-4">
-                  <motion.div variants={containerVariants} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <motion.div custom={0} variants={formItemVariants} className="space-y-2">
+                  <motion.div
+                    variants={containerVariants}
+                    className="grid grid-cols-1 gap-4 sm:grid-cols-2"
+                  >
+                    <motion.div
+                      custom={0}
+                      variants={formItemVariants}
+                      className="space-y-2"
+                    >
                       <MotionInput
                         id="name"
                         placeholder="Your Name"
                         className="rounded-lg border-gray-300"
-                        whileFocus={{ scale: 1.02, boxShadow: "0 0 0 2px rgba(101, 207, 95, 0.3)" }}
+                        whileFocus={{
+                          scale: 1.02,
+                          boxShadow: "0 0 0 2px rgba(101, 207, 95, 0.3)",
+                        }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
                     </motion.div>
-                    <motion.div custom={1} variants={formItemVariants} className="space-y-2">
+                    <motion.div
+                      custom={1}
+                      variants={formItemVariants}
+                      className="space-y-2"
+                    >
                       <MotionInput
                         id="email"
                         type="email"
                         placeholder="Email"
                         className="rounded-lg border-gray-300"
-                        whileFocus={{ scale: 1.02, boxShadow: "0 0 0 2px rgba(31, 155, 237, 0.3)" }}
+                        whileFocus={{
+                          scale: 1.02,
+                          boxShadow: "0 0 0 2px rgba(31, 155, 237, 0.3)",
+                        }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
                     </motion.div>
-                    <motion.div custom={2} variants={formItemVariants} className="space-y-2">
+                    <motion.div
+                      custom={2}
+                      variants={formItemVariants}
+                      className="space-y-2"
+                    >
                       <MotionInput
                         id="phone"
                         placeholder="Phone"
                         className="rounded-lg border-gray-300"
-                        whileFocus={{ scale: 1.02, boxShadow: "0 0 0 2px rgba(101, 207, 95, 0.3)" }}
+                        whileFocus={{
+                          scale: 1.02,
+                          boxShadow: "0 0 0 2px rgba(101, 207, 95, 0.3)",
+                        }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
                     </motion.div>
-                    <motion.div custom={3} variants={formItemVariants} className="space-y-2">
+                    <motion.div
+                      custom={3}
+                      variants={formItemVariants}
+                      className="space-y-2"
+                    >
                       <MotionInput
                         id="Website"
                         type="text"
                         placeholder="Website"
                         className="rounded-lg border-gray-300"
-                        whileFocus={{ scale: 1.02, boxShadow: "0 0 0 2px rgba(31, 155, 237, 0.3)" }}
+                        whileFocus={{
+                          scale: 1.02,
+                          boxShadow: "0 0 0 2px rgba(31, 155, 237, 0.3)",
+                        }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
                     </motion.div>
                   </motion.div>
-                  <motion.div custom={4} variants={formItemVariants} className="space-y-2">
+                  <motion.div
+                    custom={4}
+                    variants={formItemVariants}
+                    className="space-y-2"
+                  >
                     <MotionTextarea
                       id="message"
                       placeholder="Message"
                       className="min-h-[120px] rounded-lg border-gray-300"
-                      whileFocus={{ scale: 1.02, boxShadow: "0 0 0 2px rgba(101, 207, 95, 0.3)" }}
+                      whileFocus={{
+                        scale: 1.02,
+                        boxShadow: "0 0 0 2px rgba(101, 207, 95, 0.3)",
+                      }}
                       transition={{ type: "spring", stiffness: 300 }}
                     />
                   </motion.div>
@@ -216,10 +264,16 @@ export default function ContactSection() {
             </MotionCard>
           </motion.div>
 
-          <motion.div variants={imageVariants} className="relative lg:flex hidden items-center justify-center p-20">
+          <motion.div
+            variants={imageVariants}
+            className="relative lg:flex hidden items-center justify-center p-20"
+          >
             <motion.div>
               <Image
-                src={personImage || "/placeholder.svg?height=500&width=400&query=business person"}
+                src={
+                  personImage ||
+                  "/placeholder.svg?height=500&width=400&query=business person"
+                }
                 alt="Contact Us"
                 width={500}
                 height={400}
@@ -230,5 +284,5 @@ export default function ContactSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

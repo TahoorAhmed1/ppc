@@ -140,7 +140,7 @@ export default function EnhancedCtaSection() {
   }
 
   return (
-    <section className="py-12 md:py-20 bg-white overflow-hidden relative">
+    <section className="py-10 md:py-16 bg-white overflow-hidden relative">
       {/* Background decorative elements */}
       <motion.div
         className="absolute top-0 left-0 w-full h-full"
@@ -154,7 +154,11 @@ export default function EnhancedCtaSection() {
           animate={{
             x: [0, 20, 0],
             y: [0, -20, 0],
-            transition: { duration: 8, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" },
+            transition: {
+              duration: 8,
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "reverse",
+            },
           }}
         />
         <motion.div
@@ -163,7 +167,11 @@ export default function EnhancedCtaSection() {
           animate={{
             x: [0, -30, 0],
             y: [0, 30, 0],
-            transition: { duration: 10, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" },
+            transition: {
+              duration: 10,
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "reverse",
+            },
           }}
         />
       </motion.div>
@@ -175,7 +183,7 @@ export default function EnhancedCtaSection() {
           animate="visible"
           variants={containerVariants}
         >
-          <motion.div className="relative"  animate="animate">
+          <motion.div className="relative" animate="animate">
             <motion.h2
               className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text"
               whileHover={{
@@ -196,9 +204,12 @@ export default function EnhancedCtaSection() {
             </motion.div>
           </motion.div>
 
-          <motion.p className="max-w-2xl text-[#1C2D44] text-base sm:text-lg" variants={itemVariants}>
-            Have a project in mind? Let's make it happen! Contact us today and let's discuss how we can help you achieve
-            your goals.
+          <motion.p
+            className="max-w-2xl text-[#1C2D44] text-base sm:text-lg"
+            variants={itemVariants}
+          >
+            Have a project in mind? Let's make it happen! Contact us today and
+            let's discuss how we can help you achieve your goals.
           </motion.p>
 
           <AnimatePresence mode="wait">
@@ -212,7 +223,10 @@ export default function EnhancedCtaSection() {
                 onSubmit={handleSubmit}
                 key="form"
               >
-                <motion.div className="w-full sm:flex-1" variants={itemVariants}>
+                <motion.div
+                  className="w-full sm:flex-1"
+                  variants={itemVariants}
+                >
                   <motion.div
                     whileFocus={{ scale: 1.02 }}
                     whileHover={{ scale: 1.02 }}
@@ -254,7 +268,11 @@ export default function EnhancedCtaSection() {
                       Contact Us
                       <motion.div
                         animate={{ x: [0, 5, 0] }}
-                        transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
+                        transition={{
+                          duration: 1,
+                          repeat: Number.POSITIVE_INFINITY,
+                          repeatType: "reverse",
+                        }}
                       >
                         <Send className="w-4 h-4 ml-1" />
                       </motion.div>
@@ -313,5 +331,5 @@ export default function EnhancedCtaSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
