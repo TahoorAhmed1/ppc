@@ -22,23 +22,35 @@ const portfolioItems = [
 ]
 export default function Home() {
     return (
-        <main className="min-h-[80vh]">
-            <DigitalMarketingHeroSection />
-            <InfiniteScroll />
-            <PortfolioSection heading="Our Diverse Portfolio" title="" paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our
+      <main className="min-h-[100vh]">
+        <DigitalMarketingHeroSection />
+        <InfiniteScroll />
+        <PortfolioSection
+          heading="Our Diverse Portfolio"
+          title=""
+          paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our
                                                                       commitment to superior quality, innovation, and technical prowess."
+          filters={[
+            "All",
+            "E-commerce",
+            "Finance and Banking",
+            "Education and E-Learning",
+            "Hospitality and Food Service",
+            "Entertainment and Media",
+            "Real Estate",
+            "Professional Services",
+            "Travel and Hospitality",
+          ]}
+          btnIcon=""
+          items={portfolioItems}
+        />
 
-                filters={["All", "E-commerce", "Finance and Banking", "Education and E-Learning", "Hospitality and Food Service", "Entertainment and Media", "Real Estate", "Professional Services", "Travel and Hospitality"]}
-                btnIcon=""
-                items={portfolioItems}
-            />
-
-            <PricingPackage />
-            <TestimonialsSection />
-            <ContactSection />
-            <FaqSection />
-            <CtaSection />
-            <Footer />
-        </main>
-    )
+        <PricingPackage />
+        <TestimonialsSection />
+        <ContactSection />
+        <FaqSection />
+        <CtaSection />
+        <Footer />
+      </main>
+    );
 }

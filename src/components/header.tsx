@@ -46,7 +46,6 @@ export default function Header() {
           <Button className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none sm:text-sm text-xs md:px-4 px-2   py-2">
             Get Free Consultation
           </Button>
-          {/* <Search className="h-5 w-5 text-muted-foreground hidden md:block" /> */}
           <button
             className="md:hidden"
             onClick={() => setMenuOpen(!menuOpen)}

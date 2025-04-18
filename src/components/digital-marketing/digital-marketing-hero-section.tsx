@@ -129,7 +129,7 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text py-1.5 text-sm sm:text-base">
+            <Button className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none sm:text-sm text-xs md:px-4 px-2   py-2">
               Get Free Consultation
             </Button>
           </motion.div>
