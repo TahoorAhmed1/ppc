@@ -2,19 +2,10 @@
 
 import { logo } from "@/assets"
 import Image from "next/image"
-import Link from "next/link"
-import { useState, type FormEvent } from "react"
-import { motion } from "framer-motion"
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Footer() {
-  const [email, setEmail] = useState("")
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault()
-    console.log("Email submitted:", email)
-    setEmail("")
-  }
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -24,7 +15,7 @@ export default function Footer() {
         delayChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -33,7 +24,7 @@ export default function Footer() {
       opacity: 1,
       transition: { duration: 0.5, ease: "easeOut" },
     },
-  }
+  };
 
   return (
     <motion.footer

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { personImage } from "@/assets";
 import { motion, useAnimation } from "framer-motion";
 import { useForm } from "react-hook-form";
@@ -204,6 +204,7 @@ export default function ContactSection() {
         setIsSuccess(false);
       }, 2000);
     } catch (error) {
+      console.log("error", error);
       toast({
         title: "Error sending message",
         description: "Please try again later.",

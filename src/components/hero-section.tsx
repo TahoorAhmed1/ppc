@@ -10,21 +10,20 @@ import StatsBar from "./stats-card"
 import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
 
-// Animation variants
 const fadeIn = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
-}
+};
 
 const slideUp = {
   hidden: { y: 50, opacity: 0 },
   visible: { y: 0, opacity: 1 },
-}
+};
 
 const slideRight = {
   hidden: { x: -50, opacity: 0 },
   visible: { x: 0, opacity: 1 },
-}
+};
 
 const slideLeft = {
   hidden: { x: 50, opacity: 0 },
@@ -37,15 +36,12 @@ const slideLeft = {
       damping: 10,
     },
   },
-}
+};
 
 const scaleUp = {
   hidden: { scale: 0.8, opacity: 0 },
   visible: { scale: 1, opacity: 1 },
-
-
-
-}
+};
 
 const pulse: any = {
   hidden: { scale: 0.9, opacity: 0.3 },
@@ -54,24 +50,25 @@ const pulse: any = {
     opacity: [0.3],
     transition: {
       repeat: Number.POSITIVE_INFINITY,
-      repeatType: "reverse", // Ensure this matches the allowed types
+      repeatType: "reverse",
       duration: 3,
     },
   },
-}
+};
 
-// Popup content data
 const popupData = [
   {
     id: 1,
     title: "Digital Marketing",
-    description: "Boost your online presence with our comprehensive digital marketing strategies.",
+    description:
+      "Boost your online presence with our comprehensive digital marketing strategies.",
     icon: "🚀",
   },
   {
     id: 2,
     title: "Web Development",
-    description: "Custom websites and applications built with the latest technologies.",
+    description:
+      "Custom websites and applications built with the latest technologies.",
     icon: "💻",
   },
   {
@@ -86,7 +83,7 @@ const popupData = [
     description: "All our solutions prioritize your data security and privacy.",
     icon: "🔒",
   },
-]
+];
 
 const popupVariants = {
   hidden: { opacity: 0, scale: 0.8, y: 20 },
@@ -98,7 +95,7 @@ const popupVariants = {
       type: "spring",
       stiffness: 300,
       damping: 20,
-      delay: 0.2, // Add delay before the popup appears
+      delay: 0.2,
     },
   },
   exit: {
@@ -109,15 +106,15 @@ const popupVariants = {
       duration: 0.2,
     },
   },
-}
+};
 
 export default function HeroSection() {
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [activePopup, setActivePopup] = useState<number | null>(null)
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [activePopup, setActivePopup] = useState<number | null>(null);
 
   useEffect(() => {
-    setIsLoaded(true)
-  }, [])
+    setIsLoaded(true);
+  }, []);
 
   const staggerChildren = {
     hidden: { opacity: 0 },
@@ -127,7 +124,7 @@ export default function HeroSection() {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   return (
     <section className="relative container overflow-hidden ">
@@ -137,7 +134,6 @@ export default function HeroSection() {
         variants={pulse}
         className="absolute md:top-[5%] top-[70%] left-[5%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] opacity-50 cursor-pointer hover:opacity-70 transition-opacity"
         onClick={() => {
-          // Add a slight delay before opening the popup
           setTimeout(() => setActivePopup(1), 150);
         }}
         whileHover={{ scale: 1.05 }}

@@ -4,13 +4,12 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, Send, Sparkles } from "lucide-react";
+import { Check, Sparkles } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "@/components/ui/use-toast";
 
-// Create Zod schema for email validation
 const subscriptionSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
 });
@@ -19,9 +18,7 @@ type SubscriptionFormData = z.infer<typeof subscriptionSchema>;
 
 export default function EnhancedCtaSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
 
-  // Initialize React Hook Form with Zod resolver
   const {
     register,
     handleSubmit,
@@ -297,8 +294,6 @@ export default function EnhancedCtaSection() {
                       className={`rounded-lg px-4 py-3 w-full ring-0 focus-visible:ring-0 text-[#1C2D44] h-12 bg-[#F8F8F8] border border-[#AFAFAF] transition-all duration-300 ${
                         errors.email ? "border-red-500" : ""
                       }`}
-                      onFocus={() => setIsHovered(true)}
-                      onBlur={() => setIsHovered(false)}
                     />
                     {errors.email && (
                       <p className="text-red-500 text-sm mt-1 text-left">
