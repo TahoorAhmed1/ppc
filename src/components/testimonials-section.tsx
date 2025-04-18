@@ -116,13 +116,14 @@ export default function TestimonialsSection() {
   return (
     <section className="py-12 md:py-20 bg-[#f9f9f9]">
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center gap-4 text-center mb-12">
-          <h2 className="text-2xl font-bold text-[#1C2D44] bg-clip-text">VIEW REVIEWS</h2>
-          <h3 className="text-5xl font-bold bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
+        <div className="flex flex-col items-center gap-3 text-center mb-12">
+          <h2 className="text-3xl font-bold text-[#1C2D44] ">VIEW REVIEWS</h2>
+          <h3 className="text-5xl font-bold  text-[#3DB1B1]">
             Hear from Our Success Stories
           </h3>
-          <p className="max-w-[500px] text-[#1C2D44] text-lg">
-            Don't just take our word for it. Here's what our clients have to say about working with us.
+          <p className="max-w-[500px] text-[#000000] text-base mt-2">
+            Real clients, real results. Discover how we’ve partnered with brands
+            like yours to deliver measurable success
           </p>
         </div>
 
@@ -135,12 +136,13 @@ export default function TestimonialsSection() {
               {slides.map((slide, idx) => (
                 <div key={idx} className="w-full flex-shrink-0 px-4">
                   <div
-                    className={`grid gap-6 ${itemsPerSlide === 1
-                      ? "grid-cols-1"
-                      : itemsPerSlide === 2
+                    className={`grid gap-6 ${
+                      itemsPerSlide === 1
+                        ? "grid-cols-1"
+                        : itemsPerSlide === 2
                         ? "md:grid-cols-2"
                         : "lg:grid-cols-3"
-                      }`}
+                    }`}
                   >
                     {slide.map((testimonial) => (
                       <Card
@@ -151,11 +153,17 @@ export default function TestimonialsSection() {
                           <div className="flex items-center gap-4 mb-4">
                             <div className="w-10 h-10 rounded-full bg-gray-300" />
                             <div>
-                              <p className="font-semibold text-white">{testimonial.name}</p>
-                              <p className="text-sm text-gray-300">{testimonial.role}</p>
+                              <p className="font-semibold text-white">
+                                {testimonial.name}
+                              </p>
+                              <p className="text-sm text-gray-300">
+                                {testimonial.role}
+                              </p>
                             </div>
                           </div>
-                          <p className="text-white text-sm leading-relaxed">{testimonial.content}</p>
+                          <p className="text-white text-sm leading-relaxed">
+                            {testimonial.content}
+                          </p>
                         </CardContent>
                       </Card>
                     ))}
@@ -180,10 +188,11 @@ export default function TestimonialsSection() {
               {slides.map((_, idx) => (
                 <button
                   key={idx}
-                  className={`w-2 h-2 rounded-full ${activeSlide === idx
-                    ? "bg-gradient-to-r from-[#65CF5F] to-[#1F9BED]"
-                    : "bg-gray-300"
-                    }`}
+                  className={`w-2 h-2 rounded-full ${
+                    activeSlide === idx
+                      ? "bg-gradient-to-r from-[#65CF5F] to-[#1F9BED]"
+                      : "bg-gray-300"
+                  }`}
                   onClick={() => setActiveSlide(idx)}
                 >
                   <span className="sr-only">Go to slide {idx + 1}</span>
@@ -204,5 +213,5 @@ export default function TestimonialsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

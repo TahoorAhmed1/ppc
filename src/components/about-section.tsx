@@ -1,18 +1,16 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
+import { useRef } from "react";
+import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
 
-// Assuming these imports are correct from your original code
-// If not, please adjust accordingly
-import { aboutCardIcon1, aboutCardIcon2, aboutCardIcon3, logo } from "@/assets"
+import { aboutCardIcon1, aboutCardIcon2, aboutCardIcon3, logo } from "@/assets";
 
 export default function AboutSection() {
-  const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -23,7 +21,7 @@ export default function AboutSection() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -32,7 +30,7 @@ export default function AboutSection() {
       opacity: 1,
       transition: { duration: 0.5, ease: "easeOut" },
     },
-  }
+  };
 
   const cardVariants = {
     hidden: { y: 30, opacity: 0 },
@@ -45,15 +43,16 @@ export default function AboutSection() {
         delay: 0.3 + i * 0.1,
       },
     }),
-  }
+  };
 
   const cardHoverVariants = {
     hover: {
       y: -10,
-      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      boxShadow:
+        "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
       transition: { duration: 0.3 },
     },
-  }
+  };
 
   return (
     <motion.section
@@ -83,18 +82,16 @@ export default function AboutSection() {
             className="text-4xl md:text-[42px] font-bold leading-tight"
             variants={itemVariants}
           >
-            <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
-              About
-            </span>{" "}
-            <span className="text-[#1F9BED]">US</span>
+            <span className=" text-[#3DB1B1]">Who We Are</span>{" "}
           </motion.h2>
 
           <motion.p
             className="text-sm md:text-base text-[#1C2D44] leading-relaxed"
             variants={itemVariants}
           >
-            Productive agents are happy agents. Give them all the support tools
-            and information they need to best serve your customers.
+            At Creative Agency 360, your success is our priority. Our mission?
+            To help you connect with your audience, strengthen your brand, and
+            drive long-term results.
           </motion.p>
         </motion.div>
 
@@ -109,7 +106,7 @@ export default function AboutSection() {
               animate={isInView ? "visible" : "hidden"}
             >
               <motion.div variants={cardHoverVariants}>
-                <Card className="bg-white hover:bg-[#1C2D44] text-[#1C2D44] hover:text-white border-0 shadow-xl p-1 h-80 transition-colors duration-300">
+                <Card className="bg-white hover:bg-[#1C2D44] text-[#1C2D44] hover:text-white border-0 shadow-xl p-1 h-[340px] transition-colors duration-300">
                   <CardContent className="p-4">
                     <motion.div
                       className="flex mb-4"
@@ -136,9 +133,9 @@ export default function AboutSection() {
                       }
                       transition={{ delay: 0.5 + i * 0.1, duration: 0.4 }}
                     >
-                      {i === 0 && "Constant Client Coordination"}
+                      {i === 0 && "100% Ownership Rights"}
                       {i === 1 && "Customer Satisfaction"}
-                      {i === 2 && "100% Ownership Rights"}
+                      {i === 2 && "Constant Client Coordination"}
                     </motion.h3>
                     <motion.p
                       className="text-sm"
@@ -149,11 +146,11 @@ export default function AboutSection() {
                       transition={{ delay: 0.6 + i * 0.1, duration: 0.4 }}
                     >
                       {i === 0 &&
-                        "Productive agents are happy agents. Give them all the support tools and information they need."}
+                        "Guaranteed Satisfaction:   We’re not happy until you are. Expect top-tier work, timely delivery, and a team that truly listens."}
                       {i === 1 &&
-                        "Powerful enough to handle the most complex business, flexible enough to scale as you grow."}
+                        "Complete Ownership:  Your project, your control. We deliver full rights and access, giving you the power to evolve freely."}
                       {i === 2 &&
-                        "We build bridges between companies and customers by evaluating deep data and tech adoption."}
+                        "100% Transparency:  We believe in clear communication and total honesty. No surprises—just real collaboration."}
                     </motion.p>
                   </CardContent>
                 </Card>

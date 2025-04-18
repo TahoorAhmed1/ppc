@@ -49,7 +49,7 @@ export default function ServicesSection({
             {title}
           </motion.h2>
           <motion.h3
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text"
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#3DB1B1]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -125,7 +125,7 @@ export default function ServicesSection({
             }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] hover:opacity-90 text-white rounded-xl px-8 py-4 border-none text-sm sm:text-base">
+              <Button className="bg-gradient-to-r from-[#65CF5F] to-[#209CEB] w-[220px] text-[17px] font-medium hover:opacity-90 text-white rounded-md border-none">
                 {buttonText}
               </Button>
             </motion.div>

@@ -1,17 +1,42 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { motion, AnimatePresence } from "framer-motion"
-import { Check, Send, Sparkles } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { motion, AnimatePresence } from "framer-motion";
+import { Check, Send, Sparkles } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { toast } from "@/components/ui/use-toast";
+
+// Create Zod schema for email validation
+const subscriptionSchema = z.object({
+  email: z.string().email({ message: "Please enter a valid email address" }),
+});
+
+type SubscriptionFormData = z.infer<typeof subscriptionSchema>;
 
 export default function EnhancedCtaSection() {
-  const [email, setEmail] = useState("")
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isHovered, setIsHovered] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
-  // Container variants for staggered children animations
+  // Initialize React Hook Form with Zod resolver
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+    watch,
+  } = useForm<SubscriptionFormData>({
+    resolver: zodResolver(subscriptionSchema),
+    defaultValues: {
+      email: "",
+    },
+  });
+
+  const email = watch("email");
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -21,9 +46,8 @@ export default function EnhancedCtaSection() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
-  // Child variants for individual elements
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -35,7 +59,7 @@ export default function EnhancedCtaSection() {
         stiffness: 100,
       },
     },
-  }
+  };
 
   // Form element variants
   const formVariants = {
@@ -51,7 +75,7 @@ export default function EnhancedCtaSection() {
         stiffness: 100,
       },
     },
-  }
+  };
 
   // Heading floating animation
   const floatingVariants = {
@@ -64,7 +88,7 @@ export default function EnhancedCtaSection() {
         ease: "easeInOut",
       },
     },
-  }
+  };
 
   // Background reveal animation
   const backgroundVariants = {
@@ -77,7 +101,7 @@ export default function EnhancedCtaSection() {
         ease: "easeOut",
       },
     },
-  }
+  };
 
   // Success message variants
   const successVariants = {
@@ -98,7 +122,7 @@ export default function EnhancedCtaSection() {
         duration: 0.3,
       },
     },
-  }
+  };
 
   // Decorative element variants
   const decorVariants = {
@@ -111,7 +135,7 @@ export default function EnhancedCtaSection() {
         duration: 0.5,
       },
     },
-  }
+  };
 
   // Sparkle animation variants
   const sparkleVariants = {
@@ -125,19 +149,53 @@ export default function EnhancedCtaSection() {
         repeatDelay: 3,
       },
     },
-  }
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (email) {
-      setIsSubmitted(true)
-      // Reset after 3 seconds
+  const onSubmit = async (data: SubscriptionFormData) => {
+    setIsSubmitted(true);
+
+    try {
+      const response = await fetch(
+        "https://demo7.obistest.online/api/store-subscribtion",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: data.email,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Subscription failed");
+      }
+
+      toast({
+        title: "Subscription successful!",
+        description: "Thank you for subscribing to our newsletter.",
+      });
+
+      // Reset form after 3 seconds
       setTimeout(() => {
-        setIsSubmitted(false)
-        setEmail("")
-      }, 3000)
+        setIsSubmitted(false);
+        reset();
+      }, 3000);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Subscription failed",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+
+      // Even on error, we'll reset after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 3000);
     }
-  }
+  };
 
   return (
     <section className="py-10 md:py-16 bg-white overflow-hidden relative">
@@ -185,14 +243,14 @@ export default function EnhancedCtaSection() {
         >
           <motion.div className="relative" animate="animate">
             <motion.h2
-              className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text"
+              className="text-4xl sm:text-5xl font-bold py-2 text-[#3DB1B1]"
               whileHover={{
                 backgroundSize: "200%",
                 backgroundPosition: ["0%", "100%"],
                 transition: { duration: 1 },
               }}
             >
-              Let's Work Together
+              Let’s Make Your Project Standout!
             </motion.h2>
             <motion.div
               className="absolute -top-6 -right-6 text-[#65CF5F]"
@@ -208,8 +266,8 @@ export default function EnhancedCtaSection() {
             className="max-w-2xl text-[#1C2D44] text-base sm:text-lg"
             variants={itemVariants}
           >
-            Have a project in mind? Let's make it happen! Contact us today and
-            let's discuss how we can help you achieve your goals.
+            You want more than average, let’s create something that truly stands
+            out.
           </motion.p>
 
           <AnimatePresence mode="wait">
@@ -220,7 +278,7 @@ export default function EnhancedCtaSection() {
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
-                onSubmit={handleSubmit}
+                onSubmit={handleSubmit(onSubmit)}
                 key="form"
               >
                 <motion.div
@@ -231,16 +289,22 @@ export default function EnhancedCtaSection() {
                     whileFocus={{ scale: 1.02 }}
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                    className="relative"
                   >
                     <Input
+                      {...register("email")}
                       placeholder="Enter your email"
-                      className="rounded-lg px-4 py-3 w-full text-[#1C2D44] transition-all duration-300"
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      className={`rounded-lg px-4 py-3 w-full ring-0 focus-visible:ring-0 text-[#1C2D44] h-12 bg-[#F8F8F8] border border-[#AFAFAF] transition-all duration-300 ${
+                        errors.email ? "border-red-500" : ""
+                      }`}
                       onFocus={() => setIsHovered(true)}
                       onBlur={() => setIsHovered(false)}
                     />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1 text-left">
+                        {errors.email.message}
+                      </p>
+                    )}
                   </motion.div>
                 </motion.div>
                 <motion.div
@@ -251,7 +315,7 @@ export default function EnhancedCtaSection() {
                 >
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] hover:opacity-90 text-white rounded-lg px-6 py-3 w-full relative overflow-hidden group"
+                    className="bg-gradient-to-r from-[#65CF5F] to-[#209CEB] w-[200px] hover:opacity-90 h-12 text-white rounded-lg px-6 py-3  relative overflow-hidden group"
                   >
                     <motion.span
                       className="absolute inset-0 bg-white opacity-20 rounded-lg"
@@ -265,17 +329,7 @@ export default function EnhancedCtaSection() {
                       }}
                     />
                     <motion.div className="flex items-center justify-center gap-2">
-                      Contact Us
-                      <motion.div
-                        animate={{ x: [0, 5, 0] }}
-                        transition={{
-                          duration: 1,
-                          repeat: Number.POSITIVE_INFINITY,
-                          repeatType: "reverse",
-                        }}
-                      >
-                        <Send className="w-4 h-4 ml-1" />
-                      </motion.div>
+                      Contact Me
                     </motion.div>
                   </Button>
                 </motion.div>

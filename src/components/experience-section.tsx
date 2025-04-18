@@ -81,7 +81,7 @@ export default function MarketingSection() {
           variants={containerVariants}
         >
           <MotionImage
-            className="w-full max-w-[400px] aspect-square rounded-xl overflow-hidden"
+            className="w-full max-w-[500px] rounded-xl overflow-hidden"
             variants={imageVariants}
           >
             <Image
@@ -125,7 +125,7 @@ export default function MarketingSection() {
               </MotionDiv>
             </MotionDiv>
             <MotionButton
-              className="py-2 px-8 text-white font-medium rounded-md bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] hover:opacity-90 transition-opacity"
+              className="bg-gradient-to-r from-[#65CF5F] to-[#209CEB] w-[200px] text-[17px] py-2 font-medium hover:opacity-90 text-white rounded-lg border-none"
               variants={itemVariants}
               whileHover={{
                 scale: 1.05,

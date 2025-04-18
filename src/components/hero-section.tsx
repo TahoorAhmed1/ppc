@@ -321,10 +321,11 @@ export default function HeroSection() {
             >
               <motion.h1
                 variants={slideRight}
-                className="text-2xl sm:text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl"
+                className="text-2xl sm:text-3xl font-bold  md:text-4xl lg:text-5xl"
               >
-                <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
-                  All-In-One Digital Marketing and Web Development Agency Advera
+                <span className="bg-gradient-to-r  text-[#41B4A7] ">
+                  Your One-Stop Digital Marketing and Web Design Partner
+                  Empowering Your Brand Voice
                 </span>
               </motion.h1>
               <motion.p
@@ -359,8 +360,8 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Button className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] hover:opacity-90 text-white rounded-full border-none">
-                  Get Started
+                <Button className="bg-gradient-to-r from-[#65CF5F] to-[#209CEB] w-[220px] text-[17px] font-medium hover:opacity-90 text-white rounded-lg border-none">
+                  Get In Touch
                 </Button>
               </motion.div>
             </motion.div>
@@ -549,7 +550,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.0, duration: 0.5 }}
-                className="-mt-4 relative z-20"
+                className="-mt-6 relative z-20"
               >
                 <StatsBar />
               </motion.div>
