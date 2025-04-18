@@ -382,7 +382,9 @@ export default function HeroSection() {
                 <p className="font-medium text-lg sm:text-xl md:text-2xl text-[#1C2D44]">
                   (888) 321-7452
                 </p>
-                <p className="text-xs sm:text-sm">info@advora.com</p>
+                <p className="text-xs sm:text-sm">
+                  info@Creative Agency 360.com
+                </p>
               </motion.div>
             </motion.div>
           </motion.div>

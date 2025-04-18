@@ -64,7 +64,11 @@ export default function MarketingSection() {
   }, [isInView, controls])
 
   return (
-    <section id="experience" className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" ref={sectionRef}>
+    <section
+      id="experience"
+      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+      ref={sectionRef}
+    >
       <MotionDiv
         className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16"
         variants={containerVariants}
@@ -72,7 +76,10 @@ export default function MarketingSection() {
         animate={controls}
       >
         {/* Image & CTA Section */}
-        <MotionDiv className="w-full lg:w-1/2 flex flex-col items-center gap-6" variants={containerVariants}>
+        <MotionDiv
+          className="w-full lg:w-1/2 flex flex-col items-center gap-6"
+          variants={containerVariants}
+        >
           <MotionImage
             className="w-full max-w-[400px] aspect-square rounded-xl overflow-hidden"
             variants={imageVariants}
@@ -99,7 +106,10 @@ export default function MarketingSection() {
             >
               <MotionDiv
                 variants={itemVariants}
-                whileHover={{ rotate: [0, -10, 10, -10, 0], transition: { duration: 0.5 } }}
+                whileHover={{
+                  rotate: [0, -10, 10, -10, 0],
+                  transition: { duration: 0.5 },
+                }}
               >
                 <Image
                   src={mailIcon || "/placeholder.svg"}
@@ -111,13 +121,16 @@ export default function MarketingSection() {
               </MotionDiv>
               <MotionDiv variants={itemVariants}>
                 <p className="font-semibold text-lg">(888) 321-7452</p>
-                <p className="text-xs">info@advora.com</p>
+                <p className="text-xs">info@Creative Agency 360.com</p>
               </MotionDiv>
             </MotionDiv>
             <MotionButton
               className="py-2 px-8 text-white font-medium rounded-md bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] hover:opacity-90 transition-opacity"
               variants={itemVariants}
-              whileHover={{ scale: 1.05, boxShadow: "0px 5px 15px rgba(31, 155, 237, 0.3)" }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0px 5px 15px rgba(31, 155, 237, 0.3)",
+              }}
               whileTap={{ scale: 0.95 }}
             >
               Get In Touch
@@ -126,9 +139,14 @@ export default function MarketingSection() {
         </MotionDiv>
 
         {/* Text & Service Bars */}
-        <MotionDiv className="w-full lg:w-1/2 space-y-6 text-center lg:text-left" variants={containerVariants}>
+        <MotionDiv
+          className="w-full lg:w-1/2 space-y-6 text-center lg:text-left"
+          variants={containerVariants}
+        >
           <MotionDiv className="space-y-2" variants={itemVariants}>
-            <h2 className="text-[#1d3557] text-2xl font-bold uppercase">EXPERIENCE</h2>
+            <h2 className="text-[#1d3557] text-2xl font-bold uppercase">
+              EXPERIENCE
+            </h2>
             <h2 className="text-4xl font-bold leading-snug">
               <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
                 That Speaks for Itself
@@ -136,11 +154,16 @@ export default function MarketingSection() {
             </h2>
           </MotionDiv>
 
-          <MotionDiv variants={itemVariants} className="text-[#1d3557] font-medium text-sm leading-relaxed">
+          <MotionDiv
+            variants={itemVariants}
+            className="text-[#1d3557] font-medium text-sm leading-relaxed"
+          >
             <p>
-              Whether you are looking to create a mind-boggling website or e-commerce store, a promising Digital
-              Marketing Strategy, or attention-grabbing graphic design services, we have the right bunch of people who
-              go beyond your expectations to produce exemplary results.
+              Whether you are looking to create a mind-boggling website or
+              e-commerce store, a promising Digital Marketing Strategy, or
+              attention-grabbing graphic design services, we have the right
+              bunch of people who go beyond your expectations to produce
+              exemplary results.
             </p>
           </MotionDiv>
 
@@ -157,7 +180,7 @@ export default function MarketingSection() {
         </MotionDiv>
       </MotionDiv>
     </section>
-  )
+  );
 }
 
 function AnimatedServiceBar({ name, percentage }: { name: string; percentage: number }) {
