@@ -2,17 +2,17 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { AlignJustify, Search, X } from "lucide-react"
-import Image from "next/image"
-import { logo } from "@/assets/index"
+import { AlignJustify, X } from "lucide-react";
+import Image from "next/image";
+import { logo } from "@/assets/index";
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background transition-all duration-100 ease-in-out">
-      <div className="container flex  items-center justify-between ">
-        <div className="flex items-center gap-2">
+      <div className="container py-5 flex  items-center justify-between ">
+        <div className="flex items-center gap-x-2">
           <Link href="/" className="flex items-center">
             <Image
               src={logo}
@@ -25,7 +25,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <nav className="hidden md:flex gap-9">
+        <nav className="hidden md:flex lg:gap-x-9 gap-x-6">
           {["Home", "About Us", "Services", "Portfolio", "Contact Us"].map(
             (label) => {
               const href = `#${label.toLowerCase().replace(" ", "")}`;
@@ -81,5 +81,5 @@ export default function Header() {
         </div>
       )}
     </header>
-  )
+  );
 }

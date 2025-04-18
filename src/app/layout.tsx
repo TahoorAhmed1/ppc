@@ -1,23 +1,12 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import { Footer } from "react-day-picker";
 import * as motion from "motion/react-client";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
 export const metadata: Metadata = {
-  title: "Creative Agency",
-  description: " Creative Agency",
+  title: " Agency 360",
+  description: "  Agency 360",
 };
 
 export default function RootLayout({
@@ -27,9 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${poppins.className} ${geistMono.variable} antialiased `}
-      >
+      <body className={` antialiased `}>
         <motion.div
           initial={{ opacity: 0, scale: 0, y: -50 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}

@@ -73,14 +73,14 @@ export default function AboutSection() {
             <Image
               src={logo || "/placeholder.svg"}
               alt="Creative Agency"
-              width={160}
-              height={40}
-              className="h-10 w-auto"
+              width={1000}
+              height={1000}
+              className="h-12 w-auto"
             />
           </motion.div>
 
           <motion.h2
-            className="text-4xl md:text-5xl font-bold leading-tight"
+            className="text-4xl md:text-[42px] font-bold leading-tight"
             variants={itemVariants}
           >
             <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
@@ -109,7 +109,7 @@ export default function AboutSection() {
               animate={isInView ? "visible" : "hidden"}
             >
               <motion.div variants={cardHoverVariants}>
-                <Card className="bg-white hover:bg-[#1C2D44] text-[#1C2D44] hover:text-white border-0 shadow-xl p-1 h-90 transition-colors duration-300">
+                <Card className="bg-white hover:bg-[#1C2D44] text-[#1C2D44] hover:text-white border-0 shadow-xl p-1 h-80 transition-colors duration-300">
                   <CardContent className="p-4">
                     <motion.div
                       className="flex mb-4"
