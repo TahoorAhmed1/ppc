@@ -1,6 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { favicon, pricingImage, package2, package3, package4 } from "@/assets";
+import { BookingModal } from "./booking-modal";
 
 interface PricingPackage {
   id: number;
@@ -20,8 +24,8 @@ const pricingPackages: PricingPackage[] = [
     image: pricingImage,
     description:
       "Set the stage for social media success by starting with the essentials. With a solid foundation, you'll pave the way for future growth and achievement.",
-    price: "$149",
-    originalPrice: "$298",
+    price: "149",
+    originalPrice: "298",
     features: [
       "Perfect for getting started online with a clean and simple 3-page website.",
       "It includes 2 high-quality stock images.",
@@ -43,8 +47,8 @@ const pricingPackages: PricingPackage[] = [
     image: package2,
     description:
       "Elevate your brand with custom strategies across various platforms. With our expertise and insights, we deliver impactful solutions across a range of social media channels.",
-    price: "$249",
-    originalPrice: "$498",
+    price: "249",
+    originalPrice: "498",
     features: [
       "5-page custom website tailored to your needs.",
       "Includes 5 professional stock photos.",
@@ -69,8 +73,8 @@ const pricingPackages: PricingPackage[] = [
     image: package3,
     description:
       "Leverage advanced tools and campaigns to accelerate your efforts, boosting visibility and engagement across all social media channels for greater impact.",
-    price: "$500",
-    originalPrice: "$1000",
+    price: "500",
+    originalPrice: "1000",
     features: [
       "Provides a 10-page custom-designed website complete with CMS/admin panel support.",
       "It includes 8 stock images.",
@@ -94,8 +98,8 @@ const pricingPackages: PricingPackage[] = [
     image: package4,
     description:
       "With a comprehensive, 360-degree social media approach, we cover everything you need—whether it's creating engaging posts or growing your followers.",
-    price: "$800",
-    originalPrice: "$1600",
+    price: "800",
+    originalPrice: "1600",
     features: [
       "Delivering a high-end, fully custom 15 page dynamic website designed to impress.",
       "It's mobile responsive.",
@@ -120,13 +124,23 @@ const pricingPackages: PricingPackage[] = [
 ];
 
 export default function PricingPackage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState<PricingPackage | null>(
+    null
+  );
+
+  const handleBookNow = (pkg: PricingPackage) => {
+    setSelectedPackage(pkg);
+    setIsModalOpen(true);
+  };
+
   return (
     <div className="bg-gray-900 p-4 md:p-8 min-h-screen flex flex-col items-center gap-8 sm:gap-10 md:gap-14 py-10 sm:py-14 md:py-16">
       {/* Map through all packages */}
       {pricingPackages.map((pkg, idx) => (
         <div
           key={pkg.id}
-          className="grid grid-cols-1 md:grid-cols-3 max-w-7xl w-full gap-6 md:gap-4"
+          className="grid grid-cols-1 lg:grid-cols-3 max-w-7xl w-full gap-6 md:gap-4"
         >
           {/* Left Card */}
           <div
@@ -146,10 +160,10 @@ export default function PricingPackage() {
               </p>
               <div className="flex items-baseline mb-4 sm:mb-6">
                 <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text text-3xl sm:text-4xl font-bold">
-                  {pkg.price}
+                  ${pkg.price}
                 </span>
                 <span className="text-gray-400 line-through ml-3 text-base sm:text-lg">
-                  {pkg.originalPrice}
+                  ${pkg.originalPrice}
                 </span>
                 <div className="ml-auto">
                   <div className="h-6 w-6 text-teal-500">
@@ -172,7 +186,10 @@ export default function PricingPackage() {
               </p>
             </div>
             <div className="space-y-3">
-              <button className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded flex justify-between items-center text-base sm:text-lg">
+              <button
+                className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] text-white w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded flex justify-between items-center text-base sm:text-lg"
+                onClick={() => handleBookNow(pkg)}
+              >
                 <span className="font-medium">Book Now</span>
                 <ArrowRight size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
@@ -191,7 +208,6 @@ export default function PricingPackage() {
             </div>
           </div>
 
-          {/* Right Card */}
           <div
             className={`bg-white col-span-1 md:col-span-2 rounded-3xl p-6 md:p-8 flex-1 ${
               idx % 2 === 0 ? "order-1 md:order-2" : "order-1"
@@ -202,7 +218,8 @@ export default function PricingPackage() {
                 <Image
                   src={
                     favicon ||
-                    "/placeholder.svg?height=1000&width=1000&query=abstract logo"
+                    "/placeholder.svg?height=1000&width=1000&query=abstract logo" ||
+                    "/placeholder.svg"
                   }
                   alt="Favicon"
                   width={1000}
@@ -234,7 +251,7 @@ export default function PricingPackage() {
             <div className="flex flex-col gap-4 h-56 sm:h-64 md:h-80">
               <div className="relative aspect-square overflow-hidden rounded-lg">
                 <Image
-                  src={pkg.image}
+                  src={pkg.image || "/placeholder.svg"}
                   alt={`${pkg.name} package portfolio example`}
                   fill
                   className="object-cover"
@@ -244,6 +261,16 @@ export default function PricingPackage() {
           </div>
         </div>
       ))}
+
+      {selectedPackage && (
+        <BookingModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          packageId={selectedPackage.id}
+          packageName={selectedPackage.name}
+          packagePrice={selectedPackage.price}
+        />
+      )}
     </div>
   );
 }

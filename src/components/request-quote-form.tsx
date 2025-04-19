@@ -176,7 +176,7 @@ export default function RequestQuoteForm() {
           <Textarea
             {...register("description")}
             placeholder="Write Your business description"
-            className={`bg-gray-800/70 border-gray-700 text-white placeholder:text-gray-400 min-h-[100px] ${
+            className={`bg-gray-800/70 border-gray-700 text-white placeholder:text-gray-400 h-32 ${
               errors.description ? "border-red-500" : ""
             }`}
             disabled={isSubmitting || isSuccess}
