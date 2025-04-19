@@ -192,9 +192,11 @@ export default function DigitalMarketingHeroSection({
                 variants={slideLeft}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <Button className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2">
-                  Lets have a talk
-                </Button>
+                <a href="#contactus">
+                  <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2">
+                    Let's Talk
+                  </Button>
+                </a>
               </motion.div>
             </div>
           </div>

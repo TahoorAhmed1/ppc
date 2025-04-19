@@ -12,7 +12,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Check, Loader2 } from "lucide-react";
-import { toast } from "@/components/ui/use-toast";
 import { notify } from "@/lib/utils";
 
 function useInView(options = {}): [RefObject<HTMLDivElement | null>, boolean, boolean] {

@@ -1,23 +1,23 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { favicon, pricingImage } from "@/assets";
+import { favicon, pricingImage, package2, package3, package4 } from "@/assets";
 
-// Update the PricingPackage interface to include originalPrice
 interface PricingPackage {
   id: number;
   name: string;
   description: string;
   price: string;
+  image: any;
   originalPrice: string;
   features: string[];
   additionalFeatures: string[];
 }
 
-// Create an array of package data with the exact content provided
 const pricingPackages: PricingPackage[] = [
   {
     id: 1,
     name: "Starter",
+    image: pricingImage,
     description:
       "Set the stage for social media success by starting with the essentials. With a solid foundation, you'll pave the way for future growth and achievement.",
     price: "$149",
@@ -40,6 +40,7 @@ const pricingPackages: PricingPackage[] = [
   {
     id: 2,
     name: "Growth",
+    image: package2,
     description:
       "Elevate your brand with custom strategies across various platforms. With our expertise and insights, we deliver impactful solutions across a range of social media channels.",
     price: "$249",
@@ -65,6 +66,7 @@ const pricingPackages: PricingPackage[] = [
   {
     id: 3,
     name: "Premium",
+    image: package3,
     description:
       "Leverage advanced tools and campaigns to accelerate your efforts, boosting visibility and engagement across all social media channels for greater impact.",
     price: "$500",
@@ -89,6 +91,7 @@ const pricingPackages: PricingPackage[] = [
   {
     id: 4,
     name: "Ultimate",
+    image: package4,
     description:
       "With a comprehensive, 360-degree social media approach, we cover everything you need—whether it's creating engaging posts or growing your followers.",
     price: "$800",
@@ -231,12 +234,7 @@ export default function PricingPackage() {
             <div className="flex flex-col gap-4 h-56 sm:h-64 md:h-80">
               <div className="relative aspect-square overflow-hidden rounded-lg">
                 <Image
-                  src={
-                    pricingImage ||
-                    `/placeholder.svg?height=800&width=800&query=portfolio example for ${
-                      pkg.name || "/placeholder.svg"
-                    } package`
-                  }
+                  src={pkg.image}
                   alt={`${pkg.name} package portfolio example`}
                   fill
                   className="object-cover"

@@ -53,8 +53,14 @@ import serviceIcon4 from "@/assets/images/servies-icon (4).svg";
 import serviceIcon5 from "@/assets/images/servies-icon (5).svg";
 import serviceIcon6 from "@/assets/images/servies-icon (6).svg";
 import fap from "@/assets/images/faq-background.png";
+import package2 from "@/assets/images/package2.png";
+import package3 from "@/assets/images/package3.png";
+import package4 from "@/assets/images/package4.png";
 
 export {
+  package4,
+  package2,
+  package3,
   logo,
   fap,
   heroSectionImage,
