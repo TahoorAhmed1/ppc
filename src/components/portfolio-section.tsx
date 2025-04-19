@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
+import Projects from "./project"
 
 type PortfolioItem = {
   id?: number
@@ -151,13 +152,7 @@ export default function PortfolioSection({
 
       {backgroundImage && (
         <motion.div variants={backgroundVariants} className="absolute inset-0 m-auto w-[90vw] h-full ">
-          <Image
-            src={backgroundImage || "/placeholder.svg"}
-            width={1000}
-            height={1000}
-            alt="background"
-            className="w-full h-full object-contain opacity-10 pointer-events-none"
-          />
+          <Projects />
         </motion.div>
       )}
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10">

@@ -56,6 +56,22 @@ import fap from "@/assets/images/faq-background.png";
 import package2 from "@/assets/images/package2.png";
 import package3 from "@/assets/images/package3.png";
 import package4 from "@/assets/images/package4.png";
+import project1 from "@/assets/images/project/suburban-website.jpg";
+import project2 from "@/assets/images/project/kidz-website.jpg";
+import project3 from "@/assets/images/project/alan.jpg";
+import project4 from "@/assets/images/project/blb media.jpg";
+import project5 from "@/assets/images/project/capshok.jpg";
+import project6 from "@/assets/images/project/clarion.jpg";
+import project7 from "@/assets/images/project/event.jpg";
+import project8 from "@/assets/images/project/futrad.jpg";
+import project9 from "@/assets/images/project/gonaine chatbox.jpg";
+import project10 from "@/assets/images/project/jason.jpg";
+import project11 from "@/assets/images/project/margrita.png";
+import project12 from "@/assets/images/project/monique.jpg";
+import project13 from "@/assets/images/project/piza.jpg";
+import project14 from "@/assets/images/project/skin.jpg";
+import project15 from "@/assets/images/project/timothy.jpg";
+import project16 from "@/assets/images/project/yohan it.jpg";
 
 export {
   package4,
@@ -116,4 +132,20 @@ export {
   wixIcon,
   webflowIcon,
   wordpressIcon,
+  project1,
+  project2,
+  project3,
+  project4,
+  project5,
+  project6,
+  project7,
+  project8,
+  project9,
+  project10,
+  project11,
+  project12,
+  project13,
+  project14,
+  project15,
+  project16,
 };
