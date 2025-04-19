@@ -19,7 +19,6 @@ import offerIcon5 from "@/assets/images/offer-icon (3).svg";
 import offerIcon6 from "@/assets/images/offer-icon (4).svg";
 import offerIcon7 from "@/assets/images/offer-icon (7).svg";
 import experienceImage from "@/assets/images/experience-image.webp";
-import waterMarkLogo from "@/assets/images/water-mark-logo.svg";
 import portfolio1 from "@/assets/images/portfolio1.svg";
 import portfolio2 from "@/assets/images/portfolio2.svg";
 import portfolio3 from "@/assets/images/portfolio3.svg";

@@ -10,7 +10,7 @@ import ContactSection from "@/components/contact-section"
 import FaqSection from "@/components/faq-section"
 import CtaSection from "@/components/cta-section"
 import Footer from "@/components/footer"
-import { portfolio1, portfolio2, portfolio3, waterMarkLogo } from "@/assets"
+import { favicon, portfolio1, portfolio2, portfolio3, waterMarkLogo } from "@/assets"
 import HeroSection from "@/components/hero-section"
 
 const portfolioItems = [
@@ -83,7 +83,7 @@ export default function Home() {
           heading="OUR PORTFOLIO"
           title="HERE IS"
           paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
-          backgroundImage={waterMarkLogo.src}
+          backgroundImage={favicon.src}
           filters={[
             "All",
             "E-commerce",

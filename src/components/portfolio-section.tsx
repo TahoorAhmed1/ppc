@@ -156,7 +156,7 @@ export default function PortfolioSection({
 
       {backgroundImage && (
         <motion.div
-          className="absolute inset-0 m-auto w-[90vw] h-full"
+          className="absolute inset-0 m-auto w-[90%] h-[90%] bg-center bg-cover opacity-15 "
           style={{ backgroundImage: `url(${backgroundImage})` }}
         ></motion.div>
       )}
