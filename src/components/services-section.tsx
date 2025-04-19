@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { useState } from "react"
 
 interface ServiceItem {
   image: string
@@ -21,6 +22,19 @@ interface ServicesSectionProps {
   backgroundColor?: string
 }
 
+const pulse: any = {
+  hidden: { scale: 0.9, opacity: 0.3 },
+  visible: {
+    scale: [1, 1.05, 1],
+    opacity: [0.3],
+    transition: {
+      repeat: Number.POSITIVE_INFINITY,
+      repeatType: "reverse",
+      duration: 3,
+    },
+  },
+}
+
 const MotionCard = motion(Card)
 
 export default function ServicesSection({
@@ -31,12 +45,31 @@ export default function ServicesSection({
   showButton = true,
   backgroundColor = "#f9f9f9",
 }: ServicesSectionProps) {
+  const [activePopup, setActivePopup] = useState<number | null>(null)
+  const [isLoaded, setIsLoaded] = useState(true)
   return (
-    <section
-      id="services"
-      className="py-12 md:py-20 overflow-hidden"
-      style={{ backgroundColor }}
-    >
+    <section id="services" className="py-12 md:py-20 overflow-hidden relative" style={{ backgroundColor }}>
+      <motion.div
+        initial="hidden"
+        animate={isLoaded ? "visible" : "hidden"}
+        variants={pulse}
+        className="absolute md:top-[5%] top-[70%] left-[5%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] opacity-50 cursor-pointer hover:opacity-70 transition-opacity "
+        onClick={() => {
+          setTimeout(() => setActivePopup(1), 150)
+        }}
+   
+      ></motion.div>
+
+      <motion.div
+        initial="hidden"
+        animate={isLoaded ? "visible" : "hidden"}
+        variants={pulse}
+        className="absolute md:bottom-[15%] bottom-[10%] right-[10%] w-[12vw] h-[12vw] md:w-[10vw] md:h-[10vw] rounded-full bg-gradient-to-r from-[#3DB1B1]/70 to-[#65CF5F]/60 opacity-40 cursor-pointer hover:opacity-60 transition-opacity"
+        onClick={() => {
+          setTimeout(() => setActivePopup(2), 150)
+        }}
+      ></motion.div>
+
       <div className="container px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-3 text-center">
           <motion.h2
@@ -52,7 +85,6 @@ export default function ServicesSection({
             className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#3DB1B1]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             {subtitle}
@@ -98,15 +130,11 @@ export default function ServicesSection({
                       className="w-14 h-14 object-contain"
                     />
                   </motion.div>
-                  <CardTitle className="text-lg sm:text-xl md:text-2xl">
-                    {service.title}
-                  </CardTitle>
+                  <CardTitle className="text-lg sm:text-xl md:text-2xl">{service.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="mt-4">
-                <p className="text-sm sm:text-base leading-relaxed">
-                  {service.description}
-                </p>
+                <p className="text-sm sm:text-base leading-relaxed">{service.description}</p>
               </CardContent>
             </MotionCard>
           ))}
@@ -133,7 +161,7 @@ export default function ServicesSection({
         )}
       </div>
     </section>
-  );
+  )
 }
 
 const defaultServices: ServiceItem[] = [
