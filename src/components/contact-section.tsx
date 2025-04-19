@@ -1,18 +1,18 @@
 "use client"
 
-import { useEffect, useRef, useState, type RefObject } from "react";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
-import { personImage } from "@/assets";
-import { motion, useAnimation } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { Check, Loader2 } from "lucide-react";
-import { notify } from "@/lib/utils";
+import { useEffect, useRef, useState, type RefObject } from "react"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Card, CardContent } from "@/components/ui/card"
+import { personImage } from "@/assets"
+import { motion, useAnimation } from "framer-motion"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { z } from "zod"
+import { Check, Loader2 } from "lucide-react"
+import { notify } from "@/lib/utils"
 
 function useInView(options = {}): [RefObject<HTMLDivElement | null>, boolean, boolean] {
   const ref = useRef<HTMLDivElement>(null)
@@ -125,7 +125,7 @@ const buttonVariants = {
   },
 }
 
-const pulse : any = {
+const pulse: any = {
   hidden: { scale: 0.9, opacity: 0.3 },
   visible: {
     scale: [1, 1.05, 1],
@@ -135,6 +135,14 @@ const pulse : any = {
       repeatType: "reverse",
       duration: 3,
     },
+  },
+}
+
+const backgroundVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.5 },
   },
 }
 
@@ -150,7 +158,14 @@ export default function ContactSection() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(true) // Set to true by default to ensure content is visible
+
+  useEffect(() => {
+    // Start animations when component mounts
+    if (isInView || hasTriggered) {
+      controls.start("visible")
+    }
+  }, [controls, isInView, hasTriggered])
 
   // Initialize React Hook Form with Zod resolver
   const {
@@ -197,45 +212,67 @@ export default function ContactSection() {
         throw new Error("Failed to submit form")
       }
 
-      setIsSuccess(true);
+      setIsSuccess(true)
 
-      notify("success", "Message sent successfully!");
+      notify("success", "Message sent successfully!")
 
       setTimeout(() => {
         reset()
         setIsSuccess(false)
       }, 2000)
     } catch (error) {
-      console.log("error", error);
+      console.log("error", error)
     }
-    setIsLoaded(true)
+    setIsSubmitting(false)
   }
 
   return (
     <section className="pt-5 md:pt-8 bg-white overflow-hidden relative" id="contactus">
       {/* Background animated balls */}
       <motion.div
+        className="absolute top-10 left-0 w-full h-full"
         initial="hidden"
-        animate={isLoaded ? "visible" : "hidden"}
-        variants={pulse}
-        className="absolute md:top-[15%] top-[10%] left-[5%] w-[12vw] h-[12vw] md:w-[10vw] md:h-[10vw] rounded-full bg-gradient-to-r from-[#65CE5C]/40 to-[#3DB1B1]/30 opacity-50 pointer-events-none"
-        style={{ zIndex: 0 }}
-      ></motion.div>
+        animate="visible"
+        variants={backgroundVariants}
+      >
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={pulse}
+          className="absolute md:top-[15%] top-[10%] left-[5%] w-[12vw] h-[12vw] md:w-[10vw] md:h-[10vw] rounded-full bg-gradient-to-r from-[#65CE5C]/40 to-[#3DB1B1]/30 opacity-50 pointer-events-none"
+        >
+          
+        </motion.div>
 
-      <motion.div
-        initial="hidden"
-        animate={isLoaded ? "visible" : "hidden"}
-        variants={pulse}
-        className="absolute md:bottom-[15%] bottom-[10%] right-[5%] w-[14vw] h-[14vw] md:w-[12vw] md:h-[12vw] rounded-full bg-gradient-to-r from-[#209CEB]/40 to-[#65CE5C]/30 opacity-40 pointer-events-none"
-        style={{ zIndex: 0 }}
-      ></motion.div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={pulse}
+          transition={{ delay: 0.3 }}
+          className="absolute md:bottom-[15%] bottom-[10%] right-[5%] w-[14vw] h-[14vw] md:w-[12vw] md:h-[12vw] rounded-full bg-gradient-to-r from-[#209CEB]/40 to-[#65CE5C]/30 opacity-40 pointer-events-none"
+        >
 
-      <div className="container relative" style={{ zIndex: 1 }}>
+        </motion.div>
+
+     
+
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={pulse}
+          transition={{ delay: 0.9 }}
+          className="absolute md:top-[60%] top-[70%] left-[20%] w-[6vw] h-[6vw] md:w-[5vw] md:h-[5vw] rounded-full bg-gradient-to-r from-[#209CEB]/40 to-[#3DB1B1]/30 opacity-30 pointer-events-none"
+        >
+
+        </motion.div>
+      </motion.div>
+
+      <div className="container relative z-10">
         <motion.div
           ref={containerRef}
           variants={containerVariants}
           initial="hidden"
-          animate={controls}
+          animate="visible"
           className="grid gap-6 lg:grid-cols-2 lg:gap-8 items-center px-10"
         >
           <motion.div variants={containerVariants} className="flex flex-col justify-center space-y-4">
@@ -254,7 +291,7 @@ export default function ContactSection() {
             <MotionCard
               variants={itemVariants}
               transition={{ type: "spring", stiffness: 100 }}
-              className="shadow-none border-0 p-0 "
+              className="shadow-none border-0 p-0"
             >
               <CardContent className="p-0">
                 <motion.form variants={containerVariants} className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
@@ -347,7 +384,7 @@ export default function ContactSection() {
                     whileTap="tap"
                     type="submit"
                     disabled={isSubmitting || isSuccess}
-                    className="bg-gradient-to-r from-[#65CE5C]/80 h-12 cursor-pointer to-[#209CEB] w-[220px] hover:opacity-90 text-white rounded-lg   border-none"
+                    className="bg-gradient-to-r from-[#65CE5C]/80 h-12 cursor-pointer to-[#209CEB] w-[220px] hover:opacity-90 text-white rounded-lg border-none"
                   >
                     {isSubmitting ? (
                       <>
@@ -368,7 +405,7 @@ export default function ContactSection() {
             </MotionCard>
           </motion.div>
 
-          <motion.div variants={imageVariants} className="relative lg:flex hidden items-center justify-center ">
+          <motion.div variants={imageVariants} className="relative lg:flex hidden items-center justify-center">
             <motion.div>
               <Image
                 src={

@@ -1,24 +1,28 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { motion, AnimatePresence } from "framer-motion";
-import { Check, Sparkles } from "lucide-react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { toast } from "@/components/ui/use-toast";
-import { notify } from "@/lib/utils";
+import { useState, useEffect } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { motion, AnimatePresence } from "framer-motion"
+import { Check, Sparkles } from "lucide-react"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { z } from "zod"
+import { notify } from "@/lib/utils"
 
 const subscriptionSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
-});
+})
 
-type SubscriptionFormData = z.infer<typeof subscriptionSchema>;
+type SubscriptionFormData = z.infer<typeof subscriptionSchema>
 
 export default function EnhancedCtaSection() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    setIsLoaded(true)
+  }, [])
 
   const {
     register,
@@ -31,9 +35,9 @@ export default function EnhancedCtaSection() {
     defaultValues: {
       email: "",
     },
-  });
+  })
 
-  const email = watch("email");
+  const email = watch("email")
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -44,7 +48,7 @@ export default function EnhancedCtaSection() {
         delayChildren: 0.3,
       },
     },
-  };
+  }
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -57,7 +61,7 @@ export default function EnhancedCtaSection() {
         stiffness: 100,
       },
     },
-  };
+  }
 
   // Form element variants
   const formVariants = {
@@ -73,7 +77,7 @@ export default function EnhancedCtaSection() {
         stiffness: 100,
       },
     },
-  };
+  }
 
   // Background reveal animation
   const backgroundVariants = {
@@ -86,7 +90,7 @@ export default function EnhancedCtaSection() {
         ease: "easeOut",
       },
     },
-  };
+  }
 
   // Success message variants
   const successVariants = {
@@ -107,7 +111,7 @@ export default function EnhancedCtaSection() {
         duration: 0.3,
       },
     },
-  };
+  }
 
   // Decorative element variants
   const decorVariants = {
@@ -120,7 +124,7 @@ export default function EnhancedCtaSection() {
         duration: 0.5,
       },
     },
-  };
+  }
 
   // Sparkle animation variants
   const sparkleVariants = {
@@ -134,43 +138,53 @@ export default function EnhancedCtaSection() {
         repeatDelay: 3,
       },
     },
-  };
+  }
+
+  const pulse:any = {
+    hidden: { scale: 0.9, opacity: 0.4 },
+    visible: {
+      scale: [1, 1.05, 1],
+      opacity: [0.5],
+      transition: {
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "reverse",
+        duration: 3,
+      },
+    },
+  }
 
   const onSubmit = async (data: SubscriptionFormData) => {
-    setIsSubmitted(true);
+    setIsSubmitted(true)
 
     try {
-      const response = await fetch(
-        "https://demo7.obistest.online/api/store-subscribtion",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: data.email,
-          }),
-        }
-      );
+      const response = await fetch("https://demo7.obistest.online/api/store-subscribtion", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: data.email,
+        }),
+      })
 
       if (!response.ok) {
-        throw new Error("Subscription failed");
+        throw new Error("Subscription failed")
       }
 
-      notify("success", "Subscription successful!");
+      notify("success", "Subscription successful!")
 
       setTimeout(() => {
-        setIsSubmitted(false);
-        reset();
-      }, 3000);
+        setIsSubmitted(false)
+        reset()
+      }, 3000)
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Error submitting form:", error)
 
       setTimeout(() => {
-        setIsSubmitted(false);
-      }, 1500);
+        setIsSubmitted(false)
+      }, 1500)
     }
-  };
+  }
 
   return (
     <section className="py-10 md:py-16 bg-white overflow-hidden relative">
@@ -181,35 +195,28 @@ export default function EnhancedCtaSection() {
         animate="visible"
         variants={backgroundVariants}
       >
+      
+        
+
+        {/* Additional background balls */}
         <motion.div
-          className="absolute top-10 left-10 w-20 h-20 rounded-full bg-gradient-to-r from-[#65CF5F]/80/10 to-[#1F9BED]/10 blur-xl"
-          variants={decorVariants}
-          animate={{
-            x: [0, 20, 0],
-            y: [0, -20, 0],
-            transition: {
-              duration: 8,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-            },
-          }}
-        />
+          initial="hidden"
+          animate="visible"
+          variants={pulse}
+          className="absolute md:top-[20%] top-[15%] left-[15%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CE5C]/40 to-[#3DB1B1]/30 opacity-50 pointer-events-none"
+        ></motion.div>
+
         <motion.div
-          className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-gradient-to-r from-[#1F9BED]/10 to-[#65CF5F]/80/10 blur-xl"
-          variants={decorVariants}
-          animate={{
-            x: [0, -30, 0],
-            y: [0, 30, 0],
-            transition: {
-              duration: 10,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-            },
-          }}
-        />
+          initial="hidden"
+          animate="visible"
+          variants={pulse}
+          transition={{ delay: 0.3 }}
+          className="absolute md:bottom-[20%] bottom-[15%] right-[15%] w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] rounded-full bg-gradient-to-r from-[#209CEB]/40 to-[#65CE5C]/30 opacity-40 pointer-events-none"
+        ></motion.div>
+
       </motion.div>
 
-      <div className="container px-4 md:px-6 relative">
+      <div className="container px-4 md:px-6 relative z-10">
         <motion.div
           className="flex flex-col items-center text-center gap-6"
           initial="hidden"
@@ -225,7 +232,7 @@ export default function EnhancedCtaSection() {
                 transition: { duration: 1 },
               }}
             >
-              Let’s Make Your Project Standout!
+              Let's Make Your Project Standout!
             </motion.h2>
             <motion.div
               className="absolute -top-6 -right-6 text-[#65CF5F]/80"
@@ -237,12 +244,8 @@ export default function EnhancedCtaSection() {
             </motion.div>
           </motion.div>
 
-          <motion.p
-            className="max-w-2xl text-[#1C2D44] text-base sm:text-lg"
-            variants={itemVariants}
-          >
-            You want more than average, let’s create something that truly stands
-            out.
+          <motion.p className="max-w-2xl text-[#1C2D44] text-base sm:text-lg" variants={itemVariants}>
+            You want more than average, let's create something that truly stands out.
           </motion.p>
 
           <AnimatePresence mode="wait">
@@ -256,10 +259,7 @@ export default function EnhancedCtaSection() {
                 onSubmit={handleSubmit(onSubmit)}
                 key="form"
               >
-                <motion.div
-                  className="w-full sm:flex-1"
-                  variants={itemVariants}
-                >
+                <motion.div className="w-full sm:flex-1" variants={itemVariants}>
                   <motion.div
                     whileFocus={{ scale: 1.02 }}
                     whileHover={{ scale: 1.02 }}
@@ -273,11 +273,7 @@ export default function EnhancedCtaSection() {
                         errors.email ? "border-red-500" : ""
                       }`}
                     />
-                    {errors.email && (
-                      <p className="text-red-500 text-sm mt-1 text-left">
-                        {errors.email.message}
-                      </p>
-                    )}
+                    {errors.email && <p className="text-red-500 text-sm mt-1 text-left">{errors.email.message}</p>}
                   </motion.div>
                 </motion.div>
                 <motion.div
@@ -288,7 +284,7 @@ export default function EnhancedCtaSection() {
                 >
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-[#65CF5F]/80 to-[#209CEB] w-[180px] hover:opacity-90 h-12 text-white rounded-lg px-6 py-3  relative overflow-hidden group"
+                    className="bg-gradient-to-r from-[#65CF5F]/80 to-[#209CEB] w-[180px] hover:opacity-90 h-12 text-white rounded-lg px-6 py-3 relative overflow-hidden group"
                   >
                     <motion.span
                       className="absolute inset-0 bg-white opacity-20 rounded-lg"
@@ -301,9 +297,7 @@ export default function EnhancedCtaSection() {
                         repeatType: "reverse",
                       }}
                     />
-                    <motion.div className="flex items-center justify-center gap-2">
-                      Contact Me
-                    </motion.div>
+                    <motion.div className="flex items-center justify-center gap-2">Contact Me</motion.div>
                   </Button>
                 </motion.div>
               </motion.form>
@@ -358,5 +352,5 @@ export default function EnhancedCtaSection() {
         </motion.div>
       </div>
     </section>
-  );
+  )
 }
