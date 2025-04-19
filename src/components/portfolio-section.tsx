@@ -168,7 +168,7 @@ export default function PortfolioSection({
             {title}
           </motion.h2>
           <motion.h3
-            className="text-3xl sm:text-5xl font-extrabold text-[#41B4A7]"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 md:mb-4 text-[#41B4A7]"
             variants={itemVariants}
           >
             {heading}

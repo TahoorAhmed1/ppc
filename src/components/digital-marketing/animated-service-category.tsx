@@ -100,18 +100,19 @@ interface ServiceCategoryItemProps {
 function ServiceCategoryItem({ icon, title, subtitle }: ServiceCategoryItemProps) {
   return (
     <motion.div
-    className="flex items-center justify-start w-full max-w-[180px] sm:max-w-[220px] md:max-w-[260px] px-1.5 sm:px-2.5 py-0.75 sm:py-1.25 bg-gray-600/40 rounded-full shadow-sm"
-    whileHover={{
+      className="flex items-center justify-start w-full max-w-[252px] sm:max-w-[308px] md:max-w-[364px] px-2 sm:px-3.5 py-1 sm:py-1.75 bg-gray-600/40 rounded-full shadow-sm"
+      whileHover={{
         scale: 1.08,
         backgroundColor: "rgba(75, 85, 99, 0.6)",
         y: -3,
-        boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+        boxShadow:
+          "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
       }}
       transition={{ duration: 0.2 }}
     >
       {/* Logo */}
       <motion.div
-        className="flex items-center justify-center w-9 h-9 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-white -ml-0.5 sm:-ml-1 mr-2 sm:mr-2.5 flex-shrink-0"
+        className="flex items-center justify-center w-12 h-12 sm:w-[67px] sm:h-[67px] md:w-[78px] md:h-[78px] rounded-full bg-white -ml-0.5 sm:-ml-1 mr-3 sm:mr-3.5 flex-shrink-0"
         whileHover={{ rotate: 10, scale: 1.1 }}
       >
         {icon && (
@@ -120,18 +121,21 @@ function ServiceCategoryItem({ icon, title, subtitle }: ServiceCategoryItemProps
             alt={`${title} Logo`}
             width={500}
             height={500}
-            className="w-4.5 h-4.5 sm:w-8 sm:h-8 md:w-9 md:h-9 object-contain"
+            className="w-6 h-6 sm:w-11 sm:h-11 md:w-[50px] md:h-[50px] object-contain"
           />
         )}
       </motion.div>
 
       {/* Text */}
       <motion.div className="text-white leading-none" whileHover={{ x: 2 }}>
-        <h2 className="text-[9px] sm:text-[11px] md:text-[12px] font-semibold tracking-wide">{title}</h2>
-        <p className="text-[7px] sm:text-[8px] md:text-[9px] text-left tracking-[1px] sm:tracking-[1.5px] md:tracking-[2px] mt-0.5 sm:mt-1">
+        <h2 className="text-[12.5px] sm:text-[15.5px] md:text-[17px] font-semibold tracking-wide">
+          {title}
+        </h2>
+        <p className="text-[9.5px] sm:text-[11px] md:text-[12.5px] text-left tracking-[1.4px] sm:tracking-[2.1px] md:tracking-[2.8px] mt-0.5 sm:mt-1">
           {subtitle}
         </p>
       </motion.div>
     </motion.div>
   )
+
 }
