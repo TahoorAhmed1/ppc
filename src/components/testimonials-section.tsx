@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { motion } from "framer-motion"
 
 function chunkArray<T>(array: T[], size: number): T[][] {
   const chunks: T[][] = []
@@ -16,6 +17,7 @@ function chunkArray<T>(array: T[], size: number): T[][] {
 export default function TestimonialsSection() {
   const [activeSlide, setActiveSlide] = useState(0)
   const [itemsPerSlide, setItemsPerSlide] = useState(3)
+  const [isLoaded, setIsLoaded] = useState(false)
 
   const testimonials = [
     {
@@ -50,8 +52,7 @@ export default function TestimonialsSection() {
       id: 5,
       name: "James Wilson",
       role: "Operations Head",
-      content:
-        "Professional, punctual, and results-driven. Advera has been our go-to agency for all things digital.",
+      content: "Professional, punctual, and results-driven. Advera has been our go-to agency for all things digital.",
     },
     {
       id: 1,
@@ -85,8 +86,7 @@ export default function TestimonialsSection() {
       id: 5,
       name: "James Wilson",
       role: "Operations Head",
-      content:
-        "Professional, punctual, and results-driven. Advera has been our go-to agency for all things digital.",
+      content: "Professional, punctual, and results-driven. Advera has been our go-to agency for all things digital.",
     },
   ]
 
@@ -100,6 +100,7 @@ export default function TestimonialsSection() {
 
     handleResize()
     window.addEventListener("resize", handleResize)
+    setIsLoaded(true)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
@@ -113,17 +114,76 @@ export default function TestimonialsSection() {
     setActiveSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
   }
 
+  // Animation variants
+  const pulse: any = {
+    hidden: { scale: 0.9, opacity: 0.3 },
+    visible: {
+      scale: [1, 1.05, 1],
+      opacity: [0.3],
+      transition: {
+        repeat: Number.POSITIVE_INFINITY,
+        repeatType: "reverse",
+        duration: 3,
+      },
+    },
+  }
+
+  const backgroundVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.5 },
+    },
+  }
+
   return (
-    <section className="py-12 md:py-20 bg-[#f9f9f9]">
-      <div className="container px-4 md:px-6">
+    <section className="py-12 md:py-20 bg-[#f9f9f9] relative overflow-hidden">
+      {/* Background animated balls */}
+      <motion.div
+        className="absolute top-0 left-0 w-full h-full"
+        initial="hidden"
+        animate="visible"
+        variants={backgroundVariants}
+      >
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={pulse}
+          className="absolute md:top-[10%] top-[5%] left-[8%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CE5C]/30 to-[#3DB1B1]/20 opacity-40 pointer-events-none"
+        ></motion.div>
+
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={pulse}
+          transition={{ delay: 0.3 }}
+          className="absolute md:bottom-[10%] bottom-[5%] right-[8%] w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] rounded-full bg-gradient-to-r from-[#209CEB]/30 to-[#65CE5C]/20 opacity-30 pointer-events-none"
+        ></motion.div>
+
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={pulse}
+          transition={{ delay: 0.6 }}
+          className="absolute md:top-[20%] top-[15%] right-[12%] w-[7vw] h-[7vw] md:w-[6vw] md:h-[6vw] rounded-full bg-gradient-to-r from-[#65CE5C]/40 to-[#1F9BED]/30 opacity-25 pointer-events-none"
+        ></motion.div>
+
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={pulse}
+          transition={{ delay: 0.9 }}
+          className="absolute md:bottom-[20%] bottom-[15%] left-[15%] w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] rounded-full bg-gradient-to-r from-[#209CEB]/30 to-[#3DB1B1]/20 opacity-25 pointer-events-none"
+        ></motion.div>
+      </motion.div>
+
+      <div className="container px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center gap-3 text-center mb-12">
           <h2 className="text-3xl font-bold text-[#1C2D44] ">VIEW REVIEWS</h2>
-          <h3 className="text-5xl font-bold  text-[#3DB1B1]">
-            Hear from Our Success Stories
-          </h3>
+          <h3 className="text-5xl font-bold  text-[#3DB1B1]">Hear from Our Success Stories</h3>
           <p className="max-w-[500px] text-[#000000] text-base mt-2">
-            Real clients, real results. Discover how we’ve partnered with brands
-            like yours to deliver measurable success
+            Real clients, real results. Discover how we've partnered with brands like yours to deliver measurable
+            success
           </p>
         </div>
 
@@ -137,33 +197,23 @@ export default function TestimonialsSection() {
                 <div key={idx} className="w-full flex-shrink-0 px-4">
                   <div
                     className={`grid gap-6 ${
-                      itemsPerSlide === 1
-                        ? "grid-cols-1"
-                        : itemsPerSlide === 2
-                        ? "md:grid-cols-2"
-                        : "lg:grid-cols-3"
+                      itemsPerSlide === 1 ? "grid-cols-1" : itemsPerSlide === 2 ? "md:grid-cols-2" : "lg:grid-cols-3"
                     }`}
                   >
                     {slide.map((testimonial) => (
                       <Card
                         key={testimonial.id}
-                        className="bg-[#1C2D44] text-white rounded-2xl border-none p-6 flex flex-col justify-between h-full"
+                        className="bg-[#1C2D44] text-white rounded-2xl border-none p-6 flex flex-col justify-between h-full shadow-lg hover:shadow-xl transition-shadow duration-300"
                       >
                         <CardContent className="p-0">
                           <div className="flex items-center gap-4 mb-4">
                             <div className="w-10 h-10 rounded-full bg-gray-300" />
                             <div>
-                              <p className="font-semibold text-white">
-                                {testimonial.name}
-                              </p>
-                              <p className="text-sm text-gray-300">
-                                {testimonial.role}
-                              </p>
+                              <p className="font-semibold text-white">{testimonial.name}</p>
+                              <p className="text-sm text-gray-300">{testimonial.role}</p>
                             </div>
                           </div>
-                          <p className="text-white text-sm leading-relaxed">
-                            {testimonial.content}
-                          </p>
+                          <p className="text-white text-sm leading-relaxed">{testimonial.content}</p>
                         </CardContent>
                       </Card>
                     ))}
@@ -177,7 +227,7 @@ export default function TestimonialsSection() {
             <Button
               variant="outline"
               size="icon"
-              className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-white rounded-full"
+              className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-white rounded-full hover:opacity-90 transition-opacity"
               onClick={prevSlide}
             >
               <ChevronLeft className="h-4 w-4" />
@@ -189,9 +239,7 @@ export default function TestimonialsSection() {
                 <button
                   key={idx}
                   className={`w-2 h-2 rounded-full ${
-                    activeSlide === idx
-                      ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED]"
-                      : "bg-gray-300"
+                    activeSlide === idx ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED]" : "bg-gray-300"
                   }`}
                   onClick={() => setActiveSlide(idx)}
                 >
@@ -203,7 +251,7 @@ export default function TestimonialsSection() {
             <Button
               variant="outline"
               size="icon"
-              className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-white rounded-full"
+              className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-white rounded-full hover:opacity-90 transition-opacity"
               onClick={nextSlide}
             >
               <ChevronRight className="h-4 w-4" />
@@ -213,5 +261,5 @@ export default function TestimonialsSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }
