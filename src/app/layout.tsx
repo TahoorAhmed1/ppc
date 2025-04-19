@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import { Footer } from "react-day-picker";
 import * as motion from "motion/react-client";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: " Agency 360",
@@ -28,6 +29,7 @@ export default function RootLayout({
         >
           <Header />
         </motion.div>
+        <ToastContainer />
         {children}
         <Footer />
       </body>

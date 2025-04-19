@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "@/components/ui/use-toast";
+import { notify } from "@/lib/utils";
 
 const subscriptionSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
@@ -70,19 +71,6 @@ export default function EnhancedCtaSection() {
         type: "spring",
         damping: 15,
         stiffness: 100,
-      },
-    },
-  };
-
-  // Heading floating animation
-  const floatingVariants = {
-    animate: {
-      y: [0, -10, 0],
-      transition: {
-        duration: 5,
-        repeat: Number.POSITIVE_INFINITY,
-        repeatType: "reverse",
-        ease: "easeInOut",
       },
     },
   };
@@ -169,28 +157,18 @@ export default function EnhancedCtaSection() {
         throw new Error("Subscription failed");
       }
 
-      toast({
-        title: "Subscription successful!",
-        description: "Thank you for subscribing to our newsletter.",
-      });
+      notify("success", "Subscription successful!");
 
-      // Reset form after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false);
         reset();
       }, 3000);
     } catch (error) {
       console.error("Error submitting form:", error);
-      toast({
-        title: "Subscription failed",
-        description: "Please try again later.",
-        variant: "destructive",
-      });
 
-      // Even on error, we'll reset after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false);
-      }, 3000);
+      }, 1500);
     }
   };
 

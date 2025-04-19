@@ -1,12 +1,23 @@
 "use client";
 import { motion, type Variants } from "framer-motion";
-import type React from "react";
 import Image from "next/image";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2 } from "lucide-react";
+import { useState } from "react";
+
 import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Shield } from "lucide-react";
-import { useState } from "react";
+
 import {
   award1,
   award2,
@@ -18,7 +29,19 @@ import {
   serviceIcon3,
   serviceIcon4,
   serviceIcon6,
-} from "@/assets";
+} from "@/assets/index";
+import { notify } from "@/lib/utils";
+
+const formSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
+  email: z.string().email({ message: "Please enter a valid email address" }),
+  phone: z.string().min(6, { message: "Please enter a valid phone number" }),
+  message: z
+    .string()
+    .min(5, { message: "Description must be at least 5 characters" }),
+});
+
+type ContactFormData = z.infer<typeof formSchema>;
 
 interface CompactServiceCategoryProps {
   icon: string;
@@ -63,6 +86,60 @@ export default function DigitalMarketingHeroSection({
   backgroundImage = heroSectionImage3.src,
   awards = award,
 }) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    try {
+      const formData = new FormData();
+      Object.entries(data).forEach(([key, value]) => {
+        if (value) formData.append(key, value);
+      });
+
+      try {
+        const ipResponse = await fetch("https://api.ipify.org?format=json");
+        const ipData = await ipResponse.json();
+        formData.append("ip_address", ipData.ip);
+      } catch (error) {
+        console.error("Could not fetch IP address:", error);
+      }
+
+      const response = await fetch(
+        "https://demo7.obistest.online/api/store-contact-us-form",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      setIsSuccess(true);
+      notify("success", "Message sent successfully!");
+
+      setTimeout(() => {
+        form.reset();
+        setIsSuccess(false);
+      }, 2000);
+    } catch (error) {
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <motion.div
       initial="hidden"
@@ -90,7 +167,7 @@ export default function DigitalMarketingHeroSection({
             </motion.p>
           </div>
           <div className="flex justify-end w-full">
-            <div className="flex flex-wrap justify-between w-full  gap-6 max-w-[650px] ">
+            <div className="flex flex-wrap justify-between w-full gap-6 max-w-[650px]">
               <motion.div
                 className="hidden md:block"
                 variants={slideLeft}
@@ -167,7 +244,7 @@ export default function DigitalMarketingHeroSection({
                 {awards.map((awardImage, i) => (
                   <motion.div
                     key={i}
-                    className=" md:w-16 md:h-16 w-14 h-14  items-center justify-center"
+                    className="md:w-16 md:h-16 w-14 h-14 items-center justify-center"
                     variants={fadeIn}
                     transition={{ duration: 0.5, delay: 0.1 * i }}
                     whileHover={{ scale: 1.1, rotate: 5 }}
@@ -197,63 +274,120 @@ export default function DigitalMarketingHeroSection({
                 services today.
               </p>
 
-              <form className="space-y-4">
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    className="w-full p-2 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
-                    style={{
-                      boxShadow:
-                        "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
-                    }}
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    className="w-full p-2 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
-                    style={{
-                      boxShadow:
-                        "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
-                    }}
-                  />
-                </div>
-                <div>
-                  <input
-                    type="tel"
-                    placeholder="Phone Number"
-                    className="w-full p-2 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
-                    style={{
-                      boxShadow:
-                        "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
-                    }}
-                  />
-                </div>
-                <div>
-                  <textarea
-                    placeholder="Write Your business description"
-                    rows={4}
-                    className="w-full p-2 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base resize-none outline-none"
-                    style={{
-                      boxShadow:
-                        "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
-                    }}
-                  />
-                </div>
-
-                <p className="text-xs text-gray-400 mt-2 mb-4 text-center">
-                  Your data is protected with us — no worries, no compromises
-                </p>
-
-                <Button
-                  type="button"
-                  className="bg-gradient-to-r w-full from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2"
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-4"
                 >
-                  Get A Quote
-                </Button>
-              </form>
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Input
+                            {...field}
+                            placeholder="Full Name"
+                            className="w-full p-2 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
+                            style={{
+                              boxShadow:
+                                "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                            }}
+                          />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-400" />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Input
+                            {...field}
+                            type="email"
+                            placeholder="Email Address"
+                            className="w-full p-2 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
+                            style={{
+                              boxShadow:
+                                "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                            }}
+                          />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-400" />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Input
+                            {...field}
+                            type="tel"
+                            placeholder="Phone Number"
+                            className="w-full p-2 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
+                            style={{
+                              boxShadow:
+                                "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                            }}
+                          />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-400" />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Textarea
+                            {...field}
+                            placeholder="Write Your business description"
+                            rows={4}
+                            className="w-full p-2 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base resize-none outline-none"
+                            style={{
+                              boxShadow:
+                                "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                            }}
+                          />
+                        </FormControl>
+                        <FormMessage className="text-xs text-red-400" />
+                      </FormItem>
+                    )}
+                  />
+
+                  <p className="text-xs text-gray-400 mt-2 mb-4 text-center">
+                    Your data is protected with us — no worries, no compromises
+                  </p>
+
+                  <Button
+                    type="submit"
+                    className="bg-gradient-to-r w-full cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center">
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Submitting...
+                      </span>
+                    ) : isSuccess ? (
+                      "Submitted Successfully!"
+                    ) : (
+                      "Get A Quote"
+                    )}
+                  </Button>
+                </form>
+              </Form>
             </motion.div>
           </div>
         </div>
@@ -336,8 +470,4 @@ function AnimatedServiceCategory({
   );
 }
 
-// Replace the ServiceCategory import with our animated version
-// Replace this line:
-// import ServiceCategory from "./service-category"
-// With:
 const ServiceCategory = AnimatedServiceCategory;

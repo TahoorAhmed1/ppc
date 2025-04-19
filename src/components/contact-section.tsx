@@ -13,6 +13,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Check, Loader2 } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
+import { notify } from "@/lib/utils";
 
 function useInView(
   options = {}
@@ -194,10 +195,8 @@ export default function ContactSection() {
       }
 
       setIsSuccess(true);
-      toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you as soon as possible.",
-      });
+
+      notify("success", "Message sent successfully!");
 
       setTimeout(() => {
         reset();
@@ -205,11 +204,6 @@ export default function ContactSection() {
       }, 2000);
     } catch (error) {
       console.log("error", error);
-      toast({
-        title: "Error sending message",
-        description: "Please try again later.",
-        variant: "destructive",
-      });
     } finally {
       setIsSubmitting(false);
     }

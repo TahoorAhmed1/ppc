@@ -11,12 +11,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { ArrowRight, Check, Loader2 } from "lucide-react";
+import { ArrowRight, Check, Loader2, Plus } from "lucide-react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "@/components/ui/use-toast";
+import { notify } from "@/lib/utils";
 
 // Create Zod schema for email validation
 const subscriptionSchema = z.object({
@@ -173,11 +174,8 @@ export default function AnimatedFaqSection({
       }
 
       setIsSuccess(true);
-      toast({
-        title: "Thank you for your interest!",
-        description: "We'll be in touch with you soon.",
-      });
 
+      notify("success", "Subscription successful!");
       setTimeout(() => {
         reset();
         setIsSuccess(false);
@@ -196,7 +194,7 @@ export default function AnimatedFaqSection({
 
   return (
     <motion.section
-      className={`py-12 md:py-16 container flex justify-between w-full mx-auto  bg-[#f9f9f9]`}
+      className={`py-12 md:py-16  flex justify-between w-full mx-auto  bg-[#f9f9f9]`}
       initial="hidden"
       animate={isLoaded ? "visible" : "hidden"}
       variants={containerVariants}
@@ -207,105 +205,81 @@ export default function AnimatedFaqSection({
           variants={sectionVariants}
         >
           <motion.div className="space-y-6" variants={sectionVariants}>
-            <Accordion
-              type="single"
-              collapsible
-              className={`w-full space-y-2 ${
-                enableGradientBackground ? "text-white" : ""
-              }`}
-            >
+            <Accordion type="single" collapsible className="w-full space-y-4">
               <MotionAccordionItem
                 value="item-1"
-                className="border-b border-gray-200"
+                className="border-b border-gray-700/50"
                 variants={accordionItemVariants}
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <AccordionTrigger
-                  className={`text-lg font-medium ${
-                    enableGradientBackground ? "text-white" : ""
-                  }`}
-                >
-                  How do I sign up for the project?
+                <AccordionTrigger className="text-lg font-medium text-black group">
+                  How long does it take to build a website?
+                  <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
+                    <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />
+                  </div>
                 </AccordionTrigger>
-                <AccordionContent
-                  className={`${
-                    enableGradientBackground
-                      ? "text-white/80"
-                      : "text-muted-foreground"
-                  } text-sm`}
-                >
+                <AccordionContent className="text-gray-800/90 text-sm">
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    Signing up is easy! Simply contact us through our website,
-                    email, or phone.
+                    The timeline depends on the complexity of your project.
+                    Simple websites can be completed in 2-4 weeks, while more
+                    complex ones may take 2-3 months.
                   </motion.div>
                 </AccordionContent>
               </MotionAccordionItem>
 
               <MotionAccordionItem
                 value="item-2"
-                className="border-b border-gray-200"
+                className="border-b border-gray-700/50"
                 variants={accordionItemVariants}
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <AccordionTrigger
-                  className={`text-lg font-medium ${
-                    enableGradientBackground ? "text-white" : ""
-                  }`}
-                >
-                  What should I prepare before starting?
+                <AccordionTrigger className="text-lg font-medium text-black group">
+                  Can I make changes to the website after it's live?
+                  <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
+                    <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />
+                  </div>
                 </AccordionTrigger>
-                <AccordionContent
-                  className={`${
-                    enableGradientBackground
-                      ? "text-white/80"
-                      : "text-muted-foreground"
-                  } text-sm`}
-                >
+                <AccordionContent className="text-gray-800/90 text-sm">
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    Prepare your project goals, any existing materials, and your
-                    budget.
+                    Yes, we provide a user-friendly content management system
+                    that allows you to make updates. We also offer maintenance
+                    packages for more complex changes.
                   </motion.div>
                 </AccordionContent>
               </MotionAccordionItem>
 
               <MotionAccordionItem
                 value="item-3"
-                className="border-b border-gray-200"
+                className="border-b border-gray-700/50"
                 variants={accordionItemVariants}
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <AccordionTrigger
-                  className={`text-lg font-medium ${
-                    enableGradientBackground ? "text-white" : ""
-                  }`}
-                >
-                  Does my company need help with marketing advice?
+                <AccordionTrigger className="text-lg font-medium text-black group">
+                  Do you only build new websites, or can you redesign mine?
+                  <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
+                    <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />
+                  </div>
                 </AccordionTrigger>
-                <AccordionContent
-                  className={`${
-                    enableGradientBackground
-                      ? "text-white/80"
-                      : "text-muted-foreground"
-                  } text-sm`}
-                >
+                <AccordionContent className="text-gray-800/90 text-sm">
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    Yes, most companies benefit from strategic marketing advice
-                    to grow and reach target audiences.
+                    We offer both services. We can build a brand new website
+                    from scratch or redesign your existing site to improve its
+                    design, functionality, and performance.
                   </motion.div>
                 </AccordionContent>
               </MotionAccordionItem>
