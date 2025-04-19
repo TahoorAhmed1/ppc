@@ -1,7 +1,7 @@
-"use client"
-import Link from "next/link"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import { AlignJustify, X } from "lucide-react";
 import Image from "next/image";
 import { logo } from "@/assets/index";
@@ -25,13 +25,28 @@ export default function Header2() {
           </Link>
         </div>
 
+        <div className="flex items-end md:gap-4 gap-2">
+          <div className="flex flex-wrap justify-between w-full gap-12">
+            <div className="hidden md:block">
+              <div className="text-sm">Email</div>
+              <div className="font-semibold text-lg">
+                info@creativeagency360.com
+              </div>
+            </div>
 
-        <div className="flex items-center md:gap-4 gap-2">
-          <a href="#contactus" className="">
-            <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none sm:text-sm text-xs md:px-4 px-2   py-2">
-              Get Free Consultation
-            </Button>
-          </a>
+            <div className="hidden md:block">
+              <div className="text-sm">Call Now</div>
+              <a href="tel:+18045745376" className="font-semibold text-lg">
+                +1 (804) 574 5376
+              </a>
+            </div>
+
+            <a href="#contactus">
+              <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-base md:text-lg px-5 h-12">
+                Let's Talk
+              </Button>
+            </a>
+          </div>
           <button
             className="md:hidden"
             onClick={() => setMenuOpen(!menuOpen)}

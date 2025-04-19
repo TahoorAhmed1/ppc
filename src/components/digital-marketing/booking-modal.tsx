@@ -97,7 +97,7 @@ export function BookingModal({
     <>
       {packageName && (
         <div className="mb-4 text-center">
-          <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text font-bold text-lg">
+          <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text font-bold text-xl">
             {packageName} Package
           </span>
         </div>
@@ -113,7 +113,7 @@ export function BookingModal({
                   <Input
                     {...field}
                     placeholder="Full Name"
-                    className="w-full p-2 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
+                    className="w-full p-2 h-11 bg-white placeholder:font-semibold font-semibold rounded-md text-black placeholder-white text-base outline-none"
                     style={{
                       boxShadow:
                         "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
@@ -135,7 +135,7 @@ export function BookingModal({
                     {...field}
                     type="email"
                     placeholder="Email Address"
-                    className="w-full p-2 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
+                    className="w-full p-2 h-11 bg-white placeholder:font-semibold font-semibold rounded-md text-black placeholder-white text-base outline-none"
                     style={{
                       boxShadow:
                         "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
@@ -157,7 +157,7 @@ export function BookingModal({
                     {...field}
                     type="tel"
                     placeholder="Phone Number"
-                    className="w-full p-2 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
+                    className="w-full p-2 h-11 bg-white placeholder:font-semibold font-semibold rounded-md text-black placeholder-white text-base outline-none"
                     style={{
                       boxShadow:
                         "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
@@ -179,7 +179,7 @@ export function BookingModal({
                     {...field}
                     placeholder="Write Your business description"
                     rows={4}
-                    className="w-full p-2 h-32 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base resize-none outline-none"
+                    className="w-full p-2  h-36 bg-white placeholder:font-semibold font-semibold rounded-md text-black placeholder-white text-base resize-none outline-none"
                     style={{
                       boxShadow:
                         "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
@@ -197,7 +197,7 @@ export function BookingModal({
 
           <Button
             type="submit"
-            className="bg-gradient-to-r w-full cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2"
+            className="bg-gradient-to-r w-full h-12 cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2"
             disabled={isSubmitting}
           >
             {isSubmitting ? (
@@ -218,9 +218,11 @@ export function BookingModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-gray-900 text-white border-gray-700 max-w-md">
+      <DialogContent className="bg-gray-900 text-white border-gray-700 max-w-xl py-10 px-8">
         <DialogHeader>
-          <DialogTitle className="text-center">Book Your Package</DialogTitle>
+          <DialogTitle className="text-center text-2xl">
+            Book Your Package
+          </DialogTitle>
         </DialogHeader>
         {modalContent}
       </DialogContent>

@@ -125,7 +125,7 @@ export default function PortfolioSection({
 
   return (
     <motion.section
-      className="relative overflow-hidden py-16"
+      className="relative overflow-hidden py-10"
       id="portfolio"
       initial="hidden"
       animate={isLoaded ? "visible" : "hidden"}
