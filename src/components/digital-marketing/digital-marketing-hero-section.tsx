@@ -131,44 +131,10 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
       <div className="absolute inset-0 bg-black/30 mix-blend-multiply"></div>
 
       <div className="relative z-10 container mx-auto px-4 py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center mb-5">
-          <div>
-            <motion.p
-              className="text-base md:text-lg max-w-md font-normal"
-              variants={fadeIn}
-              transition={{ duration: 0.6 }}
-            >
-              Our Focus Is Leveraging PPC Ads That Deliver Targeted Traffic, Increased Conversions, And Measurable ROI
-              For Your Online Storefront.
-            </motion.p>
-          </div>
-          <div className="flex justify-end w-full">
-            <div className="flex flex-wrap justify-between w-full gap-6 max-w-[650px]">
-              <motion.div className="hidden md:block" variants={slideLeft} transition={{ duration: 0.6 }}>
-                <div className="text-sm">Email</div>
-                <div className="font-semibold text-base">info@creativeagency360.com</div>
-              </motion.div>
-
-              <motion.div className="hidden md:block" variants={slideLeft} transition={{ duration: 0.6, delay: 0.1 }}>
-                <div className="text-sm">Call Now</div>
-                <div className="font-semibold text-base">+18045745376</div>
-              </motion.div>
-
-              <motion.div variants={slideLeft} transition={{ duration: 0.6, delay: 0.2 }}>
-                <a href="#contactus">
-                  <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2">
-                    Let's Talk
-                  </Button>
-                </a>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-10">
           <div className="">
             <motion.h1
-              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
+              className="text-3xl md:text-4xl lg:text-[54px] font-bold leading-tight"
               variants={slideUp}
               transition={{ duration: 0.7 }}
             >
@@ -178,7 +144,7 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
                 transition={{ duration: 0.8, delay: 0.3 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text pb-2">
                   Not just websites
                 </span>
               </motion.span>
