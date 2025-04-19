@@ -21,9 +21,9 @@ import portfolio1 from "@/assets/images/portfolio1.svg";
 import portfolio2 from "@/assets/images/portfolio2.svg";
 import portfolio3 from "@/assets/images/portfolio3.svg";
 import personImage from "@/assets/images/person.webp";
-import award1 from "@/assets/images/award (1).webp";
-import award2 from "@/assets/images/award (2).webp";
-import award3 from "@/assets/images/award (3).webp";
+import award1 from "@/assets/images/award (1).png";
+import award2 from "@/assets/images/award (2).png";
+import award3 from "@/assets/images/award (3).png";
 import award4 from "@/assets/images/award (4).webp";
 import heroSectionImage3 from "@/assets/images/hero-section-image.webp";
 import website1 from "@/assets/images/website (1).webp";
@@ -132,20 +132,20 @@ export {
   wixIcon,
   webflowIcon,
   wordpressIcon,
-  project1,
-  project2,
-  project3,
-  project4,
-  project5,
-  project6,
-  project7,
-  project8,
-  project9,
-  project10,
-  project11,
-  project12,
-  project13,
-  project14,
-  project15,
-  project16,
+  // project1,
+  // project2,
+  // project3,
+  // project4,
+  // project5,
+  // project6,
+  // project7,
+  // project8,
+  // project9,
+  // project10,
+  // project11,
+  // project12,
+  // project13,
+  // project14,
+  // project15,
+  // project16,
 };

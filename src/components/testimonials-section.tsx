@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
+import TestimonialCard from "./testimonial-card"
 
 function chunkArray<T>(array: T[], size: number): T[][] {
   const chunks: T[][] = []
@@ -196,26 +197,12 @@ export default function TestimonialsSection() {
               {slides.map((slide, idx) => (
                 <div key={idx} className="w-full flex-shrink-0 px-4">
                   <div
-                    className={`grid gap-6 ${
-                      itemsPerSlide === 1 ? "grid-cols-1" : itemsPerSlide === 2 ? "md:grid-cols-2" : "lg:grid-cols-3"
-                    }`}
+                    className={`grid gap-6 ${itemsPerSlide === 1 ? "grid-cols-1" : itemsPerSlide === 2 ? "md:grid-cols-2" : "lg:grid-cols-3"
+                      }`}
                   >
                     {slide.map((testimonial) => (
-                      <Card
-                        key={testimonial.id}
-                        className="bg-[#1C2D44] text-white rounded-2xl border-none p-6 flex flex-col justify-between h-full shadow-lg hover:shadow-xl transition-shadow duration-300"
-                      >
-                        <CardContent className="p-0">
-                          <div className="flex items-center gap-4 mb-4">
-                            <div className="w-10 h-10 rounded-full bg-gray-300" />
-                            <div>
-                              <p className="font-semibold text-white">{testimonial.name}</p>
-                              <p className="text-sm text-gray-300">{testimonial.role}</p>
-                            </div>
-                          </div>
-                          <p className="text-white text-sm leading-relaxed">{testimonial.content}</p>
-                        </CardContent>
-                      </Card>
+                      <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+
                     ))}
                   </div>
                 </div>
@@ -238,9 +225,8 @@ export default function TestimonialsSection() {
               {slides.map((_, idx) => (
                 <button
                   key={idx}
-                  className={`w-2 h-2 rounded-full ${
-                    activeSlide === idx ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED]" : "bg-gray-300"
-                  }`}
+                  className={`w-2 h-2 rounded-full ${activeSlide === idx ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED]" : "bg-gray-300"
+                    }`}
                   onClick={() => setActiveSlide(idx)}
                 >
                   <span className="sr-only">Go to slide {idx + 1}</span>
