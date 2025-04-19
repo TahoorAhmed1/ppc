@@ -145,16 +145,16 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
                 whileHover={{ scale: 1.05 }}
               >
                 <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text pb-2">
-                  Not just websites
+                  Not Just Websites
                 </span>
               </motion.span>
-              <span className="ml-2">We build</span>
+              <span className="ml-2">We Build</span>
               <br />
-              digital experiences
+              Digital Experiences
               <br />
-              that make brands
+              that Make Brands
               <br />
-              unforgettable.
+              Unforgettable.
             </motion.h1>
 
             <motion.div
@@ -168,7 +168,7 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
               >
                 <a href="#contactus">
                   <Button className="bg-gradient-to-r cursor-pointer h-12 from-[#65CF5F]/80 to-[#1F9BED] text-white px-8 py-3 text-base rounded-lg">
-                    Get In Touch
+                    Get a Quote
                   </Button>
                 </a>
               </motion.div>

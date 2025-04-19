@@ -100,8 +100,8 @@ interface ServiceCategoryItemProps {
 function ServiceCategoryItem({ icon, title, subtitle }: ServiceCategoryItemProps) {
   return (
     <motion.div
-      className="flex items-center justify-start w-full max-w-[140px] sm:max-w-[158px] md:max-w-[176px] px-1.5 sm:px-2.5 py-0.75 sm:py-1.25 bg-gray-600/40 rounded-full shadow-sm"
-      whileHover={{
+    className="flex items-center justify-start w-full max-w-[180px] sm:max-w-[220px] md:max-w-[260px] px-1.5 sm:px-2.5 py-0.75 sm:py-1.25 bg-gray-600/40 rounded-full shadow-sm"
+    whileHover={{
         scale: 1.08,
         backgroundColor: "rgba(75, 85, 99, 0.6)",
         y: -3,
