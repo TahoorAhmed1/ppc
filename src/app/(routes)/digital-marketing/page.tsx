@@ -16,14 +16,7 @@ import Footer from "@/components/footer";
 import { InfiniteScroll } from "@/components/digital-marketing/web-agency-hero";
 import DigitalMarketingHeroSection from "@/components/digital-marketing/digital-marketing-hero-section";
 
-const portfolioItems = [
-  { id: 1, image: website1.src },
-  { id: 2, image: website2.src },
-  { id: 3, image: website3.src },
-  { id: 4, image: website4.src },
-  { id: 5, image: website5.src },
-  { id: 6, image: website6.src },
-];
+
 export default function Home() {
   return (
     <main className="min-h-[100vh]">
@@ -42,7 +35,6 @@ export default function Home() {
           "Real Estate",
         ]}
         btnIcon=""
-        items={portfolioItems}
       />
 
       <PricingPackage />

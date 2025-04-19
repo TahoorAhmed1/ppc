@@ -134,7 +134,7 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-10">
           <div className="">
             <motion.h1
-              className="text-3xl md:text-4xl lg:text-[54px] font-bold leading-tight"
+              className="text-3xl md:text-4xl lg:text-[52px] font-bold leading-tight"
               variants={slideUp}
               transition={{ duration: 0.7 }}
             >

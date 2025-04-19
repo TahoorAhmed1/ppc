@@ -74,6 +74,22 @@ import project15 from "@/assets/images/project/timothy_enhanced.webp";
 import project16 from "@/assets/images/project/yohan it_enhanced.webp";
 
 export {
+  project1,
+  project2,
+  project6,
+  project3,
+  project4,
+  project5,
+  project7,
+  project8,
+  project9,
+  project10,
+  project11,
+  project12,
+  project13,
+  project14,
+  project15,
+  project16,
   package4,
   package2,
   package3,
