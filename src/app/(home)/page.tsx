@@ -84,8 +84,13 @@ export default function Home() {
           title="HERE IS"
           paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
           backgroundImage={waterMarkLogo.src}
-          filters={["All", "UI/UX", "Web Design", "App Design", "Graphic Design"]}
-          items={portfolioItems}
+          filters={[
+            "All",
+            "E-commerce",
+            "Business",
+            "Hospitality and Food Service",
+            "Real Estate",
+          ]}
         />
       </motion.div>
 
@@ -127,5 +132,5 @@ export default function Home() {
 
       <Footer />
     </main>
-  )
+  );
 }

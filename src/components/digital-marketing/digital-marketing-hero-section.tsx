@@ -220,12 +220,12 @@ export default function DigitalMarketingHeroSection({
 
           <div>
             <motion.div
-              className="bg-[#000000]/50 rounded-xl px-6 py-8 w-full max-w-[540px] ml-auto shadow-lg border border-[#1a3b49]/50"
+              className="bg-[#000000]/50 rounded-xl px-6 py-8 w-full max-w-[600px] ml-auto shadow-lg border border-[#1a3b49]/50"
               variants={slideLeft}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-2xl font-bold mb-2">Request a Quote</h2>
-              <p className="text-sm text-gray-300 mb-6">
+              <h2 className="text-3xl font-bold mb-4">Request a Quote</h2>
+              <p className="text-base text-gray-300 mb-6">
                 Enhance your Design and start thriving by signing up for our
                 services today.
               </p>
@@ -244,7 +244,7 @@ export default function DigitalMarketingHeroSection({
                           <Input
                             {...field}
                             placeholder="Full Name"
-                            className="w-full p-2 h-11 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
+                            className="w-full p-4 h-11 bg-[#1a3b49]/40 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200  text-base outline-none"
                             style={{
                               boxShadow:
                                 "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
@@ -266,7 +266,7 @@ export default function DigitalMarketingHeroSection({
                             {...field}
                             type="email"
                             placeholder="Email Address"
-                            className="w-full p-2 h-11 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
+                            className="w-full p-4 h-11 bg-[#1a3b49]/40 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base outline-none"
                             style={{
                               boxShadow:
                                 "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
@@ -288,7 +288,7 @@ export default function DigitalMarketingHeroSection({
                             {...field}
                             type="tel"
                             placeholder="Phone Number"
-                            className="w-full p-2 h-11 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
+                            className="w-full p-4 h-11 bg-[#1a3b49]/40 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base outline-none"
                             style={{
                               boxShadow:
                                 "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
@@ -310,7 +310,7 @@ export default function DigitalMarketingHeroSection({
                             {...field}
                             placeholder="Write Your business description"
                             rows={4}
-                            className="w-full p-2 h-20 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base resize-none outline-none"
+                            className="w-full p-4 h-32 bg-[#1a3b49]/40 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base resize-none outline-none"
                             style={{
                               boxShadow:
                                 "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
@@ -322,8 +322,15 @@ export default function DigitalMarketingHeroSection({
                     )}
                   />
 
-                  <p className="text-xs text-gray-400 mt-2 mb-4 text-center">
-                    Your data is protected with us — no worries, no compromises
+                  <p className="text-xs text-gray-400 mt-2 mb-5 text-left">
+                    Disclaimer : You agree to receive conversation messages from
+                    CreativeAgency360. This includes SMS messages for
+                    appointment scheduling, appointment reminders, post-visit
+                    instructions, and billing notifications. You may receive up
+                    to 2 messages per day; message frequency may vary. To opt
+                    out, text STOP. For assistance, text HELP or visit Website
+                    Message and data rates may apply. See our Privacy Policy
+                    andTerms and Conditions. STOP to any message to opt out.
                   </p>
 
                   <Button

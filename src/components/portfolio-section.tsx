@@ -1,43 +1,76 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import { motion } from "framer-motion"
-import Projects from "./project"
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import Projects from "./project";
+import {
+  project1,
+  project2,
+  project3,
+  project4,
+  project5,
+  project6,
+  project7,
+  project8,
+  project9,
+  project10,
+  project11,
+  project12,
+  project13,
+  project14,
+  project15,
+  project16,
+} from "@/assets";
 
 type PortfolioItem = {
-  id?: number
-  image?: string
-  category?: string
-  title?: string
-}
+  img: string;
+  category: string;
+};
 
 type PortfolioSectionProps = {
-  heading?: string
-  title?: string
-  paragraph?: string
-  filters?: string[]
-  items?: PortfolioItem[]
-  backgroundImage?: string
-  btnIcon?: string
-}
+  heading?: string;
+  title?: string;
+  paragraph?: string;
+  filters?: string[];
+  data?: any[];
+  backgroundImage?: string;
+  btnIcon?: string;
+};
 
 export default function PortfolioSection({
   heading = "Our Work",
   title = "Creative Portfolio",
   paragraph = "Explore our latest design projects across various disciplines.",
-  filters = ["All", "UI/UX", "Web Design", "App Design", "Graphic Design"],
-  items = [],
+  filters = [],
   backgroundImage,
   btnIcon = "",
 }: PortfolioSectionProps) {
-  const [activeFilter, setActiveFilter] = useState("All")
-  const [filteredItems, setFilteredItems] = useState(items)
-  const [isLoaded, setIsLoaded] = useState(false)
+  const data = [
+    { img: project1, category: "Real Estate" },
+    { img: project2, category: "E-commerce" },
+    { img: project3, category: "Real Estate" },
+    { img: project4, category: "Business" },
+    { img: project5, category: "Business" },
+    { img: project6, category: "Business" },
+    { img: project7, category: "Business" },
+    { img: project8, category: "E-commerce" },
+    { img: project9, category: "E-commerce" },
+    { img: project10, category: "E-commerce" },
+    { img: project11, category: "E-commerce" },
+    { img: project12, category: "Business" },
+    { img: project13, category: "Hospitality and Food Service" },
+    { img: project14, category: "E-commerce" },
+    { img: project15, category: "E-commerce" },
+    { img: project16, category: "Business" },
+  ];
 
-  // Animation variants
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [filteredItems, setFilteredItems] = useState(data);
+  const [isLoaded, setIsLoaded] = useState(false);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -47,7 +80,7 @@ export default function PortfolioSection({
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -56,7 +89,7 @@ export default function PortfolioSection({
       opacity: 1,
       transition: { duration: 0.5, ease: "easeOut" },
     },
-  }
+  };
 
   const headingVariants = {
     hidden: { y: -50, opacity: 0 },
@@ -65,7 +98,7 @@ export default function PortfolioSection({
       opacity: 1,
       transition: { duration: 0.7, ease: "easeOut" },
     },
-  }
+  };
 
   const filterVariants = {
     hidden: { scale: 0.8, opacity: 0 },
@@ -78,31 +111,9 @@ export default function PortfolioSection({
         ease: "easeOut",
       },
     }),
-  }
+  };
 
-  const portfolioItemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: (i: number) => ({
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: 0.5 + i * 0.1,
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    }),
-  }
-
-  const backgroundVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 0.1,
-      scale: 1,
-      transition: { duration: 1.5, ease: "easeOut" },
-    },
-  }
-
-  const pulse : any = {
+  const pulse: any = {
     hidden: { scale: 0.9, opacity: 0.3 },
     visible: {
       scale: [1, 1.05, 1],
@@ -113,52 +124,47 @@ export default function PortfolioSection({
         duration: 3,
       },
     },
-  }
+  };
 
   useEffect(() => {
-    // Filter items when activeFilter changes
-    setFilteredItems(activeFilter === "All" ? items : items.filter((item) => item.category === activeFilter))
+    const sortedData =
+      activeFilter === "All"
+        ? [...data].sort((a, b) => a.category.localeCompare(b.category))
+        : data
+            .filter((item) => item.category === activeFilter)
+            .sort((a, b) => a.category.localeCompare(b.category));
 
-    // Set loaded state after component mounts
-    setIsLoaded(true)
-  }, [activeFilter, items])
+    setFilteredItems(sortedData);
+    setIsLoaded(true);
+  }, [activeFilter, data]);
 
   return (
     <motion.section
-      className="relative overflow-hidden py-10"
+      className="relative overflow-hidden pb-10"
       id="portfolio"
       initial="hidden"
       animate={isLoaded ? "visible" : "hidden"}
       variants={containerVariants}
     >
-      {/* Animated background balls */}
       <motion.div
-        initial="hidden"
-        animate={isLoaded ? "visible" : "hidden"}
         variants={pulse}
-        className="absolute md:top-[10%] top-[5%] left-[15%] w-[14vw] h-[14vw] md:w-[12vw] md:h-[12vw] rounded-full bg-gradient-to-r from-[#41B4A7]/60 to-[#65CF5F]/50 opacity-40 "
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      ></motion.div>
-
+        className="absolute md:top-[10%] top-[5%] left-[15%] w-[14vw] h-[14vw] md:w-[12vw] md:h-[12vw] rounded-full bg-gradient-to-r from-[#41B4A7]/60 to-[#65CF5F]/50 opacity-40"
+      />
       <motion.div
-        initial="hidden"
-        animate={isLoaded ? "visible" : "hidden"}
         variants={pulse}
-        className="absolute md:bottom-[10%] bottom-[5%] right-[10%] w-[10vw] h-[10vw] md:w-[9vw] md:h-[9vw] rounded-full bg-gradient-to-r from-[#1F9BED]/60 to-[#41B4A7]/50 opacity-40 "
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      ></motion.div>
+        className="absolute md:bottom-[10%] bottom-[5%] right-[10%] w-[10vw] h-[10vw] md:w-[9vw] md:h-[9vw] rounded-full bg-gradient-to-r from-[#1F9BED]/60 to-[#41B4A7]/50 opacity-40"
+      />
 
       {backgroundImage && (
         <motion.div
-          variants={backgroundVariants}
-          className="absolute inset-0 m-auto w-[90vw] h-full "
+          className="absolute inset-0 m-auto w-[90vw] h-full"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
         ></motion.div>
       )}
+
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          className="flex flex-col items-center gap-2 text-center"
+          className="flex flex-col data-center gap-2 text-center"
           variants={headingVariants}
         >
           <motion.h2
@@ -168,20 +174,19 @@ export default function PortfolioSection({
             {title}
           </motion.h2>
           <motion.h3
-            className="text-3xl sm:text-5xl font-extrabold text-[#41B4A7]"
+            className="text-3xl sm:text-5xl font-extrabold text-[#41B4A7] mb-3"
             variants={itemVariants}
           >
             {heading}
           </motion.h3>
           <motion.p
-            className="max-w-[700px] text-[#1C2D44] mb-8 text-sm sm:text-base"
+            className="max-w-[700px] w-full mx-auto text-[#1C2D44] mb-8 text-sm sm:text-base text-center"
             variants={itemVariants}
           >
             {paragraph}
           </motion.p>
         </motion.div>
 
-        {/* Filter Buttons */}
         <motion.div
           className="flex flex-wrap justify-center gap-3 mb-10"
           variants={containerVariants}
@@ -197,7 +202,7 @@ export default function PortfolioSection({
               <Button
                 variant="outline"
                 className={cn(
-                  "rounded-lg px-4 py-2 text-sm font-medium border-gray-200 flex items-center gap-2",
+                  "rounded-lg px-4 py-2 text-sm font-medium border-gray-200 flex data-center gap-2",
                   activeFilter === filter
                     ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-none"
                     : "bg-white text-gray-700 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-white"
@@ -220,7 +225,7 @@ export default function PortfolioSection({
         </motion.div>
 
         <motion.div variants={containerVariants}>
-          <Projects />
+          <Projects items={filteredItems} />
         </motion.div>
       </div>
     </motion.section>

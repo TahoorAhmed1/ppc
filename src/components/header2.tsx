@@ -36,13 +36,13 @@ export default function Header2() {
 
             <div className="hidden md:block">
               <div className="text-sm">Call Now</div>
-              <a href="tel:+18045745376" className="font-semibold text-lg">
+              <a href="+18045745376" className="font-semibold text-lg">
                 +1 (804) 574 5376
               </a>
             </div>
 
             <a href="#contactus">
-              <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-base md:text-lg px-5 h-12">
+              <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:to-[#65CF5F] hover:from-[#1F9BED]/80 hover:opacity-90 transition-colors text-white rounded-lg border-none text-base md:text-lg px-5 h-12">
                 Let's Talk
               </Button>
             </a>

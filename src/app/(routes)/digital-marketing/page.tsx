@@ -37,13 +37,9 @@ export default function Home() {
         filters={[
           "All",
           "E-commerce",
-          "Finance and Banking",
-          "Education and E-Learning",
+          "Business",
           "Hospitality and Food Service",
-          "Entertainment and Media",
           "Real Estate",
-          "Professional Services",
-          "Travel and Hospitality",
         ]}
         btnIcon=""
         items={portfolioItems}

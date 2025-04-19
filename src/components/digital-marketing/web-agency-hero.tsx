@@ -16,7 +16,7 @@ export const InfiniteScroll = () => {
 
   return (
     <motion.div
-      className="w-full bg-white py-8 sm:py-10 md:py-12 "
+      className="w-full bg-white py-8 sm:py-10 md:py-16 "
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
@@ -75,7 +75,7 @@ export const InfiniteScroll = () => {
                 transition={{ duration: 0.2 }}
               >
                 <motion.div
-                  className="relative w-12 sm:w-16 md:w-20 lg:w-24 h-4 sm:h-5 md:h-6 lg:h-8"
+                  className="relative w-12 sm:w-16 md:w-20 lg:w-32 h-4 sm:h-5 md:h-8 lg:h-12"
                   whileHover={{ rotate: 5 }}
                 >
                   <Image

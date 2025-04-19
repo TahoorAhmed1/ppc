@@ -187,16 +187,16 @@ export default function PricingPackage() {
             </div>
             <div className="space-y-3">
               <button
-                className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] text-white w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded flex justify-between items-center text-base sm:text-lg"
+                className="bg-gradient-to-r cursor-pointer hover:from-[#1F9BED]/80 hover:to-[#65CF5F] transition-colors   from-[#65CF5F]/80 to-[#1F9BED] text-white w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded flex justify-between items-center text-base sm:text-lg"
                 onClick={() => handleBookNow(pkg)}
               >
                 <span className="font-medium">Book Now</span>
                 <ArrowRight size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
-              <a href="tel:+18045745376">
-                <button className="border-4 cursor-pointer border-teal-500 text-teal-500 w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded flex justify-between items-center text-base sm:text-lg">
-                  <span className="font-medium bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
-                    +18045745376
+              <a href="+18045745376">
+                <button className="border-4 cursor-pointer group border-teal-500 text-teal-500 w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded flex justify-between items-center text-base sm:text-lg">
+                  <span className="font-medium bg-gradient-to-r group-hover:from-[#1F9BED]/80 group-hover:to-[#65CF5F] transition-colors from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
+                    +1 (804) 574 5376
                   </span>
                   <ArrowRight size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
                 </button>
@@ -230,18 +230,18 @@ export default function PricingPackage() {
                 />
               </div>
               <div className="flex-1">
-                <h3 className="text-xl sm:text-2xl font-extrabold mb-2">
+                <h3 className="text-xl sm:text-3xl font-extrabold mb-2">
                   <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
                     What&apos;s Included:
                   </span>
                 </h3>
                 <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
-                  <ul className="text-gray-700 text-sm space-y-2 list-disc pl-4 mb-2">
+                  <ul className="text-gray-700 text-base space-y-2 list-disc pl-4 mb-2">
                     {pkg.features.map((feature, index) => (
                       <li key={index}>{feature}</li>
                     ))}
                   </ul>
-                  <ul className="text-gray-700 text-sm space-y-2 list-disc pl-4">
+                  <ul className="text-gray-700 text-base space-y-2 list-disc pl-4">
                     {pkg.additionalFeatures.map((feature, index) => (
                       <li key={index}>{feature}</li>
                     ))}
