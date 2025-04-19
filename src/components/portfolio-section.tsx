@@ -151,25 +151,41 @@ export default function PortfolioSection({
       ></motion.div>
 
       {backgroundImage && (
-        <motion.div variants={backgroundVariants} className="absolute inset-0 m-auto w-[90vw] h-full ">
-          <Projects />
-        </motion.div>
+        <motion.div
+          variants={backgroundVariants}
+          className="absolute inset-0 m-auto w-[90vw] h-full "
+        ></motion.div>
       )}
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div className="flex flex-col items-center gap-2 text-center" variants={headingVariants}>
-          <motion.h2 className="text-xl sm:text-2xl font-bold text-[#1C2D44]" variants={itemVariants}>
+        <motion.div
+          className="flex flex-col items-center gap-2 text-center"
+          variants={headingVariants}
+        >
+          <motion.h2
+            className="text-xl sm:text-2xl font-bold text-[#1C2D44]"
+            variants={itemVariants}
+          >
             {title}
           </motion.h2>
-          <motion.h3 className="text-3xl sm:text-5xl font-extrabold text-[#41B4A7]" variants={itemVariants}>
+          <motion.h3
+            className="text-3xl sm:text-5xl font-extrabold text-[#41B4A7]"
+            variants={itemVariants}
+          >
             {heading}
           </motion.h3>
-          <motion.p className="max-w-[700px] text-[#1C2D44] mb-8 text-sm sm:text-base" variants={itemVariants}>
+          <motion.p
+            className="max-w-[700px] text-[#1C2D44] mb-8 text-sm sm:text-base"
+            variants={itemVariants}
+          >
             {paragraph}
           </motion.p>
         </motion.div>
 
         {/* Filter Buttons */}
-        <motion.div className="flex flex-wrap justify-center gap-3 mb-10" variants={containerVariants}>
+        <motion.div
+          className="flex flex-wrap justify-center gap-3 mb-10"
+          variants={containerVariants}
+        >
           {filters.map((filter, index) => (
             <motion.div
               key={filter}
@@ -184,12 +200,18 @@ export default function PortfolioSection({
                   "rounded-lg px-4 py-2 text-sm font-medium border-gray-200 flex items-center gap-2",
                   activeFilter === filter
                     ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-none"
-                    : "bg-white text-gray-700 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-white",
+                    : "bg-white text-gray-700 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-white"
                 )}
                 onClick={() => setActiveFilter(filter)}
               >
                 {btnIcon && (
-                  <Image src={`${btnIcon}`} alt={`${filter} icon`} width={16} height={16} className="object-contain" />
+                  <Image
+                    src={`${btnIcon}`}
+                    alt={`${filter} icon`}
+                    width={16}
+                    height={16}
+                    className="object-contain"
+                  />
                 )}
                 {filter}
               </Button>
@@ -197,60 +219,10 @@ export default function PortfolioSection({
           ))}
         </motion.div>
 
-        <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" variants={containerVariants}>
-          {filteredItems.map((item, index) => (
-            <motion.div
-              key={item.id}
-              className="group"
-              custom={index}
-              variants={portfolioItemVariants}
-              whileHover={{ y: -10 }}
-              transition={{ duration: 0.3 }}
-            >
-              <motion.div
-                className="relative overflow-hidden rounded-xl shadow-lg"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Image
-                  src={item?.image || ""}
-                  alt={item?.title || ""}
-                  width={400}
-                  height={300}
-                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </motion.div>
-              <motion.div
-                className="text-center sm:text-left"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-              >
-                {item.category && (
-                  <motion.p
-                    className="text-sm font-medium tracking-tight text-[#1C2D44]"
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
-                      {item.category}
-                    </span>
-                  </motion.p>
-                )}
-                {item.title && (
-                  <motion.h4
-                    className="text-lg font-bold text-[#1A2B4E]"
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {item?.title}
-                  </motion.h4>
-                )}
-              </motion.div>
-            </motion.div>
-          ))}
+        <motion.div variants={containerVariants}>
+          <Projects />
         </motion.div>
       </div>
     </motion.section>
-  )
+  );
 }
