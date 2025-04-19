@@ -111,14 +111,17 @@ export default function PortfolioSection({
 
   return (
     <motion.section
-      className="py-16 md:py-24 relative overflow-hidden"
+      className=" relative overflow-hidden"
       id="portfolio"
       initial="hidden"
       animate={isLoaded ? "visible" : "hidden"}
       variants={containerVariants}
     >
       {backgroundImage && (
-        <motion.div variants={backgroundVariants} className="absolute inset-0 m-auto w-[90vw] h-full">
+        <motion.div
+          variants={backgroundVariants}
+          className="absolute inset-0 m-auto w-[90vw] h-full"
+        >
           <Image
             src={backgroundImage || "/placeholder.svg"}
             width={1000}
@@ -129,24 +132,35 @@ export default function PortfolioSection({
         </motion.div>
       )}
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Headings */}
-        <motion.div className="flex flex-col items-center gap-2 text-center" variants={headingVariants}>
-          <motion.h2 className="text-xl sm:text-2xl font-bold text-[#1C2D44]" variants={itemVariants}>
+        <motion.div
+          className="flex flex-col items-center gap-2 text-center"
+          variants={headingVariants}
+        >
+          <motion.h2
+            className="text-xl sm:text-2xl font-bold text-[#1C2D44]"
+            variants={itemVariants}
+          >
             {title}
           </motion.h2>
           <motion.h3
-            className="text-3xl sm:text-5xl font-extrabold bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text"
+            className="text-3xl sm:text-5xl font-extrabold text-[#41B4A7]"
             variants={itemVariants}
           >
             {heading}
           </motion.h3>
-          <motion.p className="max-w-[700px] text-[#1C2D44] mb-8 text-sm sm:text-base" variants={itemVariants}>
+          <motion.p
+            className="max-w-[700px] text-[#1C2D44] mb-8 text-sm sm:text-base"
+            variants={itemVariants}
+          >
             {paragraph}
           </motion.p>
         </motion.div>
 
         {/* Filter Buttons */}
-        <motion.div className="flex flex-wrap justify-center gap-3 mb-10" variants={containerVariants}>
+        <motion.div
+          className="flex flex-wrap justify-center gap-3 mb-10"
+          variants={containerVariants}
+        >
           {filters.map((filter, index) => (
             <motion.div
               key={filter}
@@ -160,13 +174,19 @@ export default function PortfolioSection({
                 className={cn(
                   "rounded-lg px-4 py-2 text-sm font-medium border-gray-200 flex items-center gap-2",
                   activeFilter === filter
-                    ? "bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-white border-none"
-                    : "bg-white text-gray-700 hover:bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] hover:text-white",
+                    ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-none"
+                    : "bg-white text-gray-700 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-white"
                 )}
                 onClick={() => setActiveFilter(filter)}
               >
                 {btnIcon && (
-                  <Image src={`${btnIcon}`} alt={`${filter} icon`} width={16} height={16} className="object-contain" />
+                  <Image
+                    src={`${btnIcon}`}
+                    alt={`${filter} icon`}
+                    width={16}
+                    height={16}
+                    className="object-contain"
+                  />
                 )}
                 {filter}
               </Button>
@@ -174,12 +194,14 @@ export default function PortfolioSection({
           ))}
         </motion.div>
 
-        {/* Portfolio Grid */}
-        <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" variants={containerVariants}>
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+        >
           {filteredItems.map((item, index) => (
             <motion.div
               key={item.id}
-              className="group space-y-4 mt-20"
+              className="group  "
               custom={index}
               variants={portfolioItemVariants}
               whileHover={{ y: -10 }}
@@ -210,7 +232,7 @@ export default function PortfolioSection({
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
+                    <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
                       {item.category}
                     </span>
                   </motion.p>
@@ -230,5 +252,5 @@ export default function PortfolioSection({
         </motion.div>
       </div>
     </motion.section>
-  )
+  );
 }

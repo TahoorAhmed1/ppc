@@ -4,7 +4,7 @@ export default function Page() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header with gradient background */}
-      <div className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-white py-12">
+      <div className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold text-center mb-2 ">
             Terms and Conditions

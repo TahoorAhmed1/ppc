@@ -9,7 +9,7 @@ import {
 import ContactSection from "@/components/contact-section";
 import CtaSection from "@/components/cta-section";
 import PricingPackage from "@/components/digital-marketing/pricing-package";
-import FaqSection from "@/components/faq-section";
+import FaqSection from "@/components/faq-section-2";
 import PortfolioSection from "@/components/portfolio-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import Footer from "@/components/footer";

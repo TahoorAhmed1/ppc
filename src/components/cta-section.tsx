@@ -204,7 +204,7 @@ export default function EnhancedCtaSection() {
         variants={backgroundVariants}
       >
         <motion.div
-          className="absolute top-10 left-10 w-20 h-20 rounded-full bg-gradient-to-r from-[#65CF5F]/10 to-[#1F9BED]/10 blur-xl"
+          className="absolute top-10 left-10 w-20 h-20 rounded-full bg-gradient-to-r from-[#65CF5F]/80/10 to-[#1F9BED]/10 blur-xl"
           variants={decorVariants}
           animate={{
             x: [0, 20, 0],
@@ -217,7 +217,7 @@ export default function EnhancedCtaSection() {
           }}
         />
         <motion.div
-          className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-gradient-to-r from-[#1F9BED]/10 to-[#65CF5F]/10 blur-xl"
+          className="absolute bottom-10 right-10 w-32 h-32 rounded-full bg-gradient-to-r from-[#1F9BED]/10 to-[#65CF5F]/80/10 blur-xl"
           variants={decorVariants}
           animate={{
             x: [0, -30, 0],
@@ -250,7 +250,7 @@ export default function EnhancedCtaSection() {
               Let’s Make Your Project Standout!
             </motion.h2>
             <motion.div
-              className="absolute -top-6 -right-6 text-[#65CF5F]"
+              className="absolute -top-6 -right-6 text-[#65CF5F]/80"
               variants={sparkleVariants}
               initial="hidden"
               animate="visible"
@@ -310,7 +310,7 @@ export default function EnhancedCtaSection() {
                 >
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-[#65CF5F] to-[#209CEB] w-[200px] hover:opacity-90 h-12 text-white rounded-lg px-6 py-3  relative overflow-hidden group"
+                    className="bg-gradient-to-r from-[#65CF5F]/80 to-[#209CEB] w-[180px] hover:opacity-90 h-12 text-white rounded-lg px-6 py-3  relative overflow-hidden group"
                   >
                     <motion.span
                       className="absolute inset-0 bg-white opacity-20 rounded-lg"
@@ -346,7 +346,7 @@ export default function EnhancedCtaSection() {
 
           {/* Animated decorative elements */}
           <motion.div
-            className="absolute -bottom-10 left-1/4 w-16 h-16 rounded-full border-2 border-[#65CF5F]/20"
+            className="absolute -bottom-10 left-1/4 w-16 h-16 rounded-full border-2 border-[#65CF5F]/80/20"
             initial={{ opacity: 0, scale: 0 }}
             animate={{
               opacity: 1,

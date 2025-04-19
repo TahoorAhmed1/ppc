@@ -222,7 +222,7 @@ export default function ContactSection() {
   }, [controls, isInView, hasTriggered]);
 
   return (
-    <section className="py-7 md:py-10 bg-white overflow-hidden" id="contactus">
+    <section className="pt-5 md:pt-8 bg-white overflow-hidden" id="contactus">
       <div className="container ">
         <motion.div
           ref={containerRef}
@@ -414,7 +414,7 @@ export default function ContactSection() {
 
           <motion.div
             variants={imageVariants}
-            className="relative lg:flex hidden items-center justify-center p-20"
+            className="relative lg:flex hidden items-center justify-center "
           >
             <motion.div>
               <Image

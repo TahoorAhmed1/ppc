@@ -177,7 +177,7 @@ export default function TestimonialsSection() {
             <Button
               variant="outline"
               size="icon"
-              className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-white border-white rounded-full"
+              className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-white rounded-full"
               onClick={prevSlide}
             >
               <ChevronLeft className="h-4 w-4" />
@@ -190,7 +190,7 @@ export default function TestimonialsSection() {
                   key={idx}
                   className={`w-2 h-2 rounded-full ${
                     activeSlide === idx
-                      ? "bg-gradient-to-r from-[#65CF5F] to-[#1F9BED]"
+                      ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED]"
                       : "bg-gray-300"
                   }`}
                   onClick={() => setActiveSlide(idx)}
@@ -203,7 +203,7 @@ export default function TestimonialsSection() {
             <Button
               variant="outline"
               size="icon"
-              className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-white border-white rounded-full"
+              className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-white rounded-full"
               onClick={nextSlide}
             >
               <ChevronRight className="h-4 w-4" />

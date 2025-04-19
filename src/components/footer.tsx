@@ -108,7 +108,13 @@ export default function Footer() {
   );
 }
 
-function AnimatedFooterColumn({ title, links }: { title: string; links: string[] }) {
+function AnimatedFooterColumn({
+  title,
+  links,
+}: {
+  title: string;
+  links: string[];
+}) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -118,7 +124,7 @@ function AnimatedFooterColumn({ title, links }: { title: string; links: string[]
         delayChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { x: -20, opacity: 0 },
@@ -127,12 +133,17 @@ function AnimatedFooterColumn({ title, links }: { title: string; links: string[]
       opacity: 1,
       transition: { duration: 0.4, ease: "easeOut" },
     },
-  }
+  };
 
   return (
-    <motion.div className="space-y-4" variants={containerVariants} initial="hidden" animate="visible">
+    <motion.div
+      className="space-y-4"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <motion.h3
-        className="text-xl font-bold bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text"
+        className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text"
         variants={itemVariants}
         whileHover={{ scale: 1.05 }}
       >
@@ -153,13 +164,13 @@ function AnimatedFooterColumn({ title, links }: { title: string; links: string[]
         ))}
       </motion.ul>
     </motion.div>
-  )
+  );
 }
 
 function FooterColumn({ title, links }: { title: string; links: string[] }) {
   return (
     <div className="space-y-4">
-      <h3 className="text-xl font-bold bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
+      <h3 className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
         {title}
       </h3>
       <ul className="space-y-3">
@@ -172,5 +183,5 @@ function FooterColumn({ title, links }: { title: string; links: string[] }) {
         ))}
       </ul>
     </div>
-  )
+  );
 }

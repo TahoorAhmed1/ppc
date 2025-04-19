@@ -11,19 +11,18 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { ArrowRight, Check, Loader2 } from "lucide-react";
+import { ArrowRight, Check, Loader2, Plus } from "lucide-react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "@/components/ui/use-toast";
-
-// Create Zod schema for email validation
-const subscriptionSchema = z.object({
-  email: z.string().email({ message: "Please enter a valid email address" }),
+import faq from "../assets/images/faq-background.png";
+const contactSchema = z.object({
+  email: z.string().min(5, { message: "Please enter a valid phone number" }),
 });
 
-type SubscriptionFormData = z.infer<typeof subscriptionSchema>;
+type ContactFormData = z.infer<typeof contactSchema>;
 
 // Custom animated components
 const MotionCard = motion(Card);
@@ -34,8 +33,8 @@ const MotionInput = motion(Input);
 const MotionButton = motion(Button);
 const MotionLink = motion(Link);
 
-export default function AnimatedFaqSection({
-  enableGradientBackground = false,
+export default function AnimatedFaqSection2({
+  enableGradientBackground = true,
 }: {
   enableGradientBackground?: boolean;
 }) {
@@ -49,8 +48,8 @@ export default function AnimatedFaqSection({
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<SubscriptionFormData>({
-    resolver: zodResolver(subscriptionSchema),
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
     defaultValues: {
       email: "",
     },
@@ -151,26 +150,12 @@ export default function AnimatedFaqSection({
   };
 
   // Handle form submission
-  const onSubmit = async (data: SubscriptionFormData) => {
+  const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(
-        "https://demo7.obistest.online/api/store-subscribtion",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: data.email,
-          }),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Subscription failed");
-      }
+      // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
       setIsSuccess(true);
       toast({
@@ -196,134 +181,119 @@ export default function AnimatedFaqSection({
 
   return (
     <motion.section
-      className={`py-12 md:py-16 container flex justify-between w-full mx-auto  bg-[#f9f9f9]`}
+      className="py-16 md:py-20 w-full bg-no-repeat bg-cover bg-center relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${faq.src})`,
+      }}
       initial="hidden"
       animate={isLoaded ? "visible" : "hidden"}
       variants={containerVariants}
     >
-      <motion.div className="container px-4 md:px-6" variants={sectionVariants}>
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute -bottom-10 -left-10 w-40 h-40 border-t border-l border-teal-500/20 rounded-tl-3xl"></div>
+        <div className="absolute -top-10 -right-10 w-40 h-40 border-b border-r border-teal-500/20 rounded-br-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
-          className="grid gap-12 lg:grid-cols-2 "
+          className="grid gap-12 lg:grid-cols-2 items-center"
           variants={sectionVariants}
         >
           <motion.div className="space-y-6" variants={sectionVariants}>
-            <Accordion
-              type="single"
-              collapsible
-              className={`w-full space-y-2 ${
-                enableGradientBackground ? "text-white" : ""
-              }`}
-            >
+            <Accordion type="single" collapsible className="w-full space-y-4">
               <MotionAccordionItem
                 value="item-1"
-                className="border-b border-gray-200"
+                className="border-b border-gray-700/50"
                 variants={accordionItemVariants}
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <AccordionTrigger
-                  className={`text-lg font-medium ${
-                    enableGradientBackground ? "text-white" : ""
-                  }`}
-                >
-                  How do I sign up for the project?
+                <AccordionTrigger className="text-lg font-medium text-white group">
+                  How long does it take to build a website?
+                  <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
+                    <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />
+                  </div>
                 </AccordionTrigger>
-                <AccordionContent
-                  className={`${
-                    enableGradientBackground
-                      ? "text-white/80"
-                      : "text-muted-foreground"
-                  } text-sm`}
-                >
+                <AccordionContent className="text-gray-300/90 text-sm">
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    Signing up is easy! Simply contact us through our website,
-                    email, or phone.
+                    The timeline depends on the complexity of your project.
+                    Simple websites can be completed in 2-4 weeks, while more
+                    complex ones may take 2-3 months.
                   </motion.div>
                 </AccordionContent>
               </MotionAccordionItem>
 
               <MotionAccordionItem
                 value="item-2"
-                className="border-b border-gray-200"
+                className="border-b border-gray-700/50"
                 variants={accordionItemVariants}
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <AccordionTrigger
-                  className={`text-lg font-medium ${
-                    enableGradientBackground ? "text-white" : ""
-                  }`}
-                >
-                  What should I prepare before starting?
+                <AccordionTrigger className="text-lg font-medium text-white group">
+                  Can I make changes to the website after it's live?
+                  <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
+                    <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />
+                  </div>
                 </AccordionTrigger>
-                <AccordionContent
-                  className={`${
-                    enableGradientBackground
-                      ? "text-white/80"
-                      : "text-muted-foreground"
-                  } text-sm`}
-                >
+                <AccordionContent className="text-gray-300/90 text-sm">
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    Prepare your project goals, any existing materials, and your
-                    budget.
+                    Yes, we provide a user-friendly content management system
+                    that allows you to make updates. We also offer maintenance
+                    packages for more complex changes.
                   </motion.div>
                 </AccordionContent>
               </MotionAccordionItem>
 
               <MotionAccordionItem
                 value="item-3"
-                className="border-b border-gray-200"
+                className="border-b border-gray-700/50"
                 variants={accordionItemVariants}
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <AccordionTrigger
-                  className={`text-lg font-medium ${
-                    enableGradientBackground ? "text-white" : ""
-                  }`}
-                >
-                  Does my company need help with marketing advice?
+                <AccordionTrigger className="text-lg font-medium text-white group">
+                  Do you only build new websites, or can you redesign mine?
+                  <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
+                    <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />
+                  </div>
                 </AccordionTrigger>
-                <AccordionContent
-                  className={`${
-                    enableGradientBackground
-                      ? "text-white/80"
-                      : "text-muted-foreground"
-                  } text-sm`}
-                >
+                <AccordionContent className="text-gray-300/90 text-sm">
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    Yes, most companies benefit from strategic marketing advice
-                    to grow and reach target audiences.
+                    We offer both services. We can build a brand new website
+                    from scratch or redesign your existing site to improve its
+                    design, functionality, and performance.
                   </motion.div>
                 </AccordionContent>
               </MotionAccordionItem>
             </Accordion>
           </motion.div>
+
           <div className="flex justify-end">
             <MotionCard
-              className="bg-transparent border-none  shadow-none p-0"
+              className="bg-transparent border-none shadow-none p-0"
               variants={cardVariants}
             >
-              <MotionCardHeader className="p-0 mb-4" variants={itemVariants}>
+              <MotionCardHeader className="p-0 mb-6" variants={itemVariants}>
                 <motion.h2
-                  className={`text-4xl font-bold text-[#3DB1B1] `}
+                  className="text-4xl font-bold text-white"
                   variants={itemVariants}
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300, damping: 10 }}
                 >
-                  New Project In Mind?
+                  How We Can Help You?
                 </motion.h2>
               </MotionCardHeader>
               <MotionCardContent
@@ -331,83 +301,66 @@ export default function AnimatedFaqSection({
                 variants={itemVariants}
               >
                 <motion.p
-                  className={`${
-                    enableGradientBackground
-                      ? "text-white/80"
-                      : "text-[#1C2D44]"
-                  } text-base leading-relaxed`}
+                  className="text-gray-300 text-base leading-relaxed"
                   variants={itemVariants}
                 >
-                  Get expert help, right when you need it. Subscribe to our
-                  newsletter.
+                  Follow our newsletter. We will regularly update our latest
+                  project and availability.
                 </motion.p>
 
                 <motion.form
-                  className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 max-w-md"
+                  className="flex flex-col gap-4 max-w-md"
                   variants={itemVariants}
                   onSubmit={handleSubmit(onSubmit)}
                 >
-                  <div className="flex-1 space-y-1">
-                    <MotionInput
-                      {...register("email")}
-                      placeholder="Enter Your Email"
-                      className={`rounded-lg px-4 py-2 h-11 w-full bg-[#F8F8F8] border border-[#AFAFAF] focus:ring-0 focus-visible:ring-0 ${
-                        errors.email ? "border-red-500" : ""
-                      }`}
-                      variants={itemVariants}
-                      whileFocus={{
-                        scale: 1.02,
-                        boxShadow: "0 0 0 2px rgba(101, 207, 95, 0.2)",
-                      }}
+                  <div className="flex items-center gap-2 w-full">
+                    <div className="w-full ">
+                      <MotionInput
+                        {...register("email")}
+                        placeholder="Enter Your email"
+                        className="rounded-md px-4 py-2 h-12 w-full bg-white/10 border border-gray-700/50 text-white focus:ring-0 focus-visible:ring-0 focus:border-teal-500 focus-visible:border-teal-500"
+                        variants={itemVariants}
+                        whileFocus={{
+                          scale: 1.02,
+                          boxShadow: "0 0 0 2px rgba(20, 184, 166, 0.2)",
+                        }}
+                        disabled={isSubmitting || isSuccess}
+                      />
+                      {errors.email && (
+                        <p className="text-sm text-red-400">
+                          {errors.email.message}
+                        </p>
+                      )}
+                    </div>
+                    <MotionButton
+                      type="submit"
+                      className="bg-teal-500 hover:bg-teal-600 text-white rounded-md px-6 py-3 h-auto font-medium"
+                      variants={buttonVariants}
+                      whileHover="hover"
+                      whileTap="tap"
                       disabled={isSubmitting || isSuccess}
-                    />
-                    {errors.email && (
-                      <p
-                        className={`text-sm ${
-                          enableGradientBackground
-                            ? "text-white/90"
-                            : "text-red-500"
-                        }`}
-                      >
-                        {errors.email.message}
-                      </p>
-                    )}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          Sending...
+                        </>
+                      ) : isSuccess ? (
+                        <>
+                          <Check className="mr-2 h-4 w-4" />
+                          Sent!
+                        </>
+                      ) : (
+                        "Lets Talk"
+                      )}
+                    </MotionButton>
                   </div>
-                  <MotionButton
-                    type="submit"
-                    className="bg-gradient-to-r h-11 from-[#65CF5F]/80 cursor-pointer to-[#1F9BED] hover:opacity-90 text-white rounded-md px-6 whitespace-nowrap"
-                    variants={buttonVariants}
-                    whileHover="hover"
-                    whileTap="tap"
-                    disabled={isSubmitting || isSuccess}
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Sending...
-                      </>
-                    ) : isSuccess ? (
-                      <>
-                        <Check className="mr-2 h-4 w-4" />
-                        Sent!
-                      </>
-                    ) : (
-                      "Let's Talk"
-                    )}
-                  </MotionButton>
-                </motion.form>
 
-                <motion.div className="pt-2" variants={itemVariants}>
-                  <MotionLink
-                    href="#faq"
-                    className={`inline-flex items-center text-[#3DB1B1] font-medium`}
-                    variants={itemVariants}
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    More FAQ
-                    <motion.span
-                      initial={{ x: 0 }}
+                  <div className="flex items-center justify-between">
+                    <MotionLink
+                      href="#faq"
+                      className="inline-flex items-center text-white font-medium"
+                      variants={itemVariants}
                       whileHover={{ x: 5 }}
                       transition={{
                         type: "spring",
@@ -415,17 +368,16 @@ export default function AnimatedFaqSection({
                         damping: 10,
                       }}
                     >
-                      <ArrowRight
-                        className={`ml-1 h-4 w-4 text-[#3DB1B1] font-medium`}
-                      />
-                    </motion.span>
-                  </MotionLink>
-                </motion.div>
+                      More FAQ
+                      <ArrowRight className="ml-1 h-4 w-4" />
+                    </MotionLink>
+                  </div>
+                </motion.form>
               </MotionCardContent>
             </MotionCard>
           </div>
         </motion.div>
-      </motion.div>
+      </div>
     </motion.section>
   );
 }

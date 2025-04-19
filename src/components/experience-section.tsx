@@ -21,7 +21,7 @@ export default function MarketingSection() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
@@ -30,7 +30,7 @@ export default function MarketingSection() {
       opacity: 1,
       transition: { duration: 0.5, ease: "easeOut" },
     },
-  }
+  };
 
   const imageVariants: Variants = {
     hidden: { scale: 0.9, opacity: 0 },
@@ -39,7 +39,7 @@ export default function MarketingSection() {
       opacity: 1,
       transition: { duration: 0.7, ease: "easeOut" },
     },
-  }
+  };
 
   const barContainerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -50,18 +50,18 @@ export default function MarketingSection() {
         delayChildren: 0.6,
       },
     },
-  }
+  };
 
   // Refs for scroll animations
-  const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: false, amount: 0.2 })
-  const controls = useAnimation()
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
+  const controls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
-      controls.start("visible")
+      controls.start("visible");
     }
-  }, [isInView, controls])
+  }, [isInView, controls]);
 
   return (
     <section
@@ -121,11 +121,11 @@ export default function MarketingSection() {
               </MotionDiv>
               <MotionDiv variants={itemVariants}>
                 <p className="font-semibold text-lg">(888) 321-7452</p>
-                <p className="text-xs">info@Creative Agency 360.com</p>
+                <p className="text-xs">info@creativeagency360.com</p>
               </MotionDiv>
             </MotionDiv>
             <MotionButton
-              className="bg-gradient-to-r from-[#65CF5F] to-[#209CEB] w-[200px] text-[17px] py-2 font-medium hover:opacity-90 text-white rounded-lg border-none"
+              className="bg-gradient-to-r from-[#65CF5F]/80 to-[#209CEB] w-[200px] text-[17px] py-2 font-medium hover:opacity-90 text-white rounded-lg border-none"
               variants={itemVariants}
               whileHover={{
                 scale: 1.05,
@@ -148,7 +148,7 @@ export default function MarketingSection() {
               EXPERIENCE
             </h2>
             <h2 className="text-4xl font-bold leading-snug">
-              <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
+              <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
                 That Speaks for Itself
               </span>
             </h2>
@@ -183,10 +183,16 @@ export default function MarketingSection() {
   );
 }
 
-function AnimatedServiceBar({ name, percentage }: { name: string; percentage: number }) {
-  const barRef = useRef(null)
-  const isInView = useInView(barRef, { once: false, amount: 0.5 })
-  const controls = useAnimation()
+function AnimatedServiceBar({
+  name,
+  percentage,
+}: {
+  name: string;
+  percentage: number;
+}) {
+  const barRef = useRef(null);
+  const isInView = useInView(barRef, { once: false, amount: 0.5 });
+  const controls = useAnimation();
 
   // Define barVariants inside the component
   const barVariants: Variants = {
@@ -196,15 +202,15 @@ function AnimatedServiceBar({ name, percentage }: { name: string; percentage: nu
       opacity: 1,
       transition: { duration: 1, ease: "easeOut" },
     },
-  }
+  };
 
   useEffect(() => {
     if (isInView) {
-      controls.start("visible")
+      controls.start("visible");
     } else {
-      controls.start("hidden")
+      controls.start("hidden");
     }
-  }, [isInView, controls])
+  }, [isInView, controls]);
 
   return (
     <MotionDiv
@@ -223,17 +229,21 @@ function AnimatedServiceBar({ name, percentage }: { name: string; percentage: nu
     >
       <div className="flex justify-between text-sm font-medium text-gray-800">
         <span>{name}</span>
-        <MotionDiv initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.5 }}>
+        <MotionDiv
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
           <span>{percentage}%</span>
         </MotionDiv>
       </div>
       <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
         <MotionDiv
-          className="h-full bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] rounded-full"
+          className="h-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] rounded-full"
           custom={percentage}
           variants={barVariants}
         ></MotionDiv>
       </div>
     </MotionDiv>
-  )
+  );
 }

@@ -42,9 +42,8 @@ const services = [
   { icon: serviceIcon2.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
   { icon: serviceIcon6.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
 ];
-const repeatedServices = [...services, ...services]; // repeat once for smooth looping
+const repeatedServices = [...services, ...services];
 
-// Add animation variants after the repeatedServices constant
 const fadeIn: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
@@ -55,14 +54,9 @@ const slideUp: Variants = {
   visible: { y: 0, opacity: 1 },
 };
 
-
 const slideLeft: Variants = {
   hidden: { x: 20, opacity: 0 },
   visible: { x: 0, opacity: 1 },
-};
-
-const stagger = {
-  visible: { transition: { staggerChildren: 0.1 } },
 };
 
 export default function DigitalMarketingHeroSection({
@@ -104,7 +98,7 @@ export default function DigitalMarketingHeroSection({
               >
                 <div className="text-sm">Email</div>
                 <div className="font-semibold text-base">
-                  info.advora@gmail.com
+                  info@creativeagency360.com
                 </div>
               </motion.div>
 
@@ -121,7 +115,7 @@ export default function DigitalMarketingHeroSection({
                 variants={slideLeft}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <Button className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2">
+                <Button className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2">
                   Lets have a talk
                 </Button>
               </motion.div>
@@ -132,7 +126,7 @@ export default function DigitalMarketingHeroSection({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="">
             <motion.h1
-              className="text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
               variants={slideUp}
               transition={{ duration: 0.7 }}
             >
@@ -142,7 +136,7 @@ export default function DigitalMarketingHeroSection({
                 transition={{ duration: 0.8, delay: 0.3 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
                   Not just websites
                 </span>
               </motion.span>
@@ -164,7 +158,7 @@ export default function DigitalMarketingHeroSection({
                 transition={{ duration: 0.6 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <Button className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-white px-8 py-3 text-base rounded-lg">
+                <Button className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white px-8 py-3 text-base rounded-lg">
                   Get In Touch
                 </Button>
               </motion.div>
@@ -193,7 +187,7 @@ export default function DigitalMarketingHeroSection({
 
           <div>
             <motion.div
-              className="bg-[#000000]/50 rounded-xl px-6 py-8 w-full max-w-[540px] ml-auto shadow-lg border border-[#1a3b49]/50"
+              className="bg-[#000000]/50 rounded-xl px-6 py-8 w-full max-w-[520px] ml-auto shadow-lg border border-[#1a3b49]/50"
               variants={slideLeft}
               transition={{ duration: 0.8 }}
             >
@@ -255,7 +249,7 @@ export default function DigitalMarketingHeroSection({
 
                 <Button
                   type="button"
-                  className="bg-gradient-to-r w-full from-[#65CF5F] to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2"
+                  className="bg-gradient-to-r w-full from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2"
                 >
                   Get A Quote
                 </Button>
@@ -296,8 +290,6 @@ export default function DigitalMarketingHeroSection({
   );
 }
 
-
-
 function AnimatedServiceCategory({
   icon,
   title,
@@ -317,16 +309,16 @@ function AnimatedServiceCategory({
     >
       {/* Logo */}
       <motion.div
-        className="flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full bg-white -ml-0.5 sm:-ml-1 mr-1.5 sm:mr-2"
+        className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white -ml-0.5 sm:-ml-1 mr-1.5 sm:mr-2"
         whileHover={{ rotate: 10, scale: 1.1 }}
       >
         {icon && (
           <Image
             src={icon || "/placeholder.svg"}
             alt={`${title} Logo`}
-            width={24}
-            height={24}
-            className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 object-contain"
+            width={500}
+            height={500}
+            className="w-4 h-4 sm:w-7 sm:h-7 md:w-8 md:h-8 object-contain"
           />
         )}
       </motion.div>

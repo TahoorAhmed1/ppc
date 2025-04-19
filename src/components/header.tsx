@@ -33,7 +33,7 @@ export default function Header() {
                 <Link
                   key={label}
                   href={href === "#home" ? "/" : href}
-                  className="text-sm  font-medium text-gray-500 underline-offset-4 hover:bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] hover:text-transparent bg-clip-text"
+                  className="text-sm  font-medium text-gray-500 underline-offset-4 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-transparent bg-clip-text"
                 >
                   {label}
                 </Link>
@@ -44,7 +44,7 @@ export default function Header() {
 
         <div className="flex items-center md:gap-4 gap-2">
           <a href="#contactus" className="">
-            <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F] to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none sm:text-sm text-xs md:px-4 px-2   py-2">
+            <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none sm:text-sm text-xs md:px-4 px-2   py-2">
               Get Free Consultation
             </Button>
           </a>

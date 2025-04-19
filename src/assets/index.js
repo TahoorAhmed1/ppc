@@ -52,9 +52,11 @@ import serviceIcon3 from "@/assets/images/servies-icon (3).svg";
 import serviceIcon4 from "@/assets/images/servies-icon (4).svg";
 import serviceIcon5 from "@/assets/images/servies-icon (5).svg";
 import serviceIcon6 from "@/assets/images/servies-icon (6).svg";
+import fap from "@/assets/images/faq-background.png";
 
 export {
   logo,
+  fap,
   heroSectionImage,
   firmsLogos,
   mailIcon,
