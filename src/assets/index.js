@@ -5,9 +5,12 @@ import profileImage from "@/assets/images/profile-image.webp";
 import projectDoneLine from "@/assets/images/project-done-line.svg";
 import heroSectionImage from "@/assets/images/hero-image.svg";
 import heroSectionImage2 from "@/assets/images/girl-image.webp";
-import aboutCardIcon1 from "@/assets/images/Illust 1.svg";
-import aboutCardIcon2 from "@/assets/images/Illust 2.svg";
-import aboutCardIcon3 from "@/assets/images/Illust 3.svg";
+import aboutCardIcon1 from "@/assets/images/Illust-1.svg";
+import aboutCardIcon1Hover from "@/assets/images/Illust-1-hover.svg";
+import aboutCardIcon2 from "@/assets/images/Illust-2.svg";
+import aboutCardIcon2Hover from "@/assets/images/Illust-2-hover.svg";
+import aboutCardIcon3 from "@/assets/images/Illust-3.svg";
+import aboutCardIcon3Hover from "@/assets/images/Illust-3-hover.svg";
 import offerIcon1 from "@/assets/images/offer-icon (6).svg";
 import offerIcon2 from "@/assets/images/offer-icon (5).svg";
 import offerIcon3 from "@/assets/images/offer-icon (1).svg";
@@ -72,6 +75,14 @@ import project13 from "@/assets/images/project/piza_enhanced.webp";
 import project14 from "@/assets/images/project/skin_enhanced.webp";
 import project15 from "@/assets/images/project/timothy_enhanced.webp";
 import project16 from "@/assets/images/project/yohan it_enhanced.webp";
+import profileImage1 from "@/assets/images/pfp (1).jpg";
+import profileImage2 from "@/assets/images/pfp (2).jpg";
+import profileImage3 from "@/assets/images/pfp (3).jpg";
+import profileImage4 from "@/assets/images/pfp (4).jpg";
+import profileImage5 from "@/assets/images/pfp (5).jpg";
+import profileImage6 from "@/assets/images/pfp (6).jpg";
+import profileImage7 from "@/assets/images/pfp (7).jpg";
+import profileImage8 from "@/assets/images/pfp (8).jpg";
 
 export {
   project1,
@@ -104,6 +115,9 @@ export {
   aboutCardIcon1,
   aboutCardIcon2,
   aboutCardIcon3,
+  aboutCardIcon1Hover,
+  aboutCardIcon2Hover,
+  aboutCardIcon3Hover,
   offerIcon1,
   offerIcon2,
   offerIcon3,
@@ -148,20 +162,12 @@ export {
   wixIcon,
   webflowIcon,
   wordpressIcon,
-  // project1,
-  // project2,
-  // project3,
-  // project4,
-  // project5,
-  // project6,
-  // project7,
-  // project8,
-  // project9,
-  // project10,
-  // project11,
-  // project12,
-  // project13,
-  // project14,
-  // project15,
-  // project16,
+  profileImage1,
+  profileImage2,
+  profileImage3,
+  profileImage4,
+  profileImage5,
+  profileImage6,
+  profileImage7,
+  profileImage8,
 };

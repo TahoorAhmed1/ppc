@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
 import TestimonialCard from "./testimonial-card"
+import { a } from "motion/react-client"
+import { profileImage1, profileImage2, profileImage3, profileImage4, profileImage5, profileImage6, profileImage7, profileImage8 } from "@/assets"
 
 function chunkArray<T>(array: T[], size: number): T[][] {
   const chunks: T[][] = []
@@ -23,6 +25,7 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       id: 1,
+      avatar: profileImage1.src,
       name: "Sarah Johnson",
       role: "Marketing Director",
       content:
@@ -30,6 +33,7 @@ export default function TestimonialsSection() {
     },
     {
       id: 2,
+      avatar: profileImage2.src,
       name: "David Thompson",
       role: "CEO, Tech Startup",
       content:
@@ -37,6 +41,7 @@ export default function TestimonialsSection() {
     },
     {
       id: 3,
+      avatar: profileImage3.src,
       name: "Michael Rodriguez",
       role: "E-commerce Manager",
       content:
@@ -44,6 +49,7 @@ export default function TestimonialsSection() {
     },
     {
       id: 4,
+      avatar: profileImage4.src,
       name: "Emily Carter",
       role: "Product Manager",
       content:
@@ -51,40 +57,29 @@ export default function TestimonialsSection() {
     },
     {
       id: 5,
+      avatar: profileImage5.src,
       name: "James Wilson",
       role: "Operations Head",
       content: "Professional, punctual, and results-driven. Advera has been our go-to agency for all things digital.",
     },
     {
-      id: 1,
-      name: "Sarah Johnson",
-      role: "Marketing Director",
-      content:
-        "Working with Advera has been a transformative experience for our business. Their strategic approach to digital marketing has significantly increased our online visibility and customer engagement.",
-    },
-    {
-      id: 2,
-      name: "David Thompson",
-      role: "CEO, Tech Startup",
-      content:
-        "The team at Advera truly understands our vision and has helped us create a website that perfectly represents our brand. Their attention to detail and commitment to excellence is unmatched.",
-    },
-    {
-      id: 3,
-      name: "Michael Rodriguez",
-      role: "E-commerce Manager",
-      content:
-        "Since partnering with Advera, our online sales have increased by 40%. Their SEO and PPC strategies have been incredibly effective in driving qualified traffic to our website.",
-    },
-    {
-      id: 4,
+      id: 6,
+      avatar: profileImage6.src,
       name: "Emily Carter",
       role: "Product Manager",
       content:
         "Advera's creative team brought our product to life. Their branding strategy helped us stand out in a crowded market.",
     },
     {
-      id: 5,
+      id: 7,
+      avatar: profileImage7.src,
+      name: "James Wilson",
+      role: "Operations Head",
+      content: "Professional, punctual, and results-driven. Advera has been our go-to agency for all things digital.",
+    },
+    {
+      id: 8,
+      avatar: profileImage8.src,
       name: "James Wilson",
       role: "Operations Head",
       content: "Professional, punctual, and results-driven. Advera has been our go-to agency for all things digital.",
