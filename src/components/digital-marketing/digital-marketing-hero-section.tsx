@@ -201,20 +201,17 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
               variants={slideLeft}
               transition={{ duration: 0.8 }}
             >
-<<<<<<< HEAD
               <h2 className="text-3xl font-bold mb-4">Request a Quote</h2>
               <p className="text-base text-gray-300 mb-6">
                 Enhance your Design and start thriving by signing up for our
                 services today.
-=======
-              <h2 className="text-2xl font-bold mb-2">Request a Quote</h2>
-              <p className="text-sm text-gray-300 mb-6">
-                Enhance your Design and start thriving by signing up for our services today.
->>>>>>> cd11406d3ab73a6e363847b485776eee9e220dfb
               </p>
 
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-4"
+                >
                   <FormField
                     control={form.control}
                     name="name"
@@ -226,7 +223,8 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
                             placeholder="Full Name"
                             className="w-full p-4 h-11 bg-[#1a3b49]/40 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200  text-base outline-none"
                             style={{
-                              boxShadow: "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                              boxShadow:
+                                "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
                             }}
                           />
                         </FormControl>
@@ -247,7 +245,8 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
                             placeholder="Email Address"
                             className="w-full p-4 h-11 bg-[#1a3b49]/40 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base outline-none"
                             style={{
-                              boxShadow: "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                              boxShadow:
+                                "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
                             }}
                           />
                         </FormControl>
@@ -268,7 +267,8 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
                             placeholder="Phone Number"
                             className="w-full p-4 h-11 bg-[#1a3b49]/40 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base outline-none"
                             style={{
-                              boxShadow: "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                              boxShadow:
+                                "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
                             }}
                           />
                         </FormControl>
@@ -289,7 +289,8 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
                             rows={4}
                             className="w-full p-4 h-32 bg-[#1a3b49]/40 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base resize-none outline-none"
                             style={{
-                              boxShadow: "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                              boxShadow:
+                                "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
                             }}
                           />
                         </FormControl>
@@ -332,10 +333,14 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
         </div>
       </div>
 
-      <motion.div className="relative z-10 mt-8 pb-8" variants={fadeIn} transition={{ duration: 0.7, delay: 0.5 }}>
+      <motion.div
+        className="relative z-10 mt-8 pb-8"
+        variants={fadeIn}
+        transition={{ duration: 0.7, delay: 0.5 }}
+      >
         {/* Use the AnimatedServiceCategory component */}
         <AnimatedServiceCategory services={services} />
       </motion.div>
     </motion.div>
-  )
+  );
 }
