@@ -69,8 +69,14 @@ import project13 from "@/assets/images/project/piza.jpg";
 import project14 from "@/assets/images/project/skin.jpg";
 import project15 from "@/assets/images/project/timothy.jpg";
 import project16 from "@/assets/images/project/yohan it.jpg";
+import package2 from "@/assets/images/package2.png";
+import package3 from "@/assets/images/package3.png";
+import package4 from "@/assets/images/package4.png";
 
 export {
+  package4,
+  package2,
+  package3,
   logo,
   fap,
   heroSectionImage,

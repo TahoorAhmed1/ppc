@@ -30,7 +30,10 @@ export default function RequestQuoteForm() {
   return (
     <div className="w-full h-full max-w-lg bg-gray-900/70 backdrop-blur-sm p-8 rounded-lg ">
       <h2 className="text-3xl font-bold text-white mb-4">Request a Quote</h2>
-      <p className="text-gray-200 mb-6">Enhance your Design and start thriving by signing up for our services today.</p>
+      <p className="text-gray-200 mb-6">
+        Enhance your Design and start thriving by signing up for our services
+        today.
+      </p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -75,7 +78,7 @@ export default function RequestQuoteForm() {
             placeholder="Write Your business description"
             value={formData.description}
             onChange={handleChange}
-            className="bg-gray-800/70 border-gray-700 text-white placeholder:text-gray-400 min-h-[100px]"
+            className="bg-gray-800/70 border-gray-700 text-white placeholder:text-gray-400 h-32"
             required
           />
         </div>
@@ -93,5 +96,5 @@ export default function RequestQuoteForm() {
         </Button>
       </form>
     </div>
-  )
+  );
 }

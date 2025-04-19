@@ -1,18 +1,18 @@
 "use client"
 
-import { useEffect, useRef, useState, type RefObject } from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent } from "@/components/ui/card"
-import { personImage } from "@/assets"
-import { motion, useAnimation } from "framer-motion"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
-import { Check, Loader2 } from "lucide-react"
-import { notify } from "@/lib/utils"
+import { useEffect, useRef, useState, type RefObject } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
+import { personImage } from "@/assets";
+import { motion, useAnimation } from "framer-motion";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Check, Loader2 } from "lucide-react";
+import { notify } from "@/lib/utils";
 
 function useInView(options = {}): [RefObject<HTMLDivElement | null>, boolean, boolean] {
   const ref = useRef<HTMLDivElement>(null)
