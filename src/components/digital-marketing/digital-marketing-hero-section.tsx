@@ -28,6 +28,7 @@ import {
   serviceIcon2,
   serviceIcon3,
   serviceIcon4,
+  serviceIcon5,
   serviceIcon6,
 } from "@/assets/index";
 import { notify } from "@/lib/utils";
@@ -52,18 +53,18 @@ interface CompactServiceCategoryProps {
 // Mock award images for demonstration
 const award = [award1.src, award2.src, award3.src, award4.src];
 const services = [
-  { icon: serviceIcon1.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
+  { icon: serviceIcon1.src, title: "REAL ESTATE", subtitle: "W E B S I T E" },
   { icon: serviceIcon2.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
-  { icon: serviceIcon3.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
-  { icon: serviceIcon4.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
+  { icon: serviceIcon3.src, title: "PHARMA / MEDIC", subtitle: "W E B S I T E" },
+  { icon: serviceIcon4.src, title: "TECHNOLOGY", subtitle: "W E B S I T E" },
+  { icon: serviceIcon5.src, title: "PHARMA / MEDIC", subtitle: "W E B S I T E" },
+  { icon: serviceIcon6.src, title: "E-COMMERCE", subtitle: "W E B S I T E" },
+  { icon: serviceIcon1.src, title: "REAL ESTATE", subtitle: "W E B S I T E" },
   { icon: serviceIcon2.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
-  { icon: serviceIcon6.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
-  { icon: serviceIcon1.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
-  { icon: serviceIcon2.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
-  { icon: serviceIcon3.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
-  { icon: serviceIcon4.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
-  { icon: serviceIcon2.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
-  { icon: serviceIcon6.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
+  { icon: serviceIcon3.src, title: "PHARMA / MEDIC", subtitle: "W E B S I T E" },
+  { icon: serviceIcon4.src, title: "TECHNOLOGY", subtitle: "W E B S I T E" },
+  { icon: serviceIcon5.src, title: "PHARMA / MEDIC", subtitle: "W E B S I T E" },
+  { icon: serviceIcon6.src, title: "E-COMMERCE", subtitle: "W E B S I T E" },
 ];
 const repeatedServices = [...services, ...services];
 
