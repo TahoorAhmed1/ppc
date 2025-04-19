@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useEffect, useRef, useState, type RefObject } from "react";
 import Image from "next/image";
@@ -15,35 +15,33 @@ import { Check, Loader2 } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
 import { notify } from "@/lib/utils";
 
-function useInView(
-  options = {}
-): [RefObject<HTMLDivElement | null>, boolean, boolean] {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-  const [hasTriggered, setHasTriggered] = useState(false);
+function useInView(options = {}): [RefObject<HTMLDivElement | null>, boolean, boolean] {
+  const ref = useRef<HTMLDivElement>(null)
+  const [isInView, setIsInView] = useState(false)
+  const [hasTriggered, setHasTriggered] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
-      setIsInView(entry.isIntersecting);
+      setIsInView(entry.isIntersecting)
 
       if (entry.isIntersecting && !hasTriggered) {
-        setHasTriggered(true);
+        setHasTriggered(true)
       }
-    }, options);
+    }, options)
 
-    const currentRef = ref.current;
+    const currentRef = ref.current
     if (currentRef) {
-      observer.observe(currentRef);
+      observer.observe(currentRef)
     }
 
     return () => {
       if (currentRef) {
-        observer.unobserve(currentRef);
+        observer.unobserve(currentRef)
       }
-    };
-  }, [hasTriggered, options]);
+    }
+  }, [hasTriggered, options])
 
-  return [ref, isInView, hasTriggered];
+  return [ref, isInView, hasTriggered]
 }
 
 // Create Zod schema for form validation
@@ -51,19 +49,14 @@ const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z.string().min(10, { message: "Please enter a valid phone number" }),
-  website_url: z
-    .string()
-    .url({ message: "Please enter a valid website URL" })
-    .or(z.string().length(0)),
-  message: z
-    .string()
-    .min(5, { message: "Message must be at least 5 characters" }),
+  website_url: z.string().url({ message: "Please enter a valid website URL" }).or(z.string().length(0)),
+  message: z.string().min(5, { message: "Message must be at least 5 characters" }),
   package_price: z.string().optional(),
   ip_address: z.string().optional(),
-});
+})
 
 // Define the form data type based on the schema
-type ContactFormData = z.infer<typeof contactFormSchema>;
+type ContactFormData = z.infer<typeof contactFormSchema>
 
 // Motion variants for animations
 const containerVariants = {
@@ -75,7 +68,7 @@ const containerVariants = {
       delayChildren: 0.3,
     },
   },
-};
+}
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
@@ -88,7 +81,7 @@ const itemVariants = {
       damping: 10,
     },
   },
-};
+}
 
 const imageVariants = {
   hidden: { scale: 0.8, opacity: 0 },
@@ -101,7 +94,7 @@ const imageVariants = {
       delay: 0.5,
     },
   },
-};
+}
 
 const formItemVariants = {
   hidden: { x: -20, opacity: 0 },
@@ -115,7 +108,7 @@ const formItemVariants = {
       damping: 10,
     },
   }),
-};
+}
 
 const buttonVariants = {
   hidden: { opacity: 0, scale: 0.8 },
@@ -131,20 +124,34 @@ const buttonVariants = {
   tap: {
     scale: 0.95,
   },
-};
+}
 
-const MotionInput = motion(Input);
-const MotionTextarea = motion(Textarea);
-const MotionButton = motion(Button);
-const MotionCard = motion(Card);
+const pulse : any = {
+  hidden: { scale: 0.9, opacity: 0.3 },
+  visible: {
+    scale: [1, 1.05, 1],
+    opacity: [0.3],
+    transition: {
+      repeat: Number.POSITIVE_INFINITY,
+      repeatType: "reverse",
+      duration: 3,
+    },
+  },
+}
+
+const MotionInput = motion(Input)
+const MotionTextarea = motion(Textarea)
+const MotionButton = motion(Button)
+const MotionCard = motion(Card)
 
 export default function ContactSection() {
-  const controls = useAnimation();
+  const controls = useAnimation()
   const [containerRef, isInView, hasTriggered] = useInView({
     threshold: 0.2,
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
 
   // Initialize React Hook Form with Zod resolver
   const {
@@ -163,35 +170,32 @@ export default function ContactSection() {
       package_price: "",
       ip_address: "",
     },
-  });
+  })
 
   const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
+    setIsSubmitting(true)
 
     try {
-      const formData = new FormData();
+      const formData = new FormData()
       Object.entries(data).forEach(([key, value]) => {
-        if (value) formData.append(key, value);
-      });
+        if (value) formData.append(key, value)
+      })
 
       try {
-        const ipResponse = await fetch("https://api.ipify.org?format=json");
-        const ipData = await ipResponse.json();
-        formData.append("ip_address", ipData.ip);
+        const ipResponse = await fetch("https://api.ipify.org?format=json")
+        const ipData = await ipResponse.json()
+        formData.append("ip_address", ipData.ip)
       } catch (error) {
-        console.error("Could not fetch IP address:", error);
+        console.error("Could not fetch IP address:", error)
       }
 
-      const response = await fetch(
-        "https://demo7.obistest.online/api/store-contact-us-form",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const response = await fetch("https://demo7.obistest.online/api/store-contact-us-form", {
+        method: "POST",
+        body: formData,
+      })
 
       if (!response.ok) {
-        throw new Error("Failed to submit form");
+        throw new Error("Failed to submit form")
       }
 
       setIsSuccess(true);
@@ -199,25 +203,35 @@ export default function ContactSection() {
       notify("success", "Message sent successfully!");
 
       setTimeout(() => {
-        reset();
-        setIsSuccess(false);
-      }, 2000);
+        reset()
+        setIsSuccess(false)
+      }, 2000)
     } catch (error) {
       console.log("error", error);
-    } finally {
-      setIsSubmitting(false);
     }
-  };
-
-  useEffect(() => {
-    if (isInView || hasTriggered) {
-      controls.start("visible");
-    }
-  }, [controls, isInView, hasTriggered]);
+    setIsLoaded(true)
+  }
 
   return (
-    <section className="pt-5 md:pt-8 bg-white overflow-hidden" id="contactus">
-      <div className="container ">
+    <section className="pt-5 md:pt-8 bg-white overflow-hidden relative" id="contactus">
+      {/* Background animated balls */}
+      <motion.div
+        initial="hidden"
+        animate={isLoaded ? "visible" : "hidden"}
+        variants={pulse}
+        className="absolute md:top-[15%] top-[10%] left-[5%] w-[12vw] h-[12vw] md:w-[10vw] md:h-[10vw] rounded-full bg-gradient-to-r from-[#65CE5C]/40 to-[#3DB1B1]/30 opacity-50 pointer-events-none"
+        style={{ zIndex: 0 }}
+      ></motion.div>
+
+      <motion.div
+        initial="hidden"
+        animate={isLoaded ? "visible" : "hidden"}
+        variants={pulse}
+        className="absolute md:bottom-[15%] bottom-[10%] right-[5%] w-[14vw] h-[14vw] md:w-[12vw] md:h-[12vw] rounded-full bg-gradient-to-r from-[#209CEB]/40 to-[#65CE5C]/30 opacity-40 pointer-events-none"
+        style={{ zIndex: 0 }}
+      ></motion.div>
+
+      <div className="container relative" style={{ zIndex: 1 }}>
         <motion.div
           ref={containerRef}
           variants={containerVariants}
@@ -225,10 +239,7 @@ export default function ContactSection() {
           animate={controls}
           className="grid gap-6 lg:grid-cols-2 lg:gap-8 items-center px-10"
         >
-          <motion.div
-            variants={containerVariants}
-            className="flex flex-col justify-center space-y-4"
-          >
+          <motion.div variants={containerVariants} className="flex flex-col justify-center space-y-4">
             <motion.div variants={itemVariants} className="space-y-3">
               <motion.h2
                 variants={itemVariants}
@@ -237,8 +248,7 @@ export default function ContactSection() {
                 Ready to Get Started?
               </motion.h2>
               <motion.p variants={itemVariants} className="max-w-[600px]">
-                Talk to our experts to discuss things further and experience the
-                difference.
+                Talk to our experts to discuss things further and experience the difference.
               </motion.p>
             </motion.div>
 
@@ -248,20 +258,9 @@ export default function ContactSection() {
               className="shadow-none border-0 p-0 "
             >
               <CardContent className="p-0">
-                <motion.form
-                  variants={containerVariants}
-                  className="space-y-4"
-                  onSubmit={handleSubmit(onSubmit)}
-                >
-                  <motion.div
-                    variants={containerVariants}
-                    className="grid grid-cols-1 gap-4 sm:grid-cols-2"
-                  >
-                    <motion.div
-                      custom={0}
-                      variants={formItemVariants}
-                      className="space-y-2"
-                    >
+                <motion.form variants={containerVariants} className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
+                  <motion.div variants={containerVariants} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <motion.div custom={0} variants={formItemVariants} className="space-y-2">
                       <MotionInput
                         {...register("name")}
                         id="name"
@@ -275,17 +274,9 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.name && (
-                        <p className="text-sm text-red-500">
-                          {errors.name.message}
-                        </p>
-                      )}
+                      {errors.name && <p className="text-sm text-red-500">{errors.name.message}</p>}
                     </motion.div>
-                    <motion.div
-                      custom={1}
-                      variants={formItemVariants}
-                      className="space-y-2"
-                    >
+                    <motion.div custom={1} variants={formItemVariants} className="space-y-2">
                       <MotionInput
                         {...register("email")}
                         id="email"
@@ -300,17 +291,9 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.email && (
-                        <p className="text-sm text-red-500">
-                          {errors.email.message}
-                        </p>
-                      )}
+                      {errors.email && <p className="text-sm text-red-500">{errors.email.message}</p>}
                     </motion.div>
-                    <motion.div
-                      custom={2}
-                      variants={formItemVariants}
-                      className="space-y-2"
-                    >
+                    <motion.div custom={2} variants={formItemVariants} className="space-y-2">
                       <MotionInput
                         {...register("phone")}
                         id="phone"
@@ -324,17 +307,9 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.phone && (
-                        <p className="text-sm text-red-500">
-                          {errors.phone.message}
-                        </p>
-                      )}
+                      {errors.phone && <p className="text-sm text-red-500">{errors.phone.message}</p>}
                     </motion.div>
-                    <motion.div
-                      custom={3}
-                      variants={formItemVariants}
-                      className="space-y-2"
-                    >
+                    <motion.div custom={3} variants={formItemVariants} className="space-y-2">
                       <MotionInput
                         {...register("website_url")}
                         id="website_url"
@@ -349,18 +324,10 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.website_url && (
-                        <p className="text-sm text-red-500">
-                          {errors.website_url.message}
-                        </p>
-                      )}
+                      {errors.website_url && <p className="text-sm text-red-500">{errors.website_url.message}</p>}
                     </motion.div>
                   </motion.div>
-                  <motion.div
-                    custom={4}
-                    variants={formItemVariants}
-                    className="space-y-2"
-                  >
+                  <motion.div custom={4} variants={formItemVariants} className="space-y-2">
                     <MotionTextarea
                       {...register("message")}
                       id="message"
@@ -374,11 +341,7 @@ export default function ContactSection() {
                       }}
                       transition={{ type: "spring", stiffness: 300 }}
                     />
-                    {errors.message && (
-                      <p className="text-sm text-red-500">
-                        {errors.message.message}
-                      </p>
-                    )}
+                    {errors.message && <p className="text-sm text-red-500">{errors.message.message}</p>}
                   </motion.div>
                   <MotionButton
                     variants={buttonVariants}
@@ -406,15 +369,13 @@ export default function ContactSection() {
             </MotionCard>
           </motion.div>
 
-          <motion.div
-            variants={imageVariants}
-            className="relative lg:flex hidden items-center justify-center "
-          >
+          <motion.div variants={imageVariants} className="relative lg:flex hidden items-center justify-center ">
             <motion.div>
               <Image
                 src={
                   personImage ||
                   "/placeholder.svg?height=500&width=400&query=business person" ||
+                  "/placeholder.svg" ||
                   "/placeholder.svg"
                 }
                 alt="Contact Us"
@@ -427,5 +388,5 @@ export default function ContactSection() {
         </motion.div>
       </div>
     </section>
-  );
+  )
 }
