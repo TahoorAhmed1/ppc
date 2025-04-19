@@ -191,11 +191,20 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
               unforgettable.
             </motion.h1>
 
-            <motion.div className="flex flex-wrap items-center gap-4 mt-6" variants={fadeIn}>
-              <motion.div variants={slideUp} transition={{ duration: 0.6 }} whileHover={{ scale: 1.05 }}>
-                <Button className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white px-8 py-3 text-base rounded-lg">
-                  Get In Touch
-                </Button>
+            <motion.div
+              className="flex flex-wrap items-center gap-4 mt-6"
+              variants={fadeIn}
+            >
+              <motion.div
+                variants={slideUp}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <a href="#contactus">
+                  <Button className="bg-gradient-to-r cursor-pointer h-12 from-[#65CF5F]/80 to-[#1F9BED] text-white px-8 py-3 text-base rounded-lg">
+                    Get In Touch
+                  </Button>
+                </a>
               </motion.div>
 
               <div className="flex gap-6 items-center">
@@ -222,7 +231,7 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
 
           <div>
             <motion.div
-              className="bg-[#000000]/50 rounded-xl px-6 py-8 w-full max-w-[520px] ml-auto shadow-lg border border-[#1a3b49]/50"
+              className="bg-[#000000]/50 rounded-xl px-6 py-8 w-full max-w-[540px] ml-auto shadow-lg border border-[#1a3b49]/50"
               variants={slideLeft}
               transition={{ duration: 0.8 }}
             >
@@ -242,7 +251,7 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
                           <Input
                             {...field}
                             placeholder="Full Name"
-                            className="w-full p-2 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
+                            className="w-full p-2 h-11 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
                             style={{
                               boxShadow: "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
                             }}
@@ -263,7 +272,7 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
                             {...field}
                             type="email"
                             placeholder="Email Address"
-                            className="w-full p-2 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
+                            className="w-full p-2 h-11 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
                             style={{
                               boxShadow: "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
                             }}
@@ -284,7 +293,7 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
                             {...field}
                             type="tel"
                             placeholder="Phone Number"
-                            className="w-full p-2 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
+                            className="w-full p-2 h-11 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
                             style={{
                               boxShadow: "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
                             }}
@@ -305,7 +314,7 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
                             {...field}
                             placeholder="Write Your business description"
                             rows={4}
-                            className="w-full p-2 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base outline-none"
+                            className="w-full p-2 h-20 bg-[#1a3b49]/40 placeholder:font-semibold font-semibold rounded-md text-white placeholder-white text-base resize-none outline-none"
                             style={{
                               boxShadow: "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
                             }}

@@ -95,15 +95,14 @@ export default function MarketingSection() {
         whileTap={{ scale: 0.95 }}
       ></motion.div>
 
-<motion.div
-  initial="hidden"
-  animate={isLoaded ? "visible" : "hidden"}
-  variants={pulse}
-  className="absolute md:bottom-[0%] bottom-[15%] left-[0%] w-[9vw] h-[9vw] md:w-[7.5vw] md:h-[7.5vw] rounded-full bg-gradient-to-r from-[#3DB1B1]/70 to-[#65CF5F]/60 opacity-40"
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-></motion.div>
-
+      <motion.div
+        initial="hidden"
+        animate={isLoaded ? "visible" : "hidden"}
+        variants={pulse}
+        className="absolute md:bottom-[0%] bottom-[15%] left-[0%] w-[9vw] h-[9vw] md:w-[7.5vw] md:h-[7.5vw] rounded-full bg-gradient-to-r from-[#3DB1B1]/70 to-[#65CF5F]/60 opacity-40"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      ></motion.div>
 
       <MotionDiv
         className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16 relative z-10"
@@ -112,8 +111,14 @@ export default function MarketingSection() {
         animate={controls}
       >
         {/* Image & CTA Section */}
-        <MotionDiv className="w-full lg:w-1/2 flex flex-col items-center gap-6" variants={containerVariants}>
-          <MotionImage className="w-full max-w-[500px] rounded-xl overflow-hidden" variants={imageVariants}>
+        <MotionDiv
+          className="w-full lg:w-1/2 flex flex-col items-center gap-6"
+          variants={containerVariants}
+        >
+          <MotionImage
+            className="w-full max-w-[500px] rounded-xl overflow-hidden"
+            variants={imageVariants}
+          >
             <Image
               src={experienceImage || "/placeholder.svg"}
               alt="Digital marketing professional"
@@ -154,24 +159,31 @@ export default function MarketingSection() {
                 <p className="text-xs">info@creativeagency360.com</p>
               </MotionDiv>
             </MotionDiv>
-            <MotionButton
-              className="bg-gradient-to-r from-[#65CF5F]/80 to-[#209CEB] w-[200px] text-[17px] py-2 font-medium hover:opacity-90 text-white rounded-lg border-none"
-              variants={itemVariants}
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0px 5px 15px rgba(31, 155, 237, 0.3)",
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Get In Touch
-            </MotionButton>
+            <a href="#contactus">
+              <MotionButton
+                className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] w-[200px] text-[17px] py-2 font-medium hover:opacity-90 text-white rounded-lg border-none"
+                variants={itemVariants}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0px 5px 15px rgba(31, 155, 237, 0.3)",
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Get In Touch
+              </MotionButton>
+            </a>
           </MotionDiv>
         </MotionDiv>
 
         {/* Text & Service Bars */}
-        <MotionDiv className="w-full lg:w-1/2 space-y-6 text-center lg:text-left" variants={containerVariants}>
+        <MotionDiv
+          className="w-full lg:w-1/2 space-y-6 text-center lg:text-left"
+          variants={containerVariants}
+        >
           <MotionDiv className="space-y-2" variants={itemVariants}>
-            <h2 className="text-[#1d3557] text-2xl font-bold uppercase">EXPERIENCE</h2>
+            <h2 className="text-[#1d3557] text-2xl font-bold uppercase">
+              EXPERIENCE
+            </h2>
             <h2 className="text-4xl font-bold leading-snug">
               <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
                 That Speaks for Itself
@@ -179,11 +191,16 @@ export default function MarketingSection() {
             </h2>
           </MotionDiv>
 
-          <MotionDiv variants={itemVariants} className="text-[#1d3557] font-medium text-sm leading-relaxed">
+          <MotionDiv
+            variants={itemVariants}
+            className="text-[#1d3557] font-medium text-sm leading-relaxed"
+          >
             <p>
-              Whether you are looking to create a mind-boggling website or e-commerce store, a promising Digital
-              Marketing Strategy, or attention-grabbing graphic design services, we have the right bunch of people who
-              go beyond your expectations to produce exemplary results.
+              Whether you are looking to create a mind-boggling website or
+              e-commerce store, a promising Digital Marketing Strategy, or
+              attention-grabbing graphic design services, we have the right
+              bunch of people who go beyond your expectations to produce
+              exemplary results.
             </p>
           </MotionDiv>
 
@@ -200,7 +217,7 @@ export default function MarketingSection() {
         </MotionDiv>
       </MotionDiv>
     </section>
-  )
+  );
 }
 
 function AnimatedServiceBar({

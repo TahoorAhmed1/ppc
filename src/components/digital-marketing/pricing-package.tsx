@@ -193,18 +193,20 @@ export default function PricingPackage() {
                 <span className="font-medium">Book Now</span>
                 <ArrowRight size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
-              <button className="border-4 border-teal-500 text-teal-500 w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded flex justify-between items-center text-base sm:text-lg">
-                <span className="font-medium bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
-                  +18045745376
-                </span>
-                <ArrowRight size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
-              </button>
-              <button className="border-4 border-teal-500 text-teal-500 w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded flex justify-between items-center text-base sm:text-lg">
+              <a href="tel:+18045745376">
+                <button className="border-4 cursor-pointer border-teal-500 text-teal-500 w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded flex justify-between items-center text-base sm:text-lg">
+                  <span className="font-medium bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
+                    +18045745376
+                  </span>
+                  <ArrowRight size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
+                </button>
+              </a>
+              {/* <button className="border-4 border-teal-500 text-teal-500 w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded flex justify-between items-center text-base sm:text-lg">
                 <span className="font-medium bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
                   View Portfolio
                 </span>
                 <ArrowRight size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
-              </button>
+              </button> */}
             </div>
           </div>
 
