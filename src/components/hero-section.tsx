@@ -357,7 +357,7 @@ export default function HeroSection() {
                 whileTap={{ scale: 0.95 }}
               >
                 <a href="#contactus">
-                  <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] w-[220px] text-[17px] font-medium hover:opacity-90 text-white rounded-lg border-none">
+                  <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-[220px] text-[17px] font-medium hover:opacity-90 text-white rounded-lg border-none">
                     Get In Touch
                   </Button>
                 </a>

@@ -227,7 +227,10 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="pt-5 md:pt-8 bg-white overflow-hidden relative" id="contactus">
+    <section
+      className="pt-5 md:pt-8 bg-white overflow-hidden relative"
+      id="contactus"
+    >
       {/* Background animated balls */}
       <motion.div
         className="absolute top-10 left-0 w-full h-full"
@@ -240,9 +243,7 @@ export default function ContactSection() {
           animate="visible"
           variants={pulse}
           className="absolute md:top-[15%] top-[10%] left-[5%] w-[12vw] h-[12vw] md:w-[10vw] md:h-[10vw] rounded-full bg-gradient-to-r from-[#65CE5C]/40 to-[#3DB1B1]/30 opacity-50 pointer-events-none"
-        >
-          
-        </motion.div>
+        ></motion.div>
 
         <motion.div
           initial="hidden"
@@ -250,11 +251,7 @@ export default function ContactSection() {
           variants={pulse}
           transition={{ delay: 0.3 }}
           className="absolute md:bottom-[15%] bottom-[10%] right-[5%] w-[14vw] h-[14vw] md:w-[12vw] md:h-[12vw] rounded-full bg-gradient-to-r from-[#209CEB]/40 to-[#65CE5C]/30 opacity-40 pointer-events-none"
-        >
-
-        </motion.div>
-
-     
+        ></motion.div>
 
         <motion.div
           initial="hidden"
@@ -262,12 +259,10 @@ export default function ContactSection() {
           variants={pulse}
           transition={{ delay: 0.9 }}
           className="absolute md:top-[60%] top-[70%] left-[20%] w-[6vw] h-[6vw] md:w-[5vw] md:h-[5vw] rounded-full bg-gradient-to-r from-[#209CEB]/40 to-[#3DB1B1]/30 opacity-30 pointer-events-none"
-        >
-
-        </motion.div>
+        ></motion.div>
       </motion.div>
 
-      <div className="container relative z-10">
+      <div id="contactus" className="container relative z-10">
         <motion.div
           ref={containerRef}
           variants={containerVariants}
@@ -275,7 +270,10 @@ export default function ContactSection() {
           animate="visible"
           className="grid gap-6 lg:grid-cols-2 lg:gap-8 items-center px-10"
         >
-          <motion.div variants={containerVariants} className="flex flex-col justify-center space-y-4">
+          <motion.div
+            variants={containerVariants}
+            className="flex flex-col justify-center space-y-4"
+          >
             <motion.div variants={itemVariants} className="space-y-3">
               <motion.h2
                 variants={itemVariants}
@@ -284,7 +282,8 @@ export default function ContactSection() {
                 Ready to Get Started?
               </motion.h2>
               <motion.p variants={itemVariants} className="max-w-[600px]">
-                Talk to our experts to discuss things further and experience the difference.
+                Talk to our experts to discuss things further and experience the
+                difference.
               </motion.p>
             </motion.div>
 
@@ -294,9 +293,20 @@ export default function ContactSection() {
               className="shadow-none border-0 p-0"
             >
               <CardContent className="p-0">
-                <motion.form variants={containerVariants} className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
-                  <motion.div variants={containerVariants} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <motion.div custom={0} variants={formItemVariants} className="space-y-2">
+                <motion.form
+                  variants={containerVariants}
+                  className="space-y-4"
+                  onSubmit={handleSubmit(onSubmit)}
+                >
+                  <motion.div
+                    variants={containerVariants}
+                    className="grid grid-cols-1 gap-4 sm:grid-cols-2"
+                  >
+                    <motion.div
+                      custom={0}
+                      variants={formItemVariants}
+                      className="space-y-2"
+                    >
                       <MotionInput
                         {...register("name")}
                         id="name"
@@ -310,9 +320,17 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.name && <p className="text-sm text-red-500">{errors.name.message}</p>}
+                      {errors.name && (
+                        <p className="text-sm text-red-500">
+                          {errors.name.message}
+                        </p>
+                      )}
                     </motion.div>
-                    <motion.div custom={1} variants={formItemVariants} className="space-y-2">
+                    <motion.div
+                      custom={1}
+                      variants={formItemVariants}
+                      className="space-y-2"
+                    >
                       <MotionInput
                         {...register("email")}
                         id="email"
@@ -327,9 +345,17 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.email && <p className="text-sm text-red-500">{errors.email.message}</p>}
+                      {errors.email && (
+                        <p className="text-sm text-red-500">
+                          {errors.email.message}
+                        </p>
+                      )}
                     </motion.div>
-                    <motion.div custom={2} variants={formItemVariants} className="space-y-2">
+                    <motion.div
+                      custom={2}
+                      variants={formItemVariants}
+                      className="space-y-2"
+                    >
                       <MotionInput
                         {...register("phone")}
                         id="phone"
@@ -343,9 +369,17 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.phone && <p className="text-sm text-red-500">{errors.phone.message}</p>}
+                      {errors.phone && (
+                        <p className="text-sm text-red-500">
+                          {errors.phone.message}
+                        </p>
+                      )}
                     </motion.div>
-                    <motion.div custom={3} variants={formItemVariants} className="space-y-2">
+                    <motion.div
+                      custom={3}
+                      variants={formItemVariants}
+                      className="space-y-2"
+                    >
                       <MotionInput
                         {...register("website_url")}
                         id="website_url"
@@ -360,10 +394,18 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.website_url && <p className="text-sm text-red-500">{errors.website_url.message}</p>}
+                      {errors.website_url && (
+                        <p className="text-sm text-red-500">
+                          {errors.website_url.message}
+                        </p>
+                      )}
                     </motion.div>
                   </motion.div>
-                  <motion.div custom={4} variants={formItemVariants} className="space-y-2">
+                  <motion.div
+                    custom={4}
+                    variants={formItemVariants}
+                    className="space-y-2"
+                  >
                     <MotionTextarea
                       {...register("message")}
                       id="message"
@@ -377,14 +419,18 @@ export default function ContactSection() {
                       }}
                       transition={{ type: "spring", stiffness: 300 }}
                     />
-                    {errors.message && <p className="text-sm text-red-500">{errors.message.message}</p>}
+                    {errors.message && (
+                      <p className="text-sm text-red-500">
+                        {errors.message.message}
+                      </p>
+                    )}
                   </motion.div>
                   <MotionButton
                     variants={buttonVariants}
                     whileTap="tap"
                     type="submit"
                     disabled={isSubmitting || isSuccess}
-                    className="bg-gradient-to-r from-[#65CE5C]/80 h-12 cursor-pointer to-[#209CEB] w-[220px] hover:opacity-90 text-white rounded-lg border-none"
+                    className="bg-gradient-to-r transition-colors hover:from-[#209CEB]/80 hover:to-[#65CF5F] from-[#65CE5C]/80 h-12 cursor-pointer to-[#209CEB] w-[220px] hover:opacity-90 text-white rounded-lg border-none"
                   >
                     {isSubmitting ? (
                       <>
@@ -405,7 +451,10 @@ export default function ContactSection() {
             </MotionCard>
           </motion.div>
 
-          <motion.div variants={imageVariants} className="relative lg:flex hidden items-center justify-center">
+          <motion.div
+            variants={imageVariants}
+            className="relative lg:flex hidden items-center justify-center"
+          >
             <motion.div>
               <Image
                 src={
@@ -424,5 +473,5 @@ export default function ContactSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

@@ -48,16 +48,19 @@ export default function ServicesSection({
   const [activePopup, setActivePopup] = useState<number | null>(null)
   const [isLoaded, setIsLoaded] = useState(true)
   return (
-    <section id="services" className="py-12 md:py-20 overflow-hidden relative" style={{ backgroundColor }}>
+    <section
+      id="services"
+      className="py-12 md:py-20 overflow-hidden relative"
+      style={{ backgroundColor }}
+    >
       <motion.div
         initial="hidden"
         animate={isLoaded ? "visible" : "hidden"}
         variants={pulse}
         className="absolute md:top-[5%] top-[70%] left-[5%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] opacity-50 cursor-pointer hover:opacity-70 transition-opacity "
         onClick={() => {
-          setTimeout(() => setActivePopup(1), 150)
+          setTimeout(() => setActivePopup(1), 150);
         }}
-   
       ></motion.div>
 
       <motion.div
@@ -66,7 +69,7 @@ export default function ServicesSection({
         variants={pulse}
         className="absolute md:bottom-[15%] bottom-[10%] right-[10%] w-[12vw] h-[12vw] md:w-[10vw] md:h-[10vw] rounded-full bg-gradient-to-r from-[#3DB1B1]/70 to-[#65CF5F]/60 opacity-40 cursor-pointer hover:opacity-60 transition-opacity"
         onClick={() => {
-          setTimeout(() => setActivePopup(2), 150)
+          setTimeout(() => setActivePopup(2), 150);
         }}
       ></motion.div>
 
@@ -130,11 +133,15 @@ export default function ServicesSection({
                       className="w-14 h-14 object-contain"
                     />
                   </motion.div>
-                  <CardTitle className="text-lg sm:text-xl md:text-2xl">{service.title}</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl md:text-2xl">
+                    {service.title}
+                  </CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="mt-4">
-                <p className="text-sm sm:text-base leading-relaxed">{service.description}</p>
+                <p className="text-sm sm:text-base leading-relaxed">
+                  {service.description}
+                </p>
               </CardContent>
             </MotionCard>
           ))}
@@ -153,7 +160,7 @@ export default function ServicesSection({
             }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bg-gradient-to-r from-[#65CF5F]/80 to-[#209CEB] w-[220px] text-[17px] font-medium hover:opacity-90 text-white rounded-md border-none">
+              <Button className="bg-gradient-to-r from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-[220px] text-[17px] font-medium hover:opacity-90 text-white rounded-md border-none">
                 {buttonText}
               </Button>
             </motion.div>
@@ -161,7 +168,7 @@ export default function ServicesSection({
         )}
       </div>
     </section>
-  )
+  );
 }
 
 const defaultServices: ServiceItem[] = [

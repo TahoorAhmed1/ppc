@@ -138,7 +138,10 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section className="py-12 md:py-20 bg-[#f9f9f9] relative overflow-hidden">
+    <section
+      id="review"
+      className="py-12 md:py-20 bg-[#f9f9f9] relative overflow-hidden"
+    >
       {/* Background animated balls */}
       <motion.div
         className="absolute top-0 left-0 w-full h-full"
@@ -181,10 +184,12 @@ export default function TestimonialsSection() {
       <div className="container px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center gap-3 text-center mb-12">
           <h2 className="text-3xl font-bold text-[#1C2D44] ">VIEW REVIEWS</h2>
-          <h3 className="text-5xl font-bold  text-[#3DB1B1]">Hear from Our Success Stories</h3>
-          <p className="max-w-[500px] text-[#000000] text-base mt-2">
-            Real clients, real results. Discover how we've partnered with brands like yours to deliver measurable
-            success
+          <h3 className="text-5xl font-bold  text-[#3DB1B1]">
+            Hear from Our Success Stories
+          </h3>
+          <p className="max-w-[500px] text-[#000000] text-lg mt-2">
+            Real clients, real results. Discover how we've partnered with brands
+            like yours to deliver measurable success
           </p>
         </div>
 
@@ -197,12 +202,19 @@ export default function TestimonialsSection() {
               {slides.map((slide, idx) => (
                 <div key={idx} className="w-full flex-shrink-0 px-4">
                   <div
-                    className={`grid gap-6 ${itemsPerSlide === 1 ? "grid-cols-1" : itemsPerSlide === 2 ? "md:grid-cols-2" : "lg:grid-cols-3"
-                      }`}
+                    className={`grid gap-6 ${
+                      itemsPerSlide === 1
+                        ? "grid-cols-1"
+                        : itemsPerSlide === 2
+                        ? "md:grid-cols-2"
+                        : "lg:grid-cols-3"
+                    }`}
                   >
                     {slide.map((testimonial) => (
-                      <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-
+                      <TestimonialCard
+                        key={testimonial.id}
+                        testimonial={testimonial}
+                      />
                     ))}
                   </div>
                 </div>
@@ -225,8 +237,11 @@ export default function TestimonialsSection() {
               {slides.map((_, idx) => (
                 <button
                   key={idx}
-                  className={`w-2 h-2 rounded-full ${activeSlide === idx ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED]" : "bg-gray-300"
-                    }`}
+                  className={`w-2 h-2 rounded-full ${
+                    activeSlide === idx
+                      ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED]"
+                      : "bg-gray-300"
+                  }`}
                   onClick={() => setActiveSlide(idx)}
                 >
                   <span className="sr-only">Go to slide {idx + 1}</span>
@@ -247,5 +262,5 @@ export default function TestimonialsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -195,9 +195,6 @@ export default function EnhancedCtaSection() {
         animate="visible"
         variants={backgroundVariants}
       >
-      
-        
-
         {/* Additional background balls */}
         <motion.div
           initial="hidden"
@@ -213,7 +210,6 @@ export default function EnhancedCtaSection() {
           transition={{ delay: 0.3 }}
           className="absolute md:bottom-[20%] bottom-[15%] right-[15%] w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] rounded-full bg-gradient-to-r from-[#209CEB]/40 to-[#65CE5C]/30 opacity-40 pointer-events-none"
         ></motion.div>
-
       </motion.div>
 
       <div className="container px-4 md:px-6 relative z-10">
@@ -244,8 +240,12 @@ export default function EnhancedCtaSection() {
             </motion.div>
           </motion.div>
 
-          <motion.p className="max-w-2xl text-[#1C2D44] text-base sm:text-lg" variants={itemVariants}>
-            You want more than average, let's create something that truly stands out.
+          <motion.p
+            className="max-w-2xl text-[#1C2D44] text-base sm:text-lg"
+            variants={itemVariants}
+          >
+            You want more than average, let's create something that truly stands
+            out.
           </motion.p>
 
           <AnimatePresence mode="wait">
@@ -259,7 +259,10 @@ export default function EnhancedCtaSection() {
                 onSubmit={handleSubmit(onSubmit)}
                 key="form"
               >
-                <motion.div className="w-full sm:flex-1" variants={itemVariants}>
+                <motion.div
+                  className="w-full sm:flex-1"
+                  variants={itemVariants}
+                >
                   <motion.div
                     whileFocus={{ scale: 1.02 }}
                     whileHover={{ scale: 1.02 }}
@@ -273,7 +276,11 @@ export default function EnhancedCtaSection() {
                         errors.email ? "border-red-500" : ""
                       }`}
                     />
-                    {errors.email && <p className="text-red-500 text-sm mt-1 text-left">{errors.email.message}</p>}
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1 text-left">
+                        {errors.email.message}
+                      </p>
+                    )}
                   </motion.div>
                 </motion.div>
                 <motion.div
@@ -284,7 +291,7 @@ export default function EnhancedCtaSection() {
                 >
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r from-[#65CF5F]/80 to-[#209CEB] w-[180px] hover:opacity-90 h-12 text-white rounded-lg px-6 py-3 relative overflow-hidden group"
+                    className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-[180px] transition-colors hover:opacity-90 h-12 text-white rounded-lg px-6 py-3 relative overflow-hidden group"
                   >
                     <motion.span
                       className="absolute inset-0 bg-white opacity-20 rounded-lg"
@@ -297,7 +304,9 @@ export default function EnhancedCtaSection() {
                         repeatType: "reverse",
                       }}
                     />
-                    <motion.div className="flex items-center justify-center gap-2">Contact Me</motion.div>
+                    <motion.div className="flex items-center justify-center gap-2">
+                      Contact Me
+                    </motion.div>
                   </Button>
                 </motion.div>
               </motion.form>
@@ -352,5 +361,5 @@ export default function EnhancedCtaSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

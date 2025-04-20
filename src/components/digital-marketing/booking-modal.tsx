@@ -191,8 +191,15 @@ export function BookingModal({
             )}
           />
 
-          <p className="text-xs text-gray-400 mt-2 mb-4 text-center">
-            Your data is protected with us — no worries, no compromises
+          <p className="text-xs text-gray-400 mt-2 mb-5 text-left">
+            Disclaimer : You agree to receive conversation messages from
+            CreativeAgency360. This includes SMS messages for appointment
+            scheduling, appointment reminders, post-visit instructions, and
+            billing notifications. You may receive up to 2 messages per day;
+            message frequency may vary. To opt out, text STOP. For assistance,
+            text HELP or visit Website Message and data rates may apply. See our
+            Privacy Policy andTerms and Conditions. STOP to any message to opt
+            out.
           </p>
 
           <Button

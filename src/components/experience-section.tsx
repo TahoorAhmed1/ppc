@@ -161,7 +161,7 @@ export default function MarketingSection() {
             </MotionDiv>
             <a href="#contactus">
               <MotionButton
-                className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] w-[200px] text-[17px] py-2 font-medium hover:opacity-90 text-white rounded-lg border-none"
+                className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-[200px] text-[17px] py-2 font-medium hover:opacity-90 text-white rounded-lg border-none"
                 variants={itemVariants}
                 whileHover={{
                   scale: 1.05,

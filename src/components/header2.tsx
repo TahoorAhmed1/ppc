@@ -36,7 +36,7 @@ export default function Header2() {
 
             <div className="hidden md:block">
               <div className="text-sm">Call Now</div>
-              <a href="+18045745376" className="font-semibold text-lg">
+              <a href="tel:+18045745376" className="font-semibold text-lg">
                 +1 (804) 574 5376
               </a>
             </div>

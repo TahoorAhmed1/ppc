@@ -72,8 +72,10 @@ import project13 from "@/assets/images/project/piza_enhanced.webp";
 import project14 from "@/assets/images/project/skin_enhanced.webp";
 import project15 from "@/assets/images/project/timothy_enhanced.webp";
 import project16 from "@/assets/images/project/yohan it_enhanced.webp";
+import popup from "@/assets/images/main-popup.png";
 
 export {
+  popup,
   project1,
   project2,
   project6,

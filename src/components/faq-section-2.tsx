@@ -220,9 +220,8 @@ export default function AnimatedFaqSection2({
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    The timeline depends on the complexity of your project.
-                    Simple websites can be completed in 2-4 weeks, while more
-                    complex ones may take 2-3 months.
+                    It depends on the project, but most websites are ready in
+                    3–6 weeks.
                   </motion.div>
                 </AccordionContent>
               </MotionAccordionItem>
@@ -246,9 +245,8 @@ export default function AnimatedFaqSection2({
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    Yes, we provide a user-friendly content management system
-                    that allows you to make updates. We also offer maintenance
-                    packages for more complex changes.
+                    Yes! We use easy-to-manage platforms so you can update
+                    content anytime—no coding needed.
                   </motion.div>
                 </AccordionContent>
               </MotionAccordionItem>
@@ -272,9 +270,8 @@ export default function AnimatedFaqSection2({
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    We offer both services. We can build a brand new website
-                    from scratch or redesign your existing site to improve its
-                    design, functionality, and performance.
+                    We do both! Whether you need a brand-new site or just want
+                    to refresh your current one, we’ve got you covered.
                   </motion.div>
                 </AccordionContent>
               </MotionAccordionItem>
@@ -356,7 +353,7 @@ export default function AnimatedFaqSection2({
                     </MotionButton>
                   </div>
 
-                  <div className="flex items-center justify-between">
+                  {/* <div className="flex items-center justify-between">
                     <MotionLink
                       href="#faq"
                       className="inline-flex items-center text-white font-medium"
@@ -371,7 +368,7 @@ export default function AnimatedFaqSection2({
                       More FAQ
                       <ArrowRight className="ml-1 h-4 w-4" />
                     </MotionLink>
-                  </div>
+                  </div> */}
                 </motion.form>
               </MotionCardContent>
             </MotionCard>
