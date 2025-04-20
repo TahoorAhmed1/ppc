@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Star, X } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { firmsLogos, heroSectionImage2, mailIcon, profileImage, profileImage1, projectDoneLine } from "@/assets"
+import { firmsLogos, heroSectionImage2, mailIcon, profileImage, profileImage2, projectDoneLine } from "@/assets"
 import { AiFillSafetyCertificate } from "react-icons/ai"
 import StatsBar from "./stats-card"
 import { motion, AnimatePresence } from "framer-motion"
@@ -406,7 +406,7 @@ export default function HeroSection() {
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.9, type: "spring", stiffness: 200 }}
-                  src={profileImage1.src || "/placeholder.svg"}
+                  src={profileImage2.src || "/placeholder.svg"}
                   alt="Customer Avatar"
                   className="rounded-full object-cover"
                   style={{
