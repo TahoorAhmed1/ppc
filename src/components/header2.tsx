@@ -29,9 +29,13 @@ export default function Header2() {
           <div className="flex flex-wrap justify-between w-full gap-12">
             <div className="hidden md:block">
               <div className="text-sm">Email</div>
-              <div className="font-semibold text-lg">
+
+              <a
+                className="font-semibold text-lg"
+                href="mailto:info@creativeagency360.com"
+              >
                 info@creativeagency360.com
-              </div>
+              </a>
             </div>
 
             <div className="hidden md:block">

@@ -22,6 +22,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { notify } from "@/lib/utils";
+import Link from "next/link";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name is required" }),
@@ -198,8 +199,9 @@ export function BookingModal({
             billing notifications. You may receive up to 2 messages per day;
             message frequency may vary. To opt out, text STOP. For assistance,
             text HELP or visit Website Message and data rates may apply. See our
-            Privacy Policy andTerms and Conditions. STOP to any message to opt
-            out.
+            <Link href={"/privacy"}>Privacy Policy</Link>
+            and <Link href={"/terms-&-condition"}> Terms and Conditions</Link>.
+            STOP to any message to opt out.
           </p>
 
           <Button
