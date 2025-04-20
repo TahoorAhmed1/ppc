@@ -30,13 +30,13 @@ export default function Header() {
             (label) => {
               const href = `#${label.toLowerCase().replace(" ", "")}`;
               return (
-                <Link
+                <a
                   key={label}
                   href={href === "#home" ? "/" : href}
                   className="text-sm  font-medium text-gray-500 underline-offset-4 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-transparent bg-clip-text"
                 >
                   {label}
-                </Link>
+                </a>
               );
             }
           )}
@@ -68,14 +68,14 @@ export default function Header() {
             (label) => {
               const href = `#${label.toLowerCase().replace(" ", "")}`;
               return (
-                <Link
+                <a
                   key={label}
                   href={href === "#home" ? "/" : href}
                   className="block text-sm text-gray-600 hover:font-semibold hover:text-primary transition-colors"
                   onClick={() => setMenuOpen(false)} // auto-close on nav click
                 >
                   {label}
-                </Link>
+                </a>
               );
             }
           )}
