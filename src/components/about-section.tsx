@@ -99,7 +99,7 @@ export default function AboutSection() {
     >
       <div className="container grid grid-cols-1 lg:grid-cols-3 items-start gap-4">
         <motion.div
-          className="flex flex-col items-start gap-3 w-full max-w-sm mx-auto lg:mx-0"
+          className="flex flex-col lg:items-start items-center text-center lg:text-start gap-3 w-full max-w-sm mx-auto lg:mx-0"
           variants={containerVariants}
         >
           <motion.div variants={itemVariants}>
@@ -135,10 +135,10 @@ export default function AboutSection() {
               onHoverEnd={() => setHoveredCard(null)}
             >
               <motion.div variants={cardHoverVariants}>
-                <Card className="bg-white hover:bg-[#1C2D44] text-[#1C2D44] hover:text-white border-0 shadow-xl p-1 h-[340px] transition-colors duration-300">
+                <Card className="bg-white hover:bg-[#1C2D44] text-[#1C2D44] hover:text-white lg:items-start items-center text-center lg:text-start border-0 shadow-xl p-1 h-[340px] transition-colors duration-300">
                   <CardContent className="p-4">
                     <motion.div
-                      className="flex mb-4"
+                      className="flex mb-4 lg:items-start items-center lg:justify-start justify-center text-center lg:text-start"
                       initial={{ scale: 0.8, opacity: 0 }}
                       animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
                       transition={{ delay: 0.4 + i * 0.1, duration: 0.5 }}
