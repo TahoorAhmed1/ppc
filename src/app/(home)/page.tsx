@@ -10,7 +10,7 @@ import ContactSection from "@/components/contact-section"
 import FaqSection from "@/components/faq-section"
 import CtaSection from "@/components/cta-section"
 import Footer from "@/components/footer"
-import { portfolio1, portfolio2, portfolio3, waterMarkLogo } from "@/assets"
+import { favicon, portfolio1, portfolio2, portfolio3, waterMarkLogo } from "@/assets"
 import HeroSection from "@/components/hero-section"
 
 const portfolioItems = [

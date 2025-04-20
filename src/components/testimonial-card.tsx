@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image"
 
 // Define the testimonial interface
 interface Testimonial {
@@ -59,7 +60,9 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
         <div className="flex items-start gap-4 mb-5">
           <div className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden">
             {testimonial.avatar ? (
-              <img
+              <Image
+                width={40}
+                height={40}
                 src={testimonial.avatar || "/placeholder.svg"}
                 alt={`${testimonial.name}'s avatar`}
                 className="w-full h-full object-cover"
