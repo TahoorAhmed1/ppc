@@ -47,17 +47,6 @@ export default function Header2() {
               </Button>
             </a>
           </div>
-          <button
-            className="md:hidden"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle Menu"
-          >
-            {menuOpen ? (
-              <X className="h-5 w-5 sm:h-6 sm:w-6 text-muted-foreground" />
-            ) : (
-              <AlignJustify className="h-5 w-5 sm:h-6 sm:w-6 text-muted-foreground" />
-            )}
-          </button>
         </div>
       </div>
 
