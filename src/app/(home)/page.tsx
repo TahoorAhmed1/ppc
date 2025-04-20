@@ -73,26 +73,19 @@ export default function Home() {
         <ExperienceSection />
       </motion.div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
-      >
-        <PortfolioSection
-          heading="OUR PORTFOLIO"
-          title="HERE IS"
-          paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
-          backgroundImage={waterMarkLogo.src}
-          filters={[
-            "All",
-            "E-commerce",
-            "Business",
-            "Hospitality and Food Service",
-            "Real Estate",
-          ]}
-        />
-      </motion.div>
+      <PortfolioSection
+        heading="OUR PORTFOLIO"
+        title="HERE IS"
+        paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
+        backgroundImage={waterMarkLogo.src}
+        filters={[
+          "All",
+          "E-commerce",
+          "Business",
+          "Hospitality and Food Service",
+          "Real Estate",
+        ]}
+      />
 
       <motion.div
         initial="hidden"
