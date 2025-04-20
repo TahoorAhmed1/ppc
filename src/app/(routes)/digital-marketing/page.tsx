@@ -1,21 +1,12 @@
-import {
-  website1,
-  website2,
-  website3,
-  website4,
-  website5,
-  website6,
-} from "@/assets";
 import ContactSection from "@/components/contact-section";
 import CtaSection from "@/components/cta-section";
 import PricingPackage from "@/components/digital-marketing/pricing-package";
 import FaqSection from "@/components/faq-section-2";
 import PortfolioSection from "@/components/portfolio-section";
 import TestimonialsSection from "@/components/testimonials-section";
-import Footer from "@/components/footer";
+import Footer from "@/components/footer-2";
 import { InfiniteScroll } from "@/components/digital-marketing/web-agency-hero";
 import DigitalMarketingHeroSection from "@/components/digital-marketing/digital-marketing-hero-section";
-
 
 export default function Home() {
   return (

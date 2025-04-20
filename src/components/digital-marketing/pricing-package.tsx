@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
@@ -7,7 +6,7 @@ import { favicon, pricingImage, package2, package3, package4 } from "@/assets";
 import { BookingModal } from "./booking-modal";
 
 interface PricingPackage {
-  id: number;
+  id: string;
   name: string;
   description: string;
   price: string;
@@ -19,7 +18,7 @@ interface PricingPackage {
 
 const pricingPackages: PricingPackage[] = [
   {
-    id: 1,
+    id: "starter",
     name: "Starter",
     image: pricingImage,
     description:
@@ -42,7 +41,7 @@ const pricingPackages: PricingPackage[] = [
     ],
   },
   {
-    id: 2,
+    id: "growth",
     name: "Growth",
     image: package2,
     description:
@@ -68,7 +67,7 @@ const pricingPackages: PricingPackage[] = [
     ],
   },
   {
-    id: 3,
+    id: "premium",
     name: "Premium",
     image: package3,
     description:
@@ -93,7 +92,7 @@ const pricingPackages: PricingPackage[] = [
     ],
   },
   {
-    id: 4,
+    id: "ultimate",
     name: "Ultimate",
     image: package4,
     description:
@@ -136,13 +135,12 @@ export default function PricingPackage() {
 
   return (
     <div className="bg-gray-900 p-4 md:p-8 min-h-screen flex flex-col items-center gap-8 sm:gap-10 md:gap-14 py-10 sm:py-14 md:py-16">
-      {/* Map through all packages */}
       {pricingPackages.map((pkg, idx) => (
         <div
+          id={pkg.id}
           key={pkg.id}
           className="grid grid-cols-1 lg:grid-cols-3 max-w-7xl w-full gap-6 md:gap-4"
         >
-          {/* Left Card */}
           <div
             className={`space-y-4 ${
               idx % 2 === 0 ? "order-2 md:order-1" : "order-2"
@@ -187,26 +185,20 @@ export default function PricingPackage() {
             </div>
             <div className="space-y-3">
               <button
-                className="bg-gradient-to-r cursor-pointer hover:from-[#1F9BED]/80 hover:to-[#65CF5F] transition-colors   from-[#65CF5F]/80 to-[#1F9BED] text-white w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded flex justify-between items-center text-base sm:text-lg"
+                className="bg-gradient-to-r cursor-pointer hover:from-[#1F9BED]/80 hover:to-[#65CF5F] transition-colors   from-[#65CF5F]/80 to-[#1F9BED] text-white w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded-lg flex justify-between items-center text-base sm:text-lg"
                 onClick={() => handleBookNow(pkg)}
               >
                 <span className="font-medium">Book Now</span>
                 <ArrowRight size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
-              <a href="+18045745376">
-                <button className="border-4 cursor-pointer group border-teal-500 text-teal-500 w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded flex justify-between items-center text-base sm:text-lg">
+              <a href="tel:+18045745376">
+                <button className="border-4 cursor-pointer rounded-lg group border-teal-500 text-teal-500 w-full py-3 sm:py-3.5 px-4 sm:px-5  flex justify-between items-center text-base sm:text-lg">
                   <span className="font-medium bg-gradient-to-r group-hover:from-[#1F9BED]/80 group-hover:to-[#65CF5F] transition-colors from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
                     +1 (804) 574 5376
                   </span>
                   <ArrowRight size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
                 </button>
               </a>
-              {/* <button className="border-4 border-teal-500 text-teal-500 w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded flex justify-between items-center text-base sm:text-lg">
-                <span className="font-medium bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
-                  View Portfolio
-                </span>
-                <ArrowRight size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
-              </button> */}
             </div>
           </div>
 

@@ -16,10 +16,16 @@ interface TestimonialCardProps {
 
 export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <Card className="bg-[#1C2D44] text-white rounded-2xl border-none p-6 flex flex-col justify-between h-full shadow-lg hover:shadow-xl transition-shadow duration-300 relative">
+    <Card className="bg-[#1C2D44] text-white rounded-2xl border-none py-8 px-6 flex flex-col justify-between h-full shadow-lg hover:shadow-xl transition-shadow duration-300 relative">
       <CardContent className="p-0">
-        <div className="absolute top-6 right-6">
-          <svg width="40" height="40" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className="absolute top-8 right-6">
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 76 76"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               d="M64.0562 71.5959V74.3437C62.9045 74.2583 61.9795 73.8023 61.2816 72.9751C60.5839 72.1482 60.2349 71.1557 60.2349 69.9986C60.2349 68.7275 60.5689 67.6468 61.2366 66.7556C61.9043 65.8646 62.7081 65.419 63.6486 65.419C64.6748 65.419 65.6021 65.9659 66.431 67.059C66.8397 66.3633 67.266 65.854 67.7108 65.5309C68.1552 65.2079 68.6874 65.0464 69.3066 65.0464C70.486 65.0464 71.4311 65.4689 72.1427 66.3137C72.8542 67.1585 73.2098 68.277 73.2098 69.6684C73.2098 70.9605 72.8692 72.0308 72.1877 72.8794C71.5064 73.7276 70.5601 74.2514 69.349 74.4501V71.6386C70.5471 71.3049 71.1462 70.6626 71.1462 69.711C71.1462 69.2354 70.9893 68.8342 70.6758 68.5075C70.3622 68.181 69.9743 68.0177 69.5123 68.0177C68.9446 68.0177 68.4809 68.2147 68.1212 68.6087C67.7612 69.0027 67.5816 69.5086 67.5816 70.1264V70.6268H65.4585V70.3286C65.4585 69.6828 65.3108 69.1642 65.0155 68.7737C64.7201 68.3834 64.3296 68.1879 63.8439 68.1879C63.4043 68.1879 63.0285 68.3425 62.717 68.6514C62.4052 68.96 62.2492 69.3381 62.2492 69.7855C62.2492 70.8293 62.8517 71.4326 64.0562 71.5959Z"
               fill="white"
@@ -68,8 +74,10 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
             <p className="text-sm text-gray-300">{testimonial.role}</p>
           </div>
         </div>
-        <p className="text-white text-sm leading-relaxed">{testimonial.content}</p>
+        <p className="text-white text-base leading-relaxed">
+          {testimonial.content}
+        </p>
       </CardContent>
     </Card>
-  )
+  );
 }

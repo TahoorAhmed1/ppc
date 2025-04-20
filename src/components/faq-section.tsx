@@ -226,8 +226,6 @@ export default function AnimatedFaqSection({
           className="absolute md:top-[10%] top-[5%] right-[10%] w-[9vw] h-[9vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CE5C]/40 to-[#3DB1B1]/30 opacity-50 pointer-events-none"
         ></motion.div>
 
-       
-
         <motion.div
           initial="hidden"
           animate="visible"
@@ -237,8 +235,14 @@ export default function AnimatedFaqSection({
         ></motion.div>
       </motion.div>
 
-      <motion.div className="container px-4 md:px-6 relative z-10" variants={sectionVariants}>
-        <motion.div className="grid gap-12 lg:grid-cols-2" variants={sectionVariants}>
+      <motion.div
+        className="container px-4 md:px-6 relative z-10"
+        variants={sectionVariants}
+      >
+        <motion.div
+          className="grid gap-12 lg:grid-cols-2"
+          variants={sectionVariants}
+        >
           <motion.div className="space-y-6" variants={sectionVariants}>
             <Accordion type="single" collapsible className="w-full space-y-4">
               <MotionAccordionItem
@@ -260,8 +264,8 @@ export default function AnimatedFaqSection({
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    The timeline depends on the complexity of your project. Simple websites can be completed in 2-4
-                    weeks, while more complex ones may take 2-3 months.
+                    It depends on the project, but most websites are ready in
+                    3–6 weeks.
                   </motion.div>
                 </AccordionContent>
               </MotionAccordionItem>
@@ -285,8 +289,8 @@ export default function AnimatedFaqSection({
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    Yes, we provide a user-friendly content management system that allows you to make updates. We also
-                    offer maintenance packages for more complex changes.
+                    Yes! We use easy-to-manage platforms so you can update
+                    content anytime—no coding needed.
                   </motion.div>
                 </AccordionContent>
               </MotionAccordionItem>
@@ -310,15 +314,18 @@ export default function AnimatedFaqSection({
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    We offer both services. We can build a brand new website from scratch or redesign your existing site
-                    to improve its design, functionality, and performance.
+                    We do both! Whether you need a brand-new site or just want
+                    to refresh your current one, we’ve got you covered.
                   </motion.div>
                 </AccordionContent>
               </MotionAccordionItem>
             </Accordion>
           </motion.div>
           <div className="flex justify-end">
-            <MotionCard className="bg-transparent border-none shadow-none p-0" variants={cardVariants}>
+            <MotionCard
+              className="bg-transparent border-none shadow-none p-0"
+              variants={cardVariants}
+            >
               <MotionCardHeader className="p-0 mb-4" variants={itemVariants}>
                 <motion.h2
                   className={`text-4xl font-bold text-[#3DB1B1]`}
@@ -329,14 +336,20 @@ export default function AnimatedFaqSection({
                   New Project In Mind?
                 </motion.h2>
               </MotionCardHeader>
-              <MotionCardContent className="p-0 space-y-6" variants={itemVariants}>
+              <MotionCardContent
+                className="p-0 space-y-6"
+                variants={itemVariants}
+              >
                 <motion.p
                   className={`${
-                    enableGradientBackground ? "text-white/80" : "text-[#1C2D44]"
+                    enableGradientBackground
+                      ? "text-white/80"
+                      : "text-[#1C2D44]"
                   } text-base leading-relaxed`}
                   variants={itemVariants}
                 >
-                  Get expert help, right when you need it. Subscribe to our newsletter.
+                  Get expert help, right when you need it. Subscribe to our
+                  newsletter.
                 </motion.p>
 
                 <motion.form
@@ -359,7 +372,13 @@ export default function AnimatedFaqSection({
                       disabled={isSubmitting || isSuccess}
                     />
                     {errors.email && (
-                      <p className={`text-sm ${enableGradientBackground ? "text-white/90" : "text-red-500"}`}>
+                      <p
+                        className={`text-sm ${
+                          enableGradientBackground
+                            ? "text-white/90"
+                            : "text-red-500"
+                        }`}
+                      >
                         {errors.email.message}
                       </p>
                     )}
@@ -388,7 +407,7 @@ export default function AnimatedFaqSection({
                   </MotionButton>
                 </motion.form>
 
-                <motion.div className="pt-2" variants={itemVariants}>
+                {/* <motion.div className="pt-2" variants={itemVariants}>
                   <MotionLink
                     href="#faq"
                     className={`inline-flex items-center text-[#3DB1B1] font-medium`}
@@ -409,12 +428,12 @@ export default function AnimatedFaqSection({
                       <ArrowRight className={`ml-1 h-4 w-4 text-[#3DB1B1] font-medium`} />
                     </motion.span>
                   </MotionLink>
-                </motion.div>
+                </motion.div> */}
               </MotionCardContent>
             </MotionCard>
           </div>
         </motion.div>
       </motion.div>
     </motion.section>
-  )
+  );
 }

@@ -1,16 +1,14 @@
-import type { Metadata } from "next";
+"use client";
+import type React from "react";
 import "../globals.css";
 import Header from "@/components/header2";
 import { Footer } from "react-day-picker";
 import * as motion from "motion/react-client";
 import { ToastContainer } from "react-toastify";
 
-export const metadata: Metadata = {
-  title: " Agency 360",
-  description: "  Agency 360",
-};
+import { AutoOpenImageModal } from "@/components/auto-open-image-modal";
 
-export default function Layout({
+export default function ClientLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -32,6 +30,8 @@ export default function Layout({
         <ToastContainer />
         {children}
         <Footer />
+
+        <AutoOpenImageModal alt="Promotional popup" />
       </body>
     </html>
   );
