@@ -60,7 +60,7 @@ export default function PortfolioSection({
     { img: project10, category: "E-commerce" },
     { img: project11, category: "E-commerce" },
     { img: project12, category: "Business" },
-    { img: project13, category: "Hospitality and Food Service" },
+    { img: project13, category: "E-commerce" },
     { img: project14, category: "E-commerce" },
     { img: project15, category: "E-commerce" },
     { img: project16, category: "Business" },

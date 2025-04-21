@@ -295,14 +295,14 @@ export default function AnimatedFaqSection2({
             </Accordion>
           </motion.div>
 
-          <div className="">
+          <div className="flex justify-center">
             <MotionCard
               className="bg-transparent border-none shadow-none p-0"
               variants={cardVariants}
             >
               <MotionCardHeader className="p-0 mb-4" variants={itemVariants}>
                 <motion.h2
-                  className="text-4xl font-bold text-white"
+                  className="text-4xl font-bold text-white "
                   variants={itemVariants}
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300, damping: 10 }}

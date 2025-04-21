@@ -239,10 +239,9 @@ export default function ContactSection() {
 
   return (
     <section
-      className="pt-5 md:pt-8 bg-white overflow-hidden relative"
+      className="py-5 md:pt-8 bg-white overflow-hidden relative"
       id="contactus"
     >
-      {/* Background animated balls */}
       <motion.div
         className="absolute top-10 left-0 w-full h-full"
         initial="hidden"
@@ -279,7 +278,7 @@ export default function ContactSection() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid gap-6 lg:grid-cols-2 lg:gap-8 items-center px-6"
+          className="grid gap-6 lg:grid-cols-2 lg:gap-8 items-center lg:px-6 px-3"
         >
           <motion.div
             variants={containerVariants}

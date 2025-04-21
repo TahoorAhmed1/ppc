@@ -112,13 +112,20 @@ export default function AboutSection() {
             />
           </motion.div>
 
-          <motion.h2 className="text-4xl md:text-[42px] font-bold leading-tight" variants={itemVariants}>
+          <motion.h2
+            className="text-4xl md:text-[42px] font-bold leading-tight"
+            variants={itemVariants}
+          >
             <span className=" text-[#3DB1B1]">Who We Are</span>{" "}
           </motion.h2>
 
-          <motion.p className="text-sm md:text-base text-[#1C2D44] leading-relaxed" variants={itemVariants}>
-            At Creative Agency 360, your success is our priority. Our mission? To help you connect with your audience,
-            strengthen your brand, and drive long-term results.
+          <motion.p
+            className="text-sm md:text-base text-[#1C2D44] leading-relaxed"
+            variants={itemVariants}
+          >
+            At Creative Creative Agency 360, your success is our priority. Our
+            mission? To help you connect with your audience, strengthen your
+            brand, and drive long-term results.
           </motion.p>
         </motion.div>
 
@@ -140,11 +147,18 @@ export default function AboutSection() {
                     <motion.div
                       className="flex mb-4 lg:items-start items-center lg:justify-start justify-center text-center lg:text-start"
                       initial={{ scale: 0.8, opacity: 0 }}
-                      animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
+                      animate={
+                        isInView
+                          ? { scale: 1, opacity: 1 }
+                          : { scale: 0.8, opacity: 0 }
+                      }
                       transition={{ delay: 0.4 + i * 0.1, duration: 0.5 }}
                     >
                       <Image
-                        src={(hoveredCard === i ? card.hoverIcon : card.icon) || "/placeholder.svg"}
+                        src={
+                          (hoveredCard === i ? card.hoverIcon : card.icon) ||
+                          "/placeholder.svg"
+                        }
                         alt={`Card ${i + 1}`}
                         width={120}
                         height={120}
@@ -153,7 +167,9 @@ export default function AboutSection() {
                     <motion.h3
                       className="xl:text-2xl md:text-lg sm:text-xl font-semibold mb-2 xl:w-50"
                       initial={{ x: -20, opacity: 0 }}
-                      animate={isInView ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
+                      animate={
+                        isInView ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }
+                      }
                       transition={{ delay: 0.5 + i * 0.1, duration: 0.4 }}
                     >
                       {card.title}
@@ -161,7 +177,9 @@ export default function AboutSection() {
                     <motion.p
                       className="text-sm"
                       initial={{ x: -20, opacity: 0 }}
-                      animate={isInView ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
+                      animate={
+                        isInView ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }
+                      }
                       transition={{ delay: 0.6 + i * 0.1, duration: 0.4 }}
                     >
                       {card.description}
@@ -174,5 +192,5 @@ export default function AboutSection() {
         </div>
       </div>
     </motion.section>
-  )
+  );
 }

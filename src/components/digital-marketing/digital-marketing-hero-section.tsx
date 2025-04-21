@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import { z } from "zod";
@@ -155,7 +157,7 @@ export default function DigitalMarketingHeroSection({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-10">
           <div className="">
             <motion.h1
-              className="text-3xl md:text-4xl lg:text-[60px] font-bold leading-tight"
+              className="text-4xl lg:text-[60px] font-bold leading-tight"
               variants={slideUp}
               transition={{ duration: 0.7 }}
             >

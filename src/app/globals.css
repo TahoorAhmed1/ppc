@@ -131,3 +131,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.css-10c83fy{
+  --primary-color:"green"
+}

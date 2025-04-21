@@ -94,7 +94,7 @@ export default function Footer() {
       </motion.div>
 
       <motion.div
-        className="container px-4 mx-auto space-y-12 lg:space-y-0 lg:flex lg:justify-between lg:items-start relative z-10"
+        className="container px-4 mx-auto space-y-12 lg:space-y-0 lg:flex lg:justify-between lg:items-start relative z-10 gap-12"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -151,8 +151,12 @@ export default function Footer() {
             </h3>
 
             <div className="flex items-center gap-2">
-              <a href="mailto:support@creativeagency360.com" className="flex items-center gap-2">
-                 <Mail className="w-5 h-5 text-[#65CF5F]"/><span>support@creativeagency360.com</span>
+              <a
+                href="mailto:support@creativeagency360.com"
+                className="flex items-center gap-2"
+              >
+                <Mail className="w-5 h-5 text-[#65CF5F]" />
+                <span>support@creativeagency360.com</span>
               </a>
             </div>
 
@@ -160,7 +164,7 @@ export default function Footer() {
               <Phone className="w-5 h-5 text-[#65CF5F]" />
               <a href="tel:+18045745376">+1 (804) 574 5376</a>
             </div>
-           
+
             <div className="flex items-center gap-2">
               <MapPin className="w-8 h-8 text-[#65CF5F]" />
               <p className="text-sm">2206 ATWOOD DR ANDERSON, INDIANA 46016</p>
@@ -176,7 +180,7 @@ export default function Footer() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.5 }}
       >
-        © 2025 Creative Agency 360, Inc. All rights reserved.
+        © 2025 Creative Creative Agency 360, Inc. All rights reserved.
       </motion.div>
     </motion.footer>
   );

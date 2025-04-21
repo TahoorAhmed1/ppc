@@ -176,7 +176,7 @@ export default function Footer() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.5 }}
       >
-        © 2025 Creative Agency 360, Inc. All rights reserved.
+        © 2025 Creative Creative Agency 360, Inc. All rights reserved.
       </motion.div>
     </motion.footer>
   );

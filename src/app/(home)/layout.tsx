@@ -5,8 +5,8 @@ import { Footer } from "react-day-picker";
 import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
-  title: " Agency 360",
-  description: "  Agency 360",
+  title: " Creative Agency 360",
+  description: "  Creative Agency 360",
 };
 
 export default function RootLayout({
