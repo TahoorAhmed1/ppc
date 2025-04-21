@@ -10,12 +10,11 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const navItems = [
-    { label: "Home", href: "/" },
     { label: "About Us", href: "#aboutus" },
     { label: "Services", href: "#services" },
     { label: "Portfolio", href: "#portfolio" },
     { label: "Contact Us", href: "#contactus" },
-  ]
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background transition-all duration-100 ease-in-out">
@@ -35,13 +34,13 @@ export default function Header() {
 
         <nav className="hidden md:flex lg:gap-x-9 gap-x-6">
           {navItems.map((item) => (
-            <Link
+            <a
               key={item.label}
               href={item.href}
               className="text-sm font-medium text-gray-500 underline-offset-4 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-transparent bg-clip-text"
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -51,7 +50,11 @@ export default function Header() {
               Get Free Consultation
             </Button>
           </Link>
-          <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle Menu">
+          <button
+            className="md:hidden"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle Menu"
+          >
             {menuOpen ? (
               <X className="h-5 w-5 sm:h-6 sm:w-6 text-muted-foreground" />
             ) : (
@@ -76,5 +79,5 @@ export default function Header() {
         </div>
       )}
     </header>
-  )
+  );
 }

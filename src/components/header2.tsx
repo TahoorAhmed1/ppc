@@ -2,11 +2,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { AlignJustify, X } from "lucide-react";
 import Image from "next/image";
 import { logo } from "@/assets/index";
 
-export default function Header2() {
+export default function Header2({ setIsOpen }: any) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -45,11 +44,12 @@ export default function Header2() {
               </a>
             </div>
 
-            <a href="#contactus">
-              <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:to-[#65CF5F] hover:from-[#1F9BED]/80 hover:opacity-90 transition-colors text-white rounded-lg border-none text-base md:text-lg px-5 h-12">
-                Let's Talk
-              </Button>
-            </a>
+            <Button
+              onClick={() => setIsOpen(true)}
+              className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:to-[#65CF5F] hover:from-[#1F9BED]/80 hover:opacity-90 transition-colors text-white rounded-lg border-none text-base md:text-lg px-5 h-12"
+            >
+              Let's Talk
+            </Button>
           </div>
         </div>
       </div>

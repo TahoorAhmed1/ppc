@@ -1,18 +1,21 @@
-"use client"
+import { motion, type Variants } from "framer-motion";
+import Image from "next/image";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2 } from "lucide-react";
+import { useState } from "react";
 
-import { motion, type Variants } from "framer-motion"
-import Image from "next/image"
-import { z } from "zod"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { Loader2 } from "lucide-react"
-import { useState } from "react"
-
-import { Button } from "@/components/ui/button"
-import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 import {
   award1,
@@ -26,10 +29,11 @@ import {
   serviceIcon4,
   serviceIcon5,
   serviceIcon6,
-} from "@/assets/index"
-import { notify } from "@/lib/utils"
-import { AnimatedServiceCategory } from "./animated-service-category"
+} from "@/assets/index";
+import { notify } from "@/lib/utils";
+import { AnimatedServiceCategory } from "./animated-service-category";
 import Link from "next/link";
+import { useFormContact } from "@/store/form";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
@@ -79,10 +83,10 @@ const slideLeft: Variants = {
 export default function DigitalMarketingHeroSection({
   backgroundImage = heroSectionImage3.src,
   awards = award,
-}) {
+}: any) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-
+  const { setIsOpen }: any = useFormContact();
   const form = useForm<ContactFormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -183,15 +187,16 @@ export default function DigitalMarketingHeroSection({
                 transition={{ duration: 0.6 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <a href="#contactus">
-                  <Button className="bg-gradient-to-r cursor-pointer h-12 from-[#65CF5F]/80 to-[#1F9BED] text-white px-8 py-3 text-base rounded-lg">
-                    Get a Quote
-                  </Button>
-                </a>
+                <Button
+                  onClick={() => setIsOpen(true)}
+                  className="bg-gradient-to-r cursor-pointer h-12 from-[#65CF5F]/80 to-[#1F9BED] text-white px-8 py-3 text-base rounded-lg"
+                >
+                  Get a Quote
+                </Button>
               </motion.div>
 
               <div className="flex gap-6 items-center">
-                {awards.map((awardImage, i) => (
+                {awards.map((awardImage: any, i: any) => (
                   <motion.div
                     key={i}
                     className="md:w-16 md:h-16 w-14 h-14 items-center justify-center"
