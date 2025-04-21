@@ -92,7 +92,7 @@ export default function Footer() {
         animate="visible"
       >
         {/* Left side: logo and newsletter */}
-        <motion.div className="max-w-xl space-y-6" variants={itemVariants}>
+        <motion.div className="max-w-lg space-y-6" variants={itemVariants}>
           <motion.div
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
