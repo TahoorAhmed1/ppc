@@ -32,9 +32,9 @@ export default function Header2() {
 
               <a
                 className="font-semibold text-lg"
-                href="mailto:info@creativeagency360.com"
+                href="mailto:support@creativeagency360.com"
               >
-                info@creativeagency360.com
+                support@creativeagency360.com
               </a>
             </div>
 

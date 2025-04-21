@@ -364,10 +364,10 @@ export default function PrivacyPolicyPage() {
             If you have questions or need to reach us about this Privacy Policy,
             please email us at{" "}
             <a
-              href="mailto:info@creativeagency360.com"
+              href="mailto:support@creativeagency360.com"
               className="text-blue-600 hover:underline"
             >
-              info@creativeagency360.com
+              support@creativeagency360.com
             </a>{" "}
             as provided on our Privacy Policy page.
           </p>
