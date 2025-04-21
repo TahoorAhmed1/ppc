@@ -375,7 +375,7 @@ export default function HeroSection() {
             <motion.div variants={slideUp} className="flex flex-col gap-2 min-[400px]:flex-row">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <a href="#contactus">
-                  <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-full sm:w-[220px] text-[17px] font-medium hover:opacity-90 text-white rounded-lg border-none">
+                  <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-full sm:w-[190px] text-[17px] font-medium hover:opacity-90 text-white rounded-lg border-none">
                     Get In Touch
                   </Button>
                 </a>
@@ -397,10 +397,10 @@ export default function HeroSection() {
                 <p className="text-xs sm:text-sm">info@creativeagency360.com</p>
               </motion.div>
 
-            </motion.div>
-            
-              <AutoSlider platforms={platforms} />
-            
+            </motion.div >
+
+            <AutoSlider platforms={platforms} className="-mt-10 py-10" />
+
           </motion.div>
 
 
