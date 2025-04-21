@@ -8,6 +8,7 @@ import DigitalMarketingHeroSection from "@/components/digital-marketing/digital-
 import TestimonialsSection from "@/components/testimonials-section";
 import { AutoOpenImageModal } from "@/components/auto-open-image-modal";
 import InfiniteScroll from "@/components/digital-marketing/web-agency-hero";
+import ServicesCombo from "@/components/digital-marketing/services-combo";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
       />
 
       <PricingPackage />
+      <ServicesCombo />
       <TestimonialsSection />
       <ContactSection />
       <FaqSection />
