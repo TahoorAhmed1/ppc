@@ -216,7 +216,7 @@ export default function PricingPackage() {
             }`}
           >
             <div className="flex flex-col sm:flex-row gap-4 mb-4">
-              <div className="bg-teal-500 rounded-full hover:scale-105 h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 flex items-center justify-center text-white">
+              <div className="bg-teal-500 rounded-full  h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 flex items-center justify-center text-white">
                 <Image
                   src={
                     favicon ||
