@@ -265,7 +265,7 @@ export default function Page() {
           <h2 className="text-xl font-bold mb-3">16. Contact Us</h2>
           <p className="mb-3">
             After reading our Terms and Conditions, if you have any questions,
-            e-mail us at info@creativeagency360.com.
+            e-mail us at support@creativeagency360.com.
           </p>
         </section>
         <div className="mt-12 pt-4 border-t border-gray-200 text-center text-gray-600 text-sm relative z-10">

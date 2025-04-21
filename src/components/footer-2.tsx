@@ -159,8 +159,8 @@ export default function Footer() {
               Contact us
             </h3>
             <div>
-              <a href="mailto:info@creativeagency360.com">
-                info@creativeagency360.com
+              <a href="mailto:support@creativeagency360.com">
+                support@creativeagency360.com
               </a>
             </div>
             <div>
