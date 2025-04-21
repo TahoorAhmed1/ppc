@@ -175,7 +175,6 @@ export default function MarketingSection() {
           </MotionDiv>
         </MotionDiv>
 
-        {/* Text & Service Bars */}
         <MotionDiv
           className="w-full lg:w-1/2 space-y-6 text-center lg:text-left"
           variants={containerVariants}

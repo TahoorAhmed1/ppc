@@ -83,7 +83,7 @@ import profileImage5 from "@/assets/images/pfp (5).jpg";
 import profileImage6 from "@/assets/images/pfp (6).jpg";
 import profileImage7 from "@/assets/images/pfp (7).jpg";
 import profileImage8 from "@/assets/images/pfp (8).jpg";
-
+import waterMarkLogo from "@/assets/images/favicon.svg";
 export {
   popup,
   project1,

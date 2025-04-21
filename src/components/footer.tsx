@@ -7,11 +7,11 @@ import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 
 export default function Footer() {
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    setIsLoaded(true)
-  }, [])
+    setIsLoaded(true);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -22,7 +22,7 @@ export default function Footer() {
         delayChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -31,9 +31,9 @@ export default function Footer() {
       opacity: 1,
       transition: { duration: 0.5, ease: "easeOut" },
     },
-  }
+  };
 
-  const pulse : any= {
+  const pulse: any = {
     hidden: { scale: 0.9, opacity: 0.4 },
     visible: {
       scale: [1, 1.05, 1],
@@ -44,7 +44,7 @@ export default function Footer() {
         duration: 3,
       },
     },
-  }
+  };
 
   const backgroundVariants = {
     hidden: { opacity: 0 },
@@ -52,7 +52,7 @@ export default function Footer() {
       opacity: 1,
       transition: { duration: 0.5 },
     },
-  }
+  };
 
   return (
     <motion.footer
@@ -132,25 +132,9 @@ export default function Footer() {
           {/* Our Link */}
           <AnimatedFooterColumn
             title="Our Link"
-            links={["About Us", "Careers", "We're Hiring", "Press & Media"]}
+            links={["About Us", "Services", "Portfolio", "Contact Us"]}
           />
 
-          {/* Our Service
-          <AnimatedFooterColumn
-            title="Our Service"
-            links={[
-              "Social Media Marketing",
-              "Digital Strategy",
-              "SEO Optimization",
-              "Data Analytics",
-            ]}
-          /> */}
-
-          {/* Resources */}
-          {/* <AnimatedFooterColumn
-            title="Resources"
-            links={["Blog", "Case Studies", "eBooks", "FAQ"]}
-          /> */}
           <div className="space-y-4 text-gray-700">
             <h3 className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text ">
               Policy
@@ -193,8 +177,8 @@ function AnimatedFooterColumn({
   title,
   links,
 }: {
-  title: string
-  links: string[]
+  title: string;
+  links: string[];
 }) {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -205,7 +189,7 @@ function AnimatedFooterColumn({
         delayChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { x: -20, opacity: 0 },
@@ -214,10 +198,15 @@ function AnimatedFooterColumn({
       opacity: 1,
       transition: { duration: 0.4, ease: "easeOut" },
     },
-  }
+  };
 
   return (
-    <motion.div className="space-y-4" variants={containerVariants} initial="hidden" animate="visible">
+    <motion.div
+      className="space-y-4"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <motion.h3
         className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text"
         variants={itemVariants}
@@ -226,38 +215,24 @@ function AnimatedFooterColumn({
         {title}
       </motion.h3>
       <motion.ul className="space-y-3" variants={containerVariants}>
-        {links.map((link, index) => (
-          <motion.li
-            key={index}
-            variants={itemVariants}
-            whileHover={{ x: 5 }}
-            transition={{ type: "spring", stiffness: 400 }}
-          >
-            <Link href="#" className="text-gray-700 hover:text-gray-900">
-              {link}
-            </Link>
-          </motion.li>
-        ))}
+        {links.map((link, index) => {
+          const href = `#${link.toLowerCase().replace(" ", "")}`;
+          return (
+            <motion.li
+              key={index}
+              variants={itemVariants}
+              whileHover={{ x: 5 }}
+              transition={{ type: "spring", stiffness: 400 }}
+            >
+              <a href={href} className="text-gray-700 hover:text-gray-900">
+                {link}
+              </a>
+            </motion.li>
+          );
+        })}
       </motion.ul>
     </motion.div>
-  )
+  );
 }
 
-function FooterColumn({ title, links }: { title: string; links: string[] }) {
-  return (
-    <div className="space-y-4">
-      <h3 className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
-        {title}
-      </h3>
-      <ul className="space-y-3">
-        {links.map((link, index) => (
-          <li key={index}>
-            <Link href="#" className="text-gray-700 hover:text-gray-900">
-              {link}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
+

@@ -29,45 +29,59 @@ import {
 } from "@/assets/index"
 import { notify } from "@/lib/utils"
 import { AnimatedServiceCategory } from "./animated-service-category"
+import Link from "next/link";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z.string().min(6, { message: "Please enter a valid phone number" }),
-  message: z.string().min(5, { message: "Description must be at least 5 characters" }),
-})
+  message: z
+    .string()
+    .min(5, { message: "Description must be at least 5 characters" }),
+});
 
-type ContactFormData = z.infer<typeof formSchema>
+type ContactFormData = z.infer<typeof formSchema>;
 
 // Mock award images for demonstration
-const award = [award1.src, award2.src, award3.src, award4.src]
+const award = [award1.src, award2.src, award3.src, award4.src];
 const services = [
   { icon: serviceIcon1.src, title: "REAL ESTATE", subtitle: "W E B S I T E" },
   { icon: serviceIcon2.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
-  { icon: serviceIcon3.src, title: "PHARMA / MEDIC", subtitle: "W E B S I T E" },
+  {
+    icon: serviceIcon3.src,
+    title: "PHARMA / MEDIC",
+    subtitle: "W E B S I T E",
+  },
   { icon: serviceIcon4.src, title: "TECHNOLOGY", subtitle: "W E B S I T E" },
-  { icon: serviceIcon5.src, title: "PHARMA / MEDIC", subtitle: "W E B S I T E" },
+  {
+    icon: serviceIcon5.src,
+    title: "PHARMA / MEDIC",
+    subtitle: "W E B S I T E",
+  },
   { icon: serviceIcon6.src, title: "E-COMMERCE", subtitle: "W E B S I T E" },
-]
+];
 
 const fadeIn: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
-}
+};
 
 const slideUp: Variants = {
   hidden: { y: 20, opacity: 0 },
   visible: { y: 0, opacity: 1 },
-}
+};
 
 const slideLeft: Variants = {
   hidden: { x: 20, opacity: 0 },
   visible: { x: 0, opacity: 1 },
-}
+};
 
-export default function DigitalMarketingHeroSection({ backgroundImage = heroSectionImage3.src, awards = award }) {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSuccess, setIsSuccess] = useState(false)
+export default function DigitalMarketingHeroSection({
+  backgroundImage = heroSectionImage3.src,
+  awards = award,
+}) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(formSchema),
@@ -77,45 +91,48 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
       phone: "",
       message: "",
     },
-  })
+  });
 
   const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true)
+    setIsSubmitting(true);
     try {
-      const formData = new FormData()
+      const formData = new FormData();
       Object.entries(data).forEach(([key, value]) => {
-        if (value) formData.append(key, value)
-      })
+        if (value) formData.append(key, value);
+      });
 
       try {
-        const ipResponse = await fetch("https://api.ipify.org?format=json")
-        const ipData = await ipResponse.json()
-        formData.append("ip_address", ipData.ip)
+        const ipResponse = await fetch("https://api.ipify.org?format=json");
+        const ipData = await ipResponse.json();
+        formData.append("ip_address", ipData.ip);
       } catch (error) {
-        console.error("Could not fetch IP address:", error)
+        console.error("Could not fetch IP address:", error);
       }
 
-      const response = await fetch("https://demo7.obistest.online/api/store-contact-us-form", {
-        method: "POST",
-        body: formData,
-      })
+      const response = await fetch(
+        "https://demo7.obistest.online/api/store-contact-us-form",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
-        throw new Error("Failed to submit form")
+        throw new Error("Failed to submit form");
       }
 
-      setIsSuccess(true)
-      notify("success", "Message sent successfully!")
+      setIsSuccess(true);
+      notify("success", "Message sent successfully!");
 
       setTimeout(() => {
-        form.reset()
-        setIsSuccess(false)
-      }, 2000)
+        form.reset();
+        setIsSuccess(false);
+      }, 2000);
     } catch (error) {
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <motion.div
@@ -306,8 +323,14 @@ export default function DigitalMarketingHeroSection({ backgroundImage = heroSect
                     instructions, and billing notifications. You may receive up
                     to 2 messages per day; message frequency may vary. To opt
                     out, text STOP. For assistance, text HELP or visit Website
-                    Message and data rates may apply. See our Privacy Policy
-                    andTerms and Conditions. STOP to any message to opt out.
+                    Message and data rates may apply. See our
+                    <Link href={"/privacy"}>Privacy Policy</Link>
+                    and{" "}
+                    <Link href={"/terms-&-condition"}>
+                      {" "}
+                      Terms and Conditions
+                    </Link>
+                    . STOP to any message to opt out.
                   </p>
 
                   <Button
