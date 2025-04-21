@@ -112,7 +112,7 @@ function ServiceCategoryItem({ icon, title, subtitle }: ServiceCategoryItemProps
     >
       {/* Logo */}
       <motion.div
-        className="flex items-center justify-center w-12 h-12 sm:w-[67px] sm:h-[67px] md:w-[78px] md:h-[78px] rounded-full bg-white -ml-0.5 sm:-ml-1 mr-3 sm:mr-3.5 flex-shrink-0"
+        className="flex items-center justify-center w-12 h-12 sm:w-[67px] sm:h-[67px] md:w-[72px] md:h-[72px] rounded-full bg-white -ml-0.5 sm:-ml-1 mr-3 sm:mr-3 flex-shrink-0"
         whileHover={{ rotate: 10, scale: 1.1 }}
       >
         {icon && (
@@ -136,6 +136,6 @@ function ServiceCategoryItem({ icon, title, subtitle }: ServiceCategoryItemProps
         </p>
       </motion.div>
     </motion.div>
-  )
+  );
 
 }

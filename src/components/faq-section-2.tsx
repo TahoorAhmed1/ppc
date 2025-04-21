@@ -18,8 +18,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "@/components/ui/use-toast";
 import faq from "../assets/images/faq-background.png";
+import { notify } from "@/lib/utils";
 const contactSchema = z.object({
-  email: z.string().min(5, { message: "Please enter a valid phone number" }),
+  email: z.string().email({ message: "Please enter a valid email address" }),
+  number: z.string().min(10, { message: "Please enter a valid phone number" }),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -52,6 +54,7 @@ export default function AnimatedFaqSection2({
     resolver: zodResolver(contactSchema),
     defaultValues: {
       email: "",
+      number: "",
     },
   });
 
@@ -149,20 +152,31 @@ export default function AnimatedFaqSection2({
     },
   };
 
-  // Handle form submission
-  const onSubmit = async (data: ContactFormData) => {
+  const onSubmit = async (data: any) => {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const response = await fetch(
+        "https://demo7.obistest.online/api/store-subscribtion",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: data.email,
+            number: data.number,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Subscription failed");
+      }
 
       setIsSuccess(true);
-      toast({
-        title: "Thank you for your interest!",
-        description: "We'll be in touch with you soon.",
-      });
 
+      notify("success", "Subscription successful!");
       setTimeout(() => {
         reset();
         setIsSuccess(false);
@@ -196,10 +210,13 @@ export default function AnimatedFaqSection2({
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
-          className="grid gap-12 lg:grid-cols-2 items-center"
+          className="grid gap-12 lg:grid-cols-3 items-center"
           variants={sectionVariants}
         >
-          <motion.div className="space-y-6" variants={sectionVariants}>
+          <motion.div
+            className="space-y-6 col-span-2"
+            variants={sectionVariants}
+          >
             <Accordion type="single" collapsible className="w-full space-y-4">
               <MotionAccordionItem
                 value="item-1"
@@ -278,12 +295,12 @@ export default function AnimatedFaqSection2({
             </Accordion>
           </motion.div>
 
-          <div className="flex justify-end">
+          <div className="">
             <MotionCard
               className="bg-transparent border-none shadow-none p-0"
               variants={cardVariants}
             >
-              <MotionCardHeader className="p-0 mb-6" variants={itemVariants}>
+              <MotionCardHeader className="p-0 mb-4" variants={itemVariants}>
                 <motion.h2
                   className="text-4xl font-bold text-white"
                   variants={itemVariants}
@@ -310,7 +327,7 @@ export default function AnimatedFaqSection2({
                   variants={itemVariants}
                   onSubmit={handleSubmit(onSubmit)}
                 >
-                  <div className="flex items-center gap-2 w-full">
+                  <div className="flex flex-col gap-3 w-full">
                     <div className="w-full ">
                       <MotionInput
                         {...register("email")}
@@ -324,34 +341,52 @@ export default function AnimatedFaqSection2({
                         disabled={isSubmitting || isSuccess}
                       />
                       {errors.email && (
-                        <p className="text-sm text-red-400">
+                        <p className="text-sm text-red-400 mt-1">
                           {errors.email.message}
                         </p>
                       )}
                     </div>
-                    <MotionButton
-                      type="submit"
-                      className="bg-teal-500 hover:bg-teal-600 text-white rounded-md px-6 py-3 h-auto font-medium"
-                      variants={buttonVariants}
-                      whileHover="hover"
-                      whileTap="tap"
-                      disabled={isSubmitting || isSuccess}
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                          Sending...
-                        </>
-                      ) : isSuccess ? (
-                        <>
-                          <Check className="mr-2 h-4 w-4" />
-                          Sent!
-                        </>
-                      ) : (
-                        "Lets Talk"
+                    <div className="w-full ">
+                      <MotionInput
+                        {...register("number")}
+                        placeholder="Number"
+                        className="rounded-md px-4 py-2 h-12 w-full bg-white/10 border border-gray-700/50 text-white focus:ring-0 focus-visible:ring-0 focus:border-teal-500 focus-visible:border-teal-500"
+                        variants={itemVariants}
+                        whileFocus={{
+                          scale: 1.02,
+                          boxShadow: "0 0 0 2px rgba(20, 184, 166, 0.2)",
+                        }}
+                        disabled={isSubmitting || isSuccess}
+                      />
+                      {errors.number && (
+                        <p className="text-sm text-red-400 mt-1">
+                          {errors.number.message}
+                        </p>
                       )}
-                    </MotionButton>
+                    </div>
                   </div>
+                  <MotionButton
+                    type="submit"
+                    className="bg-teal-500 hover:bg-teal-600 text-white rounded-md px-6 py-3 h-auto font-medium"
+                    variants={buttonVariants}
+                    whileHover="hover"
+                    whileTap="tap"
+                    disabled={isSubmitting || isSuccess}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : isSuccess ? (
+                      <>
+                        <Check className="mr-2 h-4 w-4" />
+                        Sent!
+                      </>
+                    ) : (
+                      "Lets Talk"
+                    )}
+                  </MotionButton>
 
                   {/* <div className="flex items-center justify-between">
                     <MotionLink

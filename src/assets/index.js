@@ -55,9 +55,10 @@ import serviceIcon4 from "@/assets/images/servies-icon (4).svg";
 import serviceIcon5 from "@/assets/images/servies-icon (5).svg";
 import serviceIcon6 from "@/assets/images/servies-icon (6).svg";
 import fap from "@/assets/images/faq-background.png";
-import package2 from "@/assets/images/package2.png";
-import package3 from "@/assets/images/package3.png";
-import package4 from "@/assets/images/package4.png";
+import package1 from "@/assets/images/package1.webp";
+import package2 from "@/assets/images/package2.webp";
+import package3 from "@/assets/images/package3.webp";
+import package4 from "@/assets/images/package4.webp";
 import project1 from "@/assets/images/project/suburban-website_enhanced.webp";
 import project2 from "@/assets/images/project/kidz-website_enhanced.webp";
 import project3 from "@/assets/images/project/alan_enhanced.webp";
@@ -86,6 +87,7 @@ import profileImage8 from "@/assets/images/pfp (8).jpg";
 import waterMarkLogo from "@/assets/images/favicon.svg";
 export {
   popup,
+  package1,
   project1,
   project2,
   project6,

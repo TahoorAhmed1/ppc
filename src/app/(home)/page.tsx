@@ -135,15 +135,6 @@ export default function Home() {
         <FaqSection />
       </motion.div>
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
-      >
-        <CtaSection />
-      </motion.div>
-
       <Footer />
     </main>
   );

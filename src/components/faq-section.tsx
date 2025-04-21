@@ -1,43 +1,49 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { ArrowRight, Check, Loader2, Plus } from "lucide-react"
-import Link from "next/link"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
-import { toast } from "@/components/ui/use-toast"
-import { notify } from "@/lib/utils"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { ArrowRight, Check, Loader2, Plus } from "lucide-react";
+import Link from "next/link";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { toast } from "@/components/ui/use-toast";
+import { notify } from "@/lib/utils";
 
 // Create Zod schema for email validation
 const subscriptionSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
-})
+  number: z.string().min(10, { message: "Please enter a valid phone number" }),
+});
 
-type SubscriptionFormData = z.infer<typeof subscriptionSchema>
+type SubscriptionFormData = z.infer<typeof subscriptionSchema>;
 
 // Custom animated components
-const MotionCard = motion(Card)
-const MotionCardHeader = motion(CardHeader)
-const MotionCardContent = motion(CardContent)
-const MotionAccordionItem = motion(AccordionItem)
-const MotionInput = motion(Input)
-const MotionButton = motion(Button)
-const MotionLink = motion(Link)
+const MotionCard = motion(Card);
+const MotionCardHeader = motion(CardHeader);
+const MotionCardContent = motion(CardContent);
+const MotionAccordionItem = motion(AccordionItem);
+const MotionInput = motion(Input);
+const MotionButton = motion(Button);
+const MotionLink = motion(Link);
 
 export default function AnimatedFaqSection({
   enableGradientBackground = false,
 }: {
-  enableGradientBackground?: boolean
+  enableGradientBackground?: boolean;
 }) {
-  const [isLoaded, setIsLoaded] = useState(false)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSuccess, setIsSuccess] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   // Initialize React Hook Form with Zod resolver
   const {
@@ -49,12 +55,13 @@ export default function AnimatedFaqSection({
     resolver: zodResolver(subscriptionSchema),
     defaultValues: {
       email: "",
+      number: "",
     },
-  })
+  });
 
   useEffect(() => {
-    setIsLoaded(true)
-  }, [])
+    setIsLoaded(true);
+  }, []);
 
   // Animation variants
   const containerVariants = {
@@ -66,7 +73,7 @@ export default function AnimatedFaqSection({
         delayChildren: 0.2,
       },
     },
-  }
+  };
 
   const sectionVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -79,7 +86,7 @@ export default function AnimatedFaqSection({
         stiffness: 100,
       },
     },
-  }
+  };
 
   const accordionItemVariants = {
     hidden: { opacity: 0, x: -20 },
@@ -92,7 +99,7 @@ export default function AnimatedFaqSection({
         stiffness: 100,
       },
     },
-  }
+  };
 
   const cardVariants = {
     hidden: { opacity: 0, x: 20 },
@@ -107,7 +114,7 @@ export default function AnimatedFaqSection({
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 10 },
@@ -120,7 +127,7 @@ export default function AnimatedFaqSection({
         stiffness: 100,
       },
     },
-  }
+  };
 
   const buttonVariants = {
     hidden: { opacity: 0, scale: 0.9 },
@@ -144,9 +151,9 @@ export default function AnimatedFaqSection({
     tap: {
       scale: 0.95,
     },
-  }
+  };
 
-  const pulse:any = {
+  const pulse: any = {
     hidden: { scale: 0.9, opacity: 0.4 },
     visible: {
       scale: [1, 1.05, 1],
@@ -157,7 +164,7 @@ export default function AnimatedFaqSection({
         duration: 3,
       },
     },
-  }
+  };
 
   const backgroundVariants = {
     hidden: { opacity: 0 },
@@ -165,45 +172,48 @@ export default function AnimatedFaqSection({
       opacity: 1,
       transition: { duration: 0.5 },
     },
-  }
+  };
 
-  // Handle form submission
   const onSubmit = async (data: SubscriptionFormData) => {
-    setIsSubmitting(true)
+    setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://demo7.obistest.online/api/store-subscribtion", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: data.email,
-        }),
-      })
+      const response = await fetch(
+        "https://demo7.obistest.online/api/store-subscribtion",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: data.email,
+            number: data.number,
+          }),
+        }
+      );
 
       if (!response.ok) {
-        throw new Error("Subscription failed")
+        throw new Error("Subscription failed");
       }
 
-      setIsSuccess(true)
+      setIsSuccess(true);
 
-      notify("success", "Subscription successful!")
+      notify("success", "Subscription successful!");
       setTimeout(() => {
-        reset()
-        setIsSuccess(false)
-      }, 3000)
+        reset();
+        setIsSuccess(false);
+      }, 3000);
     } catch (error) {
-      console.error("Error submitting form:", error)
+      console.error("Error submitting form:", error);
       toast({
         title: "Submission failed",
         description: "Please try again later.",
         variant: "destructive",
-      })
+      });
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <motion.section
@@ -240,10 +250,13 @@ export default function AnimatedFaqSection({
         variants={sectionVariants}
       >
         <motion.div
-          className="grid gap-12 lg:grid-cols-2"
+          className="grid lg:gap-20 gap-10 lg:grid-cols-3"
           variants={sectionVariants}
         >
-          <motion.div className="space-y-6" variants={sectionVariants}>
+          <motion.div
+            className="lg:col-span-2 flex item-center justify-center"
+            variants={sectionVariants}
+          >
             <Accordion type="single" collapsible className="w-full space-y-4">
               <MotionAccordionItem
                 value="item-1"
@@ -353,7 +366,7 @@ export default function AnimatedFaqSection({
                 </motion.p>
 
                 <motion.form
-                  className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 max-w-md"
+                  className="flex flex-col   gap-3 "
                   variants={itemVariants}
                   onSubmit={handleSubmit(onSubmit)}
                 >
@@ -380,6 +393,32 @@ export default function AnimatedFaqSection({
                         }`}
                       >
                         {errors.email.message}
+                      </p>
+                    )}
+                  </div>
+                  <div className="flex-1 space-y-1">
+                    <MotionInput
+                      {...register("number")}
+                      placeholder="Enter Your number"
+                      className={`rounded-lg px-4 py-2 h-11 w-full bg-[#F8F8F8] border border-[#AFAFAF] focus:ring-0 focus-visible:ring-0 ${
+                        errors.number ? "border-red-500" : ""
+                      }`}
+                      variants={itemVariants}
+                      whileFocus={{
+                        scale: 1.02,
+                        boxShadow: "0 0 0 2px rgba(101, 207, 95, 0.2)",
+                      }}
+                      disabled={isSubmitting || isSuccess}
+                    />
+                    {errors.number && (
+                      <p
+                        className={`text-sm ${
+                          enableGradientBackground
+                            ? "text-white/90"
+                            : "text-red-500"
+                        }`}
+                      >
+                        {errors.number.message}
                       </p>
                     )}
                   </div>

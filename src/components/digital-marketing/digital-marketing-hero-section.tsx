@@ -151,7 +151,7 @@ export default function DigitalMarketingHeroSection({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-10">
           <div className="">
             <motion.h1
-              className="text-3xl md:text-4xl lg:text-[52px] font-bold leading-tight"
+              className="text-3xl md:text-4xl lg:text-[60px] font-bold leading-tight"
               variants={slideUp}
               transition={{ duration: 0.7 }}
             >
@@ -165,9 +165,9 @@ export default function DigitalMarketingHeroSection({
                   Not Just Websites
                 </span>
               </motion.span>
-              <span className="ml-2">We Build</span>
+              <span className="ml-2">We </span>
               <br />
-              Digital Experiences
+              Build Digital Experiences
               <br />
               that Make Brands
               <br />
@@ -175,7 +175,7 @@ export default function DigitalMarketingHeroSection({
             </motion.h1>
 
             <motion.div
-              className="flex flex-wrap items-center gap-4 mt-6"
+              className="flex flex-wrap items-center gap-4 lg:mt-14 mt-6"
               variants={fadeIn}
             >
               <motion.div
@@ -214,14 +214,13 @@ export default function DigitalMarketingHeroSection({
 
           <div>
             <motion.div
-              className="bg-[#000000]/50 rounded-xl px-6 py-8 w-full max-w-[600px] ml-auto shadow-lg border border-[#1a3b49]/50"
+              className="bg-[#000000]/50 rounded-xl px-10 py-8 w-full max-w-[600px] ml-auto shadow-lg border border-[#1a3b49]/50"
               variants={slideLeft}
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl font-bold mb-4">Request a Quote</h2>
-              <p className="text-base text-gray-300 mb-6">
-                Enhance your Design and start thriving by signing up for our
-                services today.
+              <p className="text-lg text-gray-300 mb-6 font-semibold">
+                We Don’t Just Build Sites. We Build Brand Experiences.
               </p>
 
               <Form {...form}>
@@ -316,17 +315,26 @@ export default function DigitalMarketingHeroSection({
                     )}
                   />
 
-                  <p className="text-xs text-gray-400 mt-2 mb-5 text-left">
-                    Disclaimer : You agree to receive conversation messages from
-                    CreativeAgency360. This includes SMS messages for
-                    appointment scheduling, appointment reminders, post-visit
-                    instructions, and billing notifications. You may receive up
-                    to 2 messages per day; message frequency may vary. To opt
-                    out, text STOP. For assistance, text HELP or visit Website
-                    Message and data rates may apply. See our
-                    <Link href={"/privacy"}>Privacy Policy</Link>
+                  <p className="text-xs text-gray-300 mt-2 mb-5 text-left">
+                    <span className="font-medium">Disclaimer</span> : You agree
+                    to receive conversation messages from CreativeAgency360.
+                    This includes SMS messages for appointment scheduling,
+                    appointment reminders, post-visit instructions, and billing
+                    notifications. You may receive up to 2 messages per day;
+                    message frequency may vary. To opt out, text STOP. For
+                    assistance, text HELP or visit Website Message and data
+                    rates may apply. See our
+                    <Link
+                      href={"/privacy"}
+                      className="font-medium mx-1 underline"
+                    >
+                      Privacy Policy
+                    </Link>
                     and{" "}
-                    <Link href={"/terms-&-condition"}>
+                    <Link
+                      href={"/terms-&-condition"}
+                      className="font-medium mx-1 underline"
+                    >
                       {" "}
                       Terms and Conditions
                     </Link>

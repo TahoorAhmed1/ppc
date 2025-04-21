@@ -6,8 +6,6 @@ export default function PricingPackage() {
   return (
     <div className="bg-gray-900 p-3 md:p-6 min-h-screen grid items-center gap-10 justify-center">
       <div className="grid grid-cols-3 max-w-5xl w-full gap-2">
-        {/* Left Card */}
-
         <div className="space-y-2.5">
           <div className="bg-white rounded-3xl p-4 flex-1">
             <p className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text font-medium mb-1">
@@ -70,7 +68,6 @@ export default function PricingPackage() {
           </div>
         </div>
 
-        {/* Right Card */}
         <div className="bg-white col-span-2 rounded-3xl p-8 flex-1">
           <div className="flex gap-3 mb-3">
             <div className="bg-teal-500 rounded-full h-25 w-25 flex items-center justify-center text-white text-3xl font-bold">
@@ -111,7 +108,6 @@ export default function PricingPackage() {
       </div>
 
       <div className="grid grid-cols-3 max-w-5xl w-full gap-2">
-        {/* Right Card */}
         <div className="bg-white col-span-2 rounded-3xl p-8 flex-1">
           <div className="flex gap-3 mb-3">
             <div className="bg-teal-500 rounded-full h-25 w-25 flex items-center justify-center text-white text-3xl font-bold">

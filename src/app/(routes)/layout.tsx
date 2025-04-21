@@ -6,7 +6,6 @@ import { Footer } from "react-day-picker";
 import * as motion from "motion/react-client";
 import { ToastContainer } from "react-toastify";
 
-import { AutoOpenImageModal } from "@/components/auto-open-image-modal";
 
 export default function ClientLayout({
   children,
@@ -30,8 +29,6 @@ export default function ClientLayout({
         <ToastContainer />
         {children}
         <Footer />
-
-        <AutoOpenImageModal alt="Promotional popup" />
       </body>
     </html>
   );

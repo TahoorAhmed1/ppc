@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Shield } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Shield } from "lucide-react";
 
 export default function RequestQuoteForm() {
   const [formData, setFormData] = useState({
@@ -14,25 +14,26 @@ export default function RequestQuoteForm() {
     email: "",
     phone: "",
     description: "",
-  })
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
+    e.preventDefault();
+    console.log("Form submitted:", formData);
     // Here you would typically send the data to your backend
-  }
+  };
 
   return (
-    <div className="w-full h-full max-w-lg bg-gray-900/70 backdrop-blur-sm p-8 rounded-lg ">
+    <div className="w-full h-full max-w-lg bg-gray-900/70 backdrop-blur-sm px-10 py-8 rounded-lg ">
       <h2 className="text-3xl font-bold text-white mb-4">Request a Quote</h2>
       <p className="text-gray-200 mb-6">
-        Enhance your Design and start thriving by signing up for our services
-        today.
+        We Don’t Just Build Sites. We Build Brand Experiences.
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
