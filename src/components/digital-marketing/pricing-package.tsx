@@ -185,14 +185,14 @@ export default function PricingPackage() {
             </div>
             <div className="">
               <button
-                className=" mb-5 bg-gradient-to-r cursor-pointer hover:from-[#1F9BED]/80 hover:to-[#65CF5F] transition-colors   from-[#65CF5F]/80 to-[#1F9BED] text-white w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded-lg flex justify-between items-center text-base sm:text-lg"
+                className=" mb-5 bg-gradient-to-r hover:scale-105  transition-all duration-300   cursor-pointer hover:from-[#1F9BED]/80 hover:to-[#65CF5F]    from-[#65CF5F]/80 to-[#1F9BED] text-white w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded-lg flex justify-between items-center text-base sm:text-lg"
                 onClick={() => handleBookNow(pkg)}
               >
                 <span className="font-medium">Book Now</span>
                 <ArrowRight size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
               <a href="tel:+18045745376" className="">
-                <button className="border-4 mb-5 cursor-pointer rounded-lg group border-teal-500 text-teal-500 w-full py-3 sm:py-3.5 px-4 sm:px-5  flex justify-between items-center text-base sm:text-lg">
+                <button className="border-4 mb-5 hover:scale-105  transition-all duration-300    cursor-pointer rounded-lg group border-teal-500 text-teal-500 w-full py-3 sm:py-3.5 px-4 sm:px-5  flex justify-between items-center text-base sm:text-lg">
                   <span className="font-medium bg-gradient-to-r group-hover:from-[#1F9BED]/80 group-hover:to-[#65CF5F] transition-colors from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
                     +1 (804) 574 5376
                   </span>
@@ -200,7 +200,7 @@ export default function PricingPackage() {
                 </button>
               </a>
               <a href="#portfolio" className="">
-                <button className="border-4 mb-5 cursor-pointer rounded-lg group border-teal-500 text-teal-500 w-full py-3 sm:py-3.5 px-4 sm:px-5  flex justify-between items-center text-base sm:text-lg">
+                <button className="border-4 mb-5 hover:scale-105  transition-all duration-300  cursor-pointer rounded-lg group border-teal-500 text-teal-500 w-full py-3 sm:py-3.5 px-4 sm:px-5  flex justify-between items-center text-base sm:text-lg">
                   <span className="font-medium bg-gradient-to-r group-hover:from-[#1F9BED]/80 group-hover:to-[#65CF5F] transition-colors from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
                     View Portfolio
                   </span>
@@ -216,7 +216,7 @@ export default function PricingPackage() {
             }`}
           >
             <div className="flex flex-col sm:flex-row gap-4 mb-4">
-              <div className="bg-teal-500 rounded-full h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 flex items-center justify-center text-white">
+              <div className="bg-teal-500 rounded-full hover:scale-105 h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 flex items-center justify-center text-white">
                 <Image
                   src={
                     favicon ||

@@ -214,7 +214,7 @@ export default function AnimatedFaqSection2({
           variants={sectionVariants}
         >
           <motion.div
-            className="space-y-6 col-span-2"
+            className="space-y-6 lg:col-span-2"
             variants={sectionVariants}
           >
             <Accordion type="single" collapsible className="w-full space-y-4">
@@ -225,13 +225,13 @@ export default function AnimatedFaqSection2({
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <AccordionTrigger className="text-lg font-medium text-white group">
+                <AccordionTrigger className="md:text-lg text-base font-medium text-white group w-full text-left  w-full">
                   How long does it take to build a website?
-                  <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
+                  <div className="ml-auto md:flex  hidden  h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
                     <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-300/90 text-sm">
+                <AccordionContent className="text-gray-300/90 text-sm ">
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -250,13 +250,13 @@ export default function AnimatedFaqSection2({
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <AccordionTrigger className="text-lg font-medium text-white group">
+                <AccordionTrigger className="md:text-lg text-base font-medium text-white group w-full text-left ">
                   Can I make changes to the website after it's live?
-                  <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
+                  <div className="ml-auto  md:flex  hidden h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
                     <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-300/90 text-sm">
+                <AccordionContent className="text-gray-300/90 text-sm ">
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -275,17 +275,18 @@ export default function AnimatedFaqSection2({
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <AccordionTrigger className="text-lg font-medium text-white group">
+                <AccordionTrigger className="md:text-lg text-base font-medium text-white group w-full text-left ">
                   Do you only build new websites, or can you redesign mine?
-                  <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
+                  <div className="ml-auto md:flex  hidden h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
                     <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-300/90 text-sm">
+                <AccordionContent className="text-gray-300/90 text-sm ">
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
+                    className=""
                   >
                     We do both! Whether you need a brand-new site or just want
                     to refresh your current one, we’ve got you covered.
@@ -295,14 +296,14 @@ export default function AnimatedFaqSection2({
             </Accordion>
           </motion.div>
 
-          <div className="flex justify-center">
+          <div className="">
             <MotionCard
               className="bg-transparent border-none shadow-none p-0"
               variants={cardVariants}
             >
               <MotionCardHeader className="p-0 mb-4" variants={itemVariants}>
                 <motion.h2
-                  className="text-4xl font-bold text-white "
+                  className="text-4xl  font-bold text-white "
                   variants={itemVariants}
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300, damping: 10 }}
@@ -315,7 +316,7 @@ export default function AnimatedFaqSection2({
                 variants={itemVariants}
               >
                 <motion.p
-                  className="text-gray-300 text-base leading-relaxed"
+                  className="text-gray-300 text-base  leading-relaxed"
                   variants={itemVariants}
                 >
                   Follow our newsletter. We will regularly update our latest
@@ -323,7 +324,7 @@ export default function AnimatedFaqSection2({
                 </motion.p>
 
                 <motion.form
-                  className="flex flex-col gap-4 max-w-md"
+                  className="flex flex-col gap-4 "
                   variants={itemVariants}
                   onSubmit={handleSubmit(onSubmit)}
                 >
@@ -367,7 +368,7 @@ export default function AnimatedFaqSection2({
                   </div>
                   <MotionButton
                     type="submit"
-                    className="bg-teal-500 hover:bg-teal-600 text-white rounded-md px-6 py-3 h-auto font-medium"
+                    className="bg-teal-500 hover:bg-teal-600  text-white rounded-md px-6 py-3 h-auto font-medium"
                     variants={buttonVariants}
                     whileHover="hover"
                     whileTap="tap"

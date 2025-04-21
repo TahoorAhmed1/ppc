@@ -110,15 +110,23 @@ export default function AutoSlider({ platforms, pauseOnHover = true, speed = 20,
       ref={containerRef}
     >
       <div className="relative w-full  overflow-hidden">
-        <motion.div className="flex gap-3 sm:gap-4 md:gap-6 lg:gap-8" animate={controls}>
+        <motion.div
+          className="flex gap-3 sm:gap-4 md:gap-6 lg:gap-8"
+          animate={controls}
+        >
           {allPlatforms.map((platform, index) => (
             <motion.div
               key={index}
-              className="flex items-center justify-center bg-gray-50 rounded-full p-2 sm:p-3 md:p-4 lg:p-6 min-w-[80px] sm:min-w-[120px] md:min-w-[150px] lg:min-w-[180px] h-10 sm:h-12 md:h-16 lg:h-20 shrink-0"
+              className="flex hover:scale-105 transition-all cursor-pointer items-center justify-center bg-gray-50 rounded-full p-2 sm:p-3 md:p-4 lg:p-6 min-w-[80px] sm:min-w-[120px] md:min-w-[150px] lg:min-w-[180px] h-10 sm:h-12 md:h-16 lg:h-20 shrink-0"
               transition={{ duration: 0.2 }}
             >
               <div className="relative w-12 sm:w-16 md:w-20 lg:w-32 h-4 sm:h-5 md:h-8 lg:h-12">
-                <Image src={platform.src || "/placeholder.svg"} alt={platform.name} fill className="object-contain" />
+                <Image
+                  src={platform.src || "/placeholder.svg"}
+                  alt={platform.name}
+                  fill
+                  className="object-contain"
+                />
               </div>
             </motion.div>
           ))}
@@ -129,5 +137,5 @@ export default function AutoSlider({ platforms, pauseOnHover = true, speed = 20,
         <div className="absolute right-0 top-0 h-full w-6 sm:w-8 md:w-10 lg:w-12 bg-gradient-to-l from-white to-transparent z-10"></div>
       </div>
     </motion.div>
-  )
+  );
 }

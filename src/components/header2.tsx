@@ -46,7 +46,7 @@ export default function Header2({ setIsOpen }: any) {
 
             <Button
               onClick={() => setIsOpen(true)}
-              className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:to-[#65CF5F] hover:from-[#1F9BED]/80 hover:opacity-90 transition-colors text-white rounded-lg border-none text-base md:text-lg px-5 h-12"
+              className="bg-gradient-to-r hover:scale-105 transition-all duration-300 cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:to-[#65CF5F] hover:from-[#1F9BED]/80 hover:opacity-90  text-white rounded-lg border-none text-base md:text-lg px-5 h-12"
             >
               Let's Talk
             </Button>

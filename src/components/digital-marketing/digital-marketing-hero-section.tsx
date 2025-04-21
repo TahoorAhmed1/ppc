@@ -221,7 +221,7 @@ export default function DigitalMarketingHeroSection({
 
           <div>
             <motion.div
-              className="bg-[#000000]/50 rounded-xl px-10 py-8 w-full max-w-[600px] ml-auto shadow-lg border border-[#1a3b49]/50"
+              className="bg-[#000000]/50 rounded-xl lg:px-10 px-6 py-8 w-full max-w-[600px] ml-auto shadow-lg border border-[#1a3b49]/50"
               variants={slideLeft}
               transition={{ duration: 0.8 }}
             >

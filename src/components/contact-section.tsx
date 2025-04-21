@@ -239,7 +239,7 @@ export default function ContactSection() {
 
   return (
     <section
-      className="py-5 md:pt-8 bg-white overflow-hidden relative"
+      className="py-5 lg:py-0 lg:pt-8 bg-white overflow-hidden relative"
       id="contactus"
     >
       <motion.div
@@ -466,7 +466,7 @@ export default function ContactSection() {
                     whileTap="tap"
                     type="submit"
                     disabled={isSubmitting || isSuccess}
-                    className="bg-gradient-to-r transition-colors hover:from-[#209CEB]/80 hover:to-[#65CF5F] from-[#65CE5C]/80 h-12 cursor-pointer to-[#209CEB] w-[220px] hover:opacity-90 text-white rounded-lg border-none"
+                    className="bg-gradient-to-r duration-300 hover:scale-105 transition-all  hover:from-[#209CEB]/80 hover:to-[#65CF5F] from-[#65CE5C]/80 h-12 cursor-pointer to-[#209CEB] w-[220px] hover:opacity-90 text-white rounded-lg border-none"
                   >
                     {isSubmitting ? (
                       <>
