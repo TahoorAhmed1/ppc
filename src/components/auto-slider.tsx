@@ -109,7 +109,7 @@ export default function AutoSlider({ platforms, pauseOnHover = true, speed = 20,
       transition={{ duration: 0.8, delay: 0.6 }}
       ref={containerRef}
     >
-      <div className="relative w-full py-10 overflow-hidden">
+      <div className="relative w-full  overflow-hidden">
         <motion.div className="flex gap-3 sm:gap-4 md:gap-6 lg:gap-8" animate={controls}>
           {allPlatforms.map((platform, index) => (
             <motion.div

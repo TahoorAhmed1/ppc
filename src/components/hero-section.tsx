@@ -4,11 +4,12 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Star, X } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { firmsLogos, heroSectionImage2, mailIcon, profileImage2, projectDoneLine } from "@/assets"
+import { firmsLogos, heroSectionImage2, mailIcon, profileImage2, projectDoneLine, shopifyIcon, wixIcon, webflowIcon, wordpressIcon } from "@/assets"
 import { AiFillSafetyCertificate } from "react-icons/ai"
 import StatsBar from "./stats-card"
 import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
+import AutoSlider from "./auto-slider"
 
 // Animation variants
 const fadeIn = {
@@ -112,6 +113,13 @@ const popupVariants = {
     },
   },
 }
+
+const platforms = [
+  { name: "Shopify", src: shopifyIcon.src },
+  { name: "WordPress", src: wordpressIcon.src },
+  { name: "Wix", src: wixIcon.src },
+  { name: "Webflow", src: webflowIcon.src },
+]
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -388,8 +396,14 @@ export default function HeroSection() {
                 <p className="font-medium text-lg sm:text-xl md:text-2xl text-[#1C2D44]">(888) 321-7452</p>
                 <p className="text-xs sm:text-sm">info@creativeagency360.com</p>
               </motion.div>
+
             </motion.div>
+            
+              <AutoSlider platforms={platforms} />
+            
           </motion.div>
+
+
 
           {/* Right column - Image and floating cards */}
           <motion.div
