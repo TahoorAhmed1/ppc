@@ -10,9 +10,33 @@ import StatsBar from "./stats-card"
 import { motion, AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
 
+// Animation variants
 const fadeIn = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
+}
+
+const slideUp = {
+  hidden: { y: 50, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
+}
+
+const slideRight = {
+  hidden: { x: -50, opacity: 0 },
+  visible: { x: 0, opacity: 1 },
+}
+
+const slideLeft = {
+  hidden: { x: 50, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 10,
+    },
+  },
 }
 
 const scaleUp = {
@@ -76,7 +100,7 @@ const popupVariants = {
       type: "spring",
       stiffness: 400,
       damping: 15,
-      delay: 0.1, // Reduced delay
+      delay: 0.1,
     },
   },
   exit: {
@@ -84,7 +108,7 @@ const popupVariants = {
     scale: 0.8,
     y: 20,
     transition: {
-      duration: 0.15, // Faster exit
+      duration: 0.15,
     },
   },
 }
@@ -92,9 +116,27 @@ const popupVariants = {
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [activePopup, setActivePopup] = useState<number | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
+  const [isTablet, setIsTablet] = useState(false)
 
+  // Check for mobile and tablet screen sizes
   useEffect(() => {
-    setIsLoaded(true)
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768)
+      setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024)
+    }
+
+    // Set initial state
+    checkScreenSize()
+
+    // Set isLoaded after a small delay to ensure smooth animations
+    setTimeout(() => setIsLoaded(true), 100)
+
+    // Add event listener for window resize
+    window.addEventListener("resize", checkScreenSize)
+
+    // Clean up
+    return () => window.removeEventListener("resize", checkScreenSize)
   }, [])
 
   const staggerChildren = {
@@ -108,65 +150,66 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative container overflow-hidden ">
-      {/* First animated ball with pulse effect */}
+    <section className="relative container overflow-hidden">
+      {/* Animated circles - only show on larger screens or with reduced opacity on mobile */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.5, scale: 1 }}
+        animate={{ opacity: isLoaded ? 0.5 : 0, scale: isLoaded ? 1 : 0.8 }}
         transition={{ duration: 0.5, delay: 1.5 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className="absolute md:top-[5%] top-[70%] left-[5%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity"
+        className={`absolute md:top-[5%] top-[70%] left-[5%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity ${isMobile ? "opacity-30" : ""
+          }`}
         onClick={() => setActivePopup(1)}
       ></motion.div>
 
-      {/* Second animated ball with pulse effect */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.5, scale: 1 }}
+        animate={{ opacity: isLoaded ? 0.5 : 0, scale: isLoaded ? 1 : 0.8 }}
         transition={{ duration: 0.5, delay: 2.0 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className="absolute md:top-[30%] top-[60%] right-[2%] w-[8vw] h-[8vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity"
+        className={`absolute md:top-[30%] top-[60%] right-[2%] w-[8vw] h-[8vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity ${isMobile ? "opacity-30" : ""
+          }`}
         onClick={() => setActivePopup(2)}
       ></motion.div>
 
-      {/* Third animated ball with pulse effect */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.5, scale: 1 }}
+        animate={{ opacity: isLoaded ? 0.5 : 0, scale: isLoaded ? 1 : 0.8 }}
         transition={{ duration: 0.5, delay: 2.5 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className="absolute md:top-[15%] top-[54%] right-[35%] w-[8vw] h-[8vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity"
+        className={`absolute md:top-[15%] top-[54%] right-[35%] w-[8vw] h-[8vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity ${isMobile ? "opacity-30" : ""
+          }`}
         onClick={() => setActivePopup(3)}
       ></motion.div>
 
-      {/* Fourth animated ball with pulse effect */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.5, scale: 1 }}
+        animate={{ opacity: isLoaded ? 0.5 : 0, scale: isLoaded ? 1 : 0.8 }}
         transition={{ duration: 0.5, delay: 3.0 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className="absolute top-[54.5%] right-[37%] w-[4vw] h-[4vw] md:w-[3vw] md:h-[3vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] flex items-center justify-center cursor-pointer hover:opacity-70 transition-opacity"
+        className={`absolute top-[54.5%] right-[37%] w-[4vw] h-[4vw] md:w-[3vw] md:h-[3vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] flex items-center justify-center cursor-pointer hover:opacity-70 transition-opacity ${isMobile ? "opacity-30" : ""
+          }`}
         onClick={() => setActivePopup(4)}
       >
         <AiFillSafetyCertificate className="text-white w-full h-full p-[15%]" />
       </motion.div>
 
-      {/* Faster popup animation */}
+      {/* Popup animation */}
       <AnimatePresence>
         {activePopup !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }} // Faster backdrop transition
+            transition={{ duration: 0.2 }}
             className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
             onClick={() => setActivePopup(null)}
           >
@@ -181,9 +224,10 @@ export default function HeroSection() {
               <motion.button
                 initial={{ opacity: 0, rotate: -90 }}
                 animate={{ opacity: 1, rotate: 0 }}
-                transition={{ delay: 0.2 }} // Faster button animation
+                transition={{ delay: 0.2 }}
                 className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
                 onClick={() => setActivePopup(null)}
+                aria-label="Close popup"
               >
                 <X size={20} />
               </motion.button>
@@ -192,15 +236,16 @@ export default function HeroSection() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.1, type: "spring", stiffness: 300 }} // Faster icon animation
+                  transition={{ delay: 0.1, type: "spring", stiffness: 300 }}
                   className="text-4xl mb-4"
+                  aria-hidden="true"
                 >
                   {popupData[activePopup - 1]?.icon}
                 </motion.div>
                 <motion.h3
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.15 }} // Faster title animation
+                  transition={{ delay: 0.15 }}
                   className="text-xl font-bold mb-2 bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text"
                 >
                   {popupData[activePopup - 1]?.title}
@@ -208,16 +253,12 @@ export default function HeroSection() {
                 <motion.p
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }} // Faster description animation
+                  transition={{ delay: 0.2 }}
                   className="text-gray-600 mb-4"
                 >
                   {popupData[activePopup - 1]?.description}
                 </motion.p>
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.25 }} // Faster button animation
-                >
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }}>
                   <Button
                     className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-full border-none"
                     onClick={() => setActivePopup(null)}
@@ -231,11 +272,11 @@ export default function HeroSection() {
         )}
       </AnimatePresence>
 
-      {/* Monthly Visitor Card with popup functionality but NO pulse effect */}
+      {/* Monthly Visitor Card with popup functionality */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, delay: 1.0 }}
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: isLoaded ? 1 : 0, x: isLoaded ? 0 : 50 }}
+        transition={{ duration: 0.5, delay: 1.0, type: "spring", stiffness: 100 }}
         className="absolute lg:right-[9%] right-[15%] lg:top-20 sm:top-[42%] top-[50%] z-40"
       >
         <div className="cursor-pointer" onClick={() => setActivePopup(5)}>
@@ -264,11 +305,19 @@ export default function HeroSection() {
                     { height: "24px", mdHeight: "36px" },
                     { height: "32px", mdHeight: "48px" },
                   ].map((bar, i) => (
-                    <div
+                    <motion.div
                       key={i}
-                      className={`w-[6px] sm:w-[8px] bg-white/70 rounded-md`}
+                      initial={{ height: 0 }}
+                      animate={{ height: isMobile ? bar.height : bar.mdHeight }}
+                      transition={{
+                        delay: 0.7 + i * 0.1,
+                        duration: 0.5,
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 15,
+                      }}
+                      className="w-[6px] sm:w-[8px] bg-white/70 rounded-md"
                       style={{
-                        height: bar.height,
                         backgroundColor: `rgba(255,255,255,${0.6 + i * 0.05})`,
                       }}
                     />
@@ -282,110 +331,86 @@ export default function HeroSection() {
 
       <div className="py-6 md:py-12">
         <div className="grid gap-6 md:gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16 items-center">
+          {/* Left column - Text content */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            initial="hidden"
+            animate={isLoaded ? "visible" : "hidden"}
+            variants={staggerChildren}
             className="flex flex-col justify-center space-y-4 md:space-y-6"
           >
-            <div className="space-y-2 md:space-y-4">
-              <motion.h1
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-2xl sm:text-3xl font-bold md:text-4xl lg:text-5xl"
-              >
+            <motion.div variants={slideRight} className="space-y-2 md:space-y-4">
+              <motion.h1 variants={slideRight} className="text-2xl sm:text-3xl font-bold md:text-4xl lg:text-5xl">
                 <span className="bg-gradient-to-r text-[#41B4A7]">
                   Your One-Stop Digital Marketing and Web Design Partner Empowering Your Brand Voice
                 </span>
               </motion.h1>
               <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                variants={slideRight}
                 className="max-w-[600px] text-[#1C2D44] text-sm sm:text-base md:text-lg lg:text-base xl:text-xl"
               >
                 A team of UI/UX experts, web and mobile app developers, copywriters and digital marketers who deliver
                 real-world solutions for today's dynamic landscape.
               </motion.p>
-            </div>
+            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="w-full"
-            >
+            <motion.div variants={fadeIn} transition={{ delay: 0.3 }} className="w-full">
               <Image
-                src={firmsLogos || "/placeholder.svg"}
-                alt="logos"
+                src={firmsLogos || "/placeholder.svg?height=100&width=1000&query=company logos"}
+                alt="Partner company logos"
                 width={1000}
-                height={1000}
+                height={100}
                 className="w-full h-auto max-h-20 object-contain"
+                priority
               />
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col gap-2 min-[400px]:flex-row"
-            >
+            <motion.div variants={slideUp} className="flex flex-col gap-2 min-[400px]:flex-row">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <a href="#contactus">
-                  <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-[220px] text-[17px] font-medium hover:opacity-90 text-white rounded-lg border-none">
+                  <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-full sm:w-[220px] text-[17px] font-medium hover:opacity-90 text-white rounded-lg border-none">
                     Get In Touch
                   </Button>
                 </a>
               </motion.div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex gap-2 text-[#1a3d7c]"
-            >
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                className="flex-shrink-0"
-              >
+            <motion.div variants={slideUp} className="flex gap-2 text-[#1a3d7c]">
+              <motion.div variants={scaleUp} className="flex-shrink-0">
                 <Image
-                  src={mailIcon || "/placeholder.svg"}
-                  alt="mail-icon"
+                  src={mailIcon || "/placeholder.svg?height=100&width=100&query=mail icon"}
+                  alt="Contact us"
                   width={100}
                   height={100}
                   className="w-12 h-12 sm:w-15 sm:h-16 object-contain"
                 />
               </motion.div>
-              <div>
+              <motion.div variants={slideRight}>
                 <p className="font-medium text-lg sm:text-xl md:text-2xl text-[#1C2D44]">(888) 321-7452</p>
                 <p className="text-xs sm:text-sm">info@creativeagency360.com</p>
-              </div>
+              </motion.div>
             </motion.div>
           </motion.div>
 
+          {/* Right column - Image and floating cards */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            initial="hidden"
+            animate={isLoaded ? "visible" : "hidden"}
+            variants={fadeIn}
+            transition={{ delay: 0.5 }}
             className="relative flex items-center justify-center mt-8 md:mt-0"
           >
-            {/* Customer Review Card - made responsive */}
+            {/* Customer Review Card - responsive */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              className="absolute md:top-50 top-[10%] right-[65%] w-[clamp(70px,40vw, 100px)] h-[clamp(100px, 10vw, 150px)] bg-white rounded-xl shadow-md p-2 sm:p-3 z-40"
+              variants={slideRight}
+              transition={{ delay: 0.7, type: "spring", stiffness: 100 }}
+              className="absolute md:top-50 top-[10%] right-[65%] w-[clamp(40px,35vw,190px)] h-[clamp(60px,8vw,80px)] bg-white rounded-xl shadow-md p-2 sm:p-3 z-40"
             >
               <div className="flex items-center gap-[1vw]">
                 <motion.img
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                  src={profileImage2.src || "/placeholder.svg"}
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.9, type: "spring", stiffness: 200 }}
+                  src={profileImage2?.src || "/placeholder.svg?height=40&width=40&query=profile avatar"}
                   alt="Customer Avatar"
                   className="rounded-full object-cover"
                   style={{
@@ -397,11 +422,11 @@ export default function HeroSection() {
                     maxHeight: "40px",
                   }}
                 />
-                <div className="flex flex-col">
+                <div className="flex flex-col w-[clamp(90px,80vw,100px)]">
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.9 }}
+                    initial="hidden"
+                    animate={isLoaded ? "visible" : "hidden"}
+                    variants={staggerChildren}
                     className="flex gap-[0.3vw] mb-[0.5vw]"
                   >
                     {Array(5)
@@ -409,9 +434,14 @@ export default function HeroSection() {
                       .map((_, i) => (
                         <motion.div
                           key={i}
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ duration: 0.2, delay: 1.0 + i * 0.1 }}
+                          variants={{
+                            hidden: { opacity: 0, scale: 0 },
+                            visible: {
+                              opacity: 1,
+                              scale: 1,
+                              transition: { delay: 1.0 + i * 0.1 },
+                            },
+                          }}
                         >
                           <Star
                             style={{
@@ -429,9 +459,8 @@ export default function HeroSection() {
                       ))}
                   </motion.div>
                   <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 1.5 }}
+                    variants={fadeIn}
+                    transition={{ delay: 1.5 }}
                     className="text-gray-500 font-medium"
                     style={{
                       fontSize: "clamp(8px, 1vw, 12px)",
@@ -443,18 +472,15 @@ export default function HeroSection() {
               </div>
             </motion.div>
 
-            {/* Project Done Card - made responsive */}
+            {/* Project Done Card - responsive */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="absolute h-[40px] w-[(clamp(80px,40vw, 100px)] sm:w-[140px] top-[30%] sm:top-50 right-[5%] bg-white rounded-lg shadow-md flex flex-col justify-center lg:py-10 sm:py-6 md:px-3 py-3 pr-4 pl-2 z-40"
+              variants={slideLeft}
+              transition={{ delay: 0.8, type: "spring", stiffness: 100 }}
+              className="absolute h-[40px] w-[clamp(50px,15vw,130px)] top-[30%] sm:top-50 right-[5%] bg-white rounded-lg shadow-md flex flex-col justify-center lg:py-10 sm:py-6 md:px-3 py-3 pr-4 pl-2 z-40"
             >
               <div>
                 <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.9 }}
+                  variants={fadeIn}
                   className="text-gray-500"
                   style={{
                     fontSize: "clamp(8px, 1.2vw, 14px)",
@@ -466,7 +492,7 @@ export default function HeroSection() {
                   <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 1.0 }}
+                    transition={{ delay: 1.0, duration: 0.5 }}
                     className="font-semibold text-gray-800"
                     style={{
                       fontSize: "clamp(10px, 2vw, 20px)",
@@ -475,16 +501,16 @@ export default function HeroSection() {
                     3,258
                   </motion.p>
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 1.2 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.2, duration: 0.5 }}
                     style={{ marginTop: "0.5vw" }}
                   >
                     <Image
-                      src={projectDoneLine || "/placeholder.svg"}
-                      alt="project done line"
-                      width={1000}
-                      height={1000}
+                      src={projectDoneLine || "/placeholder.svg?height=40&width=40&query=upward trend line"}
+                      alt="Project growth trend"
+                      width={40}
+                      height={40}
                       className="object-contain"
                       style={{
                         width: "clamp(16px, 2.5vw, 40px)",
@@ -497,28 +523,34 @@ export default function HeroSection() {
             </motion.div>
 
             <div className="relative w-full h-full">
-              {/* Large background circle behind the girl with pulse effect */}
+              {/* Large background circle behind the image */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 0.5, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
+                initial="hidden"
+                animate={isLoaded ? "visible" : "hidden"}
                 whileInView={pulseAnimation}
-                className="absolute top-[10%] left-[10%] w-[80%] h-0 pb-[80%] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] z-0"
+                className="absolute top-[10%] left-[10%] w-[80%] h-0 pb-[80%] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] opacity-50 z-0"
               ></motion.div>
 
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+              >
                 <Image
-                  src={heroSectionImage2.src || "/placeholder.svg"}
+                  src={
+                    heroSectionImage2?.src || "/placeholder.svg?height=1000&width=1000&query=digital marketing expert"
+                  }
                   alt="Digital Marketing Expert"
                   width={1000}
                   height={1000}
                   className="object-cover w-full h-auto relative z-10"
+                  priority
                 />
               </motion.div>
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 1.0 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.0, duration: 0.5 }}
                 className="-mt-6 relative z-20"
               >
                 <StatsBar />

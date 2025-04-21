@@ -5,8 +5,8 @@ import FaqSection from "@/components/faq-section-2";
 import PortfolioSection from "@/components/portfolio-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import Footer from "@/components/footer-2";
-import { InfiniteScroll } from "@/components/digital-marketing/web-agency-hero";
 import DigitalMarketingHeroSection from "@/components/digital-marketing/digital-marketing-hero-section";
+import InfiniteScroll from "@/components/digital-marketing/web-agency-hero";
 
 export default function Home() {
   return (
