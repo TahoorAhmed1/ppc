@@ -90,11 +90,7 @@ export default function ContactFormPopup({isOpen,setIsOpen}:any) {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger asChild>
-        <Button className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white">
-          Request a Quote
-        </Button>
-      </DialogTrigger>
+
       <DialogContent className="sm:max-w-[600px] p-0 border-[#1a3b49]/50 bg-[#000000]/90 text-white">
         <div className="relative w-full">
  
