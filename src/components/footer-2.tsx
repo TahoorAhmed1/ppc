@@ -7,12 +7,6 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function Footer() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -61,7 +55,6 @@ export default function Footer() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Background animated balls */}
       <motion.div
         className="absolute top-0 left-0 w-full h-full"
         initial="hidden"
@@ -150,12 +143,15 @@ export default function Footer() {
           />
           <div className="space-y-4 text-gray-700">
             <h3 className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text ">
-              Policy
+              Privacy Policy
             </h3>
             <div className="flex flex-col space-y-4">
-
-            <Link href={"/privacy"}>Privacy</Link>
-            <Link href={"/terms-&-condition"}>Terms & Condition</Link>
+              <a target="_blank" href={"/privacy"}>
+                Privacy
+              </a>
+              <a target="_blank" href={"/terms-&-condition"}>
+                Terms & Condition
+              </a>
             </div>
           </div>
           <div className="space-y-4 text-gray-700">
@@ -174,7 +170,6 @@ export default function Footer() {
         </motion.div>
       </motion.div>
 
-      {/* Bottom copyright */}
       <motion.div
         className="mt-12 pt-4 border-t border-gray-200 text-center text-gray-600 text-sm relative z-10"
         initial={{ opacity: 0, y: 20 }}

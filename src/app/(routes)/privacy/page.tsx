@@ -2,10 +2,10 @@ import Link from "next/link"
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col ">
       {/* Header with gradient background */}
       <div className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white py-12">
-        <div className="container mx-auto px-4">
+        <div className=" px-4">
           <h1 className="text-3xl font-bold text-center mb-2">
             <span className="">Privacy Policy</span>
           </h1>
@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <div className="max-w-[1000px] mx-auto px-4 py-8 max-w-4xl">
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-3">Regulatory Compliance</h2>
           <p className="mb-3">
@@ -372,6 +372,11 @@ export default function PrivacyPolicyPage() {
             as provided on our Privacy Policy page.
           </p>
         </section>
+        <div>
+          <div className="mt-12 pt-4 border-t border-gray-200 text-center text-gray-600 text-sm relative z-10">
+            © 2025 Creative Agency 360, Inc. All rights reserved.
+          </div>
+        </div>
       </div>
     </div>
   );

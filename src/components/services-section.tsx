@@ -160,7 +160,7 @@ export default function ServicesSection({
             }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bg-gradient-to-r from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-[220px] text-[17px] font-medium hover:opacity-90 text-white rounded-md border-none">
+              <Button className="bg-gradient-to-r h-11 from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-[220px] text-[17px] font-medium hover:opacity-90 text-white rounded-md border-none">
                 {buttonText}
               </Button>
             </motion.div>

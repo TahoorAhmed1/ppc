@@ -167,8 +167,9 @@ export default function HeroSection() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className={`absolute md:top-[5%] top-[70%] left-[5%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity ${isMobile ? "opacity-30" : ""
-          }`}
+        className={`absolute md:top-[5%] top-[70%] left-[5%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity ${
+          isMobile ? "opacity-30" : ""
+        }`}
         onClick={() => setActivePopup(1)}
       ></motion.div>
 
@@ -179,8 +180,9 @@ export default function HeroSection() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className={`absolute md:top-[30%] top-[60%] right-[2%] w-[8vw] h-[8vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity ${isMobile ? "opacity-30" : ""
-          }`}
+        className={`absolute md:top-[30%] top-[60%] right-[2%] w-[8vw] h-[8vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity ${
+          isMobile ? "opacity-30" : ""
+        }`}
         onClick={() => setActivePopup(2)}
       ></motion.div>
 
@@ -191,8 +193,9 @@ export default function HeroSection() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className={`absolute md:top-[15%] top-[54%] right-[35%] w-[8vw] h-[8vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity ${isMobile ? "opacity-30" : ""
-          }`}
+        className={`absolute md:top-[15%] top-[54%] right-[35%] w-[8vw] h-[8vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity ${
+          isMobile ? "opacity-30" : ""
+        }`}
         onClick={() => setActivePopup(3)}
       ></motion.div>
 
@@ -203,8 +206,9 @@ export default function HeroSection() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className={`absolute top-[54.5%] right-[37%] w-[4vw] h-[4vw] md:w-[3vw] md:h-[3vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] flex items-center justify-center cursor-pointer hover:opacity-70 transition-opacity ${isMobile ? "opacity-30" : ""
-          }`}
+        className={`absolute top-[54.5%] right-[37%] w-[4vw] h-[4vw] md:w-[3vw] md:h-[3vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] flex items-center justify-center cursor-pointer hover:opacity-70 transition-opacity ${
+          isMobile ? "opacity-30" : ""
+        }`}
         onClick={() => setActivePopup(4)}
       >
         <AiFillSafetyCertificate className="text-white w-full h-full p-[15%]" />
@@ -266,7 +270,11 @@ export default function HeroSection() {
                 >
                   {popupData[activePopup - 1]?.description}
                 </motion.p>
-                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }}>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.25 }}
+                >
                   <Button
                     className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-full border-none"
                     onClick={() => setActivePopup(null)}
@@ -284,7 +292,12 @@ export default function HeroSection() {
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: isLoaded ? 1 : 0, x: isLoaded ? 0 : 50 }}
-        transition={{ duration: 0.5, delay: 1.0, type: "spring", stiffness: 100 }}
+        transition={{
+          duration: 0.5,
+          delay: 1.0,
+          type: "spring",
+          stiffness: 100,
+        }}
         className="absolute lg:right-[9%] right-[15%] lg:top-20 sm:top-[42%] top-[50%] z-40"
       >
         <div className="cursor-pointer" onClick={() => setActivePopup(5)}>
@@ -296,7 +309,9 @@ export default function HeroSection() {
               }}
             >
               <CardContent className="flex flex-col justify-between h-full p-0">
-                <h2 className="font-medium text-[10px] sm:text-sm">Monthly Visitor</h2>
+                <h2 className="font-medium text-[10px] sm:text-sm">
+                  Monthly Visitor
+                </h2>
 
                 <div className="flex items-end gap-[6px] sm:gap-2 mt-1 sm:mt-2">
                   <div className="flex flex-col justify-between leading-none text-white/90 text-[8px] sm:text-[10px] gap-[2px] sm:gap-[6px]">
@@ -346,24 +361,39 @@ export default function HeroSection() {
             variants={staggerChildren}
             className="flex flex-col justify-center space-y-4 md:space-y-6"
           >
-            <motion.div variants={slideRight} className="space-y-2 md:space-y-4">
-              <motion.h1 variants={slideRight} className="text-2xl sm:text-3xl font-bold md:text-4xl lg:text-5xl">
+            <motion.div
+              variants={slideRight}
+              className="space-y-2 md:space-y-4"
+            >
+              <motion.h1
+                variants={slideRight}
+                className="text-2xl sm:text-3xl font-bold md:text-4xl lg:text-5xl"
+              >
                 <span className="bg-gradient-to-r text-[#41B4A7]">
-                  Your One-Stop Digital Marketing and Web Design Partner Empowering Your Brand Voice
+                  Your One-Stop Digital Marketing and Web Design Partner
+                  Empowering Your Brand Voice
                 </span>
               </motion.h1>
               <motion.p
                 variants={slideRight}
                 className="max-w-[600px] text-[#1C2D44] text-sm sm:text-base md:text-lg lg:text-base xl:text-xl"
               >
-                A team of UI/UX experts, web and mobile app developers, copywriters and digital marketers who deliver
-                real-world solutions for today's dynamic landscape.
+                A team of UI/UX experts, web and mobile app developers,
+                copywriters and digital marketers who deliver real-world
+                solutions for today's dynamic landscape.
               </motion.p>
             </motion.div>
 
-            <motion.div variants={fadeIn} transition={{ delay: 0.3 }} className="w-full">
+            <motion.div
+              variants={fadeIn}
+              transition={{ delay: 0.3 }}
+              className="w-full"
+            >
               <Image
-                src={firmsLogos || "/placeholder.svg?height=100&width=1000&query=company logos"}
+                src={
+                  firmsLogos ||
+                  "/placeholder.svg?height=100&width=1000&query=company logos"
+                }
                 alt="Partner company logos"
                 width={1000}
                 height={100}
@@ -372,38 +402,48 @@ export default function HeroSection() {
               />
             </motion.div>
 
-            <motion.div variants={slideUp} className="flex flex-col gap-2 min-[400px]:flex-row">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div
+              variants={slideUp}
+              className="flex flex-col gap-2 min-[400px]:flex-row"
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <a href="#contactus">
-                  <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-full sm:w-[190px] text-[17px] font-medium hover:opacity-90 text-white rounded-lg border-none">
+                  <Button className="bg-gradient-to-r h-11 cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-full sm:w-[190px] text-[17px] font-medium hover:opacity-90 text-white rounded-lg border-none">
                     Get In Touch
                   </Button>
                 </a>
               </motion.div>
             </motion.div>
 
-            <motion.div variants={slideUp} className="flex gap-2 text-[#1a3d7c]">
+            <motion.div
+              variants={slideUp}
+              className="flex gap-2 text-[#1a3d7c]"
+            >
               <motion.div variants={scaleUp} className="flex-shrink-0">
                 <Image
-                  src={mailIcon || "/placeholder.svg?height=100&width=100&query=mail icon"}
+                  src={
+                    mailIcon ||
+                    "/placeholder.svg?height=100&width=100&query=mail icon"
+                  }
                   alt="Contact us"
                   width={100}
                   height={100}
-                  className="w-12 h-12 sm:w-15 sm:h-16 object-contain"
+                  className="w-11 h-12 sm:w-15 sm:h-16 object-contain"
                 />
               </motion.div>
               <motion.div variants={slideRight}>
-                <p className="font-medium text-lg sm:text-xl md:text-2xl text-[#1C2D44]">(888) 321-7452</p>
+                <p className="font-medium text-lg sm:text-xl md:text-2xl text-[#1C2D44]">
+                  (888) 321-7452
+                </p>
                 <p className="text-xs sm:text-sm">info@creativeagency360.com</p>
               </motion.div>
-
-            </motion.div >
+            </motion.div>
 
             <AutoSlider platforms={platforms} className="-mt-10 py-10" />
-
           </motion.div>
-
-
 
           {/* Right column - Image and floating cards */}
           <motion.div
@@ -424,7 +464,10 @@ export default function HeroSection() {
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.9, type: "spring", stiffness: 200 }}
-                  src={profileImage2?.src || "/placeholder.svg?height=40&width=40&query=profile avatar"}
+                  src={
+                    profileImage2?.src ||
+                    "/placeholder.svg?height=40&width=40&query=profile avatar"
+                  }
                   alt="Customer Avatar"
                   className="rounded-full object-cover"
                   style={{
@@ -521,7 +564,10 @@ export default function HeroSection() {
                     style={{ marginTop: "0.5vw" }}
                   >
                     <Image
-                      src={projectDoneLine || "/placeholder.svg?height=40&width=40&query=upward trend line"}
+                      src={
+                        projectDoneLine ||
+                        "/placeholder.svg?height=40&width=40&query=upward trend line"
+                      }
                       alt="Project growth trend"
                       width={40}
                       height={40}
@@ -552,7 +598,8 @@ export default function HeroSection() {
               >
                 <Image
                   src={
-                    heroSectionImage2?.src || "/placeholder.svg?height=1000&width=1000&query=digital marketing expert"
+                    heroSectionImage2?.src ||
+                    "/placeholder.svg?height=1000&width=1000&query=digital marketing expert"
                   }
                   alt="Digital Marketing Expert"
                   width={1000}
@@ -574,5 +621,5 @@ export default function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
