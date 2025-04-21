@@ -60,14 +60,14 @@ export default function Header2() {
             (label) => {
               const href = `#${label.toLowerCase().replace(" ", "")}`;
               return (
-                <Link
+                <a
                   key={label}
                   href={href === "#home" ? "/" : href}
                   className="block text-sm text-gray-600 hover:font-semibold hover:text-primary transition-colors"
                   onClick={() => setMenuOpen(false)} // auto-close on nav click
                 >
                   {label}
-                </Link>
+                </a>
               );
             }
           )}

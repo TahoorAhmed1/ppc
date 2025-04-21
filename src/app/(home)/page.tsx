@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import AboutSection from "@/components/about-section"
-import ServicesSection from "@/components/services-section"
-import ExperienceSection from "@/components/experience-section"
+import { motion } from "framer-motion";
+import AboutSection from "@/components/about-section";
+import ServicesSection from "@/components/services-section";
+import ExperienceSection from "@/components/experience-section";
 import PortfolioSection from "@/components/portfolio-section";
 import ContactSection from "@/components/contact-section";
 import FaqSection from "@/components/faq-section";
@@ -71,7 +71,7 @@ const sectionVariants = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <HeroSection />
 
       <motion.div
@@ -136,6 +136,6 @@ export default function Home() {
       </motion.div>
 
       <Footer />
-    </main>
+    </div>
   );
 }

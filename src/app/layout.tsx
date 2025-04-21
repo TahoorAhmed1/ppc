@@ -34,7 +34,7 @@ export default function ClientLayout({
           </a>
         </noscript>
       </head>
-      <body className={`antialiased`}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
