@@ -59,6 +59,8 @@ import package1 from "@/assets/images/package1.webp";
 import package2 from "@/assets/images/package2.webp";
 import package3 from "@/assets/images/package3.webp";
 import package4 from "@/assets/images/package4.webp";
+import package5 from "@/assets/images/package5.webp";
+import package6 from "@/assets/images/package6.webp";
 import project1 from "@/assets/images/project/suburban-website_enhanced.webp";
 import project2 from "@/assets/images/project/kidz-website_enhanced.webp";
 import project3 from "@/assets/images/project/alan_enhanced.webp";
@@ -87,7 +89,6 @@ import profileImage8 from "@/assets/images/pfp (8).jpg";
 import waterMarkLogo from "@/assets/images/favicon.svg";
 export {
   popup,
-  package1,
   project1,
   project2,
   project6,
@@ -104,9 +105,12 @@ export {
   project14,
   project15,
   project16,
-  package4,
+  package1,
   package2,
   package3,
+  package4,
+  package5,
+  package6,
   logo,
   fap,
   heroSectionImage,

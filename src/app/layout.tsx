@@ -2,6 +2,13 @@ import type React from "react";
 import "./globals.css";
 
 import Script from "next/script";
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: "Creative Agency 360",
+  description: "We Build your Digital Business",
+};
 
 export default function ClientLayout({
   children,

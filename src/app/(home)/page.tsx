@@ -74,14 +74,7 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <HeroSection />
 
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
-      >
-        <AboutSection />
-      </motion.div>
+      <AboutSection />
 
       <motion.div
         initial="hidden"

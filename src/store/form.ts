@@ -2,8 +2,5 @@ import { create } from "zustand";
 
 export const useFormContact = create((set) => ({
   isOpen: false,
-
-
- 
-  setIsOpen: (isOpen: boolean) => set({ isOpen:isOpen}),
+  setIsOpen: (isOpen: boolean) => set({ isOpen: isOpen }),
 }));

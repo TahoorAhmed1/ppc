@@ -45,11 +45,11 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center md:gap-4 gap-2">
-          <Link href="#contactus" className="">
+          <a href="#contactus" className="">
             <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none sm:text-sm text-xs md:px-4 px-2 py-2">
               Get Free Consultation
             </Button>
-          </Link>
+          </a>
           <button
             className="md:hidden"
             onClick={() => setMenuOpen(!menuOpen)}

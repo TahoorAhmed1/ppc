@@ -12,7 +12,7 @@ export default function PricingPackage() {
               Package #1
             </p>
             <h2 className="text-2xl font-bold mb-1">
-              Starter <span className="font-normal    ">Package</span>
+              Starter <span className="font-normal">Package</span>
             </h2>
 
             <p className="text-gray-600 text-sm mb-5 max-w-xs">

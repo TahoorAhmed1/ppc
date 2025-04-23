@@ -121,7 +121,7 @@ export default function Footer() {
             "We're a results-driven digital marketing agency focused on helping
             brands grow in a digital-first world."We're a results-driven digital
             marketing agency focused on helping brands grow in a digital-first
-            world.
+            world."
           </motion.p>
         </motion.div>
 

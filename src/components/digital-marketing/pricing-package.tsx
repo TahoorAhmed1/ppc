@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { favicon, package2, package3, package4, package1 } from "@/assets";
+import { favicon, package2, package3, package4, package1, package6, package5 } from "@/assets";
 import { BookingModal } from "./booking-modal";
 
 interface PricingPackage {
@@ -13,7 +13,6 @@ interface PricingPackage {
   image: any;
   originalPrice: string;
   features: string[];
-  additionalFeatures: string[];
 }
 
 const pricingPackages: PricingPackage[] = [
@@ -22,102 +21,191 @@ const pricingPackages: PricingPackage[] = [
     name: "Starter",
     image: package1,
     description:
-      "Set the stage for social media success by starting with the essentials. With a solid foundation, you'll pave the way for future growth and achievement.",
+      "Perfect for small businesses looking to establish their online presence with a simple yet professional website.",
     price: "149",
     originalPrice: "298",
     features: [
-      "Perfect for getting started online with a clean and simple 3-page website.",
-      "It includes 2 high-quality stock images.",
-      "One jQuery slider banner for dynamic visual appeal.",
-      "A fully functional contact or query form.",
-      "Built using complete W3C certified HTML standards.",
-      "Your website will be delivered within 48 to 72 hours.",
-    ],
-    additionalFeatures: [
-      "You'll also receive full deployment support to make your launch smooth and stress-free.",
-      "This package comes with a 100% satisfaction guarantee.",
-      "A 100% unique design promise.",
-      "A full money-back guarantee if you're not completely happy with the final result.",
+      "3-4 Pages Website",
+      "02 Stock Images",
+      "03 Banner Designs",
+      "All Browser Compatibility",
+      "Complete W3C Certified HTML",
+      "Google Friendly Sitemap",
+      "NO MONTHLY/YEARLY FEE",
+      "Dedicated Project Manager",
+      "48 to 72 hours TAT",
+      "Unlimited Revisions",
+      "Complete Deployment",
+      "100% Satisfaction Guarantee",
+      "100% Unique Design Guarantee",
+      "100% Money Back Guarantee",
     ],
   },
   {
-    id: "growth",
-    name: "Growth",
+    id: "professional",
+    name: "Professional",
     image: package2,
     description:
-      "Elevate your brand with custom strategies across various platforms. With our expertise and insights, we deliver impactful solutions across a range of social media channels.",
-    price: "249",
-    originalPrice: "498",
+      "Elevate your brand with a conceptual and interactive design that engages visitors and showcases your business.",
+    price: "349",
+    originalPrice: "698",
     features: [
-      "5-page custom website tailored to your needs.",
-      "Includes 5 professional stock photos.",
-      "Comes with 3 unique banner designs aligned with your brand identity.",
-      "Features one jQuery slider for dynamic visuals.",
-      "Includes a Google-friendly sitemap for basic SEO.",
-      "Built using W3C certified HTML standards.",
-      "Delivery within 48 to 72 hours.",
-    ],
-    additionalFeatures: [
-      "Backed by a 100% satisfaction guarantee.",
-      "Includes a 100% unique design promise.",
-      "Offers a full money-back guarantee if you're not satisfied.",
-      "Optional Upgrades: Mobile responsiveness for $200.",
-      "CMS integration for $250 (easily expandable as your business grows).",
-      "A powerful launchpad for establishing a strong online presence.",
+      "3-5 Pages Website",
+      "Conceptual & Interactive Design",
+      "08 Stock Images",
+      "05 Banner Design",
+      "1 jQuery Slider Banner",
+      "All Browser Compatibility",
+      "Complete W3C Certified HTML",
+      "Google Friendly Sitemap",
+      "Contact/Query Form",
+      "NO MONTHLY/YEARLY FEE",
+      "Dedicated Project Manager",
+      "Unlimited Revisions",
+      "48 to 72 hours TAT",
+      "Complete Deployment",
+      "100% Satisfaction Guarantee",
+      "100% Unique Design Guarantee",
+      "100% Money Back Guarantee",
     ],
   },
+  {
+    id: "business",
+    name: "Business",
+    image: package3,
+    description:
+      "A comprehensive solution for growing businesses that need more content and enhanced functionality.",
+    price: "532",
+    originalPrice: "1064",
+    features: [
+      "5-10 Pages Website",
+      "Conceptual & Interactive Design",
+      "12 Stock Images",
+      "08 Banner Design",
+      "1 jQuery Slider Banner",
+      "All Browser Compatibility",
+      "Complete W3C Certified HTML",
+      "Google Friendly Sitemap",
+      "Contact/Query Form",
+      "Search Engine Submission",
+      "NO MONTHLY/YEARLY FEE",
+      "Dedicated Project Manager",
+      "Unlimited Revisions",
+      "48 to 72 hours TAT",
+      "Complete Deployment",
+      "100% Satisfaction Guarantee",
+      "100% Unique Design Guarantee",
+      "100% Money Back Guarantee",
+    ],
+  },
+
   {
     id: "premium",
     name: "Premium",
-    image: package3,
+    image: package4,
     description:
-      "Leverage advanced tools and campaigns to accelerate your efforts, boosting visibility and engagement across all social media channels for greater impact.",
-    price: "500",
-    originalPrice: "1000",
+      "Take your online presence to the next level with special effects, more content, and enhanced design elements.",
+    price: "765",
+    originalPrice: "1530",
     features: [
-      "Provides a 10-page custom-designed website complete with CMS/admin panel support.",
-      "It includes 8 stock images.",
-      "5 eye-catching banner designs.",
-      "A jQuery slider banner for dynamic presentation.",
-      "You'll also receive a Google-friendly sitemap.",
-      "Delivery is guaranteed within 48 to 72 hours along with full deployment support.",
+      "10-15 Pages Website",
+      "Conceptual & Interactive Design",
+      "15 Stock Images",
+      "Special hover Effects",
+      "10 Banner Design",
+      "1 jQuery Slider Banner",
+      "All Browser Compatibility",
+      "Complete W3C Certified HTML",
+      "Google Friendly Sitemap",
+      "Contact/Query Form",
+      "Search Engine Submission",
+      "Social Media Banner Designs",
+      "Content Management System (CMS)",
+      "NO MONTHLY/YEARLY FEE",
+
+      "Dedicated Project Manager",
+      "Unlimited Revisions",
+      "48 to 72 hours TAT",
+      "Complete Deployment",
+      "100% Satisfaction Guarantee",
+      "100% Unique Design Guarantee",
+      "100% Money Back Guarantee",
     ],
-    additionalFeatures: [
-      "Full W3C certified HTML development.",
-      "Optional mobile responsiveness can be added for $200.",
-      "This package includes 100% satisfaction.",
-      "A unique design promise.",
-      "A full money-back guarantee.",
-      "It's the perfect solution for businesses ready to scale and strengthen their digital presence.",
+  },
+  {
+    id: "enterprise",
+    name: "Enterprise",
+    image: package5,
+    description:
+      "A feature-rich solution for established businesses requiring advanced functionality and comprehensive online presence.",
+    price: "899",
+    originalPrice: "1798",
+    features: [
+      "15-20 Pages Website",
+      "Conceptual & Interactive Design",
+      "20 Stock Images",
+      "Special Hover Effects",
+      "15 Banner Design",
+      "1 jQuery Slider Banner",
+      "All Browser Compatibility",
+      "Complete W3C Certified HTML",
+      "Google Friendly Sitemap",
+      "Contact/Query Form",
+      "Social Media Banner Designs",
+      "Social Media Integration",
+      "Search Engine Submission",
+      "Login/Sign-up Area",
+      "Online Appointment/Scheduling",
+      "Content Management System (CMS)",
+      "NO MONTHLY/YEARLY FEE",
+
+      "Dedicated Project Manager",
+      "Unlimited Revisions",
+      "48 to 72 hours TAT",
+      "Complete Deployment",
+      "100% Satisfaction Guarantee",
+      "100% Unique Design Guarantee",
+      "100% Money Back Guarantee",
     ],
   },
   {
     id: "ultimate",
     name: "Ultimate",
-    image: package4,
+    image: package6,
     description:
-      "With a comprehensive, 360-degree social media approach, we cover everything you need—whether it's creating engaging posts or growing your followers.",
-    price: "800",
-    originalPrice: "1600",
+      "Our most comprehensive package with custom PHP development and advanced features for businesses requiring a powerful online platform.",
+    price: "1249",
+    originalPrice: "2498",
     features: [
-      "Delivering a high-end, fully custom 15 page dynamic website designed to impress.",
-      "It's mobile responsive.",
-      "Includes optional tools like online appointment booking, payment integration, lead capture forms, and newsletter subscription.",
-      "You also get 5 stock photos.",
-      "3 custom banners.",
-      "A jQuery slider.",
-      "We'll integrate social media.",
-      "Enable newsfeed updates.",
-    ],
-    additionalFeatures: [
-      "Handle search engine submission.",
-      "Built using W3C certified HTML.",
-      "Delivered within 48 to 72 hours.",
-      "This package ensures seamless deployment.",
-      "Enjoy peace of mind with our 100% satisfaction guarantee.",
-      "Unique design assurance.",
-      "Full money-back promise.",
-      "It's the ultimate all-in-one digital solution.",
+      "15-20 Pages Website",
+      "Custom PhP Development",
+      "30 Stock Images",
+      "Special Hover Effects",
+      "20 Banner Design",
+      "1 jQuery Slider Banner",
+      "All Browser Compatibility",
+      "Complete W3C Certified HTML",
+      "Google Friendly Sitemap",
+      "Contact/Query Form",
+      "Social Media Banner Designs",
+      "Social Media Integration",
+      "Search Engine Submission",
+      "Multi Lingual (Optional)",
+      "Payment Module Integration (Optional)",
+      "Search Bar Integration",
+      "Newsletter Subscription",
+      "Online Appointment/Scheduling",
+      "Login/Sign-up Area",
+      "Content Management System (CMS)",
+      "NO MONTHLY/YEARLY FEE",
+
+      "Dedicated Project Manager",
+      "Unlimited Revisions",
+      "48 to 72 hours TAT",
+      "Complete Deployment",
+      "100% Satisfaction Guarantee",
+      "100% Unique Design Guarantee",
+      "100% Money Back Guarantee",
     ],
   },
 ];
@@ -235,18 +323,12 @@ export default function PricingPackage() {
                     What&apos;s Included:
                   </span>
                 </h3>
-                <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
-                  <ul className="text-gray-700 text-base space-y-2 list-disc pl-4 mb-2">
-                    {pkg.features.map((feature, index) => (
-                      <li key={index}>{feature}</li>
-                    ))}
-                  </ul>
-                  <ul className="text-gray-700 text-base space-y-2 list-disc pl-4">
-                    {pkg.additionalFeatures.map((feature, index) => (
-                      <li key={index}>{feature}</li>
-                    ))}
-                  </ul>
-                </div>
+
+                <ul className="text-gray-700 text-base grid grid-cols-1 sm:grid-cols-2 gap-x-6 list-disc pl-4 mb-2">
+                  {pkg.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
               </div>
             </div>
             <div className="border-b-2 border-gray-400 mb-4 sm:mb-6"></div>
@@ -263,6 +345,7 @@ export default function PricingPackage() {
           </div>
         </div>
       ))}
+      
 
       {selectedPackage && (
         <BookingModal

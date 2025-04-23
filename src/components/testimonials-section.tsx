@@ -123,7 +123,7 @@ export default function TestimonialsSection() {
       </div>
 
       <div className="container px-4 md:px-6 relative z-10">
-        <div className="flex flex-col items-center gap-3 text-center mb-12">
+        <div className="flex flex-col items-center gap-3 text-center mb-6">
           <h2 className="text-3xl font-bold text-[#1C2D44]">VIEW REVIEWS</h2>
           <h3 className="text-4xl md:text-5xl font-bold text-[#3DB1B1]">
             Hear from Our Success Stories
@@ -142,7 +142,7 @@ export default function TestimonialsSection() {
             loop: true,
           }}
         >
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="-ml-4 py-3">
             {testimonials.map((testimonial) => (
               <CarouselItem
                 key={testimonial.id}

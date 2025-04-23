@@ -1,20 +1,22 @@
-"use client"
-import { useState } from "react"
-import { BookingModal } from "./booking-modal"
+"use client";
+import { useState } from "react";
+import { BookingModal } from "./booking-modal";
 
 interface PricingPackage {
-  id: string
-  name: string
-  description: string
-  price: string
-  originalPrice: string
-  features: string[]
-  additionalFeatures: string[]
+  id: string;
+  name: string;
+  description: string;
+  price: string;
+  originalPrice: string;
+  features: string[];
+  additionalFeatures: string[];
 }
 
 const ServicesCombo = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [selectedPackage, setSelectedPackage] = useState<PricingPackage | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState<PricingPackage | null>(
+    null
+  );
 
   const handleBookNow = () => {
     const combo: PricingPackage = {
@@ -327,39 +329,46 @@ const ServicesCombo = () => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-[#65CF5F]/80  to-[#1F9BED] bg-[#1F9BED] px-6 whitespace-nowrap rounded-lg p-5 sm:p-6 text-white flex flex-col h-fit shadow-lg mt-8 lg:mt-0">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-2">
-            COMBO PACKAGES
+        <div className="bg-gradient-to-r from-[#65CF5F]/90 to-[#1F9BED]/90 rounded-2xl px-8 py-10 sm:px-10 sm:py-12 shadow-2xl text-white flex flex-col items-center mt-10 space-y-6 sm:space-y-8 max-w-md mx-auto">
+          {/* Title */}
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-center">
+            Combo Packages
           </h2>
-          <p className="text-center mb-4 sm:mb-6 text-sm sm:text-base">
-            Company Branding Solution
+
+          {/* Subtitle */}
+          <p className="text-base sm:text-lg text-center text-white/90 font-medium max-w-sm">
+            A complete company branding solution tailored for growth-focused
+            businesses.
           </p>
 
-          <div className="text-center mb-3 sm:mb-4">
-            <div className="flex items-center justify-center">
-              <span className="text-5xl sm:text-6xl font-bold">$1799</span>
-              <div className="ml-2 text-left">
-                <span className="line-through text-sm sm:text-base">$2599</span>
-                <br />
-                <span className="text-sm sm:text-base">ONLY</span>
-              </div>
+          {/* Price Section */}
+          <div className="flex items-start justify-center space-x-4 sm:space-x-5">
+            <span className="text-5xl sm:text-6xl font-extrabold">$1799</span>
+            <div className="flex flex-col leading-snug">
+              <span className="line-through text-sm sm:text-base text-white/70">
+                $2599
+              </span>
+              <span className="text-xs sm:text-sm font-medium">
+                Limited Time Only
+              </span>
             </div>
           </div>
 
-          <div className="py-2 sm:py-3 text-center text-lg sm:text-xl font-medium mb-6 sm:mb-8">
-            03 Months Installments
+          {/* Installment Info */}
+          <div className="bg-white/10 px-5 py-2.5 rounded-lg backdrop-blur-md text-white text-center text-base sm:text-lg font-medium">
+            3 Month Easy Installments
           </div>
 
+          {/* CTA Button */}
           <button
-            className="bg-white w-full sm:w-[200px] hover:scale-105 text-[#3DB1B1] text-base sm:text-[17px] py-2.5 sm:py-3 font-medium hover:opacity-90  transition-all cursor-pointer rounded-lg border-none mx-auto shadow-2xl"
             onClick={handleBookNow}
+            className="bg-white text-[#3DB1B1] hover:text-[#3DB1B1] cursor-pointer px-7 py-3 rounded-xl text-base sm:text-lg font-semibold transition-all shadow-md hover:shadow-lg hover:scale-105 duration-200"
           >
             Order Now
           </button>
         </div>
       </div>
 
-      {/* You can add a modal component here to show when isModalOpen is true */}
       {isModalOpen && selectedPackage && (
         <BookingModal
           isOpen={isModalOpen}
@@ -371,6 +380,6 @@ const ServicesCombo = () => {
       )}
     </div>
   );
-}
+};
 
-export default ServicesCombo
+export default ServicesCombo;

@@ -1,22 +1,22 @@
-import { Card, CardContent } from "@/components/ui/card"
-import Image from "next/image"
+import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 
 // Define the testimonial interface
 interface Testimonial {
-  id: number | string
-  name: string
-  role: string
-  content: string
-  avatar?: string
+  id: number | string;
+  name: string;
+  role: string;
+  content: string;
+  avatar?: string;
 }
 
 interface TestimonialCardProps {
-  testimonial: Testimonial
+  testimonial: Testimonial;
 }
 
 export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <Card className="bg-[#1C2D44] text-white rounded-2xl border-none py-8 px-6 flex flex-col justify-between h-full shadow-lg hover:shadow-xl transition-shadow duration-300 relative">
+    <Card className="bg-[#1C2D44] text-white hover:scale-105 transition-all rounded-2xl border-none py-8 px-6 flex flex-col justify-between h-full shadow-lg hover:shadow-xl duration-300 relative">
       <CardContent className="p-0">
         <div className="absolute top-8 right-6">
           <svg
