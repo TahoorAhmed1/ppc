@@ -1,16 +1,22 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-import { Loader2, X } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { Loader2, X } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Dialog,
   DialogContent,
@@ -18,23 +24,25 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { notify } from "@/lib/utils"
+} from "@/components/ui/dialog";
+import { notify } from "@/lib/utils";
 
 // Form validation schema
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z.string().min(10, { message: "Please enter a valid phone number" }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters" }),
-})
+  message: z
+    .string()
+    .min(10, { message: "Message must be at least 10 characters" }),
+});
 
 // Type for form data
-type ContactFormData = z.infer<typeof formSchema>
+type ContactFormData = z.infer<typeof formSchema>;
 
-export default function ContactFormPopup({isOpen,setIsOpen}:any) {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSuccess, setIsSuccess] = useState(false)
+export default function ContactFormPopup({ isOpen, setIsOpen }: any) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(formSchema),
@@ -44,67 +52,70 @@ export default function ContactFormPopup({isOpen,setIsOpen}:any) {
       phone: "",
       message: "",
     },
-  })
+  });
 
   const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true)
+    setIsSubmitting(true);
     try {
-      const formData = new FormData()
+      const formData = new FormData();
       Object.entries(data).forEach(([key, value]) => {
-        if (value) formData.append(key, value)
-      })
+        if (value) formData.append(key, value);
+      });
 
       try {
-        const ipResponse = await fetch("https://api.ipify.org?format=json")
-        const ipData = await ipResponse.json()
-        formData.append("ip_address", ipData.ip)
+        const ipResponse = await fetch("https://api.ipify.org?format=json");
+        const ipData = await ipResponse.json();
+        formData.append("ip_address", ipData.ip);
       } catch (error) {
-        console.error("Could not fetch IP address:", error)
+        console.error("Could not fetch IP address:", error);
       }
 
-      const response = await fetch("https://demo7.obistest.online/api/store-contact-us-form", {
-        method: "POST",
-        body: formData,
-      })
+      const response = await fetch(
+        "https://demo7.obistest.online/api/store-contact-us-form",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
-        throw new Error("Failed to submit form")
+        throw new Error("Failed to submit form");
       }
 
-      setIsSuccess(true)
-      notify("success", "Message sent successfully!")
+      setIsSuccess(true);
+      notify("success", "Message sent successfully!");
 
       setTimeout(() => {
-        form.reset()
-        setIsSuccess(false)
-        setIsOpen(false) 
-      }, 2000)
+        form.reset();
+        setIsSuccess(false);
+        setIsOpen(false);
+      }, 2000);
     } catch (error) {
-      console.error("Form submission error:", error)
+      console.error("Form submission error:", error);
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
-
-
+  };
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-
       <DialogContent className="sm:max-w-[600px] p-0 border-[#1a3b49]/50 bg-[#000000]/90 text-white">
         <div className="relative w-full">
- 
-
           <div className="px-10 py-8 w-full">
             <DialogHeader>
-              <DialogTitle className="text-3xl font-bold mb-2">Request a Quote</DialogTitle>
+              <DialogTitle className="text-3xl font-bold mb-2">
+                Request a Quote
+              </DialogTitle>
               <DialogDescription className="text-lg text-gray-300 font-semibold">
                 We Don't Just Build Sites. We Build Brand Experiences.
               </DialogDescription>
             </DialogHeader>
 
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 mt-6">
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-4 mt-6"
+              >
                 <FormField
                   control={form.control}
                   name="name"
@@ -116,7 +127,8 @@ export default function ContactFormPopup({isOpen,setIsOpen}:any) {
                           placeholder="Full Name"
                           className="w-full p-4 h-11 bg-[#1a3b49]/40 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base outline-none"
                           style={{
-                            boxShadow: "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                            boxShadow:
+                              "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
                           }}
                         />
                       </FormControl>
@@ -137,7 +149,8 @@ export default function ContactFormPopup({isOpen,setIsOpen}:any) {
                           placeholder="Email Address"
                           className="w-full p-4 h-11 bg-[#1a3b49]/40 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base outline-none"
                           style={{
-                            boxShadow: "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                            boxShadow:
+                              "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
                           }}
                         />
                       </FormControl>
@@ -158,7 +171,8 @@ export default function ContactFormPopup({isOpen,setIsOpen}:any) {
                           placeholder="Phone Number"
                           className="w-full p-4 h-11 bg-[#1a3b49]/40 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base outline-none"
                           style={{
-                            boxShadow: "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                            boxShadow:
+                              "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
                           }}
                         />
                       </FormControl>
@@ -179,7 +193,8 @@ export default function ContactFormPopup({isOpen,setIsOpen}:any) {
                           rows={4}
                           className="w-full p-4 h-32 bg-[#1a3b49]/40 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base resize-none outline-none"
                           style={{
-                            boxShadow: "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                            boxShadow:
+                              "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
                           }}
                         />
                       </FormControl>
@@ -189,19 +204,29 @@ export default function ContactFormPopup({isOpen,setIsOpen}:any) {
                 />
 
                 <p className="text-xs text-gray-300 mt-2 mb-5 text-left">
-                  <span className="font-medium">Disclaimer</span> : You agree to receive conversation messages from
-                  CreativeAgency360. This includes SMS messages for appointment scheduling, appointment reminders,
-                  post-visit instructions, and billing notifications. You may receive up to 2 messages per day; message
-                  frequency may vary. To opt out, text STOP. For assistance, text HELP or visit Website Message and data
-                  rates may apply. See our
-                  <Link href={"/privacy"} className="font-medium mx-1 underline">
+                  <span className="font-medium">Disclaimer</span> : You agree to
+                  receive conversation messages from CreativeAgency360. This
+                  includes SMS messages for appointment scheduling, appointment
+                  reminders, post-visit instructions, and billing notifications.
+                  You may receive up to 2 messages per day; message frequency
+                  may vary. To opt out, text STOP. For assistance, text HELP or
+                  visit Website Message and data rates may apply. See our
+                  <a
+                    target="_blank"
+                    href={"/privacy"}
+                    className="font-medium mx-1 underline"
+                  >
                     Privacy Policy
-                  </Link>
+                  </a>
                   and{" "}
-                  <Link href={"/terms-&-condition"} className="font-medium mx-1 underline">
+                  <a
+                    target="_blank"
+                    href={"/terms-&-condition"}
+                    className="font-medium mx-1 underline"
+                  >
                     {" "}
                     Terms and Conditions
-                  </Link>
+                  </a>
                   . STOP to any message to opt out.
                 </p>
 
@@ -227,5 +252,5 @@ export default function ContactFormPopup({isOpen,setIsOpen}:any) {
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

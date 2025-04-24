@@ -1,28 +1,24 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { motion, AnimatePresence } from "framer-motion"
-import { Check, Sparkles } from "lucide-react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
-import { notify } from "@/lib/utils"
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { motion, AnimatePresence } from "framer-motion";
+import { Check, Sparkles } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { notify } from "@/lib/utils";
 
 const subscriptionSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address" }),
-})
+});
 
-type SubscriptionFormData = z.infer<typeof subscriptionSchema>
+type SubscriptionFormData = z.infer<typeof subscriptionSchema>;
 
 export default function EnhancedCtaSection() {
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isLoaded, setIsLoaded] = useState(false)
-
-  useEffect(() => {
-    setIsLoaded(true)
-  }, [])
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(true);
 
   const {
     register,
@@ -35,9 +31,7 @@ export default function EnhancedCtaSection() {
     defaultValues: {
       email: "",
     },
-  })
-
-  const email = watch("email")
+  });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -48,7 +42,7 @@ export default function EnhancedCtaSection() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -61,7 +55,7 @@ export default function EnhancedCtaSection() {
         stiffness: 100,
       },
     },
-  }
+  };
 
   // Form element variants
   const formVariants = {
@@ -77,7 +71,7 @@ export default function EnhancedCtaSection() {
         stiffness: 100,
       },
     },
-  }
+  };
 
   // Background reveal animation
   const backgroundVariants = {
@@ -90,7 +84,7 @@ export default function EnhancedCtaSection() {
         ease: "easeOut",
       },
     },
-  }
+  };
 
   // Success message variants
   const successVariants = {
@@ -111,7 +105,7 @@ export default function EnhancedCtaSection() {
         duration: 0.3,
       },
     },
-  }
+  };
 
   // Decorative element variants
   const decorVariants = {
@@ -124,7 +118,7 @@ export default function EnhancedCtaSection() {
         duration: 0.5,
       },
     },
-  }
+  };
 
   // Sparkle animation variants
   const sparkleVariants = {
@@ -138,9 +132,9 @@ export default function EnhancedCtaSection() {
         repeatDelay: 3,
       },
     },
-  }
+  };
 
-  const pulse:any = {
+  const pulse: any = {
     hidden: { scale: 0.9, opacity: 0.4 },
     visible: {
       scale: [1, 1.05, 1],
@@ -151,40 +145,43 @@ export default function EnhancedCtaSection() {
         duration: 3,
       },
     },
-  }
+  };
 
   const onSubmit = async (data: SubscriptionFormData) => {
-    setIsSubmitted(true)
+    setIsSubmitted(true);
 
     try {
-      const response = await fetch("https://demo7.obistest.online/api/store-subscribtion", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: data.email,
-        }),
-      })
+      const response = await fetch(
+        "https://demo7.obistest.online/api/store-subscribtion",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: data.email,
+          }),
+        }
+      );
 
       if (!response.ok) {
-        throw new Error("Subscription failed")
+        throw new Error("Subscription failed");
       }
 
-      notify("success", "Subscription successful!")
+      notify("success", "Subscription successful!");
 
       setTimeout(() => {
-        setIsSubmitted(false)
-        reset()
-      }, 3000)
+        setIsSubmitted(false);
+        reset();
+      }, 3000);
     } catch (error) {
-      console.error("Error submitting form:", error)
+      console.error("Error submitting form:", error);
 
       setTimeout(() => {
-        setIsSubmitted(false)
-      }, 1500)
+        setIsSubmitted(false);
+      }, 1500);
     }
-  }
+  };
 
   return (
     <section className="py-10 md:py-16 bg-white overflow-hidden relative">

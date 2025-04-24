@@ -169,13 +169,11 @@ export default function ContactSection() {
   const [isLoaded, setIsLoaded] = useState(true); // Set to true by default to ensure content is visible
 
   useEffect(() => {
-    // Start animations when component mounts
     if (isInView || hasTriggered) {
       controls.start("visible");
     }
   }, [controls, isInView, hasTriggered]);
 
-  // Initialize React Hook Form with Zod resolver
   const {
     register,
     handleSubmit,
@@ -445,20 +443,22 @@ export default function ContactSection() {
                     message frequency may vary. To opt out, text STOP. For
                     assistance, text HELP or visit Website Message and data
                     rates may apply. See our
-                    <Link
+                    <a
+                      target="_blank"
                       href={"/privacy"}
                       className="font-medium mx-1 underline"
                     >
                       Privacy Policy
-                    </Link>
+                    </a>
                     and{" "}
-                    <Link
+                    <a
+                      target="_blank"
                       href={"/terms-&-condition"}
                       className="font-medium mx-1 underline"
                     >
                       {" "}
                       Terms and Conditions
-                    </Link>
+                    </a>
                     . STOP to any message to opt out.
                   </p>
                   <MotionButton

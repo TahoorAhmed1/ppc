@@ -12,16 +12,16 @@ export default function Header2({ setIsOpen }: any) {
     <header className="sticky top-0 z-50 w-full border-b bg-background transition-all duration-100 ease-in-out">
       <div className="container py-5 flex  items-center justify-between ">
         <div className="flex items-center gap-x-2">
-          <Link href="/website-development" className="flex items-center">
+          <a href="/website-development" className="flex items-center">
             <Image
               src={logo}
               alt="logo"
               width={1000}
               height={1000}
               priority
-              className="lg:w-[150px] w-[130px]"
+              className="lg:w-[155px] w-[135px]"
             />
-          </Link>
+          </a>
         </div>
 
         <div className="flex items-end md:gap-4 gap-2">

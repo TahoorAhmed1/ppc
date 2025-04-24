@@ -9,7 +9,7 @@ export default function Page() {
             Terms and Conditions
           </h1>
           <div className="flex justify-center text-sm">
-            <Link href="/" className="hover:underline">
+            <Link href="/website-development" className="hover:underline">
               Home
             </Link>
             <span className="mx-2">•</span>
@@ -49,12 +49,12 @@ export default function Page() {
           <p className="mb-3">
             If an unknown source tries to invade your privacy, we will
             immediately act against it. Please visit our{" "}
-            <Link
-              href="/privacy-policy"
+            <a
+              href="/privacy"
               className="text-blue-600 hover:underline"
             >
               Privacy Policy
-            </Link>{" "}
+            </a>{" "}
             page to learn more about protecting your personal information.
           </p>
         </section>

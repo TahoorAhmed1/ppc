@@ -59,11 +59,8 @@ export default function AnimatedFaqSection({
     },
   });
 
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
 
-  // Animation variants
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
