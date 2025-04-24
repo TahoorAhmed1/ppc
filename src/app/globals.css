@@ -3,13 +3,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
-.container{
-  @apply !container mx-auto px-3 md:px-8
+.container {
+  @apply !container mx-auto px-3 md:px-7;
 }
 
 @theme inline {
-  --color-primary: #1C2D44;
-  --primary-gradient: linear-gradient(to right, #65CF5F, #1F9BED); /* Gradient */
+  --color-primary: #1c2d44;
+  --primary-gradient: linear-gradient(
+    to right,
+    #65cf5f,
+    #1f9bed
+  ); /* Gradient */
   --primary: var(--color-primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -132,8 +136,6 @@
   }
 }
 
-
-
 @keyframes borderAnimation {
   0% {
     background-position: 0% 50%;
@@ -147,13 +149,7 @@
 }
 
 .border-animation-wrapper {
-  background: linear-gradient(
-    270deg,
-    #65CF5F,
-    #303bcd,
-    #1F9BED,
-    #65f0c6
-  );
+  background: linear-gradient(270deg, #65cf5f, #303bcd, #1f9bed, #65f0c6);
   background-size: 800% 800%;
   animation: borderAnimation 4s ease infinite;
   border-radius: 1rem;
@@ -174,5 +170,3 @@
   animation: borderAnimation 4s ease infinite;
   z-index: -1;
 }
-
-

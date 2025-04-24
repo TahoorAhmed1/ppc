@@ -41,11 +41,9 @@ export default function AnimatedFaqSection({
 }: {
   enableGradientBackground?: boolean;
 }) {
-  const [isLoaded, setIsLoaded] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // Initialize React Hook Form with Zod resolver
   const {
     register,
     handleSubmit,
@@ -58,8 +56,6 @@ export default function AnimatedFaqSection({
       number: "",
     },
   });
-
-
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -216,10 +212,9 @@ export default function AnimatedFaqSection({
     <motion.section
       className={`py-12 md:py-16 flex justify-between w-full mx-auto bg-[#f9f9f9] relative overflow-hidden`}
       initial="hidden"
-      animate={isLoaded ? "visible" : "hidden"}
+      animate={"visible"}
       variants={containerVariants}
     >
-      {/* Background animated balls */}
       <motion.div
         className="absolute top-0 left-0 w-full h-full"
         initial="hidden"
