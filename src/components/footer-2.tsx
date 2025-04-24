@@ -86,13 +86,13 @@ export default function Footer() {
       </motion.div>
 
       <motion.div
-        className="container px-4 mx-auto space-y-12 lg:space-y-0 lg:flex lg:justify-between lg:items-start relative z-10 gap-12"
+        className="container px-4 mx-auto space-y-12 lg:space-y-0 lg:flex lg:justify-between gap-2 lg:items-start relative z-10 "
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Left side: logo and newsletter */}
-        <motion.div className="max-w-lg space-y-6" variants={itemVariants}>
+        <motion.div className="max-w-md space-y-6" variants={itemVariants}>
           <motion.div
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
@@ -115,7 +115,7 @@ export default function Footer() {
             marketing agency focused on helping brands grow in a digital-first
             world."
           </motion.p>
-          <div className="flex gap-4 mt-4">
+          <div className="flex gap-2 mt-4">
             <a
               href="https://x.com/creative_a360"
               target="_blank"
@@ -252,7 +252,7 @@ export default function Footer() {
 
         {/* Right side: links grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 lg:mt-0"
+          className="grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-5 gap-6 mt-12 lg:mt-0"
           variants={containerVariants}
         >
           {/* Our Link */}
@@ -275,7 +275,7 @@ export default function Footer() {
               { name: "Ultimate package", link: "ultimate" },
             ]}
           />
-          <div className="space-y-4 text-gray-700">
+          <div className="space-y-4  text-gray-700">
             <h3 className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text ">
               Privacy Policy
             </h3>
@@ -288,7 +288,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <div className="space-y-4 text-gray-700">
+          <div className="space-y-4 col-span-2 text-gray-700">
             <h3 className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text ">
               Contact us
             </h3>
