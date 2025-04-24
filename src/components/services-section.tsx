@@ -1,25 +1,32 @@
-"use client"
+"use client";
 
-import { offerIcon1, offerIcon2, offerIcon3, offerIcon4, offerIcon5, offerIcon6 } from "@/assets"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { useState } from "react"
+import {
+  offerIcon1,
+  offerIcon2,
+  offerIcon3,
+  offerIcon4,
+  offerIcon5,
+  offerIcon6,
+} from "@/assets";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useState } from "react";
 
 interface ServiceItem {
-  image: string
-  title: string
-  description: string
+  image: string;
+  title: string;
+  description: string;
 }
 
 interface ServicesSectionProps {
-  title?: string
-  subtitle?: string
-  services?: ServiceItem[]
-  buttonText?: string
-  showButton?: boolean
-  backgroundColor?: string
+  title?: string;
+  subtitle?: string;
+  services?: ServiceItem[];
+  buttonText?: string;
+  showButton?: boolean;
+  backgroundColor?: string;
 }
 
 const pulse: any = {
@@ -33,9 +40,9 @@ const pulse: any = {
       duration: 3,
     },
   },
-}
+};
 
-const MotionCard = motion(Card)
+const MotionCard = motion(Card);
 
 export default function ServicesSection({
   title = "WHY CHOOSE US",
@@ -45,8 +52,8 @@ export default function ServicesSection({
   showButton = true,
   backgroundColor = "#f9f9f9",
 }: ServicesSectionProps) {
-  const [activePopup, setActivePopup] = useState<number | null>(null)
-  const [isLoaded, setIsLoaded] = useState(true)
+  const [activePopup, setActivePopup] = useState<number | null>(null);
+  const [isLoaded, setIsLoaded] = useState(true);
   return (
     <section
       id="services"
@@ -147,7 +154,7 @@ export default function ServicesSection({
           ))}
         </div>
 
-        {showButton && (
+        {/* {showButton && (
           <motion.div
             className="flex justify-center mt-10 sm:mt-12"
             initial={{ opacity: 0, y: 20 }}
@@ -165,7 +172,7 @@ export default function ServicesSection({
               </Button>
             </motion.div>
           </motion.div>
-        )}
+        )} */}
       </div>
     </section>
   );
@@ -208,4 +215,4 @@ const defaultServices: ServiceItem[] = [
     description:
       "Our PPC advertising strategies help you reach potential customers at the right time, maximizing your ROI.",
   },
-]
+];
