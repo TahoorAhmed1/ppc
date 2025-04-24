@@ -155,14 +155,14 @@ export default function MarketingSection() {
                 />
               </MotionDiv>
               <MotionDiv variants={itemVariants}>
-                <a href="tel:+18045745376" className="font-semibold text-lg">
-                  +1(804)574-5376
-                </a>
+                <p><a className="font-semibold text-lg"
+                  href="tel:+18045745376">
+                  +1 (804) 574 5376
+                </a></p>
                 <a
                   className="text-xs"
-                  href="mailto:support@creativeagency360.com"
-                >
-                  support@creativeagency360.com.
+                  href="mailto:support@creativeagency360.com">
+                  support@creativeagency360.com
                 </a>
               </MotionDiv>
             </MotionDiv>

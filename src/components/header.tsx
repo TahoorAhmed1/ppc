@@ -20,7 +20,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background transition-all duration-100 ease-in-out">
       <div className="container py-5 flex items-center justify-between">
         <div className="flex items-center gap-x-2">
-          <Link href="/" className="flex items-center">
+          <a href="/" className="flex items-center">
             <Image
               src={logo || "/placeholder.svg"}
               alt="logo"
@@ -29,7 +29,7 @@ export default function Header() {
               priority
               className="lg:w-[150px] w-[130px]"
             />
-          </Link>
+          </a>
         </div>
 
         <nav className="hidden md:flex lg:gap-x-9 gap-x-6">

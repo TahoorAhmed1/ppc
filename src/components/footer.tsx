@@ -99,7 +99,7 @@ export default function Footer() {
         initial="hidden"
         animate="visible"
       >
-        <motion.div className="max-w-lg space-y-6" variants={itemVariants}>
+        <motion.div className="max-w-md space-y-6" variants={itemVariants}>
           <motion.div
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
@@ -259,7 +259,7 @@ export default function Footer() {
 
         {/* Right side: links grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4  mt-12 lg:mt-0"
+          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4  mt-12 lg:mt-0"
           variants={containerVariants}
         >
           <AnimatedFooterColumn

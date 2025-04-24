@@ -159,7 +159,7 @@ export default function HeroSection() {
         )}
       </AnimatePresence>
 
-      <div className="absolute lg:right-[9%] right-[15%] lg:top-20 sm:top-[42%] top-[50%] z-40">
+      <div className="absolute lg:right-[9%] right-[15%] lg:top-20 md:top-[40%] sm:top-[42%] top-6/11 z-40">
         <div className="cursor-pointer" onClick={() => setActivePopup(5)}>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Card
@@ -264,17 +264,15 @@ export default function HeroSection() {
               <div className="flex flex-col gap-1">
                 <p>
                   <a
-                    href="tel:+18045745376"
                     className="font-medium text-base sm:text-lg md:text-xl text-[#1C2D44]"
-                  >
+                    href="tel:+18045745376">
                     +1 (804) 574 5376
                   </a>
                 </p>
                 <p>
                   <a
-                    href="mailto:support@creativeagency360.com"
                     className="text-sm sm:text-base"
-                  >
+                    href="mailto:support@creativeagency360.com">
                     support@creativeagency360.com
                   </a>
                 </p>
@@ -339,7 +337,7 @@ export default function HeroSection() {
             </div>
 
             {/* Project Done Card - responsive */}
-            <div className="absolute h-[40px] w-[clamp(50px,15vw,130px)] top-[30%] sm:top-50 right-[5%] bg-white rounded-lg shadow-md flex flex-col justify-center lg:py-10 sm:py-6 md:px-3 py-3 pr-4 pl-2 z-40">
+            <div className="absolute h-[40px] md:w-[clamp(50px,21vw,130px)] top-[30%] sm:top-50 right-[5%] bg-white rounded-lg shadow-md flex flex-col justify-center lg:py-10 sm:py-6 md:px-3 py-3 pr-4 pl-2 z-40">
               <div>
                 <p
                   className="text-gray-500"
