@@ -141,8 +141,8 @@ export default function Footer() {
               Policy
             </h3>
             <div className="flex flex-col space-y-4">
-              <Link href={"/privacy"}>Privacy</Link>
-              <Link href={"/terms-&-condition"}>Terms & Condition</Link>
+              <a href={"/privacy"}>Privacy</a>
+              <a href={"/terms-&-condition"}>Terms & Condition</a>
             </div>
           </div>
           <div className="space-y-4 text-gray-700">
