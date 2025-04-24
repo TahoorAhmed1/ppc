@@ -50,7 +50,7 @@ export default function Page() {
             If an unknown source tries to invade your privacy, we will
             immediately act against it. Please visit our{" "}
             <a
-              href="/privacy-policy"
+              href="/privacy"
               className="text-blue-600 hover:underline"
             >
               Privacy Policy

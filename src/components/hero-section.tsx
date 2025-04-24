@@ -262,10 +262,16 @@ export default function HeroSection() {
                 />
               </div>
               <div>
-                <p className="font-medium text-lg sm:text-xl md:text-2xl text-[#1C2D44]">
-                  (888) 321-7452
-                </p>
-                <p className="text-xs sm:text-sm">info@creativeagency360.com</p>
+                <p>
+                <a className="font-medium text-lg sm:text-xl md:text-2xl text-[#1C2D44]"
+                  href="tel:+18045745376" >
+                  +1 (804) 574 5376
+                </a></p>
+                <a className="text-xs sm:text-sm"
+                  href="mailto:support@creativeagency360.com"
+                >
+                  support@creativeagency360.com
+                </a>
               </div>
             </div>
             <div className="hidden xl:block">
@@ -370,7 +376,7 @@ export default function HeroSection() {
               {/* Large background circle behind the image */}
               <motion.div
                 whileInView={pulseAnimation}
-                className="absolute top-[10%] left-[10%] w-[80%] h-0 pb-[80%] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] opacity-50 z-0"
+                className="absolute top-[16%] left-[8%] w-[80%] h-0 pb-[80%] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] opacity-50 z-0"
               ></motion.div>
 
               <div>
@@ -393,6 +399,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 }

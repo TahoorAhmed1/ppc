@@ -132,11 +132,12 @@ export default function Footer() {
             ]}
           />
 
+
           <AnimatedFooterColumn
             title="Our Service"
             links={[
               { name: "Starter package", link: "starter" },
-              { name: "Growth package", link: "growth" },
+              { name: "Growth package", link: "business" },
               { name: "Premium package", link: "premium" },
               { name: "Ultimate package", link: "ultimate" },
             ]}
