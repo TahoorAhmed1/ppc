@@ -132,15 +132,15 @@ export default function DigitalMarketingHeroSection({
       <div className="absolute inset-0 bg-black/30 mix-blend-multiply"></div>
 
       <div className="relative z-10 container py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mt-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center mt-10">
           <div className="w-full">
             <h1 className="text-[46px] lg:text-[60px] font-bold leading-tight h-[350px]">
-              <span className="inline-block bg-white rounded-xl py-1 px-1 mb-2">
+              <span className="inline-block bg-white rounded-xl py-1 px-2 mb-2">
                 <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] bg-clip-text text-transparent">
                   Not Just Websites
                 </span>
               </span>
-              <span className="md:ml-2">We Build </span>
+              <span className="md:ml-2.5">We Build </span>
               <span className="text-white">
                 <Typewriter
                   words={[
@@ -292,6 +292,7 @@ export default function DigitalMarketingHeroSection({
                       billing. Message frequency may vary. Text STOP to opt out.
                       See our{" "}
                       <a
+                        target="_blank"
                         href="/privacy"
                         className="font-medium mx-1 underline"
                       >
@@ -299,6 +300,7 @@ export default function DigitalMarketingHeroSection({
                       </a>{" "}
                       and{" "}
                       <a
+                        target="_blank"
                         href="/terms-&-condition"
                         className="font-medium mx-1 underline"
                       >

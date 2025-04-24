@@ -167,11 +167,16 @@ export function BookingModal({
               receive conversation messages from CreativeAgency360. This
               includes SMS messages for appointment scheduling, appointment
               reminders, post-visit instructions, and billing notifications...
-              <a href="/privacy" className="font-medium mx-1 underline">
+              <a
+                target="_blank"
+                href="/privacy"
+                className="font-medium mx-1 underline"
+              >
                 Privacy Policy
               </a>{" "}
               and
               <a
+                target="_blank"
                 href="/terms-&-condition"
                 className="font-medium mx-1 underline"
               >

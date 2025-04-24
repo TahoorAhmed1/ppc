@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -10,7 +10,7 @@ export default function PrivacyPolicyPage() {
             <span className="">Privacy Policy</span>
           </h1>
           <div className="flex justify-center text-sm">
-            <Link href="/" className="hover:underline">
+            <Link href="/website-development" className="hover:underline">
               Home
             </Link>
             <span className="mx-2">•</span>

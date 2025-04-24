@@ -44,7 +44,6 @@ export default function AnimatedFaqSection2({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // Initialize React Hook Form with Zod resolver
   const {
     register,
     handleSubmit,
@@ -58,11 +57,6 @@ export default function AnimatedFaqSection2({
     },
   });
 
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -200,7 +194,7 @@ export default function AnimatedFaqSection2({
         backgroundImage: `url(${faq.src})`,
       }}
       initial="hidden"
-      animate={isLoaded ? "visible" : "hidden"}
+      animate={"visible"}
       variants={containerVariants}
     >
       <div className="absolute inset-0 opacity-20 pointer-events-none">

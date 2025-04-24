@@ -19,7 +19,7 @@ export default function Header2({ setIsOpen }: any) {
               width={1000}
               height={1000}
               priority
-              className="lg:w-[150px] w-[130px]"
+              className="lg:w-[155px] w-[135px]"
             />
           </a>
         </div>

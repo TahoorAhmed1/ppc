@@ -7,9 +7,11 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Creative Agency 360",
   description: "We Build your Digital Business",
+  keywords:
+    "Software House, PPC Services, Pay-Per-Click Experts, Google Ads Management, Digital Marketing Agency, Web Development, SEO Services, Social Media Marketing, Creative Agency, Branding, Performance Marketing, Online Advertising, Conversion Optimization",
 };
 
-export default function ClientLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
