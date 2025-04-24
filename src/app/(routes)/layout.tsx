@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import type React from "react";
 import Header from "@/components/header2";
 import { ToastContainer } from "react-toastify";
@@ -6,10 +6,7 @@ import ContactFormPopup from "@/components/Contact";
 import { useFormContact } from "@/store/form";
 import "../globals.css";
 
-
-
-
-export default function ClientLayout({
+export default function ChildLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
