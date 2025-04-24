@@ -1,13 +1,13 @@
-"use client"
-import Link from "next/link"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { AlignJustify, X } from "lucide-react"
-import Image from "next/image"
-import { logo } from "@/assets/index"
+"use client";
+import Link from "next/link";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { AlignJustify, X } from "lucide-react";
+import Image from "next/image";
+import { logo } from "@/assets/index";
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const navItems = [
     { label: "About Us", href: "#aboutus" },
@@ -67,14 +67,14 @@ export default function Header() {
       {menuOpen && (
         <div className="md:hidden px-4 pb-4 pt-2 space-y-2 bg-background border-t">
           {navItems.map((item) => (
-            <Link
+            <a
               key={item.label}
               href={item.href}
               className="block text-sm text-gray-600 hover:font-semibold hover:text-primary transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </div>
       )}

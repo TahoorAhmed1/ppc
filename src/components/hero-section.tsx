@@ -261,11 +261,23 @@ export default function HeroSection() {
                   className="w-11 h-12 sm:w-15 sm:h-16 object-contain"
                 />
               </div>
-              <div>
-                <p className="font-medium text-lg sm:text-xl md:text-2xl text-[#1C2D44]">
-                  (888) 321-7452
+              <div className="flex flex-col gap-1">
+                <p>
+                  <a
+                    href="tel:+18045745376"
+                    className="font-medium text-base sm:text-lg md:text-xl text-[#1C2D44]"
+                  >
+                    +1 (804) 574 5376
+                  </a>
                 </p>
-                <p className="text-xs sm:text-sm">info@creativeagency360.com</p>
+                <p>
+                  <a
+                    href="mailto:support@creativeagency360.com"
+                    className="text-sm sm:text-base"
+                  >
+                    support@creativeagency360.com
+                  </a>
+                </p>
               </div>
             </div>
             <div className="hidden xl:block">

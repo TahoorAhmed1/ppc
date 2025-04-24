@@ -131,16 +131,16 @@ export default function DigitalMarketingHeroSection({
     >
       <div className="absolute inset-0 bg-black/30 mix-blend-multiply"></div>
 
-      <div className="relative z-10 container mx-auto px-4 py-6">
+      <div className="relative z-10 container py-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mt-10">
           <div className="w-full">
-            <h1 className="text-5xl lg:text-[60px] font-bold leading-tight h-[340px]">
-              <span className="inline-block bg-white rounded-xl py-1 px-4 mb-2">
+            <h1 className="text-[46px] lg:text-[60px] font-bold leading-tight h-[350px]">
+              <span className="inline-block bg-white rounded-xl py-1 px-1 mb-2">
                 <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] bg-clip-text text-transparent">
                   Not Just Websites
                 </span>
               </span>
-              <span className="ml-2">We Build </span>
+              <span className="md:ml-2">We Build </span>
               <span className="text-white">
                 <Typewriter
                   words={[

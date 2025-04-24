@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
-import { motion, useInView, useAnimation, type Variants } from "framer-motion"
-import { experienceImage, mailIcon } from "@/assets"
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { motion, useInView, useAnimation, type Variants } from "framer-motion";
+import { experienceImage, mailIcon } from "@/assets";
 
 // Create motion components
-const MotionDiv = motion.div
-const MotionButton = motion.button
-const MotionImage = motion.div
+const MotionDiv = motion.div;
+const MotionButton = motion.button;
+const MotionImage = motion.div;
 
 export default function MarketingSection() {
-  const [isLoaded, setIsLoaded] = useState(true)
-  const [activePopup, setActivePopup] = useState<number | null>(null)
+  const [isLoaded, setIsLoaded] = useState(true);
+  const [activePopup, setActivePopup] = useState<number | null>(null);
 
   // Animation variants
   const containerVariants: Variants = {
@@ -24,7 +24,7 @@ export default function MarketingSection() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
@@ -33,7 +33,7 @@ export default function MarketingSection() {
       opacity: 1,
       transition: { duration: 0.5, ease: "easeOut" },
     },
-  }
+  };
 
   const imageVariants: Variants = {
     hidden: { scale: 0.9, opacity: 0 },
@@ -42,7 +42,7 @@ export default function MarketingSection() {
       opacity: 1,
       transition: { duration: 0.7, ease: "easeOut" },
     },
-  }
+  };
 
   const barContainerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -53,7 +53,7 @@ export default function MarketingSection() {
         delayChildren: 0.6,
       },
     },
-  }
+  };
 
   const pulse: Variants = {
     hidden: { scale: 0.9, opacity: 0.3 },
@@ -66,18 +66,18 @@ export default function MarketingSection() {
         duration: 3,
       },
     },
-  }
+  };
 
   // Refs for scroll animations
-  const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: false, amount: 0.2 })
-  const controls = useAnimation()
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
+  const controls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
-      controls.start("visible")
+      controls.start("visible");
     }
-  }, [isInView, controls])
+  }, [isInView, controls]);
 
   return (
     <section
@@ -155,8 +155,15 @@ export default function MarketingSection() {
                 />
               </MotionDiv>
               <MotionDiv variants={itemVariants}>
-                <p className="font-semibold text-lg">+1(804)574-5376</p>
-                <p className="text-xs">support@creativeagency360.com</p>
+                <a href="tel:+18045745376" className="font-semibold text-lg">
+                  +1(804)574-5376
+                </a>
+                <a
+                  className="text-xs"
+                  href="mailto:support@creativeagency360.com"
+                >
+                  support@creativeagency360.com.
+                </a>
               </MotionDiv>
             </MotionDiv>
             <a href="#contactus">
@@ -223,12 +230,12 @@ function AnimatedServiceBar({
   name,
   percentage,
 }: {
-  name: string
-  percentage: number
+  name: string;
+  percentage: number;
 }) {
-  const barRef = useRef(null)
-  const isInView = useInView(barRef, { once: false, amount: 0.5 })
-  const controls = useAnimation()
+  const barRef = useRef(null);
+  const isInView = useInView(barRef, { once: false, amount: 0.5 });
+  const controls = useAnimation();
 
   // Define barVariants inside the component
   const barVariants: Variants = {
@@ -238,15 +245,15 @@ function AnimatedServiceBar({
       opacity: 1,
       transition: { duration: 1, ease: "easeOut" },
     },
-  }
+  };
 
   useEffect(() => {
     if (isInView) {
-      controls.start("visible")
+      controls.start("visible");
     } else {
-      controls.start("hidden")
+      controls.start("hidden");
     }
-  }, [isInView, controls])
+  }, [isInView, controls]);
 
   return (
     <MotionDiv
@@ -265,7 +272,11 @@ function AnimatedServiceBar({
     >
       <div className="flex justify-between text-sm font-medium text-gray-800">
         <span>{name}</span>
-        <MotionDiv initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.5 }}>
+        <MotionDiv
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
           <span>{percentage}%</span>
         </MotionDiv>
       </div>
@@ -277,5 +288,5 @@ function AnimatedServiceBar({
         ></MotionDiv>
       </div>
     </MotionDiv>
-  )
+  );
 }

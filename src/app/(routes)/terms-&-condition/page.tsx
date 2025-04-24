@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -266,7 +266,10 @@ export default function Page() {
           <h2 className="text-xl font-bold mb-3">16. Contact Us</h2>
           <p className="mb-3">
             After reading our Terms and Conditions, if you have any questions,
-            e-mail us at support@creativeagency360.com.
+            e-mail us at{" "}
+            <a href="mailto:support@creativeagency360.com">
+              support@creativeagency360.com.
+            </a>
           </p>
         </section>
         <div className="mt-12 pt-4 border-t border-gray-200 text-center text-gray-600 text-sm relative z-10">
