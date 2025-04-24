@@ -445,20 +445,20 @@ export default function ContactSection() {
                     message frequency may vary. To opt out, text STOP. For
                     assistance, text HELP or visit Website Message and data
                     rates may apply. See our
-                    <Link
+                    <a
                       href={"/privacy"}
                       className="font-medium mx-1 underline"
                     >
                       Privacy Policy
-                    </Link>
+                    </a>
                     and{" "}
-                    <Link
+                    <a
                       href={"/terms-&-condition"}
                       className="font-medium mx-1 underline"
                     >
                       {" "}
                       Terms and Conditions
-                    </Link>
+                    </a>
                     . STOP to any message to opt out.
                   </p>
                   <MotionButton

@@ -194,14 +194,14 @@ export default function ContactFormPopup({isOpen,setIsOpen}:any) {
                   post-visit instructions, and billing notifications. You may receive up to 2 messages per day; message
                   frequency may vary. To opt out, text STOP. For assistance, text HELP or visit Website Message and data
                   rates may apply. See our
-                  <Link href={"/privacy"} className="font-medium mx-1 underline">
+                  <a href={"/privacy"} className="font-medium mx-1 underline">
                     Privacy Policy
-                  </Link>
+                  </a>
                   and{" "}
-                  <Link href={"/terms-&-condition"} className="font-medium mx-1 underline">
+                  <a href={"/terms-&-condition"} className="font-medium mx-1 underline">
                     {" "}
                     Terms and Conditions
-                  </Link>
+                  </a>
                   . STOP to any message to opt out.
                 </p>
 

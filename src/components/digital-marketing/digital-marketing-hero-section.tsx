@@ -291,19 +291,19 @@ export default function DigitalMarketingHeroSection({
                       SMS messages for appointment scheduling, reminders, and
                       billing. Message frequency may vary. Text STOP to opt out.
                       See our{" "}
-                      <Link
+                      <a
                         href="/privacy"
                         className="font-medium mx-1 underline"
                       >
                         Privacy Policy
-                      </Link>{" "}
+                      </a>{" "}
                       and{" "}
-                      <Link
+                      <a
                         href="/terms-&-condition"
                         className="font-medium mx-1 underline"
                       >
                         Terms and Conditions
-                      </Link>
+                      </a>
                       .
                     </p>
 

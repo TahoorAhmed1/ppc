@@ -49,12 +49,12 @@ export default function Page() {
           <p className="mb-3">
             If an unknown source tries to invade your privacy, we will
             immediately act against it. Please visit our{" "}
-            <Link
+            <a
               href="/privacy-policy"
               className="text-blue-600 hover:underline"
             >
               Privacy Policy
-            </Link>{" "}
+            </a>{" "}
             page to learn more about protecting your personal information.
           </p>
         </section>
