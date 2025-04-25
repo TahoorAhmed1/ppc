@@ -84,12 +84,12 @@ export default function Footer() {
       </motion.div>
 
       <motion.div
-        className="container px-4 mx-auto space-y-12 lg:space-y-0 lg:flex lg:justify-between gap-2 lg:items-start relative z-10 "
+        className="container mx-auto space-y-12  lg:space-y-0 grid  lg:grid-cols-3 lg:items-start relative z-10 lg:gap-9 gap-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.div className="max-w-[500px] space-y-6" variants={itemVariants}>
+        <motion.div className="max-w-[650px] space-y-6" variants={itemVariants}>
           <motion.div
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
@@ -248,7 +248,7 @@ export default function Footer() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-12 lg:mt-0"
+          className=" col-span-2 grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 mt-10 lg:mt-0"
           variants={containerVariants}
         >
           <AnimatedFooterColumn

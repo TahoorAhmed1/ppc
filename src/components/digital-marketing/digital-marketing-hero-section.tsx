@@ -25,6 +25,7 @@ import {
   award3,
   award4,
   heroSectionImage3,
+<<<<<<< HEAD
   facebookIcon,
   twitterIcon,
   instagramIcon,
@@ -33,6 +34,15 @@ import {
   youtubeIcon,
   discordIcon,
   pinterestIcon,
+=======
+  serviceIcon1,
+  serviceIcon2,
+  serviceIcon3,
+  serviceIcon4,
+  serviceIcon5,
+  serviceIcon6,
+  trustpilot,
+>>>>>>> 91b4f82c19181e79029a763a3f1d7912b58ea179
 } from "@/assets/index";
 import { notify } from "@/lib/utils";
 import Link from "next/link";
@@ -50,7 +60,7 @@ const formSchema = z.object({
 
 type ContactFormData = z.infer<typeof formSchema>;
 
-const award = [award1.src, award2.src, award3.src, award4.src];
+const award = [award1.src, award2.src, award3.src, award4.src, trustpilot.src];
 const services = [
   { icon: facebookIcon.src, title: "FACEBOOK", subtitle: "MARKETING" },
   { icon: instagramIcon.src, title: "INSTAGRAM", subtitle: "MARKETING" },
@@ -127,26 +137,25 @@ export default function WebsiteDevelopmentHeroSection({
     >
       
 
-      <div className="relative z-10 container py-6 ">
-        <div className="grid grid-cols-1 lg:grid-cols-3 md:gap-5 items-center mt-10 justify-center space-y-16">
-         
-          <div className="w-full col-span-2">
-            <h1 className="text-[46px] lg:text-[60px] font-bold leading-tight md:h-[350px] h-[280px] ">
+      <div className="relative z-10 container py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mt-10">
+          <div className="w-full">
+            <h1 className=" text-[41px] md:text-[46px] lg:text-[60px] font-bold leading-tight md:h-[350px] h-[320px] ">
               <span className="inline-block bg-white rounded-xl py-1 px-2 mb-2">
                 <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] bg-clip-text text-transparent">
                   Not Just Websites
                 </span>
               </span>
-              <span className="md:ml-2.5">We Build </span>
+              <br />
               <span className="text-white">
                 <Typewriter
                   words={[
-                    " Digital Experiences That Make Brands Unforgettable.",
+                    " We Build Digital Experiences That Make Brands Unforgettable.",
                   ]}
                   loop={1}
                   cursor
                   cursorStyle="|"
-                  typeSpeed={90}
+                  typeSpeed={0}
                   deleteSpeed={0}
                   delaySpeed={999999}
                 />
@@ -163,11 +172,11 @@ export default function WebsiteDevelopmentHeroSection({
                 </Button>
               </div>
 
-              <div className="flex gap-6 items-center">
+              <div className="flex flex-wrap lg:gap-8 gap-4 items-center sm:mt-0 mt-2">
                 {awards.map((awardImage: any, i: any) => (
                   <div
                     key={i}
-                    className="md:w-16 md:h-16 w-14 h-14 items-center justify-center"
+                    className="md:w-20 md:h-20 w-[60px] h-[60px] items-center justify-center"
                   >
                     <Image
                       src={awardImage || "/placeholder.svg"}

@@ -236,10 +236,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section
-      className="py-5 lg:py-0 lg:pt-8 bg-white overflow-hidden relative"
-      id="contactus"
-    >
+    <section className=" bg-white overflow-hidden relative" id="contactus">
       <motion.div
         className="absolute top-10 left-0 w-full h-full"
         initial="hidden"
@@ -276,11 +273,11 @@ export default function ContactSection() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid gap-6 lg:grid-cols-2 lg:gap-8 items-center lg:px-6 px-3"
+          className="grid gap-6 lg:grid-cols-2 lg:gap-8 items-center "
         >
           <motion.div
             variants={containerVariants}
-            className="flex flex-col justify-center space-y-4"
+            className="flex py-5 xl:py-0 lg:pt-8 flex-col justify-center space-y-4"
           >
             <motion.div variants={itemVariants} className="space-y-3">
               <motion.h2

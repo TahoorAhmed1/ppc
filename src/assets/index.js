@@ -95,8 +95,9 @@ import tiktokIcon from "@/assets/images/tiktok-icon.png";
 import youtubeIcon from "@/assets/images/youtube-icon.png";
 import discordIcon from "@/assets/images/discord-icon.png";
 import pinterestIcon from "@/assets/images/pinterest-icon.png";
-
+import trustpilot from "@/assets/images/trustpilot.png";
 export {
+  trustpilot,
   popup,
   project1,
   project2,
