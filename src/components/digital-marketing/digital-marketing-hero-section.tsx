@@ -31,6 +31,7 @@ import {
   serviceIcon4,
   serviceIcon5,
   serviceIcon6,
+  trustpilot,
 } from "@/assets/index";
 import { notify } from "@/lib/utils";
 import { AnimatedServiceCategory } from "./animated-service-category";
@@ -48,7 +49,7 @@ const formSchema = z.object({
 
 type ContactFormData = z.infer<typeof formSchema>;
 
-const award = [award1.src, award2.src, award3.src, award4.src];
+const award = [award1.src, award2.src, award3.src, award4.src, trustpilot.src];
 const services = [
   { icon: serviceIcon1.src, title: "REAL ESTATE", subtitle: "W E B S I T E" },
   { icon: serviceIcon2.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
@@ -134,22 +135,22 @@ export default function DigitalMarketingHeroSection({
       <div className="relative z-10 container py-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mt-10">
           <div className="w-full">
-            <h1 className="text-[43px] lg:text-[60px] font-bold leading-tight h-[350px]">
+            <h1 className=" text-[41px] md:text-[46px] lg:text-[60px] font-bold leading-tight md:h-[350px] h-[320px] ">
               <span className="inline-block bg-white rounded-xl py-1 px-2 mb-2">
                 <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] bg-clip-text text-transparent">
                   Not Just Websites
                 </span>
               </span>
-              <span className="md:ml-2">We </span>
+              <br />
               <span className="text-white">
                 <Typewriter
                   words={[
-                    "Build Digital Experiences That Make Brands Unforgettable.",
+                    " We Build Digital Experiences That Make Brands Unforgettable.",
                   ]}
                   loop={1}
                   cursor
                   cursorStyle="|"
-                  typeSpeed={200}
+                  typeSpeed={0}
                   deleteSpeed={0}
                   delaySpeed={999999}
                 />
@@ -166,11 +167,11 @@ export default function DigitalMarketingHeroSection({
                 </Button>
               </div>
 
-              <div className="flex gap-6 items-center">
+              <div className="flex flex-wrap lg:gap-8 gap-4 items-center sm:mt-0 mt-2">
                 {awards.map((awardImage: any, i: any) => (
                   <div
                     key={i}
-                    className="md:w-16 md:h-16 w-14 h-14 items-center justify-center"
+                    className="md:w-20 md:h-20 w-[60px] h-[60px] items-center justify-center"
                   >
                     <Image
                       src={awardImage || "/placeholder.svg"}

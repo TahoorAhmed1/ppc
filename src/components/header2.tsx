@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -25,12 +24,12 @@ export default function Header2({ setIsOpen }: any) {
         </div>
 
         <div className="flex items-end md:gap-4 gap-2">
-          <div className="flex flex-wrap justify-between w-full gap-12">
+          <div className="flex flex-wrap justify-between w-full lg:gap-12 gap-4">
             <div className="hidden md:block">
               <div className="text-sm">Email</div>
 
               <a
-                className="font-semibold text-lg"
+                className="font-semibold lg:text-lg text-sm"
                 href="mailto:support@creativeagency360.com"
               >
                 support@creativeagency360.com
@@ -39,7 +38,10 @@ export default function Header2({ setIsOpen }: any) {
 
             <div className="hidden md:block">
               <div className="text-sm">Call Now</div>
-              <a href="tel:+18045745376" className="font-semibold text-lg">
+              <a
+                href="tel:+18045745376"
+                className="font-semibold lg:text-lg text-sm"
+              >
                 +1 (804) 574 5376
               </a>
             </div>
