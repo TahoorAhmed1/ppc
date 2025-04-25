@@ -188,13 +188,30 @@ export default function DigitalMarketingHeroSection({
                         </div>
                     </div>
 
-                    <div className="w-full">
-                        <div className="relative p-[4px] rounded-xl border-animation-wrapper max-w-[550px] ml-auto shadow-lg">
-                            <div className="bg-slate-950 rounded-xl lg:px-10 px-6 py-8 w-full">
-                                <h2 className="text-3xl font-bold mb-4">Request a Quote</h2>
-                                <p className="text-lg text-gray-300 mb-6 font-semibold">
-                                    We Don’t Just Build Sites. We Build Brand Experiences.
-                                </p>
+      <div className="relative z-10 container py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mt-10">
+          <div className="w-full">
+            <h1 className="text-[46px] lg:text-[60px] font-bold leading-tight h-[350px]">
+              <span className="inline-block bg-white rounded-xl py-1 px-2 mb-2">
+                <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] bg-clip-text text-transparent">
+                  Not Just Websites
+                </span>
+              </span>
+              <span className="md:ml-2">We </span>
+              <span className="text-white">
+                <Typewriter
+                  words={[
+                    "Build Digital Experiences That Make Brands Unforgettable.",
+                  ]}
+                  loop={1}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={90}
+                  deleteSpeed={0}
+                  delaySpeed={999999}
+                />
+              </span>
+            </h1>
 
                                 <Form {...form}>
                                     <form
@@ -336,8 +353,144 @@ export default function DigitalMarketingHeroSection({
                 </div>
             </div>
 
-            <div className="relative z-10 mt-8 pb-8">
-                <DigitialMarkethingServiceCategory services={services} />
+          <div className="w-full">
+            <div className="relative p-[4px] rounded-xl border-animation-wrapper max-w-[550px] ml-auto shadow-lg">
+              <div className="bg-slate-950 rounded-xl lg:px-10 px-6 py-8 w-full">
+                <h2 className="text-3xl font-bold mb-4">Request a Quote</h2>
+                <p className="text-lg text-gray-300 mb-6 font-semibold">
+                  We Don’t Just Build Sites. We Build Brand Experiences.
+                </p>
+
+                <Form {...form}>
+                  <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="space-y-4"
+                  >
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              placeholder="Full Name"
+                              className="w-full p-4 h-11 bg-[#1a3b49]/20 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200  text-base outline-none"
+                              style={{
+                                boxShadow:
+                                  "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                              }}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-xs text-red-400" />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              type="email"
+                              placeholder="Email Address"
+                              className="w-full p-4 h-11 bg-[#1a3b49]/20 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base outline-none"
+                              style={{
+                                boxShadow:
+                                  "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                              }}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-xs text-red-400" />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input
+                              {...field}
+                              type="tel"
+                              placeholder="Phone Number"
+                              className="w-full p-4 h-11 bg-[#1a3b49]/20 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base outline-none"
+                              style={{
+                                boxShadow:
+                                  "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                              }}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-xs text-red-400" />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="message"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Textarea
+                              {...field}
+                              placeholder="Write Your business description"
+                              rows={4}
+                              className="w-full p-4 h-32 bg-[#1a3b49]/20 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base resize-none outline-none"
+                              style={{
+                                boxShadow:
+                                  "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                              }}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-xs text-red-400" />
+                        </FormItem>
+                      )}
+                    />
+
+                    <p className="text-xs text-gray-300 mt-2 mb-5 text-left">
+                      <span className="font-medium">Disclaimer</span>: You agree
+                      to receive messages from CreativeAgency360. This includes
+                      SMS messages for appointment scheduling, reminders, and
+                      billing. Message frequency may vary. Text STOP to opt out.
+                      See our{" "}
+                      <a href="/privacy" className="font-medium mx-1 underline">
+                        Privacy Policy
+                      </a>{" "}
+                      and{" "}
+                      <a
+                        href="/terms-&-condition"
+                        className="font-medium mx-1 underline"
+                      >
+                        Terms and Conditions
+                      </a>
+                      .
+                    </p>
+
+                    <Button
+                      type="submit"
+                      className="bg-gradient-to-r w-full hover:scale-105 transition-all cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        <span className="flex items-center justify-center">
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          Submitting...
+                        </span>
+                      ) : isSuccess ? (
+                        "Submitted Successfully!"
+                      ) : (
+                        "Get A Quote"
+                      )}
+                    </Button>
+                  </form>
+                </Form>
+              </div>
             </div>
         </div>
     );
