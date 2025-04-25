@@ -25,6 +25,15 @@ export default function DigitalMarketingServiceSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative  ">
                     {/* Left Column */}
                     <div className="space-y-8 relative">
+                    <div className="absolute -top-10 -right-30 z-10">
+                                <Image
+                                    src={likeEmoji.src}
+                                    alt="Love reaction"
+                                    width={1000}
+                                    height={1000}
+                                    className="w-50 h-50 "
+                                />
+                            </div>
                         <div className="absolute -left-2 top-150 z-10">
                             <Image
                                 src={coolEmoji.src}
@@ -40,12 +49,12 @@ export default function DigitalMarketingServiceSection() {
                                 Take Your Social Media To The Next Level
                             </h1>
 
-                            <p className="text-gray-700 text-lg max-w-xl">
+                            <p className="text-[#1C2D44] text-lg font-medium max-w-xl">
                                 At Creative Agency 360, we don't have a secret formula — just a proven approach to help you achieve your
                                 goals in a simple, effective, and results-driven way.
                             </p>
 
-                            <Button className="bg-[#4CD079] hover:bg-[#3bb063] text-white rounded-md px-8 py-6 text-lg font-medium">
+                            <Button className="bg-gradient-to-r w-50 cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2">
                                 Get In Touch
                             </Button>
                         </div>
@@ -119,7 +128,7 @@ export default function DigitalMarketingServiceSection() {
                         <ServiceCard
                             icon={digitalserviceIcon3.src}
                             title="Advertising and Campaign Management"
-                            description="We use analytics to track performance, continuously optimizing your campaigns for measurable growth and success."
+                            description="We use analytics to track performance, continuously optimizGet A Quoteing your campaigns for measurable growth and success."
                             iconBgColor="bg-[#E8F8F6]"
                         />
 
