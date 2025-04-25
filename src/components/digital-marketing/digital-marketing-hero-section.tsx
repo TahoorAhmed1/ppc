@@ -126,7 +126,7 @@ export default function WebsiteDevelopmentHeroSection({
       className="relative w-full text-white bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      
+
 
       <div className="relative z-10 container py-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mt-10">
@@ -183,7 +183,7 @@ export default function WebsiteDevelopmentHeroSection({
           </div>
 
           <div className="w-full ">
-            <div className="relative p-[4px] rounded-xl border-animation-wrapper max-w-[450px] md:ml-auto mx-auto shadow-lg">
+            <div className="relative p-[4px] rounded-xl border-animation-wrapper max-w-[450px] md:ml-auto ml-auto mr-auto shadow-lg">
               <div className="bg-slate-950 rounded-xl lg:px-10 px-6 py-8 w-full">
                 <h2 className="text-3xl font-bold mb-4">Request a Quote</h2>
                 <p className="text-lg text-gray-300 mb-6 font-semibold">

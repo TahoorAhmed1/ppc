@@ -1,8 +1,10 @@
 import type React from "react";
 import "./globals.css";
-
+import { Poppins } from "next/font/google";
 import Script from "next/script";
 import { Metadata } from "next";
+
+
 
 export const metadata: Metadata = {
   title: "Creative Agency 360",
@@ -11,13 +13,20 @@ export const metadata: Metadata = {
     "Software House, PPC Services, Pay-Per-Click Experts, Google Ads Management, Digital Marketing Agency, Web Development, SEO Services, Social Media Marketing, Creative Agency, Branding, Performance Marketing, Online Advertising, Conversion Optimization",
 };
 
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"], // pick the weights you need
+  variable: "--font-poppins", // optional, but good for Tailwind or CSS vars
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={poppins.className}>
       <head>
         <Script
           async

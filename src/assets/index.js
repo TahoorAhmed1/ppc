@@ -96,6 +96,18 @@ import youtubeIcon from "@/assets/images/youtube-icon.png";
 import discordIcon from "@/assets/images/discord-icon.png";
 import pinterestIcon from "@/assets/images/pinterest-icon.png";
 import trustpilot from "@/assets/images/trustpilot.png";
+import coolEmoji from "@/assets/images/cool-emoji.png";
+import loveEmoji from "@/assets/images/love-emoji.png";
+import loveEmoji2 from "@/assets/images/love-emoji (2).png";
+import wowEmoji from "@/assets/images/wow-emoji.png";
+import likeEmoji from "@/assets/images/like-emoji.png";
+import laughEmoji from "@/assets/images/laugh-emoji.png";
+import serviceRightImage from "@/assets/images/service-right-image.png";
+import digitalserviceIcon1 from "@/assets/images/service-icon  (1).png";
+import digitalserviceIcon2 from "@/assets/images/service-icon  (2).png";
+import digitalserviceIcon3 from "@/assets/images/service-icon  (3).png";
+import digitalserviceIcon4 from "@/assets/images/service-icon  (4).png";
+
 export {
   trustpilot,
   popup,
@@ -195,4 +207,16 @@ export {
   youtubeIcon,
   discordIcon,
   pinterestIcon,
+  coolEmoji,
+  loveEmoji,
+  loveEmoji2,
+  wowEmoji,
+  likeEmoji,
+  laughEmoji,
+  serviceRightImage,
+  digitalserviceIcon1,
+  digitalserviceIcon2,
+  digitalserviceIcon3,
+  digitalserviceIcon4,
+  
 };
