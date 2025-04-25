@@ -191,7 +191,7 @@ export default function DigitalMarketingHeroSection({
       <div className="relative z-10 container py-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mt-10">
           <div className="w-full">
-            <h1 className="text-[46px] lg:text-[60px] font-bold leading-tight h-[350px]">
+            <h1 className="text-[43px] lg:text-[60px] font-bold leading-tight h-[350px]">
               <span className="inline-block bg-white rounded-xl py-1 px-2 mb-2">
                 <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] bg-clip-text text-transparent">
                   Not Just Websites
@@ -206,7 +206,7 @@ export default function DigitalMarketingHeroSection({
                   loop={1}
                   cursor
                   cursorStyle="|"
-                  typeSpeed={90}
+                  typeSpeed={200}
                   deleteSpeed={0}
                   delaySpeed={999999}
                 />

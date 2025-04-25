@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Star, X } from "lucide-react";
+import { Sparkles, Star, X } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   firmsLogos,
@@ -73,6 +73,17 @@ const platforms = [
   { name: "Wix", src: wixIcon.src },
   { name: "Webflow", src: webflowIcon.src },
 ];
+const shimmerAnimation = {
+  hidden: { backgroundPosition: "200% 0" },
+  visible: {
+    backgroundPosition: "-200% 0",
+    transition: {
+      repeat: Number.POSITIVE_INFINITY,
+      duration: 3,
+      ease: "linear",
+    },
+  },
+};
 
 export default function HeroSection() {
   const [activePopup, setActivePopup] = useState<number | null>(null);
@@ -83,7 +94,7 @@ export default function HeroSection() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className={`absolute md:top-[5%] top-[70%] left-[5%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity 
+        className={`absolute sm:top-[5%] -top-[3%]  md:left-[3%]  -left-[3%] w-[12vw] h-[12vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity 
         }`}
         onClick={() => setActivePopup(1)}
       ></motion.div>
@@ -92,7 +103,7 @@ export default function HeroSection() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className={`absolute md:top-[30%] top-[60%] right-[2%] w-[8vw] h-[8vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity 
+        className={`absolute md:top-[30%] top-[0.5%] md:right-[2%] right-[3%] w-[14vw] h-[14vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity 
         }`}
         onClick={() => setActivePopup(2)}
       ></motion.div>
@@ -207,30 +218,74 @@ export default function HeroSection() {
       <div className="py-6 md:py-12">
         <div className="grid gap-6 md:gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16 items-center">
           <div className="flex flex-col justify-center space-y-4 md:space-y-6">
-            <div className="space-y-2 md:space-y-4">
-              <h1 className="text-2xl sm:text-3xl font-bold md:text-4xl lg:text-5xl">
-                <span className="bg-gradient-to-r text-[#41B4A7]">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-2 md:space-y-4"
+            >
+              <h1 className="text-[35px] font-bold md:leading-tight md:text-4xl lg:text-5xl">
+                <motion.span
+                  initial="hidden"
+                  animate="visible"
+                  variants={shimmerAnimation}
+                  className="relative inline-block bg-gradient-to-r from-[#41B4A7] to-[#2C7A71] bg-clip-text text-transparent"
+                  style={{
+                    backgroundSize: "200% 100%",
+                    backgroundImage:
+                      "linear-gradient(90deg, #41B4A7 0%, #2C7A71 25%, #41B4A7 50%, #2C7A71 75%, #41B4A7 100%)",
+                  }}
+                >
                   Your One-Stop Digital Marketing and Web Design Partner
+                </motion.span>
+                <br />
+                <motion.span
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.8, duration: 0.5 }}
+                  className="relative inline-block bg-gradient-to-r mt-5 from-[#41B4A7] via-[#65CF5F] to-[#2C7A71] bg-clip-text text-transparent"
+                >
+                  <motion.span
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-75"
+                    style={{
+                      backgroundSize: "200% 100%",
+                      mixBlendMode: "overlay",
+                    }}
+                    animate={{
+                      x: ["100%", "-100%"],
+                    }}
+                    transition={{
+                      repeat: Number.POSITIVE_INFINITY,
+                      repeatType: "loop",
+                      duration: 2,
+                      ease: "easeInOut",
+                      delay: 1,
+                      repeatDelay: 3,
+                    }}
+                  />
                   Empowering Your Brand Voice
-                </span>
+                </motion.span>
               </h1>
-              <p className="max-w-[600px] text-[#1C2D44] text-sm sm:text-base md:text-lg lg:text-base xl:text-xl">
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="relative max-w-[640px] text-[#1C2D44] text-lg  lg:text-[22px]"
+              >
                 A team of UI/UX experts, web and mobile app developers,
                 copywriters and digital marketers who deliver real-world
                 solutions for today's dynamic landscape.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             <div className="w-full">
               <Image
-                src={
-                  firmsLogos ||
-                  "/placeholder.svg?height=100&width=1000&query=company logos"
-                }
+                src={firmsLogos}
                 alt="Partner company logos"
                 width={1000}
-                height={100}
-                className="w-full h-auto max-h-20 object-contain"
+                height={1000}
+                className="w-full h-auto max-h-20"
                 priority
               />
             </div>
@@ -265,14 +320,16 @@ export default function HeroSection() {
                 <p>
                   <a
                     className="font-medium text-base sm:text-lg md:text-xl text-[#1C2D44]"
-                    href="tel:+18045745376">
+                    href="tel:+18045745376"
+                  >
                     +1 (804) 574 5376
                   </a>
                 </p>
                 <p>
                   <a
                     className="text-sm sm:text-base"
-                    href="mailto:support@creativeagency360.com">
+                    href="mailto:support@creativeagency360.com"
+                  >
                     support@creativeagency360.com
                   </a>
                 </p>
@@ -403,6 +460,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-    </section >
+    </section>
   );
 }
