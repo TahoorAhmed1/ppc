@@ -89,7 +89,7 @@ export default function Footer() {
         initial="hidden"
         animate="visible"
       >
-        <motion.div className="max-w-lg space-y-6" variants={itemVariants}>
+        <motion.div className="max-w-[500px] space-y-6" variants={itemVariants}>
           <motion.div
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
