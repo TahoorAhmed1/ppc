@@ -127,10 +127,11 @@ export default function WebsiteDevelopmentHeroSection({
     >
       
 
-      <div className="relative z-10 container py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 items-center mt-10">
+      <div className="relative z-10 container py-6 ">
+        <div className="grid grid-cols-1 lg:grid-cols-3 md:gap-5 items-center mt-10 justify-center space-y-16">
+         
           <div className="w-full col-span-2">
-            <h1 className="text-[46px] lg:text-[60px] font-bold leading-tight h-[350px]">
+            <h1 className="text-[46px] lg:text-[60px] font-bold leading-tight md:h-[350px] h-[280px] ">
               <span className="inline-block bg-white rounded-xl py-1 px-2 mb-2">
                 <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] bg-clip-text text-transparent">
                   Not Just Websites
@@ -181,8 +182,8 @@ export default function WebsiteDevelopmentHeroSection({
             </div>
           </div>
 
-          <div className="w-full">
-            <div className="relative p-[4px] rounded-xl border-animation-wrapper max-w-[450px] ml-auto shadow-lg">
+          <div className="w-full ">
+            <div className="relative p-[4px] rounded-xl border-animation-wrapper max-w-[450px] md:ml-auto mx-auto shadow-lg">
               <div className="bg-slate-950 rounded-xl lg:px-10 px-6 py-8 w-full">
                 <h2 className="text-3xl font-bold mb-4">Request a Quote</h2>
                 <p className="text-lg text-gray-300 mb-6 font-semibold">
@@ -326,6 +327,7 @@ export default function WebsiteDevelopmentHeroSection({
               </div>
             </div>
           </div>
+
         </div>
       </div>
 
