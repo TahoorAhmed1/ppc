@@ -25,7 +25,6 @@ import {
   award3,
   award4,
   heroSectionImage3,
-<<<<<<< HEAD
   facebookIcon,
   twitterIcon,
   instagramIcon,
@@ -34,15 +33,7 @@ import {
   youtubeIcon,
   discordIcon,
   pinterestIcon,
-=======
-  serviceIcon1,
-  serviceIcon2,
-  serviceIcon3,
-  serviceIcon4,
-  serviceIcon5,
-  serviceIcon6,
   trustpilot,
->>>>>>> 91b4f82c19181e79029a763a3f1d7912b58ea179
 } from "@/assets/index";
 import { notify } from "@/lib/utils";
 import Link from "next/link";
