@@ -87,6 +87,15 @@ import profileImage6 from "@/assets/images/pfp (6).jpg";
 import profileImage7 from "@/assets/images/pfp (7).jpg";
 import profileImage8 from "@/assets/images/pfp (8).jpg";
 import waterMarkLogo from "@/assets/images/favicon.svg";
+import facebookIcon from "@/assets/images/facebook-icon.png";
+import twitterIcon from "@/assets/images/twitter-icon.png";
+import instagramIcon from "@/assets/images/instagram-icon.png";
+import snapchatIcon from "@/assets/images/snapchat-icon.png";
+import tiktokIcon from "@/assets/images/tiktok-icon.png";
+import youtubeIcon from "@/assets/images/youtube-icon.png";
+import discordIcon from "@/assets/images/discord-icon.png";
+import pinterestIcon from "@/assets/images/pinterest-icon.png";
+
 export {
   popup,
   project1,
@@ -177,4 +186,12 @@ export {
   profileImage6,
   profileImage7,
   profileImage8,
+  facebookIcon,
+  twitterIcon,
+  instagramIcon,
+  snapchatIcon,
+  tiktokIcon,
+  youtubeIcon,
+  discordIcon,
+  pinterestIcon,
 };
