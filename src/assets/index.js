@@ -107,6 +107,7 @@ import digitalserviceIcon1 from "@/assets/images/service-icon  (1).png";
 import digitalserviceIcon2 from "@/assets/images/service-icon  (2).png";
 import digitalserviceIcon3 from "@/assets/images/service-icon  (3).png";
 import digitalserviceIcon4 from "@/assets/images/service-icon  (4).png";
+import socialMediaMarketingImage from "@/assets/images/about-us-Image.png";
 
 export {
   trustpilot,
@@ -218,5 +219,5 @@ export {
   digitalserviceIcon2,
   digitalserviceIcon3,
   digitalserviceIcon4,
-  
+  socialMediaMarketingImage,
 };
