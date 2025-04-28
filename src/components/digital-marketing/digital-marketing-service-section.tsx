@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
 import { Button } from '../ui/button'
-import ServiceCard from './service-card'
 import {
     profileImage,
     coolEmoji,
@@ -16,11 +15,12 @@ import {
     digitalserviceIcon3,
     digitalserviceIcon4,
 } from '@/assets'
+import ServiceCard from './service-cards'
 
 export default function DigitalMarketingServiceSection() {
     return (
         <main className="bg-white ">
-            <div className="container mx-auto px-4 py-12 md:py-16 lg:py-20">
+            <div className="container mx-auto px-4 py-12 md:py-16 lg:py-25 lg:mb-55 xl:mb-0">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative">
                     {/* Left Column */}
                     <div className="space-y-8 relative">
@@ -33,7 +33,7 @@ export default function DigitalMarketingServiceSection() {
                                 className="w-20 h-20 md:w-28 md:h-28"
                             />
                         </div>
-                        <div className="absolute left-0 top-40 z-10">
+                        <div className="absolute left-0 top-[310vw] sm:top-180 lg:top-150 z-20">
                             <Image
                                 src={coolEmoji.src}
                                 alt="Thumbs up"
