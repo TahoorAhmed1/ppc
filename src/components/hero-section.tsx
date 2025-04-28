@@ -94,7 +94,7 @@ export default function HeroSection() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className={`absolute sm:top-[5%] -top-[3%]  md:left-[3%]  -left-[3%] w-[12vw] h-[12vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity 
+        className={`absolute sm:top-[5%] -top-[3%]  md:left-[3%]  -left-[3%] w-[12vw] h-[12vw] md:max-w-[7vw] md:h-[7vw] min-w-[4vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity 
         }`}
         onClick={() => setActivePopup(1)}
       ></motion.div>
@@ -103,7 +103,7 @@ export default function HeroSection() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className={`absolute md:top-[30%] top-[0.5%] md:right-[2%] right-[3%] w-[14vw] h-[14vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity 
+        className={`absolute md:top-[30%] top-[0.5%] md:right-[0%] right-[3%] w-[12vw] h-[12vw] md:max-w-[7vw] md:h-[7vw] min-w-[4vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity 
         }`}
         onClick={() => setActivePopup(2)}
       ></motion.div>
@@ -112,7 +112,7 @@ export default function HeroSection() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className={`absolute md:top-[15%] top-[54%] right-[35%] w-[8vw] h-[8vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity 
+        className={`absolute md:top-[15%] top-[54%] right-[40%] w-[8vw] h-[8vw] xl:max-w-[5vw] xl:max-h-[5vw]  md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity 
         }`}
         onClick={() => setActivePopup(3)}
       ></motion.div>

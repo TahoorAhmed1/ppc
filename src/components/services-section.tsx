@@ -64,7 +64,7 @@ export default function ServicesSection({
         initial="hidden"
         animate={isLoaded ? "visible" : "hidden"}
         variants={pulse}
-        className="absolute md:top-[5%] top-[70%] left-[5%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] opacity-50 cursor-pointer hover:opacity-70 transition-opacity "
+        className="absolute md:top-[5%] top-[70%] left-[5%] w-[10vw] h-[10vw] md:max-w-[4vw] md:max-h-[4vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] opacity-50 cursor-pointer hover:opacity-70 transition-opacity "
         onClick={() => {
           setTimeout(() => setActivePopup(1), 150);
         }}
