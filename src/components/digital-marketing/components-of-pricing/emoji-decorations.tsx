@@ -7,7 +7,7 @@ export function EmojiDecorations() {
       <div className="hidden xl:block absolute top-[60px] left-200">
         <Image src={wowEmoji.src} alt="" width={80} height={80} className="w-16 h-16 md:w-20 md:h-20" />
       </div>
-      <div className="hidden xl:block absolute top-300 left-[200px]">
+      <div className="hidden xl:block absolute top-300 left-0]">
         <Image src={laughEmoji.src} alt="" width={80} height={80} className="w-16 h-16 md:w-20 md:h-20" />
       </div>
       <div className="hidden xl:block absolute top-[400px] left-[20px]">

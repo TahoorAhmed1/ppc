@@ -4,9 +4,10 @@ import DigitalMarketingServiceSection from '@/components/digital-marketing/digit
 import Pricing from '@/components/digital-marketing/pricing'
 import SocialMediaMarketing from '@/components/digital-marketing/social-media-marketing'
 import AnimatedFaqSection from '@/components/faq-section'
+import AnimatedFaqSection2 from '@/components/faq-section-2'
+import Footer from '@/components/footer'
 import TestimonialsSection from '@/components/testimonials-section'
 import React from 'react'
-import { Footer } from 'react-day-picker'
 
 function page() {
     return (
@@ -17,7 +18,7 @@ function page() {
             <SocialMediaMarketing/>
             <TestimonialsSection />
             <ContactSection />
-            <AnimatedFaqSection />
+            <AnimatedFaqSection2 />
             <Footer />
         </>
     )
