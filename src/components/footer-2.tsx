@@ -84,12 +84,12 @@ export default function Footer() {
       </motion.div>
 
       <motion.div
-        className="container mx-auto space-y-12  lg:space-y-0 grid  lg:grid-cols-3 lg:items-start relative z-10 lg:gap-9 gap-8"
+        className="container mx-auto space-y-12  lg:space-y-0 grid grid-cols-1   lg:grid-cols-3 lg:items-start relative z-10 lg:gap-9 gap-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.div className="max-w-[650px] space-y-6" variants={itemVariants}>
+        <motion.div className="max-w-[650px] space-y-6 col-span-1" variants={itemVariants}>
           <motion.div
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
@@ -248,7 +248,7 @@ export default function Footer() {
         </motion.div>
 
         <motion.div
-          className=" col-span-2 grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 mt-10 lg:mt-0"
+          className="col-span-2 grid grid-cols-1  md:grid-cols-4 gap-5 mt-10 lg:mt-0"
           variants={containerVariants}
         >
           <AnimatedFooterColumn
@@ -257,6 +257,8 @@ export default function Footer() {
               { name: "Contact us", link: "contactus" },
               { name: "Portfolio", link: "portfolio" },
               { name: "Reviews", link: "review" },
+              { name: "Privacy Policy", link: "/privacy" },
+              { name: "Terms & Condition", link: "/terms-&-condition" },
             ]}
           />
 
@@ -267,9 +269,10 @@ export default function Footer() {
               { name: "Growth package", link: "business" },
               { name: "Premium package", link: "premium" },
               { name: "Ultimate package", link: "ultimate" },
+
             ]}
           />
-          <div className="space-y-4  text-gray-700">
+          {/* <div className="space-y-4  text-gray-700">
             <h3 className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text ">
               Privacy Policy
             </h3>
@@ -281,8 +284,8 @@ export default function Footer() {
                 Terms & Condition
               </a>
             </div>
-          </div>
-          <div className="space-y-4 col-span-2 text-gray-700">
+          </div> */}
+          <div className="space-y-4 md:col-span-2 text-gray-700">
             <h3 className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text ">
               Contact us
             </h3>
@@ -296,6 +299,8 @@ export default function Footer() {
             </div>
           </div>
         </motion.div>
+
+
       </motion.div>
 
       <motion.div
