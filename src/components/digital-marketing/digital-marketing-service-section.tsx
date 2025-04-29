@@ -24,7 +24,7 @@ export default function DigitalMarketingServiceSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative">
                     {/* Left Column */}
                     <div className="space-y-8 relative">
-                        <div className="absolute -top-10 -right-25 z-10">
+                        <div className="absolute -top-10 -right-25 z-10 hidden lg:block">
                             <Image
                                 src={likeEmoji.src}
                                 alt="Love reaction"

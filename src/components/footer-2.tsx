@@ -3,6 +3,7 @@
 import { logo } from "@/assets";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export default function Footer() {
   const containerVariants = {
@@ -286,16 +287,28 @@ export default function Footer() {
             </div>
           </div> */}
           <div className="space-y-4 md:col-span-2 text-gray-700">
-            <h3 className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text ">
+            <h3 className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
               Contact us
             </h3>
-            <div>
-              <a href="mailto:support@creativeagency360.com">
-                support@creativeagency360.com
+
+            <div className="flex items-center gap-2">
+              <a
+                href="mailto:support@creativeagency360.com"
+                className="flex items-center gap-2"
+              >
+                <Mail className="w-5 h-5 text-[#65CF5F]" />
+                <span>support@creativeagency360.com</span>
               </a>
             </div>
-            <div>
+
+            <div className="flex items-center gap-2">
+              <Phone className="w-5 h-5 text-[#65CF5F]" />
               <a href="tel:+18045745376">+1 (804) 574 5376</a>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <MapPin className="w-8 h-8 text-[#65CF5F]" />
+              <p className="text-sm">2206 ATWOOD DR ANDERSON, INDIANA 46016</p>
             </div>
           </div>
         </motion.div>
