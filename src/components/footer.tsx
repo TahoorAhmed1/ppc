@@ -264,7 +264,7 @@ export default function Footer() {
         >
           <AnimatedFooterColumn
             title="Our Link"
-            links={["About Us", "Services", "Portfolio", "Contact Us"]}
+            links={["About Us", "Services", "Portfolio", "Contact Us" , "Home"]}
           />
 
           <div className="space-y-4 text-gray-700">

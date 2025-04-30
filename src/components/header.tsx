@@ -10,6 +10,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navItems = [
+    { label: "Home", href: "/" },
     { label: "About Us", href: "#aboutus" },
     { label: "Services", href: "#services" },
     { label: "Portfolio", href: "#portfolio" },
@@ -32,7 +33,7 @@ export default function Header() {
           </a>
         </div>
 
-        <nav className="hidden md:flex lg:gap-x-9 gap-x-6">
+        <nav className="hidden md:flex lg:gap-x-9 gap-x-3 ">
           {navItems.map((item) => (
             <a
               key={item.label}

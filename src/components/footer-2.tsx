@@ -255,6 +255,7 @@ export default function Footer() {
           <AnimatedFooterColumn
             title="Our Link"
             links={[
+              { name: "Home", link: "/" },
               { name: "Contact us", link: "contactus" },
               { name: "Portfolio", link: "portfolio" },
               { name: "Reviews", link: "review" },

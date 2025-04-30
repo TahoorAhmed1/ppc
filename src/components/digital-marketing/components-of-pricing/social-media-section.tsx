@@ -1,55 +1,97 @@
 import Image from "next/image"
-import { ServiceCard } from "./service-card"
-import { SocialMediaIcon } from "./social-media-icon"
-import { servicesData } from "@/data/services-data"
+import { ArrowRight } from "lucide-react"
 
-export function SocialMediaSection() {
+export default function SocialMediaMarketing() {
   return (
-    <section className="py-16 px-4 md:py-24 bg-white overflow-hidden relative">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          {/* Left side with image and social icons */}
-          <div className="relative">
-            <div className="relative z-10">
-              <div className="bg-[#4cd3a5] w-[350px] h-[350px] md:w-[450px] md:h-[450px] rounded-full mx-auto relative">
-                <Image
-                  src="/images/social-media-person.png"
-                  alt="Social Media Expert"
-                  width={400}
-                  height={500}
-                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2"
-                />
-              </div>
-            </div>
+    <div className="container mx-auto px-4 py-12 md:py-20 overflow-hidden">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+        {/* Left side with person and social media icons */}
+        <div className="relative w-full lg:w-1/2 h-[500px] md:h-[600px] flex items-center justify-center">
+          {/* Main circular background */}
+          <div className="absolute w-[90%] h-[90%] rounded-full bg-gradient-to-br from-emerald-400 to-teal-500"></div>
 
-            {/* Social Media Icons */}
-            <SocialMediaIcon src="/images/emoji-wow.png" alt="Wow Emoji" className="top-0 left-16" />
-            <SocialMediaIcon src="/images/facebook-icon.png" alt="Facebook" className="top-[20%] left-0" />
-            <SocialMediaIcon src="/images/instagram-icon.png" alt="Instagram" className="top-[30%] right-[5%]" />
-            <SocialMediaIcon src="/images/pinterest-icon.png" alt="Pinterest" className="top-[60%] left-[5%]" />
-            <SocialMediaIcon src="/images/emoji-love.png" alt="Love Emoji" className="top-[10%] right-[15%]" />
-            <SocialMediaIcon
-              src="/images/emoji-heart-eyes.png"
-              alt="Heart Eyes Emoji"
-              className="bottom-[30%] right-[10%]"
+          {/* Person image */}
+          <div className="relative z-10">
+            <Image
+              src="/images/social-media-person.png"
+              alt="Social media specialist with smartphone"
+              width={500}
+              height={600}
+              className="object-contain"
+              priority
             />
-            <SocialMediaIcon src="/images/youtube-icon.png" alt="YouTube" className="bottom-[15%] right-[20%]" />
-            <SocialMediaIcon src="/images/thumbs-up.png" alt="Thumbs Up" className="bottom-[5%] left-[10%]" />
           </div>
 
-          {/* Right side with service cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {servicesData.map((service) => (
-              <ServiceCard
-                key={service.id}
-                number={service.id}
-                title={service.title}
-                description={service.description}
-              />
-            ))}
+          {/* Social media icons */}
+          <div className="absolute top-0 left-[15%] animate-float-slow">
+            <Image src="/images/facebook-icon.png" alt="Facebook" width={80} height={80} />
+          </div>
+          <div className="absolute top-[10%] right-[15%] animate-float-slow-delay">
+            <Image src="/images/instagram-icon.png" alt="Instagram" width={80} height={80} />
+          </div>
+          <div className="absolute bottom-[20%] left-[10%] animate-float">
+            <Image src="/images/pinterest-icon.png" alt="Pinterest" width={80} height={80} />
+          </div>
+          <div className="absolute bottom-[10%] right-[15%] animate-float-delay">
+            <Image src="/images/youtube-icon.png" alt="YouTube" width={80} height={80} />
+          </div>
+          <div className="absolute top-[5%] left-[5%] animate-float-slow">
+            <Image src="/images/emoji-wow.png" alt="Wow emoji" width={60} height={60} />
+          </div>
+          <div className="absolute top-[40%] right-[5%] animate-float">
+            <Image src="/images/emoji-heart.png" alt="Heart emoji" width={60} height={60} />
+          </div>
+          <div className="absolute bottom-[15%] right-[30%] animate-float-delay">
+            <Image src="/images/emoji-love.png" alt="Love emoji" width={60} height={60} />
+          </div>
+          <div className="absolute bottom-[5%] left-[25%] animate-float-slow-delay">
+            <Image src="/images/emoji-thumbsup.png" alt="Thumbs up emoji" width={60} height={60} />
           </div>
         </div>
+
+        {/* Right side with cards */}
+        <div className="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <ServiceCard
+            number="01"
+            title="Tailored Social Media Strategies"
+            description="Li Europan lingues es membres del sam familie. Lor separat existentie es un"
+          />
+          <ServiceCard
+            number="02"
+            title="Engaging Content Creation"
+            description="Li Europan lingues es membres del sam familie. Lor separat existentie es un"
+          />
+          <ServiceCard
+            number="03"
+            title="Expertise Across Platforms"
+            description="Li Europan lingues es membres del sam familie. Lor separat existentie es un"
+          />
+          <ServiceCard
+            number="04"
+            title="Data-Driven Results"
+            description="Li Europan lingues es membres del sam familie. Lor separat existentie es un myth."
+          />
+        </div>
       </div>
-    </section>
+    </div>
+  )
+}
+
+interface ServiceCardProps {
+  number: string
+  title: string
+  description: string
+}
+
+function ServiceCard({ number, title, description }: ServiceCardProps) {
+  return (
+    <div className="bg-white rounded-xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+      <div className="text-xl font-medium text-emerald-500 mb-4">{number}</div>
+      <h3 className="text-2xl font-bold text-gray-800 mb-3">{title}</h3>
+      <p className="text-gray-600 mb-6 flex-grow">{description}</p>
+      <div className="mt-auto">
+        <ArrowRight className="text-emerald-500 h-5 w-5" />
+      </div>
+    </div>
   )
 }
