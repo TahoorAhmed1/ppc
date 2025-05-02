@@ -82,7 +82,7 @@ export default function MarketingSection() {
   return (
     <section
       id="experience"
-      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative overflow-hidden"
+      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative overflow-hidden"
       ref={sectionRef}
     >
       {/* Background animated balls */}
