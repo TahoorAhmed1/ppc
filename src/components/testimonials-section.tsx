@@ -104,7 +104,7 @@ export default function TestimonialsSection() {
     // Set up new interval for auto-sliding
     autoPlayIntervalRef.current = setInterval(() => {
       api.scrollNext()
-    }, 5000) // Change slide every 5 seconds
+    }, 20000) 
 
     // Cleanup function
     return () => {

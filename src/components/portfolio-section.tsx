@@ -139,7 +139,7 @@ export default function PortfolioSection({
 
   return (
     <motion.section
-      className="relative overflow-hidden pb-10"
+      className="relative overflow-hidden pb-10 py-30"
       id="portfolio"
       initial="hidden"
       animate={isLoaded ? "visible" : "hidden"}

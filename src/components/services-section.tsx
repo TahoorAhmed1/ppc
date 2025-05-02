@@ -57,7 +57,7 @@ export default function ServicesSection({
   return (
     <section
       id="services"
-      className="py-12 md:py-20 overflow-hidden relative"
+      className="py-15 md:py-30 overflow-hidden relative"
       style={{ backgroundColor }}
     >
       <motion.div
@@ -154,25 +154,6 @@ export default function ServicesSection({
           ))}
         </div>
 
-        {/* {showButton && (
-          <motion.div
-            className="flex justify-center mt-10 sm:mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.5,
-              delay: 0.6,
-              type: "spring",
-            }}
-          >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bg-gradient-to-r h-11 from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-[220px] text-[17px] font-medium hover:opacity-90 text-white rounded-md border-none">
-                {buttonText}
-              </Button>
-            </motion.div>
-          </motion.div>
-        )} */}
       </div>
     </section>
   );
