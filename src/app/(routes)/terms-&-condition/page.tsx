@@ -9,7 +9,7 @@ export default function Page() {
             Terms and Conditions
           </h1>
           <div className="flex justify-center text-sm">
-            <Link href="/website-development" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Home
             </Link>
             <span className="mx-2">•</span>

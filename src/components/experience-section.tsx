@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView, useAnimation, type Variants } from "framer-motion";
-import { experienceImage, mailIcon } from "@/assets";
+import {  mailIcon ,girlWithPhone} from "@/assets";
 
 // Create motion components
 const MotionDiv = motion.div;
@@ -120,7 +120,7 @@ export default function MarketingSection() {
             variants={imageVariants}
           >
             <Image
-              src={experienceImage || "/placeholder.svg"}
+              src={girlWithPhone || "/placeholder.svg"} 
               alt="Digital marketing professional"
               width={1000}
               height={1000}

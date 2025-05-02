@@ -12,7 +12,6 @@ import {
 import TestimonialCard from "./testimonial-card"
 import {
   profileImage1,
-  profileImage2,
   profileImage3,
   profileImage4,
   profileImage5,
@@ -39,7 +38,7 @@ export default function TestimonialsSection() {
     },
     {
       id: 2,
-      avatar: profileImage2.src,
+      avatar: profileImage5.src,
       name: "David Thompson",
       role: "CEO, Tech Startup",
       content:
@@ -104,7 +103,7 @@ export default function TestimonialsSection() {
     // Set up new interval for auto-sliding
     autoPlayIntervalRef.current = setInterval(() => {
       api.scrollNext()
-    }, 20000) 
+    }, 1500) 
 
     // Cleanup function
     return () => {

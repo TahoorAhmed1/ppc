@@ -8,12 +8,12 @@ import {
   firmsLogos,
   heroSectionImage2,
   mailIcon,
-  profileImage2,
   projectDoneLine,
   shopifyIcon,
   wixIcon,
   webflowIcon,
   wordpressIcon,
+  profileImage6,
 } from "@/assets";
 import { AiFillSafetyCertificate } from "react-icons/ai";
 import StatsBar from "./stats-card";
@@ -346,7 +346,7 @@ export default function HeroSection() {
               <div className="flex items-center gap-[1vw]">
                 <img
                   src={
-                    profileImage2?.src ||
+                    profileImage6?.src ||
                     "/placeholder.svg?height=40&width=40&query=profile avatar"
                   }
                   alt="Customer Avatar"

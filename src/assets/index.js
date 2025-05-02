@@ -1,9 +1,8 @@
-import logo from "@/assets/images/logo.png";
+import logo from "@/assets/images/logo.svg";
 import firmsLogos from "@/assets/images/ux-firms-logos.webp";
 import mailIcon from "@/assets/images/mail-icon.svg";
 import profileImage from "@/assets/images/profile-image.webp";
 import projectDoneLine from "@/assets/images/project-done-line.svg";
-import heroSectionImage from "@/assets/images/hero-image.svg";
 import heroSectionImage2 from "@/assets/images/girl-image.webp";
 import aboutCardIcon1 from "@/assets/images/Illust-1.svg";
 import aboutCardIcon1Hover from "@/assets/images/Illust-1-hover.svg";
@@ -18,7 +17,7 @@ import offerIcon4 from "@/assets/images/offer-icon (2).svg";
 import offerIcon5 from "@/assets/images/offer-icon (3).svg";
 import offerIcon6 from "@/assets/images/offer-icon (4).svg";
 import offerIcon7 from "@/assets/images/offer-icon (7).svg";
-import experienceImage from "@/assets/images/experience-image.webp";
+import girlWithPhone from "@/assets/images/girl-with_phone.webp";
 import portfolio1 from "@/assets/images/portfolio1.svg";
 import portfolio2 from "@/assets/images/portfolio2.svg";
 import portfolio3 from "@/assets/images/portfolio3.svg";
@@ -78,14 +77,13 @@ import project14 from "@/assets/images/project/skin_enhanced.webp";
 import project15 from "@/assets/images/project/timothy_enhanced.webp";
 import project16 from "@/assets/images/project/yohan it_enhanced.webp";
 import popup from "@/assets/images/main-popup.png";
-import profileImage1 from "@/assets/images/pfp (1).jpg";
-import profileImage2 from "@/assets/images/pfp (2).jpg";
-import profileImage3 from "@/assets/images/pfp (3).jpg";
-import profileImage4 from "@/assets/images/pfp (4).jpg";
-import profileImage5 from "@/assets/images/pfp (5).jpg";
-import profileImage6 from "@/assets/images/pfp (6).jpg";
-import profileImage7 from "@/assets/images/pfp (7).jpg";
-import profileImage8 from "@/assets/images/pfp (8).jpg";
+import profileImage1 from "@/assets/images/pfp (1).webp";
+import profileImage3 from "@/assets/images/pfp (3).webp";
+import profileImage4 from "@/assets/images/pfp (4).webp";
+import profileImage5 from "@/assets/images/pfp (5).webp";
+import profileImage6 from "@/assets/images/pfp (6).webp";
+import profileImage7 from "@/assets/images/pfp (7).webp";
+import profileImage8 from "@/assets/images/pfp (8).webp";
 import waterMarkLogo from "@/assets/images/favicon.svg";
 import facebookIcon from "@/assets/images/facebook-icon.png";
 import twitterIcon from "@/assets/images/twitter-icon.png";
@@ -136,7 +134,6 @@ export {
   package6,
   logo,
   fap,
-  heroSectionImage,
   firmsLogos,
   mailIcon,
   profileImage,
@@ -155,7 +152,6 @@ export {
   offerIcon5,
   offerIcon6,
   offerIcon7,
-  experienceImage,
   waterMarkLogo,
   portfolio1,
   portfolio2,
@@ -193,7 +189,6 @@ export {
   webflowIcon,
   wordpressIcon,
   profileImage1,
-  profileImage2,
   profileImage3,
   profileImage4,
   profileImage5,
@@ -220,4 +215,5 @@ export {
   digitalserviceIcon3,
   digitalserviceIcon4,
   socialMediaMarketingImage,
+  girlWithPhone,
 };
