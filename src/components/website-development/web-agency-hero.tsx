@@ -1,5 +1,7 @@
 "use client"
 import { shopifyIcon, wixIcon, webflowIcon, wordpressIcon } from "@/assets"
+
+import { motion } from "framer-motion"
 import AutoSliderHeading from "../auto-silder-heading"
 import AutoSlider from "../auto-slider"
 
@@ -9,12 +11,16 @@ const platforms = [
   { name: "WordPress", src: wordpressIcon.src },
   { name: "Wix", src: wixIcon.src },
   { name: "Webflow", src: webflowIcon.src },
-
 ]
 
 export default function InfiniteScroll() {
   return (
-    <main className="w-full bg-white py-8 sm:py-10 md:py-16">
+    <motion.main
+      className="w-full bg-white py-8 sm:py-10 md:py-16"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="container mx-auto px-4">
         <AutoSliderHeading
           title="Versatile Development Expertise"
@@ -23,6 +29,6 @@ export default function InfiniteScroll() {
 
         <AutoSlider platforms={platforms} />
       </div>
-    </main>
+    </motion.main>
   )
 }

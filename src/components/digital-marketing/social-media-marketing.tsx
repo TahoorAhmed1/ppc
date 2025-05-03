@@ -4,7 +4,7 @@ import { socialMediaMarketingImage } from "@/assets"
 
 export default function SocialMediaMarketing() {
   return (
-    <div className="container mx-auto px-4 py-12 md:py-20 overflow-hidden flex items-center justify-center ">
+    <div className="container mx-auto px-4 py-12 md:py-30 overflow-hidden flex items-center justify-center ">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
         <div className="">
           <Image src={socialMediaMarketingImage.src} alt="" width={1000} height={1000} className="w-120" />

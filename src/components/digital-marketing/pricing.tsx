@@ -115,7 +115,7 @@ export default function Pricing() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="min-h-screen text-white py-12 px-4 md:px-8 lg:px-12 relative overflow-hidden"
+      className="min-h-screen text-white py-30 px-4 md:px-8 lg:px-12 relative overflow-hidden"
       style={{
         background: "linear-gradient(94deg,rgba(9, 32, 33, 1) 0%, rgba(28, 45, 68, 1) 100%)",
       }}

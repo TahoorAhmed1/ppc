@@ -35,7 +35,7 @@ export default function DigitalMarketingServiceSection() {
   }
 
   return (
-    <main className="bg-white ">
+    <main className="bg-white py-10">
       <div className="container mx-auto px-4 py-12 md:py-16 lg:py-25 lg:mb-55 xl:mb-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative">
           {/* Left Column */}
