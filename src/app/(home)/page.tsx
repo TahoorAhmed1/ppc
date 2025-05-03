@@ -18,6 +18,7 @@ import {
 } from "@/assets";
 import HeroSection from "@/components/hero-section";
 import TestimonialsSection from "@/components/testimonials-section";
+import PricingSection from "@/components/pricing/pricing-section";
 
 const portfolioItems = [
   {
@@ -93,6 +94,8 @@ export default function Home() {
       >
         <ExperienceSection />
       </motion.div>
+
+      <PricingSection filter={["Animation", "Branding", "Digital Marketing", "E-commerce", "Logo Design", "SEO", "SMM", "Web Design"]} />
 
       <PortfolioSection
         heading="OUR PORTFOLIO"

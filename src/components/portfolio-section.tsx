@@ -153,13 +153,7 @@ export default function PortfolioSection({
         variants={pulse}
         className="absolute md:bottom-[10%] bottom-[5%] right-[10%] w-[10vw] h-[10vw] md:w-[9vw] md:h-[9vw] rounded-full bg-gradient-to-r from-[#1F9BED]/60 to-[#41B4A7]/50 opacity-40"
       />
-      {/* 
-      {backgroundImage && (
-        <motion.div
-          className="absolute inset-0 m-auto w-[90%] h-[90%] bg-center bg-cover opacity-15 "
-          style={{ backgroundImage: `url(${backgroundImage})` }}
-        ></motion.div>
-      )} */}
+   
 
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
