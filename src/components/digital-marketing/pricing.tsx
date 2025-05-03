@@ -1,11 +1,12 @@
+"use client"
+
+import { motion } from "framer-motion"
 import { CallToAction } from "./components-of-pricing/call-to-action"
 import { EmojiDecorations } from "./components-of-pricing/emoji-decorations"
 import { PricingCard } from "./components-of-pricing/pricing-card"
 import { PricingHeader } from "./components-of-pricing/pricing-header"
 
-
 export default function Pricing() {
-
   const pricingData = [
     {
       id: "silver",
@@ -109,38 +110,45 @@ export default function Pricing() {
     },
   ]
 
-
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
       className="min-h-screen text-white py-12 px-4 md:px-8 lg:px-12 relative overflow-hidden"
       style={{
-        background: 'linear-gradient(94deg,rgba(9, 32, 33, 1) 0%, rgba(28, 45, 68, 1) 100%)',
+        background: "linear-gradient(94deg,rgba(9, 32, 33, 1) 0%, rgba(28, 45, 68, 1) 100%)",
       }}
     >
-
       <EmojiDecorations />
 
       <div className="max-w-7xl mx-auto">
         <PricingHeader />
 
         <div className="space-y-8">
-          {pricingData.map((plan) => (
-            <PricingCard
+          {pricingData.map((plan, index) => (
+            <motion.div
               key={plan.id}
-              title={plan.title}
-              rating={plan.rating}
-              description={plan.description}
-              currentPrice={plan.currentPrice}
-              originalPrice={plan.originalPrice}
-              services={plan.services}
-              features={plan.features}
-              showSilverStartupPlus={plan.showSilverStartupPlus}
-            />
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
+            >
+              <PricingCard
+                title={plan.title}
+                rating={plan.rating}
+                description={plan.description}
+                currentPrice={plan.currentPrice}
+                originalPrice={plan.originalPrice}
+                services={plan.services}
+                features={plan.features}
+                showSilverStartupPlus={plan.showSilverStartupPlus}
+              />
+            </motion.div>
           ))}
         </div>
 
         <CallToAction />
       </div>
-    </div>
+    </motion.div>
   )
 }

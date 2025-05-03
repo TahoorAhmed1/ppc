@@ -1,3 +1,6 @@
+"use client"
+
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { StarRating } from "./star-rating"
@@ -29,31 +32,91 @@ export function PricingCard({
   showSilverStartupPlus = false,
 }: PricingCardProps) {
   return (
-    <Card className="bg-[#0e2330] border border-gray-700 rounded-lg overflow-hidden text-white">
-      <div className="grid grid-cols-1 lg:grid-cols-3">
-        <div className="p-6 border-r border-gray-700 lg:col-span-1 my-auto">
-          <StarRating rating={rating} />
-          <h2 className="text-2xl font-bold mb-6">{title}</h2>
-          <div className="mb-6">
-            <h3 className="text-[#5ce0c6] font-medium mb-2">Perfect For</h3>
-            <p className="text-sm text-gray-300">{description}</p>
-          </div>
-          <div className="flex items-center gap-5">
-            <Button className="bg-gradient-to-r w-30 cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2">Order Now</Button>
-            <div className="flex items-baseline">
-              <span className="text-3xl font-bold text-[#5ce0c6]">{currentPrice}</span>
-              <span className="ml-2 text-gray-400 line-through">{originalPrice}</span>
+    <motion.div
+      whileHover={{
+        y: -10,
+        transition: { duration: 0.3 },
+      }}
+    >
+      <Card className="bg-[#0e2330] border border-gray-700 rounded-lg overflow-hidden text-white relative">
+        {/* Hover glow effect */}
+        <motion.div
+          className="absolute inset-0 opacity-0 bg-gradient-to-r from-[#5ce0c6]/10 to-[#65CF5F]/10"
+          initial={{ opacity: 0 }}
+          whileHover={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        />
+
+        {/* Border highlight on hover */}
+        <motion.div
+          className="absolute inset-0 border-2 border-transparent rounded-lg"
+          initial={{ borderColor: "rgba(92,224,198,0)" }}
+          whileHover={{
+            borderColor: ["rgba(92,224,198,0)", "rgba(92,224,198,0.3)", "rgba(101,207,95,0.3)", "rgba(92,224,198,0.3)"],
+            boxShadow: "0 0 15px rgba(92,224,198,0.3)",
+          }}
+          transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+        />
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 relative z-10">
+          <div className="p-6 border-r border-gray-700 lg:col-span-1 my-auto">
+            <StarRating rating={rating} />
+            <motion.h2
+              className="text-2xl font-bold mb-6"
+              whileHover={{
+                color: "#5ce0c6",
+                scale: 1.05,
+                originX: 0,
+              }}
+              transition={{ duration: 0.2 }}
+            >
+              {title}
+            </motion.h2>
+            <div className="mb-6">
+              <h3 className="text-[#5ce0c6] font-medium mb-2">Perfect For</h3>
+              <p className="text-sm text-gray-300">{description}</p>
+            </div>
+            <div className="flex items-center gap-5">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button className="bg-gradient-to-r w-30 cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2 relative overflow-hidden group">
+                  {/* Gradient overlay on hover */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-[#5ce0c6] to-[#65CF5F] opacity-0 group-hover:opacity-100"
+                    transition={{ duration: 0.3 }}
+                  />
+                  <span className="relative z-10">Order Now</span>
+                </Button>
+              </motion.div>
+              <motion.div
+                className="flex items-baseline"
+                whileHover={{
+                  scale: 1.1,
+                  color: "#5ce0c6",
+                }}
+                transition={{ duration: 0.2 }}
+              >
+                <span className="text-3xl font-bold text-[#5ce0c6]">{currentPrice}</span>
+                <span className="ml-2 text-gray-400 line-through">{originalPrice}</span>
+              </motion.div>
             </div>
           </div>
 
+          <div className="p-6 lg:col-span-2">
+            <motion.h3
+              className="font-medium mb-4"
+              whileHover={{
+                color: "#5ce0c6",
+                x: 5,
+              }}
+              transition={{ duration: 0.2 }}
+            >
+              Included services
+            </motion.h3>
+            <ServiceBadges services={services} />
+            <FeatureList features={features} showSilverStartupPlus={showSilverStartupPlus} />
+          </div>
         </div>
-
-        <div className="p-6 lg:col-span-2">
-          <h3 className="font-medium mb-4">Included services</h3>
-          <ServiceBadges services={services} />
-          <FeatureList features={features} showSilverStartupPlus={showSilverStartupPlus} />
-        </div>
-      </div>
-    </Card>
+      </Card>
+    </motion.div>
   )
 }
