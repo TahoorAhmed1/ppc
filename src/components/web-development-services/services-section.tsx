@@ -31,11 +31,11 @@ export default function ServicesSection() {
 
   return (
     <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-12 max-w-7xl mx-auto">
-      <div className="mb-10 ">
+      <div className="mb-10">
         <span className="text-gray-500 uppercase text-sm tracking-wider block">
           A WEB DEVELOPMENT AGENCY
         </span>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mt-2 leading-tight">
+        <h2 className="text-4xl  font-extrabold text-[#41B4A7] mb-3">
           That Delivers Purpose-Built Solutions
         </h2>
       </div>
@@ -51,7 +51,7 @@ export default function ServicesSection() {
         ))}
       </div>
 
-      <div className="mt-12 ">
+      <div className="mt-12 text-center">
         <Link
           href="#contact"
           className="inline-block bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold transition-all duration-300"

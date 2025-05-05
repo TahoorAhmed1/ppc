@@ -3,6 +3,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import Script from "next/script";
 import { Metadata } from "next";
+import FollowCursor from "@/components/digital-marketing/components-of-pricing/follow-cursor";
 
 
 
@@ -76,7 +77,23 @@ export default function RootLayout({
           </a>
         </noscript>
       </head>
-      <body>{children}</body>
+      <body>
+      <FollowCursor
+        dotCount={4} // Reduced from 15 to exactly 4 dots
+        maxSize={10} // Decreased from 16 to 10
+        minSize={3} // Decreased from 6 to 3
+        baseSpeed={8} // Kept the same
+        colorful={true}
+        cursorStyle="dot" // Changed to dot style
+        cursorSize={14} // Decreased from 20 to 14
+        customColors={[
+          "#3CBFAE", // Teal
+          "#65CF5F", // Green
+          "#1F9BED", // Blue
+          "#5ce0c6", // Light teal
+        ]}
+      />
+        {children}</body>
     </html>
   );
 }
