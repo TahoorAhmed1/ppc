@@ -58,7 +58,7 @@ export function PricingCard({
           transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 relative z-1">
           <div className="p-6 border-r border-gray-700 lg:col-span-1 my-auto">
             <StarRating rating={rating} />
             <motion.h2

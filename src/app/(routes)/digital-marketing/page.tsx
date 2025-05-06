@@ -28,7 +28,6 @@ function Page() {
       <ScrollToTopButton />
       <DigitalMarketingHeroSection />
 
-      {/* Apply scroll animations to each section with ID for scroll targeting */}
       <div id="service-section">
         <ScrollAnimationWrapper animation="fade-up">
           <DigitalMarketingServiceSection />

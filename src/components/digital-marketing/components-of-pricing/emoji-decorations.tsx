@@ -61,7 +61,7 @@ export function EmojiDecorations() {
 
       {/* Middle left emoji */}
       <motion.div
-        className="hidden xl:block absolute top-300 left-0 cursor-pointer"
+        className="hidden xl:block absolute top-300 left-0 cursor-pointer z-10"
         animate={{
           y: [0, 10, -10, 15, 0],
           x: [0, -8, 8, -4, 0],
@@ -97,7 +97,7 @@ export function EmojiDecorations() {
 
       {/* Bottom left emoji */}
       <motion.div
-        className="hidden xl:block absolute top-[600px] left-[20px] cursor-pointer"
+        className="hidden xl:block absolute top-[600px] left-[20px] cursor-pointer z-10"
         animate={{
           y: [0, 15, 5, -10, 0],
           rotate: [0, 10, -5, 8, 0],
