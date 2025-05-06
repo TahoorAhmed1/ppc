@@ -57,7 +57,7 @@ export default function ServicesSection({
   return (
     <section
       id="services"
-      className="py-15 md:py-30 overflow-hidden relative"
+      className="py-15 md:py-30 overflow-hidden relative z-0"
       style={{ backgroundColor }}
     >
       <motion.div

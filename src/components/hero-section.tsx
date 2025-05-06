@@ -89,7 +89,7 @@ export default function HeroSection() {
   const [activePopup, setActivePopup] = useState<number | null>(null);
 
   return (
-    <section className="relative container overflow-hidden">
+    <section className="relative container overflow-hidden ">
       <motion.div
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -285,7 +285,7 @@ export default function HeroSection() {
                 alt="Partner company logos"
                 width={1000}
                 height={1000}
-                className="w-full h-auto max-h-20"
+                className="w-full h-auto max-h-20 -z-1"
                 priority
               />
             </div>

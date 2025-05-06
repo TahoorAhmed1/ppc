@@ -108,19 +108,19 @@ export default function AboutSection() {
               alt="Creative Agency"
               width={1000}
               height={1000}
-              className="h-12 w-auto"
+              className="h-12 w-auto z-10"
             />
           </motion.div>
 
           <motion.h2
-            className="text-4xl md:text-[42px] font-bold leading-tight"
+            className="text-4xl md:text-[42px] font-bold leading-tight z-10"
             variants={itemVariants}
           >
             <span className=" text-[#3DB1B1]">Who We Are</span>{" "}
           </motion.h2>
 
           <motion.p
-            className="text-sm md:text-base text-[#1C2D44] leading-relaxed"
+            className="text-sm md:text-base text-[#1C2D44] leading-relaxed z-10"
             variants={itemVariants}
           >
             At Creative Creative Agency 360, your success is our priority. Our
@@ -142,7 +142,7 @@ export default function AboutSection() {
               onHoverEnd={() => setHoveredCard(null)}
             >
               <motion.div variants={cardHoverVariants}>
-                <Card className="bg-white hover:bg-[#1C2D44] text-[#1C2D44] hover:text-white lg:items-start items-center text-center lg:text-start border-0 shadow-xl p-1 h-[340px] transition-colors duration-300">
+                <Card className="bg-white hover:bg-[#1C2D44] text-[#1C2D44] hover:text-white lg:items-start items-center text-center lg:text-start border-0 shadow-xl p-1 h-[340px] transition-colors duration-300 z-10">
                   <CardContent className="p-4">
                     <motion.div
                       className="flex mb-4 lg:items-start items-center lg:justify-start justify-center text-center lg:text-start"

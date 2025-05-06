@@ -2,10 +2,11 @@ import type React from "react";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import Script from "next/script";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import FollowCursor from "@/components/digital-marketing/components-of-pricing/follow-cursor";
-
-
+import FixedPositionBalls from "@/components/moving-bulbs-background";
+import AnimatedStarfield from "@/components/animated-starfield";
+import MovingBulbsBackground from "@/components/moving-bulbs-background";
 
 export const metadata: Metadata = {
   title: "Creative Agency 360",
@@ -14,11 +15,10 @@ export const metadata: Metadata = {
     "Software House, PPC Services, Pay-Per-Click Experts, Google Ads Management, Digital Marketing Agency, Web Development, SEO Services, Social Media Marketing, Creative Agency, Branding, Performance Marketing, Online Advertising, Conversion Optimization",
 };
 
-
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"], // pick the weights you need
-  variable: "--font-poppins", // optional, but good for Tailwind or CSS vars
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
 });
 
 export default function RootLayout({
@@ -78,22 +78,24 @@ export default function RootLayout({
         </noscript>
       </head>
       <body>
-      <FollowCursor
-        dotCount={4} // Reduced from 15 to exactly 4 dots
-        maxSize={10} // Decreased from 16 to 10
-        minSize={3} // Decreased from 6 to 3
-        baseSpeed={8} // Kept the same
-        colorful={true}
-        cursorStyle="dot" // Changed to dot style
-        cursorSize={14} // Decreased from 20 to 14
-        customColors={[
-          "#3CBFAE", // Teal
-          "#65CF5F", // Green
-          "#1F9BED", // Blue
-          "#5ce0c6", // Light teal
-        ]}
-      />
-        {children}</body>
+        <MovingBulbsBackground />
+        <FollowCursor
+          dotCount={4}
+          maxSize={10}
+          minSize={3}
+          baseSpeed={8}
+          colorful={true}
+          cursorStyle="dot"
+          cursorSize={14}
+          customColors={[
+            "#3CBFAE", // Teal
+            "#65CF5F", // Green
+            "#1F9BED", // Blue
+            "#5ce0c6", // Light teal
+          ]}
+        />
+        {children}
+      </body>
     </html>
   );
 }
