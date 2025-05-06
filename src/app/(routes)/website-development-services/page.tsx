@@ -1,10 +1,9 @@
-import { heroSectionImage3, profileImage4 } from "@/assets";
-import Footer from "@/components/footer";
-import PortfolioSection from "@/components/portfolio-section";
-import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
-import HireDevelopersSection from "@/components/hire-developer";
-import Link from "next/link";
-import React from "react";
+import { heroSectionImage3, profileImage4 } from "@/assets"
+import Footer from "@/components/footer"
+import PortfolioSection from "@/components/portfolio-section"
+import WebDevelopmentSection from "@/components/web-development-services/web-development-section"
+import HireDevelopersSection from "@/components/hire-developer/hire-developers-section"
+import Link from "next/link"
 
 export default function Page() {
   const customServices = [
@@ -33,9 +32,31 @@ export default function Page() {
         "We optimize your web applications for speed and efficiency, ensuring fast load times and smooth user experiences.",
     },
   ]
+
+  
+  type FeatureItemType = {
+    icon: "megaphone" | "chart"
+    title: string
+    description: string
+  }
+  
+    const developerFeatures: FeatureItemType[] = [
+    {
+      icon: "megaphone",
+      title: "Customized Solutions ",
+      description:
+        "We design a one-of-a-kind website that reflects your vision and is in line with your business objectives.",
+    },
+    {
+      icon: "chart",
+      title: "Ongoing Support",
+      description:
+        "We provide ongoing support after deployment, allowing you to focus on what matters most—running your business.",
+    },
+  ]
+
   return (
     <>
-     
       <div className="min-h-screen flex flex-col">
         <div
           className="text-white py-20 md:py-32 bg-cover bg-center bg-no-repeat"
@@ -66,12 +87,12 @@ export default function Page() {
             filters={["All", "E-commerce", "Business", "Real Estate"]}
             btnIcon=""
           />
-          <HireDevelopersSection />
+          <HireDevelopersSection features={developerFeatures} image="/placeholder.svg?key=yox12" />
         </div>
         <footer>
           <Footer />
         </footer>
-      </div>{" "}
+      </div>
     </>
-  );
+  )
 }
