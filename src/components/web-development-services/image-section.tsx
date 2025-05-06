@@ -1,11 +1,14 @@
-import { heroSectionImage2 } from "@/assets"
 import Image from "next/image"
 
-export default function ImageSection() {
+interface ImageSectionProps {
+  image?: string
+}
+
+export default function ImageSection({ image }: ImageSectionProps) {
   return (
     <div className="relative">
       <Image
-        src={heroSectionImage2}
+        src={image || ""}
         alt="Web development workspace with purple blob design"
         width={600}
         height={600}

@@ -17,11 +17,13 @@ import { useState } from "react";
 interface ServiceItem {
   image: string;
   title: string;
+  link: string;
   description: string;
 }
 
 interface ServicesSectionProps {
   title?: string;
+  link?: string;
   subtitle?: string;
   services?: ServiceItem[];
   buttonText?: string;
@@ -103,57 +105,58 @@ export default function ServicesSection({
 
         <div className="grid gap-4  sm:gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <MotionCard
-              key={index}
-              className="bg-white hover:bg-[#1C2D44] text-[#1C2D44] hover:text-white transition-colors duration-300"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.5,
-                delay: 0.1 * index,
-                type: "spring",
-                stiffness: 100,
-              }}
-              whileHover={{
-                scale: 1.03,
-                transition: { duration: 0.2 },
-              }}
-            >
-              <CardHeader className="pb-0">
-                <div className="flex items-center gap-4">
-                  <motion.div
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.5,
-                      delay: 0.2 + 0.1 * index,
-                      type: "spring",
-                    }}
-                  >
-                    <Image
-                      src={service.image || ""}
-                      alt={service.title}
-                      width={60}
-                      height={60}
-                      className="w-14 h-14 object-contain"
-                    />
-                  </motion.div>
-                  <CardTitle className="text-lg sm:text-xl md:text-2xl">
-                    {service.title}
-                  </CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="mt-4">
-                <p className="text-sm sm:text-base leading-relaxed">
-                  {service.description}
-                </p>
-              </CardContent>
-            </MotionCard>
+            <a href={service.link}>
+              <MotionCard
+                key={index}
+                className="bg-white hover:bg-[#1C2D44] text-[#1C2D44] hover:text-white transition-colors duration-300"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.1 * index,
+                  type: "spring",
+                  stiffness: 100,
+                }}
+                whileHover={{
+                  scale: 1.03,
+                  transition: { duration: 0.2 },
+                }}
+              >
+                <CardHeader className="pb-0">
+                  <div className="flex items-center gap-4">
+                    <motion.div
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.5,
+                        delay: 0.2 + 0.1 * index,
+                        type: "spring",
+                      }}
+                    >
+                      <Image
+                        src={service.image || ""}
+                        alt={service.title}
+                        width={60}
+                        height={60}
+                        className="w-14 h-14 object-contain"
+                      />
+                    </motion.div>
+                    <CardTitle className="text-lg sm:text-xl md:text-2xl">
+                      {service.title}
+                    </CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="mt-4">
+                  <p className="text-sm sm:text-base leading-relaxed">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </MotionCard>
+            </a>
           ))}
         </div>
-
       </div>
     </section>
   );
@@ -163,11 +166,13 @@ const defaultServices: ServiceItem[] = [
   {
     image: offerIcon1.src,
     title: "SEO",
+    link: "/seo",
     description:
       "Our expert SEO services help improve your website's visibility in search engines, driving more organic traffic and increasing your online presence.",
   },
   {
     image: offerIcon2.src,
+    link: "/website-development-services",
     title: "Web Development",
     description:
       "We build stunning, responsive websites that not only look great but also perform exceptionally well across all devices.",
@@ -175,24 +180,28 @@ const defaultServices: ServiceItem[] = [
   {
     image: offerIcon3.src,
     title: "Branding",
+    link: "/seo",
     description:
       "Our branding services help establish a strong, recognizable identity for your business, creating a lasting impression.",
   },
   {
     image: offerIcon4.src,
     title: "App Development",
+    link: "/seo",
     description:
       "Creating user-friendly mobile apps for iOS and Android platforms that help your business reach a wider audience.",
   },
   {
     image: offerIcon5.src,
     title: "Email Marketing",
+    link: "/seo",
     description:
       "We help you reach your customers and prospects through targeted email campaigns that drive engagement and conversions.",
   },
   {
     image: offerIcon6.src,
     title: "Pay-Per-Click Advertising",
+    link: "/seo",
     description:
       "Our PPC advertising strategies help you reach potential customers at the right time, maximizing your ROI.",
   },
