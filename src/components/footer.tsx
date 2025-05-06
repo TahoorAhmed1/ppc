@@ -257,7 +257,6 @@ export default function Footer() {
           </div>
         </motion.div>
 
-        {/* Right side: links grid */}
         <motion.div
           className="col-span-2 grid grid-cols-1  md:grid-cols-4 gap-5  "
           variants={containerVariants}
@@ -308,7 +307,6 @@ export default function Footer() {
         </motion.div>
       </motion.div>
 
-      {/* Bottom copyright */}
       <motion.div
         className="mt-12 pt-4 border-t border-gray-200 text-center text-[#3DB1B1] text-sm relative z-10"
         initial={{ opacity: 0, y: 20 }}

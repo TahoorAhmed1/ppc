@@ -30,7 +30,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="px-4 sm:px-6 md:px-8 lg:px-12 py-12 max-w-7xl mx-auto">
+    <section className="  py-12 max-w-7xl mx-auto">
       <div className="mb-10">
         <span className="text-gray-500 uppercase text-sm tracking-wider block">
           A WEB DEVELOPMENT AGENCY
@@ -51,7 +51,7 @@ export default function ServicesSection() {
         ))}
       </div>
 
-      <div className="mt-12 text-center">
+      <div className="mt-12 ">
         <Link
           href="#contact"
           className="inline-block bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold transition-all duration-300"

@@ -185,14 +185,12 @@ export default function EnhancedCtaSection() {
 
   return (
     <section className="py-10 md:py-16 bg-white overflow-hidden relative">
-      {/* Background decorative elements */}
       <motion.div
         className="absolute top-0 left-0 w-full h-full"
         initial="hidden"
         animate="visible"
         variants={backgroundVariants}
       >
-        {/* Additional background balls */}
         <motion.div
           initial="hidden"
           animate="visible"
@@ -322,7 +320,6 @@ export default function EnhancedCtaSection() {
             )}
           </AnimatePresence>
 
-          {/* Animated decorative elements */}
           <motion.div
             className="absolute -bottom-10 left-1/4 w-16 h-16 rounded-full border-2 border-[#65CF5F]/80/20"
             initial={{ opacity: 0, scale: 0 }}

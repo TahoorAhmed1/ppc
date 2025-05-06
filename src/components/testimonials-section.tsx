@@ -145,7 +145,6 @@ export default function TestimonialsSection() {
 
   return (
     <section id="review" className="py-12 md:py-30 bg-[#f9f9f9] relative overflow-hidden">
-      {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute md:top-[10%] top-[5%] left-[8%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CE5C]/30 to-[#3DB1B1]/20 opacity-40 pointer-events-none"></div>
         <div className="absolute md:bottom-[10%] bottom-[5%] right-[8%] w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] rounded-full bg-gradient-to-r from-[#209CEB]/30 to-[#65CE5C]/20 opacity-30 pointer-events-none"></div>

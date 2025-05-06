@@ -39,7 +39,6 @@ export function PricingCard({
       }}
     >
       <Card className="bg-[#0e2330] border border-gray-700 rounded-lg overflow-hidden text-white relative">
-        {/* Hover glow effect */}
         <motion.div
           className="absolute inset-0 opacity-0 bg-gradient-to-r from-[#5ce0c6]/10 to-[#65CF5F]/10"
           initial={{ opacity: 0 }}
@@ -47,7 +46,6 @@ export function PricingCard({
           transition={{ duration: 0.3 }}
         />
 
-        {/* Border highlight on hover */}
         <motion.div
           className="absolute inset-0 border-2 border-transparent rounded-lg"
           initial={{ borderColor: "rgba(92,224,198,0)" }}
@@ -79,7 +77,6 @@ export function PricingCard({
             <div className="flex items-center gap-5">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button className="bg-gradient-to-r w-30 cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2 relative overflow-hidden group">
-                  {/* Gradient overlay on hover */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-[#5ce0c6] to-[#65CF5F] opacity-0 group-hover:opacity-100"
                     transition={{ duration: 0.3 }}

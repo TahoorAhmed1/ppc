@@ -5,12 +5,9 @@ export default function SocialMediaMarketing() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-20 overflow-hidden">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-        {/* Left side with person and social media icons */}
         <div className="relative w-full lg:w-1/2 h-[500px] md:h-[600px] flex items-center justify-center">
-          {/* Main circular background */}
           <div className="absolute w-[90%] h-[90%] rounded-full bg-gradient-to-br from-emerald-400 to-teal-500"></div>
 
-          {/* Person image */}
           <div className="relative z-10">
             <Image
               src="/images/social-media-person.png"
@@ -22,7 +19,6 @@ export default function SocialMediaMarketing() {
             />
           </div>
 
-          {/* Social media icons */}
           <div className="absolute top-0 left-[15%] animate-float-slow">
             <Image src="/images/facebook-icon.png" alt="Facebook" width={80} height={80} />
           </div>
@@ -49,7 +45,6 @@ export default function SocialMediaMarketing() {
           </div>
         </div>
 
-        {/* Right side with cards */}
         <div className="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
           <ServiceCard
             number="01"

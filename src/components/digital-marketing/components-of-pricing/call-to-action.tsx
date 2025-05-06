@@ -14,7 +14,6 @@ export function CallToAction() {
     >
       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
         <Button className="bg-gradient-to-r w-40 cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2 relative overflow-hidden group">
-          {/* Gradient overlay on hover */}
           <motion.div
             className="absolute inset-0 bg-gradient-to-r from-[#5ce0c6] to-[#65CF5F] opacity-0 group-hover:opacity-100"
             transition={{ duration: 0.3 }}
@@ -35,7 +34,6 @@ export function CallToAction() {
           variant="outline"
           className="bg-gradient-to-r w-50 cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2 relative overflow-hidden group"
         >
-          {/* Gradient overlay on hover */}
           <motion.div
             className="absolute inset-0 bg-gradient-to-r from-[#5ce0c6] to-[#65CF5F] opacity-0 group-hover:opacity-100"
             transition={{ duration: 0.3 }}

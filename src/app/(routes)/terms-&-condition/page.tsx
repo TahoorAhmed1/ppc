@@ -25,7 +25,6 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Content */}
       <div className="max-w-[1000px] mx-auto px-4 py-8">
         <p className="mb-4">
           Accessing the website confirms that you have agreed to our Terms and

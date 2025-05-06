@@ -85,7 +85,6 @@ export default function MarketingSection() {
       className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative overflow-hidden"
       ref={sectionRef}
     >
-      {/* Background animated balls */}
       <motion.div
         initial="hidden"
         animate={isLoaded ? "visible" : "hidden"}
@@ -110,7 +109,6 @@ export default function MarketingSection() {
         initial="hidden"
         animate={controls}
       >
-        {/* Image & CTA Section */}
         <MotionDiv
           className="w-full lg:w-1/2 flex flex-col items-center gap-6"
           variants={containerVariants}
@@ -129,7 +127,6 @@ export default function MarketingSection() {
             />
           </MotionImage>
 
-          {/* CTA */}
           <MotionDiv
             className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
             variants={containerVariants}
@@ -210,7 +207,6 @@ export default function MarketingSection() {
             </p>
           </MotionDiv>
 
-          {/* Service bars */}
           <MotionDiv className="space-y-4 pt-4" variants={barContainerVariants}>
             <AnimatedServiceBar name="SEO" percentage={90} />
             <AnimatedServiceBar name="PPC" percentage={79} />

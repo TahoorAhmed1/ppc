@@ -14,7 +14,6 @@ export function PricingHeader() {
           }}
         >
           Our Pricing
-          {/* Underline animation on hover */}
           <motion.span
             className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-[#65CF5F] to-[#1F9BED]"
             initial={{ width: "0%" }}

@@ -38,7 +38,6 @@ export default function DigitalMarketingServiceSection() {
     <main className="bg-white py-10">
       <div className="container mx-auto px-4 py-12 md:py-16 lg:py-25 lg:mb-55 xl:mb-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 relative">
-          {/* Left Column */}
           <div className="space-y-8 relative">
             <motion.div
               className="absolute -top-10 -right-25 z-10 hidden lg:block"
@@ -118,7 +117,6 @@ export default function DigitalMarketingServiceSection() {
             </div>
           </div>
 
-          {/* Service Cards */}
           <div
             ref={cardsRef}
             className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:absolute z-10 2xl:top-[40%] xl:top-[50%] lg:top-[75%] md:top-[30%] "
@@ -177,10 +175,8 @@ export default function DigitalMarketingServiceSection() {
             </motion.div>
           </div>
 
-          {/* Right Column Image */}
           <div className="relative mt-12 lg:mt-0">
             <div className="relative w-full overflow-hidden">
-              {/* Emoji top-right */}
               <motion.div
                 className="absolute top-6 right-4 md:right-16 z-10"
                 animate={{
@@ -203,7 +199,6 @@ export default function DigitalMarketingServiceSection() {
                 />
               </motion.div>
 
-              {/* Main Image */}
               <motion.div
                 ref={imageRef}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -220,7 +215,6 @@ export default function DigitalMarketingServiceSection() {
                   priority
                 />
 
-                {/* Bottom emoji */}
                 <motion.div
                   className="absolute bottom-0 right-4 z-10"
                   animate={{

@@ -341,7 +341,6 @@ export default function HeroSection() {
           </div>
 
           <div className="relative flex items-center justify-center mt-8 md:mt-0">
-            {/* Customer Review Card - responsive */}
             <div className="absolute md:top-50 top-[10%] right-[65%] w-[clamp(40px,35vw,190px)] h-[clamp(60px,8vw,80px)] bg-white rounded-xl shadow-md p-2 sm:p-3 z-40">
               <div className="flex items-center gap-[1vw]">
                 <img
@@ -393,7 +392,6 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Project Done Card - responsive */}
             <div className="absolute h-[40px] md:w-[clamp(50px,21vw,130px)] top-[30%] sm:top-50 right-[5%] bg-white rounded-lg shadow-md flex flex-col justify-center lg:py-10 sm:py-6 md:px-3 py-3 pr-4 pl-2 z-40">
               <div>
                 <p
@@ -434,7 +432,6 @@ export default function HeroSection() {
             </div>
 
             <div className="relative w-full h-full">
-              {/* Large background circle behind the image */}
               <motion.div
                 whileInView={pulseAnimation}
                 className="absolute top-[16%] left-[8%] w-[80%] h-0 pb-[80%] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] opacity-50 z-0"

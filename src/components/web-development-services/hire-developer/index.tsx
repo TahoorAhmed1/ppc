@@ -6,7 +6,6 @@ export default function HireDevelopersSection() {
     <section className="w-full py-16 px-4 md:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left side with content */}
           <div>
             <div className="mb-8">
               <span className="text-green-400 uppercase text-sm font-medium tracking-wider">HIRE WEB DEVELOPERS</span>
@@ -39,7 +38,6 @@ export default function HireDevelopersSection() {
             </button>
           </div>
 
-          {/* Right side with image */}
           <HeroImage />
         </div>
       </div>

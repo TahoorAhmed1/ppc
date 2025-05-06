@@ -5,7 +5,6 @@ import Link from "next/link";
 export default function Page() {
   return (
     <div className="min-h-screen flex flex-col ">
-      {/* Header with gradient background */}
       <div
         className="text-white py-30 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroSectionImage3.src})` }}
@@ -25,7 +24,6 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Content */}
       <div className="max-w-[1000px] mx-auto px-4 py-8 max-w-4xl">
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-3">Regulatory Compliance</h2>

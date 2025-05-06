@@ -383,22 +383,7 @@ export default function AnimatedFaqSection2({
                     )}
                   </MotionButton>
 
-                  {/* <div className="flex items-center justify-between">
-                    <MotionLink
-                      href="#faq"
-                      className="inline-flex items-center text-white font-medium"
-                      variants={itemVariants}
-                      whileHover={{ x: 5 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                    >
-                      More FAQ
-                      <ArrowRight className="ml-1 h-4 w-4" />
-                    </MotionLink>
-                  </div> */}
+                 
                 </motion.form>
               </MotionCardContent>
             </MotionCard>

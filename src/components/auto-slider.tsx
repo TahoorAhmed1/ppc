@@ -132,7 +132,6 @@ export default function AutoSlider({ platforms, pauseOnHover = true, speed = 20,
           ))}
         </motion.div>
 
-        {/* Gradient overlays for fade effect */}
         <div className="absolute left-0 top-0 h-full w-6 sm:w-8 md:w-10 lg:w-12 bg-gradient-to-r from-white to-transparent z-10"></div>
         <div className="absolute right-0 top-0 h-full w-6 sm:w-8 md:w-10 lg:w-12 bg-gradient-to-l from-white to-transparent z-10"></div>
       </div>

@@ -22,7 +22,6 @@ export function EmojiDecorations() {
 
   return (
     <>
-      {/* Top left emoji */}
       <motion.div
         className="hidden xl:block absolute top-[60px] left-200 cursor-pointer"
         animate={{
@@ -59,7 +58,6 @@ export function EmojiDecorations() {
         </div>
       </motion.div>
 
-      {/* Middle left emoji */}
       <motion.div
         className="hidden xl:block absolute top-300 left-0 cursor-pointer z-10"
         animate={{
@@ -95,7 +93,6 @@ export function EmojiDecorations() {
         </div>
       </motion.div>
 
-      {/* Bottom left emoji */}
       <motion.div
         className="hidden xl:block absolute top-[600px] left-[20px] cursor-pointer z-10"
         animate={{
@@ -131,7 +128,6 @@ export function EmojiDecorations() {
             }}
             transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
           />
-          {/* Heart particles on hover */}
           {[...Array(5)].map((_, i) => (
             <motion.div
               key={i}
@@ -153,7 +149,6 @@ export function EmojiDecorations() {
         </div>
       </motion.div>
 
-      {/* Top right emoji */}
       <motion.div
         className="hidden xl:block absolute top-[200px] right-[60px] cursor-pointer"
         animate={{
@@ -193,7 +188,6 @@ export function EmojiDecorations() {
         </div>
       </motion.div>
 
-      {/* Bottom left emoji */}
       <motion.div
         className="hidden xl:block absolute bottom-[40px] left-[40px] cursor-pointer"
         animate={{
@@ -231,7 +225,6 @@ export function EmojiDecorations() {
             }}
             transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
           />
-          {/* Cool effect on hover */}
           <motion.div
             className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-0 bg-gradient-to-t from-blue-500 to-transparent"
             initial={{ height: 0, opacity: 0 }}
@@ -244,7 +237,6 @@ export function EmojiDecorations() {
         </div>
       </motion.div>
 
-      {/* Bottom right emoji */}
       <motion.div
         className="hidden xl:block absolute bottom-[40px] right-[40px] cursor-pointer"
         animate={{
@@ -281,7 +273,6 @@ export function EmojiDecorations() {
             }}
             transition={{ duration: 1.2, repeat: Number.POSITIVE_INFINITY }}
           />
-          {/* Sparkle effects on hover */}
           {[...Array(6)].map((_, i) => (
             <motion.div
               key={i}

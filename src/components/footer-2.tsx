@@ -274,19 +274,7 @@ export default function Footer() {
 
             ]}
           />
-          {/* <div className="space-y-4  text-gray-700">
-            <h3 className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text ">
-              Privacy Policy
-            </h3>
-            <div className="flex flex-col space-y-4">
-              <a target="_blank" href={"/privacy"}>
-                Privacy
-              </a>
-              <a target="_blank" href={"/terms-&-condition"}>
-                Terms & Condition
-              </a>
-            </div>
-          </div> */}
+         
           <div className="space-y-4 md:col-span-2 text-gray-700">
             <h3 className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
               Contact us

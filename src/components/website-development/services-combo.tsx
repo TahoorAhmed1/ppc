@@ -81,7 +81,6 @@ const ServicesCombo = () => {
       variants={containerVariants}
     >
       <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-3">
-        {/* Left Content */}
         <motion.div className="lg:col-span-2" variants={itemVariants}>
           <motion.h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-4" variants={itemVariants}>
             ALL IN ONE <span className="text-[#3DB1B1]">COMBO</span>
@@ -94,9 +93,7 @@ const ServicesCombo = () => {
             className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 md:gap-x-8 gap-y-8 md:gap-y-10"
             variants={itemVariants}
           >
-            {/* First Column */}
             <motion.div className="space-y-8" variants={itemVariants}>
-              {/* LOGO DESIGN SERVICES */}
               <motion.div variants={itemVariants}>
                 <motion.h2 className="text-[#3DB1B1] text-lg sm:text-xl font-bold mb-3 sm:mb-4" variants={itemVariants}>
                   LOGO DESIGN SERVICES
@@ -147,7 +144,6 @@ const ServicesCombo = () => {
                 </motion.ul>
               </motion.div>
 
-              {/* STATIONARY SERVICES */}
               <motion.div variants={itemVariants}>
                 <motion.h2 className="text-[#3DB1B1] text-lg sm:text-xl font-bold mb-3 sm:mb-4" variants={itemVariants}>
                   STATIONARY SERVICES
@@ -198,7 +194,6 @@ const ServicesCombo = () => {
                 </motion.ul>
               </motion.div>
 
-              {/* SOCIAL MEDIA SERVICES */}
               <motion.div variants={itemVariants}>
                 <motion.h2 className="text-[#3DB1B1] text-lg sm:text-xl font-bold mb-3 sm:mb-4" variants={itemVariants}>
                   SOCIAL MEDIA SERVICES
@@ -268,9 +263,7 @@ const ServicesCombo = () => {
               </motion.div>
             </motion.div>
 
-            {/* Second Column */}
             <motion.div className="space-y-8" variants={itemVariants}>
-              {/* WEBSITE SERVICES */}
               <motion.div variants={itemVariants}>
                 <motion.h2 className="text-[#3DB1B1] text-lg sm:text-xl font-bold mb-3 sm:mb-4" variants={itemVariants}>
                   WEBSITE SERVICES
@@ -375,7 +368,6 @@ const ServicesCombo = () => {
                 </motion.ul>
               </motion.div>
 
-              {/* VALUE-ADDED SERVICES */}
               <motion.div variants={itemVariants}>
                 <motion.h2 className="text-[#3DB1B1] text-lg sm:text-xl font-bold mb-3 sm:mb-4" variants={itemVariants}>
                   VALUE-ADDED SERVICES
@@ -455,12 +447,10 @@ const ServicesCombo = () => {
             transition: { duration: 0.3 },
           }}
         >
-          {/* Title */}
           <motion.h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-center" variants={itemVariants}>
             Combo Packages
           </motion.h2>
 
-          {/* Subtitle */}
           <motion.p
             className="text-base sm:text-lg text-center text-white/90 font-medium max-w-sm"
             variants={itemVariants}
@@ -468,7 +458,6 @@ const ServicesCombo = () => {
             A complete company branding solution tailored for growth-focused businesses.
           </motion.p>
 
-          {/* Price Section */}
           <motion.div className="flex items-start justify-center space-x-4 sm:space-x-5" variants={itemVariants}>
             <motion.span
               className="text-5xl sm:text-6xl font-extrabold"
@@ -484,7 +473,6 @@ const ServicesCombo = () => {
             </motion.div>
           </motion.div>
 
-          {/* Installment Info */}
           <motion.div
             className="bg-white/10 px-5 py-2.5 rounded-lg backdrop-blur-md text-white text-center text-base sm:text-lg font-medium"
             variants={itemVariants}
@@ -493,7 +481,6 @@ const ServicesCombo = () => {
             3 Month Easy Installments
           </motion.div>
 
-          {/* CTA Button */}
           <motion.button
             onClick={handleBookNow}
             className="bg-white text-[#3DB1B1] hover:text-[#3DB1B1] cursor-pointer px-7 py-3 rounded-xl text-base sm:text-lg font-semibold transition-all shadow-md hover:shadow-lg hover:scale-105 duration-200"

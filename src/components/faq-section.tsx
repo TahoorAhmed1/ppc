@@ -438,28 +438,7 @@ export default function AnimatedFaqSection({
                   </MotionButton>
                 </motion.form>
 
-                {/* <motion.div className="pt-2" variants={itemVariants}>
-                  <MotionLink
-                    href="#faq"
-                    className={`inline-flex items-center text-[#3DB1B1] font-medium`}
-                    variants={itemVariants}
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    More FAQ
-                    <motion.span
-                      initial={{ x: 0 }}
-                      whileHover={{ x: 5 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                    >
-                      <ArrowRight className={`ml-1 h-4 w-4 text-[#3DB1B1] font-medium`} />
-                    </motion.span>
-                  </MotionLink>
-                </motion.div> */}
+                
               </MotionCardContent>
             </MotionCard>
           </div>

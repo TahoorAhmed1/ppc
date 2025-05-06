@@ -4,7 +4,6 @@ import Image from "next/image"
 export default function HeroImage() {
   return (
     <div className="relative">
-      {/* Purple blob background */}
       <div className="relative w-full h-full">
         <Image
           src={heroSectionImage3}

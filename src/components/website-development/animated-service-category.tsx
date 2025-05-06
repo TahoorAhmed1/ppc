@@ -110,7 +110,6 @@ function ServiceCategoryItem({ icon, title, subtitle }: ServiceCategoryItemProps
       }}
       transition={{ duration: 0.2 }}
     >
-      {/* Logo */}
       <motion.div
         className="flex items-center justify-center w-12 h-12 sm:w-[67px] sm:h-[67px] md:w-[72px] md:h-[72px] rounded-full bg-white -ml-0.5 sm:-ml-1 mr-3 sm:mr-3 flex-shrink-0"
         whileHover={{ rotate: 10, scale: 1.1 }}
@@ -126,7 +125,6 @@ function ServiceCategoryItem({ icon, title, subtitle }: ServiceCategoryItemProps
         )}
       </motion.div>
 
-      {/* Text */}
       <motion.div className="text-white leading-none" whileHover={{ x: 2 }}>
         <h2 className="text-[12.5px] sm:text-[15.5px] md:text-[17px] font-semibold tracking-wide">
           {title}
