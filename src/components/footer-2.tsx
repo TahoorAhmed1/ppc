@@ -1,11 +1,27 @@
-"use client";
+"use client"
 
-import { logo } from "@/assets";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { logo } from "@/assets"
+import Image from "next/image"
+import { motion } from "framer-motion"
+import { Mail, MapPin, Phone, ChevronDown } from "lucide-react"
+import { useState } from "react"
+
+// Define service items
+const serviceItems = [
+  { name: "App Development Services", link: "/app-development-services" },
+  { name: "Branding Services", link: "/branding-services" },
+  { name: "Digital Marketing", link: "/digital-marketing" },
+  { name: "Email Marketing Services", link: "/email-marketing-services" },
+  { name: "PPC Management Services", link: "/ppc-management-services" },
+  { name: "SEO", link: "/seo" },
+  { name: "Social Media Marketing Services", link: "/social-media-marketing-services" },
+  { name: "Website Development Services", link: "/website-development-services" },
+  { name: "Writing & Publishing Services", link: "/writing-&-publishing-services" },
+]
 
 export default function Footer() {
+  const [servicesOpen, setServicesOpen] = useState(false)
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -15,7 +31,7 @@ export default function Footer() {
         delayChildren: 0.2,
       },
     },
-  };
+  }
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -24,7 +40,7 @@ export default function Footer() {
       opacity: 1,
       transition: { duration: 0.5, ease: "easeOut" },
     },
-  };
+  }
 
   const pulse: any = {
     hidden: { scale: 0.9, opacity: 0.4 },
@@ -37,7 +53,7 @@ export default function Footer() {
         duration: 3,
       },
     },
-  };
+  }
 
   const backgroundVariants = {
     hidden: { opacity: 0 },
@@ -45,7 +61,7 @@ export default function Footer() {
       opacity: 1,
       transition: { duration: 0.5 },
     },
-  };
+  }
 
   return (
     <motion.footer
@@ -85,7 +101,7 @@ export default function Footer() {
       </motion.div>
 
       <motion.div
-        className="container mx-auto space-y-12  lg:space-y-0 grid grid-cols-1   lg:grid-cols-3 lg:items-start relative z-10 lg:gap-9 gap-8"
+        className="container mx-auto space-y-12 lg:space-y-0 grid grid-cols-1 lg:grid-cols-3 lg:items-start relative z-10 lg:gap-9 gap-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -96,21 +112,12 @@ export default function Footer() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <Image
-              src={logo || "/placeholder.svg"}
-              alt="Logo"
-              width={200}
-              height={200}
-            />
+            <Image src={logo || "/placeholder.svg"} alt="Logo" width={200} height={200} />
           </motion.div>
 
-          <motion.p
-            className="text-gray-700 font-medium leading-relaxed"
-            variants={itemVariants}
-          >
-            "We're a results-driven digital marketing agency focused on helping
-            brands grow in a digital-first world."We're a results-driven digital
-            marketing agency focused on helping brands grow in a digital-first
+          <motion.p className="text-gray-700 font-medium leading-relaxed" variants={itemVariants}>
+            "We're a results-driven digital marketing agency focused on helping brands grow in a digital-first
+            world."We're a results-driven digital marketing agency focused on helping brands grow in a digital-first
             world."
           </motion.p>
           <div className="flex gap-2 mt-4">
@@ -120,13 +127,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:scale-105 "
             >
-              <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_498_627)">
                   <path
                     d="M18.6957 16.9259L26.5827 28.2071H23.3459L16.9099 19.0016V19.0011L15.965 17.6497L8.44678 6.89551H11.6836L17.7508 15.5746L18.6957 16.9259Z"
@@ -150,13 +151,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:scale-105 "
             >
-              <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_498_607)">
                   <path
                     d="M25.2575 0H11.0916C5.33451 0 0.650757 4.68375 0.650757 10.4409V24.6067C0.650757 30.3639 5.33451 35.0476 11.0916 35.0476H25.2575C31.0146 35.0476 35.6984 30.3639 35.6984 24.6067V10.4409C35.6983 4.68375 31.0146 0 25.2575 0ZM32.1726 24.6067C32.1726 28.4258 29.0766 31.5218 25.2575 31.5218H11.0916C7.27257 31.5218 4.17655 28.4258 4.17655 24.6067V10.4409C4.17655 6.62175 7.27257 3.52579 11.0916 3.52579H25.2575C29.0766 3.52579 32.1726 6.62175 32.1726 10.4409V24.6067Z"
@@ -173,12 +168,7 @@ export default function Footer() {
                 </g>
                 <defs>
                   <clipPath id="clip0_498_607">
-                    <rect
-                      width="35.0476"
-                      height="35.0476"
-                      fill="white"
-                      transform="translate(0.650757)"
-                    />
+                    <rect width="35.0476" height="35.0476" fill="white" transform="translate(0.650757)" />
                   </clipPath>
                 </defs>
               </svg>
@@ -189,13 +179,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:scale-105 "
             >
-              <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_498_645)">
                   <path
                     d="M30.6268 0H5.02498C2.41674 0 0.302246 2.11441 0.302246 4.72274V30.3247C0.302246 32.933 2.41665 35.0474 5.02498 35.0474H17.6517L17.6732 22.5234H14.4194C13.9966 22.5234 13.6534 22.1815 13.6518 21.7586L13.6362 17.7216C13.6345 17.2964 13.9788 16.9509 14.4039 16.9509H17.6518V13.0501C17.6518 8.5233 20.4165 6.05841 24.4547 6.05841H27.7684C28.1923 6.05841 28.5361 6.40212 28.5361 6.82617V10.2302C28.5361 10.6541 28.1926 10.9977 27.7688 10.998L25.7352 10.9989C23.5391 10.9989 23.1139 12.0425 23.1139 13.574V16.951H27.9395C28.3993 16.951 28.756 17.3525 28.7019 17.8091L28.2234 21.8462C28.1776 22.2325 27.85 22.5236 27.461 22.5236H23.1354L23.1139 35.0476H30.627C33.2352 35.0476 35.3496 32.9332 35.3496 30.325V4.72274C35.3495 2.11441 33.2351 0 30.6268 0Z"
@@ -204,12 +188,7 @@ export default function Footer() {
                 </g>
                 <defs>
                   <clipPath id="clip0_498_645">
-                    <rect
-                      width="35.0476"
-                      height="35.0476"
-                      fill="white"
-                      transform="translate(0.301636)"
-                    />
+                    <rect width="35.0476" height="35.0476" fill="white" transform="translate(0.301636)" />
                   </clipPath>
                 </defs>
               </svg>
@@ -220,13 +199,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:scale-105 "
             >
-              <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_498_662)">
                   <path
                     d="M32.8297 0H4.12273C2.37182 0 0.952393 1.41943 0.952393 3.17034V31.8772C0.952393 33.6282 2.37182 35.0476 4.12273 35.0476H32.8296C34.5806 35.0476 36 33.6282 36 31.8772V3.17034C36 1.41943 34.5806 0 32.8297 0ZM11.7976 30.2624C11.7976 30.772 11.3846 31.185 10.875 31.185H6.94765C6.43808 31.185 6.02503 30.772 6.02503 30.2624V13.7991C6.02503 13.2896 6.43808 12.8765 6.94765 12.8765H10.875C11.3846 12.8765 11.7976 13.2896 11.7976 13.7991V30.2624ZM8.91132 11.3246C6.85076 11.3246 5.18031 9.65415 5.18031 7.59359C5.18031 5.53303 6.85076 3.86258 8.91132 3.86258C10.9719 3.86258 12.6423 5.53303 12.6423 7.59359C12.6423 9.65415 10.972 11.3246 8.91132 11.3246ZM32.3218 30.3367C32.3218 30.8052 31.942 31.185 31.4735 31.185H27.2592C26.7907 31.185 26.4109 30.8052 26.4109 30.3367V22.6145C26.4109 21.4625 26.7488 17.5665 23.4004 17.5665C20.8031 17.5665 20.2763 20.2332 20.1705 21.43V30.3367C20.1705 30.8052 19.7908 31.185 19.3222 31.185H15.2462C14.7778 31.185 14.3979 30.8052 14.3979 30.3367V13.7248C14.3979 13.2563 14.7778 12.8765 15.2462 12.8765H19.3222C19.7907 12.8765 20.1705 13.2563 20.1705 13.7248V15.1611C21.1336 13.7158 22.5648 12.6003 25.6122 12.6003C32.3605 12.6003 32.3218 18.9048 32.3218 22.3688V30.3367Z"
@@ -235,12 +208,7 @@ export default function Footer() {
                 </g>
                 <defs>
                   <clipPath id="clip0_498_662">
-                    <rect
-                      width="35.0476"
-                      height="35.0476"
-                      fill="white"
-                      transform="translate(0.952393)"
-                    />
+                    <rect width="35.0476" height="35.0476" fill="white" transform="translate(0.952393)" />
                   </clipPath>
                 </defs>
               </svg>
@@ -249,7 +217,7 @@ export default function Footer() {
         </motion.div>
 
         <motion.div
-          className="col-span-2 grid grid-cols-1  md:grid-cols-4 gap-5 mt-10 lg:mt-0"
+          className="col-span-2 grid grid-cols-1 md:grid-cols-4 gap-5 mt-10 lg:mt-0"
           variants={containerVariants}
         >
           <AnimatedFooterColumn
@@ -271,20 +239,20 @@ export default function Footer() {
               { name: "Growth package", link: "business" },
               { name: "Premium package", link: "premium" },
               { name: "Ultimate package", link: "ultimate" },
-
             ]}
+            hasServicesDropdown={true}
+            servicesOpen={servicesOpen}
+            setServicesOpen={setServicesOpen}
+            serviceItems={serviceItems}
           />
-         
+
           <div className="space-y-4 md:col-span-2 text-gray-700">
             <h3 className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
               Contact us
             </h3>
 
             <div className="flex items-center gap-2">
-              <a
-                href="mailto:support@creativeagency360.com"
-                className="flex items-center gap-2"
-              >
+              <a href="mailto:support@creativeagency360.com" className="flex items-center gap-2">
                 <Mail className="w-5 h-5 text-[#65CF5F]" />
                 <span>support@creativeagency360.com</span>
               </a>
@@ -301,8 +269,6 @@ export default function Footer() {
             </div>
           </div>
         </motion.div>
-
-
       </motion.div>
 
       <motion.div
@@ -314,10 +280,24 @@ export default function Footer() {
         © 2025 Creative Creative Agency 360, Inc. All rights reserved.
       </motion.div>
     </motion.footer>
-  );
+  )
 }
 
-function AnimatedFooterColumn({ title, links }: { title: string; links: any }) {
+function AnimatedFooterColumn({
+  title,
+  links,
+  hasServicesDropdown = false,
+  servicesOpen,
+  setServicesOpen,
+  serviceItems,
+}: {
+  title: string
+  links: any
+  hasServicesDropdown?: boolean
+  servicesOpen?: boolean
+  setServicesOpen?: (open: boolean) => void
+  serviceItems?: any[]
+}) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -327,7 +307,7 @@ function AnimatedFooterColumn({ title, links }: { title: string; links: any }) {
         delayChildren: 0.2,
       },
     },
-  };
+  }
 
   const itemVariants = {
     hidden: { x: -20, opacity: 0 },
@@ -336,15 +316,19 @@ function AnimatedFooterColumn({ title, links }: { title: string; links: any }) {
       opacity: 1,
       transition: { duration: 0.4, ease: "easeOut" },
     },
-  };
+  }
+
+  const dropdownVariants = {
+    hidden: { height: 0, opacity: 0, overflow: "hidden" },
+    visible: {
+      height: "auto",
+      opacity: 1,
+      transition: { duration: 0.3, ease: "easeOut" },
+    },
+  }
 
   return (
-    <motion.div
-      className="space-y-4"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
+    <motion.div className="space-y-4" variants={containerVariants} initial="hidden" animate="visible">
       <motion.h3
         className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text"
         variants={itemVariants}
@@ -365,7 +349,44 @@ function AnimatedFooterColumn({ title, links }: { title: string; links: any }) {
             </a>
           </motion.li>
         ))}
+
+        {hasServicesDropdown && (
+          <motion.li
+            variants={itemVariants}
+            whileHover={{ x: 5 }}
+            transition={{ type: "spring", stiffness: 400 }}
+            className="cursor-pointer"
+          >
+            <div
+              className="flex items-center justify-between text-gray-700 hover:text-gray-900"
+              onClick={() => setServicesOpen && setServicesOpen(!servicesOpen)}
+            >
+              <span>All Services</span>
+              <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+            </div>
+
+            <motion.div
+              className="pl-4 mt-2 space-y-2 border-l border-gray-200"
+              initial="hidden"
+              animate={servicesOpen ? "visible" : "hidden"}
+              variants={dropdownVariants}
+            >
+              {serviceItems?.map((service, idx) => (
+                <motion.div
+                  key={idx}
+                  variants={itemVariants}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <a href={service.link} className="block text-sm text-gray-500 hover:text-gray-900 hover:font-medium">
+                    {service.name}
+                  </a>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.li>
+        )}
       </motion.ul>
     </motion.div>
-  );
+  )
 }
