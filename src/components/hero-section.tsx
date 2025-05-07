@@ -340,7 +340,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="relative flex items-center justify-center mt-8 md:mt-0">
+          <div className="relative flex justify-center mt-8 md:mt-0">
             <div className="absolute md:top-50 top-[10%] right-[65%] w-[clamp(40px,35vw,190px)] h-[clamp(60px,8vw,80px)] bg-white rounded-xl shadow-md p-2 sm:p-3 z-40">
               <div className="flex items-center gap-[1vw]">
                 <img

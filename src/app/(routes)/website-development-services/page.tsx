@@ -1,4 +1,4 @@
-import { heroSectionImage3, profileImage4 } from "@/assets"
+import { girlWithPhone, heroSectionImage3, profileImage4 } from "@/assets"
 import Footer from "@/components/footer"
 import PortfolioSection from "@/components/portfolio-section"
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section"
@@ -79,7 +79,7 @@ export default function Page() {
         </div>
 
         <div className="">
-          <WebDevelopmentSection services={customServices} image={profileImage4.src} />
+          <WebDevelopmentSection services={customServices} image={girlWithPhone.src} />
           <PortfolioSection
             heading="Our Diverse Portfolio"
             title=""
@@ -87,7 +87,7 @@ export default function Page() {
             filters={["All", "E-commerce", "Business", "Real Estate"]}
             btnIcon=""
           />
-          <HireDevelopersSection features={developerFeatures} image="/placeholder.svg?key=yox12" />
+          <HireDevelopersSection features={developerFeatures} image={girlWithPhone.src} />
         </div>
         <footer>
           <Footer />

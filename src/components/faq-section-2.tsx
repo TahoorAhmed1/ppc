@@ -219,7 +219,7 @@ export default function AnimatedFaqSection2({
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <AccordionTrigger className="md:text-lg text-base font-medium text-white group w-full text-left  w-full">
+                <AccordionTrigger className="md:text-lg text-base font-medium text-white group  text-left  w-full">
                   How long does it take to build a website?
                   <div className="ml-auto md:flex  hidden  h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
                     <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />

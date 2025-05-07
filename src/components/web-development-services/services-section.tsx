@@ -1,23 +1,33 @@
-import Link from "next/link"
-import ServiceItem from "./service-item"
+import Link from "next/link";
+import ServiceItem from "./service-item";
 
 // Define the service item type
 interface ServiceItemType {
-  number: string
-  title: string
-  description: string
+  number: string;
+  title: string;
+  description: string;
 }
 
 interface ServicesSectionProps {
-  services: ServiceItemType[] // Making services required
+  services: ServiceItemType[];
+  headingtitle: string;
+  heading: string;
 }
 
-export default function ServicesSection({ services }: ServicesSectionProps) {
+export default function ServicesSection({
+  services,
+  headingtitle,
+  heading,
+}: ServicesSectionProps) {
   return (
     <section className="py-12 max-w-7xl mx-auto">
       <div className="mb-10">
-        <span className="text-gray-500 uppercase text-sm tracking-wider block">A WEB DEVELOPMENT AGENCY</span>
-        <h2 className="text-4xl font-extrabold text-[#41B4A7] mb-3">That Delivers Purpose-Built Solutions</h2>
+        <span className="text-gray-500 uppercase text-sm tracking-wider block">
+          {headingtitle}
+        </span>
+        <h2 className="text-4xl font-extrabold text-[#41B4A7] mb-3">
+          {heading}
+        </h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -31,7 +41,9 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
             />
           ))
         ) : (
-          <p className="text-gray-500 col-span-2 text-center py-8">No services available</p>
+          <p className="text-gray-500 col-span-2 text-center py-8">
+            No services available
+          </p>
         )}
       </div>
 
@@ -44,5 +56,5 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
         </Link>
       </div>
     </section>
-  )
+  );
 }

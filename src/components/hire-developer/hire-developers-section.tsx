@@ -11,23 +11,24 @@ interface FeatureItemType {
 interface HireDevelopersSectionProps {
   features: FeatureItemType[]
   image?: string
+  hireHeadingTitle?: string
+  hireHeading?: string
+  hireHeadingDescription?: string
 }
 
-export default function HireDevelopersSection({ features, image }: HireDevelopersSectionProps) {
+export default function HireDevelopersSection({ features, image , hireHeadingTitle , hireHeading ,hireHeadingDescription}: HireDevelopersSectionProps) {
   return (
     <section className="w-full py-16 px-4 md:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <div className="mb-8">
-              <span className="text-green-400 uppercase text-sm font-medium tracking-wider">HIRE WEB DEVELOPERS</span>
+              <span className="text-green-400 uppercase text-sm font-medium tracking-wider">{hireHeadingTitle}</span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">
-                Who&apos;ll Become an Extension of Your Team
+                {hireHeading}
               </h2>
               <p className="text-gray-600 mt-4">
-                Our web developers take a unique approach to web development, handling every project with precision and
-                care. No matter how complex your website is, you can count on our highly qualified team to get the job
-                done.
+                {hireHeadingDescription}
               </p>
             </div>
 
