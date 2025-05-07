@@ -87,10 +87,10 @@ export default function RootLayout({
           cursorStyle="dot"
           cursorSize={14}
           customColors={[
-            "#3CBFAE", // Teal
-            "#65CF5F", // Green
-            "#1F9BED", // Blue
-            "#5ce0c6", // Light teal
+            "#3CBFAE",
+            "#65CF5F", 
+            "#1F9BED", 
+            "#5ce0c6",
           ]}
         />
         {children}
