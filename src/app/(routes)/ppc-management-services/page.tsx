@@ -87,8 +87,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-
-        <div className="">
+        <>
           <WebDevelopmentSection
             services={ppcServices}
             image={girlWithPhone.src}
@@ -109,7 +108,7 @@ export default function Page() {
             hireHeading={hireHeading}
             hireHeadingTitle={hireHeadingTitle}
           />
-        </div>
+        </>
         <footer>
           <Footer />
         </footer>
