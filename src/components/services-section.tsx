@@ -180,7 +180,7 @@ const defaultServices: ServiceItem[] = [
   {
     image: offerIcon3.src,
     title: "Branding",
-    link: "/seo",
+    link: "/branding-services",
     description:
       "Our branding services help establish a strong, recognizable identity for your business, creating a lasting impression.",
   },
@@ -194,14 +194,14 @@ const defaultServices: ServiceItem[] = [
   {
     image: offerIcon5.src,
     title: "Email Marketing",
-    link: "/seo",
+    link: "/email-marketing-services",
     description:
       "We help you reach your customers and prospects through targeted email campaigns that drive engagement and conversions.",
   },
   {
     image: offerIcon6.src,
     title: "Pay-Per-Click Advertising",
-    link: "/seo",
+    link: "/ppc-management-services",
     description:
       "Our PPC advertising strategies help you reach potential customers at the right time, maximizing your ROI.",
   },
