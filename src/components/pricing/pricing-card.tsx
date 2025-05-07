@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { useFormContact } from "@/store/form"
 
 interface PricingCardProps {
   duration: number
@@ -12,6 +13,8 @@ interface PricingCardProps {
 }
 
 export function PricingCard({ duration, currentPrice, originalPrice, features, index }: PricingCardProps) {
+  const { setIsOpen, isOpen }: any = useFormContact();
+
   return (
     <motion.div
       className="pricing-card border border-gray-200 rounded-lg overflow-hidden flex flex-col w-120 p-5 shadow-sm"
@@ -52,7 +55,7 @@ export function PricingCard({ duration, currentPrice, originalPrice, features, i
           <span className="text-lg text-gray-500 line-through">${originalPrice.toFixed(2)}</span>
         </motion.div>
         <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
-          <Button className="w-full bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] text-white font-medium py-3 rounded transition-all duration-300 ease-in-out">
+          <Button onClick={() => setIsOpen(true)} className="w-full bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] text-white font-medium py-3 rounded transition-all duration-300 ease-in-out">
             Get Started
           </Button>
         </motion.div>

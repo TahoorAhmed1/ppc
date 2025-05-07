@@ -78,7 +78,6 @@ export default function RootLayout({
         </noscript>
       </head>
       <body>
-        <MovingBulbsBackground />
         <FollowCursor
           dotCount={4}
           maxSize={10}
