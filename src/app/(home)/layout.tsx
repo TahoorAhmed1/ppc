@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import ContactFormPopup from "@/components/Contact";
 import "../globals.css";
 import Header from "@/components/header";

@@ -4,6 +4,7 @@ import PortfolioSection from "@/components/portfolio-section";
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
 import HireDevelopersSection from "@/components/hire-developer/hire-developers-section";
 import Link from "next/link";
+import PricingSection from "@/components/pricing/pricing-section";
 
 export type FeatureItemType = {
   icon: "megaphone" | "chart";
@@ -57,8 +58,7 @@ export default function Page() {
 
   //WebDevelopmentSection
   const headingtitle = "Engage. Convert. Grow.";
-  const heading = "With the Best Email Marketing Services"
-
+  const heading = "With the Best Email Marketing Services";
 
   //Hire
   const hireHeadingTitle = "Professional Email Marketing Services";
@@ -66,7 +66,6 @@ export default function Page() {
   const hireHeadingDescription =
     "Time is of the essence, and we waste none. Our experts deploy targeted email advertising campaigns that engage your audience on the spot. Prioritizing speed without compromising quality, we make sure your messages reach the right people at the right time.";
 
-  
   return (
     <>
       <div className="min-h-screen flex flex-col">
@@ -103,6 +102,18 @@ export default function Page() {
             paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
             filters={["All", "E-commerce", "Business", "Real Estate"]}
             btnIcon=""
+          />
+          <PricingSection
+            filter={[
+              "Animation",
+              "Branding",
+              "Digital Marketing",
+              "E-commerce",
+              "Logo Design",
+              "SEO",
+              "SMM",
+              "Web Design",
+            ]}
           />
           <HireDevelopersSection
             features={seoFeatures}

@@ -1,9 +1,10 @@
-import { girlWithPhone, heroSectionImage3, profileImage4 } from "@/assets"
-import Footer from "@/components/footer"
-import PortfolioSection from "@/components/portfolio-section"
-import WebDevelopmentSection from "@/components/web-development-services/web-development-section"
-import HireDevelopersSection from "@/components/hire-developer/hire-developers-section"
-import Link from "next/link"
+import { girlWithPhone, heroSectionImage3, profileImage4 } from "@/assets";
+import Footer from "@/components/footer";
+import PortfolioSection from "@/components/portfolio-section";
+import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
+import HireDevelopersSection from "@/components/hire-developer/hire-developers-section";
+import Link from "next/link";
+import PricingSection from "@/components/pricing/pricing-section";
 
 export default function Page() {
   const customServices = [
@@ -31,16 +32,15 @@ export default function Page() {
       description:
         "We optimize your web applications for speed and efficiency, ensuring fast load times and smooth user experiences.",
     },
-  ]
+  ];
 
-  
   type FeatureItemType = {
-    icon: "megaphone" | "chart"
-    title: string
-    description: string
-  }
-  
-    const developerFeatures: FeatureItemType[] = [
+    icon: "megaphone" | "chart";
+    title: string;
+    description: string;
+  };
+
+  const developerFeatures: FeatureItemType[] = [
     {
       icon: "megaphone",
       title: "Customized Solutions ",
@@ -53,7 +53,7 @@ export default function Page() {
       description:
         "We provide ongoing support after deployment, allowing you to focus on what matters most—running your business.",
     },
-  ]
+  ];
 
   return (
     <>
@@ -79,7 +79,10 @@ export default function Page() {
         </div>
 
         <div className="">
-          <WebDevelopmentSection services={customServices} image={girlWithPhone.src} />
+          <WebDevelopmentSection
+            services={customServices}
+            image={girlWithPhone.src}
+          />
           <PortfolioSection
             heading="Our Diverse Portfolio"
             title=""
@@ -87,12 +90,27 @@ export default function Page() {
             filters={["All", "E-commerce", "Business", "Real Estate"]}
             btnIcon=""
           />
-          <HireDevelopersSection features={developerFeatures} image={girlWithPhone.src} />
+          <PricingSection
+            filter={[
+              "Animation",
+              "Branding",
+              "Digital Marketing",
+              "E-commerce",
+              "Logo Design",
+              "SEO",
+              "SMM",
+              "Web Design",
+            ]}
+          />
+          <HireDevelopersSection
+            features={developerFeatures}
+            image={girlWithPhone.src}
+          />
         </div>
         <footer>
           <Footer />
         </footer>
       </div>
     </>
-  )
+  );
 }

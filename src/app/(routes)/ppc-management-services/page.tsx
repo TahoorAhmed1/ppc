@@ -4,6 +4,7 @@ import PortfolioSection from "@/components/portfolio-section";
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
 import HireDevelopersSection from "@/components/hire-developer/hire-developers-section";
 import Link from "next/link";
+import PricingSection from "@/components/pricing/pricing-section";
 
 export type FeatureItemType = {
   icon: "megaphone" | "chart";
@@ -100,6 +101,18 @@ export default function Page() {
             paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
             filters={["All", "E-commerce", "Business", "Real Estate"]}
             btnIcon=""
+          />
+          <PricingSection
+            filter={[
+              "Animation",
+              "Branding",
+              "Digital Marketing",
+              "E-commerce",
+              "Logo Design",
+              "SEO",
+              "SMM",
+              "Web Design",
+            ]}
           />
           <HireDevelopersSection
             features={seoFeatures}
