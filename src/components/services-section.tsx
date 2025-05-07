@@ -1,5 +1,11 @@
 "use client";
 
+import type React from "react";
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   offerIcon1,
   offerIcon2,
@@ -8,158 +14,12 @@ import {
   offerIcon5,
   offerIcon6,
 } from "@/assets";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { useState } from "react";
 
 interface ServiceItem {
   image: string;
   title: string;
   link: string;
   description: string;
-}
-
-interface ServicesSectionProps {
-  title?: string;
-  link?: string;
-  subtitle?: string;
-  services?: ServiceItem[];
-  buttonText?: string;
-  showButton?: boolean;
-  backgroundColor?: string;
-}
-
-const pulse: any = {
-  hidden: { scale: 0.9, opacity: 0.3 },
-  visible: {
-    scale: [1, 1.05, 1],
-    opacity: [0.3],
-    transition: {
-      repeat: Number.POSITIVE_INFINITY,
-      repeatType: "reverse",
-      duration: 3,
-    },
-  },
-};
-
-const MotionCard = motion(Card);
-
-export default function ServicesSection({
-  title = "WHY CHOOSE US",
-  subtitle = "What We Offer",
-  services = defaultServices,
-  buttonText = "See more",
-  showButton = true,
-  backgroundColor = "#f9f9f9",
-}: ServicesSectionProps) {
-  const [activePopup, setActivePopup] = useState<number | null>(null);
-  const [isLoaded, setIsLoaded] = useState(true);
-  return (
-    <section
-      id="services"
-      className="py-15 md:py-30 overflow-hidden relative z-0"
-      style={{ backgroundColor }}
-    >
-      <motion.div
-        initial="hidden"
-        animate={isLoaded ? "visible" : "hidden"}
-        variants={pulse}
-        className="absolute md:top-[5%] top-[70%] left-[5%] w-[10vw] h-[10vw] md:max-w-[4vw] md:max-h-[4vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] opacity-50 cursor-pointer hover:opacity-70 transition-opacity "
-        onClick={() => {
-          setTimeout(() => setActivePopup(1), 150);
-        }}
-      ></motion.div>
-
-      <motion.div
-        initial="hidden"
-        animate={isLoaded ? "visible" : "hidden"}
-        variants={pulse}
-        className="absolute md:bottom-[15%] bottom-[10%] right-[10%] w-[12vw] h-[12vw] md:w-[10vw] md:h-[10vw] rounded-full bg-gradient-to-r from-[#3DB1B1]/70 to-[#65CF5F]/60 opacity-40 cursor-pointer hover:opacity-60 transition-opacity"
-        onClick={() => {
-          setTimeout(() => setActivePopup(2), 150);
-        }}
-      ></motion.div>
-
-      <div className="container px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center gap-3 text-center">
-          <motion.h2
-            className="text-lg sm:text-xl md:text-2xl font-bold text-[#1C2D44]"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            {title}
-          </motion.h2>
-          <motion.h3
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#3DB1B1]"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            {subtitle}
-          </motion.h3>
-        </div>
-
-        <div className="grid gap-4  sm:gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <a href={service.link}>
-              <MotionCard
-                key={index}
-                className="bg-white hover:bg-[#1C2D44] text-[#1C2D44] hover:text-white transition-colors duration-300"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: 0.1 * index,
-                  type: "spring",
-                  stiffness: 100,
-                }}
-                whileHover={{
-                  scale: 1.03,
-                  transition: { duration: 0.2 },
-                }}
-              >
-                <CardHeader className="pb-0">
-                  <div className="flex items-center gap-4">
-                    <motion.div
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      whileInView={{ scale: 1, opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.5,
-                        delay: 0.2 + 0.1 * index,
-                        type: "spring",
-                      }}
-                    >
-                      <Image
-                        src={service.image || ""}
-                        alt={service.title}
-                        width={60}
-                        height={60}
-                        className="w-14 h-14 object-contain"
-                      />
-                    </motion.div>
-                    <CardTitle className="text-lg sm:text-xl md:text-2xl">
-                      {service.title}
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="mt-4">
-                  <p className="text-sm sm:text-base leading-relaxed">
-                    {service.description}
-                  </p>
-                </CardContent>
-              </MotionCard>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
 }
 
 const defaultServices: ServiceItem[] = [
@@ -187,7 +47,7 @@ const defaultServices: ServiceItem[] = [
   {
     image: offerIcon4.src,
     title: "App Development",
-    link: "/seo",
+    link: "/app-development-services",
     description:
       "Creating user-friendly mobile apps for iOS and Android platforms that help your business reach a wider audience.",
   },
@@ -205,4 +65,171 @@ const defaultServices: ServiceItem[] = [
     description:
       "Our PPC advertising strategies help you reach potential customers at the right time, maximizing your ROI.",
   },
+  {
+    image: offerIcon1.src,
+    title: "Digital Marketing",
+    link: "/digital-marketing",
+    description:
+      "Comprehensive digital marketing strategies that help your business grow online through multiple channels and platforms.",
+  },
+  {
+    image: offerIcon3.src,
+    title: "Social Media Marketing",
+    link: "/social-media-marketing-services",
+    description:
+      "Engaging social media campaigns that build your brand presence and connect with your target audience across platforms.",
+  },
+  {
+    image: offerIcon2.src,
+    title: "Writing & Publishing",
+    link: "/writing-&-publishing-services",
+    description:
+      "Professional content writing and publishing services that help establish your authority and engage your audience with valuable information.",
+  },
 ];
+
+interface ServicesSectionProps {
+  services?: ServiceItem[];
+  title?: string;
+  heading?: string;
+  paragraph?: string;
+  description?: string;
+  buttonText?: string;
+}
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
+
+const headingVariants = {
+  hidden: { y: -50, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
+};
+
+const MotionCard = motion(Card);
+
+const ServicesSection: React.FC<ServicesSectionProps> = ({
+  services: propServices,
+  title = "Why Choose Us",
+  heading = "What We Offer",
+  paragraph = "",
+  buttonText = "Show More",
+}) => {
+  const services = propServices || defaultServices;
+  const [showAll, setShowAll] = useState(false);
+  const initialDisplayCount = 6;
+
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto ">
+        <motion.div
+          className="flex flex-col data-center gap-2 text-center"
+          variants={headingVariants}
+        >
+          <motion.h2
+            className="text-xl sm:text-2xl font-bold text-[#1C2D44]"
+            variants={itemVariants}
+          >
+            {title}
+          </motion.h2>
+          <motion.h3
+            className="text-3xl sm:text-5xl font-extrabold text-[#41B4A7] mb-3"
+            variants={itemVariants}
+          >
+            {heading}
+          </motion.h3>
+          <motion.p
+            className="max-w-[700px] w-full mx-auto text-[#1C2D44] mb-8 text-sm sm:text-base text-center"
+            variants={itemVariants}
+          >
+            {paragraph}
+          </motion.p>
+        </motion.div>
+
+        <div className="grid gap-4 sm:gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
+          {services
+            .slice(0, showAll ? services.length : initialDisplayCount)
+            .map((service, index) => (
+              <a href={service.link} key={index}>
+                <MotionCard
+                  className="bg-white hover:bg-[#1C2D44] text-[#1C2D44] hover:text-white transition-colors duration-300"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.1 * index,
+                    type: "spring",
+                    stiffness: 100,
+                  }}
+                  whileHover={{
+                    scale: 1.03,
+                    transition: { duration: 0.2 },
+                  }}
+                >
+                  <CardHeader className="pb-0">
+                    <div className="flex items-center gap-4">
+                      <motion.div
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.5,
+                          delay: 0.2 + 0.1 * index,
+                          type: "spring",
+                        }}
+                      >
+                        <Image
+                          src={service.image || ""}
+                          alt={service.title}
+                          width={60}
+                          height={60}
+                          className="w-14 h-14 object-contain"
+                        />
+                      </motion.div>
+                      <CardTitle className="text-lg sm:text-xl md:text-2xl">
+                        {service.title}
+                      </CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="mt-4">
+                    <p className="text-sm sm:text-base leading-relaxed">
+                      {service.description}
+                    </p>
+                  </CardContent>
+                </MotionCard>
+              </a>
+            ))}
+        </div>
+        {services.length > initialDisplayCount && (
+          <div className="flex justify-center mt-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <Button
+                onClick={() => setShowAll(!showAll)}
+                className="bg-[#3DB1B1] hover:bg-[#1C2D44] text-white px-6 py-2 rounded-md transition-all duration-300"
+              >
+                {showAll ? "Show Less" : buttonText}
+                
+              </Button>
+            </motion.div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default ServicesSection;
