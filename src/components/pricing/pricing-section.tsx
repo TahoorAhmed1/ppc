@@ -1,18 +1,18 @@
-"use client"
-import { useEffect, useState } from "react"
-import { motion, useAnimate, stagger } from "framer-motion"
-import { PricingCard } from "./pricing-card"
-import { ServiceTag } from "./service-tag"
-import { AnimatedText } from "./animated-text"
-import Image from "next/image"
-import { Button } from "../ui/button"
-import { cn } from "@/lib/utils"
+"use client";
+import { useEffect, useState } from "react";
+import { motion, useAnimate, stagger } from "framer-motion";
+import { PricingCard } from "./pricing-card";
+import { ServiceTag } from "./service-tag";
+import { AnimatedText } from "./animated-text";
+import Image from "next/image";
+import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
 
 interface PricingSectionProps {
   filter: string[];
 }
 export default function PricingSection({ filter }: PricingSectionProps) {
-  const [scope, animate] = useAnimate()
+  const [scope, animate] = useAnimate();
   const [activeFilter, setActiveFilter] = useState("All");
   const filterVariants = {
     hidden: { scale: 0.8, opacity: 0 },
@@ -121,21 +121,34 @@ export default function PricingSection({ filter }: PricingSectionProps) {
         "100% Satisfaction Guarantee",
       ],
     },
-  ]
+  ];
 
   useEffect(() => {
     // Animate elements on page load
-    const sequence: Array<[string, Record<string, any>, Record<string, any>]> = [
-      [".heading-beat", { opacity: [0, 1], y: [20, 0] }, { duration: 0.5 }],
-      [".heading-main", { opacity: [0, 1], y: [20, 0] }, { duration: 0.6 }],
-      [".heading-subtitle", { opacity: [0, 1], y: [20, 0] }, { duration: 0.7 }],
-      [".service-tags", { opacity: [0, 1] }, { duration: 0.5 }],
-      [".service-tag", { scale: [0.8, 1], opacity: [0, 1] }, { duration: 0.4, delay: stagger(0.05) }],
-      [".pricing-card", { opacity: [0, 1], y: [50, 0] }, { duration: 0.6, delay: stagger(0.1) }],
-    ]
+    const sequence: Array<[string, Record<string, any>, Record<string, any>]> =
+      [
+        [".heading-beat", { opacity: [0, 1], y: [20, 0] }, { duration: 0.5 }],
+        [".heading-main", { opacity: [0, 1], y: [20, 0] }, { duration: 0.6 }],
+        [
+          ".heading-subtitle",
+          { opacity: [0, 1], y: [20, 0] },
+          { duration: 0.7 },
+        ],
+        [".service-tags", { opacity: [0, 1] }, { duration: 0.5 }],
+        [
+          ".service-tag",
+          { scale: [0.8, 1], opacity: [0, 1] },
+          { duration: 0.4, delay: stagger(0.05) },
+        ],
+        [
+          ".pricing-card",
+          { opacity: [0, 1], y: [50, 0] },
+          { duration: 0.6, delay: stagger(0.1) },
+        ],
+      ];
 
-    animate(sequence)
-  }, [animate])
+    animate(sequence);
+  }, [animate]);
 
   return (
     <main className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8" ref={scope}>
@@ -147,9 +160,13 @@ export default function PricingSection({ filter }: PricingSectionProps) {
           text="All That Glitters Is Not Gold"
           className="heading-main text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-[#4ecca3] to-[#3db8c5] text-transparent bg-clip-text"
         />
-        <motion.p className="heading-subtitle max-w-3xl mx-auto text-base sm:text-lg text-gray-800">
-          Remember that true treasures lie beyond the gilded veil in a world where shimmering illusions dance before
-          your eyes. For all the true glitters, choose Digitzlabs.
+        <motion.p
+          id="services"
+          className="heading-subtitle max-w-3xl mx-auto text-base sm:text-lg text-gray-800"
+        >
+          Remember that true treasures lie beyond the gilded veil in a world
+          where shimmering illusions dance before your eyes. For all the true
+          glitters, choose Digitzlabs.
         </motion.p>
       </div>
 
@@ -175,7 +192,6 @@ export default function PricingSection({ filter }: PricingSectionProps) {
               )}
               onClick={() => setActiveFilter(filter)}
             >
-
               {filter}
             </Button>
           </motion.div>
@@ -195,5 +211,5 @@ export default function PricingSection({ filter }: PricingSectionProps) {
         ))}
       </div>
     </main>
-  )
+  );
 }
