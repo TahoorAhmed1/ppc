@@ -22,19 +22,11 @@ export default function Header() {
     { label: "Email Marketing Services", href: "/email-marketing-services" },
     { label: "PPC Management Services", href: "/ppc-management-services" },
     { label: "SEO", href: "/seo" },
-    {
-      label: "Social Media Marketing Services",
-      href: "/social-media-marketing-services",
-    },
-    {
-      label: "Website Development Services",
-      href: "/website-development-services",
-    },
-    {
-      label: "Writing & Publishing Services",
-      href: "/writing-&-publishing-services",
-    },
-  ];
+    { label: "Social Media Marketing Services", href: "/social-media-marketing-services" },
+    { label: "Website Development Services", href: "/website-development-services" },
+    { label: "Writing & Publishing Services", href: "/writing-&-publishing-services" },
+    { label: "Web Hosting Services", href: "/web-hosting" },
+  ]
 
   const navItems = [
     { label: "Home", href: "/" },
