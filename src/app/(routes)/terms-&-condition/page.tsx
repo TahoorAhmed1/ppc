@@ -1,29 +1,14 @@
 import { heroSectionImage3 } from "@/assets";
+import ServicesHeroSection from "@/components/digital-marketing/services-hero-section";
 import Footer from "@/components/footer-2";
 import Link from "next/link";
+
+const pageHeading = "Terms and Conditions";
 
 export default function Page() {
   return (
     <div className="min-h-screen flex flex-col ">
-      <div
-        className="text-white py-30 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${heroSectionImage3.src})`,
-        }}
-      >
-        <div className=" px-4">
-          <h1 className="text-5xl font-bold text-center mb-2 ">
-            Terms and Conditions
-          </h1>
-          <div className="flex justify-center text-md">
-            <Link href="/" className="hover:underline">
-              Home
-            </Link>
-            <span className="mx-2">•</span>
-            <span>Terms and Conditions</span>
-          </div>
-        </div>
-      </div>
+      <ServicesHeroSection heading={pageHeading} />
 
       <div className="max-w-[1000px] mx-auto px-4 py-8">
         <p className="mb-4">
@@ -275,10 +260,8 @@ export default function Page() {
             </a>
           </p>
         </section>
-        
       </div>
       <Footer />
-      
     </div>
   );
 }

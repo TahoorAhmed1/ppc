@@ -20,6 +20,7 @@ export default function Header() {
     { label: "Social Media Marketing Services", href: "/social-media-marketing-services" },
     { label: "Website Development Services", href: "/website-development-services" },
     { label: "Writing & Publishing Services", href: "/writing-&-publishing-services" },
+    { label: "Web Hosting Services", href: "/web-hosting" },
   ]
 
   const navItems = [
