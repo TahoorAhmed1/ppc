@@ -2,7 +2,7 @@ import { Check } from "lucide-react";
 
 export function WhyChooseSection() {
   return (
-    <div className="bg-gray-50 py-16">
+    <div className="bg-gray-50 py-16 p-10">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left column with heading */}

@@ -1,10 +1,15 @@
-"use client"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import { logo } from "@/assets/index"
-import { AlignJustify, ChevronDown, X } from "lucide-react"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+"use client";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import { logo } from "@/assets/index";
+import { AlignJustify, ChevronDown, X } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const serviceItems = [
   { label: "App Development Services", href: "/app-development-services" },
@@ -25,7 +30,7 @@ const serviceItems = [
     label: "Writing & Publishing Services",
     href: "/writing-&-publishing-services",
   },
-]
+];
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -37,11 +42,16 @@ const navItems = [
   },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Contact Us", href: "#contactus" },
-]
+  { label: "Web Hosting", href: "/web-hosting" },
+];
 
-export default function Header2({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [servicesOpen, setServicesOpen] = useState(false)
+export default function Header2({
+  setIsOpen,
+}: {
+  setIsOpen: (isOpen: boolean) => void;
+}) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background transition-all duration-100 ease-in-out">
@@ -88,7 +98,7 @@ export default function Header2({ setIsOpen }: { setIsOpen: (isOpen: boolean) =>
                 >
                   {item.label}
                 </a>
-              ),
+              )
             )}
           </nav>
 
@@ -119,7 +129,11 @@ export default function Header2({ setIsOpen }: { setIsOpen: (isOpen: boolean) =>
             </Button>
 
             {/* Mobile Menu Toggle */}
-            <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden ml-2" aria-label="Toggle Menu">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden ml-2"
+              aria-label="Toggle Menu"
+            >
               {menuOpen ? (
                 <X className="h-5 w-5 text-muted-foreground" />
               ) : (
@@ -140,7 +154,11 @@ export default function Header2({ setIsOpen }: { setIsOpen: (isOpen: boolean) =>
                     onClick={() => setServicesOpen(!servicesOpen)}
                   >
                     <span>{item.label}</span>
-                    <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform ${
+                        servicesOpen ? "rotate-180" : ""
+                      }`}
+                    />
                   </button>
                   {servicesOpen && (
                     <div className="pl-4 space-y-2 border-l border-gray-200">
@@ -166,14 +184,17 @@ export default function Header2({ setIsOpen }: { setIsOpen: (isOpen: boolean) =>
                 >
                   {item.label}
                 </a>
-              ),
+              )
             )}
 
             {/* Mobile Contact Info */}
             <div className="pt-2 mt-2 border-t border-gray-100">
               <div className="mb-2">
                 <div className="text-xs text-gray-500">Email</div>
-                <a className="font-semibold text-sm" href="mailto:support@creativeagency360.com">
+                <a
+                  className="font-semibold text-sm"
+                  href="mailto:support@creativeagency360.com"
+                >
                   support@creativeagency360.com
                 </a>
               </div>
@@ -188,5 +209,5 @@ export default function Header2({ setIsOpen }: { setIsOpen: (isOpen: boolean) =>
         )}
       </div>
     </header>
-  )
+  );
 }
