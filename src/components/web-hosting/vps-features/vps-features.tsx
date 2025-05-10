@@ -3,7 +3,7 @@ import { GuaranteeSection } from "./guarantee-section"
 
 export function VpsFeatures() {
   return (
-    <div className=" mx-auto px-8 py-12 max-w-6xl ">
+    <div className=" mx-auto px-8 py-12 max-w-7xl ">
       <h1 className="text-3xl font-bold text-center mb-12">What Makes Our Creative Agency Excellent?</h1>
 
       <div className="grid md:grid-cols-3 gap-8 mb-12">

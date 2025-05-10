@@ -13,7 +13,7 @@ export function GuaranteeSection() {
       </div>
 
       {/* Hexagon icons */}
-      <div className="absolute -top-6 right-8 flex space-x-4">
+      <div className="absolute -top-6 right-8  space-x-4 hidden md:flex">
         <HexagonIcon icon={<Shield className="h-6 w-6" />} />
         <HexagonIcon icon={<Lock className="h-6 w-6" />} />
         <HexagonIcon icon={<Activity className="h-6 w-6" />} />
