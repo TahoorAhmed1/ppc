@@ -16,17 +16,30 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   const serviceItems = [
-    { label: "App Development Services", href: "/app-development-services" },
-    { label: "Branding Services", href: "/branding-services" },
-    { label: "Digital Marketing", href: "/digital-marketing" },
-    { label: "Email Marketing Services", href: "/email-marketing-services" },
-    { label: "PPC Management Services", href: "/ppc-management-services" },
+    // { label: "App Development Services", href: "/app-development-services" },
+    // { label: "Branding Services", href: "/branding-services" },
+    // { label: "Digital Marketing", href: "/digital-marketing" },
+    // { label: "Email Marketing Services", href: "/email-marketing-services" },
+    // { label: "PPC Management Services", href: "/ppc-management-services" },
     { label: "SEO", href: "/seo" },
-    { label: "Social Media Marketing Services", href: "/social-media-marketing-services" },
-    { label: "Website Development Services", href: "/website-development-services" },
-    { label: "Writing & Publishing Services", href: "/writing-&-publishing-services" },
-    { label: "Web Hosting Services", href: "/web-hosting" },
-  ]
+    {
+      label: "Social Media Marketing Services",
+      href: "/social-media-marketing-services",
+    },
+    {
+      label: "Website Development Services",
+      href: "/website-development-services",
+    },
+    {
+      label: "Logo Services",
+      href: "/logo-services",
+    },
+
+    {
+      label: "E-commerce Services",
+      href: "/ecommerce-services",
+    },
+  ];
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -39,7 +52,7 @@ export default function Header() {
     { label: "Portfolio", href: "#portfolio" },
     { label: "Contact Us", href: "#contactus" },
     { label: "Web Hosting", href: "/web-hosting" },
-  ]
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background transition-all duration-100 ease-in-out">
