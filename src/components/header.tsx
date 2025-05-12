@@ -1,27 +1,45 @@
-"use client"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { AlignJustify, X, ChevronDown } from "lucide-react"
-import Image from "next/image"
-import { logo } from "@/assets/index"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+"use client";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { AlignJustify, X, ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { logo } from "@/assets/index";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [servicesOpen, setServicesOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   const serviceItems = [
-    { label: "App Development Services", href: "/app-development-services" },
-    { label: "Branding Services", href: "/branding-services" },
-    { label: "Digital Marketing", href: "/digital-marketing" },
-    { label: "Email Marketing Services", href: "/email-marketing-services" },
-    { label: "PPC Management Services", href: "/ppc-management-services" },
+    // { label: "App Development Services", href: "/app-development-services" },
+    // { label: "Branding Services", href: "/branding-services" },
+    // { label: "Digital Marketing", href: "/digital-marketing" },
+    // { label: "Email Marketing Services", href: "/email-marketing-services" },
+    // { label: "PPC Management Services", href: "/ppc-management-services" },
     { label: "SEO", href: "/seo" },
-    { label: "Social Media Marketing Services", href: "/social-media-marketing-services" },
-    { label: "Website Development Services", href: "/website-development-services" },
-    { label: "Writing & Publishing Services", href: "/writing-&-publishing-services" },
-    { label: "Web Hosting Services", href: "/web-hosting" },
-  ]
+    {
+      label: "Social Media Marketing Services",
+      href: "/social-media-marketing-services",
+    },
+    {
+      label: "Website Development Services",
+      href: "/website-development-services",
+    },
+    {
+      label: "Logo Services",
+      href: "/logo-services",
+    },
+
+    {
+      label: "E-commerce Services",
+      href: "/ecommerce-services",
+    },
+  ];
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -34,7 +52,7 @@ export default function Header() {
     { label: "Portfolio", href: "#portfolio" },
     { label: "Contact Us", href: "#contactus" },
     { label: "Web Hosting", href: "/web-hosting" },
-  ]
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background transition-all duration-100 ease-in-out">
@@ -78,7 +96,7 @@ export default function Header() {
               >
                 {item.label}
               </a>
-            ),
+            )
           )}
         </nav>
 
@@ -88,7 +106,11 @@ export default function Header() {
               Get Free Consultation
             </Button>
           </a>
-          <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle Menu">
+          <button
+            className="md:hidden"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle Menu"
+          >
             {menuOpen ? (
               <X className="h-5 w-5 sm:h-6 sm:w-6 text-muted-foreground" />
             ) : (
@@ -108,7 +130,11 @@ export default function Header() {
                   onClick={() => setServicesOpen(!servicesOpen)}
                 >
                   <span>{item.label}</span>
-                  <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform ${
+                      servicesOpen ? "rotate-180" : ""
+                    }`}
+                  />
                 </div>
                 {servicesOpen && (
                   <div className="pl-4 space-y-2 border-l border-gray-200">
@@ -134,10 +160,10 @@ export default function Header() {
               >
                 {item.label}
               </a>
-            ),
+            )
           )}
         </div>
       )}
     </header>
-  )
+  );
 }
