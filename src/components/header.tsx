@@ -47,7 +47,7 @@ export default function Header() {
     {
       label: "Services",
       href: "#services",
-      hasDropdown: false,
+      hasDropdown: true,
     },
     { label: "Portfolio", href: "#portfolio" },
     { label: "Contact Us", href: "#contactus" },
