@@ -55,25 +55,104 @@ export default function Page() {
     },
   ];
   const pageHeading = "SEO Services";
+
+  const pricingOptions = [
+    {
+      id: 1,
+      packageHeading: "SEO Essential",
+      packageDescription: "Cost Effective Package for your business",
+      duration: 30,
+      currentPrice: 250,
+      originalPrice: 500,
+      buttonTitle: "Buy Now",
+      features: [
+        "5 Keywords",
+        "Off-page Optimization",
+        "Link Building",
+        "Social Bookmarking",
+        "Guaranteed Ranking on Google",
+        "Basic Analytical Report",
+        "Dedicated Project Manager",
+      ],
+    },
+    {
+      id: 2,
+      packageHeading: "SEO Standard",
+      packageDescription: "Cost Effective Package for your business",
+      duration: 30,
+      currentPrice: 500,
+      originalPrice: 1000,
+      buttonTitle: "Buy Now",
+      features: [
+        "10 Keywords",
+        "Off-page Optimization",
+        "On-page Optimization",
+        "Link Building",
+        "Social Bookmarking",
+        "Guaranteed Ranking on Google",
+        "Comprehensive Analytical Report",
+        "Dedicated Project Manager",
+      ],
+    },
+    {
+      id: 3,
+      packageHeading: "SEO Classic",
+      packageDescription: "Cost Effective Package for your business",
+      duration: 30,
+      currentPrice: 700,
+      originalPrice: 1400,
+      buttonTitle: "Buy Now",
+      features: [
+        "20 Keywords",
+        "Off-page Optimization",
+        "On-page Optimization",
+        "Link Building",
+        "Social Bookmarking",
+        "Guaranteed Ranking on Google",
+        "Comprehensive Analytical Report",
+        "Dedicated Project Manager",
+      ],
+    },
+    {
+      id: 1,
+      packageHeading: "SEO Classic",
+      packageDescription: "Cost Effective Package for your business",
+      duration: 30,
+      currentPrice: 700,
+      originalPrice: 1400,
+      buttonTitle: "Buy Now",
+      features: [
+        "20 Keywords",
+        "Off-page Optimization",
+        "On-page Optimization",
+        "Link Building",
+        "Social Bookmarking",
+        "Guaranteed Ranking on Google",
+        "Comprehensive Analytical Report",
+        "Dedicated Project Manager",
+      ],
+    },
+  ];
+
   return (
     <>
       <div className="min-h-screen flex flex-col">
         <ServicesHeroSection heading={pageHeading} />
 
-        <div >
+        <div>
           <WebDevelopmentSection
             services={seoServices}
             image={girlWithPhone.src}
             heading="Dominate the Search Engines"
             headingtitle="Professional SEO Services"
           />
-          <PortfolioSection
+          {/* <PortfolioSection
             heading="Our Diverse Portfolio"
             title=""
             paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
             filters={["All", "E-commerce", "Business", "Real Estate"]}
             btnIcon=""
-          />
+          /> */}
           <PricingSection
             filter={[
               "Animation",
@@ -85,6 +164,7 @@ export default function Page() {
               "SMM",
               "Web Design",
             ]}
+            pricingOptions={pricingOptions}
           />
           <HireDevelopersSection
             features={seoFeatures}

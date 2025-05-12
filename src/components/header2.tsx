@@ -12,11 +12,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const serviceItems = [
-  { label: "App Development Services", href: "/app-development-services" },
-  { label: "Branding Services", href: "/branding-services" },
-  { label: "Digital Marketing", href: "/digital-marketing" },
-  { label: "Email Marketing Services", href: "/email-marketing-services" },
-  { label: "PPC Management Services", href: "/ppc-management-services" },
+  // { label: "App Development Services", href: "/app-development-services" },
+  // { label: "Branding Services", href: "/branding-services" },
+  // { label: "Digital Marketing", href: "/digital-marketing" },
+  // { label: "Email Marketing Services", href: "/email-marketing-services" },
+  // { label: "PPC Management Services", href: "/ppc-management-services" },
   { label: "SEO", href: "/seo" },
   {
     label: "Social Media Marketing Services",
@@ -27,9 +27,18 @@ const serviceItems = [
     href: "/website-development-services",
   },
   {
-    label: "Writing & Publishing Services",
-    href: "/writing-&-publishing-services",
+    label: "Logo Services",
+    href: "/logo-services",
   },
+
+  {
+    label: "E-commerce Services",
+    href: "/ecommerce-services",
+  },
+  // {
+  //   label: "Writing & Publishing Services",
+  //   href: "/writing-&-publishing-services",
+  // },
 ];
 
 const navItems = [

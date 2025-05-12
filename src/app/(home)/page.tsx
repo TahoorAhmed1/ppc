@@ -70,6 +70,82 @@ const sectionVariants = {
   },
 };
 
+ const pricingOptions = [
+    {
+      id: 1,
+      packageHeading: "",
+      packageDescription: "",
+      duration: 30,
+      currentPrice: 349.99,
+      originalPrice: 599.99,
+      features: [
+        "2D Animation / White Board / Motion Graphics",
+        "Custom Artwork, No Stolen Images",
+        "Initial Script Writing",
+        "Professional Voice – Over",
+        "Background Music",
+        "Exotic Animations",
+        "30 seconds Video Duration*(Yes, you can ask for more!)",
+        "100% Satisfaction Guarantee",
+      ],
+    },
+    {
+      id: 2,
+      packageHeading: "2D Animation",
+      packageDescription: "30 seconds",
+      duration: 60,
+      currentPrice: 649.0,
+      originalPrice: 1199.99,
+      features: [
+        "2D Animation / White Board / Motion Graphics",
+        "Custom Artwork, No Stolen Images",
+        "Initial Script Writing",
+        "Professional Voice – Over",
+        "Background Music",
+        "Exotic Animations",
+        "60 seconds Video Duration*(Yes, you can ask for more!)",
+        "100% Satisfaction Guarantee",
+      ],
+    },
+    {
+      id: 3,
+      packageHeading: "2D Animation",
+      packageDescription: "30 seconds",
+      duration: 90,
+      currentPrice: 949.0,
+      originalPrice: 1799.99,
+      features: [
+        "2D Animation / White Board / Motion Graphics",
+        "Custom Artwork, No Stolen Images",
+        "Initial Script Writing",
+        "Professional Voice – Over",
+        "Background Music",
+        "Exotic Animations",
+        "90 seconds Video Duration*(Yes, you can ask for more!)",
+        "100% Satisfaction Guarantee",
+      ],
+    },
+    {
+      id: 4,
+      packageHeading: "2D Animation",
+      packageDescription: "30 seconds",
+      duration: 120,
+      currentPrice: 1349.0,
+      originalPrice: 2399.0,
+      features: [
+        "2D Animation / White Board / Motion Graphics",
+        "Custom Artwork, No Stolen Images",
+        "Initial Script Writing",
+        "Professional Voice – Over",
+        "Background Music",
+        "Exotic Animations",
+        "120 seconds Video Duration*(Yes, you can ask for more!)",
+        "100% Satisfaction Guarantee",
+      ],
+    },
+  ];
+
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
@@ -95,7 +171,7 @@ export default function Home() {
         <ExperienceSection />
       </motion.div>
 
-      <PricingSection filter={["Animation", "Branding", "Digital Marketing", "E-commerce", "Logo Design", "SEO", "SMM", "Web Design"]} />
+      <PricingSection filter={["Animation", "Branding", "Digital Marketing", "E-commerce", "Logo Design", "SEO", "SMM", "Web Design"]} pricingOptions={pricingOptions} />
 
       <PortfolioSection
         heading="OUR PORTFOLIO"
