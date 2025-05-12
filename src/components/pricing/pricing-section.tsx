@@ -7,11 +7,27 @@ import { AnimatedText } from "./animated-text";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface PricingSectionProps {
   filter: string[];
+  filterLink?: string;
+  pricingOptions: {
+    id: number;
+    packageHeading: string;
+    packageDescription: string;
+    buttonTitle?: string;
+    duration: number | null;
+    currentPrice?: number | null;
+    originalPrice?: number | null;
+    features: string[];
+  }[];
 }
-export default function PricingSection({ filter }: PricingSectionProps) {
+export default function PricingSection({
+  filter,
+  filterLink,
+  pricingOptions,
+}: PricingSectionProps) {
   const [scope, animate] = useAnimate();
   const [activeFilter, setActiveFilter] = useState("All");
   const filterVariants = {
@@ -56,73 +72,6 @@ export default function PricingSection({ filter }: PricingSectionProps) {
     { category: "Business" },
   ];
 
-  const pricingOptions = [
-    {
-      id: 1,
-      duration: 30,
-      currentPrice: 349.99,
-      originalPrice: 599.99,
-      features: [
-        "2D Animation / White Board / Motion Graphics",
-        "Custom Artwork, No Stolen Images",
-        "Initial Script Writing",
-        "Professional Voice – Over",
-        "Background Music",
-        "Exotic Animations",
-        "30 seconds Video Duration*(Yes, you can ask for more!)",
-        "100% Satisfaction Guarantee",
-      ],
-    },
-    {
-      id: 2,
-      duration: 60,
-      currentPrice: 649.0,
-      originalPrice: 1199.99,
-      features: [
-        "2D Animation / White Board / Motion Graphics",
-        "Custom Artwork, No Stolen Images",
-        "Initial Script Writing",
-        "Professional Voice – Over",
-        "Background Music",
-        "Exotic Animations",
-        "60 seconds Video Duration*(Yes, you can ask for more!)",
-        "100% Satisfaction Guarantee",
-      ],
-    },
-    {
-      id: 3,
-      duration: 90,
-      currentPrice: 949.0,
-      originalPrice: 1799.99,
-      features: [
-        "2D Animation / White Board / Motion Graphics",
-        "Custom Artwork, No Stolen Images",
-        "Initial Script Writing",
-        "Professional Voice – Over",
-        "Background Music",
-        "Exotic Animations",
-        "90 seconds Video Duration*(Yes, you can ask for more!)",
-        "100% Satisfaction Guarantee",
-      ],
-    },
-    {
-      id: 4,
-      duration: 120,
-      currentPrice: 1349.0,
-      originalPrice: 2399.0,
-      features: [
-        "2D Animation / White Board / Motion Graphics",
-        "Custom Artwork, No Stolen Images",
-        "Initial Script Writing",
-        "Professional Voice – Over",
-        "Background Music",
-        "Exotic Animations",
-        "120 seconds Video Duration*(Yes, you can ask for more!)",
-        "100% Satisfaction Guarantee",
-      ],
-    },
-  ];
-
   useEffect(() => {
     // Animate elements on page load
     const sequence: Array<[string, Record<string, any>, Record<string, any>]> =
@@ -160,17 +109,14 @@ export default function PricingSection({ filter }: PricingSectionProps) {
           text="All That Glitters Is Not Gold"
           className="heading-main text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-[#4ecca3] to-[#3db8c5] text-transparent bg-clip-text"
         />
-        <motion.p
-          id="services"
-          className="heading-subtitle max-w-3xl mx-auto text-base sm:text-lg text-gray-800"
-        >
+        <motion.p className="heading-subtitle max-w-3xl mx-auto text-base sm:text-lg text-gray-800">
           Remember that true treasures lie beyond the gilded veil in a world
           where shimmering illusions dance before your eyes. For all the true
           glitters, choose Digitzlabs.
         </motion.p>
       </div>
 
-      <motion.div
+      {/* <motion.div
         className="flex flex-wrap justify-center gap-3 mb-10"
         variants={containerVariants}
       >
@@ -192,21 +138,25 @@ export default function PricingSection({ filter }: PricingSectionProps) {
               )}
               onClick={() => setActiveFilter(filter)}
             >
-              {filter}
+              <Link href={`${filterLink}`} className="flex items-center gap-2">
+              {filter}</Link>
             </Button>
           </motion.div>
         ))}
-      </motion.div>
+      </motion.div> */}
 
       <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center justify-items-center max-w-250 mx-auto gap-5">
         {pricingOptions.map((option, index) => (
           <PricingCard
             key={option.id}
-            duration={option.duration}
-            currentPrice={option.currentPrice}
-            originalPrice={option.originalPrice}
+            duration={option.duration ?? undefined}
+            currentPrice={option.currentPrice ?? undefined}
+            originalPrice={option.originalPrice ?? undefined}
             features={option.features}
             index={index}
+            packageHeading={option.packageHeading}
+            packageDescription={option.packageDescription}
+            buttonTitle={option.buttonTitle}
           />
         ))}
       </div>

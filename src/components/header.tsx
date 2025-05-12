@@ -38,7 +38,8 @@ export default function Header() {
     },
     { label: "Portfolio", href: "#portfolio" },
     { label: "Contact Us", href: "#contactus" },
-  ];
+    { label: "Web Hosting", href: "/web-hosting" },
+  ]
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background transition-all duration-100 ease-in-out">

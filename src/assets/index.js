@@ -94,6 +94,7 @@ import youtubeIcon from "@/assets/images/youtube-icon.png";
 import discordIcon from "@/assets/images/discord-icon.png";
 import pinterestIcon from "@/assets/images/pinterest-icon.png";
 import trustpilot from "@/assets/images/trustpilot.png";
+import trustpilot2 from "@/assets/images/trustpilot.webp";
 import coolEmoji from "@/assets/images/cool-emoji.png";
 import loveEmoji from "@/assets/images/love-emoji.png";
 import loveEmoji2 from "@/assets/images/love-emoji (2).png";
@@ -106,9 +107,12 @@ import digitalserviceIcon2 from "@/assets/images/service-icon  (2).png";
 import digitalserviceIcon3 from "@/assets/images/service-icon  (3).png";
 import digitalserviceIcon4 from "@/assets/images/service-icon  (4).png";
 import socialMediaMarketingImage from "@/assets/images/about-us-Image.png";
+import supportSectionImage from "@/assets/images/support-section-image.webp";
 
 export {
   trustpilot,
+  trustpilot2,
+  supportSectionImage,
   popup,
   project1,
   project2,
