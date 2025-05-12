@@ -86,7 +86,7 @@ export default function Page() {
             filters={["All", "E-commerce", "Business", "Real Estate"]}
             btnIcon=""
           />
-          <PricingSection
+          {/* <PricingSection
             filter={[
               "Animation",
               "Branding",
@@ -97,7 +97,7 @@ export default function Page() {
               "SMM",
               "Web Design",
             ]}
-          />
+          /> */}
           <HireDevelopersSection
             features={seoFeatures}
             hireHeadingDescription={hireHeadingDescription}
