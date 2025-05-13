@@ -108,11 +108,21 @@ import digitalserviceIcon3 from "@/assets/images/service-icon  (3).png";
 import digitalserviceIcon4 from "@/assets/images/service-icon  (4).png";
 import socialMediaMarketingImage from "@/assets/images/about-us-Image.png";
 import supportSectionImage from "@/assets/images/support-section-image.webp";
+import seoServiceImage from "@/assets/images/seo.png";
+import websiteDevelopmentServiceImage from "@/assets/images/website development.png";
+import ecomerceServiceImage from "@/assets/images/ecomerce.png";
+import socilaMediaServiceImage from "@/assets/images/socila media.png";
+import logoServiceImage from "@/assets/images/logo.png";
 
 export {
   trustpilot,
   trustpilot2,
   supportSectionImage,
+  seoServiceImage,
+  websiteDevelopmentServiceImage,
+  ecomerceServiceImage,
+  socilaMediaServiceImage,
+  logoServiceImage,
   popup,
   project1,
   project2,

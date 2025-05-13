@@ -1,4 +1,10 @@
-import { girlWithPhone, heroSectionImage3, profileImage4 } from "@/assets";
+import {
+  girlWithPhone,
+  heroSectionImage3,
+  logoServiceImage,
+  profileImage4,
+  websiteDevelopmentServiceImage,
+} from "@/assets";
 import Footer from "@/components/footer";
 import PortfolioSection from "@/components/portfolio-section";
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
@@ -12,25 +18,25 @@ export default function Page() {
       number: "01",
       title: "Custom Web Applications",
       description:
-        "We build scalable, high-performance web applications tailored to your specific business needs using modern frameworks and technologies.",
+        "We develop robust, scalable web applications customized to meet your business goals using the latest tools and technologies.",
     },
     {
       number: "02",
       title: "Responsive Website Design",
       description:
-        "Our designs adapt seamlessly to all devices, ensuring your users have an optimal experience whether on desktop, tablet, or mobile.",
+        "Our websites automatically adjust to all screen sizes, providing an exceptional user experience on mobile, tablet, or desktop.",
     },
     {
       number: "03",
       title: "API Development & Integration",
       description:
-        "We create robust APIs and seamlessly integrate third-party services to extend your application's functionality and connectivity.",
+        "We build secure APIs and integrate external services to expand your platform’s features and enhance communication.",
     },
     {
       number: "04",
       title: "Performance Optimization",
       description:
-        "We optimize your web applications for speed and efficiency, ensuring fast load times and smooth user experiences.",
+        "We enhance your web application's speed and reliability, ensuring quick page loads and a frictionless browsing experience. ",
     },
   ];
 
@@ -43,15 +49,15 @@ export default function Page() {
   const developerFeatures: FeatureItemType[] = [
     {
       icon: "megaphone",
-      title: "Customized Solutions ",
+      title: "Web Development Experts ",
       description:
-        "We design a one-of-a-kind website that reflects your vision and is in line with your business objectives.",
+        "Our team includes seasoned designers, developers, and UX strategists working in perfect sync.",
     },
     {
       icon: "chart",
-      title: "Ongoing Support",
+      title: "Cutting-Edge Technologies ",
       description:
-        "We provide ongoing support after deployment, allowing you to focus on what matters most—running your business.",
+        "We leverage modern frameworks and tools to craft fast, secure, and future-ready web solutions. ",
     },
   ];
   const pricingOptions = [
@@ -261,8 +267,10 @@ export default function Page() {
 
         <div className="">
           <WebDevelopmentSection
+            heading=" Website Development Services "
+            headingtitle="Professional Website Development Services"
             services={customServices}
-            image={girlWithPhone.src}
+            image={websiteDevelopmentServiceImage.src}
           />
           {/* <PortfolioSection
             heading="Our Diverse Portfolio"
@@ -282,11 +290,16 @@ export default function Page() {
               "SMM",
               "Web Design",
             ]}
+            pricingOptionsHeading="Shiny Doesn’t Mean Smart "
+            pricingOptionsDescription="In a web full of pretty pixels and empty promises, real power lies in what’s under the hood. Go beyond the glitter—build for impact. "
             pricingOptions={pricingOptions}
           />
           <HireDevelopersSection
+            HireDevelopersSectionTitle="What Makes Us "
+            HireDevelopersSectionHeading="Pioneers in Website Development "
+            HireDevelopersSectionDiscripton="Creating a high-performing website takes more than good design. We build scalable, optimized sites that blend usability with speed—helping you engage users, strengthen your brand, and drive results."
             features={developerFeatures}
-            image={girlWithPhone.src}
+            image={logoServiceImage.src}
           />
         </div>
         <footer>

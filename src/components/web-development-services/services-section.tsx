@@ -22,7 +22,7 @@ export default function ServicesSection({
   return (
     <section className="py-12 max-w-7xl mx-auto">
       <div className="mb-10">
-        <span className="text-gray-500 uppercase text-sm tracking-wider block">
+        <span className="text-gray-500 uppercase text-sm tracking-wider block mb-4">
           {headingtitle}
         </span>
         <h2 className="text-4xl font-extrabold text-[#41B4A7] mb-3">
