@@ -289,9 +289,9 @@ export default function Home() {
           "Web Design",
         ]}
         pricingOptions={pricingOptions}
-        pricingOptionsTilte="RIDE THE WAVE "
-        pricingOptionsHeading="Success Isn’t Just a Trend "
-        pricingOptionsDescription="In a market flooded with e-commerce platforms, the secret to lasting success lies in strategy and innovation. Build for growth, not just for the sale. "
+        pricingOptionsTilte="BEAT THE ODDS"
+        pricingOptionsHeading="Shiny Doesn’t Mean Smart"
+        pricingOptionsDescription="In a web full of pretty pixels and empty promises, real power lies in what’s under the hood. Go beyond the glitter—build for impact. "
       />
       <PortfolioSection
         heading="OUR PORTFOLIO"

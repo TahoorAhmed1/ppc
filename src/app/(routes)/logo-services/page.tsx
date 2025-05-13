@@ -2,6 +2,7 @@ import {
   girlWithPhone,
   heroSectionImage3,
   logoServiceImage,
+  portfolioLogo1,
   profileImage4,
   seoServiceImage,
 } from "@/assets";
@@ -48,13 +49,13 @@ export default function Page() {
 
   const logoDesignFeatures: FeatureItemType[] = [
     {
-       icon: "megaphone",
+      icon: "megaphone",
       title: "Logo Design Experts",
       description:
         "Our team consists of talented designers and branding experts who collaborate to bring your brand to life through powerful visual storytelling.",
     },
     {
-       icon: "chart", 
+      icon: "chart",
       title: "Cutting-Edge Design Tools",
       description:
         "We use the latest design software and techniques to create logos that are versatile, scalable, and timeless.",
@@ -184,6 +185,33 @@ export default function Page() {
     },
   ];
 
+  const portfolioItems = [
+    {
+      id: 1,
+      image: portfolioLogo1.src,
+    },
+    {
+      id: 2,
+      image: portfolioLogo1.src,
+    },
+    {
+      id: 3,
+      image: portfolioLogo1.src,
+    },
+    {
+      id: 1,
+      image: portfolioLogo1.src,
+    },
+    {
+      id: 2,
+      image: portfolioLogo1.src,
+    },
+    {
+      id: 3,
+      image: portfolioLogo1.src,
+    },
+  ];
+
   const pageHeading = "Logo Services";
 
   //WebDevelopmentSection
@@ -208,13 +236,14 @@ export default function Page() {
             heading="Your Brand, Our Design "
             headingtitle="Professional Logo Design services  "
           />
-          {/* <PortfolioSection
+          <PortfolioSection
             heading="Our Diverse Portfolio"
             title=""
             paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
             filters={["All", "E-commerce", "Business", "Real Estate"]}
             btnIcon=""
-          /> */}
+           
+          />
           <PricingSection
             filter={[
               "Animation",

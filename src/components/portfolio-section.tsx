@@ -38,9 +38,11 @@ type PortfolioSectionProps = {
   data?: any[];
   backgroundImage?: string;
   btnIcon?: string;
+  
 };
 
 export default function PortfolioSection({
+  
   heading = "Our Work",
   title = "Creative Portfolio",
   paragraph = "Explore our latest design projects across various disciplines.",
@@ -48,7 +50,8 @@ export default function PortfolioSection({
   backgroundImage,
   btnIcon = "",
 }: PortfolioSectionProps) {
-  const data = [
+  
+const data = [
     { img: project1, category: "Real Estate" },
     { img: project2, category: "E-commerce" },
     { img: project3, category: "Real Estate" },
@@ -65,7 +68,6 @@ export default function PortfolioSection({
     { img: project15, category: "E-commerce" },
     { img: project16, category: "Business" },
   ];
-
   const [activeFilter, setActiveFilter] = useState("All");
   const [filteredItems, setFilteredItems] = useState(data);
   const [isLoaded, setIsLoaded] = useState(false);
