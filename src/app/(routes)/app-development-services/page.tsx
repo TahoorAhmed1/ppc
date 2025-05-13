@@ -174,17 +174,17 @@ export default function Page() {
               "Web Design",
             ]}
             pricingOptions={pricingOptions}
-            pricingOptionsTilte=""
+            pricingOptionsTilte="BEAT THE ODDS "
             pricingOptionsHeading=""
             pricingOptionsDescription=""
 
           />
           <HireDevelopersSection
             features={seoFeatures}
-            hireHeadingDescription={hireHeadingDescription}
             image={girlWithPhone.src}
-            hireHeading={hireHeading}
-            hireHeadingTitle={hireHeadingTitle}
+            HireDevelopersSectionTitle=""
+            HireDevelopersSectionHeading=""
+            HireDevelopersSectionDiscripton=""
           />
         </div>
         <footer>

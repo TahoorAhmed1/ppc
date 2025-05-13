@@ -14,6 +14,21 @@ import {
   portfolio1,
   portfolio2,
   portfolio3,
+  project1,
+  project10,
+  project11,
+  project12,
+  project13,
+  project14,
+  project15,
+  project16,
+  project2,
+  project3,
+  project4,
+  project5,
+  project6,
+  project7,
+  project9,
   waterMarkLogo,
 } from "@/assets";
 import HeroSection from "@/components/hero-section";
@@ -251,6 +266,23 @@ const pricingOptions = [
     features: ["Custom PHP Website", "Web Application", "Custom Web Portal"],
   },
 ];
+const portfolioData = [
+    { image: project1.src, category: "Real Estate" },
+    { image: project2.src, category: "E-commerce" },
+    { image: project3.src, category: "Real Estate" },
+    { image: project4.src, category: "Business" },
+    { image: project5.src, category: "Business" },
+    { image: project6.src, category: "Business" },
+    { image: project7.src, category: "Business" },
+    { image: project9.src, category: "E-commerce" },
+    { image: project10.src, category: "E-commerce" },
+    { image: project11.src, category: "E-commerce" },
+    { image: project12.src, category: "Business" },
+    { image: project13.src, category: "E-commerce" },
+    { image: project14.src, category: "E-commerce" },
+    { image: project15.src, category: "E-commerce" },
+    { image: project16.src, category: "Business" },
+  ];
 
 export default function Home() {
   return (
@@ -299,6 +331,7 @@ export default function Home() {
         paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
         backgroundImage={waterMarkLogo.src}
         filters={["All", "E-commerce", "Business", "Real Estate"]}
+        portfolioData={portfolioData}
       />
 
       <TestimonialsSection />

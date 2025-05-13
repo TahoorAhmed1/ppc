@@ -86,7 +86,7 @@ export default function Page() {
         "Business Page Optimization",
         "Social Media Calendar",
         "Monthly Progress Report",
-        "Paid Boosting (Additional Charges Apply)",
+        "Paid Boosting (Additional Charges according to the budget)",
       ],
     },
     {
@@ -107,7 +107,7 @@ export default function Page() {
         "Comment Moderation",
         "Reputation Management",
         "Monthly Progress Report",
-        "Paid Boosting (Additional Charges Apply)",
+        "Paid Boosting (Additional Charges according to the budget)",
       ],
     },
     {
@@ -131,7 +131,7 @@ export default function Page() {
         "Comment Moderation",
         "Spam Monitoring",
         "Reputation Management",
-        "Paid Boosting (Additional Charges Apply)",
+        "Paid Boosting (Additional Charges according to the budget)",
       ],
     },
     {
@@ -161,7 +161,7 @@ export default function Page() {
         "Reputation Management",
         "Daily Monitoring of Boosted Posts",
         "Monthly Progress Report",
-        "Paid Boosting (Additional Charges Apply)",
+        "Paid Boosting (Additional Charges according to the budget)",
       ],
     },
   ];
@@ -215,10 +215,7 @@ export default function Page() {
           />
           <HireDevelopersSection
             features={seoFeatures}
-            hireHeadingDescription={hireHeadingDescription}
             image={logoServiceImage.src}
-            hireHeading={hireHeading}
-            hireHeadingTitle={hireHeadingTitle}
             HireDevelopersSectionTitle="What Makes Us "
             HireDevelopersSectionHeading="The Best Social Media Management Team "
             HireDevelopersSectionDiscripton="Building a real presence on social media takes more than just posting. That’s where we come in. Our strategy-driven services boost engagement, grow your audience, and turn followers into loyal customers. "

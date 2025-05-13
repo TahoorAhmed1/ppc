@@ -11,9 +11,7 @@ interface FeatureItemType {
 interface HireDevelopersSectionProps {
   features: FeatureItemType[];
   image?: string;
-  hireHeadingTitle?: string;
-  hireHeading?: string;
-  hireHeadingDescription?: string;
+
   HireDevelopersSectionTitle?: string;
   HireDevelopersSectionHeading?: string;
   HireDevelopersSectionDiscripton?: string;
@@ -22,9 +20,6 @@ interface HireDevelopersSectionProps {
 export default function HireDevelopersSection({
   features,
   image,
-  hireHeadingTitle,
-  hireHeading,
-  hireHeadingDescription,
   HireDevelopersSectionTitle,
   HireDevelopersSectionHeading,
   HireDevelopersSectionDiscripton,
@@ -45,15 +40,7 @@ export default function HireDevelopersSection({
                 {HireDevelopersSectionDiscripton}
               </p>
             </div>
-            <div className="mb-8">
-              <span className="text-green-400 uppercase text-sm font-medium tracking-wider">
-                {hireHeadingTitle}
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">
-                {hireHeading}
-              </h2>
-              <p className="text-gray-600 mt-4">{hireHeadingDescription}</p>
-            </div>
+           
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               {features.length > 0 ? (
