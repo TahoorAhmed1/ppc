@@ -174,6 +174,10 @@ export default function Page() {
               "Web Design",
             ]}
             pricingOptions={pricingOptions}
+            pricingOptionsTilte=""
+            pricingOptionsHeading=""
+            pricingOptionsDescription=""
+
           />
           <HireDevelopersSection
             features={seoFeatures}

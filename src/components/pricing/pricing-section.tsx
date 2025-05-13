@@ -12,6 +12,9 @@ import Link from "next/link";
 interface PricingSectionProps {
   filter: string[];
   filterLink?: string;
+  pricingOptionsDescription?: string;
+  pricingOptionsHeading?: string;
+  pricingOptionsTilte?: string;
   pricingOptions: {
     id: number;
     packageHeading: string;
@@ -26,7 +29,10 @@ interface PricingSectionProps {
 export default function PricingSection({
   filter,
   filterLink,
+  pricingOptionsHeading,
+  pricingOptionsDescription,
   pricingOptions,
+  pricingOptionsTilte,
 }: PricingSectionProps) {
   const [scope, animate] = useAnimate();
   const [activeFilter, setActiveFilter] = useState("All");
@@ -100,19 +106,17 @@ export default function PricingSection({
   }, [animate]);
 
   return (
-    <main className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8" ref={scope}>
+    <main className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 space-y-4" ref={scope}>
       <div className="text-center mb-12">
         <motion.h2 className="text-2xl font-bold text-[#1a3a5a] uppercase  mb-4">
-          BEAT THE ODDS
+          {pricingOptionsTilte}
         </motion.h2>
         <AnimatedText
-          text="All That Glitters Is Not Gold"
-          className="heading-main text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-[#4ecca3] to-[#3db8c5] text-transparent bg-clip-text"
+          text={pricingOptionsHeading || ""}
+          className="heading-main text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r p-5 from-[#4ecca3] to-[#3db8c5] text-transparent bg-clip-text "
         />
         <motion.p className="heading-subtitle max-w-3xl mx-auto text-base sm:text-lg text-gray-800">
-          Remember that true treasures lie beyond the gilded veil in a world
-          where shimmering illusions dance before your eyes. For all the true
-          glitters, choose Digitzlabs.
+          {pricingOptionsDescription}
         </motion.p>
       </div>
 

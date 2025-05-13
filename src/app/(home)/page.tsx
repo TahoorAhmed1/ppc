@@ -289,8 +289,10 @@ export default function Home() {
           "Web Design",
         ]}
         pricingOptions={pricingOptions}
+        pricingOptionsTilte="RIDE THE WAVE "
+        pricingOptionsHeading="Success Isn’t Just a Trend "
+        pricingOptionsDescription="In a market flooded with e-commerce platforms, the secret to lasting success lies in strategy and innovation. Build for growth, not just for the sale. "
       />
-
       <PortfolioSection
         heading="OUR PORTFOLIO"
         title="HERE IS"

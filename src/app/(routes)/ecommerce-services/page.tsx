@@ -1,4 +1,4 @@
-import { girlWithPhone, heroSectionImage3, profileImage4 } from "@/assets";
+import { ecomerceServiceImage, girlWithPhone, heroSectionImage3, logoServiceImage, profileImage4 } from "@/assets";
 import Footer from "@/components/footer";
 import PortfolioSection from "@/components/portfolio-section";
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
@@ -13,45 +13,45 @@ export type FeatureItemType = {
   description: string;
 };
 export default function Page() {
-  const appDevelopmentServices = [
+  const ecommerceServices = [
     {
       number: "01",
-      title: "iOS Apps",
+      title: "Tailored E-Commerce Solutions",
       description:
-        "Careful analysis, eye-catchy designs to maintaining responsiveness across all iOS devices – we offer the complete app development package.",
+        "We design custom e-commerce platforms that are built to scale, providing seamless user experiences and optimizing your sales funnel.",
     },
     {
       number: "02",
-      title: "Android Apps",
+      title: "Mobile-First Design",
       description:
-        "Almost half the population uses android devices for interactions. That’s why our android experts focus on developing safe and secure apps that reach the maximum of your target audience.",
+        "Our e-commerce websites are designed to work flawlessly across all devices, ensuring customers enjoy an optimal shopping experience, whether on mobile, tablet, or desktop.",
     },
     {
       number: "03",
-      title: "Cross-Platform Apps",
+      title: "Secure Payment Integration",
       description:
-        "Whether you’re looking to increase your outreach or make your interface more user-friendly, our developers can create apps that best suit your users’ needs.",
+        "We integrate trusted payment gateways and security features, providing a smooth, secure transaction process for your customers.",
     },
     {
       number: "04",
-      title: "Hybrid Apps",
+      title: "Conversion Rate Optimization",
       description:
-        "Invest in hybrid app development to save your valuable money and reach the maximum of your clients across multiple platforms at once.",
+        "We implement strategies that focus on turning site visitors into loyal customers by improving site navigation, design, and checkout processes.",
     },
   ];
 
-  const seoFeatures: FeatureItemType[] = [
+  const ecommerceFeatures: FeatureItemType[] = [
     {
       icon: "megaphone",
-      title: "User-friendly",
+      title: "E-Commerce Experts",
       description:
-        "Our apps are designed with the ease of your customers in mind.",
+        "Our team blends e-commerce developers, UX/UI designers, and digital marketing specialists to create fully integrated and optimized shopping experiences.",
     },
     {
       icon: "chart",
-      title: "Reliability",
+      title: "Cutting-Edge Technology",
       description:
-        "Our apps lead the way to converting your users into loyal customers.",
+        "We harness the latest technologies and platforms to deliver powerful, future-ready e-commerce solutions that grow with your business.",
     },
   ];
 
@@ -228,12 +228,9 @@ export default function Page() {
     },
   ];
 
+
+
   const pageHeading = "E-commerce Services";
-
-  //WebDevelopmentSection
-  const headingtitle = "Your Business Needs";
-  const heading = "A Powerful & Device-Friendly App";
-
   //Hire
   const hireHeadingTitle = "Agile App Development";
   const hireHeading = "Innovative Designs to Captivate Your Audience";
@@ -247,10 +244,11 @@ export default function Page() {
 
         <div className="">
           <WebDevelopmentSection
-            services={appDevelopmentServices}
-            image={girlWithPhone.src}
-            heading={heading}
-            headingtitle={headingtitle}
+            services={ecommerceServices}
+            image={ecomerceServiceImage.src}
+            headingtitle="Unleash Your E-Commerce Potential"
+            heading="Maximize Sales, Minimize Hassle "
+
           />
           {/* <PortfolioSection
             heading="Our Diverse Portfolio"
@@ -270,14 +268,22 @@ export default function Page() {
               "SMM",
               "Web Design",
             ]}
+
             pricingOptions={pricingOptions}
+            pricingOptionsTilte="RIDE THE WAVE "
+            pricingOptionsHeading="Success Isn’t Just a Trend "
+            pricingOptionsDescription="In a market flooded with e-commerce platforms, the secret to lasting success lies in strategy and innovation. Build for growth, not just for the sale. "
           />
           <HireDevelopersSection
-            features={seoFeatures}
+            features={ecommerceFeatures}
             hireHeadingDescription={hireHeadingDescription}
-            image={girlWithPhone.src}
+            image={logoServiceImage.src}
             hireHeading={hireHeading}
+
             hireHeadingTitle={hireHeadingTitle}
+            HireDevelopersSectionTitle="What Makes Us "
+            HireDevelopersSectionHeading="E-Commerce Pioneers "
+            HireDevelopersSectionDiscripton="Building a successful e-commerce business requires more than just an attractive website. We create robust, scalable e-commerce platforms that optimize for both customer experience and long-term growth. "
           />
         </div>
         <footer>

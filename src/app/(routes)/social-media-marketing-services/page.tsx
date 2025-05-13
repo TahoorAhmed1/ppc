@@ -1,4 +1,4 @@
-import { girlWithPhone, heroSectionImage3, profileImage4 } from "@/assets";
+import { girlWithPhone, heroSectionImage3, logoServiceImage, profileImage4, socilaMediaServiceImage } from "@/assets";
 import Footer from "@/components/footer";
 import PortfolioSection from "@/components/portfolio-section";
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
@@ -16,42 +16,42 @@ export default function Page() {
   const socialMediaServices = [
     {
       number: "01",
-      title: "Social Media Strategy Development",
+      title: "Custom Social Media Strategies",
       description:
-        "Understanding your business goals is the first step, followed by developing a social media strategy. We identify the target audience and the best social media platform during this process.",
+        "We create tailored, data-driven social media strategies designed to grow your brand, engage your audience, and drive conversions.",
     },
     {
       number: "02",
-      title: "Content Creation",
+      title: "Engaging Content Creation",
       description:
-        "Each social media platform has a different audience, so we write high-quality, engaging content tailored for each channel. This includes posts, videos, graphics, and captions.",
+        "Our team crafts high-quality, platform-specific content that resonates with your audience and sparks meaningful interactions.",
     },
     {
       number: "03",
-      title: "Community Management",
+      title: "Targeted Ad Campaigns",
       description:
-        "To foster strong connections with your audience, we actively manage your online community by responding to comments and addressing concerns; doing so creates a positive perception of your brand.",
+        "We design and manage targeted social media ad campaigns that increase reach, drive traffic, and boost sales.",
     },
     {
       number: "04",
-      title: "Paid Campaigns",
+      title: "Performance Tracking & Analytics",
       description:
-        "Running highly targeted advertising campaigns tailored for specific demographics is essential to amplify your reach and ensure your budget delivers maximum returns.",
+        "We provide detailed performance reports and insights, helping you measure success and refine your social media strategies.",
     },
   ];
 
   const seoFeatures: FeatureItemType[] = [
     {
       icon: "megaphone",
-      title: "Tailored Strategies",
+      title: "Social Media Experts ",
       description:
-        "We develop customized strategies after thoroughly understanding your brand, target audience, and goals.",
+        "Our team blends platform specialists, content creators, and ad managers to craft results-driven campaigns. ",
     },
     {
       icon: "chart",
-      title: "Expert Engagement",
+      title: "Premium Marketing Tools",
       description:
-        "Our experts on social media follow a hands-on approach when managing your community.",
+        "We use top-tier tools to schedule, analyze, and optimize your content for maximum visibility and impact. ",
     },
   ];
 
@@ -186,7 +186,7 @@ export default function Page() {
         <div className="">
           <WebDevelopmentSection
             services={socialMediaServices}
-            image={girlWithPhone.src}
+            image={socilaMediaServiceImage.src}
             heading={heading}
             headingtitle={headingtitle}
           />
@@ -209,13 +209,19 @@ export default function Page() {
               "Web Design",
             ]}
             pricingOptions={pricingOptions}
+            pricingOptionsTilte="BEAT THE NOISE"
+            pricingOptionsHeading="Not Every Trend Is Worth the Hype "
+            pricingOptionsDescription="In a scroll-happy world chasing likes and filters, real engagement comes from strategy, not spectacle. Cut through the clutter—make every post count. "
           />
           <HireDevelopersSection
             features={seoFeatures}
             hireHeadingDescription={hireHeadingDescription}
-            image={girlWithPhone.src}
+            image={logoServiceImage.src}
             hireHeading={hireHeading}
             hireHeadingTitle={hireHeadingTitle}
+            HireDevelopersSectionTitle="What Makes Us "
+            HireDevelopersSectionHeading="The Best Social Media Management Team "
+            HireDevelopersSectionDiscripton="Building a real presence on social media takes more than just posting. That’s where we come in. Our strategy-driven services boost engagement, grow your audience, and turn followers into loyal customers. "
           />
         </div>
         <footer>
