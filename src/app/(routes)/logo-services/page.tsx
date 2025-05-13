@@ -241,7 +241,7 @@ export default function Page() {
       <div className="min-h-screen flex flex-col">
         <ServicesHeroSection heading={pageHeading} />
 
-        <div className="">
+        <div >
           <WebDevelopmentSection
             services={logoDesignServices}
             image={logoServiceImage.src}
