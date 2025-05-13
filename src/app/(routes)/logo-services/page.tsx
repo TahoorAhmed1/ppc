@@ -1,4 +1,10 @@
-import { girlWithPhone, heroSectionImage3, profileImage4 } from "@/assets";
+import {
+  girlWithPhone,
+  heroSectionImage3,
+  logoServiceImage,
+  profileImage4,
+  seoServiceImage,
+} from "@/assets";
 import Footer from "@/components/footer";
 import PortfolioSection from "@/components/portfolio-section";
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
@@ -13,45 +19,45 @@ export type FeatureItemType = {
   description: string;
 };
 export default function Page() {
-  const appDevelopmentServices = [
+  const logoDesignServices = [
     {
       number: "01",
-      title: "iOS Apps",
+      title: "Custom Logo Design",
       description:
-        "Careful analysis, eye-catchy designs to maintaining responsiveness across all iOS devices – we offer the complete app development package.",
+        "We create unique, memorable logos tailored to reflect your brand’s identity and values, ensuring it stands out in your industry.",
     },
     {
       number: "02",
-      title: "Android Apps",
+      title: "Versatile Design",
       description:
-        "Almost half the population uses android devices for interactions. That’s why our android experts focus on developing safe and secure apps that reach the maximum of your target audience.",
+        "Our logos are designed with versatility in mind, ensuring they work seamlessly across all platforms, from digital to print.",
     },
     {
       number: "03",
-      title: "Cross-Platform Apps",
+      title: "Brand Identity Development",
       description:
-        "Whether you’re looking to increase your outreach or make your interface more user-friendly, our developers can create apps that best suit your users’ needs.",
+        "We go beyond logo design, crafting a cohesive visual identity that communicates your brand story and resonates with your target audience.",
     },
     {
       number: "04",
-      title: "Hybrid Apps",
+      title: "Design Refinement & Perfection",
       description:
-        "Invest in hybrid app development to save your valuable money and reach the maximum of your clients across multiple platforms at once.",
+        "Our team works closely with you to refine and perfect every detail, ensuring your logo is polished and impactful.",
     },
   ];
 
-  const seoFeatures: FeatureItemType[] = [
+  const logoDesignFeatures: FeatureItemType[] = [
     {
-      icon: "megaphone",
-      title: "User-friendly",
+       icon: "megaphone",
+      title: "Logo Design Experts",
       description:
-        "Our apps are designed with the ease of your customers in mind.",
+        "Our team consists of talented designers and branding experts who collaborate to bring your brand to life through powerful visual storytelling.",
     },
     {
-      icon: "chart",
-      title: "Reliability",
+       icon: "chart", 
+      title: "Cutting-Edge Design Tools",
       description:
-        "Our apps lead the way to converting your users into loyal customers.",
+        "We use the latest design software and techniques to create logos that are versatile, scalable, and timeless.",
     },
   ];
 
@@ -159,24 +165,23 @@ export default function Page() {
       ],
     },
     {
-  id: 6,
-  packageHeading: "Custom Logo Package",
-  packageDescription: "Tailored solutions for your unique branding needs",
-  duration: null,
-  currentPrice: null,
-  originalPrice: null,
-  buttonTitle: "Get a Quote",
-  features: [
-    "Illustrative Logo Design",
-    "Animated Logo Design",
-    "2D Logo Design",
-    "3D Logo Design",
-    "Personalized Consultation",
-    "Dedicated Project Manager",
-    "100% Satisfaction Guarantee"
-  ]
-}
-
+      id: 6,
+      packageHeading: "Custom Logo Package",
+      packageDescription: "Tailored solutions for your unique branding needs",
+      duration: null,
+      currentPrice: null,
+      originalPrice: null,
+      buttonTitle: "Get a Quote",
+      features: [
+        "Illustrative Logo Design",
+        "Animated Logo Design",
+        "2D Logo Design",
+        "3D Logo Design",
+        "Personalized Consultation",
+        "Dedicated Project Manager",
+        "100% Satisfaction Guarantee",
+      ],
+    },
   ];
 
   const pageHeading = "Logo Services";
@@ -186,8 +191,8 @@ export default function Page() {
   const heading = "A Powerful & Device-Friendly App";
 
   //Hire
-  const hireHeadingTitle = "Agile App Development";
-  const hireHeading = "Innovative Designs to Captivate Your Audience";
+  const hireHeadingTitle = "Professional Logo Design services  ";
+  const hireHeading = "Your Brand, Our Design ";
   const hireHeadingDescription =
     "No matter the size of your brand, your customers will love when you launch an app that’s not only user-friendly but offers the desired reliability. So, you can count on us to understand your business needs after which we’ll come up with efficient solutions to design an app that garners instant results.";
 
@@ -198,10 +203,10 @@ export default function Page() {
 
         <div className="">
           <WebDevelopmentSection
-            services={appDevelopmentServices}
-            image={girlWithPhone.src}
-            heading={heading}
-            headingtitle={headingtitle}
+            services={logoDesignServices}
+            image={logoServiceImage.src}
+            heading="Your Brand, Our Design "
+            headingtitle="Professional Logo Design services  "
           />
           {/* <PortfolioSection
             heading="Our Diverse Portfolio"
@@ -222,11 +227,14 @@ export default function Page() {
               "Web Design",
             ]}
             pricingOptions={pricingOptions}
+            pricingOptionsTilte="BEAT THE ODDS "
+            pricingOptionsHeading="Not Just a Pretty Picture "
+            pricingOptionsDescription="A logo is more than just a visual—it's the face of your brand. In a world full of flashy designs, we create logos that tell your story and make a lasting impression. "
           />
           <HireDevelopersSection
-            features={seoFeatures}
+            features={logoDesignFeatures}
             hireHeadingDescription={hireHeadingDescription}
-            image={girlWithPhone.src}
+            image={seoServiceImage.src}
             hireHeading={hireHeading}
             hireHeadingTitle={hireHeadingTitle}
           />

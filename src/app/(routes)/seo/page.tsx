@@ -1,4 +1,10 @@
-import { girlWithPhone, heroSectionImage3, profileImage4 } from "@/assets";
+import {
+  girlWithPhone,
+  heroSectionImage3,
+  logoServiceImage,
+  profileImage4,
+  seoServiceImage,
+} from "@/assets";
 import Footer from "@/components/footer";
 import PortfolioSection from "@/components/portfolio-section";
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
@@ -16,27 +22,27 @@ export default function Page() {
   const seoServices = [
     {
       number: "01",
-      title: "Keyword Research",
+      title: "Custom SEO Strategies",
       description:
-        "Laying a strong foundation for a sound SEO strategy begins with identifying the right keywords. We analyze search intent and strategically integrate high-impact terms into your content.",
+        "We develop tailored SEO strategies designed to improve your search rankings, drive organic traffic, and increase conversions.",
     },
     {
       number: "02",
-      title: "Content Creation",
+      title: "On-Page Optimization",
       description:
-        "Content is king, especially in SEO. Our highly qualified writers craft engaging, informative, and well-structured content that appeals to both humans and search engines.",
+        "Our team optimizes your website’s content, structure, and metadata to ensure it ranks higher and provides a seamless user experience.",
     },
     {
       number: "03",
-      title: "Technical SEO",
+      title: "Link Building & Outreach",
       description:
-        "From fast loading speeds to user-friendly navigation, we ensure your website is optimized for both bots and humans. We also address other technical aspects to enhance your site’s performance.",
+        "We use proven techniques to build high-quality backlinks that enhance your site's authority and search visibility.",
     },
     {
       number: "04",
-      title: "Backlink Building",
+      title: "Performance Monitoring & Reporting",
       description:
-        "Earning links from relevant and credible websites signals trustworthiness to search engines. Backlink building is a key part of our strategy to boost your brand’s authority.",
+        "We track and analyze key performance metrics to continually refine your SEO strategy and ensure long-term success.",
     },
   ];
 
@@ -45,13 +51,13 @@ export default function Page() {
       icon: "megaphone",
       title: "SEO Specialists",
       description:
-        "Though we’re SEO specialists, our team consists of experienced writers, developers, and link builders.",
+        "We’re more than SEO experts—our team blends skilled writers, developers, and outreach professionals. ",
     },
     {
       icon: "chart",
       title: "Advanced SEO Tools",
       description:
-        "We have access to premium SEO tools that make optimizing your website and improving its performance a breeze.",
+        "With cutting-edge SEO platforms, we fine-tune your site to rank higher and perform at its best. ",
     },
   ];
   const pageHeading = "SEO Services";
@@ -142,9 +148,9 @@ export default function Page() {
         <div>
           <WebDevelopmentSection
             services={seoServices}
-            image={girlWithPhone.src}
-            heading="Dominate the Search Engines"
+            image={seoServiceImage.src}
             headingtitle="Professional SEO Services"
+            heading="Dominate the Search Engines"
           />
           {/* <PortfolioSection
             heading="Our Diverse Portfolio"
@@ -164,14 +170,17 @@ export default function Page() {
               "SMM",
               "Web Design",
             ]}
+            pricingOptionsTilte="BEAT THE ALGORITHM "
+            pricingOptionsHeading="Not All Rankings Are Created Equal "
+            pricingOptionsDescription="In a sea of shortcuts and black-hat tricks, lasting visibility comes from strategy, not gimmicks. Rise with relevance—win where it matters. "
             pricingOptions={pricingOptions}
           />
           <HireDevelopersSection
             features={seoFeatures}
+            image={logoServiceImage.src}
+            HireDevelopersSectionTitle="What Makes Us "
+            HireDevelopersSectionHeading="The Best SEO Company "
             hireHeadingDescription="Improving your company’s SEO without being penalized can be tricky. Fortunately, we’re here to guide you throughout the process. Our performance-based SEO services are designed to improve your keyword rankings, enhance organic traffic, and grow revenue."
-            image={girlWithPhone.src}
-            hireHeading="The Best SEO Company"
-            hireHeadingTitle="What Makes Us"
           />
         </div>
         <footer>

@@ -106,14 +106,14 @@ export default function PricingSection({
   }, [animate]);
 
   return (
-    <main className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8" ref={scope}>
+    <main className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 space-y-4" ref={scope}>
       <div className="text-center mb-12">
         <motion.h2 className="text-2xl font-bold text-[#1a3a5a] uppercase  mb-4">
           {pricingOptionsTilte}
         </motion.h2>
         <AnimatedText
           text={pricingOptionsHeading || ""}
-          className="heading-main text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-[#4ecca3] to-[#3db8c5] text-transparent bg-clip-text"
+          className="heading-main text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r p-5 from-[#4ecca3] to-[#3db8c5] text-transparent bg-clip-text "
         />
         <motion.p className="heading-subtitle max-w-3xl mx-auto text-base sm:text-lg text-gray-800">
           {pricingOptionsDescription}
