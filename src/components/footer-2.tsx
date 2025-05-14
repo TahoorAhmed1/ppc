@@ -20,7 +20,7 @@ const serviceItems = [
 
   {
     label: "E-commerce Services",
-    href: "/ecommerce-services",
+    href: "/e-commerce-services",
   },
   { name: "SEO", link: "/seo" },
   {

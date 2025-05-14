@@ -100,9 +100,7 @@ export default function Page() {
             HireDevelopersSectionDiscripton={HireDevelopersSectionDiscripton}
           />
         </div>
-        <footer>
-          <Footer />
-        </footer>
+        
       </div>
     </>
   );

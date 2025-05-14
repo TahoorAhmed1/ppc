@@ -261,7 +261,7 @@ export default function Page() {
           </p>
         </section>
       </div>
-      <Footer />
+      
     </div>
   );
 }

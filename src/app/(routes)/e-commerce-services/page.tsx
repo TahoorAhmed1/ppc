@@ -275,9 +275,7 @@ export default function Page() {
             HireDevelopersSectionDiscripton="Building a successful e-commerce business requires more than just an attractive website. We create robust, scalable e-commerce platforms that optimize for both customer experience and long-term growth. "
           />
         </div>
-        <footer>
-          <Footer />
-        </footer>
+       
       </div>
     </>
   );

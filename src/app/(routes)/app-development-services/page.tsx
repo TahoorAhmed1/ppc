@@ -176,9 +176,7 @@ export default function Page() {
             HireDevelopersSectionDiscripton=""
           />
         </div>
-        <footer>
-          <Footer />
-        </footer>
+        
       </div>
     </>
   );

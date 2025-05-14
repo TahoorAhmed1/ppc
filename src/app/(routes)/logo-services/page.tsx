@@ -268,9 +268,6 @@ export default function Page() {
             HireDevelopersSectionDiscripton="Crafting a memorable logo takes more than just creativity. We design logos that are not only visually striking but also strategically aligned with your brand’s mission, values, and vision. "
           />
         </div>
-        <footer>
-          <Footer />
-        </footer>
       </div>
     </>
   );

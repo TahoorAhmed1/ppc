@@ -364,9 +364,7 @@ export default function Page() {
             as provided on our Privacy Policy page.
           </p>
         </section>
-        <div>
-          <Footer />
-        </div>
+        
       </div>
     </div>
   );
