@@ -62,9 +62,9 @@ export default function Page() {
   const heading = "With a Personal Branding Agency";
 
   //Hire
-  const hireHeadingTitle = "Professional Branding Services";
-  const hireHeading = "That Foster Long-Term Loyalty";
-  const hireHeadingDescription =
+  const HireDevelopersSectionTitle = "Professional Branding Services";
+  const HireDevelopersSectionHeading = "That Foster Long-Term Loyalty";
+  const HireDevelopersSectionDiscripton =
     "At Marketairre, we believe in delivering more—more connections, more impact, and more results. With proven expertise as a trusted branding agency, we craft innovative strategies that elevate your brand to new heights. Unlock your company’s full potential with us.";
 
   return (
@@ -104,10 +104,10 @@ export default function Page() {
           />
           <HireDevelopersSection
             features={seoFeatures}
-            hireHeadingDescription={hireHeadingDescription}
             image={girlWithPhone.src}
-            hireHeading={hireHeading}
-            hireHeadingTitle={hireHeadingTitle}
+            HireDevelopersSectionHeading={HireDevelopersSectionHeading}
+            HireDevelopersSectionTitle={HireDevelopersSectionTitle}
+            HireDevelopersSectionDiscripton={HireDevelopersSectionDiscripton}
           />
         </div>
         <footer>
