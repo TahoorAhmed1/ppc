@@ -16,7 +16,6 @@ interface PricingCardProps {
   index: number;
   buttonTitle?: string;
 }
-
 export function PricingCard({
   packageHeading,
   packageDescription,
@@ -72,6 +71,11 @@ export function PricingCard({
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3 + index * 0.1, type: "spring" }}
           >
+            {originalPrice && (
+              <span className="text-base sm:text-lg text-gray-500 line-through">
+                ${originalPrice?.toFixed(2)}
+              </span>
+            )}
             {currentPrice && (
               <motion.span
                 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#3db8c5]"
@@ -80,11 +84,6 @@ export function PricingCard({
               >
                 ${currentPrice?.toFixed(2)}
               </motion.span>
-            )}
-            {originalPrice && (
-              <span className="text-base sm:text-lg text-gray-500 line-through">
-                ${originalPrice?.toFixed(2)}
-              </span>
             )}
           </motion.div>
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>

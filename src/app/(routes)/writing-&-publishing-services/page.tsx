@@ -285,16 +285,6 @@ export default function Page() {
             btnIcon=""
           />
           <PricingSection
-            filter={[
-              "Animation",
-              "Branding",
-              "Digital Marketing",
-              "E-commerce",
-              "Logo Design",
-              "SEO",
-              "SMM",
-              "Web Design",
-            ]}
             pricingOptions={pricingOptions}
             pricingOptionsTilte=""
             pricingOptionsHeading=""

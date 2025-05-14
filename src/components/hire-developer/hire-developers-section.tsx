@@ -1,3 +1,6 @@
+"use client";
+import { useFormContact } from "@/store/form";
+import { Button } from "../ui/button";
 import FeatureItem from "./feature-item";
 import HeroImage from "./hero-image";
 
@@ -24,6 +27,7 @@ export default function HireDevelopersSection({
   HireDevelopersSectionHeading,
   HireDevelopersSectionDiscripton,
 }: HireDevelopersSectionProps) {
+  const { setIsOpen, isOpen }: any = useFormContact();
   return (
     <section className="w-full py-16 px-4 md:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -40,7 +44,6 @@ export default function HireDevelopersSection({
                 {HireDevelopersSectionDiscripton}
               </p>
             </div>
-           
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               {features.length > 0 ? (
@@ -59,9 +62,12 @@ export default function HireDevelopersSection({
               )}
             </div>
 
-            <button className="inline-block bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold transition-all duration-300">
+            <Button
+              onClick={() => setIsOpen(true)}
+              className="inline-block bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg text-sm sm:text-base font-semibold transition-all duration-300"
+            >
               Book an appointment
-            </button>
+            </Button>
           </div>
 
           <HeroImage image={image} />
