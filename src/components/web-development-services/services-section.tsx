@@ -1,5 +1,8 @@
+"use client";
 import Link from "next/link";
 import ServiceItem from "./service-item";
+import { Button } from "../ui/button";
+import { useFormContact } from "@/store/form";
 
 // Define the service item type
 interface ServiceItemType {
@@ -14,11 +17,18 @@ interface ServicesSectionProps {
   heading: string;
 }
 
+
+
 export default function ServicesSection({
   services,
   headingtitle,
   heading,
 }: ServicesSectionProps) {
+
+
+  const { setIsOpen, isOpen }: any = useFormContact();
+
+
   return (
     <section className="py-12 max-w-7xl mx-auto">
       <div className="mb-10">
@@ -48,13 +58,14 @@ export default function ServicesSection({
       </div>
 
       <div className="mt-12">
-        <Link
-          href="#contact"
-          className="inline-block bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold transition-all duration-300"
+        <Button
+          onClick={() => setIsOpen(true)}
+          className="inline-block bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg text-sm sm:text-base font-semibold transition-all duration-300"
         >
           LET&apos;S CONNECT
-        </Link>
+        </Button>
       </div>
+
     </section>
   );
 }

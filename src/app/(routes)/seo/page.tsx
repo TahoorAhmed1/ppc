@@ -162,16 +162,6 @@ export default function Page() {
             btnIcon=""
           /> */}
           <PricingSection
-            filter={[
-              "Animation",
-              "Branding",
-              "Digital Marketing",
-              "E-commerce",
-              "Logo Design",
-              "SEO",
-              "SMM",
-              "Web Design",
-            ]}
             pricingOptionsTilte="BEAT THE ALGORITHM "
             pricingOptionsHeading="Not All Rankings Are Created Equal "
             pricingOptionsDescription="In a sea of shortcuts and black-hat tricks, lasting visibility comes from strategy, not gimmicks. Rise with relevance—win where it matters. "

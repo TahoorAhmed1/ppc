@@ -310,16 +310,6 @@ export default function Page() {
             portfolioData={portfolioData}
           />
           <PricingSection
-            filter={[
-              "Animation",
-              "Branding",
-              "Digital Marketing",
-              "E-commerce",
-              "Logo Design",
-              "SEO",
-              "SMM",
-              "Web Design",
-            ]}
             pricingOptionsTilte="BEAT THE ODDS "
             pricingOptionsHeading="Shiny Doesn’t Mean Smart "
             pricingOptionsDescription="In a web full of pretty pixels and empty promises, real power lies in what’s under the hood. Go beyond the glitter—build for impact. "

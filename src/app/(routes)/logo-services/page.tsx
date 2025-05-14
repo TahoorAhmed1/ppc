@@ -241,7 +241,7 @@ export default function Page() {
       <div className="min-h-screen flex flex-col">
         <ServicesHeroSection heading={pageHeading} />
 
-        <div >
+        <div>
           <WebDevelopmentSection
             services={logoDesignServices}
             image={logoServiceImage.src}
@@ -255,16 +255,6 @@ export default function Page() {
             animate={false}
           />
           <PricingSection
-            filter={[
-              "Animation",
-              "Branding",
-              "Digital Marketing",
-              "E-commerce",
-              "Logo Design",
-              "SEO",
-              "SMM",
-              "Web Design",
-            ]}
             pricingOptions={pricingOptions}
             pricingOptionsTilte="BEAT THE ODDS "
             pricingOptionsHeading="Not Just a Pretty Picture "
