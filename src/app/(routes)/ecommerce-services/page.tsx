@@ -1,4 +1,10 @@
-import { ecomerceServiceImage, girlWithPhone, heroSectionImage3, logoServiceImage, profileImage4 } from "@/assets";
+import {
+  ecomerceServiceImage,
+  girlWithPhone,
+  heroSectionImage3,
+  logoServiceImage,
+  profileImage4,
+} from "@/assets";
 import Footer from "@/components/footer";
 import PortfolioSection from "@/components/portfolio-section";
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
@@ -228,13 +234,12 @@ export default function Page() {
     },
   ];
 
-
-
   const pageHeading = "E-commerce Services";
   //Hire
-  const hireHeadingTitle = "Agile App Development";
-  const hireHeading = "Innovative Designs to Captivate Your Audience";
-  const hireHeadingDescription =
+  const HireDevelopersSectionTitle = "Agile App Development";
+  const HireDevelopersSectionHeading =
+    "Innovative Designs to Captivate Your Audience";
+  const HireDevelopersSectionDiscripton =
     "No matter the size of your brand, your customers will love when you launch an app that’s not only user-friendly but offers the desired reliability. So, you can count on us to understand your business needs after which we’ll come up with efficient solutions to design an app that garners instant results.";
 
   return (
@@ -248,7 +253,6 @@ export default function Page() {
             image={ecomerceServiceImage.src}
             headingtitle="Unleash Your E-Commerce Potential"
             heading="Maximize Sales, Minimize Hassle "
-
           />
           {/* <PortfolioSection
             heading="Our Diverse Portfolio"
@@ -268,7 +272,6 @@ export default function Page() {
               "SMM",
               "Web Design",
             ]}
-
             pricingOptions={pricingOptions}
             pricingOptionsTilte="RIDE THE WAVE "
             pricingOptionsHeading="Success Isn’t Just a Trend "
@@ -276,11 +279,7 @@ export default function Page() {
           />
           <HireDevelopersSection
             features={ecommerceFeatures}
-            hireHeadingDescription={hireHeadingDescription}
             image={logoServiceImage.src}
-            hireHeading={hireHeading}
-
-            hireHeadingTitle={hireHeadingTitle}
             HireDevelopersSectionTitle="What Makes Us "
             HireDevelopersSectionHeading="E-Commerce Pioneers "
             HireDevelopersSectionDiscripton="Building a successful e-commerce business requires more than just an attractive website. We create robust, scalable e-commerce platforms that optimize for both customer experience and long-term growth. "

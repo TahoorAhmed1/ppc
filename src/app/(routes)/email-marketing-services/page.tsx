@@ -62,9 +62,9 @@ export default function Page() {
   const heading = "With the Best Email Marketing Services";
 
   //Hire
-  const hireHeadingTitle = "Professional Email Marketing Services";
-  const hireHeading = "That Deliver Fast Results";
-  const hireHeadingDescription =
+  const HireDevelopersSectionTitle = "Professional Email Marketing Services";
+  const HireDevelopersSectionHeading = "That Deliver Fast Results";
+  const HireDevelopersSectionDiscripton =
     "Time is of the essence, and we waste none. Our experts deploy targeted email advertising campaigns that engage your audience on the spot. Prioritizing speed without compromising quality, we make sure your messages reach the right people at the right time.";
 
   return (
@@ -97,17 +97,17 @@ export default function Page() {
               "SMM",
               "Web Design",
             ]}
-             pricingOptionsTilte=""
+            pricingOptionsTilte=""
             pricingOptionsHeading=""
             pricingOptionsDescription=""
             pricingOptions={[]}
           />
           <HireDevelopersSection
             features={seoFeatures}
-            hireHeadingDescription={hireHeadingDescription}
+            HireDevelopersSectionDiscripton={HireDevelopersSectionDiscripton}
             image={girlWithPhone.src}
-            hireHeading={hireHeading}
-            hireHeadingTitle={hireHeadingTitle}
+            HireDevelopersSectionHeading={HireDevelopersSectionHeading}
+            HireDevelopersSectionTitle={HireDevelopersSectionTitle}
           />
         </div>
         <footer>

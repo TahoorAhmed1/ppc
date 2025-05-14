@@ -241,9 +241,10 @@ export default function Page() {
   const heading = "We Help You Bring Your Book to Life";
 
   //Hire
-  const hireHeadingTitle = "Why Choose Our";
-  const hireHeading = "Innovative Designs to Captivate Your Audience";
-  const hireHeadingDescription =
+  const HireDevelopersSectionTitle = "Why Choose Our";
+  const HireDevelopersSectionHeading =
+    "Innovative Designs to Captivate Your Audience";
+  const HireDevelopersSectionDiscripton =
     "Finding a PPC advertising agency is easy. However, finding a pay-per-click advertising company that’s as invested in your success as you are will prove challenging. Marketairre checks that box and many more, including:";
 
   return (
@@ -294,18 +295,17 @@ export default function Page() {
               "SMM",
               "Web Design",
             ]}
-            
             pricingOptions={pricingOptions}
-             pricingOptionsTilte=""
+            pricingOptionsTilte=""
             pricingOptionsHeading=""
             pricingOptionsDescription=""
           />
           <HireDevelopersSection
             features={seoFeatures}
-            hireHeadingDescription={hireHeadingDescription}
+            HireDevelopersSectionDiscripton={HireDevelopersSectionDiscripton}
             image={girlWithPhone.src}
-            hireHeading={hireHeading}
-            hireHeadingTitle={hireHeadingTitle}
+            HireDevelopersSectionHeading={HireDevelopersSectionHeading}
+            HireDevelopersSectionTitle={HireDevelopersSectionTitle}
           />
         </div>
         <footer>

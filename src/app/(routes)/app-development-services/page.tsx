@@ -137,9 +137,10 @@ export default function Page() {
   const heading = "A Powerful & Device-Friendly App";
 
   //Hire
-  const hireHeadingTitle = "Agile App Development";
-  const hireHeading = "Innovative Designs to Captivate Your Audience";
-  const hireHeadingDescription =
+  const HireDevelopersSectionTitle = "Agile App Development";
+  const HireDevelopersSectionHeading =
+    "Innovative Designs to Captivate Your Audience";
+  const HireDevelopersSectionDiscripton =
     "No matter the size of your brand, your customers will love when you launch an app that’s not only user-friendly but offers the desired reliability. So, you can count on us to understand your business needs after which we’ll come up with efficient solutions to design an app that garners instant results.";
 
   return (
@@ -162,7 +163,6 @@ export default function Page() {
             btnIcon=""
           /> */}
           <PricingSection
-            
             filter={[
               "Animation",
               "Branding",
@@ -177,7 +177,6 @@ export default function Page() {
             pricingOptionsTilte="BEAT THE ODDS "
             pricingOptionsHeading=""
             pricingOptionsDescription=""
-
           />
           <HireDevelopersSection
             features={seoFeatures}

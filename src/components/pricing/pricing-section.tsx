@@ -5,6 +5,7 @@ import { PricingCard } from "./pricing-card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+<<<<<<< HEAD
 
 interface PackageData {
   ecommercePackages: any[]
@@ -17,6 +18,19 @@ interface PackageData {
 
 interface PricingSectionProps {
   packageData?: PackageData
+=======
+interface PackageData {
+  ecommercePackages: any[];
+  logoPackages: any[];
+  mobileAppPackages: any[];
+  seoPackages: any[];
+  socialMediaPackages: any[];
+  websitePackages: any;
+}
+
+interface PricingSectionProps {
+  packageData?: PackageData;
+>>>>>>> d174ce62f9845a073badc2698ed5ba865d263c10
   filter: string[];
   filterLink?: string;
   pricingOptionsDescription?: string;
@@ -178,34 +192,6 @@ export default function PricingSection({
       </div>
 
       <motion.div
-        className="flex flex-wrap justify-center gap-3 mb-10"
-        variants={containerVariants}
-      >
-        {filter.map((filter, index) => (
-          <motion.div
-            key={filter}
-            custom={index}
-            variants={filterVariants}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Button
-              variant="outline"
-              className={cn(
-                "rounded-lg px-4 py-2 text-sm font-medium border-gray-200 flex data-center gap-2",
-                activeFilter === filter
-                  ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#6d8a9e] text-white border-none"
-                  : "bg-white text-gray-700 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-white"
-              )}
-              onClick={() => setActiveFilter(filter)}
-            >
-              {filter}
-            </Button>
-          </motion.div>
-        ))}
-      </motion.div>
-
-      <motion.div 
         className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 lg:gap-6 justify-items-center max-w-250 mx-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

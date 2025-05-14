@@ -1,4 +1,10 @@
-import { girlWithPhone, heroSectionImage3, logoServiceImage, profileImage4, socilaMediaServiceImage } from "@/assets";
+import {
+  girlWithPhone,
+  heroSectionImage3,
+  logoServiceImage,
+  profileImage4,
+  socilaMediaServiceImage,
+} from "@/assets";
 import Footer from "@/components/footer";
 import PortfolioSection from "@/components/portfolio-section";
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
@@ -173,9 +179,9 @@ export default function Page() {
   const heading = "That Amplify YourBrand’s Impact";
 
   //Hire
-  const hireHeadingTitle = "Why Choose Our";
-  const hireHeading = "Social Media Management Services";
-  const hireHeadingDescription =
+  const HireDevelopersSectionTitle = "Why Choose Our";
+  const HireDevelopersSectionHeading = "Social Media Management Services";
+  const HireDevelopersSectionDiscripton =
     "Working with Marketairre is a breeze, which makes hiring our SMM services worth it. But our friendly rapport is not the only reason you should consider hiring us; we take our work very seriously and only stop until we’ve produced the desired results.";
 
   return (
