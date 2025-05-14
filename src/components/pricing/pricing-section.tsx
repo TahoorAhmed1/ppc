@@ -1,27 +1,41 @@
-"use client"
-import { useEffect, useState } from "react"
-import { motion, useAnimate, stagger } from "framer-motion"
-import { PricingCard } from "./pricing-card"
-import { Button } from "@/components/ui/button"
+"use client";
+import { useEffect, useState } from "react";
+import { motion, useAnimate, stagger } from "framer-motion";
+import { PricingCard } from "./pricing-card";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+
+interface PackageData {
+  ecommercePackages: any[]
+  logoPackages: any[]
+  mobileAppPackages: any[]
+  seoPackages: any[]
+  socialMediaPackages: any[]
+  websitePackages: any
+}
 
 interface PricingSectionProps {
-  filter: string[]
-  filterLink?: string
-  pricingOptionsDescription?: string
-  pricingOptionsHeading?: string
-  pricingOptionsTilte?: string
+  packageData?: PackageData
+  filter: string[];
+  filterLink?: string;
+  pricingOptionsDescription?: string;
+  pricingOptionsHeading?: string;
+  pricingOptionsTilte?: string;
   pricingOptions: {
-    id: number
-    packageHeading: string
-    packageDescription: string
-    buttonTitle?: string
-    duration: number | null
-    currentPrice?: number | null
-    originalPrice?: number | null
-    features: string[]
-  }[]
+    id: number;
+    packageHeading: string;
+    packageDescription: string;
+    buttonTitle?: string;
+    duration: number | null;
+    currentPrice?: number | null;
+    originalPrice?: number | null;
+    features: string[];
+  }[];
+
 }
 export default function PricingSection({
+  packageData,
   filter,
   filterLink,
   pricingOptionsHeading,
@@ -29,18 +43,20 @@ export default function PricingSection({
   pricingOptions,
   pricingOptionsTilte,
 }: PricingSectionProps) {
-  const [scope, animate] = useAnimate()
-  const [activeFilter, setActiveFilter] = useState("All")
-  const [showAll, setShowAll] = useState(false)
+  const [scope, animate] = useAnimate();
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [showAll, setShowAll] = useState(false);
 
   // Number of items to show initially
-  const initialItemsToShow = 2
+  const initialItemsToShow = 2;
 
   // Calculate if we need the "See More" button
-  const needsSeeMore = pricingOptions.length > initialItemsToShow
+  const needsSeeMore = pricingOptions.length > initialItemsToShow;
 
   // Determine which items to display
-  const displayedOptions = showAll ? pricingOptions : pricingOptions.slice(0, initialItemsToShow)
+  const displayedOptions = showAll
+    ? pricingOptions
+    : pricingOptions.slice(0, initialItemsToShow);
 
   const filterVariants = {
     hidden: { scale: 0.8, opacity: 0 },
@@ -53,7 +69,7 @@ export default function PricingSection({
         ease: "easeOut",
       },
     }),
-  }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -64,7 +80,7 @@ export default function PricingSection({
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   // Animation variants for the heading
   const headingVariants = {
@@ -77,7 +93,7 @@ export default function PricingSection({
         ease: "easeOut",
       },
     },
-  }
+  };
 
   const data = [
     { category: "Real Estate" },
@@ -95,22 +111,37 @@ export default function PricingSection({
     { category: "E-commerce" },
     { category: "E-commerce" },
     { category: "Business" },
-  ]
+  ];
 
   useEffect(() => {
     // Animate elements on page load
-    const sequence: Array<[string, Record<string, any>, Record<string, any>]> = [
-      [".heading-beat", { opacity: [0, 1], y: [20, 0] }, { duration: 0.5 }],
-      [".heading-main", { opacity: [0, 1], y: [20, 0] }, { duration: 0.6 }],
-      [".heading-subtitle", { opacity: [0, 1], y: [20, 0] }, { duration: 0.7 }],
-      [".service-tags", { opacity: [0, 1] }, { duration: 0.5 }],
-      [".service-tag", { scale: [0.8, 1], opacity: [0, 1] }, { duration: 0.4, delay: stagger(0.05) }],
-      [".pricing-card", { opacity: [0, 1], y: [50, 0] }, { duration: 0.6, delay: stagger(0.1) }],
-    ]
+    const sequence: Array<[string, Record<string, any>, Record<string, any>]> =
+      [
+        [".heading-beat", { opacity: [0, 1], y: [20, 0] }, { duration: 0.5 }],
+        [".heading-main", { opacity: [0, 1], y: [20, 0] }, { duration: 0.6 }],
+        [
+          ".heading-subtitle",
+          { opacity: [0, 1], y: [20, 0] },
+          { duration: 0.7 },
+        ],
+        [".service-tags", { opacity: [0, 1] }, { duration: 0.5 }],
+        [
+          ".service-tag",
+          { scale: [0.8, 1], opacity: [0, 1] },
+          { duration: 0.4, delay: stagger(0.05) },
+        ],
+        [
+          ".pricing-card",
+          { opacity: [0, 1], y: [50, 0] },
+          { duration: 0.6, delay: stagger(0.1) },
+        ],
+      ];
 
-    animate(sequence)
-  }, [animate])
+    animate(sequence);
+  }, [animate]);
 
+
+  
   return (
     <main
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16 space-y-4 sm:space-y-6 md:space-y-8"
@@ -146,9 +177,35 @@ export default function PricingSection({
         </motion.p>
       </div>
 
-      {/* Filter buttons section - commented out in original code */}
-
       <motion.div
+        className="flex flex-wrap justify-center gap-3 mb-10"
+        variants={containerVariants}
+      >
+        {filter.map((filter, index) => (
+          <motion.div
+            key={filter}
+            custom={index}
+            variants={filterVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Button
+              variant="outline"
+              className={cn(
+                "rounded-lg px-4 py-2 text-sm font-medium border-gray-200 flex data-center gap-2",
+                activeFilter === filter
+                  ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#6d8a9e] text-white border-none"
+                  : "bg-white text-gray-700 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-white"
+              )}
+              onClick={() => setActiveFilter(filter)}
+            >
+              {filter}
+            </Button>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      <motion.div 
         className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 lg:gap-6 justify-items-center max-w-250 mx-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -195,5 +252,5 @@ export default function PricingSection({
         </motion.div>
       )}
     </main>
-  )
+  );
 }
