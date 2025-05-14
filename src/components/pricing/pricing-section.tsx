@@ -5,18 +5,17 @@ import { PricingCard } from "./pricing-card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-
 interface PackageData {
-  ecommercePackages: any[]
-  logoPackages: any[]
-  mobileAppPackages: any[]
-  seoPackages: any[]
-  socialMediaPackages: any[]
-  websitePackages: any
+  ecommercePackages: any[];
+  logoPackages: any[];
+  mobileAppPackages: any[];
+  seoPackages: any[];
+  socialMediaPackages: any[];
+  websitePackages: any;
 }
 
 interface PricingSectionProps {
-  packageData?: PackageData
+  packageData?: PackageData;
   filter: string[];
   filterLink?: string;
   pricingOptionsDescription?: string;
@@ -32,7 +31,6 @@ interface PricingSectionProps {
     originalPrice?: number | null;
     features: string[];
   }[];
-
 }
 export default function PricingSection({
   packageData,
@@ -140,8 +138,6 @@ export default function PricingSection({
     animate(sequence);
   }, [animate]);
 
-
-  
   return (
     <main
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16 space-y-4 sm:space-y-6 md:space-y-8"
@@ -178,34 +174,6 @@ export default function PricingSection({
       </div>
 
       <motion.div
-        className="flex flex-wrap justify-center gap-3 mb-10"
-        variants={containerVariants}
-      >
-        {filter.map((filter, index) => (
-          <motion.div
-            key={filter}
-            custom={index}
-            variants={filterVariants}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Button
-              variant="outline"
-              className={cn(
-                "rounded-lg px-4 py-2 text-sm font-medium border-gray-200 flex data-center gap-2",
-                activeFilter === filter
-                  ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#6d8a9e] text-white border-none"
-                  : "bg-white text-gray-700 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-white"
-              )}
-              onClick={() => setActiveFilter(filter)}
-            >
-              {filter}
-            </Button>
-          </motion.div>
-        ))}
-      </motion.div>
-
-      <motion.div 
         className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 lg:gap-6 justify-items-center max-w-250 mx-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
