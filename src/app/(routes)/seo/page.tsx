@@ -120,20 +120,22 @@ export default function Page() {
       ],
     },
     {
-      id: 1,
-      packageHeading: "SEO Classic",
+      id: 4,
+      packageHeading: "SEO Exclusive",
       packageDescription: "Cost Effective Package for your business",
       duration: 30,
-      currentPrice: 700,
-      originalPrice: 1400,
+      currentPrice: 1300,
+      originalPrice: 2600,
       buttonTitle: "Buy Now",
       features: [
-        "20 Keywords",
+        "30 Keywords",
         "Off-page Optimization",
         "On-page Optimization",
+        "Technical SEO",
+        "Website Audit",
         "Link Building",
         "Social Bookmarking",
-        "Guaranteed Ranking on Google",
+        "Website Performance Enhancement",
         "Comprehensive Analytical Report",
         "Dedicated Project Manager",
       ],
@@ -180,7 +182,7 @@ export default function Page() {
             image={logoServiceImage.src}
             HireDevelopersSectionTitle="What Makes Us "
             HireDevelopersSectionHeading="The Best SEO Company "
-            hireHeadingDescription="Improving your company’s SEO without being penalized can be tricky. Fortunately, we’re here to guide you throughout the process. Our performance-based SEO services are designed to improve your keyword rankings, enhance organic traffic, and grow revenue."
+            HireDevelopersSectionDiscripton="Navigating SEO without risking penalties can be complex. That’s why we support you every step of the way. Our results-driven SEO approach boosts keyword rankings, drives organic traffic, and increases your bottom line. "
           />
         </div>
         <footer>

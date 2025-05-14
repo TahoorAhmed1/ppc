@@ -1,9 +1,22 @@
 import {
-  girlWithPhone,
   heroSectionImage3,
   logoServiceImage,
-  profileImage4,
   websiteDevelopmentServiceImage,
+  project1,
+  project10,
+  project11,
+  project12,
+  project13,
+  project14,
+  project15,
+  project16,
+  project2,
+  project3,
+  project4,
+  project5,
+  project6,
+  project7,
+  project9,
 } from "@/assets";
 import Footer from "@/components/footer";
 import PortfolioSection from "@/components/portfolio-section";
@@ -241,6 +254,23 @@ export default function Page() {
       features: ["Custom PHP Website", "Web Application", "Custom Web Portal"],
     },
   ];
+  const portfolioData = [
+    { img: project1.src, category: "Real Estate" },
+    { img: project2.src, category: "E-commerce" },
+    { img: project3.src, category: "Real Estate" },
+    { img: project4.src, category: "Business" },
+    { img: project5.src, category: "Business" },
+    { img: project6.src, category: "Business" },
+    { img: project7.src, category: "Business" },
+    { img: project9.src, category: "E-commerce" },
+    { img: project10.src, category: "E-commerce" },
+    { img: project11.src, category: "E-commerce" },
+    { img: project12.src, category: "Business" },
+    { img: project13.src, category: "E-commerce" },
+    { img: project14.src, category: "E-commerce" },
+    { img: project15.src, category: "E-commerce" },
+    { img: project16.src, category: "Business" },
+  ];
 
   return (
     <>
@@ -272,13 +302,13 @@ export default function Page() {
             services={customServices}
             image={websiteDevelopmentServiceImage.src}
           />
-          {/* <PortfolioSection
+          <PortfolioSection
             heading="Our Diverse Portfolio"
             title=""
             paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
             filters={["All", "E-commerce", "Business", "Real Estate"]}
-            btnIcon=""
-          /> */}
+            portfolioData={portfolioData}
+          />
           <PricingSection
             filter={[
               "Animation",
@@ -290,6 +320,7 @@ export default function Page() {
               "SMM",
               "Web Design",
             ]}
+            pricingOptionsTilte="BEAT THE ODDS "
             pricingOptionsHeading="Shiny Doesn’t Mean Smart "
             pricingOptionsDescription="In a web full of pretty pixels and empty promises, real power lies in what’s under the hood. Go beyond the glitter—build for impact. "
             pricingOptions={pricingOptions}

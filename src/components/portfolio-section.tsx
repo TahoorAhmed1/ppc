@@ -6,28 +6,10 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Projects from "./project";
-import {
-  project1,
-  project2,
-  project3,
-  project4,
-  project5,
-  project6,
-  project7,
-  project8,
-  project9,
-  project10,
-  project11,
-  project12,
-  project13,
-  project14,
-  project15,
-  project16,
-} from "@/assets";
 
 type PortfolioItem = {
-  img: string;
-  category: string;
+  img?: string;
+  category?: string;
 };
 
 type PortfolioSectionProps = {
@@ -38,9 +20,13 @@ type PortfolioSectionProps = {
   data?: any[];
   backgroundImage?: string;
   btnIcon?: string;
+  portfolioData?: PortfolioItem[];
+  animate?: boolean;
 };
 
 export default function PortfolioSection({
+  animate,
+  portfolioData,
   heading = "Our Work",
   title = "Creative Portfolio",
   paragraph = "Explore our latest design projects across various disciplines.",
@@ -48,26 +34,8 @@ export default function PortfolioSection({
   backgroundImage,
   btnIcon = "",
 }: PortfolioSectionProps) {
-  const data = [
-    { img: project1, category: "Real Estate" },
-    { img: project2, category: "E-commerce" },
-    { img: project3, category: "Real Estate" },
-    { img: project4, category: "Business" },
-    { img: project5, category: "Business" },
-    { img: project6, category: "Business" },
-    { img: project7, category: "Business" },
-    { img: project9, category: "E-commerce" },
-    { img: project10, category: "E-commerce" },
-    { img: project11, category: "E-commerce" },
-    { img: project12, category: "Business" },
-    { img: project13, category: "E-commerce" },
-    { img: project14, category: "E-commerce" },
-    { img: project15, category: "E-commerce" },
-    { img: project16, category: "Business" },
-  ];
-
   const [activeFilter, setActiveFilter] = useState("All");
-  const [filteredItems, setFilteredItems] = useState(data);
+  const [filteredItems, setFilteredItems] = useState(portfolioData || []);
   const [isLoaded, setIsLoaded] = useState(false);
 
   const containerVariants = {
@@ -128,14 +96,19 @@ export default function PortfolioSection({
   useEffect(() => {
     const sortedData =
       activeFilter === "All"
-        ? [...data].sort((a, b) => a.category.localeCompare(b.category))
-        : data
-            .filter((item) => item.category === activeFilter)
-            .sort((a, b) => a.category.localeCompare(b.category));
+        ? [...(portfolioData || [])].sort(
+            (a: PortfolioItem, b: PortfolioItem) =>
+              (a.category ?? "").localeCompare(b.category ?? "")
+          )
+        : (portfolioData || [])
+            .filter((item: PortfolioItem) => item.category === activeFilter)
+            .sort((a: PortfolioItem, b: PortfolioItem) =>
+              (a.category ?? "").localeCompare(b.category ?? "")
+            );
 
     setFilteredItems(sortedData);
     setIsLoaded(true);
-  }, [activeFilter, data]);
+  }, [activeFilter, portfolioData]);
 
   return (
     <motion.section
@@ -153,7 +126,6 @@ export default function PortfolioSection({
         variants={pulse}
         className="absolute md:bottom-[10%] bottom-[5%] right-[10%] w-[10vw] h-[10vw] md:w-[9vw] md:h-[9vw] rounded-full bg-gradient-to-r from-[#1F9BED]/60 to-[#41B4A7]/50 opacity-40"
       />
-   
 
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -218,7 +190,7 @@ export default function PortfolioSection({
         </motion.div>
 
         <motion.div variants={containerVariants}>
-          <Projects items={filteredItems} />
+          <Projects items={filteredItems} animate={animate}  />
         </motion.div>
       </div>
     </motion.section>

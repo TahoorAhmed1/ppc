@@ -2,9 +2,9 @@
 import ContactFormPopup from "@/components/Contact";
 import "../globals.css";
 import Header from "@/components/header";
-import { Footer } from "react-day-picker";
 import { ToastContainer } from "react-toastify";
 import { useFormContact } from "@/store/form";
+import Footer from "@/components/footer";
 
 export default function ChildLayout({
   children,
@@ -20,7 +20,7 @@ export default function ChildLayout({
       {children}
       <ContactFormPopup isOpen={isOpen} setIsOpen={setIsOpen} />
 
-      <Footer />
+      
     </div>
   );
 }

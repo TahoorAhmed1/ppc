@@ -31,10 +31,6 @@ const serviceItems = [
     label: "E-commerce Services",
     href: "/ecommerce-services",
   },
-  // {
-  //   label: "Writing & Publishing Services",
-  //   href: "/writing-&-publishing-services",
-  // },
 ];
 
 export default function Footer() {
@@ -286,27 +282,39 @@ export default function Footer() {
         </motion.div>
 
         <motion.div
-          className="col-span-2 grid grid-cols-1  md:grid-cols-4 gap-5  "
+          className="col-span-2 grid grid-cols-1  md:grid-cols-4 gap-5 text-sm  "
           variants={containerVariants}
         >
           <AnimatedFooterColumn
-            title="Our Link"
-            links={["About Us", "Portfolio", "Contact Us", "Home"]}
-            hasServicesDropdown={true}
-            servicesOpen={servicesOpen}
-            setServicesOpen={setServicesOpen}
+            title="Company"
+            links={[
+              "Home",
+              "About Us",
+              "Contact Us",
+              "Privacy Policy",
+              "Terms & Conditions",
+            ]}
           />
 
           <div className="space-y-4 text-gray-700">
             <h3 className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text ">
-              Privacy Policy
+              Services
             </h3>
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-4 text-sm">
               <a target="_blank" href={"/privacy"} rel="noreferrer">
-                Privacy
+                logo Design
+              </a>
+              <a target="_blank" href={"/privacy"} rel="noreferrer">
+                Website Design & Development
               </a>
               <a target="_blank" href={"/terms-&-condition"} rel="noreferrer">
-                Terms & Condition
+                E-Commerce Websites
+              </a>
+              <a target="_blank" href={"/privacy"} rel="noreferrer">
+                Social Media Marketing
+              </a>
+              <a target="_blank" href={"/terms-&-condition"} rel="noreferrer">
+                Search Engine Optimization
               </a>
             </div>
           </div>
@@ -315,22 +323,22 @@ export default function Footer() {
               Contact us
             </h3>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 text-sm">
               <a
                 href="mailto:support@creativeagency360.com"
                 className="flex items-center gap-2"
               >
-                <Mail className="w-5 h-5 text-[#65CF5F]" />
+                <Mail className="w-5 h-5 text-[#65CF5F] text-sm" />
                 <span>support@creativeagency360.com</span>
               </a>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 text-sm">
               <Phone className="w-5 h-5 text-[#65CF5F]" />
               <a href="tel:+18045745376">+1 (804) 574 5376</a>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 text-sm">
               <MapPin className="w-8 h-8 text-[#65CF5F]" />
               <p className="text-sm">2206 ATWOOD DR ANDERSON, INDIANA 46016</p>
             </div>

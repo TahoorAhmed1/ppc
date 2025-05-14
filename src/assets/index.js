@@ -107,12 +107,23 @@ import digitalserviceIcon2 from "@/assets/images/service-icon  (2).png";
 import digitalserviceIcon3 from "@/assets/images/service-icon  (3).png";
 import digitalserviceIcon4 from "@/assets/images/service-icon  (4).png";
 import socialMediaMarketingImage from "@/assets/images/about-us-Image.png";
+import logoServiceImage from "@/assets/images/logo.webp";
 import supportSectionImage from "@/assets/images/support-section-image.webp";
-import seoServiceImage from "@/assets/images/seo.png";
-import websiteDevelopmentServiceImage from "@/assets/images/website development.png";
-import ecomerceServiceImage from "@/assets/images/ecomerce.png";
-import socilaMediaServiceImage from "@/assets/images/socila media.png";
-import logoServiceImage from "@/assets/images/logo.png";
+import seoServiceImage from "@/assets/images/seo.webp";
+import websiteDevelopmentServiceImage from "@/assets/images/website development.webp";
+import ecomerceServiceImage from "@/assets/images/ecomerce.webp";
+import socilaMediaServiceImage from "@/assets/images/socila media.webp";
+import portfolioLogo1 from "@/assets/images/portfolio-logos/portfolio-logo (1).jpg";
+import portfolioLogo2 from "@/assets/images/portfolio-logos/portfolio-logo (2).jpg";
+import portfolioLogo3 from "@/assets/images/portfolio-logos/portfolio-logo (3).jpg";
+import portfolioLogo4 from "@/assets/images/portfolio-logos/portfolio-logo (4).jpg";
+import portfolioLogo5 from "@/assets/images/portfolio-logos/portfolio-logo (5).jpg";
+import portfolioLogo6 from "@/assets/images/portfolio-logos/portfolio-logo (6).jpg";
+import portfolioLogo7 from "@/assets/images/portfolio-logos/portfolio-logo (7).jpg";
+import portfolioLogo8 from "@/assets/images/portfolio-logos/portfolio-logo (8).jpg";
+import portfolioLogo9 from "@/assets/images/portfolio-logos/portfolio-logo (9).jpg";
+import portfolioLogo10 from "@/assets/images/portfolio-logos/portfolio-logo (10).jpg";
+import portfolioLogo11 from "@/assets/images/portfolio-logos/portfolio-logo (11).jpg";
 
 export {
   trustpilot,
@@ -230,4 +241,15 @@ export {
   digitalserviceIcon4,
   socialMediaMarketingImage,
   girlWithPhone,
+  portfolioLogo1,
+  portfolioLogo2,
+  portfolioLogo3,
+  portfolioLogo4,
+  portfolioLogo5,
+  portfolioLogo6,
+  portfolioLogo7,
+  portfolioLogo8,
+  portfolioLogo9,
+  portfolioLogo10,
+  portfolioLogo11,
 };

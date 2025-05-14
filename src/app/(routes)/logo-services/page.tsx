@@ -2,6 +2,17 @@ import {
   girlWithPhone,
   heroSectionImage3,
   logoServiceImage,
+  portfolioLogo1,
+  portfolioLogo10,
+  portfolioLogo11,
+  portfolioLogo2,
+  portfolioLogo3,
+  portfolioLogo4,
+  portfolioLogo5,
+  portfolioLogo6,
+  portfolioLogo7,
+  portfolioLogo8,
+  portfolioLogo9,
   profileImage4,
   seoServiceImage,
 } from "@/assets";
@@ -48,13 +59,13 @@ export default function Page() {
 
   const logoDesignFeatures: FeatureItemType[] = [
     {
-       icon: "megaphone",
+      icon: "megaphone",
       title: "Logo Design Experts",
       description:
         "Our team consists of talented designers and branding experts who collaborate to bring your brand to life through powerful visual storytelling.",
     },
     {
-       icon: "chart", 
+      icon: "chart",
       title: "Cutting-Edge Design Tools",
       description:
         "We use the latest design software and techniques to create logos that are versatile, scalable, and timeless.",
@@ -130,10 +141,10 @@ export default function Page() {
       buttonTitle: "Buy Now",
       features: [
         "10 Logo Design Concepts",
-        "Stationery Design (Business Card, Letterhead, Envelope)",
-        "4 Dedicated Designers",
-        "9 Revisions (Additional Revision Per Change $30)",
-        "48-72 Hours Turnaround Time",
+        "Stationery Design (Business card design, Letterhead Design, Envelope Design)",
+        "7 Dedicated Designers",
+        "Unlimited Revisions",
+        "48-72 Hours Turn Around Time",
         "Final Files (AI, PSD, EPS, JPEG, PNG, PDF, SVG)",
         "Dedicated Project Manager",
         "100% Unique Concepts",
@@ -151,12 +162,12 @@ export default function Page() {
       buttonTitle: "Buy Now",
       features: [
         "12 Logo Design Concepts",
-        "Stationery Design (Business Card, Letterhead, Envelope)",
+        "Stationery Design (Business card design, Letterhead Design, Envelope Design)",
         "Flyer Design",
         "Free Icon Design",
         "8 Dedicated Designers",
         "Unlimited Revisions",
-        "48-72 Hours Turnaround Time",
+        "48-72 Hours Turn Around Time",
         "Final Files (AI, PSD, EPS, JPEG, PNG, PDF, SVG)",
         "Dedicated Project Manager",
         "100% Unique Concepts",
@@ -167,54 +178,82 @@ export default function Page() {
     {
       id: 6,
       packageHeading: "Custom Logo Package",
-      packageDescription: "Tailored solutions for your unique branding needs",
+      packageDescription: "Cost Effective Package for your business",
       duration: null,
       currentPrice: null,
       originalPrice: null,
-      buttonTitle: "Get a Quote",
-      features: [
-        "Illustrative Logo Design",
-        "Animated Logo Design",
-        "2D Logo Design",
-        "3D Logo Design",
-        "Personalized Consultation",
-        "Dedicated Project Manager",
-        "100% Satisfaction Guarantee",
-      ],
+      buttonTitle: "Get a quote",
+      features: ["Illustrative Logo", "Animated Logo", "2D Logo", "3D Logo"],
+    },
+  ];
+
+  const portfolioItems = [
+    {
+      image: portfolioLogo1.src,
+      category: "",
+    },
+    {
+      image: portfolioLogo2.src,
+      category: "",
+    },
+    {
+      image: portfolioLogo3.src,
+      category: "",
+    },
+    {
+      image: portfolioLogo4.src,
+      category: "",
+    },
+    {
+      image: portfolioLogo5.src,
+      category: "",
+    },
+    {
+      image: portfolioLogo6.src,
+      category: "",
+    },
+    {
+      image: portfolioLogo7.src,
+      category: "",
+    },
+    {
+      image: portfolioLogo8.src,
+      category: "",
+    },
+    {
+      image: portfolioLogo9.src,
+      category: "",
+    },
+     {
+      image: portfolioLogo10.src,
+      category: "",
+    },
+     {
+      image: portfolioLogo11.src,
+      category: "",
     },
   ];
 
   const pageHeading = "Logo Services";
-
-  //WebDevelopmentSection
-  const headingtitle = "Your Business Needs";
-  const heading = "A Powerful & Device-Friendly App";
-
-  //Hire
-  const hireHeadingTitle = "Professional Logo Design services  ";
-  const hireHeading = "Your Brand, Our Design ";
-  const hireHeadingDescription =
-    "No matter the size of your brand, your customers will love when you launch an app that’s not only user-friendly but offers the desired reliability. So, you can count on us to understand your business needs after which we’ll come up with efficient solutions to design an app that garners instant results.";
 
   return (
     <>
       <div className="min-h-screen flex flex-col">
         <ServicesHeroSection heading={pageHeading} />
 
-        <div className="">
+        <div >
           <WebDevelopmentSection
             services={logoDesignServices}
             image={logoServiceImage.src}
             heading="Your Brand, Our Design "
             headingtitle="Professional Logo Design services  "
           />
-          {/* <PortfolioSection
-            heading="Our Diverse Portfolio"
-            title=""
-            paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
-            filters={["All", "E-commerce", "Business", "Real Estate"]}
-            btnIcon=""
-          /> */}
+          <PortfolioSection
+            heading="Iconic Logo Designs"
+            paragraph="Explore our logo design portfolio featuring iconic brand identities across 350+ industries. Each logo reflects our dedication to creativity, precision, and lasting visual impact."
+            portfolioData={portfolioItems}
+            animate={false}
+          />
           <PricingSection
             filter={[
               "Animation",
@@ -233,10 +272,10 @@ export default function Page() {
           />
           <HireDevelopersSection
             features={logoDesignFeatures}
-            hireHeadingDescription={hireHeadingDescription}
             image={seoServiceImage.src}
-            hireHeading={hireHeading}
-            hireHeadingTitle={hireHeadingTitle}
+            HireDevelopersSectionTitle="What Makes Us"
+            HireDevelopersSectionHeading="Pioneers in Logo Design "
+            HireDevelopersSectionDiscripton="Crafting a memorable logo takes more than just creativity. We design logos that are not only visually striking but also strategically aligned with your brand’s mission, values, and vision. "
           />
         </div>
         <footer>

@@ -21,24 +21,17 @@ export default function Header() {
     // { label: "Digital Marketing", href: "/digital-marketing" },
     // { label: "Email Marketing Services", href: "/email-marketing-services" },
     // { label: "PPC Management Services", href: "/ppc-management-services" },
-    { label: "SEO", href: "/seo" },
+    { label: "logo Design", href: "/logo-services" },
     {
-      label: "Social Media Marketing Services",
-      href: "/social-media-marketing-services",
-    },
-    {
-      label: "Website Development Services",
+      label: "Website Design & Development",
       href: "/website-development-services",
     },
+    { label: "E-Commerce Websites", href: "/ecommerce-services" },
     {
-      label: "Logo Services",
-      href: "/logo-services",
+      label: "Social Media Marketing",
+      href: "/social-media-marketing-services",
     },
-
-    {
-      label: "E-commerce Services",
-      href: "/ecommerce-services",
-    },
+    { label: "Search Engine Optimization", href: "/seo" },
   ];
 
   const navItems = [
@@ -70,7 +63,7 @@ export default function Header() {
           </a>
         </div>
 
-        <nav className="hidden md:flex lg:gap-x-9 gap-x-3 ">
+        <nav className="hidden lg:flex lg:gap-x-9 gap-x-3 ">
           {navItems.map((item) =>
             item.hasDropdown ? (
               <DropdownMenu key={item.label}>
@@ -107,7 +100,7 @@ export default function Header() {
             </Button>
           </a>
           <button
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle Menu"
           >
@@ -121,7 +114,7 @@ export default function Header() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden px-4 pb-4 pt-2 space-y-2 bg-background border-t">
+        <div className="lg:hidden px-4 pb-4 pt-2 space-y-2 bg-background border-t">
           {navItems.map((item) =>
             item.hasDropdown ? (
               <div key={item.label} className="space-y-2">
