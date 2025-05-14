@@ -49,7 +49,7 @@ const navItems = [
     href: "#services",
     hasDropdown: true,
   },
-  { label: "Portfolio", href: "#portfolio" },
+  { label: "Packages", href: "/packages" },
   { label: "Contact Us", href: "#contactus" },
   { label: "Web Hosting", href: "/web-hosting" },
 ];

@@ -124,8 +124,10 @@ import portfolioLogo8 from "@/assets/images/portfolio-logos/portfolio-logo (8).j
 import portfolioLogo9 from "@/assets/images/portfolio-logos/portfolio-logo (9).jpg";
 import portfolioLogo10 from "@/assets/images/portfolio-logos/portfolio-logo (10).jpg";
 import portfolioLogo11 from "@/assets/images/portfolio-logos/portfolio-logo (11).jpg";
+import packagesBgImage from "@/assets/images/packages-bg-image.jpg";
 
 export {
+  packagesBgImage,
   trustpilot,
   trustpilot2,
   supportSectionImage,
