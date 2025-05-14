@@ -16,22 +16,12 @@ interface PackageData {
 
 interface PricingSectionProps {
   packageData?: PackageData;
-  filter: string[];
+  filter?: string[];
   filterLink?: string;
   pricingOptionsDescription?: string;
   pricingOptionsHeading?: string;
   pricingOptionsTilte?: string;
-  pricingOptions: {
-    id: number;
-    packageHeading: string;
-    packageDescription: string;
-    buttonTitle?: string;
-    duration: number | null;
-    currentPrice?: number | null;
-    originalPrice?: number | null;
-    features: string[];
-  }[];
-
+  pricingOptions: any[]
 }
 export default function PricingSection({
   packageData,
@@ -94,24 +84,6 @@ export default function PricingSection({
     },
   };
 
-  const data = [
-    { category: "Real Estate" },
-    { category: "E-commerce" },
-    { category: "Real Estate" },
-    { category: "Business" },
-    { category: "Business" },
-    { category: "Business" },
-    { category: "Business" },
-    { category: "E-commerce" },
-    { category: "E-commerce" },
-    { category: "E-commerce" },
-    { category: "Business" },
-    { category: "E-commerce" },
-    { category: "E-commerce" },
-    { category: "E-commerce" },
-    { category: "Business" },
-  ];
-
   useEffect(() => {
     // Animate elements on page load
     const sequence: Array<[string, Record<string, any>, Record<string, any>]> =
@@ -139,8 +111,6 @@ export default function PricingSection({
     animate(sequence);
   }, [animate]);
 
-
-  
   return (
     <main
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16 space-y-4 sm:space-y-6 md:space-y-8"
@@ -174,6 +144,36 @@ export default function PricingSection({
         >
           {pricingOptionsDescription}
         </motion.p>
+      </div>
+
+      <div>
+        <motion.div
+          className="flex flex-wrap justify-center gap-3 mb-10"
+          variants={containerVariants}
+        >
+          {filter?.map((filter, index) => (
+            <motion.div
+              key={filter}
+              custom={index}
+              variants={filterVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Button
+                variant="outline"
+                className={cn(
+                  "rounded-lg px-4 py-2 text-sm font-medium border-gray-200 flex data-center gap-2",
+                  activeFilter === filter
+                    ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-none"
+                    : "bg-white text-gray-700 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-white"
+                )}
+                onClick={() => setActiveFilter(filter)}
+              >
+                {filter}
+              </Button>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
 
       <motion.div
