@@ -22,8 +22,10 @@ interface PricingSectionProps {
   pricingOptionsHeading?: string;
   pricingOptionsTilte?: string;
   pricingOptions: any[]
+  showHeading?: boolean;
 }
 export default function PricingSection({
+  showHeading= true,
   packageData,
   filter,
   filterLink,
@@ -113,10 +115,10 @@ export default function PricingSection({
 
   return (
     <main
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16 space-y-4 sm:space-y-6 md:space-y-8"
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-10 space-y-4 sm:space-y-6 md:space-y-8"
       ref={scope}
     >
-      <div className="text-center mb-8 sm:mb-10 md:mb-12">
+      { showHeading &&  <div className="text-center mb-8 sm:mb-10 md:mb-12">
         <motion.h2
           className="text-xl sm:text-2xl font-bold text-[#1a3a5a] uppercase mb-2 sm:mb-4"
           initial={{ opacity: 0, y: 10 }}
@@ -144,7 +146,7 @@ export default function PricingSection({
         >
           {pricingOptionsDescription}
         </motion.p>
-      </div>
+      </div>}
 
       <div>
         <motion.div

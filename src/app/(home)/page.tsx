@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import AboutSection from "@/components/about-section";
 import ServicesSection from "@/components/services-section";
 import ExperienceSection from "@/components/experience-section";
@@ -77,6 +77,31 @@ const containerVariants = {
   },
 };
 
+const pricingCardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+    scale: 0.04,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.04,
+      ease: "easeOut",
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+    scale: 0.95,
+    transition: {
+      duration: 0.2,
+    },
+  },
+};
+
 const allPricingData = {
   websitePackages: websitePackage,
   ecommercePackages: ecommercePackage,
@@ -111,18 +136,35 @@ const filter = [
   "Social Media Package",
 ];
 
+const headingVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const pricingOptionsTilte = "BEAT THE ODDS";
+const pricingOptionsHeading = "Shiny Doesn't Mean Smart";
+const pricingOptionsDescription =
+  "In a web full of pretty pixels and empty promises, real power lies in what's under the hood. Go beyond the glitter—build for impact. ";
+
 export default function Home() {
   const [activeFilter, setActiveFilter] = useState("Website Package");
   type PricingOption =
-    | typeof websitePackage[number]
-    | typeof ecommercePackage[number]
-    | typeof logoPackage[number]
-    | typeof seoPackage[number]
-    | typeof socialMediaPackage[number];
+    | (typeof websitePackage)[number]
+    | (typeof ecommercePackage)[number]
+    | (typeof logoPackage)[number]
+    | (typeof seoPackage)[number]
+    | (typeof socialMediaPackage)[number];
 
-  const [filteredPricingOptions, setFilteredPricingOptions] = useState<PricingOption[]>(
-    allPricingData.websitePackages
-  );
+  const [filteredPricingOptions, setFilteredPricingOptions] = useState<
+    PricingOption[]
+  >(allPricingData.websitePackages);
 
   const handleFilterClick = (filter: string) => {
     setActiveFilter(filter);
@@ -165,10 +207,40 @@ export default function Home() {
         <ExperienceSection />
       </motion.div>
 
+      <div className="text-center mb-8 sm:mb-10 md:mb-12">
+        <motion.h2
+          className="text-xl sm:text-2xl font-bold text-[#1a3a5a] uppercase mb-2 sm:mb-4"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          {pricingOptionsTilte}
+        </motion.h2>
+
+        {/* New animation approach for the heading */}
+        <motion.h1
+          className="heading-main text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-[#4ecca3] to-[#3db8c5] text-transparent bg-clip-text p-3 sm:p-4 md:p-5"
+          initial="hidden"
+          animate="visible"
+          variants={headingVariants}
+        >
+          {pricingOptionsHeading}
+        </motion.h1>
+
+        <motion.p
+          className="heading-subtitle max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-gray-800 px-2"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          {pricingOptionsDescription}
+        </motion.p>
+      </div>
+
       {/* Filter Buttons */}
       <div>
         <motion.div
-          className="flex flex-wrap justify-center gap-3 mb-10"
+          className="flex flex-wrap justify-center gap-3  "
           variants={containerVariants}
         >
           {filter.map((filterItem, index) => (
@@ -197,12 +269,20 @@ export default function Home() {
       </div>
 
       {/* Pricing Section */}
-      <PricingSection
-        pricingOptions={filteredPricingOptions}
-        pricingOptionsTilte="BEAT THE ODDS"
-        pricingOptionsHeading="Shiny Doesn’t Mean Smart"
-        pricingOptionsDescription="In a web full of pretty pixels and empty promises, real power lies in what’s under the hood. Go beyond the glitter—build for impact. "
-      />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeFilter}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={pricingCardVariants}
+        >
+          <PricingSection
+            showHeading={false}
+            pricingOptions={filteredPricingOptions}
+          />
+        </motion.div>
+      </AnimatePresence>
 
       <PortfolioSection
         heading="OUR PORTFOLIO"
