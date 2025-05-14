@@ -14,7 +14,6 @@ interface PricingCardProps {
   index: number
   buttonTitle?: string
 }
-
 export function PricingCard({
   packageHeading,
   packageDescription,

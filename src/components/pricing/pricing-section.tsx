@@ -5,20 +5,6 @@ import { PricingCard } from "./pricing-card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-<<<<<<< HEAD
-
-interface PackageData {
-  ecommercePackages: any[]
-  logoPackages: any[]
-  mobileAppPackages: any[]
-  seoPackages: any[]
-  socialMediaPackages: any[]
-  websitePackages: any
-}
-
-interface PricingSectionProps {
-  packageData?: PackageData
-=======
 interface PackageData {
   ecommercePackages: any[];
   logoPackages: any[];
@@ -30,7 +16,6 @@ interface PackageData {
 
 interface PricingSectionProps {
   packageData?: PackageData;
->>>>>>> d174ce62f9845a073badc2698ed5ba865d263c10
   filter: string[];
   filterLink?: string;
   pricingOptionsDescription?: string;
