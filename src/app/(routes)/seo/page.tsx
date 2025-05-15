@@ -1,18 +1,9 @@
-import {
-  girlWithPhone,
-  heroSectionImage3,
-  logoServiceImage,
-  profileImage4,
-  seoServiceImage,
-} from "@/assets";
-import Footer from "@/components/footer";
-import PortfolioSection from "@/components/portfolio-section";
+import { logoServiceImage, seoServiceImage } from "@/assets";
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
 import HireDevelopersSection from "@/components/hire-developer/hire-developers-section";
-import Link from "next/link";
 import PricingSection from "@/components/pricing/pricing-section";
 import ServicesHeroSection from "@/components/digital-marketing/services-hero-section";
-
+import { seoPackage } from "@/components/packages";
 export type FeatureItemType = {
   icon: "megaphone" | "chart";
   title: string;
@@ -60,92 +51,11 @@ export default function Page() {
         "With cutting-edge SEO platforms, we fine-tune your site to rank higher and perform at its best. ",
     },
   ];
-  const pageHeading = "SEO Services";
-
-  const pricingOptions = [
-    {
-      id: 1,
-      packageHeading: "SEO Essential",
-      packageDescription: "Cost Effective Package for your business",
-      duration: 30,
-      currentPrice: 250,
-      originalPrice: 500,
-      buttonTitle: "Buy Now",
-      features: [
-        "5 Keywords",
-        "Off-page Optimization",
-        "Link Building",
-        "Social Bookmarking",
-        "Guaranteed Ranking on Google",
-        "Basic Analytical Report",
-        "Dedicated Project Manager",
-      ],
-    },
-    {
-      id: 2,
-      packageHeading: "SEO Standard",
-      packageDescription: "Cost Effective Package for your business",
-      duration: 30,
-      currentPrice: 500,
-      originalPrice: 1000,
-      buttonTitle: "Buy Now",
-      features: [
-        "10 Keywords",
-        "Off-page Optimization",
-        "On-page Optimization",
-        "Link Building",
-        "Social Bookmarking",
-        "Guaranteed Ranking on Google",
-        "Comprehensive Analytical Report",
-        "Dedicated Project Manager",
-      ],
-    },
-    {
-      id: 3,
-      packageHeading: "SEO Classic",
-      packageDescription: "Cost Effective Package for your business",
-      duration: 30,
-      currentPrice: 700,
-      originalPrice: 1400,
-      buttonTitle: "Buy Now",
-      features: [
-        "20 Keywords",
-        "Off-page Optimization",
-        "On-page Optimization",
-        "Link Building",
-        "Social Bookmarking",
-        "Guaranteed Ranking on Google",
-        "Comprehensive Analytical Report",
-        "Dedicated Project Manager",
-      ],
-    },
-    {
-      id: 4,
-      packageHeading: "SEO Exclusive",
-      packageDescription: "Cost Effective Package for your business",
-      duration: 30,
-      currentPrice: 1300,
-      originalPrice: 2600,
-      buttonTitle: "Buy Now",
-      features: [
-        "30 Keywords",
-        "Off-page Optimization",
-        "On-page Optimization",
-        "Technical SEO",
-        "Website Audit",
-        "Link Building",
-        "Social Bookmarking",
-        "Website Performance Enhancement",
-        "Comprehensive Analytical Report",
-        "Dedicated Project Manager",
-      ],
-    },
-  ];
 
   return (
     <>
       <div className="min-h-screen flex flex-col">
-        <ServicesHeroSection heading={pageHeading} />
+        <ServicesHeroSection heading="SEO Services" />
 
         <div>
           <WebDevelopmentSection
@@ -154,18 +64,12 @@ export default function Page() {
             headingtitle="Professional SEO Services"
             heading="Dominate the Search Engines"
           />
-          {/* <PortfolioSection
-            heading="Our Diverse Portfolio"
-            title=""
-            paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
-            filters={["All", "E-commerce", "Business", "Real Estate"]}
-            btnIcon=""
-          /> */}
+
           <PricingSection
             pricingOptionsTilte="BEAT THE ALGORITHM "
             pricingOptionsHeading="Not All Rankings Are Created Equal "
             pricingOptionsDescription="In a sea of shortcuts and black-hat tricks, lasting visibility comes from strategy, not gimmicks. Rise with relevance—win where it matters. "
-            pricingOptions={pricingOptions}
+            pricingOptions={seoPackage}
           />
           <HireDevelopersSection
             features={seoFeatures}

@@ -17,28 +17,17 @@ const serviceItems = [
   // { label: "Digital Marketing", href: "/digital-marketing" },
   // { label: "Email Marketing Services", href: "/email-marketing-services" },
   // { label: "PPC Management Services", href: "/ppc-management-services" },
-  { label: "SEO", href: "/seo" },
+  { label: "logo Design", href: "/logo-services" },
   {
-    label: "Social Media Marketing Services",
-    href: "/social-media-marketing-services",
-  },
-  {
-    label: "Website Development Services",
+    label: "Website Design & Development",
     href: "/website-development-services",
   },
+  { label: "E-Commerce Websites", href: "/e-commerce-services" },
   {
-    label: "Logo Services",
-    href: "/logo-services",
+    label: "Social Media Marketing",
+    href: "/social-media-marketing-services",
   },
-
-  {
-    label: "E-commerce Services",
-    href: "/e-commerce-services",
-  },
-  // {
-  //   label: "Writing & Publishing Services",
-  //   href: "/writing-&-publishing-services",
-  // },
+  { label: "Search Engine Optimization", href: "/seo" },
 ];
 
 const navItems = [
