@@ -190,7 +190,7 @@ export default function PortfolioSection({
         </motion.div>
 
         <motion.div variants={containerVariants}>
-          <Projects items={filteredItems} animate={animate}  />
+          <Projects items={filteredItems} animate={animate} />
         </motion.div>
       </div>
     </motion.section>

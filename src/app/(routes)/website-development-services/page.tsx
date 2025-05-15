@@ -74,21 +74,21 @@ export default function Page() {
   ];
   
   const portfolioData = [
-    { img: project1.src, category: "Real Estate" },
-    { img: project2.src, category: "E-commerce" },
-    { img: project3.src, category: "Real Estate" },
-    { img: project4.src, category: "Business" },
-    { img: project5.src, category: "Business" },
-    { img: project6.src, category: "Business" },
-    { img: project7.src, category: "Business" },
-    { img: project9.src, category: "E-commerce" },
-    { img: project10.src, category: "E-commerce" },
-    { img: project11.src, category: "E-commerce" },
-    { img: project12.src, category: "Business" },
-    { img: project13.src, category: "E-commerce" },
-    { img: project14.src, category: "E-commerce" },
-    { img: project15.src, category: "E-commerce" },
-    { img: project16.src, category: "Business" },
+    { image: project1.src, category: "Real Estate" },
+    { image: project2.src, category: "E-commerce" },
+    { image: project3.src, category: "Real Estate" },
+    { image: project4.src, category: "Business" },
+    { image: project5.src, category: "Business" },
+    { image: project6.src, category: "Business" },
+    { image: project7.src, category: "Business" },
+    { image: project9.src, category: "E-commerce" },
+    { image: project10.src, category: "E-commerce" },
+    { image: project11.src, category: "E-commerce" },
+    { image: project12.src, category: "Business" },
+    { image: project13.src, category: "E-commerce" },
+    { image: project14.src, category: "E-commerce" },
+    { image: project15.src, category: "E-commerce" },
+    { image: project16.src, category: "Business" },
   ];
 
   return (
@@ -125,7 +125,7 @@ export default function Page() {
             heading="Our Diverse Portfolio"
             title=""
             paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
-            filters={["All", "E-commerce", "Business", "Real Estate"]}
+            filters={["All", "E-commerce", "Website Package", "Real Estate"]}
             portfolioData={portfolioData}
           />
           <PricingSection
