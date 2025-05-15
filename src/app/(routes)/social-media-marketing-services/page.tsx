@@ -217,9 +217,6 @@ export default function Page() {
             HireDevelopersSectionDiscripton="Building a real presence on social media takes more than just posting. That’s where we come in. Our strategy-driven services boost engagement, grow your audience, and turn followers into loyal customers. "
           />
         </div>
-        <footer>
-          <Footer />
-        </footer>
       </div>
     </>
   );

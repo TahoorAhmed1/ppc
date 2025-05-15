@@ -1,49 +1,44 @@
-"use client";
+"use client"
 
-import { useEffect, useRef, useState, type RefObject } from "react";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
-import { personImage } from "@/assets";
-import { motion, useAnimation } from "framer-motion";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { Check, Loader2 } from "lucide-react";
-import { notify } from "@/lib/utils";
-import Link from "next/link";
+import { useEffect, useRef, useState, type RefObject } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Card, CardContent } from "@/components/ui/card"
+import { motion, useAnimation } from "framer-motion"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { z } from "zod"
+import { Check, Loader2 } from "lucide-react"
+import { notify } from "@/lib/utils"
 
-function useInView(
-  options = {}
-): [RefObject<HTMLDivElement | null>, boolean, boolean] {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-  const [hasTriggered, setHasTriggered] = useState(false);
+function useInView(options = {}): [RefObject<HTMLDivElement | null>, boolean, boolean] {
+  const ref = useRef<HTMLDivElement>(null)
+  const [isInView, setIsInView] = useState(false)
+  const [hasTriggered, setHasTriggered] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
-      setIsInView(entry.isIntersecting);
+      setIsInView(entry.isIntersecting)
 
       if (entry.isIntersecting && !hasTriggered) {
-        setHasTriggered(true);
+        setHasTriggered(true)
       }
-    }, options);
+    }, options)
 
-    const currentRef = ref.current;
+    const currentRef = ref.current
     if (currentRef) {
-      observer.observe(currentRef);
+      observer.observe(currentRef)
     }
 
     return () => {
       if (currentRef) {
-        observer.unobserve(currentRef);
+        observer.unobserve(currentRef)
       }
-    };
-  }, [hasTriggered, options]);
+    }
+  }, [hasTriggered, options])
 
-  return [ref, isInView, hasTriggered];
+  return [ref, isInView, hasTriggered]
 }
 
 // Create Zod schema for form validation
@@ -51,19 +46,14 @@ const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z.string().min(10, { message: "Please enter a valid phone number" }),
-  website_url: z
-    .string()
-    .url({ message: "Please enter a valid website URL" })
-    .or(z.string().length(0)),
-  message: z
-    .string()
-    .min(5, { message: "Message must be at least 5 characters" }),
+  website_url: z.string().url({ message: "Please enter a valid website URL" }).or(z.string().length(0)),
+  message: z.string().min(5, { message: "Message must be at least 5 characters" }),
   package_price: z.string().optional(),
   ip_address: z.string().optional(),
-});
+})
 
 // Define the form data type based on the schema
-type ContactFormData = z.infer<typeof contactFormSchema>;
+type ContactFormData = z.infer<typeof contactFormSchema>
 
 // Motion variants for animations
 const containerVariants = {
@@ -75,7 +65,7 @@ const containerVariants = {
       delayChildren: 0.3,
     },
   },
-};
+}
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
@@ -88,7 +78,7 @@ const itemVariants = {
       damping: 10,
     },
   },
-};
+}
 
 const imageVariants = {
   hidden: { scale: 0.8, opacity: 0 },
@@ -101,7 +91,7 @@ const imageVariants = {
       delay: 0.5,
     },
   },
-};
+}
 
 const formItemVariants = {
   hidden: { x: -20, opacity: 0 },
@@ -115,7 +105,7 @@ const formItemVariants = {
       damping: 10,
     },
   }),
-};
+}
 
 const buttonVariants = {
   hidden: { opacity: 0, scale: 0.8 },
@@ -131,7 +121,7 @@ const buttonVariants = {
   tap: {
     scale: 0.95,
   },
-};
+}
 
 const pulse: any = {
   hidden: { scale: 0.9, opacity: 0.3 },
@@ -144,7 +134,7 @@ const pulse: any = {
       duration: 3,
     },
   },
-};
+}
 
 const backgroundVariants = {
   hidden: { opacity: 0 },
@@ -152,27 +142,27 @@ const backgroundVariants = {
     opacity: 1,
     transition: { duration: 0.5 },
   },
-};
+}
 
-const MotionInput = motion(Input);
-const MotionTextarea = motion(Textarea);
-const MotionButton = motion(Button);
-const MotionCard = motion(Card);
+const MotionInput = motion(Input)
+const MotionTextarea = motion(Textarea)
+const MotionButton = motion(Button)
+const MotionCard = motion(Card)
 
 export default function ContactSection() {
-  const controls = useAnimation();
+  const controls = useAnimation()
   const [containerRef, isInView, hasTriggered] = useInView({
     threshold: 0.2,
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(true); // Set to true by default to ensure content is visible
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(true) // Set to true by default to ensure content is visible
 
   useEffect(() => {
     if (isInView || hasTriggered) {
-      controls.start("visible");
+      controls.start("visible")
     }
-  }, [controls, isInView, hasTriggered]);
+  }, [controls, isInView, hasTriggered])
 
   const {
     register,
@@ -190,51 +180,47 @@ export default function ContactSection() {
       package_price: "",
       ip_address: "",
     },
-  });
+  })
 
-  
   const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
+    setIsSubmitting(true)
 
     try {
-      const formData = new FormData();
+      const formData = new FormData()
       Object.entries(data).forEach(([key, value]) => {
-        if (value) formData.append(key, value);
-      });
+        if (value) formData.append(key, value)
+      })
 
       try {
-        const ipResponse = await fetch("https://api.ipify.org?format=json");
-        const ipData = await ipResponse.json();
-        formData.append("ip_address", ipData.ip);
+        const ipResponse = await fetch("https://api.ipify.org?format=json")
+        const ipData = await ipResponse.json()
+        formData.append("ip_address", ipData.ip)
       } catch (error) {
-        console.error("Could not fetch IP address:", error);
+        console.error("Could not fetch IP address:", error)
       }
 
-      const response = await fetch(
-        "https://demo7.obistest.online/api/store-contact-us-form",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const response = await fetch("https://demo7.obistest.online/api/store-contact-us-form", {
+        method: "POST",
+        body: formData,
+      })
 
       if (!response.ok) {
-        throw new Error("Failed to submit form");
+        throw new Error("Failed to submit form")
       }
 
-      setIsSuccess(true);
+      setIsSuccess(true)
 
-      notify("success", "Message sent successfully!");
+      notify("success", "Message sent successfully!")
 
       setTimeout(() => {
-        reset();
-        setIsSuccess(false);
-      }, 2000);
+        reset()
+        setIsSuccess(false)
+      }, 2000)
     } catch (error) {
-      console.log("error", error);
+      console.log("error", error)
     }
-    setIsSubmitting(false);
-  };
+    setIsSubmitting(false)
+  }
 
   return (
     <section className=" bg-white overflow-hidden relative  py-30" id="contactus">
@@ -268,51 +254,44 @@ export default function ContactSection() {
         ></motion.div>
       </motion.div>
 
-      <div id="contactus" className="container relative z-10">
+      <div id="contactus" className="container relative z-10 ">
+        <h1 className="text-4xl md:text-5xl text-center font-bold  bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text mb-15">
+          Connect Our Team
+        </h1>
+
         <motion.div
           ref={containerRef}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid gap-6 lg:grid-cols-2 lg:gap-8 items-center "
+          className="grid gap-6 lg:grid-cols-2 lg:gap-8  "
         >
+          <motion.div variants={imageVariants}>
+            <motion.div className="my-10 lg:my-0">
+              <p className="text-lg text-gray-700">
+                Begin your journey towards business growth confidently. Whether you're eager to explore our offerings or
+                seek further discussion, don't hesitate to reach out. Our dedicated team is available round-the-clock,
+                ready to provide complimentary consultations tailored to your needs. At Creative Agency, we promise
+                exceptional outcomes that align precisely with your business requirements. No challenge is too daunting;
+                our skilled experts are here to bring your ideas to life. Connect with us today and let's embark on your
+                next venture together.
+              </p>
+            </motion.div>
+          </motion.div>
+
           <motion.div
             variants={containerVariants}
             className="flex py-5 xl:py-0 lg:pt-8 flex-col justify-center space-y-4"
           >
-            <motion.div variants={itemVariants} className="space-y-3">
-              <motion.h2
-                variants={itemVariants}
-                className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#3DB1B1]"
-              >
-                Ready to Get Started?
-              </motion.h2>
-              <motion.p variants={itemVariants} className="max-w-[600px]">
-                Talk to our experts to discuss things further and experience the
-                difference.
-              </motion.p>
-            </motion.div>
-
             <MotionCard
               variants={itemVariants}
               transition={{ type: "spring", stiffness: 100 }}
               className="shadow-none border-0 p-0"
             >
               <CardContent className="p-0">
-                <motion.form
-                  variants={containerVariants}
-                  className="space-y-4"
-                  onSubmit={handleSubmit(onSubmit)}
-                >
-                  <motion.div
-                    variants={containerVariants}
-                    className="grid grid-cols-1 gap-4 sm:grid-cols-2"
-                  >
-                    <motion.div
-                      custom={0}
-                      variants={formItemVariants}
-                      className="space-y-2"
-                    >
+                <motion.form variants={containerVariants} className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
+                  <motion.div variants={containerVariants} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <motion.div custom={0} variants={formItemVariants} className="space-y-2">
                       <MotionInput
                         {...register("name")}
                         id="name"
@@ -326,17 +305,9 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.name && (
-                        <p className="text-sm text-red-500">
-                          {errors.name.message}
-                        </p>
-                      )}
+                      {errors.name && <p className="text-sm text-red-500">{errors.name.message}</p>}
                     </motion.div>
-                    <motion.div
-                      custom={1}
-                      variants={formItemVariants}
-                      className="space-y-2"
-                    >
+                    <motion.div custom={1} variants={formItemVariants} className="space-y-2">
                       <MotionInput
                         {...register("email")}
                         id="email"
@@ -351,17 +322,9 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.email && (
-                        <p className="text-sm text-red-500">
-                          {errors.email.message}
-                        </p>
-                      )}
+                      {errors.email && <p className="text-sm text-red-500">{errors.email.message}</p>}
                     </motion.div>
-                    <motion.div
-                      custom={2}
-                      variants={formItemVariants}
-                      className="space-y-2"
-                    >
+                    <motion.div custom={2} variants={formItemVariants} className="space-y-2">
                       <MotionInput
                         {...register("phone")}
                         id="phone"
@@ -375,17 +338,9 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.phone && (
-                        <p className="text-sm text-red-500">
-                          {errors.phone.message}
-                        </p>
-                      )}
+                      {errors.phone && <p className="text-sm text-red-500">{errors.phone.message}</p>}
                     </motion.div>
-                    <motion.div
-                      custom={3}
-                      variants={formItemVariants}
-                      className="space-y-2"
-                    >
+                    <motion.div custom={3} variants={formItemVariants} className="space-y-2">
                       <MotionInput
                         {...register("website_url")}
                         id="website_url"
@@ -400,18 +355,10 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.website_url && (
-                        <p className="text-sm text-red-500">
-                          {errors.website_url.message}
-                        </p>
-                      )}
+                      {errors.website_url && <p className="text-sm text-red-500">{errors.website_url.message}</p>}
                     </motion.div>
                   </motion.div>
-                  <motion.div
-                    custom={4}
-                    variants={formItemVariants}
-                    className="space-y-2"
-                  >
+                  <motion.div custom={4} variants={formItemVariants} className="space-y-2">
                     <MotionTextarea
                       {...register("message")}
                       id="message"
@@ -425,27 +372,16 @@ export default function ContactSection() {
                       }}
                       transition={{ type: "spring", stiffness: 300 }}
                     />
-                    {errors.message && (
-                      <p className="text-sm text-red-500">
-                        {errors.message.message}
-                      </p>
-                    )}
+                    {errors.message && <p className="text-sm text-red-500">{errors.message.message}</p>}
                   </motion.div>
 
                   <p className="text-xs text-gray-800 mt-2 mb-5 text-left">
-                    <span className="font-medium">Disclaimer</span> : You agree
-                    to receive conversation messages from CreativeAgency360.
-                    This includes SMS messages for appointment scheduling,
-                    appointment reminders, post-visit instructions, and billing
-                    notifications. You may receive up to 2 messages per day;
-                    message frequency may vary. To opt out, text STOP. For
-                    assistance, text HELP or visit Website Message and data
-                    rates may apply. See our
-                    <a
-                      target="_blank"
-                      href={"/privacy"}
-                      className="font-medium mx-1 underline"
-                    >
+                    <span className="font-medium">Disclaimer</span> : You agree to receive conversation messages from
+                    CreativeAgency360. This includes SMS messages for appointment scheduling, appointment reminders,
+                    post-visit instructions, and billing notifications. You may receive up to 2 messages per day;
+                    message frequency may vary. To opt out, text STOP. For assistance, text HELP or visit Website
+                    Message and data rates may apply. See our
+                    <a target="_blank" href={"/privacy"} className="font-medium mx-1 underline" rel="noreferrer">
                       Privacy Policy
                     </a>
                     and{" "}
@@ -453,6 +389,7 @@ export default function ContactSection() {
                       target="_blank"
                       href={"/terms-&-condition"}
                       className="font-medium mx-1 underline"
+                      rel="noreferrer"
                     >
                       {" "}
                       Terms and Conditions
@@ -484,28 +421,8 @@ export default function ContactSection() {
               </CardContent>
             </MotionCard>
           </motion.div>
-
-          <motion.div
-            variants={imageVariants}
-            className="relative lg:flex hidden items-center justify-center"
-          >
-            <motion.div>
-              <Image
-                src={
-                  personImage ||
-                  "/placeholder.svg?height=500&width=400&query=business person" ||
-                  "/placeholder.svg" ||
-                  "/placeholder.svg"
-                }
-                alt="Contact Us"
-                width={500}
-                height={400}
-                className="object-cover rounded-lg"
-              />
-            </motion.div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
-  );
+  )
 }

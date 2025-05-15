@@ -100,9 +100,6 @@ export default function Page() {
             HireDevelopersSectionTitle={HireDevelopersSectionTitle}
           />
         </>
-        <footer>
-          <Footer />
-        </footer>
       </div>
     </>
   );

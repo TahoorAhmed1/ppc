@@ -175,9 +175,6 @@ export default function Page() {
             HireDevelopersSectionDiscripton="Navigating SEO without risking penalties can be complex. That’s why we support you every step of the way. Our results-driven SEO approach boosts keyword rankings, drives organic traffic, and increases your bottom line. "
           />
         </div>
-        <footer>
-          <Footer />
-        </footer>
       </div>
     </>
   );

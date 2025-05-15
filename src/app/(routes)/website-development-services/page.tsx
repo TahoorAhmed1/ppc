@@ -323,9 +323,6 @@ export default function Page() {
             image={logoServiceImage.src}
           />
         </div>
-        <footer>
-          <Footer />
-        </footer>
       </div>
     </>
   );

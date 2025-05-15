@@ -26,7 +26,7 @@ export default function Header() {
       label: "Website Design & Development",
       href: "/website-development-services",
     },
-    { label: "E-Commerce Websites", href: "/ecommerce-services" },
+    { label: "E-Commerce Websites", href: "/e-commerce-services" },
     {
       label: "Social Media Marketing",
       href: "/social-media-marketing-services",
@@ -42,7 +42,8 @@ export default function Header() {
       href: "#services",
       hasDropdown: true,
     },
-    { label: "Portfolio", href: "#portfolio" },
+        { label: "Packages", href: "/packages" },
+
     { label: "Contact Us", href: "#contactus" },
     { label: "Web Hosting", href: "/web-hosting" },
   ];
