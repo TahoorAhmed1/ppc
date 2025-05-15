@@ -3,6 +3,7 @@
 import { packagesBgImage } from "@/assets";
 import { ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
+import { useFormContact } from "@/store/form";
 
 export default function HireUsHeroSection() {
   // Animation variants
@@ -53,6 +54,7 @@ export default function HireUsHeroSection() {
       },
     },
   };
+  const { setIsOpen, isOpen }: any = useFormContact();
 
   return (
     <div className="relative min-h-[600px] w-full flex flex-col items-center justify-center px-4 py-16 z-10 overflow-hidden">
@@ -162,6 +164,7 @@ export default function HireUsHeroSection() {
           transition={{ duration: 0.5, delay: 0.4 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => setIsOpen(true)}
         >
           HIRE US TODAY
         </motion.button>
