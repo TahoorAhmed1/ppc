@@ -3,7 +3,7 @@ import WebDevelopmentSection from "@/components/web-development-services/web-dev
 import HireDevelopersSection from "@/components/hire-developer/hire-developers-section";
 import PricingSection from "@/components/pricing/pricing-section";
 import ServicesHeroSection from "@/components/digital-marketing/services-hero-section";
-import { seoPackage } from "@/components/packages";
+import { seoPackage } from "@/components/packages/packages";
 export type FeatureItemType = {
   icon: "megaphone" | "chart";
   title: string;

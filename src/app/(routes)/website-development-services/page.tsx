@@ -23,7 +23,7 @@ import WebDevelopmentSection from "@/components/web-development-services/web-dev
 import HireDevelopersSection from "@/components/hire-developer/hire-developers-section";
 import Link from "next/link";
 import PricingSection from "@/components/pricing/pricing-section";
-import { websitePackage } from "@/components/packages";
+import { websitePackage } from "@/components/packages/packages";
 export default function Page() {
   const customServices = [
     {

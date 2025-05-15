@@ -661,3 +661,165 @@ export const ecommercePackage = [
     ],
   },
 ];
+
+export const uiDesignPackages = [
+  {
+    id: 1,
+    buttonTitle: "Get Started",
+    packageHeading: "Basic UI Design Package",
+    packageDescription: "Cost Effective Package for your business",
+    currentPrice: 1500,
+    originalPrice: 3000,
+    features: [
+      "Homepage design",
+      "Up to 5 additional pages",
+      "Basic layout and design elements",
+      "Typography",
+      "Color scheme"
+    ]
+  },
+  {
+    id: 2,
+    buttonTitle: "Get Started",
+    packageHeading: "Advanced UI Design Package",
+    packageDescription: "Cost Effective Package for your business",
+    currentPrice: 2000,
+    originalPrice: 4000,
+    features: [
+      "Homepage design",
+      "Up to 10 additional pages",
+      "More complex design elements",
+      "Illustrations",
+      "Animations",
+      "Interactive features",
+      "Iconography and graphic design"
+    ]
+  },
+  {
+    id: 3,
+    buttonTitle: "Get Started",
+    packageHeading: "E-Commerce Design Package",
+    packageDescription: "Cost Effective Package for your business",
+    currentPrice: 3000,
+    originalPrice: 6000,
+    features: [
+      "Homepage design",
+      "Up to 20 additional pages",
+      "Shopping cart design",
+      "Product page design",
+      "Checkout process design",
+      "Custom graphic design for promotional materials"
+    ]
+  },
+  {
+    id: 4,
+    buttonTitle: "Get Started",
+    packageHeading: "Responsive Design Package",
+    packageDescription: "Cost Effective Package for your business",
+    currentPrice: 3500,
+    originalPrice: 7000,
+    features: [
+      "Homepage design",
+      "Up to 10 additional pages",
+      "Optimized for all devices, including desktops, tablets, and mobile phones",
+      "Touch-friendly interfaces and larger fonts for easier reading on smaller screens"
+    ]
+  },
+  {
+    id: 5,
+    buttonTitle: "Get Started",
+    packageHeading: "Custom Design Package",
+    packageDescription: "Cost Effective Package for your business",
+    currentPrice: 6000,
+    originalPrice: 12000,
+    features: [
+      "Completely tailored to the client’s specific needs",
+      "Can include any combination of design elements, from basic to advanced",
+      "Customizable for any type of website or web application",
+      "Illustrations",
+      "Animations",
+      "Interactive features",
+      "Iconography and graphic design"
+    ]
+  },
+  {
+    id: 6,
+    buttonTitle: "Get Started",
+    packageHeading: "Application UI/UX Design Package",
+    packageDescription: "Cost Effective Package for your business",
+    currentPrice: 3500,
+    originalPrice: 7000,
+    features: [
+      "Design for the application’s main screen",
+      "Up to 5 additional screens",
+      "Custom layout and design elements, such as typography, color scheme, and graphics",
+      "Custom iconography, graphic design, and branding",
+      "Design for user interface (UI) elements, such as buttons, menus, and forms",
+      "User experience (UX) design, including user flow diagrams and wireframes"
+    ]
+  },
+  {
+    id: 7,
+    buttonTitle: "Get Started",
+    packageHeading: "Advanced Application UI/UX Design Package",
+    packageDescription: "Cost Effective Package for your business",
+    currentPrice: 6500,
+    originalPrice: 13000,
+    features: [
+      "Design for the application’s main screen",
+      "Up to 10 additional screens",
+      "More complex design elements, such as custom illustrations, animations, and interactive features",
+      "Custom iconography, graphic design, and branding",
+      "Design for user interface (UI) elements, such as buttons, menus, and forms",
+      "User experience (UX) design, including user flow diagrams and wireframes",
+      "Customized user research and user testing to optimize the design"
+    ]
+  },
+  {
+    id: 8,
+    buttonTitle: "Get Started",
+    packageHeading: "E-Commerce Application Design Package",
+    packageDescription: "Cost Effective Package for your business",
+    currentPrice: 7500,
+    originalPrice: 15000,
+    features: [
+      "Design for the application’s main screen, plus up to 20 additional screens",
+      "Shopping cart design, product page design, and checkout process design",
+      "Custom graphic design for promotional materials",
+      "Custom iconography, graphic design, and branding",
+      "Design for user interface (UI) elements, such as buttons, menus, and forms",
+      "User experience (UX) design, including user flow diagrams and wireframes",
+      "Customized user research and user testing to optimize the design"
+    ]
+  }
+];
+
+export const appPackages = [
+  {
+    id: 1,
+    buttonTitle: "Get a quote",
+    packageHeading: "Hybrid Application",
+    packageDescription: "Cost Effective Package for your business",
+    currentPrice: null,
+    originalPrice: null,
+    features: ["Let’s Discuss"]
+  },
+  {
+    id: 2,
+    buttonTitle: "Get a quote",
+    packageHeading: "IOS Application Development",
+    packageDescription: "Cost Effective Package for your business",
+    currentPrice: null,
+    originalPrice: null,
+    features: ["Let’s Discuss"]
+  },
+  {
+    id: 3,
+    buttonTitle: "Get a quote",
+    packageHeading: "Android Application",
+    packageDescription: "Cost Effective Package for your business",
+    currentPrice: null,
+    originalPrice: null,
+    features: ["Let’s Discuss"]
+  }
+];
