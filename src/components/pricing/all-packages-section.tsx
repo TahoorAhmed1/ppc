@@ -127,7 +127,7 @@ export default function AllPackagesSection() {
       "SEO Package": "seoPackages",
       "Social Media Package": "socialMediaPackages",
       "UI Design Package": "uiDesignPackages",
-      "App Package": "appPackages",
+      "Mobile App Package": "appPackages",
     };
 
     const dataKey = filterMap[filter];
