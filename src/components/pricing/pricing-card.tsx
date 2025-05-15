@@ -35,7 +35,7 @@ export function PricingCard({
         initial={{
           y: 0,
           boxShadow: "0 1px 2px rgba(0,0,0,0.05)",
-        }} 
+        }}
         whileHover={{
           y: -8,
           boxShadow:
@@ -97,7 +97,15 @@ export function PricingCard({
           </motion.div>
         </div>
         <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6">
-          <ul className="space-y-1 sm:space-y-2">
+          <ul
+            className="max-h-48 overflow-y-auto pr-2 space-y-1 sm:space-y-2 
+                       [&::-webkit-scrollbar]:w-2
+                       [&::-webkit-scrollbar-track]:bg-transparent
+                       [&::-webkit-scrollbar-track]:rounded-full
+                       [&::-webkit-scrollbar-thumb]:rounded-full
+                       [&::-webkit-scrollbar-thumb]:bg-[linear-gradient(to_bottom,_#65CF5FCC,_#1F9BED)]
+                       [&::-webkit-scrollbar-button]:hidden
+                       scrollbar-thin scrollbar-thumb-[#65CF5F] scrollbar-track-transparent">
             {features.map((feature, featureIndex) => (
               <motion.li
                 key={featureIndex}
