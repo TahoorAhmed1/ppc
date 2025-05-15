@@ -10,7 +10,7 @@ import {
   websitePackage,
   socialMediaPackage,
   seoPackage,
-} from "@/components/constants";
+} from "@/components/packages";
 import PricingSection from "@/components/pricing/pricing-section";
 
 const filterVariants = {

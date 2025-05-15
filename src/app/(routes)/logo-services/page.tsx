@@ -1,6 +1,4 @@
 import {
-  girlWithPhone,
-  heroSectionImage3,
   logoServiceImage,
   portfolioLogo1,
   portfolioLogo10,
@@ -16,14 +14,12 @@ import {
   profileImage4,
   seoServiceImage,
 } from "@/assets";
-import Footer from "@/components/footer";
 import PortfolioSection from "@/components/portfolio-section";
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
 import HireDevelopersSection from "@/components/hire-developer/hire-developers-section";
-import Link from "next/link";
 import PricingSection from "@/components/pricing/pricing-section";
 import ServicesHeroSection from "@/components/digital-marketing/services-hero-section";
-
+import { logoPackage } from "@/components/packages";
 export type FeatureItemType = {
   icon: "megaphone" | "chart";
   title: string;
@@ -72,121 +68,6 @@ export default function Page() {
     },
   ];
 
-  const pricingOptions = [
-    {
-      id: 1,
-      packageHeading: "Startup Logo Package",
-      packageDescription: "Cost Effective Package for your business",
-      duration: 1,
-      currentPrice: 79,
-      originalPrice: 79,
-      buttonTitle: "Buy Now",
-      features: [
-        "3 Logo Design Concepts",
-        "2 Dedicated Designers",
-        "6 Revisions",
-        "24 Hours Turnaround Time",
-        "Final Files (JPEG, PNG, PDF)",
-        "Dedicated Project Manager",
-        "100% Satisfaction Guarantee",
-      ],
-    },
-    {
-      id: 2,
-      packageHeading: "Silver Logo Package",
-      packageDescription: "Cost Effective Package for your business",
-      duration: 1,
-      currentPrice: 150,
-      originalPrice: 150,
-      buttonTitle: "Buy Now",
-      features: [
-        "5 Logo Design Concepts",
-        "3 Dedicated Designers",
-        "10 Revisions",
-        "24 Hours Turnaround Time",
-        "Final Files (JPEG, PNG, PDF, PSD)",
-        "Dedicated Project Manager",
-        "100% Unique Concepts",
-        "100% Satisfaction Guarantee",
-      ],
-    },
-    {
-      id: 3,
-      packageHeading: "Gold Logo Package",
-      packageDescription: "Cost Effective Package for your business",
-      duration: 1,
-      currentPrice: 250,
-      originalPrice: 250,
-      buttonTitle: "Buy Now",
-      features: [
-        "8 Logo Design Concepts",
-        "Business Card Design",
-        "3 Dedicated Designers",
-        "Unlimited Revisions",
-        "24-48 Hours Turnaround Time",
-        "Final Files (AI, PSD, EPS, JPEG, PNG, PDF)",
-        "Dedicated Project Manager",
-        "100% Unique Concepts",
-        "100% Approval Assurance",
-        "100% Satisfaction Guarantee",
-      ],
-    },
-    {
-      id: 4,
-      packageHeading: "Platinum Logo Package",
-      packageDescription: "Cost Effective Package for your business",
-      duration: 3,
-      currentPrice: 400,
-      originalPrice: 400,
-      buttonTitle: "Buy Now",
-      features: [
-        "10 Logo Design Concepts",
-        "Stationery Design (Business card design, Letterhead Design, Envelope Design)",
-        "7 Dedicated Designers",
-        "Unlimited Revisions",
-        "48-72 Hours Turn Around Time",
-        "Final Files (AI, PSD, EPS, JPEG, PNG, PDF, SVG)",
-        "Dedicated Project Manager",
-        "100% Unique Concepts",
-        "100% Approval Assurance",
-        "100% Satisfaction Guarantee",
-      ],
-    },
-    {
-      id: 5,
-      packageHeading: "Ultimate Logo Package",
-      packageDescription: "Cost Effective Package for your business",
-      duration: 3,
-      currentPrice: 479,
-      originalPrice: 479,
-      buttonTitle: "Buy Now",
-      features: [
-        "12 Logo Design Concepts",
-        "Stationery Design (Business card design, Letterhead Design, Envelope Design)",
-        "Flyer Design",
-        "Free Icon Design",
-        "8 Dedicated Designers",
-        "Unlimited Revisions",
-        "48-72 Hours Turn Around Time",
-        "Final Files (AI, PSD, EPS, JPEG, PNG, PDF, SVG)",
-        "Dedicated Project Manager",
-        "100% Unique Concepts",
-        "100% Approval Assurance",
-        "100% Satisfaction Guarantee",
-      ],
-    },
-    {
-      id: 6,
-      packageHeading: "Custom Logo Package",
-      packageDescription: "Cost Effective Package for your business",
-      duration: null,
-      currentPrice: null,
-      originalPrice: null,
-      buttonTitle: "Get a quote",
-      features: ["Illustrative Logo", "Animated Logo", "2D Logo", "3D Logo"],
-    },
-  ];
-
   const portfolioItems = [
     {
       image: portfolioLogo1.src,
@@ -224,11 +105,11 @@ export default function Page() {
       image: portfolioLogo9.src,
       category: "",
     },
-     {
+    {
       image: portfolioLogo10.src,
       category: "",
     },
-     {
+    {
       image: portfolioLogo11.src,
       category: "",
     },
@@ -255,7 +136,7 @@ export default function Page() {
             animate={false}
           />
           <PricingSection
-            pricingOptions={pricingOptions}
+            pricingOptions={logoPackage}
             pricingOptionsTilte="BEAT THE ODDS "
             pricingOptionsHeading="Not Just a Pretty Picture "
             pricingOptionsDescription="A logo is more than just a visual—it's the face of your brand. In a world full of flashy designs, we create logos that tell your story and make a lasting impression. "
