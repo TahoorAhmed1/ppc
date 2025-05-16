@@ -1,7 +1,4 @@
-import { heroSectionImage3 } from "@/assets";
 import ServicesHeroSection from "@/components/digital-marketing/services-hero-section";
-import Footer from "@/components/footer-2";
-import Link from "next/link";
 
 const pageHeading = "Terms and Conditions";
 
