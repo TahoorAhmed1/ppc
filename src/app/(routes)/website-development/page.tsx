@@ -8,8 +8,8 @@ import PortfolioSection from "@/components/portfolio-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import ContactSection from "@/components/contact-section";
 import FaqSection from "@/components/faq-section-2";
-import Footer from "@/components/footer-2";
 import { AutoOpenImageModal } from "@/components/auto-open-image-modal";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Website Development | Creative Agency 360",

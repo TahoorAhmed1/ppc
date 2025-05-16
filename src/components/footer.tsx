@@ -47,7 +47,6 @@ export default function Footer() {
     },
   }
 
-  // Hover animation for links
   const linkHoverAnimation = {
     whileHover: {
       x: 5,
@@ -247,7 +246,7 @@ export default function Footer() {
                 Contact Us
               </motion.a>
               <motion.a
-                href={"/social-media-marketing-services"}
+                href={"/privacy"}
                 rel="noreferrer"
                 whileHover={{ x: 5, color: "#3DB1B1" }}
                 transition={{ type: "spring", stiffness: 400 }}
@@ -312,7 +311,7 @@ export default function Footer() {
               </motion.a>
               <motion.a
                 target="_blank"
-                href={"/terms-&-condition"}
+                href={"/seo"}
                 rel="noreferrer"
                 whileHover={{ x: 5, color: "#3DB1B1" }}
                 transition={{ type: "spring", stiffness: 400 }}
@@ -423,7 +422,6 @@ function AnimatedFooterColumn({
     },
   }
 
-  // Define serviceItems for the dropdown
   const serviceItems = [
     { label: "Logo Design", href: "/logo-services" },
     { label: "Website Development", href: "/website-development-services" },
