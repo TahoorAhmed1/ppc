@@ -4,7 +4,6 @@ import "../globals.css";
 import Header from "@/components/header";
 import { ToastContainer } from "react-toastify";
 import { useFormContact } from "@/store/form";
-import Footer from "@/components/footer";
 
 export default function ChildLayout({
   children,

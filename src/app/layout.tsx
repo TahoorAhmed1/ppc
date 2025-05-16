@@ -4,9 +4,7 @@ import { Poppins } from "next/font/google";
 import Script from "next/script";
 import type { Metadata } from "next";
 import FollowCursor from "@/components/digital-marketing/components-of-pricing/follow-cursor";
-import FixedPositionBalls from "@/components/moving-bulbs-background";
-import AnimatedStarfield from "@/components/animated-starfield";
-import MovingBulbsBackground from "@/components/moving-bulbs-background";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Creative Agency 360",
@@ -81,6 +79,7 @@ export default function RootLayout({
           customColors={["#3CBFAE", "#65CF5F", "#1F9BED", "#5ce0c6"]}
         />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -237,7 +237,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section className=" bg-white overflow-hidden relative  py-30" id="contactus">
+    <section
+      className=" bg-white overflow-hidden relative  py-30"
+      id="contactus"
+    >
       <motion.div
         className="absolute top-10 left-0 w-full h-full"
         initial="hidden"
@@ -441,20 +444,15 @@ export default function ContactSection() {
                     message frequency may vary. To opt out, text STOP. For
                     assistance, text HELP or visit Website Message and data
                     rates may apply. See our
-                    <a
-                      target="_blank"
-                      href={"/privacy"}
-                      className="font-medium mx-1 underline"
-                    >
+                    <a href={"/privacy"} className="font-medium mx-1 underline">
                       Privacy Policy
                     </a>
                     and{" "}
                     <a
-                      target="_blank"
                       href={"/terms-&-condition"}
                       className="font-medium mx-1 underline"
                     >
-                      {" "}
+                      
                       Terms and Conditions
                     </a>
                     . STOP to any message to opt out.

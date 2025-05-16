@@ -223,7 +223,10 @@ export default function ContactSection() {
   }
 
   return (
-    <section className=" bg-white overflow-hidden relative  py-30" id="contactus">
+    <section
+      className=" bg-white overflow-hidden relative  py-30"
+      id="contactus"
+    >
       <motion.div
         className="absolute top-10 left-0 w-full h-full"
         initial="hidden"
@@ -269,12 +272,15 @@ export default function ContactSection() {
           <motion.div variants={imageVariants}>
             <motion.div className="my-10 lg:my-0">
               <p className="text-lg text-gray-700">
-                Begin your journey towards business growth confidently. Whether you're eager to explore our offerings or
-                seek further discussion, don't hesitate to reach out. Our dedicated team is available round-the-clock,
-                ready to provide complimentary consultations tailored to your needs. At Creative Agency, we promise
-                exceptional outcomes that align precisely with your business requirements. No challenge is too daunting;
-                our skilled experts are here to bring your ideas to life. Connect with us today and let's embark on your
-                next venture together.
+                Begin your journey towards business growth confidently. Whether
+                you're eager to explore our offerings or seek further
+                discussion, don't hesitate to reach out. Our dedicated team is
+                available round-the-clock, ready to provide complimentary
+                consultations tailored to your needs. At Creative Agency, we
+                promise exceptional outcomes that align precisely with your
+                business requirements. No challenge is too daunting; our skilled
+                experts are here to bring your ideas to life. Connect with us
+                today and let's embark on your next venture together.
               </p>
             </motion.div>
           </motion.div>
@@ -289,9 +295,20 @@ export default function ContactSection() {
               className="shadow-none border-0 p-0"
             >
               <CardContent className="p-0">
-                <motion.form variants={containerVariants} className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
-                  <motion.div variants={containerVariants} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    <motion.div custom={0} variants={formItemVariants} className="space-y-2">
+                <motion.form
+                  variants={containerVariants}
+                  className="space-y-4"
+                  onSubmit={handleSubmit(onSubmit)}
+                >
+                  <motion.div
+                    variants={containerVariants}
+                    className="grid grid-cols-1 gap-4 sm:grid-cols-2"
+                  >
+                    <motion.div
+                      custom={0}
+                      variants={formItemVariants}
+                      className="space-y-2"
+                    >
                       <MotionInput
                         {...register("name")}
                         id="name"
@@ -305,9 +322,17 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.name && <p className="text-sm text-red-500">{errors.name.message}</p>}
+                      {errors.name && (
+                        <p className="text-sm text-red-500">
+                          {errors.name.message}
+                        </p>
+                      )}
                     </motion.div>
-                    <motion.div custom={1} variants={formItemVariants} className="space-y-2">
+                    <motion.div
+                      custom={1}
+                      variants={formItemVariants}
+                      className="space-y-2"
+                    >
                       <MotionInput
                         {...register("email")}
                         id="email"
@@ -322,9 +347,17 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.email && <p className="text-sm text-red-500">{errors.email.message}</p>}
+                      {errors.email && (
+                        <p className="text-sm text-red-500">
+                          {errors.email.message}
+                        </p>
+                      )}
                     </motion.div>
-                    <motion.div custom={2} variants={formItemVariants} className="space-y-2">
+                    <motion.div
+                      custom={2}
+                      variants={formItemVariants}
+                      className="space-y-2"
+                    >
                       <MotionInput
                         {...register("phone")}
                         id="phone"
@@ -338,9 +371,17 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.phone && <p className="text-sm text-red-500">{errors.phone.message}</p>}
+                      {errors.phone && (
+                        <p className="text-sm text-red-500">
+                          {errors.phone.message}
+                        </p>
+                      )}
                     </motion.div>
-                    <motion.div custom={3} variants={formItemVariants} className="space-y-2">
+                    <motion.div
+                      custom={3}
+                      variants={formItemVariants}
+                      className="space-y-2"
+                    >
                       <MotionInput
                         {...register("website_url")}
                         id="website_url"
@@ -355,10 +396,18 @@ export default function ContactSection() {
                         }}
                         transition={{ type: "spring", stiffness: 300 }}
                       />
-                      {errors.website_url && <p className="text-sm text-red-500">{errors.website_url.message}</p>}
+                      {errors.website_url && (
+                        <p className="text-sm text-red-500">
+                          {errors.website_url.message}
+                        </p>
+                      )}
                     </motion.div>
                   </motion.div>
-                  <motion.div custom={4} variants={formItemVariants} className="space-y-2">
+                  <motion.div
+                    custom={4}
+                    variants={formItemVariants}
+                    className="space-y-2"
+                  >
                     <MotionTextarea
                       {...register("message")}
                       id="message"
@@ -372,21 +421,31 @@ export default function ContactSection() {
                       }}
                       transition={{ type: "spring", stiffness: 300 }}
                     />
-                    {errors.message && <p className="text-sm text-red-500">{errors.message.message}</p>}
+                    {errors.message && (
+                      <p className="text-sm text-red-500">
+                        {errors.message.message}
+                      </p>
+                    )}
                   </motion.div>
 
                   <p className="text-xs text-gray-800 mt-2 mb-5 text-left">
-                    <span className="font-medium">Disclaimer</span> : You agree to receive conversation messages from
-                    CreativeAgency360. This includes SMS messages for appointment scheduling, appointment reminders,
-                    post-visit instructions, and billing notifications. You may receive up to 2 messages per day;
-                    message frequency may vary. To opt out, text STOP. For assistance, text HELP or visit Website
-                    Message and data rates may apply. See our
-                    <a target="_blank" href={"/privacy"} className="font-medium mx-1 underline" rel="noreferrer">
+                    <span className="font-medium">Disclaimer</span> : You agree
+                    to receive conversation messages from CreativeAgency360.
+                    This includes SMS messages for appointment scheduling,
+                    appointment reminders, post-visit instructions, and billing
+                    notifications. You may receive up to 2 messages per day;
+                    message frequency may vary. To opt out, text STOP. For
+                    assistance, text HELP or visit Website Message and data
+                    rates may apply. See our
+                    <a
+                      href={"/privacy"}
+                      className="font-medium mx-1 underline"
+                      rel="noreferrer"
+                    >
                       Privacy Policy
                     </a>
                     and{" "}
                     <a
-                      target="_blank"
                       href={"/terms-&-condition"}
                       className="font-medium mx-1 underline"
                       rel="noreferrer"
@@ -424,5 +483,5 @@ export default function ContactSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

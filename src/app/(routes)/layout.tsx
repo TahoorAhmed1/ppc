@@ -5,7 +5,6 @@ import { ToastContainer } from "react-toastify";
 import ContactFormPopup from "@/components/Contact";
 import { useFormContact } from "@/store/form";
 import "../globals.css";
-import Footer from "@/components/footer";
 
 export default function ChildLayout({
   children,
@@ -19,7 +18,6 @@ export default function ChildLayout({
       <ToastContainer />
       {children}
       <ContactFormPopup isOpen={isOpen} setIsOpen={setIsOpen} />
-      <Footer />
     </div>
   );
 }

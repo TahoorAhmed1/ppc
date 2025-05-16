@@ -8,7 +8,6 @@ import DigitalMarketingServiceSection from "@/components/digital-marketing/digit
 import Pricing from "@/components/digital-marketing/pricing";
 import SocialMediaMarketing from "@/components/digital-marketing/social-media-marketing";
 import AnimatedFaqSection2 from "@/components/faq-section-2";
-import Footer from "@/components/footer";
 
 import TestimonialsSection from "@/components/testimonials-section";
 import { motion, useScroll } from "framer-motion";
@@ -54,9 +53,7 @@ function Page() {
         <AnimatedFaqSection2 />
       </ScrollAnimationWrapper>
 
-      <ScrollAnimationWrapper animation="fade-in">
-        <Footer />
-      </ScrollAnimationWrapper>
+   
     </>
   );
 }

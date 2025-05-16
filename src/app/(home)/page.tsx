@@ -114,7 +114,6 @@ export default function Home() {
         <FaqSection />
       </motion.div>
 
-      <Footer />
     </div>
   );
 }

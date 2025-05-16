@@ -127,8 +127,6 @@ export default function WebsiteDevelopmentHeroSection({
       className="relative w-full text-white bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-
-
       <div className="relative z-10 container py-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mt-10">
           <div className="w-full">
@@ -289,16 +287,11 @@ export default function WebsiteDevelopmentHeroSection({
                       SMS messages for appointment scheduling, reminders, and
                       billing. Message frequency may vary. Text STOP to opt out.
                       See our{" "}
-                      <a
-                        target="_blank"
-                        href="/privacy"
-                        className="font-medium mx-1 underline"
-                      >
+                      <a href="/privacy" className="font-medium mx-1 underline">
                         Privacy Policy
                       </a>{" "}
                       and{" "}
                       <a
-                        target="_blank"
                         href="/terms-&-condition"
                         className="font-medium mx-1 underline"
                       >
@@ -328,7 +321,6 @@ export default function WebsiteDevelopmentHeroSection({
               </div>
             </div>
           </div>
-
         </div>
       </div>
 

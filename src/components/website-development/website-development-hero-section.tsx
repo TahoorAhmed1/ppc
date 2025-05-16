@@ -158,7 +158,10 @@ export default function WebsiteDevelopmentHeroSection({
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center mt-10">
           <motion.div className="w-full" variants={fadeIn}>
-            <motion.h1 className="text-[46px] lg:text-[60px] font-bold leading-tight h-[350px]" variants={slideIn}>
+            <motion.h1
+              className="text-[46px] lg:text-[60px] font-bold leading-tight h-[350px]"
+              variants={slideIn}
+            >
               <motion.span
                 className="inline-block bg-white rounded-xl py-1 px-2 mb-2"
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -174,7 +177,9 @@ export default function WebsiteDevelopmentHeroSection({
               </motion.span>
               <motion.span className="text-white" variants={fadeIn}>
                 <Typewriter
-                  words={[" Digital Experiences That Make Brands Unforgettable."]}
+                  words={[
+                    " Digital Experiences That Make Brands Unforgettable.",
+                  ]}
                   loop={1}
                   cursor
                   cursorStyle="|"
@@ -185,8 +190,15 @@ export default function WebsiteDevelopmentHeroSection({
               </motion.span>
             </motion.h1>
 
-            <motion.div className="flex flex-wrap items-start gap-4 lg:mt-14 mt-6" variants={staggerContainer}>
-              <motion.div variants={fadeIn} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div
+              className="flex flex-wrap items-start gap-4 lg:mt-14 mt-6"
+              variants={staggerContainer}
+            >
+              <motion.div
+                variants={fadeIn}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Button
                   onClick={() => setIsOpen(true)}
                   className="bg-gradient-to-r cursor-pointer h-13 from-[#65CF5F]/80 to-[#1F9BED] text-white px-8 py-3 text-base rounded-lg"
@@ -195,7 +207,10 @@ export default function WebsiteDevelopmentHeroSection({
                 </Button>
               </motion.div>
 
-              <motion.div className="flex gap-6 items-center" variants={staggerContainer}>
+              <motion.div
+                className="flex gap-6 items-center"
+                variants={staggerContainer}
+              >
                 {awards.map((awardImage: any, i: any) => (
                   <motion.div
                     key={i}
@@ -247,56 +262,70 @@ export default function WebsiteDevelopmentHeroSection({
                 </p>
 
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                    {["name", "email", "phone", "message"].map((fieldName, index) => (
-                      <motion.div
-                        key={fieldName}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
-                      >
-                        <FormField
-                          control={form.control}
-                          name={fieldName as keyof ContactFormData}
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormControl>
-                                {fieldName === "message" ? (
-                                  <Textarea
-                                    {...field}
-                                    placeholder="Write Your business description"
-                                    rows={4}
-                                    className="w-full p-4 h-32 bg-[#1a3b49]/20 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base resize-none outline-none"
-                                    style={{
-                                      boxShadow:
-                                        "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
-                                    }}
-                                  />
-                                ) : (
-                                  <Input
-                                    {...field}
-                                    type={fieldName === "email" ? "email" : fieldName === "phone" ? "tel" : "text"}
-                                    placeholder={
-                                      fieldName === "name"
-                                        ? "Full Name"
-                                        : fieldName === "email"
+                  <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="space-y-4"
+                  >
+                    {["name", "email", "phone", "message"].map(
+                      (fieldName, index) => (
+                        <motion.div
+                          key={fieldName}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{
+                            delay: 0.5 + index * 0.1,
+                            duration: 0.5,
+                          }}
+                        >
+                          <FormField
+                            control={form.control}
+                            name={fieldName as keyof ContactFormData}
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormControl>
+                                  {fieldName === "message" ? (
+                                    <Textarea
+                                      {...field}
+                                      placeholder="Write Your business description"
+                                      rows={4}
+                                      className="w-full p-4 h-32 bg-[#1a3b49]/20 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base resize-none outline-none"
+                                      style={{
+                                        boxShadow:
+                                          "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                                      }}
+                                    />
+                                  ) : (
+                                    <Input
+                                      {...field}
+                                      type={
+                                        fieldName === "email"
+                                          ? "email"
+                                          : fieldName === "phone"
+                                          ? "tel"
+                                          : "text"
+                                      }
+                                      placeholder={
+                                        fieldName === "name"
+                                          ? "Full Name"
+                                          : fieldName === "email"
                                           ? "Email Address"
                                           : "Phone Number"
-                                    }
-                                    className="w-full p-4 h-11 bg-[#1a3b49]/20 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base outline-none"
-                                    style={{
-                                      boxShadow:
-                                        "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
-                                    }}
-                                  />
-                                )}
-                              </FormControl>
-                              <FormMessage className="text-xs text-red-400" />
-                            </FormItem>
-                          )}
-                        />
-                      </motion.div>
-                    ))}
+                                      }
+                                      className="w-full p-4 h-11 bg-[#1a3b49]/20 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base outline-none"
+                                      style={{
+                                        boxShadow:
+                                          "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
+                                      }}
+                                    />
+                                  )}
+                                </FormControl>
+                                <FormMessage className="text-xs text-red-400" />
+                              </FormItem>
+                            )}
+                          />
+                        </motion.div>
+                      )
+                    )}
 
                     <motion.p
                       className="text-xs text-gray-300 mt-2 mb-5 text-left"
@@ -304,15 +333,20 @@ export default function WebsiteDevelopmentHeroSection({
                       animate={{ opacity: 1 }}
                       transition={{ delay: 1, duration: 0.5 }}
                     >
-                      <span className="font-medium">Disclaimer</span>: You agree to receive messages from
-                      CreativeAgency360. This includes SMS messages for appointment scheduling, reminders, and billing.
-                      Message frequency may vary. Text STOP to opt out. See our{" "}
-                      <a target="_blank" href="/privacy" className="font-medium mx-1 underline" rel="noreferrer">
+                      <span className="font-medium">Disclaimer</span>: You agree
+                      to receive messages from CreativeAgency360. This includes
+                      SMS messages for appointment scheduling, reminders, and
+                      billing. Message frequency may vary. Text STOP to opt out.
+                      See our{" "}
+                      <a
+                        href="/privacy"
+                        className="font-medium mx-1 underline"
+                        rel="noreferrer"
+                      >
                         Privacy Policy
                       </a>{" "}
                       and{" "}
                       <a
-                        target="_blank"
                         href="/terms-&-condition"
                         className="font-medium mx-1 underline"
                         rel="noreferrer"
@@ -358,5 +392,5 @@ export default function WebsiteDevelopmentHeroSection({
         <AnimatedServiceCategory services={services} />
       </div>
     </div>
-  )
+  );
 }

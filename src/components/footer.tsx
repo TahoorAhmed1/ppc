@@ -3,7 +3,7 @@
 import { logo } from "@/assets"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Mail, MapPin, Phone, ChevronDown } from "lucide-react"
+import { Mail, MapPin, Phone } from "lucide-react"
 
 export default function Footer() {
   const containerVariants = {
@@ -114,10 +114,11 @@ export default function Footer() {
           <div className="flex gap-4 mt-4">
             <motion.a
               href="https://x.com/creative_a360"
-              target="_blank"
-              rel="noopener noreferrer"
               className="hover:scale-105"
-              whileHover={{ scale: 1.15, transition: { type: "spring", stiffness: 400 } }}
+              whileHover={{
+                scale: 1.15,
+                transition: { type: "spring", stiffness: 400 },
+              }}
             >
               <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_498_627)">
@@ -139,10 +140,11 @@ export default function Footer() {
             </motion.a>
             <motion.a
               href="https://www.instagram.com/creativeagency360"
-              target="_blank"
-              rel="noopener noreferrer"
               className="hover:scale-105"
-              whileHover={{ scale: 1.15, transition: { type: "spring", stiffness: 400 } }}
+              whileHover={{
+                scale: 1.15,
+                transition: { type: "spring", stiffness: 400 },
+              }}
             >
               <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_498_607)">
@@ -168,10 +170,11 @@ export default function Footer() {
             </motion.a>
             <motion.a
               href="https://www.facebook.com/profile.php?id=100077438044422"
-              target="_blank"
-              rel="noopener noreferrer"
               className="hover:scale-105"
-              whileHover={{ scale: 1.15, transition: { type: "spring", stiffness: 400 } }}
+              whileHover={{
+                scale: 1.15,
+                transition: { type: "spring", stiffness: 400 },
+              }}
             >
               <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_498_645)">
@@ -189,10 +192,11 @@ export default function Footer() {
             </motion.a>
             <motion.a
               href="https://www.linkedin.com/company/creativeagency360/?viewAsMember=true"
-              target="_blank"
-              rel="noopener noreferrer"
               className="hover:scale-105"
-              whileHover={{ scale: 1.15, transition: { type: "spring", stiffness: 400 } }}
+              whileHover={{
+                scale: 1.15,
+                transition: { type: "spring", stiffness: 400 },
+              }}
             >
               <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_498_662)">
@@ -223,7 +227,6 @@ export default function Footer() {
             <div className="flex flex-col space-y-4 text-sm">
               <motion.a
                 href={"/"}
-                rel="noreferrer"
                 whileHover={{ x: 5, color: "#3DB1B1" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
@@ -231,7 +234,6 @@ export default function Footer() {
               </motion.a>
               <motion.a
                 href={"#aboutus"}
-                rel="noreferrer"
                 whileHover={{ x: 5, color: "#3DB1B1" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
@@ -239,7 +241,6 @@ export default function Footer() {
               </motion.a>
               <motion.a
                 href={"#contactus"}
-                rel="noreferrer"
                 whileHover={{ x: 5, color: "#3DB1B1" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
@@ -247,7 +248,6 @@ export default function Footer() {
               </motion.a>
               <motion.a
                 href={"/privacy"}
-                rel="noreferrer"
                 whileHover={{ x: 5, color: "#3DB1B1" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
@@ -255,7 +255,6 @@ export default function Footer() {
               </motion.a>
               <motion.a
                 href={"/terms-&-condition"}
-                rel="noreferrer"
                 whileHover={{ x: 5, color: "#3DB1B1" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
@@ -274,45 +273,35 @@ export default function Footer() {
             </motion.h3>
             <div className="flex flex-col space-y-4 text-sm">
               <motion.a
-                target="_blank"
                 href={"/logo-services"}
-                rel="noreferrer"
                 whileHover={{ x: 5, color: "#3DB1B1" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 Logo Design
               </motion.a>
               <motion.a
-                target="_blank"
                 href={"/website-development-services"}
-                rel="noreferrer"
                 whileHover={{ x: 5, color: "#3DB1B1" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 Website Design & Development
               </motion.a>
               <motion.a
-                target="_blank"
                 href={"/e-commerce-services"}
-                rel="noreferrer"
                 whileHover={{ x: 5, color: "#3DB1B1" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 E-Commerce Websites
               </motion.a>
               <motion.a
-                target="_blank"
                 href={"/social-media-marketing-services"}
-                rel="noreferrer"
                 whileHover={{ x: 5, color: "#3DB1B1" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 Social Media Marketing
               </motion.a>
               <motion.a
-                target="_blank"
                 href={"/seo"}
-                rel="noreferrer"
                 whileHover={{ x: 5, color: "#3DB1B1" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
@@ -377,151 +366,5 @@ export default function Footer() {
         © 2025 Creative Creative Agency 360, Inc. All rights reserved.
       </motion.div>
     </motion.footer>
-  )
-}
-
-function AnimatedFooterColumn({
-  title,
-  links,
-  hasServicesDropdown = false,
-  servicesOpen,
-  setServicesOpen,
-}: {
-  title: string
-  links: string[]
-  hasServicesDropdown?: boolean
-  servicesOpen?: boolean
-  setServicesOpen?: (open: boolean) => void
-}) {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { x: -20, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-  }
-
-  const dropdownVariants = {
-    hidden: { height: 0, opacity: 0, overflow: "hidden" },
-    visible: {
-      height: "auto",
-      opacity: 1,
-      transition: { duration: 0.3, ease: "easeOut" },
-    },
-  }
-
-  const serviceItems = [
-    { label: "Logo Design", href: "/logo-services" },
-    { label: "Website Development", href: "/website-development-services" },
-    { label: "E-Commerce", href: "/e-commerce-services" },
-    { label: "Social Media Marketing", href: "/social-media-marketing-services" },
-    { label: "SEO", href: "/seo-services" },
-  ]
-
-  return (
-    <motion.div className="space-y-4" variants={containerVariants} initial="hidden" animate="visible">
-      <motion.h3
-        className="text-xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text"
-        variants={itemVariants}
-        whileHover={{ scale: 1.05 }}
-      >
-        {title}
-      </motion.h3>
-      <motion.ul className="space-y-3" variants={containerVariants}>
-        {links.map((link, index) => {
-          const href = `#${link.toLowerCase().replace(" ", "")}`
-          return (
-            <motion.li
-              key={index}
-              variants={itemVariants}
-              whileHover={{ x: 5, color: "#3DB1B1" }}
-              transition={{ type: "spring", stiffness: 400 }}
-            >
-              <a href={href} className="text-gray-700 hover:text-gray-900">
-                {link}
-              </a>
-            </motion.li>
-          )
-        })}
-
-        <div className="flex flex-col space-y-2">
-          <motion.a
-            target="_blank"
-            href={"/privacy"}
-            rel="noreferrer"
-            className="text-gray-700 hover:text-gray-900"
-            whileHover={{ x: 5, color: "#3DB1B1" }}
-            transition={{ type: "spring", stiffness: 400 }}
-          >
-            Privacy Policy
-          </motion.a>
-
-          <motion.a
-            target="_blank"
-            href={"/terms-&-condition"}
-            rel="noreferrer"
-            className="text-gray-700 hover:text-gray-900"
-            whileHover={{ x: 5, color: "#3DB1B1" }}
-            transition={{ type: "spring", stiffness: 400 }}
-          >
-            Terms & Conditions
-          </motion.a>
-        </div>
-
-        {hasServicesDropdown && (
-          <>
-            <motion.li
-              variants={itemVariants}
-              whileHover={{ x: 5 }}
-              transition={{ type: "spring", stiffness: 400 }}
-              className="cursor-pointer"
-            >
-              <div
-                className="flex items-center justify-between text-gray-700 hover:text-gray-900"
-                onClick={() => setServicesOpen && setServicesOpen(!servicesOpen)}
-              >
-                <span>Services</span>
-                <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
-              </div>
-
-              <motion.div
-                className="pl-4 mt-2 space-y-2 border-l border-gray-200"
-                initial="hidden"
-                animate={servicesOpen ? "visible" : "hidden"}
-                variants={dropdownVariants}
-              >
-                {serviceItems.map((service, idx) => (
-                  <motion.div
-                    key={idx}
-                    variants={itemVariants}
-                    whileHover={{ x: 5, color: "#3DB1B1" }}
-                    transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    <a
-                      href={service.href}
-                      className="block text-sm text-gray-500 hover:text-gray-900 hover:font-medium"
-                    >
-                      {service.label}
-                    </a>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.li>
-          </>
-        )}
-      </motion.ul>
-    </motion.div>
   )
 }
