@@ -11,7 +11,8 @@ import {
   socialMediaPackage,
   seoPackage,
   uiDesignPackages,
-  appPackages
+  appPackages,
+  hostingPackages,
 } from "@/components/packages/packages";
 import PricingSection from "@/components/pricing/pricing-section";
 
@@ -83,8 +84,8 @@ const filter = [
   "SEO Package",
   "Social Media Package",
   "UI Design Package",
+  "Hosting Package",
   "Mobile App Package",
-
 ];
 
 const allPricingData = {
@@ -95,7 +96,7 @@ const allPricingData = {
   socialMediaPackages: socialMediaPackage,
   uiDesignPackages: uiDesignPackages,
   appPackages: appPackages,
-
+  hostingPackages: hostingPackages,
 };
 
 const pricingOptionsTilte = "BEAT THE ODDS";
@@ -111,7 +112,8 @@ export default function AllPackagesSection() {
     | (typeof seoPackage)[number]
     | (typeof socialMediaPackage)[number]
     | (typeof uiDesignPackages)[number]
-    | (typeof appPackages)[number];
+    | (typeof appPackages)[number]
+    | (typeof hostingPackages)[number];
   const [filteredPricingOptions, setFilteredPricingOptions] = useState<
     PricingOption[]
   >(allPricingData.websitePackages);
@@ -128,6 +130,7 @@ export default function AllPackagesSection() {
       "Social Media Package": "socialMediaPackages",
       "UI Design Package": "uiDesignPackages",
       "Mobile App Package": "appPackages",
+      "Hosting Package": "hostingPackages",
     };
 
     const dataKey = filterMap[filter];

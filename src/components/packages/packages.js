@@ -1,6 +1,5 @@
 export const websitePackage = [
   {
-    
     id: 1,
     buttonTitle: "Get Started",
     packageHeading: "Basic Website Package",
@@ -675,8 +674,8 @@ export const uiDesignPackages = [
       "Up to 5 additional pages",
       "Basic layout and design elements",
       "Typography",
-      "Color scheme"
-    ]
+      "Color scheme",
+    ],
   },
   {
     id: 2,
@@ -692,8 +691,8 @@ export const uiDesignPackages = [
       "Illustrations",
       "Animations",
       "Interactive features",
-      "Iconography and graphic design"
-    ]
+      "Iconography and graphic design",
+    ],
   },
   {
     id: 3,
@@ -708,8 +707,8 @@ export const uiDesignPackages = [
       "Shopping cart design",
       "Product page design",
       "Checkout process design",
-      "Custom graphic design for promotional materials"
-    ]
+      "Custom graphic design for promotional materials",
+    ],
   },
   {
     id: 4,
@@ -722,8 +721,8 @@ export const uiDesignPackages = [
       "Homepage design",
       "Up to 10 additional pages",
       "Optimized for all devices, including desktops, tablets, and mobile phones",
-      "Touch-friendly interfaces and larger fonts for easier reading on smaller screens"
-    ]
+      "Touch-friendly interfaces and larger fonts for easier reading on smaller screens",
+    ],
   },
   {
     id: 5,
@@ -739,8 +738,8 @@ export const uiDesignPackages = [
       "Illustrations",
       "Animations",
       "Interactive features",
-      "Iconography and graphic design"
-    ]
+      "Iconography and graphic design",
+    ],
   },
   {
     id: 6,
@@ -755,8 +754,8 @@ export const uiDesignPackages = [
       "Custom layout and design elements, such as typography, color scheme, and graphics",
       "Custom iconography, graphic design, and branding",
       "Design for user interface (UI) elements, such as buttons, menus, and forms",
-      "User experience (UX) design, including user flow diagrams and wireframes"
-    ]
+      "User experience (UX) design, including user flow diagrams and wireframes",
+    ],
   },
   {
     id: 7,
@@ -772,8 +771,8 @@ export const uiDesignPackages = [
       "Custom iconography, graphic design, and branding",
       "Design for user interface (UI) elements, such as buttons, menus, and forms",
       "User experience (UX) design, including user flow diagrams and wireframes",
-      "Customized user research and user testing to optimize the design"
-    ]
+      "Customized user research and user testing to optimize the design",
+    ],
   },
   {
     id: 8,
@@ -789,9 +788,9 @@ export const uiDesignPackages = [
       "Custom iconography, graphic design, and branding",
       "Design for user interface (UI) elements, such as buttons, menus, and forms",
       "User experience (UX) design, including user flow diagrams and wireframes",
-      "Customized user research and user testing to optimize the design"
-    ]
-  }
+      "Customized user research and user testing to optimize the design",
+    ],
+  },
 ];
 
 export const appPackages = [
@@ -802,7 +801,7 @@ export const appPackages = [
     packageDescription: "Cost Effective Package for your business",
     currentPrice: null,
     originalPrice: null,
-    features: ["Let’s Discuss"]
+    features: ["Let’s Discuss"],
   },
   {
     id: 2,
@@ -811,7 +810,7 @@ export const appPackages = [
     packageDescription: "Cost Effective Package for your business",
     currentPrice: null,
     originalPrice: null,
-    features: ["Let’s Discuss"]
+    features: ["Let’s Discuss"],
   },
   {
     id: 3,
@@ -820,6 +819,148 @@ export const appPackages = [
     packageDescription: "Cost Effective Package for your business",
     currentPrice: null,
     originalPrice: null,
-    features: ["Let’s Discuss"]
-  }
+    features: ["Let’s Discuss"],
+  },
+];
+
+export const hostingPackages = [
+  {
+    id: 1,
+    buttonTitle: "Get Started",
+    packageHeading: "Basic Hosting Package",
+    packageDescription: "Affordable hosting solution for small websites",
+    currentPrice: 500,
+    originalPrice: 1000,
+    features: [
+      "1 Website",
+      "10 GB SSD Storage",
+      "100 GB Bandwidth",
+      "Free SSL Certificate",
+      "Standard Support",
+    ],
+  },
+  {
+    id: 2,
+    buttonTitle: "Get Started",
+    packageHeading: "Advanced Hosting Package",
+    packageDescription: "Ideal for growing websites with moderate traffic",
+    currentPrice: 1000,
+    originalPrice: 2000,
+    features: [
+      "Up to 5 Websites",
+      "50 GB SSD Storage",
+      "500 GB Bandwidth",
+      "Free SSL Certificate",
+      "Daily Backups",
+      "Priority Support",
+    ],
+  },
+  {
+    id: 3,
+    buttonTitle: "Get Started",
+    packageHeading: "E-Commerce Hosting Package",
+    packageDescription: "Optimized for online stores and transactions",
+    currentPrice: 2000,
+    originalPrice: 4000,
+    features: [
+      "Unlimited Websites",
+      "100 GB SSD Storage",
+      "Unlimited Bandwidth",
+      "Free SSL Certificate",
+      "Daily Backups",
+      "E-Commerce Optimization",
+      "Advanced Security Features",
+      "24/7 Priority Support",
+    ],
+  },
+  {
+    id: 4,
+    buttonTitle: "Get Started",
+    packageHeading: "VPS Hosting Package",
+    packageDescription: "Powerful virtual server hosting for developers",
+    currentPrice: 2500,
+    originalPrice: 5000,
+    features: [
+      "2 vCPU Cores",
+      "4 GB RAM",
+      "80 GB SSD Storage",
+      "Root Access",
+      "Dedicated IP",
+      "Free SSL Certificate",
+      "Advanced Firewall",
+      "Full Control Panel Access",
+    ],
+  },
+  {
+    id: 5,
+    buttonTitle: "Get Started",
+    packageHeading: "Managed WordPress Hosting",
+    packageDescription: "Optimized WordPress hosting with full management",
+    currentPrice: 1500,
+    originalPrice: 3000,
+    features: [
+      "1-3 WordPress Sites",
+      "30 GB SSD Storage",
+      "Free SSL & CDN",
+      "Automatic Updates",
+      "Staging Environment",
+      "Daily Backups",
+      "Malware Scanning",
+      "Expert WP Support",
+    ],
+  },
+  {
+    id: 6,
+    buttonTitle: "Get Started",
+    packageHeading: "Business Hosting Package",
+    packageDescription: "High performance hosting for business-critical sites",
+    currentPrice: 3000,
+    originalPrice: 6000,
+    features: [
+      "Unlimited Websites",
+      "200 GB SSD Storage",
+      "Unlimited Bandwidth",
+      "Free SSL & CDN",
+      "Daily Backups",
+      "Performance Optimization",
+      "Advanced Security Suite",
+      "24/7 VIP Support",
+    ],
+  },
+  {
+    id: 7,
+    buttonTitle: "Get Started",
+    packageHeading: "Cloud Hosting Package",
+    packageDescription: "Scalable cloud infrastructure for growing businesses",
+    currentPrice: 4000,
+    originalPrice: 8000,
+    features: [
+      "Cloud-based Hosting",
+      "Auto-Scaling Resources",
+      "High Availability",
+      "Free SSL & Global CDN",
+      "Container Support (Docker, Kubernetes)",
+      "Integrated Monitoring",
+      "Multi-region Deployment",
+      "Enterprise Support",
+    ],
+  },
+  {
+    id: 8,
+    buttonTitle: "Get Started",
+    packageHeading: "Enterprise Hosting Package",
+    packageDescription: "Custom solutions for enterprise-scale applications",
+    currentPrice: 8000,
+    originalPrice: 16000,
+    features: [
+      "Custom Infrastructure Design",
+      "Unlimited Storage & Bandwidth",
+      "Load Balancing & Failover",
+      "Dedicated Account Manager",
+      "Custom Security Configurations",
+      "Compliance Assistance (GDPR, HIPAA, etc.)",
+      "24/7 Dedicated Support",
+      "SLA-Backed Uptime Guarantee",
+    ],
+  },
 ];
