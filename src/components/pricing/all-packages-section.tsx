@@ -13,6 +13,7 @@ import {
   uiDesignPackages,
   appPackages,
   hostingPackages,
+  pitchDeckPackages,
 } from "@/components/packages/packages";
 import PricingSection from "@/components/pricing/pricing-section";
 
@@ -86,6 +87,7 @@ const filter = [
   "UI Design Package",
   "Hosting Package",
   "Mobile App Package",
+  "Pitch Deck Package",
 ];
 
 const allPricingData = {
@@ -97,6 +99,7 @@ const allPricingData = {
   uiDesignPackages: uiDesignPackages,
   appPackages: appPackages,
   hostingPackages: hostingPackages,
+  pitchDeckPackages: pitchDeckPackages,
 };
 
 const pricingOptionsTilte = "BEAT THE ODDS";
@@ -113,7 +116,8 @@ export default function AllPackagesSection() {
     | (typeof socialMediaPackage)[number]
     | (typeof uiDesignPackages)[number]
     | (typeof appPackages)[number]
-    | (typeof hostingPackages)[number];
+    | (typeof hostingPackages)[number]
+    | (typeof pitchDeckPackages)[number];
   const [filteredPricingOptions, setFilteredPricingOptions] = useState<
     PricingOption[]
   >(allPricingData.websitePackages);
@@ -131,6 +135,7 @@ export default function AllPackagesSection() {
       "UI Design Package": "uiDesignPackages",
       "Mobile App Package": "appPackages",
       "Hosting Package": "hostingPackages",
+      "Pitch Deck Package": "pitchDeckPackages",
     };
 
     const dataKey = filterMap[filter];
@@ -174,7 +179,7 @@ export default function AllPackagesSection() {
       {/* Filter Buttons */}
       <div>
         <motion.div
-          className="flex flex-wrap justify-center gap-3"
+          className="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto mb-8 sm:mb-10 md:mb-12"
           initial="hidden"
           animate="visible"
           variants={containerVariants}

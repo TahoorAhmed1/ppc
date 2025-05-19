@@ -964,3 +964,43 @@ export const hostingPackages = [
     ],
   },
 ];
+
+export const pitchDeckPackages = [
+  {
+    id: 1,
+    buttonTitle: "Get a quote",
+    packageHeading: "Presentation Design",
+    packageDescription: "Visually compelling presentations tailored to your brand.",
+    currentPrice: null,
+    originalPrice: null,
+    features: ["Let’s Discuss"],
+  },
+  {
+    id: 2,
+    buttonTitle: "Get a quote",
+    packageHeading: "Investment Deck Design",
+    packageDescription: "High-impact decks designed to attract investors.",
+    currentPrice: null,
+    originalPrice: null,
+    features: ["Let’s Discuss"],
+  },
+  {
+    id: 3,
+    buttonTitle: "Get a quote",
+    packageHeading: "PowerPoint Presentation",
+    packageDescription: "Custom PowerPoint decks for business or pitches.",
+    currentPrice: null,
+    originalPrice: null,
+    features: ["Let’s Discuss"],
+  },
+  {
+    id: 4,
+    buttonTitle: "Get a quote",
+    packageHeading: "Google Slide Presentation",
+    packageDescription: "Professional presentations built in Google Slides.",
+    currentPrice: null,
+    originalPrice: null,
+    features: ["Let’s Discuss"],
+  },
+];
+

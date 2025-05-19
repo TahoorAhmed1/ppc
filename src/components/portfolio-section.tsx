@@ -1,28 +1,28 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import Projects from "./project";
-
+import Image from "next/image"
+import { useState, useEffect } from "react"
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { motion, AnimatePresence } from "framer-motion"
+import Projects from "./project"
+  
 type PortfolioItem = {
-  img?: string;
-  category?: string;
-};
+  img?: string
+  category?: string
+}
 
 type PortfolioSectionProps = {
-  heading?: string;
-  title?: string;
-  paragraph?: string;
-  filters?: string[];
-  data?: any[];
-  backgroundImage?: string;
-  btnIcon?: string;
-  portfolioData?: PortfolioItem[];
-  animate?: boolean;
-};
+  heading?: string
+  title?: string
+  paragraph?: string
+  filters?: string[]
+  data?: any[]
+  backgroundImage?: string
+  btnIcon?: string
+  portfolioData?: PortfolioItem[]
+  animate?: boolean
+}
 
 export default function PortfolioSection({
   animate,
@@ -34,9 +34,9 @@ export default function PortfolioSection({
   backgroundImage,
   btnIcon = "",
 }: PortfolioSectionProps) {
-  const [activeFilter, setActiveFilter] = useState("All");
-  const [filteredItems, setFilteredItems] = useState(portfolioData || []);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [activeFilter, setActiveFilter] = useState("All")
+  const [filteredItems, setFilteredItems] = useState(portfolioData || [])
+  const [isLoaded, setIsLoaded] = useState(false)
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -47,7 +47,7 @@ export default function PortfolioSection({
         delayChildren: 0.3,
       },
     },
-  };
+  }
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -56,7 +56,7 @@ export default function PortfolioSection({
       opacity: 1,
       transition: { duration: 0.5, ease: "easeOut" },
     },
-  };
+  }
 
   const headingVariants = {
     hidden: { y: -50, opacity: 0 },
@@ -65,7 +65,7 @@ export default function PortfolioSection({
       opacity: 1,
       transition: { duration: 0.7, ease: "easeOut" },
     },
-  };
+  }
 
   const filterVariants = {
     hidden: { scale: 0.8, opacity: 0 },
@@ -78,7 +78,7 @@ export default function PortfolioSection({
         ease: "easeOut",
       },
     }),
-  };
+  }
 
   const pulse: any = {
     hidden: { scale: 0.9, opacity: 0.3 },
@@ -91,24 +91,44 @@ export default function PortfolioSection({
         duration: 3,
       },
     },
-  };
+  }
+
+  // Animation variants for filter change
+  const filterChangeVariants = {
+    initial: {
+      opacity: 0,
+      scale: 0.9,
+      transition: { duration: 0.3 },
+    },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        staggerChildren: 0.08,
+        delayChildren: 0.1,
+      },
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.9,
+      transition: { duration: 0.3 },
+    },
+  }
 
   useEffect(() => {
     const sortedData =
       activeFilter === "All"
-        ? [...(portfolioData || [])].sort(
-            (a: PortfolioItem, b: PortfolioItem) =>
-              (a.category ?? "").localeCompare(b.category ?? "")
+        ? [...(portfolioData || [])].sort((a: PortfolioItem, b: PortfolioItem) =>
+            (a.category ?? "").localeCompare(b.category ?? ""),
           )
         : (portfolioData || [])
             .filter((item: PortfolioItem) => item.category === activeFilter)
-            .sort((a: PortfolioItem, b: PortfolioItem) =>
-              (a.category ?? "").localeCompare(b.category ?? "")
-            );
+            .sort((a: PortfolioItem, b: PortfolioItem) => (a.category ?? "").localeCompare(b.category ?? ""))
 
-    setFilteredItems(sortedData);
-    setIsLoaded(true);
-  }, [activeFilter, portfolioData]);
+    setFilteredItems(sortedData)
+    setIsLoaded(true)
+  }, [activeFilter, portfolioData])
 
   return (
     <motion.section
@@ -128,20 +148,11 @@ export default function PortfolioSection({
       />
 
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          className="flex flex-col data-center gap-2 text-center"
-          variants={headingVariants}
-        >
-          <motion.h2
-            className="text-xl sm:text-2xl font-bold text-[#1C2D44]"
-            variants={itemVariants}
-          >
+        <motion.div className="flex flex-col data-center gap-2 text-center" variants={headingVariants}>
+          <motion.h2 className="text-xl sm:text-2xl font-bold text-[#1C2D44]" variants={itemVariants}>
             {title}
           </motion.h2>
-          <motion.h3
-            className="text-3xl sm:text-5xl font-extrabold text-[#41B4A7] mb-3"
-            variants={itemVariants}
-          >
+          <motion.h3 className="text-3xl sm:text-5xl font-extrabold text-[#41B4A7] mb-3" variants={itemVariants}>
             {heading}
           </motion.h3>
           <motion.p
@@ -152,10 +163,7 @@ export default function PortfolioSection({
           </motion.p>
         </motion.div>
 
-        <motion.div
-          className="flex flex-wrap justify-center gap-3 mb-10"
-          variants={containerVariants}
-        >
+        <motion.div className="flex flex-wrap justify-center gap-3 mb-10" variants={containerVariants}>
           {filters.map((filter, index) => (
             <motion.div
               key={filter}
@@ -170,18 +178,12 @@ export default function PortfolioSection({
                   "rounded-lg px-4 py-2 text-sm font-medium border-gray-200 flex data-center gap-2",
                   activeFilter === filter
                     ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-none"
-                    : "bg-white text-gray-700 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-white"
+                    : "bg-white text-gray-700 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-white",
                 )}
                 onClick={() => setActiveFilter(filter)}
               >
                 {btnIcon && (
-                  <Image
-                    src={`${btnIcon}`}
-                    alt={`${filter} icon`}
-                    width={16}
-                    height={16}
-                    className="object-contain"
-                  />
+                  <Image src={`${btnIcon}`} alt={`${filter} icon`} width={16} height={16} className="object-contain" />
                 )}
                 {filter}
               </Button>
@@ -189,10 +191,18 @@ export default function PortfolioSection({
           ))}
         </motion.div>
 
-        <motion.div variants={containerVariants}>
-          <Projects items={filteredItems} animate={animate} />
-        </motion.div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeFilter}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={filterChangeVariants}
+          >
+            <Projects items={filteredItems} animate={animate} />
+          </motion.div>
+        </AnimatePresence>
       </div>
     </motion.section>
-  );
+  )
 }
