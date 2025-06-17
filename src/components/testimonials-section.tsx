@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -8,8 +8,8 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from "@/components/ui/carousel"
-import TestimonialCard from "./testimonial-card"
+} from "@/components/ui/carousel";
+import TestimonialCard from "./testimonial-card";
 import {
   profileImage1,
   profileImage3,
@@ -18,14 +18,14 @@ import {
   profileImage6,
   profileImage7,
   profileImage8,
-} from "@/assets"
+} from "@/assets";
 
 export default function TestimonialsSection() {
-  const [api, setApi] = useState<CarouselApi>()
-  const [current, setCurrent] = useState(0)
-  const [count, setCount] = useState(0)
-  const [autoPlay, setAutoPlay] = useState(true)
-  const autoPlayIntervalRef = useRef<NodeJS.Timeout | null>(null)
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
+  const autoPlayIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const testimonials = [
     {
@@ -34,7 +34,7 @@ export default function TestimonialsSection() {
       name: "Sarah Johnson",
       role: "Marketing Director",
       content:
-        "Working with Advera has been a transformative experience for our business. Their strategic approach to digital marketing has significantly increased our online visibility and customer engagement.",
+        "Working with our creative agency has been a transformative experience for our business. Their strategic approach to branding and design has significantly elevated our market presence.",
     },
     {
       id: 2,
@@ -42,7 +42,7 @@ export default function TestimonialsSection() {
       name: "David Thompson",
       role: "CEO, Tech Startup",
       content:
-        "The team at Advera truly understands our vision and has helped us create a website that perfectly represents our brand. Their attention to detail and commitment to excellence is unmatched.",
+        "The team at our creative agency truly understands our vision and helped us build a website that perfectly reflects our brand identity. Their attention to detail and passion for creativity are unmatched.",
     },
     {
       id: 3,
@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
       name: "Michael Rodriguez",
       role: "E-commerce Manager",
       content:
-        "Since partnering with Advera, our online sales have increased by 40%. Their SEO and PPC strategies have been incredibly effective in driving qualified traffic to our website.",
+        "Since collaborating with the creative agency, our conversions have jumped by 40%. Their innovative designs and targeted messaging made a real impact on our online store.",
     },
     {
       id: 4,
@@ -58,14 +58,15 @@ export default function TestimonialsSection() {
       name: "Emily Carter",
       role: "Product Manager",
       content:
-        "Advera's creative team brought our product to life. Their branding strategy helped us stand out in a crowded market.",
+        "The creative team brought our product to life. Their fresh ideas and bold visual identity helped us stand out in a competitive market.",
     },
     {
       id: 5,
       avatar: profileImage5.src,
       name: "James Wilson",
       role: "Operations Head",
-      content: "Professional, punctual, and results-driven. Advera has been our go-to agency for all things digital.",
+      content:
+        "Professional, punctual, and results-driven. This creative agency has been our go-to partner for all things branding and visual communication.",
     },
     {
       id: 6,
@@ -73,78 +74,83 @@ export default function TestimonialsSection() {
       name: "Emily Carter",
       role: "Product Manager",
       content:
-        "Advera's creative team brought our product to life. Their branding strategy helped us stand out in a crowded market.",
+        "The creative team brought our product to life. Their fresh ideas and bold visual identity helped us stand out in a competitive market.",
     },
     {
       id: 7,
       avatar: profileImage7.src,
       name: "James Wilson",
       role: "Operations Head",
-      content: "Professional, punctual, and results-driven. Advera has been our go-to agency for all things digital.",
+      content:
+        "Professional, punctual, and results-driven. This creative agency has been our go-to partner for all things branding and visual communication.",
     },
     {
       id: 8,
       avatar: profileImage8.src,
       name: "James Wilson",
       role: "Operations Head",
-      content: "Professional, punctual, and results-driven. Advera has been our go-to agency for all things digital.",
+      content:
+        "Professional, punctual, and results-driven. This creative agency has been our go-to partner for all things branding and visual communication.",
     },
-  ]
+  ];
 
   // Setup auto-sliding
   useEffect(() => {
-    if (!api || !autoPlay) return
+    if (!api || !autoPlay) return;
 
     // Clear any existing interval
     if (autoPlayIntervalRef.current) {
-      clearInterval(autoPlayIntervalRef.current)
+      clearInterval(autoPlayIntervalRef.current);
     }
 
     // Set up new interval for auto-sliding
     autoPlayIntervalRef.current = setInterval(() => {
-      api.scrollNext()
-    }, 1500) 
+      api.scrollNext();
+    }, 1500);
 
     // Cleanup function
     return () => {
       if (autoPlayIntervalRef.current) {
-        clearInterval(autoPlayIntervalRef.current)
+        clearInterval(autoPlayIntervalRef.current);
       }
-    }
-  }, [api, autoPlay])
+    };
+  }, [api, autoPlay]);
 
   useEffect(() => {
-    if (!api) return
+    if (!api) return;
 
-    setCount(api.scrollSnapList().length)
+    setCount(api.scrollSnapList().length);
 
     const onSelect = () => {
-      setCurrent(api.selectedScrollSnap())
-    }
+      setCurrent(api.selectedScrollSnap());
+    };
 
     // Pause auto-sliding when user interacts with carousel
     const onDragStart = () => {
-      setAutoPlay(false)
-    }
+      setAutoPlay(false);
+    };
 
     // Resume auto-sliding after a period of inactivity
     const onDragEnd = () => {
-      setTimeout(() => setAutoPlay(true), 5000)
-    }
+      setTimeout(() => setAutoPlay(true), 5000);
+    };
 
-    api.on("select", onSelect)
-    api.on("pointerDown", onDragStart)
-    api.on("pointerUp", onDragEnd)
+    api.on("select", onSelect);
+    api.on("pointerDown", onDragStart);
+    api.on("pointerUp", onDragEnd);
 
     return () => {
-      api.off("select", onSelect)
-      api.off("pointerDown", onDragStart)
-      api.off("pointerUp", onDragEnd)
-    }
-  }, [api])
+      api.off("select", onSelect);
+      api.off("pointerDown", onDragStart);
+      api.off("pointerUp", onDragEnd);
+    };
+  }, [api]);
 
   return (
-    <section id="review" className="py-12 md:py-30 bg-[#f9f9f9] relative overflow-hidden">
+    <section
+      id="review"
+      className="py-12 md:py-30 bg-[#f9f9f9] relative overflow-hidden"
+    >
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="absolute md:top-[10%] top-[5%] left-[8%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CE5C]/30 to-[#3DB1B1]/20 opacity-40 pointer-events-none"></div>
         <div className="absolute md:bottom-[10%] bottom-[5%] right-[8%] w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] rounded-full bg-gradient-to-r from-[#209CEB]/30 to-[#65CE5C]/20 opacity-30 pointer-events-none"></div>
@@ -155,10 +161,12 @@ export default function TestimonialsSection() {
       <div className="container px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center gap-3 text-center mb-6">
           <h2 className="text-3xl font-bold text-[#1C2D44]">VIEW REVIEWS</h2>
-          <h3 className="text-4xl md:text-5xl font-bold text-[#3DB1B1]">Hear from Our Success Stories</h3>
+          <h3 className="text-4xl md:text-5xl font-bold text-[#3DB1B1]">
+            Hear from Our Success Stories
+          </h3>
           <p className="max-w-[500px] text-base md:text-lg mt-2 text-[#000000]">
-            Real clients, real results. Discover how we've partnered with brands like yours to deliver measurable
-            success
+            Real clients, real results. Discover how we've partnered with brands
+            like yours to deliver measurable success
           </p>
         </div>
 
@@ -172,7 +180,10 @@ export default function TestimonialsSection() {
         >
           <CarouselContent className="-ml-4 py-3">
             {testimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+              <CarouselItem
+                key={testimonial.id}
+                className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+              >
                 <TestimonialCard testimonial={testimonial} />
               </CarouselItem>
             ))}
@@ -189,7 +200,9 @@ export default function TestimonialsSection() {
                 <button
                   key={index}
                   className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full ${
-                    current === index ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED]" : "bg-gray-300"
+                    current === index
+                      ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED]"
+                      : "bg-gray-300"
                   }`}
                   onClick={() => api?.scrollTo(index)}
                 >
@@ -206,5 +219,5 @@ export default function TestimonialsSection() {
         </Carousel>
       </div>
     </section>
-  )
+  );
 }
