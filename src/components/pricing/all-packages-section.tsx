@@ -10,7 +10,9 @@ import {
   websitePackage,
   socialMediaPackage,
   seoPackage,
-} from "@/components/constants";
+  uiDesignPackages,
+  appPackages
+} from "@/components/packages/packages";
 import PricingSection from "@/components/pricing/pricing-section";
 
 const filterVariants = {
@@ -80,6 +82,9 @@ const filter = [
   "logo Package",
   "SEO Package",
   "Social Media Package",
+  "UI Design Package",
+  "Mobile App Package",
+
 ];
 
 const allPricingData = {
@@ -88,6 +93,9 @@ const allPricingData = {
   logoPackages: logoPackage,
   seoPackages: seoPackage,
   socialMediaPackages: socialMediaPackage,
+  uiDesignPackages: uiDesignPackages,
+  appPackages: appPackages,
+
 };
 
 const pricingOptionsTilte = "BEAT THE ODDS";
@@ -101,7 +109,9 @@ export default function AllPackagesSection() {
     | (typeof ecommercePackage)[number]
     | (typeof logoPackage)[number]
     | (typeof seoPackage)[number]
-    | (typeof socialMediaPackage)[number];
+    | (typeof socialMediaPackage)[number]
+    | (typeof uiDesignPackages)[number]
+    | (typeof appPackages)[number];
   const [filteredPricingOptions, setFilteredPricingOptions] = useState<
     PricingOption[]
   >(allPricingData.websitePackages);
@@ -116,6 +126,8 @@ export default function AllPackagesSection() {
       "logo Package": "logoPackages",
       "SEO Package": "seoPackages",
       "Social Media Package": "socialMediaPackages",
+      "UI Design Package": "uiDesignPackages",
+      "Mobile App Package": "appPackages",
     };
 
     const dataKey = filterMap[filter];

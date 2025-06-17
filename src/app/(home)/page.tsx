@@ -88,7 +88,7 @@ export default function Home() {
         title="HERE IS"
         paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
         backgroundImage={waterMarkLogo.src}
-        filters={["All", "E-commerce", "Website Package", "Real Estate"]}
+        filters={["All", "E-commerce", "Real Estate"]}
         portfolioData={portfolioData}
       />
 

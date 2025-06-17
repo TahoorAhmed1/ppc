@@ -197,7 +197,7 @@ export default function PricingSection({
               currentPrice={option.currentPrice ?? undefined}
               originalPrice={option.originalPrice ?? undefined}
               features={option.features}
-              index={index}
+              index={index}              
               packageHeading={option.packageHeading}
               packageDescription={option.packageDescription}
               buttonTitle={option.buttonTitle}

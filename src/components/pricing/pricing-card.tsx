@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useFormContact } from "@/store/form";
 import { useState } from "react";
 import { BookingModal } from "../website-development/booking-modal";
+import { Check } from "lucide-react";
 
 interface PricingCardProps {
   packageHeading: string;
@@ -30,17 +31,15 @@ export function PricingCard({
   return (
     <>
       <motion.div
-        className="pricing-card border border-gray-200 rounded-lg overflow-hidden flex flex-col w-full h-full p-3 sm:p-4 md:p-5 shadow-sm"
+        className="pricing-card border border-[#4ecca3] rounded-lg overflow-hidden flex flex-col w-full h-full p-3 sm:p-4 md:p-5 shadow-sm"
         initial={{
           y: 0,
           boxShadow: "0 1px 2px rgba(0,0,0,0.05)",
-          borderColor: "#e5e7eb",
-        }} // Tailwind's gray-200
+        }}
         whileHover={{
           y: -8,
           boxShadow:
             "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-          borderColor: "#4ecca3",
         }}
         transition={{
           type: "spring",
@@ -98,7 +97,15 @@ export function PricingCard({
           </motion.div>
         </div>
         <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6">
-          <ul className="space-y-1 sm:space-y-2">
+          <ul
+            className="max-h-48 overflow-y-auto pr-2 space-y-1 sm:space-y-2 
+                       [&::-webkit-scrollbar]:w-2
+                       [&::-webkit-scrollbar-track]:bg-transparent
+                       [&::-webkit-scrollbar-track]:rounded-full
+                       [&::-webkit-scrollbar-thumb]:rounded-full
+                       [&::-webkit-scrollbar-thumb]:bg-[linear-gradient(to_bottom,_#65CF5FCC,_#1F9BED)]
+                       [&::-webkit-scrollbar-button]:hidden
+                       scrollbar-thin scrollbar-thumb-[#65CF5F] scrollbar-track-transparent">
             {features.map((feature, featureIndex) => (
               <motion.li
                 key={featureIndex}
@@ -108,7 +115,7 @@ export function PricingCard({
                 transition={{ delay: 0.4 + index * 0.05 + featureIndex * 0.03 }}
               >
                 <motion.span
-                  className="text-[#4ecca3] mr-2 mt-1 flex-shrink-0"
+                  className="text-[#4ecca3] mr-2 flex-shrink-0"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{
                     repeat: Number.POSITIVE_INFINITY,
@@ -117,7 +124,7 @@ export function PricingCard({
                     delay: featureIndex * 0.2,
                   }}
                 >
-                  •
+                  <Check />
                 </motion.span>
                 <span className="text-xs sm:text-sm text-gray-700">
                   {feature}
