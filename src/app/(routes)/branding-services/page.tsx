@@ -1,9 +1,7 @@
-import { girlWithPhone, heroSectionImage3, profileImage4 } from "@/assets";
-import Footer from "@/components/footer";
+import { girlWithPhone,  } from "@/assets";
 import PortfolioSection from "@/components/portfolio-section";
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
 import HireDevelopersSection from "@/components/hire-developer/hire-developers-section";
-import Link from "next/link";
 import PricingSection from "@/components/pricing/pricing-section";
 import ServicesHeroSection from "@/components/digital-marketing/services-hero-section";
 

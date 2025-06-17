@@ -1,7 +1,6 @@
 import logo from "@/assets/images/logo.svg";
 import firmsLogos from "@/assets/images/ux-firms-logos.webp";
 import mailIcon from "@/assets/images/mail-icon.svg";
-import profileImage from "@/assets/images/profile-image.webp";
 import projectDoneLine from "@/assets/images/project-done-line.svg";
 import heroSectionImage2 from "@/assets/images/girl-image.webp";
 import aboutCardIcon1 from "@/assets/images/Illust-1.svg";
@@ -78,6 +77,7 @@ import project15 from "@/assets/images/project/timothy_enhanced.webp";
 import project16 from "@/assets/images/project/yohan it_enhanced.webp";
 import popup from "@/assets/images/main-popup.png";
 import profileImage1 from "@/assets/images/pfp (1).webp";
+import profileImage2 from "@/assets/images/pfp (2).webp";
 import profileImage3 from "@/assets/images/pfp (3).webp";
 import profileImage4 from "@/assets/images/pfp (4).webp";
 import profileImage5 from "@/assets/images/pfp (5).webp";
@@ -163,7 +163,6 @@ export {
   fap,
   firmsLogos,
   mailIcon,
-  profileImage,
   projectDoneLine,
   heroSectionImage2,
   aboutCardIcon1,
@@ -216,6 +215,7 @@ export {
   webflowIcon,
   wordpressIcon,
   profileImage1,
+  profileImage2,
   profileImage3,
   profileImage4,
   profileImage5,

@@ -6,7 +6,6 @@ import ExperienceSection from "@/components/experience-section";
 import PortfolioSection from "@/components/portfolio-section";
 import ContactSection from "@/components/contact-section";
 import FaqSection from "@/components/faq-section";
-import Footer from "@/components/footer";
 import {
   project1,
   project2,

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Star, X } from "lucide-react";
+import { Star, X } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   firmsLogos,
@@ -13,12 +13,12 @@ import {
   wixIcon,
   webflowIcon,
   wordpressIcon,
-  profileImage6,
+  profileImage1,
 } from "@/assets";
 import { AiFillSafetyCertificate } from "react-icons/ai";
 import StatsBar from "./stats-card";
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AutoSlider from "./auto-slider";
 
 const pulseAnimation = {
@@ -170,7 +170,7 @@ export default function HeroSection() {
         )}
       </AnimatePresence>
 
-      <div className="absolute lg:right-[9%] right-[15%] lg:top-20 md:top-[40%] sm:top-[42%] top-6/11 z-40">
+      <div className="absolute lg:right-[9%] right-[15%] lg:top-20 md:top-[40%] sm:top-[42%] sm:flex hidden z-40 ">
         <div className="cursor-pointer" onClick={() => setActivePopup(5)}>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Card
@@ -345,7 +345,7 @@ export default function HeroSection() {
               <div className="flex items-center gap-[1vw]">
                 <img
                   src={
-                    profileImage6?.src ||
+                    profileImage1?.src ||
                     "/placeholder.svg?height=40&width=40&query=profile avatar"
                   }
                   alt="Customer Avatar"

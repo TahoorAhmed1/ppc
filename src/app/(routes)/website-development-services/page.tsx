@@ -72,7 +72,7 @@ export default function Page() {
         "We leverage modern frameworks and tools to craft fast, secure, and future-ready web solutions. ",
     },
   ];
-  
+
   const portfolioData = [
     { image: project1.src, category: "Real Estate" },
     { image: project2.src, category: "E-commerce" },
@@ -125,7 +125,7 @@ export default function Page() {
             heading="Our Diverse Portfolio"
             title=""
             paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
-            filters={["All", "E-commerce", "Website Package", "Real Estate"]}
+            filters={["All", "E-commerce", "Real Estate"]}
             portfolioData={portfolioData}
           />
           <PricingSection
