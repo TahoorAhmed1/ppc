@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView, useAnimation, type Variants } from "framer-motion";
-import {  mailIcon ,girlWithPhone} from "@/assets";
+import { mailIcon, girlWithPhone } from "@/assets";
 
 // Create motion components
 const MotionDiv = motion.div;
@@ -118,7 +118,7 @@ export default function MarketingSection() {
             variants={imageVariants}
           >
             <Image
-              src={girlWithPhone || "/placeholder.svg"} 
+              src={girlWithPhone || "/placeholder.svg"}
               alt="Digital marketing professional"
               width={1000}
               height={1000}
@@ -152,13 +152,15 @@ export default function MarketingSection() {
                 />
               </MotionDiv>
               <MotionDiv variants={itemVariants}>
-                <p><a className="font-semibold text-lg"
-                  href="tel:+18045745376">
-                  +1 (804) 574 5376
-                </a></p>
+                <p>
+                  <a className="font-semibold text-lg" href="tel:+18045745376">
+                    +1 (804) 574 5376
+                  </a>
+                </p>
                 <a
                   className="text-xs"
-                  href="mailto:support@creativeagency360.com">
+                  href="mailto:support@creativeagency360.com"
+                >
                   support@creativeagency360.com
                 </a>
               </MotionDiv>
@@ -188,9 +190,7 @@ export default function MarketingSection() {
               EXPERIENCE
             </h2>
             <h2 className="text-4xl font-bold leading-snug">
-              <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
-                That Speaks for Itself
-              </span>
+              <span className="text-[#41B4A7]">That Speaks for Itself</span>
             </h2>
           </MotionDiv>
 
