@@ -29,6 +29,7 @@ import TestimonialsSection from "@/components/testimonials-section";
 import AllPackagesSection from "@/components/pricing/all-packages-section";
 import NewServicesSection from "@/components/new-services-section";
 import NewPortfolioSection from "@/components/new-portfolio-section";
+import NewAllPackagesSection from "@/components/pricing/new-all-packages-section";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -92,7 +93,7 @@ export default function Home() {
         portfolioData={portfolioData}
       />
 
-      <AllPackagesSection />
+      <NewAllPackagesSection />
 
       <TestimonialsSection />
 

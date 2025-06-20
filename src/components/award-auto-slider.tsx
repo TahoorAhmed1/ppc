@@ -99,11 +99,11 @@ export default function AwardsAutoSlider({ platforms, speed = 20, className = ""
       ref={containerRef}
     >
       <div className="relative w-full overflow-hidden">
-        <motion.div className="flex" animate={controls}>
+        <motion.div className="flex gap-2" animate={controls}>
           {allPlatforms.map((platform, index) => (
             <motion.div
               key={index}
-              className="flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 min-w-[100px] sm:min-w-[140px] md:min-w-[160px] lg:min-w-[200px] h-12 sm:h-16 md:h-20 lg:h-24 shrink-0  border-gray-100"
+              className="flex items-center  justify-center bg-[#f9fafb] backdrop-blur-sm rounded-full p-3 sm:p-4 md:p-5 lg:p-6 min-w-[100px] sm:min-w-[140px] md:min-w-[160px] lg:min-w-[200px] h-12 sm:h-16 md:h-20 lg:h-24 shrink-0 "
             >
               <div className="relative w-16 sm:w-20 md:w-24 lg:w-32 h-6 sm:h-8 md:h-10 lg:h-12">
                 <Image src={platform.src || "/placeholder.svg"} alt={platform.name} fill className="object-contain" />

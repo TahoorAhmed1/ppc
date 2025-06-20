@@ -14,6 +14,7 @@ import {
   offerIcon5,
   offerIcon6,
 } from "@/assets";
+import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
 
 interface ServiceItem {
   image: string;
@@ -158,7 +159,10 @@ const NewServicesSection: React.FC<ServicesSectionProps> = ({
 
         <div className="grid gap-4 sm:gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
           {services
-            .slice(currentIndex * cardsPerPage, (currentIndex + 1) * cardsPerPage)
+            .slice(
+              currentIndex * cardsPerPage,
+              (currentIndex + 1) * cardsPerPage
+            )
             .map((service, index) => (
               <a href={service.link} key={currentIndex * cardsPerPage + index}>
                 <MotionCard
@@ -222,19 +226,21 @@ const NewServicesSection: React.FC<ServicesSectionProps> = ({
               <Button
                 onClick={() => setCurrentIndex(Math.max(0, currentIndex - 1))}
                 disabled={currentIndex === 0}
-                className="bg-[#3DB1B1] hover:bg-[#1C2D44] text-white px-6 py-2 rounded-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="static h-8 w-8 md:h-10 md:w-10  cursor-pointer  bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-white rounded-full hover:opacity-90 transition-opacity"
               >
-                Previous
+                <ArrowLeft />
               </Button>
             </motion.div>
-            
+
             <div className="flex items-center gap-2">
               {Array.from({ length: totalPages }, (_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrentIndex(i)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    i === currentIndex ? 'bg-[#3DB1B1]' : 'bg-gray-300 hover:bg-gray-400'
+                    i === currentIndex
+                      ? "bg-[#3DB1B1]"
+                      : "bg-gray-300 hover:bg-gray-400"
                   }`}
                 />
               ))}
@@ -246,11 +252,13 @@ const NewServicesSection: React.FC<ServicesSectionProps> = ({
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <Button
-                onClick={() => setCurrentIndex(Math.min(totalPages - 1, currentIndex + 1))}
+                onClick={() =>
+                  setCurrentIndex(Math.min(totalPages - 1, currentIndex + 1))
+                }
                 disabled={currentIndex === totalPages - 1}
-                className="bg-[#3DB1B1] hover:bg-[#1C2D44] text-white px-6 py-2 rounded-md transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="static h-8 w-8 md:h-10 md:w-10  cursor-pointer  bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-white rounded-full hover:opacity-90 transition-opacity"
               >
-                Next
+                <ArrowRight />
               </Button>
             </motion.div>
           </div>
