@@ -280,7 +280,7 @@ export default function PricingPackage() {
             >
               <div
                 className={`space-y-4 ${
-                  idx % 2 === 0 ? "order-2 md:order-1" : "order-2"
+                  idx % 2 === 0 ? "order-1 lg:order-1" : "order-1 lg:order-2"
                 }`}
               >
                 <div
@@ -370,10 +370,9 @@ export default function PricingPackage() {
                   </motion.a>
                 </div>
               </div>
-
               <div
                 className={`bg-white col-span-1 md:col-span-2 rounded-3xl p-6 md:p-8 flex-1 ${
-                  idx % 2 === 0 ? "order-1 md:order-2" : "order-1"
+                  idx % 2 === 0 ? "order-2 lg:order-2" : "order-2 lg:order-1"
                 }`}
               >
                 <div className="flex flex-col sm:flex-row gap-4 mb-4">
