@@ -27,6 +27,7 @@ import {
 import HeroSection from "@/components/hero-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import AllPackagesSection from "@/components/pricing/all-packages-section";
+import NewServicesSection from "@/components/new-services-section";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -70,7 +71,7 @@ export default function Home() {
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
       >
-        <ServicesSection />
+        <NewServicesSection />
       </motion.div>
 
       <motion.div
