@@ -14,6 +14,12 @@ import {
   webflowIcon,
   wordpressIcon,
   profileImage1,
+  newAward1,
+  newAward2,
+  newAward4,
+  newAward3,
+  newAward5,
+  newAward6,
 } from "@/assets";
 import { AiFillSafetyCertificate } from "react-icons/ai";
 import StatsBar from "./stats-card";
@@ -73,6 +79,15 @@ const platforms = [
   { name: "WordPress", src: wordpressIcon.src },
   { name: "Wix", src: wixIcon.src },
   { name: "Webflow", src: webflowIcon.src },
+];
+
+const newAward = [
+  { name: "new Award 1", src: newAward1.src },
+  { name: "new Award 2", src: newAward2.src },
+  { name: "new Award 3", src: newAward3.src },
+  { name: "new Award 4", src: newAward4.src },
+  { name: "new Award 5", src: newAward5.src },
+  { name: "new Award 6", src: newAward6.src },
 ];
 const shimmerAnimation = {
   hidden: { backgroundPosition: "200% 0" },
@@ -225,7 +240,10 @@ export default function HeroSection() {
               transition={{ duration: 0.5 }}
               className="space-y-2 md:space-y-4"
             >
-              <h1 className="text-[35px] font-bold md:leading-tight md:text-4xl lg:text-5xl" style={{ fontFamily: "var(--font-bricolage)" }}>
+              <h1
+                className="text-[35px] font-bold md:leading-tight md:text-4xl lg:text-5xl"
+                style={{ fontFamily: "var(--font-bricolage)" }}
+              >
                 <motion.span
                   initial="hidden"
                   animate="visible"
@@ -288,7 +306,7 @@ export default function HeroSection() {
                 className="w-full h-auto max-h-20 -z-1"
                 priority
               /> */}
-              <AwardsAutoSlider platforms={platforms} />
+              <AwardsAutoSlider platforms={newAward} />
             </div>
 
             <div className="flex flex-col gap-2 min-[400px]:flex-row">

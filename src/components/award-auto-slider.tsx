@@ -99,7 +99,7 @@ export default function AwardsAutoSlider({ platforms, speed = 20, className = ""
       ref={containerRef}
     >
       <div className="relative w-full overflow-hidden">
-        <motion.div className="flex gap-4 sm:gap-6 md:gap-8 lg:gap-12" animate={controls}>
+        <motion.div className="flex" animate={controls}>
           {allPlatforms.map((platform, index) => (
             <motion.div
               key={index}

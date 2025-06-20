@@ -125,6 +125,12 @@ import portfolioLogo9 from "@/assets/images/portfolio-logos/portfolio-logo (9).j
 import portfolioLogo10 from "@/assets/images/portfolio-logos/portfolio-logo (10).jpg";
 import portfolioLogo11 from "@/assets/images/portfolio-logos/portfolio-logo (11).jpg";
 import packagesBgImage from "@/assets/images/packages-bg-image.jpg";
+import newAward1 from "@/assets/images/new-award (1).png";
+import newAward2 from "@/assets/images/new-award (2).png";
+import newAward3 from "@/assets/images/new-award (3).png";
+import newAward4 from "@/assets/images/new-award (4).png";
+import newAward5 from "@/assets/images/new-award (5).png";
+import newAward6 from "@/assets/images/new-award (6).png";
 
 export {
   packagesBgImage,
@@ -254,4 +260,10 @@ export {
   portfolioLogo9,
   portfolioLogo10,
   portfolioLogo11,
+  newAward1,
+  newAward2,
+  newAward3,
+  newAward4,
+  newAward5,
+  newAward6,
 };
