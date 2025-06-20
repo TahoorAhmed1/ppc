@@ -1,18 +1,24 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { z } from "zod"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { Loader2 } from "lucide-react"
-import { useState } from "react"
-import { motion } from "framer-motion"
+import Image from "next/image";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2 } from "lucide-react";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
-import { Button } from "@/components/ui/button"
-import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Typewriter } from "react-simple-typewriter"
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Typewriter } from "react-simple-typewriter";
 
 import {
   award1,
@@ -26,21 +32,23 @@ import {
   serviceIcon4,
   serviceIcon5,
   serviceIcon6,
-} from "@/assets/index"
-import { notify } from "@/lib/utils"
-import { useFormContact } from "@/store/form"
-import { AnimatedServiceCategory } from "./animated-service-category"
+} from "@/assets/index";
+import { notify } from "@/lib/utils";
+import { useFormContact } from "@/store/form";
+import { AnimatedServiceCategory } from "./animated-service-category";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
   phone: z.string().min(6, { message: "Please enter a valid phone number" }),
-  message: z.string().min(5, { message: "Description must be at least 5 characters" }),
-})
+  message: z
+    .string()
+    .min(5, { message: "Description must be at least 5 characters" }),
+});
 
-type ContactFormData = z.infer<typeof formSchema>
+type ContactFormData = z.infer<typeof formSchema>;
 
-const award = [award1.src, award2.src, award3.src, award4.src]
+const award = [award1.src, award2.src, award3.src, award4.src];
 const services = [
   { icon: serviceIcon1.src, title: "REAL ESTATE", subtitle: "W E B S I T E" },
   { icon: serviceIcon2.src, title: "TRAVEL / TOUR", subtitle: "W E B S I T E" },
@@ -56,9 +64,8 @@ const services = [
     subtitle: "W E B S I T E",
   },
   { icon: serviceIcon6.src, title: "E-COMMERCE", subtitle: "W E B S I T E" },
-]
+];
 
-// Animation variants
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -66,7 +73,7 @@ const fadeIn = {
     y: 0,
     transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1.0] },
   },
-}
+};
 
 const slideIn = {
   hidden: { x: -60, opacity: 0 },
@@ -75,7 +82,7 @@ const slideIn = {
     opacity: 1,
     transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1.0] },
   },
-}
+};
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -86,15 +93,15 @@ const staggerContainer = {
       delayChildren: 0.3,
     },
   },
-}
+};
 
 export default function WebsiteDevelopmentHeroSection({
   backgroundImage = heroSectionImage3.src,
   awards = award,
 }: any) {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSuccess, setIsSuccess] = useState(false)
-  const { setIsOpen }: any = useFormContact()
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const { setIsOpen }: any = useFormContact();
   const form = useForm<ContactFormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -103,45 +110,48 @@ export default function WebsiteDevelopmentHeroSection({
       phone: "",
       message: "",
     },
-  })
+  });
 
   const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true)
+    setIsSubmitting(true);
     try {
-      const formData = new FormData()
+      const formData = new FormData();
       Object.entries(data).forEach(([key, value]) => {
-        if (value) formData.append(key, value)
-      })
+        if (value) formData.append(key, value);
+      });
 
       try {
-        const ipResponse = await fetch("https://api.ipify.org?format=json")
-        const ipData = await ipResponse.json()
-        formData.append("ip_address", ipData.ip)
+        const ipResponse = await fetch("https://api.ipify.org?format=json");
+        const ipData = await ipResponse.json();
+        formData.append("ip_address", ipData.ip);
       } catch (error) {
-        console.error("Could not fetch IP address:", error)
+        console.error("Could not fetch IP address:", error);
       }
 
-      const response = await fetch("https://demo7.obistest.online/api/store-contact-us-form", {
-        method: "POST",
-        body: formData,
-      })
+      const response = await fetch(
+        "https://demo7.obistest.online/api/store-contact-us-form",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
-        throw new Error("Failed to submit form")
+        throw new Error("Failed to submit form");
       }
 
-      setIsSuccess(true)
-      notify("success", "Message sent successfully!")
+      setIsSuccess(true);
+      notify("success", "Message sent successfully!");
 
       setTimeout(() => {
-        form.reset()
-        setIsSuccess(false)
-      }, 2000)
+        form.reset();
+        setIsSuccess(false);
+      }, 2000);
     } catch (error) {
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <div
@@ -151,7 +161,7 @@ export default function WebsiteDevelopmentHeroSection({
       <div className="absolute inset-0 bg-black/30 mix-blend-multiply"></div>
 
       <motion.div
-        className="relative z-10 container py-6"
+        className="relative z-10 container py-6 px-4 sm:px-6"
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
@@ -159,7 +169,7 @@ export default function WebsiteDevelopmentHeroSection({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center mt-10">
           <motion.div className="w-full" variants={fadeIn}>
             <motion.h1
-              className="text-[46px] lg:text-[60px] font-bold leading-tight h-[350px]"
+              className="text-[30px] sm:text-[38px] md:text-[46px] lg:text-[60px] font-bold leading-tight h-auto"
               variants={slideIn}
             >
               <motion.span
@@ -208,7 +218,7 @@ export default function WebsiteDevelopmentHeroSection({
               </motion.div>
 
               <motion.div
-                className="flex gap-6 items-center"
+                className="flex flex-wrap gap-3 md:gap-6 items-center justify-start md:justify-normal"
                 variants={staggerContainer}
               >
                 {awards.map((awardImage: any, i: any) => (
@@ -249,7 +259,7 @@ export default function WebsiteDevelopmentHeroSection({
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             <motion.div
-              className="relative p-[4px] rounded-xl border-animation-wrapper max-w-[550px] ml-auto shadow-lg"
+              className="relative p-[4px] rounded-xl border-animation-wrapper max-w-full sm:max-w-[550px] mx-auto sm:ml-auto shadow-lg"
               whileHover={{
                 boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                 transition: { duration: 0.3 },
@@ -287,8 +297,8 @@ export default function WebsiteDevelopmentHeroSection({
                                     <Textarea
                                       {...field}
                                       placeholder="Write Your business description"
-                                      rows={4}
-                                      className="w-full p-4 h-32 bg-[#1a3b49]/20 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base resize-none outline-none"
+                                      rows={2}
+                                      className="w-full p-4 h-24 bg-[#1a3b49]/20 placeholder:font-normal font-semibold rounded-md text-white placeholder:text-slate-200 text-base resize-none outline-none"
                                       style={{
                                         boxShadow:
                                           "0 0 0 1px rgba(102, 201, 193, 0.2), inset 0 0 0 1px rgba(102, 201, 193, 0.1)",
