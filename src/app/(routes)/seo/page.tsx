@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+import ContactSection from "@/components/contact-section";
 import { logoServiceImage, seoServiceImage } from "@/assets";
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
 import HireDevelopersSection from "@/components/hire-developer/hire-developers-section";
@@ -52,6 +56,17 @@ export default function Page() {
     },
   ];
 
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
+
   return (
     <>
       <div className="min-h-screen flex flex-col">
@@ -78,6 +93,14 @@ export default function Page() {
             HireDevelopersSectionHeading="The Best SEO Company "
             HireDevelopersSectionDiscripton="Navigating SEO without risking penalties can be complex. That’s why we support you every step of the way. Our results-driven SEO approach boosts keyword rankings, drives organic traffic, and increases your bottom line. "
           />
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={sectionVariants}
+          >
+            <ContactSection />
+          </motion.div>
         </div>
       </div>
     </>

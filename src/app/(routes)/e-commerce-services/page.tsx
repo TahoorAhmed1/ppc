@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+import ContactSection from "@/components/contact-section";
 import { ecomerceServiceImage, logoServiceImage } from "@/assets";
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
 import HireDevelopersSection from "@/components/hire-developer/hire-developers-section";
@@ -53,6 +57,17 @@ export default function Page() {
     },
   ];
 
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
+
   const pageHeading = "E-commerce Services";
   //Hire
   const HireDevelopersSectionTitle = "Agile App Development";
@@ -93,6 +108,14 @@ export default function Page() {
             HireDevelopersSectionHeading="E-Commerce Pioneers "
             HireDevelopersSectionDiscripton="Building a successful e-commerce business requires more than just an attractive website. We create robust, scalable e-commerce platforms that optimize for both customer experience and long-term growth. "
           />
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={sectionVariants}
+          >
+            <ContactSection />
+          </motion.div>
         </div>
       </div>
     </>

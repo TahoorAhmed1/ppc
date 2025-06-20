@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import {
   logoServiceImage,
   portfolioLogo1,
@@ -20,6 +23,7 @@ import HireDevelopersSection from "@/components/hire-developer/hire-developers-s
 import PricingSection from "@/components/pricing/pricing-section";
 import ServicesHeroSection from "@/components/digital-marketing/services-hero-section";
 import { logoPackage } from "@/components/packages/packages";
+import ContactSection from "@/components/contact-section";
 export type FeatureItemType = {
   icon: "megaphone" | "chart";
   title: string;
@@ -114,6 +118,16 @@ export default function Page() {
       category: "",
     },
   ];
+  const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+    },
+  },
+};
 
   const pageHeading = "Logo Services";
 
@@ -148,6 +162,14 @@ export default function Page() {
             HireDevelopersSectionHeading="Pioneers in Logo Design "
             HireDevelopersSectionDiscripton="Crafting a memorable logo takes more than just creativity. We design logos that are not only visually striking but also strategically aligned with your brand’s mission, values, and vision. "
           />
+          <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
+        <ContactSection />
+      </motion.div>
         </div>
       </div>
     </>

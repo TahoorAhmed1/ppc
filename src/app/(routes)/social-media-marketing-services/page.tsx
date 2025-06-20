@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+import ContactSection from "@/components/contact-section";
 import { logoServiceImage, socilaMediaServiceImage } from "@/assets";
 import WebDevelopmentSection from "@/components/web-development-services/web-development-section";
 import HireDevelopersSection from "@/components/hire-developer/hire-developers-section";
@@ -52,6 +56,16 @@ export default function Page() {
         "We use top-tier tools to schedule, analyze, and optimize your content for maximum visibility and impact. ",
     },
   ];
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
 
   const pageHeading = "Social Media Marketing Services";
 
@@ -80,6 +94,14 @@ export default function Page() {
           HireDevelopersSectionHeading="The Best Social Media Management Team "
           HireDevelopersSectionDiscripton="Building a real presence on social media takes more than just posting. That’s where we come in. Our strategy-driven services boost engagement, grow your audience, and turn followers into loyal customers. "
         />
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <ContactSection />
+        </motion.div>
       </>
     </div>
   );

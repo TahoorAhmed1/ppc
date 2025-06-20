@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+import ContactSection from "@/components/contact-section";
+
 import {
   heroSectionImage3,
   logoServiceImage,
@@ -90,6 +95,17 @@ export default function Page() {
     { image: project15.src, category: "E-commerce" },
     { image: project16.src, category: "Business" },
   ];
+  
+    const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+    },
+  },
+};
 
   return (
     <>
@@ -141,6 +157,14 @@ export default function Page() {
             features={developerFeatures}
             image={logoServiceImage.src}
           />
+            <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                  variants={sectionVariants}
+                >
+                  <ContactSection />
+                </motion.div>
         </div>
       </div>
     </>
