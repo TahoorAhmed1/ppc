@@ -40,7 +40,6 @@ const navItems = [
   },
   { label: "Packages", href: "/packages" },
   { label: "Contact Us", href: "#contactus" },
-  { label: "Web Hosting", href: "/web-hosting" },
 ];
 
 export default function Header2({

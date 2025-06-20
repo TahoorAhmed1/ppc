@@ -45,7 +45,6 @@ export default function Header() {
         { label: "Packages", href: "/packages" },
 
     { label: "Contact Us", href: "#contactus" },
-    { label: "Web Hosting", href: "/web-hosting" },
   ];
 
   return (

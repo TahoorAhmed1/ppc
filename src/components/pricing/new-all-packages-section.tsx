@@ -10,10 +10,7 @@ import {
   websitePackage,
   socialMediaPackage,
   seoPackage,
-  uiDesignPackages,
   appPackages,
-  hostingPackages,
-  pitchDeckPackages,
 } from "@/components/packages/packages";
 import PricingSection from "@/components/pricing/pricing-section";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -79,16 +76,14 @@ const headingVariants = {
   },
 };
 
+// ✅ Filter options without removed packages
 const filter = [
   "Website Package",
   "E-commerce Package",
   "logo Package",
   "SEO Package",
   "Social Media Package",
-  "UI Design Package",
-  "Hosting Package",
   "Mobile App Package",
-  "Pitch Deck Package",
 ];
 
 const allPricingData = {
@@ -97,10 +92,7 @@ const allPricingData = {
   logoPackages: logoPackage,
   seoPackages: seoPackage,
   socialMediaPackages: socialMediaPackage,
-  uiDesignPackages: uiDesignPackages,
   appPackages: appPackages,
-  hostingPackages: hostingPackages,
-  pitchDeckPackages: pitchDeckPackages,
 };
 
 const pricingOptionsTilte = "Packages";
@@ -115,10 +107,7 @@ export default function NewAllPackagesSection() {
     | (typeof logoPackage)[number]
     | (typeof seoPackage)[number]
     | (typeof socialMediaPackage)[number]
-    | (typeof uiDesignPackages)[number]
-    | (typeof appPackages)[number]
-    | (typeof hostingPackages)[number]
-    | (typeof pitchDeckPackages)[number];
+    | (typeof appPackages)[number];
 
   const [filteredPricingOptions, setFilteredPricingOptions] = useState<
     PricingOption[]
@@ -131,7 +120,7 @@ export default function NewAllPackagesSection() {
 
   const handleFilterClick = (filter: string) => {
     setActiveFilter(filter);
-    setCurrentIndex(0); // Reset to first page when filter changes
+    setCurrentIndex(0);
 
     const filterMap: Record<string, keyof typeof allPricingData> = {
       "Website Package": "websitePackages",
@@ -139,10 +128,7 @@ export default function NewAllPackagesSection() {
       "logo Package": "logoPackages",
       "SEO Package": "seoPackages",
       "Social Media Package": "socialMediaPackages",
-      "UI Design Package": "uiDesignPackages",
       "Mobile App Package": "appPackages",
-      "Hosting Package": "hostingPackages",
-      "Pitch Deck Package": "pitchDeckPackages",
     };
 
     const dataKey = filterMap[filter];
@@ -151,7 +137,6 @@ export default function NewAllPackagesSection() {
     }
   };
 
-  // Get current packages to display
   const currentPackages = filteredPricingOptions.slice(
     currentIndex * packagesPerPage,
     (currentIndex + 1) * packagesPerPage
@@ -159,7 +144,7 @@ export default function NewAllPackagesSection() {
 
   return (
     <div className="bg-white py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16">
-      <div className="text-center mb-8 sm:mb-10 md:mb-12  ">
+      <div className="text-center mb-8 sm:mb-10 md:mb-12">
         <motion.h2
           className="text-xl sm:text-2xl font-bold text-[#1a3a5a] uppercase mb-2 sm:mb-4"
           initial={{ opacity: 0, y: 10 }}
@@ -169,7 +154,6 @@ export default function NewAllPackagesSection() {
           {pricingOptionsTilte}
         </motion.h2>
 
-        {/* New animation approach for the heading */}
         <motion.h1
           className="heading-main text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-[#4ecca3] to-[#3db8c5] text-transparent bg-clip-text p-3 sm:p-4 md:p-5"
           initial="hidden"
@@ -189,7 +173,6 @@ export default function NewAllPackagesSection() {
         </motion.p>
       </div>
 
-      {/* Filter Buttons */}
       <div>
         <motion.div
           className="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto mb-8 sm:mb-10 md:mb-12"
@@ -221,7 +204,6 @@ export default function NewAllPackagesSection() {
           ))}
         </motion.div>
 
-        {/* Pricing Section */}
         <AnimatePresence mode="wait">
           <motion.div
             key={`${activeFilter}-${currentIndex}`}
@@ -237,7 +219,6 @@ export default function NewAllPackagesSection() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Navigation Controls */}
         {totalPages > 1 && (
           <div className="flex justify-center items-center gap-4 mt-8 sm:mt-10">
             <motion.div
@@ -249,7 +230,7 @@ export default function NewAllPackagesSection() {
                 onClick={() => setCurrentIndex(Math.max(0, currentIndex - 1))}
                 disabled={currentIndex === 0}
                 variant="outline"
-              className="static h-8 w-8 md:h-10 md:w-10  cursor-pointer  bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-white rounded-full hover:opacity-90 transition-opacity"
+                className="static h-8 w-8 md:h-10 md:w-10 cursor-pointer bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-white rounded-full hover:opacity-90 transition-opacity"
               >
                 <ArrowLeft />
               </Button>
