@@ -28,6 +28,7 @@ import HeroSection from "@/components/hero-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import AllPackagesSection from "@/components/pricing/all-packages-section";
 import NewServicesSection from "@/components/new-services-section";
+import NewPortfolioSection from "@/components/new-portfolio-section";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -74,21 +75,20 @@ export default function Home() {
         <NewServicesSection />
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
       >
         <ExperienceSection />
-      </motion.div>
+      </motion.div> */}
 
-      <PortfolioSection
+      <NewPortfolioSection
         heading="OUR PORTFOLIO"
         title="HERE IS"
         paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
         backgroundImage={waterMarkLogo.src}
-        filters={["All", "E-commerce", "Real Estate"]}
         portfolioData={portfolioData}
       />
 
