@@ -1,6 +1,8 @@
 import type React from "react";
 import "./globals.css";
 import { Poppins } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
+
 import Script from "next/script";
 import type { Metadata } from "next";
 import FollowCursor from "@/components/digital-marketing/components-of-pricing/follow-cursor";
@@ -19,13 +21,22 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+const bricolageGrotesque = Bricolage_Grotesque({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-bricolage",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={poppins.className}>
+    <html
+      lang="en"
+      className={`${poppins.variable} ${bricolageGrotesque.variable}`}
+    >
       <head>
         {/* Google Analytics */}
         <Script

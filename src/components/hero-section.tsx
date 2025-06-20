@@ -20,6 +20,7 @@ import StatsBar from "./stats-card";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import AutoSlider from "./auto-slider";
+import AwardsAutoSlider from "@/components/award-auto-slider";
 
 const pulseAnimation = {
   scale: [1, 1.05, 1],
@@ -224,7 +225,7 @@ export default function HeroSection() {
               transition={{ duration: 0.5 }}
               className="space-y-2 md:space-y-4"
             >
-              <h1 className="text-[35px] font-bold md:leading-tight md:text-4xl lg:text-5xl">
+              <h1 className="text-[35px] font-bold md:leading-tight md:text-4xl lg:text-5xl" style={{ fontFamily: "var(--font-bricolage)" }}>
                 <motion.span
                   initial="hidden"
                   animate="visible"
@@ -236,7 +237,7 @@ export default function HeroSection() {
                       "linear-gradient(90deg, #41B4A7 0%, #2C7A71 25%, #41B4A7 50%, #2C7A71 75%, #41B4A7 100%)",
                   }}
                 >
-                  Your One-Stop Digital Marketing and Web Design Partner
+                  Crafting Brands That Stand Out
                 </motion.span>
                 <br />
                 <motion.span
@@ -263,7 +264,7 @@ export default function HeroSection() {
                       repeatDelay: 3,
                     }}
                   />
-                  Empowering Your Brand Voice
+                  Empowering Your Business with Expert Design and Marketing
                 </motion.span>
               </h1>
 
@@ -273,21 +274,21 @@ export default function HeroSection() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="relative max-w-[640px] text-[#1C2D44] text-lg  lg:text-[22px]"
               >
-                A team of UI/UX experts, web and mobile app developers,
-                copywriters and digital marketers who deliver real-world
-                solutions for today's dynamic landscape.
+                A Diverse Team of Experts, Driven by Innovation. We Create
+                Seamless Digital Experiences for Your Brand's Success
               </motion.p>
             </motion.div>
 
-            <div className="w-full">
-              <Image
+            <div className="max-w-[300px] sm:max-w-full">
+              {/* <Image
                 src={firmsLogos}
                 alt="Partner company logos"
                 width={1000}
                 height={1000}
                 className="w-full h-auto max-h-20 -z-1"
                 priority
-              />
+              /> */}
+              <AwardsAutoSlider platforms={platforms} />
             </div>
 
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -296,7 +297,7 @@ export default function HeroSection() {
                 whileTap={{ scale: 0.95 }}
               >
                 <a href="#contactus">
-                  <Button className="bg-gradient-to-r h-11 cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-full sm:w-[190px] text-[17px] font-medium hover:opacity-90 text-white rounded-lg border-none">
+                  <Button className="bg-gradient-to-r h-11 cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-[190px] text-[17px] font-medium hover:opacity-90 text-white rounded-lg border-none">
                     Get In Touch
                   </Button>
                 </a>

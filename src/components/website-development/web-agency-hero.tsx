@@ -1,9 +1,9 @@
-"use client"
-import { shopifyIcon, wixIcon, webflowIcon, wordpressIcon } from "@/assets"
+"use client";
+import { shopifyIcon, wixIcon, webflowIcon, wordpressIcon } from "@/assets";
 
-import { motion } from "framer-motion"
-import AutoSliderHeading from "../auto-silder-heading"
-import AutoSlider from "../auto-slider"
+import { motion } from "framer-motion";
+import AutoSliderHeading from "../auto-silder-heading";
+import AutoSlider from "../auto-slider";
 
 // Example platform data
 const platforms = [
@@ -11,12 +11,12 @@ const platforms = [
   { name: "WordPress", src: wordpressIcon.src },
   { name: "Wix", src: wixIcon.src },
   { name: "Webflow", src: webflowIcon.src },
-]
+];
 
 export default function InfiniteScroll() {
   return (
     <motion.main
-      className="w-full bg-white py-8 sm:py-10 md:py-16"
+      className="w-full bg-white  md:py-30 sm:py-10 "
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
@@ -30,5 +30,5 @@ export default function InfiniteScroll() {
         <AutoSlider platforms={platforms} />
       </div>
     </motion.main>
-  )
+  );
 }

@@ -6,6 +6,17 @@
 .container {
   @apply !container mx-auto px-2.5 md:px-7;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-poppins);
+}
+
+.heading {
+  font-family: var(--font-bricolage);
+}
 
 @theme inline {
   --color-primary: #1c2d44;

@@ -6,10 +6,10 @@ export default function StatsBar() {
   return (
     <div className="flex   max-w-3xl border border-black mx-auto items-center justify-between rounded-[1.6vw] bg-gradient-to-r from-green-200 via-teal-200 to-blue-200 p-[1.6vw]">
       {[
-        { value: "300M+", label: "Global Impressions\nAcross Platforms" },
-        { value: "1,250+", label: "Fresh Content\nCreated Daily" },
+        { value: "50M+", label: "Global Impressions\nAcross Platforms" },
+        { value: "480+", label: "Fresh Content\nCreated Daily" },
         { value: "85%", label: "Millennial Audience\nEngagement" },
-        { value: "99%", label: "Client Retention\n& Satisfaction" },
+        { value: "100%", label: "Client Retention\n& Satisfaction" },
       ].map((stat, index) => (
         <motion.div
           key={index}

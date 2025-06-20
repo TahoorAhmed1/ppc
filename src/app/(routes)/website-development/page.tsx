@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+"use client";
+import { motion } from "framer-motion";
 import PageTransition from "@/components/website-development/page-transition";
 import WebsiteDevelopmentHeroSection from "@/components/website-development/website-development-hero-section";
 import InfiniteScroll from "@/components/website-development/web-agency-hero";
@@ -8,7 +9,8 @@ import PortfolioSection from "@/components/portfolio-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import ContactSection from "@/components/contact-section";
 import FaqSection from "@/components/faq-section-2";
-import { AutoOpenImageModal } from "@/components/auto-open-image-modal";
+
+
 import {
   project1,
   project2,
@@ -26,11 +28,9 @@ import {
   project15,
   project16,
 } from "@/assets";
+import { AutoOpenImageModal } from "@/components/auto-open-image-modal";
 
-export const metadata: Metadata = {
-  title: "Website Development | Creative Agency 360",
-  description: "We Build your Digital Business",
-};
+
 const portfolioData = [
   { image: project1.src, category: "Real Estate" },
   { image: project2.src, category: "E-commerce" },
@@ -49,7 +49,19 @@ const portfolioData = [
   { image: project16.src, category: "Business" },
 ];
 
-export default function Home() {
+// ✅ Framer Motion animation variants
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+    },
+  },
+};
+
+export default function page() {
   return (
     <PageTransition>
       <main className="min-h-[100vh]">
@@ -66,7 +78,19 @@ export default function Home() {
         <PricingPackage />
         <ServicesCombo />
         <TestimonialsSection />
-        <ContactSection />
+
+        {/* ✅ Scroll-animated Contact Section with anchor support */}
+        <div id="contact">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={sectionVariants}
+          >
+            <ContactSection />
+          </motion.div>
+        </div>
+
         <FaqSection />
         <AutoOpenImageModal alt="Promotional popup" />
       </main>
