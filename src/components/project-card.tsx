@@ -24,7 +24,7 @@ const ProjectCard = ({
             : "transition-all"
         }`}
         width={1000}
-        height={1000}
+        height={600}
         src={img}
         alt={title}
       />
