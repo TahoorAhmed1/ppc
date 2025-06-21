@@ -10,6 +10,7 @@ import {
   websitePackage,
   socialMediaPackage,
   seoPackage,
+  brandingPackages, // ✅ Renamed for clarity
   appPackages,
 } from "@/components/packages/packages";
 import PricingSection from "@/components/pricing/pricing-section";
@@ -76,7 +77,7 @@ const headingVariants = {
   },
 };
 
-// ✅ Filter options without removed packages
+// ✅ Filter options (Branding Package added)
 const filter = [
   "Website Package",
   "E-commerce Package",
@@ -84,8 +85,10 @@ const filter = [
   "SEO Package",
   "Social Media Package",
   "Mobile App Package",
+  "Branding Package",
 ];
 
+// ✅ Combined all data packages
 const allPricingData = {
   websitePackages: websitePackage,
   ecommercePackages: ecommercePackage,
@@ -93,6 +96,7 @@ const allPricingData = {
   seoPackages: seoPackage,
   socialMediaPackages: socialMediaPackage,
   appPackages: appPackages,
+  brandingPackages: brandingPackages,
 };
 
 const pricingOptionsTilte = "Packages";
@@ -107,7 +111,8 @@ export default function NewAllPackagesSection() {
     | (typeof logoPackage)[number]
     | (typeof seoPackage)[number]
     | (typeof socialMediaPackage)[number]
-    | (typeof appPackages)[number];
+    | (typeof appPackages)[number]
+    | (typeof brandingPackages)[number]; // ✅ Extended
 
   const [filteredPricingOptions, setFilteredPricingOptions] = useState<
     PricingOption[]
@@ -129,6 +134,7 @@ export default function NewAllPackagesSection() {
       "SEO Package": "seoPackages",
       "Social Media Package": "socialMediaPackages",
       "Mobile App Package": "appPackages",
+      "Branding Package": "brandingPackages", // ✅ Added
     };
 
     const dataKey = filterMap[filter];

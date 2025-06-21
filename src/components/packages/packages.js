@@ -172,6 +172,54 @@ export const websitePackage = [
     features: ["Custom PHP Website", "Web Application", "Custom Web Portal"],
   },
 ];
+export const brandingPackages = [
+  {
+    id: 1,
+    packageHeading: "Business Card Design",
+    packageDescription: "Professional custom business card",
+    currentPrice: 25.99,
+    originalPrice: 50.99,
+    buttonTitle: "Get Started",
+    features: [
+      "1 Business Card",
+      "UNLIMITED Revisions",
+      "100% Satisfaction Guarantee",
+      "100% Unique Design Guarantee",
+    ],
+  },
+  {
+    id: 2,
+    packageHeading: "Complete Stationery",
+    packageDescription: "Full branding stationery set",
+    currentPrice: 99.99,
+    originalPrice: 199.99,
+    buttonTitle: "Get Started",
+    features: [
+      "5 Business Cards",
+      "5 Letterheads",
+      "5 Envelopes",
+      "100% Unique Design Guarantee",
+      "100% Satisfaction Guarantee",
+    ],
+  },
+  {
+    id: 3,
+    packageHeading: "Tri-Fold Brochure Design",
+    packageDescription: "Custom tri-fold brochure ready for print",
+    currentPrice: 199.99,
+    originalPrice: 399.99,
+    buttonTitle: "Get Started",
+    features: [
+      "Tri-Fold Brochure Design",
+      "3 Stock Images",
+      "Print Ready Formats",
+      "Unlimited Revisions",
+      "100% Unique Design Guarantee",
+      "100% Satisfaction Guarantee",
+    ],
+  },
+];
+
 
 export const socialMediaPackage = [
   {
