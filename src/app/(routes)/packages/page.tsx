@@ -4,6 +4,7 @@ import ServicesHeroSection from "@/components/digital-marketing/services-hero-se
 import HireUsHeroSection from "@/components/packages/hire-us-hero-section"
 import ContactForm from "@/components/packages/package-contact-form"
 import AllPackagesSection from "@/components/pricing/all-packages-section"
+import NewAllPackagesSection from "@/components/pricing/new-all-packages-section"
 import { motion } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 import { useEffect, useState } from "react"
@@ -46,7 +47,7 @@ export default function Page() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.7 }}
       >
-        <AllPackagesSection />
+        <NewAllPackagesSection />
       </motion.div>
 
       {/* Hire Us Section with scroll animation */}

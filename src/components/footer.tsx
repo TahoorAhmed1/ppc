@@ -289,7 +289,7 @@ export default function Footer() {
                 Home
               </motion.a>
               <motion.a
-                href={"#aboutus"}
+                href={"/about"}
                 whileHover={{ x: 5, color: "#3DB1B1" }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
