@@ -297,7 +297,7 @@ export default function HeroSection() {
               </motion.p>
             </motion.div>
 
-            <div className="max-w-[300px] sm:max-w-full">
+            <div className="max-w-[300px] sm:max-w-full hidden lg:block">
               {/* <Image
                 src={firmsLogos}
                 alt="Partner company logos"

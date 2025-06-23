@@ -1,8 +1,20 @@
 "use client";
+import { motion } from "framer-motion";
 
 import ServicesHeroSection from "@/components/digital-marketing/services-hero-section";
+import ContactSection from "@/components/contact-section";
 
 const pageHeading = "About Us";
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+    },
+  },
+};
 
 export default function Page() {
   return (
@@ -46,6 +58,15 @@ export default function Page() {
           Let’s build something meaningful together.
         </p>
       </div>
+
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
+        <ContactSection />
+      </motion.div>
     </div>
   );
 }

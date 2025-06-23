@@ -125,14 +125,23 @@ import portfolioLogo9 from "@/assets/images/portfolio-logos/portfolio-logo (9).j
 import portfolioLogo10 from "@/assets/images/portfolio-logos/portfolio-logo (10).jpg";
 import portfolioLogo11 from "@/assets/images/portfolio-logos/portfolio-logo (11).jpg";
 import packagesBgImage from "@/assets/images/packages-bg-image.jpg";
-import newAward1 from "@/assets/images/new-award (1).png";
-import newAward2 from "@/assets/images/new-award (2).png";
-import newAward3 from "@/assets/images/new-award (3).png";
-import newAward4 from "@/assets/images/new-award (4).png";
-import newAward5 from "@/assets/images/new-award (5).png";
-import newAward6 from "@/assets/images/new-award (6).png";
+import newAward1 from "@/assets/images/award-white-bg/award-bg-white (1).webp";
+import newAward2 from "@/assets/images/award-white-bg/award-bg-white (2).webp";
+import newAward3 from "@/assets/images/award-white-bg/award-bg-white (3).webp";
+import newAward4 from "@/assets/images/award-white-bg/award-bg-white (4).webp";
+import newAward5 from "@/assets/images/award-white-bg/award-bg-white (5).webp";
+import newAward6 from "@/assets/images/award-white-bg/award-bg-white (6).webp";
+import newAwardBgBlack1 from "@/assets/images/award-black-bg/award-bg-black (1).webp";
+import newAwardBgBlack2 from "@/assets/images/award-black-bg/award-bg-black (2).webp";
+import newAwardBgBlack3 from "@/assets/images/award-black-bg/award-bg-black (3).webp";
+import newAwardBgBlack4 from "@/assets/images/award-black-bg/award-bg-black (4).webp";
+import newAwardBgBlack5 from "@/assets/images/award-black-bg/award-bg-black (5).webp";
+import newAwardBgBlack6 from "@/assets/images/award-black-bg/award-bg-black (6).webp";
+
+import trophy from "@/assets/images/trophy.webp";
 
 export {
+  trophy,
   packagesBgImage,
   trustpilot,
   trustpilot2,
@@ -266,4 +275,10 @@ export {
   newAward4,
   newAward5,
   newAward6,
+  newAwardBgBlack1,
+  newAwardBgBlack2,
+  newAwardBgBlack3,
+  newAwardBgBlack4,
+  newAwardBgBlack5,
+  newAwardBgBlack6,
 };

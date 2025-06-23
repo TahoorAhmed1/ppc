@@ -1,9 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import AboutSection from "@/components/about-section";
-import ServicesSection from "@/components/services-section";
-import ExperienceSection from "@/components/experience-section";
-import PortfolioSection from "@/components/portfolio-section";
 import ContactSection from "@/components/contact-section";
 import FaqSection from "@/components/faq-section";
 import {
@@ -26,7 +23,6 @@ import {
 } from "@/assets";
 import HeroSection from "@/components/hero-section";
 import TestimonialsSection from "@/components/testimonials-section";
-import AllPackagesSection from "@/components/pricing/all-packages-section";
 import NewServicesSection from "@/components/new-services-section";
 import NewPortfolioSection from "@/components/new-portfolio-section";
 import NewAllPackagesSection from "@/components/pricing/new-all-packages-section";
@@ -86,7 +82,7 @@ export default function Home() {
         <ExperienceSection />
       </motion.div> */}
 
-      {/* <AwardsComponent /> */}
+      <AwardsComponent />
 
       <NewPortfolioSection
         heading="OUR PORTFOLIO"

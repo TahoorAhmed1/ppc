@@ -17,7 +17,10 @@ export default function ChildLayout({
       
       <Header />
       <ToastContainer />
+      
+
       {children}
+      
       <ContactFormPopup isOpen={isOpen} setIsOpen={setIsOpen} />
 
       
