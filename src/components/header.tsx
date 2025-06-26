@@ -48,7 +48,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background transition-all duration-100 ease-in-out">
+    <header className="sticky -top-1 z-50 w-full border-b bg-background transition-all duration-100 ease-in-out">
       <div className="container py-5 flex items-center justify-between">
         <div className="flex items-center gap-x-2">
           <a href="/" className="flex items-center">
