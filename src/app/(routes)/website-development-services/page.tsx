@@ -276,12 +276,12 @@ export default function Page() {
     <>
       <div className="min-h-screen flex flex-col">
         <div
-          className="text-white py-20 md:py-32 bg-cover bg-center bg-no-repeat"
+          className="text-white py-20 md:py-32 bg-cover bg-center bg-no-repeat relative"
           style={{
             backgroundImage: `url(${heroSectionImage3.src})`,
           }}
         >
-          <div className="px-4 md:px-8 max-w-4xl mx-auto text-center">
+          <div className="px-4 md:px-8 max-w-4xl mx-auto text-center ">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
               Website Development Services
             </h1>
@@ -293,6 +293,7 @@ export default function Page() {
               <span>Website Development Services</span>
             </div>
           </div>
+          <div className="absolute inset-0 bg-opacity-40 bg-black/60 "></div>
         </div>
 
         <div className="">

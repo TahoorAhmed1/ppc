@@ -85,7 +85,7 @@ export default function Header2({
             {navItems.map((item) =>
               item.hasDropdown ? (
                 <DropdownMenu key={item.label}>
-                  <DropdownMenuTrigger className="flex items-center text-sm font-medium text-gray-500 underline-offset-4 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-transparent hover:bg-clip-text">
+                  <DropdownMenuTrigger className="flex items-center text-sm font-medium text-gray-500 underline-offset-4 hover:bg-gradient-to-r from-black/80 to-black hover:text-transparent hover:bg-clip-text">
                     {item.label}
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </DropdownMenuTrigger>
@@ -103,7 +103,7 @@ export default function Header2({
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-sm font-medium text-gray-500 underline-offset-4 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-transparent hover:bg-clip-text"
+                  className="text-sm font-medium text-gray-500 underline-offset-4 hover:bg-gradient-to-r from-black/80 to-black hover:text-transparent hover:bg-clip-text"
                 >
                   {item.label}
                 </a>
@@ -116,15 +116,15 @@ export default function Header2({
             {/* <div className="hidden md:flex items-center gap-4 lg:gap-10">
               <div>
                 <div className="text-xs">Email</div>
-                <a className="font-semibold text-xs lg:text-base" href="mailto:support@creativeagency360.com">
-                  support@creativeagency360.com
+                <a className="font-semibold text-xs lg:text-base" href="mailto:support@nexuzglobal.com">
+                  support@nexuzglobal.com
                 </a>
               </div>
 
               <div>
                 <div className="text-xs">Call Now</div>
                 <a href="tel:+18045745376" className="font-semibold text-xs lg:text-base">
-                  +1 (804) 574 5376
+                  +92 3282371639
                 </a>
               </div>
             </div> */}
@@ -132,7 +132,7 @@ export default function Header2({
             {/* CTA Button */}
             <Button
               onClick={() => setIsOpen(true)}
-              className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:to-[#65CF5F] hover:from-[#1F9BED]/80 hover:opacity-90 hover:scale-105 transition-all duration-300 text-white rounded-lg border-none text-sm md:text-base px-4 h-10"
+              className="bg-gradient-to-r from-black/80 to-black hover:to-black hover:from-black/80 hover:opacity-90 hover:scale-105 transition-all duration-300 text-white rounded-lg border-none text-sm md:text-base px-4 h-10"
             >
               Let's Talk
             </Button>
@@ -202,15 +202,15 @@ export default function Header2({
                 <div className="text-xs text-gray-500">Email</div>
                 <a
                   className="font-semibold text-sm"
-                  href="mailto:support@creativeagency360.com"
+                  href="mailto:support@nexuzglobal.com"
                 >
-                  support@creativeagency360.com
+                  support@nexuzglobal.com
                 </a>
               </div>
               <div>
                 <div className="text-xs text-gray-500">Call Now</div>
                 <a href="tel:+18045745376" className="font-semibold text-sm">
-                  +1 (804) 574 5376
+                  +92 3282371639
                 </a>
               </div>
             </div>

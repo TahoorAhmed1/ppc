@@ -1,25 +1,38 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { coolEmoji, digitalserviceIcon1, digitalserviceIcon2, digitalserviceIcon3, digitalserviceIcon4, laughEmoji, likeEmoji, loveEmoji, serviceRightImage } from "@/assets/index" // Import emojis and service image
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
-import ServiceCard from "./service-cards"
+import { Button } from "@/components/ui/button";
+import {
+  coolEmoji,
+  digitalserviceIcon1,
+  digitalserviceIcon2,
+  digitalserviceIcon3,
+  digitalserviceIcon4,
+  laughEmoji,
+  likeEmoji,
+  loveEmoji,
+  serviceRightImage,
+} from "@/assets/index"; // Import emojis and service image
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import ServiceCard from "./service-cards";
 
 export default function DigitalMarketingServiceSection() {
-  const headingRef = useRef(null)
-  const descriptionRef = useRef(null)
-  const buttonRef = useRef(null)
-  const imageRef = useRef(null)
-  const cardsRef = useRef(null)
+  const headingRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const buttonRef = useRef(null);
+  const imageRef = useRef(null);
+  const cardsRef = useRef(null);
 
-  const isHeadingInView = useInView(headingRef, { once: true, amount: 0.3 })
-  const isDescriptionInView = useInView(descriptionRef, { once: true, amount: 0.3 })
-  const isButtonInView = useInView(buttonRef, { once: true, amount: 0.3 })
-  const isImageInView = useInView(imageRef, { once: true, amount: 0.3 })
-  const isCardsInView = useInView(cardsRef, { once: true, amount: 0.1 })
+  const isHeadingInView = useInView(headingRef, { once: true, amount: 0.3 });
+  const isDescriptionInView = useInView(descriptionRef, {
+    once: true,
+    amount: 0.3,
+  });
+  const isButtonInView = useInView(buttonRef, { once: true, amount: 0.3 });
+  const isImageInView = useInView(imageRef, { once: true, amount: 0.3 });
+  const isCardsInView = useInView(cardsRef, { once: true, amount: 0.1 });
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -32,7 +45,7 @@ export default function DigitalMarketingServiceSection() {
         ease: "easeOut",
       },
     }),
-  }
+  };
 
   return (
     <main className="bg-white py-10">
@@ -86,7 +99,9 @@ export default function DigitalMarketingServiceSection() {
               <motion.h1
                 ref={headingRef}
                 initial={{ opacity: 0, y: 30 }}
-                animate={isHeadingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                animate={
+                  isHeadingInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+                }
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-6xl md:text-5xl lg:text-6xl font-bold text-[#3CBFAE] leading-tight"
               >
@@ -96,21 +111,28 @@ export default function DigitalMarketingServiceSection() {
               <motion.p
                 ref={descriptionRef}
                 initial={{ opacity: 0, y: 30 }}
-                animate={isDescriptionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                animate={
+                  isDescriptionInView
+                    ? { opacity: 1, y: 0 }
+                    : { opacity: 0, y: 30 }
+                }
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                className="text-[#1C2D44] text-lg font-medium max-w-xl"
+                className="text-black text-lg font-medium max-w-xl"
               >
-                At Creative Agency 360, we don't have a secret formula — just a proven approach to help you achieve your
-                goals in a simple, effective, and results-driven way.
+                At Nexuz Global , we don't have a secret formula — just a proven
+                approach to help you achieve your goals in a simple, effective,
+                and results-driven way.
               </motion.p>
 
               <motion.div
                 ref={buttonRef}
                 initial={{ opacity: 0, y: 30 }}
-                animate={isButtonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                animate={
+                  isButtonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+                }
                 transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
               >
-                <Button className="bg-gradient-to-r w-fit from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-4 py-2">
+                <Button className="bg-gradient-to-r w-fit from-black/80 to-black hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-4 py-2">
                   Get In Touch
                 </Button>
               </motion.div>
@@ -202,7 +224,11 @@ export default function DigitalMarketingServiceSection() {
               <motion.div
                 ref={imageRef}
                 initial={{ opacity: 0, scale: 0.95 }}
-                animate={isImageInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+                animate={
+                  isImageInView
+                    ? { opacity: 1, scale: 1 }
+                    : { opacity: 0, scale: 0.95 }
+                }
                 transition={{ duration: 0.7, ease: "easeOut" }}
                 className="relative"
               >
@@ -242,5 +268,5 @@ export default function DigitalMarketingServiceSection() {
         </div>
       </div>
     </main>
-  )
+  );
 }

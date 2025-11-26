@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
 // First, let's add state to track which card is being hovered
-import { useState, useRef } from "react"
-import Image from "next/image"
-import { Card, CardContent } from "@/components/ui/card"
-import { motion, useInView } from "framer-motion"
+import { useState, useRef } from "react";
+import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion, useInView } from "framer-motion";
 
 import {
   aboutCardIcon1,
@@ -14,13 +14,13 @@ import {
   aboutCardIcon3,
   aboutCardIcon3Hover,
   logo,
-} from "@/assets"
+} from "@/assets";
 
 export default function AboutSection() {
-  const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   // Add state to track which card is being hovered
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -31,7 +31,7 @@ export default function AboutSection() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -40,7 +40,7 @@ export default function AboutSection() {
       opacity: 1,
       transition: { duration: 0.5, ease: "easeOut" },
     },
-  }
+  };
 
   const cardVariants = {
     hidden: { y: 30, opacity: 0 },
@@ -53,15 +53,16 @@ export default function AboutSection() {
         delay: 0.3 + i * 0.1,
       },
     }),
-  }
+  };
 
   const cardHoverVariants = {
     hover: {
       y: -10,
-      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      boxShadow:
+        "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
       transition: { duration: 0.3 },
     },
-  }
+  };
 
   // Create an array of card data with regular and hover icons
   const cardData = [
@@ -86,13 +87,13 @@ export default function AboutSection() {
       description:
         "100% Transparency: We believe in clear communication and total honesty. No surprises—just real collaboration.",
     },
-  ]
+  ];
 
   return (
     <motion.section
       id="aboutus"
       ref={sectionRef}
-      className="py-8 md:py-50 bg-white text-[#1C2D44] flex flex-col justify-center "
+      className="py-8 md:py-50 bg-white text-black flex flex-col justify-center "
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
@@ -103,29 +104,25 @@ export default function AboutSection() {
           variants={containerVariants}
         >
           <motion.div variants={itemVariants}>
-            <Image
-              src={logo || "/placeholder.svg"}
-              alt="Creative Agency"
-              width={1000}
-              height={1000}
-              className="h-12 w-auto z-10"
-            />
+            <a href="/" className="flex font-bold text-3xl items-center">
+              Nexuz Global
+            </a>
           </motion.div>
 
           <motion.h2
             className="text-4xl md:text-[42px] font-bold leading-tight z-10"
             variants={itemVariants}
           >
-            <span className=" text-[#3DB1B1]">Who We Are</span>{" "}
+            <span className=" text-black">Who We Are</span>{" "}
           </motion.h2>
 
           <motion.p
-            className="text-sm md:text-base text-[#1C2D44] leading-relaxed z-10"
+            className="text-sm md:text-base text-black leading-relaxed z-10"
             variants={itemVariants}
           >
-            At Creative Creative Agency 360, your success is our priority. Our
-            mission? To help you connect with your audience, strengthen your
-            brand, and drive long-term results.
+            At Nexuz Global , your success is our priority. Our mission? To help
+            you connect with your audience, strengthen your brand, and drive
+            long-term results.
           </motion.p>
         </motion.div>
 
@@ -142,7 +139,7 @@ export default function AboutSection() {
               onHoverEnd={() => setHoveredCard(null)}
             >
               <motion.div variants={cardHoverVariants}>
-                <Card className="bg-white hover:bg-[#1C2D44] text-[#1C2D44] hover:text-white lg:items-start items-center text-center lg:text-start border-0 shadow-xl p-1 h-[340px] transition-colors duration-300 z-10">
+                <Card className="bg-white hover:bg-black text-black hover:text-white lg:items-start items-center text-center lg:text-start border-0 shadow-xl p-1 h-[340px] transition-colors duration-300 z-10">
                   <CardContent className="p-4">
                     <motion.div
                       className="flex mb-4 lg:items-start items-center lg:justify-start justify-center text-center lg:text-start"

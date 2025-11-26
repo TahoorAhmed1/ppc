@@ -164,7 +164,8 @@ export default function ContactFormPopup({ isOpen, setIsOpen }: any) {
                 />
 
                 <p className="text-[10px] text-gray-300 mt-2 text-left">
-                  <span className="font-medium">Disclaimer</span> : You agree to receive conversation messages from CreativeAgency360...{" "}
+                  <span className="font-medium">Disclaimer</span> : You agree to
+                  receive conversation messages from CreativeAgency360...{" "}
                   <a
                     target="_blank"
                     href={"/privacy"}
@@ -185,7 +186,7 @@ export default function ContactFormPopup({ isOpen, setIsOpen }: any) {
 
                 <Button
                   type="submit"
-                  className="bg-gradient-to-r w-full from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm px-3 py-2"
+                  className="bg-gradient-to-r w-full from-black/80 to-black hover:opacity-90 text-white rounded-lg border-none text-sm px-3 py-2"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (

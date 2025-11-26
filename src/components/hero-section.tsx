@@ -94,7 +94,7 @@ export default function HeroSection() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className={`absolute sm:top-[5%] -top-[3%]  md:left-[3%]  -left-[3%] w-[12vw] h-[12vw] md:max-w-[7vw] md:h-[7vw] min-w-[4vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity 
+        className={`absolute sm:top-[5%] -top-[3%]  md:left-[3%]  -left-[3%] w-[12vw] h-[12vw] md:max-w-[7vw] md:h-[7vw] min-w-[4vw] rounded-full bg-gradient-to-r from-black/80 to-black cursor-pointer hover:opacity-70 transition-opacity 
         }`}
         onClick={() => setActivePopup(1)}
       ></motion.div>
@@ -103,7 +103,7 @@ export default function HeroSection() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className={`absolute md:top-[30%] top-[0.5%] md:right-[0%] right-[3%] w-[12vw] h-[12vw] md:max-w-[7vw] md:h-[7vw] min-w-[4vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity 
+        className={`absolute md:top-[30%] top-[0.5%] md:right-[0%] right-[3%] w-[12vw] h-[12vw] md:max-w-[7vw] md:h-[7vw] min-w-[4vw] rounded-full bg-gradient-to-r from-black/80 to-black cursor-pointer hover:opacity-70 transition-opacity 
         }`}
         onClick={() => setActivePopup(2)}
       ></motion.div>
@@ -112,7 +112,7 @@ export default function HeroSection() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className={`absolute md:top-[15%] top-[54%] right-[40%] w-[8vw] h-[8vw] xl:max-w-[5vw] xl:max-h-[5vw]  md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] cursor-pointer hover:opacity-70 transition-opacity 
+        className={`absolute md:top-[15%] top-[54%] right-[40%] w-[8vw] h-[8vw] xl:max-w-[5vw] xl:max-h-[5vw]  md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-black/80 to-black cursor-pointer hover:opacity-70 transition-opacity 
         }`}
         onClick={() => setActivePopup(3)}
       ></motion.div>
@@ -121,7 +121,7 @@ export default function HeroSection() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         whileInView={pulseAnimation}
-        className={`absolute top-[54.5%] right-[37%] w-[4vw] h-[4vw] md:w-[3vw] md:h-[3vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] flex items-center justify-center cursor-pointer hover:opacity-70 transition-opacity 
+        className={`absolute top-[54.5%] right-[37%] w-[4vw] h-[4vw] md:w-[3vw] md:h-[3vw] rounded-full bg-gradient-to-r from-black/80 to-black flex items-center justify-center cursor-pointer hover:opacity-70 transition-opacity 
         }`}
         onClick={() => setActivePopup(4)}
       >
@@ -139,7 +139,7 @@ export default function HeroSection() {
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+                className="absolute top-3 right-3 text-gray-500 hover:text-black"
                 onClick={() => setActivePopup(null)}
                 aria-label="Close popup"
               >
@@ -150,7 +150,7 @@ export default function HeroSection() {
                 <div className="text-4xl mb-4" aria-hidden="true">
                   {popupData[activePopup - 1]?.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
+                <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-black/80 to-black text-transparent bg-clip-text">
                   {popupData[activePopup - 1]?.title}
                 </h3>
                 <p className="text-gray-600 mb-4">
@@ -158,7 +158,7 @@ export default function HeroSection() {
                 </p>
                 <div>
                   <Button
-                    className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-full border-none"
+                    className="bg-gradient-to-r from-black/80 to-black hover:opacity-90 text-white rounded-full border-none"
                     onClick={() => setActivePopup(null)}
                   >
                     Learn More
@@ -174,7 +174,7 @@ export default function HeroSection() {
         <div className="cursor-pointer" onClick={() => setActivePopup(5)}>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Card
-              className="rounded-lg shadow-md bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white w-fit h-fit p-2 sm:p-3"
+              className="rounded-lg shadow-md bg-gradient-to-r from-black/80 to-black text-white w-fit h-fit p-2 sm:p-3"
               style={{
                 maxHeight: "150px",
               }}
@@ -229,11 +229,9 @@ export default function HeroSection() {
                   initial="hidden"
                   animate="visible"
                   variants={shimmerAnimation}
-                  className="relative inline-block bg-gradient-to-r from-[#41B4A7] to-[#2C7A71] bg-clip-text text-transparent"
+                  className="relative inline-block bg-gradient-to-r from-black to-black bg-clip-text text-transparent"
                   style={{
                     backgroundSize: "200% 100%",
-                    backgroundImage:
-                      "linear-gradient(90deg, #41B4A7 0%, #2C7A71 25%, #41B4A7 50%, #2C7A71 75%, #41B4A7 100%)",
                   }}
                 >
                   Your One-Stop Digital Marketing and Web Design Partner
@@ -243,7 +241,7 @@ export default function HeroSection() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.8, duration: 0.5 }}
-                  className="relative inline-block bg-gradient-to-r mt-5 from-[#41B4A7] via-[#65CF5F] to-[#2C7A71] bg-clip-text text-transparent"
+                  className="relative inline-block bg-gradient-to-r mt-5 from-black via-black to-black bg-clip-text text-transparent"
                 >
                   <motion.span
                     className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-75"
@@ -271,7 +269,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="relative max-w-[640px] text-[#1C2D44] text-lg  lg:text-[22px]"
+                className="relative max-w-[640px] text-black text-lg  lg:text-[22px]"
               >
                 A team of UI/UX experts, web and mobile app developers,
                 copywriters and digital marketers who deliver real-world
@@ -296,7 +294,7 @@ export default function HeroSection() {
                 whileTap={{ scale: 0.95 }}
               >
                 <a href="#contactus">
-                  <Button className="bg-gradient-to-r h-11 cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-full sm:w-[190px] text-[17px] font-medium hover:opacity-90 text-white rounded-lg border-none">
+                  <Button className="bg-gradient-to-r h-11 cursor-pointer from-black/80 to-black hover:from-black/80 hover:to-black w-full sm:w-[190px] text-[17px] font-medium hover:opacity-90 text-white rounded-lg border-none">
                     Get In Touch
                   </Button>
                 </a>
@@ -319,18 +317,18 @@ export default function HeroSection() {
               <div className="flex flex-col gap-1">
                 <p>
                   <a
-                    className="font-medium text-base sm:text-lg md:text-xl text-[#1C2D44]"
+                    className="font-medium text-base sm:text-lg md:text-xl text-black"
                     href="tel:+18045745376"
                   >
-                    +1 (804) 574 5376
+                    +92 3282371639
                   </a>
                 </p>
                 <p>
                   <a
                     className="text-sm sm:text-base"
-                    href="mailto:support@creativeagency360.com"
+                    href="mailto:support@nexuzglobal.com"
                   >
-                    support@creativeagency360.com
+                    support@nexuzglobal.com
                   </a>
                 </p>
               </div>
@@ -434,7 +432,7 @@ export default function HeroSection() {
             <div className="relative w-full h-full">
               <motion.div
                 whileInView={pulseAnimation}
-                className="absolute top-[16%] left-[8%] w-[80%] h-0 pb-[80%] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] opacity-50 z-0"
+                className="absolute top-[16%] left-[8%] w-[80%] h-0 pb-[80%] rounded-full bg-gradient-to-r from-black/80 to-black opacity-50 z-0"
               ></motion.div>
 
               <div>

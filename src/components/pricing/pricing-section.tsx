@@ -21,11 +21,11 @@ interface PricingSectionProps {
   pricingOptionsDescription?: string;
   pricingOptionsHeading?: string;
   pricingOptionsTilte?: string;
-  pricingOptions: any[]
+  pricingOptions: any[];
   showHeading?: boolean;
 }
 export default function PricingSection({
-  showHeading= true,
+  showHeading = true,
   packageData,
   filter,
   filterLink,
@@ -118,35 +118,37 @@ export default function PricingSection({
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-10 space-y-4 sm:space-y-6 md:space-y-8"
       ref={scope}
     >
-      { showHeading &&  <div className="text-center mb-8 sm:mb-10 md:mb-12">
-        <motion.h2
-          className="text-xl sm:text-2xl font-bold text-[#1a3a5a] uppercase mb-2 sm:mb-4"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          {pricingOptionsTilte}
-        </motion.h2>
+      {showHeading && (
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <motion.h2
+            className="text-xl sm:text-2xl font-bold text-[#1a3a5a] uppercase mb-2 sm:mb-4"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {pricingOptionsTilte}
+          </motion.h2>
 
-        {/* New animation approach for the heading */}
-        <motion.h1
-          className="heading-main text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-[#4ecca3] to-[#3db8c5] text-transparent bg-clip-text p-3 sm:p-4 md:p-5"
-          initial="hidden"
-          animate="visible"
-          variants={headingVariants}
-        >
-          {pricingOptionsHeading}
-        </motion.h1>
+          {/* New animation approach for the heading */}
+          <motion.h1
+            className="heading-main text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-black to-black text-transparent bg-clip-text p-3 sm:p-4 md:p-5"
+            initial="hidden"
+            animate="visible"
+            variants={headingVariants}
+          >
+            {pricingOptionsHeading}
+          </motion.h1>
 
-        <motion.p
-          className="heading-subtitle max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-gray-800 px-2"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          {pricingOptionsDescription}
-        </motion.p>
-      </div>}
+          <motion.p
+            className="heading-subtitle max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-gray-800 px-2"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            {pricingOptionsDescription}
+          </motion.p>
+        </div>
+      )}
 
       <div>
         <motion.div
@@ -166,8 +168,8 @@ export default function PricingSection({
                 className={cn(
                   "rounded-lg px-4 py-2 text-sm font-medium border-gray-200 flex data-center gap-2",
                   activeFilter === filter
-                    ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-none"
-                    : "bg-white text-gray-700 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-white"
+                    ? "bg-gradient-to-r from-black/80 to-black text-white border-none"
+                    : "bg-white text-black hover:bg-gradient-to-r from-black/80 to-black hover:text-white"
                 )}
                 onClick={() => setActiveFilter(filter)}
               >
@@ -197,7 +199,7 @@ export default function PricingSection({
               currentPrice={option.currentPrice ?? undefined}
               originalPrice={option.originalPrice ?? undefined}
               features={option.features}
-              index={index}              
+              index={index}
               packageHeading={option.packageHeading}
               packageDescription={option.packageDescription}
               buttonTitle={option.buttonTitle}
@@ -217,7 +219,7 @@ export default function PricingSection({
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
               onClick={() => setShowAll(!showAll)}
-              className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:from-[#209CEB]/80 hover:to-[#65CF5F] text-white font-medium px-6 py-2 sm:py-3 rounded-lg transition-all duration-300 ease-in-out text-sm sm:text-base"
+              className="bg-gradient-to-r from-black/80 to-black hover:from-black/80 hover:to-black text-white font-medium px-6 py-2 sm:py-3 rounded-lg transition-all duration-300 ease-in-out text-sm sm:text-base"
             >
               {showAll ? "See Less" : "See More"}
             </Button>

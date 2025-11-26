@@ -12,7 +12,7 @@ import Footer from "@/components/footer-2";
 import { AutoOpenImageModal } from "@/components/auto-open-image-modal";
 
 export const metadata: Metadata = {
-  title: "Website Development | Creative Agency 360",
+  title: "Website Development | Nexuz Global ",
   description: "We Build your Digital Business",
 };
 
@@ -22,11 +22,13 @@ export default function Home() {
       <main className="min-h-[100vh]">
         <WebsiteDevelopmentHeroSection />
         <InfiniteScroll />
-        <PortfolioSection heading="Our Diverse Portfolio"
+        <PortfolioSection
+          heading="Our Diverse Portfolio"
           title=""
           paragraph="Explore our portfolio showcasing cutting-edge websites across 350+ industries. Each project exemplifies our commitment to superior quality, innovation, and technical prowess."
           filters={["All", "E-commerce", "Business", "Real Estate"]}
-          btnIcon="" />
+          btnIcon=""
+        />
         <PricingPackage />
         <ServicesCombo />
         <TestimonialsSection />

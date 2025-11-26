@@ -1,6 +1,6 @@
 "use client";
 import type React from "react";
-import Header from "@/components/header2";
+import Header from "@/components/header";
 import { ToastContainer } from "react-toastify";
 import ContactFormPopup from "@/components/Contact";
 import { useFormContact } from "@/store/form";
@@ -15,7 +15,7 @@ export default function ChildLayout({
   const { setIsOpen, isOpen }: any = useFormContact();
   return (
     <div>
-      <Header setIsOpen={setIsOpen} />
+      <Header />
       <ToastContainer />
       {children}
       <ContactFormPopup isOpen={isOpen} setIsOpen={setIsOpen} />

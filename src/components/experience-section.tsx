@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView, useAnimation, type Variants } from "framer-motion";
-import {  mailIcon ,girlWithPhone} from "@/assets";
+import { mailIcon, girlWithPhone } from "@/assets";
 
 // Create motion components
 const MotionDiv = motion.div;
@@ -89,7 +89,7 @@ export default function MarketingSection() {
         initial="hidden"
         animate={isLoaded ? "visible" : "hidden"}
         variants={pulse}
-        className="absolute md:top-[15%] top-[10%] right-[5%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] opacity-50 "
+        className="absolute md:top-[15%] top-[10%] right-[5%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-black/80 to-black opacity-50 "
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       ></motion.div>
@@ -98,7 +98,7 @@ export default function MarketingSection() {
         initial="hidden"
         animate={isLoaded ? "visible" : "hidden"}
         variants={pulse}
-        className="absolute md:bottom-[0%] bottom-[15%] left-[0%] w-[9vw] h-[9vw] md:w-[7.5vw] md:h-[7.5vw] rounded-full bg-gradient-to-r from-[#3DB1B1]/70 to-[#65CF5F]/60 opacity-40"
+        className="absolute md:bottom-[0%] bottom-[15%] left-[0%] w-[9vw] h-[9vw] md:w-[7.5vw] md:h-[7.5vw] rounded-full bg-gradient-to-r from-black/70 to-black/60 opacity-40"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       ></motion.div>
@@ -118,7 +118,7 @@ export default function MarketingSection() {
             variants={imageVariants}
           >
             <Image
-              src={girlWithPhone || "/placeholder.svg"} 
+              src={girlWithPhone || "/placeholder.svg"}
               alt="Digital marketing professional"
               width={1000}
               height={1000}
@@ -132,7 +132,7 @@ export default function MarketingSection() {
             variants={containerVariants}
           >
             <MotionDiv
-              className="flex items-center gap-3 text-[#1C2D44]"
+              className="flex items-center gap-3 text-black"
               variants={itemVariants}
               whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
             >
@@ -152,20 +152,19 @@ export default function MarketingSection() {
                 />
               </MotionDiv>
               <MotionDiv variants={itemVariants}>
-                <p><a className="font-semibold text-lg"
-                  href="tel:+18045745376">
-                  +1 (804) 574 5376
-                </a></p>
-                <a
-                  className="text-xs"
-                  href="mailto:support@creativeagency360.com">
-                  support@creativeagency360.com
+                <p>
+                  <a className="font-semibold text-lg" href="tel:+18045745376">
+                    +92 3282371639
+                  </a>
+                </p>
+                <a className="text-xs" href="mailto:support@nexuzglobal.com">
+                  support@nexuzglobal.com
                 </a>
               </MotionDiv>
             </MotionDiv>
             <a href="#contactus">
               <MotionButton
-                className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-[200px] text-[17px] py-2 h-11 font-medium hover:opacity-90 text-white rounded-lg border-none"
+                className="bg-gradient-to-r cursor-pointer from-black/80 to-black hover:from-black/80 hover:to-black w-[200px] text-[17px] py-2 h-11 font-medium hover:opacity-90 text-white rounded-lg border-none"
                 variants={itemVariants}
                 whileHover={{
                   scale: 1.05,
@@ -188,7 +187,7 @@ export default function MarketingSection() {
               EXPERIENCE
             </h2>
             <h2 className="text-4xl font-bold leading-snug">
-              <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
+              <span className="bg-gradient-to-r from-black/80 to-black text-transparent bg-clip-text">
                 That Speaks for Itself
               </span>
             </h2>
@@ -278,7 +277,7 @@ function AnimatedServiceBar({
       </div>
       <div className="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
         <MotionDiv
-          className="h-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] rounded-full"
+          className="h-full bg-gradient-to-r from-black/80 to-black rounded-full"
           custom={percentage}
           variants={barVariants}
         ></MotionDiv>

@@ -28,7 +28,7 @@ export default function PortfolioSection({
   animate,
   portfolioData,
   heading = "Our Work",
-  title = "Creative Portfolio",
+  title = " Portfolio",
   paragraph = "Explore our latest design projects across various disciplines.",
   filters = [],
   backgroundImage,
@@ -120,11 +120,11 @@ export default function PortfolioSection({
     >
       <motion.div
         variants={pulse}
-        className="absolute md:top-[10%] top-[5%] left-[15%] w-[14vw] h-[14vw] md:w-[12vw] md:h-[12vw] rounded-full bg-gradient-to-r from-[#41B4A7]/60 to-[#65CF5F]/50 opacity-40"
+        className="absolute md:top-[10%] top-[5%] left-[15%] w-[14vw] h-[14vw] md:w-[12vw] md:h-[12vw] rounded-full bg-gradient-to-r from-black/60 to-black/50 opacity-40"
       />
       <motion.div
         variants={pulse}
-        className="absolute md:bottom-[10%] bottom-[5%] right-[10%] w-[10vw] h-[10vw] md:w-[9vw] md:h-[9vw] rounded-full bg-gradient-to-r from-[#1F9BED]/60 to-[#41B4A7]/50 opacity-40"
+        className="absolute md:bottom-[10%] bottom-[5%] right-[10%] w-[10vw] h-[10vw] md:w-[9vw] md:h-[9vw] rounded-full bg-gradient-to-r from-black/60 to-black/50 opacity-40"
       />
 
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10">
@@ -133,19 +133,19 @@ export default function PortfolioSection({
           variants={headingVariants}
         >
           <motion.h2
-            className="text-xl sm:text-2xl font-bold text-[#1C2D44]"
+            className="text-xl sm:text-2xl font-bold text-black"
             variants={itemVariants}
           >
             {title}
           </motion.h2>
           <motion.h3
-            className="text-3xl sm:text-5xl font-extrabold text-[#41B4A7] mb-3"
+            className="text-3xl sm:text-5xl font-extrabold text-black mb-3"
             variants={itemVariants}
           >
             {heading}
           </motion.h3>
           <motion.p
-            className="max-w-[700px] w-full mx-auto text-[#1C2D44] mb-8 text-sm sm:text-base text-center"
+            className="max-w-[700px] w-full mx-auto text-black mb-8 text-sm sm:text-base text-center"
             variants={itemVariants}
           >
             {paragraph}
@@ -169,8 +169,8 @@ export default function PortfolioSection({
                 className={cn(
                   "rounded-lg px-4 py-2 text-sm font-medium border-gray-200 flex data-center gap-2",
                   activeFilter === filter
-                    ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-none"
-                    : "bg-white text-gray-700 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-white"
+                    ? "bg-gradient-to-r from-black/80 to-black text-white border-none"
+                    : "bg-white text-black hover:bg-gradient-to-r from-black/80 to-black hover:text-white"
                 )}
                 onClick={() => setActiveFilter(filter)}
               >

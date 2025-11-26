@@ -1,14 +1,16 @@
-import { FeatureCard } from "./feature-card"
-import { GuaranteeSection } from "./guarantee-section"
+import { FeatureCard } from "./feature-card";
+import { GuaranteeSection } from "./guarantee-section";
 
 export function VpsFeatures() {
   return (
     <div className=" mx-auto px-8 py-12 max-w-7xl ">
-      <h1 className="text-3xl font-bold text-center mb-12">What Makes Our Creative Agency Excellent?</h1>
+      <h1 className="text-3xl font-bold text-center mb-12">
+        What Makes Our Nexuz Global Excellent?
+      </h1>
 
       <div className="grid md:grid-cols-3 gap-8 mb-12">
         <FeatureCard
-          title="Global Creative Network"
+          title="Global  Network"
           description="Our creative team is distributed across Tier-1 cities worldwide, which gives us access to diverse cultural perspectives and the latest design trends."
         />
 
@@ -40,5 +42,5 @@ export function VpsFeatures() {
 
       <GuaranteeSection />
     </div>
-  )
+  );
 }

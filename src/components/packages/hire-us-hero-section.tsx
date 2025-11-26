@@ -43,18 +43,7 @@ export default function HireUsHeroSection() {
     },
   };
 
-  const rotateAnimation = {
-    initial: { rotate: 0 },
-    animate: {
-      rotate: 360,
-      transition: {
-        duration: 20,
-        repeat: Number.POSITIVE_INFINITY,
-        ease: "linear",
-      },
-    },
-  };
-  const { setIsOpen, isOpen }: any = useFormContact();
+  const { setIsOpen }: any = useFormContact();
 
   return (
     <div className="relative min-h-[600px] w-full flex flex-col items-center justify-center px-4 py-16 z-10 overflow-hidden">
@@ -78,7 +67,7 @@ export default function HireUsHeroSection() {
           boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
         }}
       >
-        <ArrowUp className="w-6 sm:w-8 h-6 sm:h-8 text-[#65CF5F] transform -rotate-45" />
+        <ArrowUp className="w-6 sm:w-8 h-6 sm:h-8 text-black transform -rotate-45" />
       </motion.div>
 
       {/* Right arrow circle */}
@@ -103,7 +92,7 @@ export default function HireUsHeroSection() {
 
       {/* Green circle */}
       <motion.div
-        className="absolute right-[35%] sm:right-[40%] top-[25%] sm:top-[30%] w-6 sm:w-8 h-6 sm:h-8 border-2 border-green-300 rounded-full z-10"
+        className="absolute right-[35%] sm:right-[40%] top-[25%] sm:top-[30%] w-6 sm:w-8 h-6 sm:h-8 border-2 border-black rounded-full z-10"
         initial="initial"
         animate="animate"
         variants={pulseAnimation}
@@ -112,12 +101,12 @@ export default function HireUsHeroSection() {
       {/* Content */}
       <div className="relative z-20 max-w-4xl mx-auto text-center px-4">
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text mb-6 sm:mb-8"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-black/80 to-black text-transparent bg-clip-text mb-6 sm:mb-8"
           initial="hidden"
           animate="visible"
           variants={fadeIn}
         >
-          EXPERIENCE SMARTER DIGITAL WITH CREATIVE AGENCY
+          EXPERIENCE SMARTER DIGITAL WITH Nexuz Global
         </motion.h1>
 
         <motion.div
@@ -141,7 +130,7 @@ export default function HireUsHeroSection() {
         </motion.div>
 
         <motion.h2
-          className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#3DB1B1] mb-8 sm:mb-12 leading-tight"
+          className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-8 sm:mb-12 leading-tight"
           initial="hidden"
           animate="visible"
           variants={{
@@ -154,11 +143,11 @@ export default function HireUsHeroSection() {
           }}
         >
           Discover digital solutions that help you take your industry by storm
-          with Creative Agency.
+          with Nexuz Global.
         </motion.h2>
 
         <motion.button
-          className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:from-[#209CEB]/80 hover:to-[#65CF5F] rounded-2xl border-none text-white font-bold py-3 sm:py-4 px-8 sm:px-10 text-base sm:text-lg transition-colors duration-300"
+          className="bg-gradient-to-r from-black/80 to-black hover:from-black/80 hover:to-black rounded-2xl border-none text-white font-bold py-3 sm:py-4 px-8 sm:px-10 text-base sm:text-lg transition-colors duration-300"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}

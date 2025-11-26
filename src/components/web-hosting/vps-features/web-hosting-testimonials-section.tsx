@@ -29,10 +29,10 @@ export function TestimonialsSection() {
           <div className="flex mb-4">
             <StarRating rating={5} />
           </div>
-          <p className="text-gray-700 mb-2">
+          <p className="text-black mb-2">
             I've tested at least 6 design companies over the last 10 years and I
-            stick to Creative Agency because they're honest, have a great
-            service and amazing...{" "}
+            stick to Nexuz Global because they're honest, have a great service
+            and amazing...{" "}
             <span className="text-yellow-500 cursor-pointer">show more</span>
           </p>
           <p className="font-medium mt-4">Catalin Zorzini</p>
@@ -46,7 +46,7 @@ export function TestimonialsSection() {
           <div className="flex mb-4">
             <StarRating rating={5} />
           </div>
-          <p className="text-gray-700 mb-2">
+          <p className="text-black mb-2">
             Great design, great support, love it 😊
           </p>
           <p className="font-medium mt-4">Pankaj</p>
@@ -67,7 +67,7 @@ export function TestimonialsSection() {
           <div className="flex mb-4">
             <StarRating rating={5} />
           </div>
-          <p className="text-gray-700 mb-2">
+          <p className="text-black mb-2">
             The creative service is very good, they are kindly and fast for
             every our needs.
           </p>

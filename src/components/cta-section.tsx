@@ -195,7 +195,7 @@ export default function EnhancedCtaSection() {
           initial="hidden"
           animate="visible"
           variants={pulse}
-          className="absolute md:top-[20%] top-[15%] left-[15%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CE5C]/40 to-[#3DB1B1]/30 opacity-50 pointer-events-none"
+          className="absolute md:top-[20%] top-[15%] left-[15%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-black/40 to-black/30 opacity-50 pointer-events-none"
         ></motion.div>
 
         <motion.div
@@ -203,7 +203,7 @@ export default function EnhancedCtaSection() {
           animate="visible"
           variants={pulse}
           transition={{ delay: 0.3 }}
-          className="absolute md:bottom-[20%] bottom-[15%] right-[15%] w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] rounded-full bg-gradient-to-r from-[#209CEB]/40 to-[#65CE5C]/30 opacity-40 pointer-events-none"
+          className="absolute md:bottom-[20%] bottom-[15%] right-[15%] w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] rounded-full bg-gradient-to-r from-black/40 to-black/30 opacity-40 pointer-events-none"
         ></motion.div>
       </motion.div>
 
@@ -216,7 +216,7 @@ export default function EnhancedCtaSection() {
         >
           <motion.div className="relative" animate="animate">
             <motion.h2
-              className="text-4xl sm:text-5xl font-bold py-2 text-[#3DB1B1]"
+              className="text-4xl sm:text-5xl font-bold py-2 text-black"
               whileHover={{
                 backgroundSize: "200%",
                 backgroundPosition: ["0%", "100%"],
@@ -226,7 +226,7 @@ export default function EnhancedCtaSection() {
               Let's Make Your Project Standout!
             </motion.h2>
             <motion.div
-              className="absolute -top-6 -right-6 text-[#65CF5F]/80"
+              className="absolute -top-6 -right-6 text-black/80"
               variants={sparkleVariants}
               initial="hidden"
               animate="visible"
@@ -236,7 +236,7 @@ export default function EnhancedCtaSection() {
           </motion.div>
 
           <motion.p
-            className="max-w-2xl text-[#1C2D44] text-base sm:text-lg"
+            className="max-w-2xl text-black text-base sm:text-lg"
             variants={itemVariants}
           >
             You want more than average, let's create something that truly stands
@@ -267,7 +267,7 @@ export default function EnhancedCtaSection() {
                     <Input
                       {...register("email")}
                       placeholder="Enter your email"
-                      className={`rounded-lg px-4 py-3 w-full ring-0 focus-visible:ring-0 text-[#1C2D44] h-12 bg-[#F8F8F8] border border-[#AFAFAF] transition-all duration-300 ${
+                      className={`rounded-lg px-4 py-3 w-full ring-0 focus-visible:ring-0 text-black h-12 bg-[#F8F8F8] border border-[#AFAFAF] transition-all duration-300 ${
                         errors.email ? "border-red-500" : ""
                       }`}
                     />
@@ -286,7 +286,7 @@ export default function EnhancedCtaSection() {
                 >
                   <Button
                     type="submit"
-                    className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] w-[180px] transition-colors hover:opacity-90 h-12 text-white rounded-lg px-6 py-3 relative overflow-hidden group"
+                    className="bg-gradient-to-r cursor-pointer from-black/80 to-black hover:from-black/80 hover:to-black w-[180px] transition-colors hover:opacity-90 h-12 text-white rounded-lg px-6 py-3 relative overflow-hidden group"
                   >
                     <motion.span
                       className="absolute inset-0 bg-white opacity-20 rounded-lg"
@@ -307,7 +307,7 @@ export default function EnhancedCtaSection() {
               </motion.form>
             ) : (
               <motion.div
-                className="mt-4 flex items-center justify-center gap-2 bg-green-100 text-green-700 py-3 px-6 rounded-lg w-full max-w-xl"
+                className="mt-4 flex items-center justify-center gap-2 bg-black/70 text-green-700 py-3 px-6 rounded-lg w-full max-w-xl"
                 variants={successVariants}
                 initial="hidden"
                 animate="visible"
@@ -321,7 +321,7 @@ export default function EnhancedCtaSection() {
           </AnimatePresence>
 
           <motion.div
-            className="absolute -bottom-10 left-1/4 w-16 h-16 rounded-full border-2 border-[#65CF5F]/80/20"
+            className="absolute -bottom-10 left-1/4 w-16 h-16 rounded-full border-2 border-black/80/20"
             initial={{ opacity: 0, scale: 0 }}
             animate={{
               opacity: 1,
@@ -337,7 +337,7 @@ export default function EnhancedCtaSection() {
             }}
           />
           <motion.div
-            className="absolute top-20 right-1/4 w-8 h-8 rounded-full border-2 border-[#1F9BED]/20"
+            className="absolute top-20 right-1/4 w-8 h-8 rounded-full border-2 border-black/20"
             initial={{ opacity: 0, scale: 0 }}
             animate={{
               opacity: 1,

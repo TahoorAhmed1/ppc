@@ -31,7 +31,7 @@ export function PricingCard({
   return (
     <>
       <motion.div
-        className="pricing-card border border-[#4ecca3] rounded-lg overflow-hidden flex flex-col w-full h-full p-3 sm:p-4 md:p-5 shadow-sm"
+        className="pricing-card border border-black rounded-lg overflow-hidden flex flex-col w-full h-full p-3 sm:p-4 md:p-5 shadow-sm"
         initial={{
           y: 0,
           boxShadow: "0 1px 2px rgba(0,0,0,0.05)",
@@ -49,7 +49,7 @@ export function PricingCard({
       >
         <div className="p-4 sm:p-5 md:p-6 text-center">
           <motion.h3
-            className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2 bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text"
+            className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2 bg-gradient-to-r from-black/80 to-black text-transparent bg-clip-text"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 + index * 0.1 }}
@@ -77,7 +77,7 @@ export function PricingCard({
             )}
             {currentPrice && (
               <motion.span
-                className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#3db8c5]"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold text-black"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
@@ -90,7 +90,7 @@ export function PricingCard({
               onClick={() => {
                 setIsModalOpen(true);
               }}
-              className="w-full bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] text-white font-medium py-2 sm:py-3 rounded transition-all duration-300 ease-in-out text-sm sm:text-base"
+              className="w-full bg-gradient-to-r cursor-pointer from-black/80 to-black hover:from-black/80 hover:to-black text-white font-medium py-2 sm:py-3 rounded transition-all duration-300 ease-in-out text-sm sm:text-base"
             >
               {buttonTitle}
             </Button>
@@ -103,9 +103,10 @@ export function PricingCard({
                        [&::-webkit-scrollbar-track]:bg-transparent
                        [&::-webkit-scrollbar-track]:rounded-full
                        [&::-webkit-scrollbar-thumb]:rounded-full
-                       [&::-webkit-scrollbar-thumb]:bg-[linear-gradient(to_bottom,_#65CF5FCC,_#1F9BED)]
+                       [&::-webkit-scrollbar-thumb]:bg-black
                        [&::-webkit-scrollbar-button]:hidden
-                       scrollbar-thin scrollbar-thumb-[#65CF5F] scrollbar-track-transparent">
+                       scrollbar-thin scrollbar-thumb-black scrollbar-track-transparent"
+          >
             {features.map((feature, featureIndex) => (
               <motion.li
                 key={featureIndex}
@@ -115,7 +116,7 @@ export function PricingCard({
                 transition={{ delay: 0.4 + index * 0.05 + featureIndex * 0.03 }}
               >
                 <motion.span
-                  className="text-[#4ecca3] mr-2 flex-shrink-0"
+                  className="text-black mr-2 flex-shrink-0"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{
                     repeat: Number.POSITIVE_INFINITY,
@@ -126,9 +127,7 @@ export function PricingCard({
                 >
                   <Check />
                 </motion.span>
-                <span className="text-xs sm:text-sm text-gray-700">
-                  {feature}
-                </span>
+                <span className="text-xs sm:text-sm text-black">{feature}</span>
               </motion.li>
             ))}
           </ul>

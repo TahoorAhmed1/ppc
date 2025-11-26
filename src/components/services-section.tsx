@@ -136,19 +136,19 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
           variants={headingVariants}
         >
           <motion.h2
-            className="text-xl sm:text-2xl font-bold text-[#1C2D44]"
+            className="text-xl sm:text-2xl font-bold text-black"
             variants={itemVariants}
           >
             {title}
           </motion.h2>
           <motion.h3
-            className="text-3xl sm:text-5xl font-extrabold text-[#41B4A7] mb-3"
+            className="text-3xl sm:text-5xl font-extrabold text-black mb-3"
             variants={itemVariants}
           >
             {heading}
           </motion.h3>
           <motion.p
-            className="max-w-[700px] w-full mx-auto text-[#1C2D44] mb-8 text-sm sm:text-base text-center"
+            className="max-w-[700px] w-full mx-auto text-black mb-8 text-sm sm:text-base text-center"
             variants={itemVariants}
           >
             {paragraph}
@@ -161,7 +161,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
             .map((service, index) => (
               <a href={service.link} key={index}>
                 <MotionCard
-                  className="bg-white hover:bg-[#1C2D44] text-[#1C2D44] hover:text-white transition-colors duration-300"
+                  className="bg-white hover:bg-black text-black hover:text-white transition-colors duration-300"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -219,10 +219,9 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
             >
               <Button
                 onClick={() => setShowAll(!showAll)}
-                className="bg-[#3DB1B1] hover:bg-[#1C2D44] text-white px-6 py-2 rounded-md transition-all duration-300"
+                className="bg-black hover:bg-black text-white px-6 py-2 rounded-md transition-all duration-300"
               >
                 {showAll ? "Show Less" : buttonText}
-                
               </Button>
             </motion.div>
           </div>

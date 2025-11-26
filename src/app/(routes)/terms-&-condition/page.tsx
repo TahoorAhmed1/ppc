@@ -50,10 +50,10 @@ export default function Page() {
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-3">2. Confidential Data</h2>
           <p className="mb-3">
-            Creative Creative Agency 360 follows the &apos;Under the Data
-            Protection Act.&apos; Your information will be confidential when
-            passed on to third parties. It will only be accessible by the
-            authorities for legal proceedings.
+            Nexuz Global follows the &apos;Under the Data Protection Act.&apos;
+            Your information will be confidential when passed on to third
+            parties. It will only be accessible by the authorities for legal
+            proceedings.
           </p>
           <p className="mb-3">
             You can request us to provide a copy of your records. According to
@@ -86,10 +86,9 @@ export default function Page() {
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-3">4. Cancellation</h2>
           <p className="mb-3">
-            Creative Creative Agency 360 offers 2 days to cancel your
-            subscription. We will accept your cancellation by e-mail, message,
-            call, or in person. Both parties have the right to cancel the
-            agreement for any reason.
+            Nexuz Global offers 2 days to cancel your subscription. We will
+            accept your cancellation by e-mail, message, call, or in person.
+            Both parties have the right to cancel the agreement for any reason.
           </p>
           <p className="mb-3">
             We will not provide a refund for the services that you cancel right
@@ -101,10 +100,10 @@ export default function Page() {
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-3">5. Accessibility</h2>
           <p className="mb-3">
-            Creative Creative Agency 360 offers a wide range of services that
-            are accessible to everyone. You can use our website for particular
-            downloads, programs, or texts. Republication of any feature of our
-            website is strictly prohibited.
+            Nexuz Global offers a wide range of services that are accessible to
+            everyone. You can use our website for particular downloads,
+            programs, or texts. Republication of any feature of our website is
+            strictly prohibited.
           </p>
           <p className="mb-3">
             We admit that its services might get interrupted because of some
@@ -122,8 +121,8 @@ export default function Page() {
           </p>
           <p className="mb-3">
             IP addresses do not have any connection with the personal data of
-            clients. The IP addresses in the log files of Creative Creative
-            Agency 360 access to web servers, URLs, and system administration.
+            clients. The IP addresses in the log files of Agency access to web
+            servers, URLs, and system administration.
           </p>
           <p className="mb-3">
             We restrict this information to those only authorized members can
@@ -134,19 +133,19 @@ export default function Page() {
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-3">7. Function of Cookies</h2>
           <p className="mb-3">
-            Creative Creative Agency 360 uses cookies to collect users&apos;
-            detail on every visit. The cookies enhance functionality and offer
-            easy website browsing.
+            Nexuz Global uses cookies to collect users&apos; detail on every
+            visit. The cookies enhance functionality and offer easy website
+            browsing.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-3">8. Links</h2>
           <p className="mb-3">
-            Creative Creative Agency 360 does not allow users to create links to
-            their pages without prior consent. Doing so without approval can put
-            you at risk. In content on our website, we have limitations in
-            various areas on your web page.
+            Nexuz Global does not allow users to create links to their pages
+            without prior consent. Doing so without approval can put you at
+            risk. In content on our website, we have limitations in various
+            areas on your web page.
           </p>
           <p className="mb-3">
             We encourage users to verify the security status of the links placed
@@ -158,11 +157,10 @@ export default function Page() {
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-3">9. Notice of Copyright</h2>
           <p className="mb-3">
-            All the content of Creative Creative Agency 360 is protected
-            according to Intellectual Property law, including copyright. You
-            cannot own any material, content, and services of the website unless
-            third parties acting on our behalf or authorized personnel access
-            it.
+            All the content of Nexuz Global is protected according to
+            Intellectual Property law, including copyright. You cannot own any
+            material, content, and services of the website unless third parties
+            acting on our behalf or authorized personnel access it.
           </p>
           <p className="mb-3">
             Copying the content from our website and rephrasing it to publish on
@@ -174,9 +172,9 @@ export default function Page() {
           <h2 className="text-xl font-bold mb-3">10. Trademarks</h2>
           <p className="mb-3">
             The content and services on the website are exclusive trademarks of
-            Creative Creative Agency 360. The services of other companies on our
-            website show that they are the trademarks of their respective
-            owners, such as social media icons.
+            Nexuz Global . The services of other companies on our website show
+            that they are the trademarks of their respective owners, such as
+            social media icons.
           </p>
         </section>
 
@@ -206,9 +204,9 @@ export default function Page() {
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-3">13. Newsletter</h2>
           <p className="mb-3">
-            Creative Creative Agency 360 uses newsletters to send e-mails and
-            keep your ID safe from third parties. We also provide unsubscribe
-            instructions for those who do not want newsletter subscriptions.
+            Nexuz Global uses newsletters to send e-mails and keep your ID safe
+            from third parties. We also provide unsubscribe instructions for
+            those who do not want newsletter subscriptions.
           </p>
           <p className="mb-3">
             If you feel comfortable opting out of our newsletter distribution
@@ -239,9 +237,9 @@ export default function Page() {
             15. Changes in Terms and Conditions
           </h2>
           <p className="mb-3">
-            Creative Creative Agency 360 has all the rights to change or upgrade
-            its Terms and Conditions when needed. Your continued use of our
-            service confirms that you have read and accepted the changes.
+            Nexuz Global has all the rights to change or upgrade its Terms and
+            Conditions when needed. Your continued use of our service confirms
+            that you have read and accepted the changes.
           </p>
           <p className="mb-3">
             The Terms and Conditions are used to build a level of understanding
@@ -255,13 +253,12 @@ export default function Page() {
           <p className="mb-3">
             After reading our Terms and Conditions, if you have any questions,
             e-mail us at{" "}
-            <a href="mailto:support@creativeagency360.com">
-              support@creativeagency360.com.
+            <a href="mailto:support@nexuzglobal.com">
+              support@nexuzglobal.com.
             </a>
           </p>
         </section>
       </div>
-      
     </div>
   );
 }

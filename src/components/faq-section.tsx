@@ -225,7 +225,7 @@ export default function AnimatedFaqSection({
           initial="hidden"
           animate="visible"
           variants={pulse}
-          className="absolute md:top-[10%] top-[5%] right-[10%] w-[9vw] h-[9vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-[#65CE5C]/40 to-[#3DB1B1]/30 opacity-50 pointer-events-none"
+          className="absolute md:top-[10%] top-[5%] right-[10%] w-[9vw] h-[9vw] md:w-[7vw] md:h-[7vw] rounded-full bg-gradient-to-r from-black/40 to-black/30 opacity-50 pointer-events-none"
         ></motion.div>
 
         <motion.div
@@ -233,7 +233,7 @@ export default function AnimatedFaqSection({
           animate="visible"
           variants={pulse}
           transition={{ delay: 0.6 }}
-          className="absolute md:top-[40%] top-[30%] left-[5%] w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] rounded-full bg-gradient-to-r from-[#65CE5C]/50 to-[#1F9BED]/40 opacity-40 pointer-events-none"
+          className="absolute md:top-[40%] top-[30%] left-[5%] w-[7vw] h-[7vw] md:w-[5vw] md:h-[5vw] rounded-full bg-gradient-to-r from-black/50 to-black/40 opacity-40 pointer-events-none"
         ></motion.div>
       </motion.div>
 
@@ -259,7 +259,7 @@ export default function AnimatedFaqSection({
               >
                 <AccordionTrigger className="text-lg font-medium text-black group">
                   How long does it take to build a website?
-                  <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
+                  <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-black/60 text-black shrink-0">
                     <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />
                   </div>
                 </AccordionTrigger>
@@ -284,7 +284,7 @@ export default function AnimatedFaqSection({
               >
                 <AccordionTrigger className="text-lg font-medium text-black group">
                   Can I make changes to the website after it's live?
-                  <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
+                  <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-black/60 text-black shrink-0">
                     <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />
                   </div>
                 </AccordionTrigger>
@@ -309,7 +309,7 @@ export default function AnimatedFaqSection({
               >
                 <AccordionTrigger className="text-lg font-medium text-black group">
                   Do you only build new websites, or can you redesign mine?
-                  <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
+                  <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-black/60 text-black shrink-0">
                     <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />
                   </div>
                 </AccordionTrigger>
@@ -333,7 +333,7 @@ export default function AnimatedFaqSection({
             >
               <MotionCardHeader className="p-0 mb-4" variants={itemVariants}>
                 <motion.h2
-                  className={`text-4xl font-bold text-[#3DB1B1]`}
+                  className={`text-4xl font-bold text-black`}
                   variants={itemVariants}
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300, damping: 10 }}
@@ -347,9 +347,7 @@ export default function AnimatedFaqSection({
               >
                 <motion.p
                   className={`${
-                    enableGradientBackground
-                      ? "text-white/80"
-                      : "text-[#1C2D44]"
+                    enableGradientBackground ? "text-white/80" : "text-black"
                   } text-base leading-relaxed`}
                   variants={itemVariants}
                 >
@@ -416,7 +414,7 @@ export default function AnimatedFaqSection({
                   </div>
                   <MotionButton
                     type="submit"
-                    className="bg-gradient-to-r h-11 from-[#65CF5F]/80 cursor-pointer to-[#1F9BED] hover:opacity-90 text-white rounded-md px-6 whitespace-nowrap"
+                    className="bg-gradient-to-r h-11 from-black/80 cursor-pointer to-black hover:opacity-90 text-white rounded-md px-6 whitespace-nowrap"
                     variants={buttonVariants}
                     whileHover="hover"
                     whileTap="tap"
@@ -437,8 +435,6 @@ export default function AnimatedFaqSection({
                     )}
                   </MotionButton>
                 </motion.form>
-
-                
               </MotionCardContent>
             </MotionCard>
           </div>

@@ -8,13 +8,14 @@ export function WhyChooseSection() {
           {/* Left column with heading */}
           <div className="md:col-span-4 space-y-6">
             <h2 className="text-3xl sm:text-4xl font-bold leading-snug">
-              <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
-                Why Choose <br /> Creative Agency <br /> As Your Provider?
+              <span className="bg-gradient-to-r from-black/80 to-black text-transparent bg-clip-text">
+                Why Choose <br /> Nexuz Global <br /> As Your Provider?
               </span>
             </h2>
             <p className="text-gray-600">
-              Over the years, we have accumulated extensive creative knowledge that we have used to create a design
-              service that no competitor can match.
+              Over the years, we have accumulated extensive creative knowledge
+              that we have used to create a design service that no competitor
+              can match.
             </p>
           </div>
 
@@ -35,7 +36,7 @@ export function WhyChooseSection() {
                 {
                   title: "A Home for Developers",
                   description:
-                    "At Creative Agency, we fully support PHP 5, MySQL 5, Perl, CGI, SSH, SSL, HTML5 and JavaScript, providing a safe haven for all developers!",
+                    "At Nexuz Global, we fully support PHP 5, MySQL 5, Perl, CGI, SSH, SSL, HTML5 and JavaScript, providing a safe haven for all developers!",
                 },
                 {
                   title: "Eco-Friendly Design",
@@ -45,8 +46,10 @@ export function WhyChooseSection() {
               ].map((feature, idx) => (
                 <div key={idx} className="space-y-2">
                   <div className="flex items-center">
-                    <Check className="text-green-400 mr-2" />
-                    <h3 className="font-semibold text-gray-900">{feature.title}</h3>
+                    <Check className="text-white mr-2" />
+                    <h3 className="font-semibold text-gray-900">
+                      {feature.title}
+                    </h3>
                   </div>
                   <p className="text-gray-600">{feature.description}</p>
                 </div>

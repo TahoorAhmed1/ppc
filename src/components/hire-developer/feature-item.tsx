@@ -13,11 +13,11 @@ export default function FeatureItem({
 }: FeatureItemProps) {
   return (
     <div>
-      <div className="mb-4 w-16 h-16 flex items-center justify-center rounded-full bg-green-100  border border-green-300 ">
+      <div className="mb-4 w-16 h-16 flex items-center justify-center rounded-full bg-black/70  border border-black ">
         {icon === "megaphone" ? (
-          <Megaphone className="w-8 h-8 text-green-400 " />
+          <Megaphone className="w-8 h-8 text-white " />
         ) : (
-          <BarChart3 className="w-8 h-8 text-green-400 " />
+          <BarChart3 className="w-8 h-8 text-white " />
         )}
       </div>
       <h3 className="text-gray-800 font-semibold text-lg mb-2">{title}</h3>

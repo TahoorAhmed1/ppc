@@ -15,17 +15,16 @@ export default function Page() {
           <h2 className="text-xl font-bold mb-3">Regulatory Compliance</h2>
           <p className="mb-3">
             The revised Rule implements the Telemarketing and Consumer Fraud and
-            Abuse Prevention Act (TCFPA). It is crucially important that
-            Creative Creative Agency 360 aligns with the TCR regulations.
+            Abuse Prevention Act (TCFPA). It is crucially important that Nexuz
+            Global aligns with the TCR regulations.
           </p>
           <p className="mb-3">
-            Creative Creative Agency 360 respects the privacy rights and data
-            protection rights of its users and recognizes the importance of
-            protecting the personal information we collect about you. Our
-            Privacy Policy is designed to help you understand what information
-            we collect and how we use and share that information. This Privacy
-            Policy applies to our websites, applications, products, and
-            services.
+            Nexuz Global respects the privacy rights and data protection rights
+            of its users and recognizes the importance of protecting the
+            personal information we collect about you. Our Privacy Policy is
+            designed to help you understand what information we collect and how
+            we use and share that information. This Privacy Policy applies to
+            our websites, applications, products, and services.
           </p>
         </section>
 
@@ -35,11 +34,10 @@ export default function Page() {
           </h2>
           <p className="mb-3">
             When you engage in certain activities on this website—such as
-            requesting information, downloading information, or other
-            content—Creative Creative Agency 360 may ask you to provide certain
-            information about yourself or your company by filling out and
-            submitting an online form. This is completely optional for you to
-            engage in or not.
+            requesting information, downloading information, or other content—
+            Nexuz Global may ask you to provide certain information about
+            yourself or your company by filling out and submitting an online
+            form. This is completely optional for you to engage in or not.
           </p>
           <p className="mb-3">
             To send us your Request for Proposal (RFP), Request for Quote (RFQ),
@@ -62,11 +60,10 @@ export default function Page() {
             processor partners.
           </p>
           <p className="mb-3">
-            Creative Creative Agency 360 will only collect sufficient
-            information necessary to enable us to comply with your request for
-            information. Communications sent by the Creative Creative Agency 360
-            website will be sent to appropriate Creative Creative Agency 360
-            staff for action as needed.
+            Nexuz Global will only collect sufficient information necessary to
+            enable us to comply with your request for information.
+            Communications sent by the Nexuz Global website will be sent to
+            appropriate Nexuz Global staff for action as needed.
           </p>
         </section>
 
@@ -148,10 +145,10 @@ export default function Page() {
             Recording of Your Email Address
           </h2>
           <p className="mb-3">
-            If you send us a message, Creative Creative Agency 360 will record
-            your email address. This email address will only be used for the
-            purpose you provided it. We will not use it for any other purpose or
-            disclose it without your consent.
+            If you send us a message, Nexuz Global will record your email
+            address. This email address will only be used for the purpose you
+            provided it. We will not use it for any other purpose or disclose it
+            without your consent.
           </p>
           <p className="mb-3">
             Some email communications may be monitored for statistical and
@@ -186,9 +183,9 @@ export default function Page() {
           <h2 className="text-xl font-bold mb-3">Your Data is Safe with Us</h2>
           <p className="mb-3">
             None of the information that we collect is sold to any third-party
-            organization not part of Creative Creative Agency 360 or its
-            subsidiaries. However, we may share your information with our
-            subsidiary companies and affiliates.
+            organization not part of Nexuz Global or its subsidiaries. However,
+            we may share your information with our subsidiary companies and
+            affiliates.
           </p>
         </section>
 
@@ -356,15 +353,14 @@ export default function Page() {
             If you have questions or need to reach us about this Privacy Policy,
             please email us at{" "}
             <a
-              href="mailto:support@creativeagency360.com"
+              href="mailto:support@nexuzglobal.com"
               className="text-blue-600 hover:underline"
             >
-              support@creativeagency360.com
+              support@nexuzglobal.com
             </a>{" "}
             as provided on our Privacy Policy page.
           </p>
         </section>
-        
       </div>
     </div>
   );

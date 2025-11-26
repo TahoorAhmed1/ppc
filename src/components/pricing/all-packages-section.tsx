@@ -11,7 +11,7 @@ import {
   socialMediaPackage,
   seoPackage,
   uiDesignPackages,
-  appPackages
+  appPackages,
 } from "@/components/packages/packages";
 import PricingSection from "@/components/pricing/pricing-section";
 
@@ -84,7 +84,6 @@ const filter = [
   "Social Media Package",
   "UI Design Package",
   "Mobile App Package",
-
 ];
 
 const allPricingData = {
@@ -95,7 +94,6 @@ const allPricingData = {
   socialMediaPackages: socialMediaPackage,
   uiDesignPackages: uiDesignPackages,
   appPackages: appPackages,
-
 };
 
 const pricingOptionsTilte = "BEAT THE ODDS";
@@ -150,7 +148,7 @@ export default function AllPackagesSection() {
 
         {/* New animation approach for the heading */}
         <motion.h1
-          className="heading-main text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-[#4ecca3] to-[#3db8c5] text-transparent bg-clip-text p-3 sm:p-4 md:p-5"
+          className="heading-main text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-black to-black text-transparent bg-clip-text p-3 sm:p-4 md:p-5"
           initial="hidden"
           animate="visible"
           variants={headingVariants}
@@ -189,8 +187,8 @@ export default function AllPackagesSection() {
                 className={cn(
                   "rounded-lg px-4 py-2 text-sm font-medium border-gray-200 flex data-center gap-2",
                   activeFilter === filterItem
-                    ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-none"
-                    : "bg-white text-gray-700 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-white"
+                    ? "bg-gradient-to-r from-black/80 to-black text-white border-none"
+                    : "bg-white text-black hover:bg-gradient-to-r from-black/80 to-black hover:text-white"
                 )}
                 onClick={() => handleFilterClick(filterItem)}
               >

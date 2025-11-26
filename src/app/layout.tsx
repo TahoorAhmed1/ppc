@@ -1,23 +1,20 @@
 import type React from "react";
 import "./globals.css";
-import { Poppins } from "next/font/google";
+import { EB_Garamond as Garamond } from "next/font/google";
 import Script from "next/script";
 import type { Metadata } from "next";
 import FollowCursor from "@/components/digital-marketing/components-of-pricing/follow-cursor";
-import FixedPositionBalls from "@/components/moving-bulbs-background";
-import AnimatedStarfield from "@/components/animated-starfield";
-import MovingBulbsBackground from "@/components/moving-bulbs-background";
 
 export const metadata: Metadata = {
-  title: "Creative Agency 360",
+  title: "Nexuz Global ",
   description: "We Build your Digital Business",
   keywords:
-    "Software House, PPC Services, Pay-Per-Click Experts, Google Ads Management, Digital Marketing Agency, Web Development, SEO Services, Social Media Marketing, Creative Agency, Branding, Performance Marketing, Online Advertising, Conversion Optimization",
+    "Software House, PPC Services, Pay-Per-Click Experts, Google Ads Management, Digital Marketing Agency, Web Development, SEO Services, Social Media Marketing, Nexuz Global, Branding, Performance Marketing, Online Advertising, Conversion Optimization",
 };
 
-const poppins = Poppins({
+const poppins = Garamond({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
 });
 
@@ -76,9 +73,9 @@ export default function RootLayout({
           minSize={3}
           baseSpeed={8}
           colorful={true}
-          cursorStyle="dot"
-          cursorSize={14}
-          customColors={["#3CBFAE", "#65CF5F", "#1F9BED", "#5ce0c6"]}
+          cursorStyle="ring"
+          cursorSize={10}
+          customColors={["#1e0e29", "#0e1b29", "#280e29", "#13112e"]}
         />
         {children}
       </body>

@@ -1,13 +1,19 @@
-import Image from "next/image"
-import { ArrowRight } from "lucide-react"
-import { socialMediaMarketingImage } from "@/assets"
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { socialMediaMarketingImage } from "@/assets";
 
 export default function SocialMediaMarketing() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-30 overflow-hidden flex items-center justify-center ">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
         <div className="">
-          <Image src={socialMediaMarketingImage.src} alt="" width={1000} height={1000} className="w-120" />
+          <Image
+            src={socialMediaMarketingImage.src}
+            alt=""
+            width={1000}
+            height={1000}
+            className="w-120"
+          />
         </div>
         <div className="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
           <ServiceCard
@@ -34,21 +40,22 @@ export default function SocialMediaMarketing() {
         </div>
       </div>
     </div>
-
-  )
+  );
 }
 
 interface ServiceCardProps {
-  number: string
-  title: string
-  description: string
+  number: string;
+  title: string;
+  description: string;
 }
 
 function ServiceCard({ number, title, description }: ServiceCardProps) {
   return (
-    <div className="bg-gradient-to-r from-[#65CE5C]/80 to-[#209CEB] hover:from-[#209CEB]/80 hover:to-[#65CF5F] transition-all duration-300 hover:scale-105 rounded-xl p-[5px]">
-      <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">      
-        <div className="text-xl text-end font-medium text-emerald-500 mb-4 ">{number}</div>
+    <div className="bg-gradient-to-r from-black/80 to-black hover:from-black/80 hover:to-black transition-all duration-300 hover:scale-105 rounded-xl p-[5px]">
+      <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+        <div className="text-xl text-end font-medium text-emerald-500 mb-4 ">
+          {number}
+        </div>
         <h3 className="text-2xl font-bold text-gray-800 mb-3">{title}</h3>
         <p className="text-gray-600 mb-6 flex-grow">{description}</p>
         <div className="mt-auto">
@@ -56,5 +63,5 @@ function ServiceCard({ number, title, description }: ServiceCardProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

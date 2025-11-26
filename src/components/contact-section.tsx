@@ -192,7 +192,6 @@ export default function ContactSection() {
     },
   });
 
-  
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
 
@@ -237,7 +236,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section className=" bg-white overflow-hidden relative  py-30" id="contactus">
+    <section
+      className=" bg-white overflow-hidden relative  py-30"
+      id="contactus"
+    >
       <motion.div
         className="absolute top-10 left-0 w-full h-full"
         initial="hidden"
@@ -248,7 +250,7 @@ export default function ContactSection() {
           initial="hidden"
           animate="visible"
           variants={pulse}
-          className="absolute md:top-[15%] top-[10%] left-[5%] w-[12vw] h-[12vw] md:w-[10vw] md:h-[10vw] rounded-full bg-gradient-to-r from-[#65CE5C]/40 to-[#3DB1B1]/30 opacity-50 pointer-events-none"
+          className="absolute md:top-[15%] top-[10%] left-[5%] w-[12vw] h-[12vw] md:w-[10vw] md:h-[10vw] rounded-full bg-gradient-to-r from-black/40 to-black/30 opacity-50 pointer-events-none"
         ></motion.div>
 
         <motion.div
@@ -256,7 +258,7 @@ export default function ContactSection() {
           animate="visible"
           variants={pulse}
           transition={{ delay: 0.3 }}
-          className="absolute md:bottom-[15%] bottom-[10%] right-[5%] w-[14vw] h-[14vw] md:w-[12vw] md:h-[12vw] rounded-full bg-gradient-to-r from-[#209CEB]/40 to-[#65CE5C]/30 opacity-40 pointer-events-none"
+          className="absolute md:bottom-[15%] bottom-[10%] right-[5%] w-[14vw] h-[14vw] md:w-[12vw] md:h-[12vw] rounded-full bg-gradient-to-r from-black/40 to-black/30 opacity-40 pointer-events-none"
         ></motion.div>
 
         <motion.div
@@ -264,7 +266,7 @@ export default function ContactSection() {
           animate="visible"
           variants={pulse}
           transition={{ delay: 0.9 }}
-          className="absolute md:top-[60%] top-[70%] left-[20%] w-[6vw] h-[6vw] md:w-[5vw] md:h-[5vw] rounded-full bg-gradient-to-r from-[#209CEB]/40 to-[#3DB1B1]/30 opacity-30 pointer-events-none"
+          className="absolute md:top-[60%] top-[70%] left-[20%] w-[6vw] h-[6vw] md:w-[5vw] md:h-[5vw] rounded-full bg-gradient-to-r from-black/40 to-black/30 opacity-30 pointer-events-none"
         ></motion.div>
       </motion.div>
 
@@ -283,7 +285,7 @@ export default function ContactSection() {
             <motion.div variants={itemVariants} className="space-y-3">
               <motion.h2
                 variants={itemVariants}
-                className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#3DB1B1]"
+                className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-black"
               >
                 Ready to Get Started?
               </motion.h2>
@@ -464,7 +466,7 @@ export default function ContactSection() {
                     whileTap="tap"
                     type="submit"
                     disabled={isSubmitting || isSuccess}
-                    className="bg-gradient-to-r duration-300 hover:scale-105 transition-all  hover:from-[#209CEB]/80 hover:to-[#65CF5F] from-[#65CE5C]/80 h-12 cursor-pointer to-[#209CEB] w-[220px] hover:opacity-90 text-white rounded-lg border-none"
+                    className="bg-gradient-to-r duration-300 hover:scale-105 transition-all  hover:from-black/80 hover:to-black from-black/80 h-12 cursor-pointer to-black w-[220px] hover:opacity-90 text-white rounded-lg border-none"
                   >
                     {isSubmitting ? (
                       <>

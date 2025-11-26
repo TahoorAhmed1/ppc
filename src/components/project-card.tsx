@@ -13,7 +13,7 @@ const ProjectCard = ({
 }) => {
   return (
     <div
-      className={`w-full hover:scale-105 transition-all border-[1px] border-[#41B4A7] overflow-hidden relative rounded-lg group ${
+      className={`w-full hover:scale-105 transition-all border-[1px] border-black overflow-hidden relative rounded-lg group ${
         animate ? "h-96" : ""
       }`}
     >

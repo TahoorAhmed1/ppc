@@ -1,15 +1,17 @@
-"use client"
+"use client";
 
-import { heroSectionImage3 } from "@/assets"
-import Link from "next/link"
-import type React from "react"
-import { motion } from "framer-motion"
+import { heroSectionImage3 } from "@/assets";
+import Link from "next/link";
+import type React from "react";
+import { motion } from "framer-motion";
 
 type ServicesHeroSectionProps = {
-  heading: string
-}
+  heading: string;
+};
 
-const ServicesHeroSection: React.FC<ServicesHeroSectionProps> = ({ heading }) => {
+const ServicesHeroSection: React.FC<ServicesHeroSectionProps> = ({
+  heading,
+}) => {
   return (
     <>
       <div
@@ -18,8 +20,7 @@ const ServicesHeroSection: React.FC<ServicesHeroSectionProps> = ({ heading }) =>
           backgroundImage: `url(${heroSectionImage3.src})`,
         }}
       >
-        {/* Overlay to ensure text readability on any background */}
-        <div className="absolute inset-0 bg-opacity-40"></div>
+        <div className="absolute inset-0 bg-opacity-40 bg-black/60 "></div>
 
         <div className="px-4 sm:px-6 md:px-8 max-w-4xl mx-auto text-center relative z-10">
           <motion.h1
@@ -42,14 +43,18 @@ const ServicesHeroSection: React.FC<ServicesHeroSectionProps> = ({ heading }) =>
               </Link>
             </motion.div>
             <span className="mx-1 sm:mx-2">•</span>
-            <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.4 }}>
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
               {heading}
             </motion.span>
           </motion.div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ServicesHeroSection
+export default ServicesHeroSection;

@@ -110,7 +110,7 @@ export function BookingModal({
 
         {packageName && (
           <div className="mb-4 text-center">
-            <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text font-bold text-xl">
+            <span className="bg-gradient-to-r from-black/80 to-black text-transparent bg-clip-text font-bold text-xl">
               {packageName} Package
             </span>
           </div>
@@ -187,7 +187,7 @@ export function BookingModal({
 
             <Button
               type="submit"
-              className="bg-gradient-to-r w-full h-12 cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2"
+              className="bg-gradient-to-r w-full h-12 cursor-pointer from-black/80 to-black hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2"
               disabled={isSubmitting}
             >
               {isSubmitting ? (

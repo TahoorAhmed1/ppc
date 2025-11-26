@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 export function CallToAction() {
   return (
@@ -13,9 +13,9 @@ export function CallToAction() {
       }}
     >
       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-        <Button className="bg-gradient-to-r w-40 cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2 relative overflow-hidden group">
+        <Button className="bg-gradient-to-r w-40 cursor-pointer from-black/80 to-black hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2 relative overflow-hidden group">
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-[#5ce0c6] to-[#65CF5F] opacity-0 group-hover:opacity-100"
+            className="absolute inset-0 bg-gradient-to-r from-[#5ce0c6] to-black opacity-0 group-hover:opacity-100"
             transition={{ duration: 0.3 }}
           />
           <motion.span
@@ -32,10 +32,10 @@ export function CallToAction() {
       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
         <Button
           variant="outline"
-          className="bg-gradient-to-r w-50 cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2 relative overflow-hidden group"
+          className="bg-gradient-to-r w-50 cursor-pointer from-black/80 to-black hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2 relative overflow-hidden group"
         >
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-[#5ce0c6] to-[#65CF5F] opacity-0 group-hover:opacity-100"
+            className="absolute inset-0 bg-gradient-to-r from-[#5ce0c6] to-black opacity-0 group-hover:opacity-100"
             transition={{ duration: 0.3 }}
           />
           <motion.span
@@ -50,7 +50,11 @@ export function CallToAction() {
               initial={{ x: 0 }}
               whileHover={{
                 x: 5,
-                transition: { repeat: Number.POSITIVE_INFINITY, repeatType: "reverse", duration: 0.6 },
+                transition: {
+                  repeat: Number.POSITIVE_INFINITY,
+                  repeatType: "reverse",
+                  duration: 0.6,
+                },
               }}
             >
               →
@@ -59,5 +63,5 @@ export function CallToAction() {
         </Button>
       </motion.div>
     </motion.div>
-  )
+  );
 }

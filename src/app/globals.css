@@ -149,7 +149,7 @@
 }
 
 .border-animation-wrapper {
-  background: linear-gradient(270deg, #65cf5f, #303bcd, #1f9bed, #65f0c6);
+  background: linear-gradient(270deg, #252523, #121435, #071620, #061813);
   background-size: 800% 800%;
   animation: borderAnimation 4s ease infinite;
   border-radius: 1rem;

@@ -34,7 +34,7 @@ export default function TestimonialsSection() {
       name: "Sarah Johnson",
       role: "Marketing Director",
       content:
-        "Working with our creative agency has been a transformative experience for our business. Their strategic approach to branding and design has significantly elevated our market presence.",
+        "Working with our Nexuz Global has been a transformative experience for our business. Their strategic approach to branding and design has significantly elevated our market presence.",
     },
     {
       id: 2,
@@ -42,7 +42,7 @@ export default function TestimonialsSection() {
       name: "David Thompson",
       role: "CEO, Tech Startup",
       content:
-        "The team at our creative agency truly understands our vision and helped us build a website that perfectly reflects our brand identity. Their attention to detail and passion for creativity are unmatched.",
+        "The team at our Nexuz Global truly understands our vision and helped us build a website that perfectly reflects our brand identity. Their attention to detail and passion for creativity are unmatched.",
     },
     {
       id: 3,
@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
       name: "Michael Rodriguez",
       role: "E-commerce Manager",
       content:
-        "Since collaborating with the creative agency, our conversions have jumped by 40%. Their innovative designs and targeted messaging made a real impact on our online store.",
+        "Since collaborating with the Nexuz Global, our conversions have jumped by 40%. Their innovative designs and targeted messaging made a real impact on our online store.",
     },
     {
       id: 4,
@@ -66,7 +66,7 @@ export default function TestimonialsSection() {
       name: "James Wilson",
       role: "Operations Head",
       content:
-        "Professional, punctual, and results-driven. This creative agency has been our go-to partner for all things branding and visual communication.",
+        "Professional, punctual, and results-driven. This Nexuz Global has been our go-to partner for all things branding and visual communication.",
     },
     {
       id: 6,
@@ -82,7 +82,7 @@ export default function TestimonialsSection() {
       name: "James Wilson",
       role: "Operations Head",
       content:
-        "Professional, punctual, and results-driven. This creative agency has been our go-to partner for all things branding and visual communication.",
+        "Professional, punctual, and results-driven. This Nexuz Global has been our go-to partner for all things branding and visual communication.",
     },
     {
       id: 8,
@@ -90,7 +90,7 @@ export default function TestimonialsSection() {
       name: "James Wilson",
       role: "Operations Head",
       content:
-        "Professional, punctual, and results-driven. This creative agency has been our go-to partner for all things branding and visual communication.",
+        "Professional, punctual, and results-driven. This Nexuz Global has been our go-to partner for all things branding and visual communication.",
     },
   ];
 
@@ -152,16 +152,16 @@ export default function TestimonialsSection() {
       className="py-12 md:py-30 bg-[#f9f9f9] relative overflow-hidden"
     >
       <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute md:top-[10%] top-[5%] left-[8%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-[#65CE5C]/30 to-[#3DB1B1]/20 opacity-40 pointer-events-none"></div>
-        <div className="absolute md:bottom-[10%] bottom-[5%] right-[8%] w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] rounded-full bg-gradient-to-r from-[#209CEB]/30 to-[#65CE5C]/20 opacity-30 pointer-events-none"></div>
-        <div className="absolute md:top-[20%] top-[15%] right-[12%] w-[7vw] h-[7vw] md:w-[6vw] md:h-[6vw] rounded-full bg-gradient-to-r from-[#65CE5C]/40 to-[#1F9BED]/30 opacity-25 pointer-events-none"></div>
-        <div className="absolute md:bottom-[20%] bottom-[15%] left-[15%] w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] rounded-full bg-gradient-to-r from-[#209CEB]/30 to-[#3DB1B1]/20 opacity-25 pointer-events-none"></div>
+        <div className="absolute md:top-[10%] top-[5%] left-[8%] w-[10vw] h-[10vw] md:w-[8vw] md:h-[8vw] rounded-full bg-gradient-to-r from-black/30 to-black/20 opacity-40 pointer-events-none"></div>
+        <div className="absolute md:bottom-[10%] bottom-[5%] right-[8%] w-[12vw] h-[12vw] md:w-[9vw] md:h-[9vw] rounded-full bg-gradient-to-r from-black/30 to-black/20 opacity-30 pointer-events-none"></div>
+        <div className="absolute md:top-[20%] top-[15%] right-[12%] w-[7vw] h-[7vw] md:w-[6vw] md:h-[6vw] rounded-full bg-gradient-to-r from-black/40 to-black/30 opacity-25 pointer-events-none"></div>
+        <div className="absolute md:bottom-[20%] bottom-[15%] left-[15%] w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] rounded-full bg-gradient-to-r from-black/30 to-black/20 opacity-25 pointer-events-none"></div>
       </div>
 
       <div className="container px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center gap-3 text-center mb-6">
-          <h2 className="text-3xl font-bold text-[#1C2D44]">VIEW REVIEWS</h2>
-          <h3 className="text-4xl md:text-5xl font-bold text-[#3DB1B1]">
+          <h2 className="text-3xl font-bold text-black">VIEW REVIEWS</h2>
+          <h3 className="text-4xl md:text-5xl font-bold text-black">
             Hear from Our Success Stories
           </h3>
           <p className="max-w-[500px] text-base md:text-lg mt-2 text-[#000000]">
@@ -192,7 +192,7 @@ export default function TestimonialsSection() {
           <div className="flex items-center justify-center gap-4 md:gap-6 mt-6 md:mt-8">
             <CarouselPrevious
               variant="outline"
-              className="static h-8 w-8 md:h-10 md:w-10  cursor-pointer mt-6 md:mt-8 bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-white rounded-full hover:opacity-90 transition-opacity"
+              className="static h-8 w-8 md:h-10 md:w-10  cursor-pointer mt-6 md:mt-8 bg-gradient-to-r from-black/80 to-black text-white border-white rounded-full hover:opacity-90 transition-opacity"
             />
 
             <div className="flex gap-1 md:gap-2">
@@ -201,7 +201,7 @@ export default function TestimonialsSection() {
                   key={index}
                   className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full ${
                     current === index
-                      ? "bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED]"
+                      ? "bg-gradient-to-r from-black/80 to-black"
                       : "bg-gray-300"
                   }`}
                   onClick={() => api?.scrollTo(index)}
@@ -213,7 +213,7 @@ export default function TestimonialsSection() {
 
             <CarouselNext
               variant="outline"
-              className="static h-8 w-8 md:h-10 md:w-10 mt-6 md:mt-8 cursor-pointer  bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white border-white rounded-full hover:opacity-90 transition-opacity"
+              className="static h-8 w-8 md:h-10 md:w-10 mt-6 md:mt-8 cursor-pointer  bg-gradient-to-r from-black/80 to-black text-white border-white rounded-full hover:opacity-90 transition-opacity"
             />
           </div>
         </Carousel>

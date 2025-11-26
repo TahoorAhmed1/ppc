@@ -72,7 +72,7 @@ const RainbowCursor: React.FC<RainbowCursorProps> = ({
       const opacity = 1 - i / (dotCount * 1.5)
 
       // Calculate hue: distribute colors evenly across the spectrum
-      const hue = (i * (360 / dotCount)) % 360
+      const hue = (i * ( / dotCount)) % 
 
       dots.push(new Dot(width / 2, height / 2, size, lag, hue, opacity))
     }

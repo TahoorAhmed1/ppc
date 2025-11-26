@@ -1,6 +1,6 @@
-import Image from "next/image"
-import { ArrowRight } from "lucide-react"
-import { favicon, pricingImage } from "@/assets"
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { favicon, pricingImage } from "@/assets";
 
 export default function PricingPackage() {
   return (
@@ -8,7 +8,7 @@ export default function PricingPackage() {
       <div className="grid grid-cols-3 max-w-5xl w-full gap-2">
         <div className="space-y-2.5">
           <div className="bg-white rounded-3xl p-4 flex-1">
-            <p className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text font-medium mb-1">
+            <p className="bg-gradient-to-r from-black to-black text-transparent bg-clip-text font-medium mb-1">
               Package #1
             </p>
             <h2 className="text-2xl font-bold mb-1">
@@ -22,7 +22,7 @@ export default function PricingPackage() {
             </p>
 
             <div className="flex items-baseline mb-5">
-              <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text text-3xl font-bold">
+              <span className="bg-gradient-to-r from-black to-black text-transparent bg-clip-text text-3xl font-bold">
                 $249
               </span>
               <span className="text-gray-400 line-through ml-2">$399</span>
@@ -47,20 +47,20 @@ export default function PricingPackage() {
             </p>
           </div>
           <div className="space-y-2.5">
-            <button className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED]  text-white w-full py-2.5 px-3.5 rounded flex justify-between items-center">
+            <button className="bg-gradient-to-r from-black to-black  text-white w-full py-2.5 px-3.5 rounded flex justify-between items-center">
               <span className="font-medium">Book Now</span>
               <ArrowRight size={16} />
             </button>
 
             <button className="border-4 border-teal-500 text-teal-500 w-full py-2.5 px-3.5 rounded flex justify-between items-center">
-              <span className="font-medium bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
-                +1 (804) 574 5376
+              <span className="font-medium bg-gradient-to-r from-black to-black text-transparent bg-clip-text">
+                +92 3282371639
               </span>
               <ArrowRight size={16} />
             </button>
 
             <button className="border-4 border-teal-500 text-teal-500 w-full py-2.5 px-3.5 rounded flex justify-between items-center">
-              <span className="font-medium bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
+              <span className="font-medium bg-gradient-to-r from-black to-black text-transparent bg-clip-text">
                 View Portfolio
               </span>
               <ArrowRight size={16} />
@@ -76,11 +76,11 @@ export default function PricingPackage() {
 
             <div className="flex-1">
               <h3 className="text-xl font-extrabold  mb-1">
-                <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-black to-black text-transparent bg-clip-text">
                   What's Included:
                 </span>
               </h3>
-              <p className="text-gray-700 text-xs">
+              <p className="text-black text-xs">
                 This package includes 2 high-quality stock images and a 3-page
                 custom-designed website. It features a dynamic jQuery slider
                 banner and a functional contact or query form. The website will
@@ -116,11 +116,11 @@ export default function PricingPackage() {
 
             <div className="flex-1">
               <h3 className="text-xl font-extrabold  mb-1">
-                <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-black to-black text-transparent bg-clip-text">
                   What's Included:
                 </span>
               </h3>
-              <p className="text-gray-700 text-xs">
+              <p className="text-black text-xs">
                 This package includes 2 high-quality stock images and a 3-page
                 custom-designed website. It features a dynamic jQuery slider
                 banner and a functional contact or query form. The website will
@@ -148,7 +148,7 @@ export default function PricingPackage() {
 
         <div className="space-y-2.5">
           <div className="bg-white rounded-3xl p-4 flex-1">
-            <p className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text font-medium mb-1">
+            <p className="bg-gradient-to-r from-black to-black text-transparent bg-clip-text font-medium mb-1">
               Package #1
             </p>
             <h2 className="text-2xl font-bold mb-1">
@@ -162,7 +162,7 @@ export default function PricingPackage() {
             </p>
 
             <div className="flex items-baseline mb-5">
-              <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text text-3xl font-bold">
+              <span className="bg-gradient-to-r from-black to-black text-transparent bg-clip-text text-3xl font-bold">
                 $249
               </span>
               <span className="text-gray-400 line-through ml-2">$399</span>
@@ -187,20 +187,20 @@ export default function PricingPackage() {
             </p>
           </div>
           <div className="space-y-2.5">
-            <button className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED]  text-white w-full py-2.5 px-3.5 rounded flex justify-between items-center">
+            <button className="bg-gradient-to-r from-black to-black  text-white w-full py-2.5 px-3.5 rounded flex justify-between items-center">
               <span className="font-medium">Book Now</span>
               <ArrowRight size={16} />
             </button>
 
             <button className="border-4 border-teal-500 text-teal-500 w-full py-2.5 px-3.5 rounded flex justify-between items-center">
-              <span className="font-medium bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
-                +1 (804) 574 5376
+              <span className="font-medium bg-gradient-to-r from-black to-black text-transparent bg-clip-text">
+                +92 3282371639
               </span>
               <ArrowRight size={16} />
             </button>
 
             <button className="border-4 border-teal-500 text-teal-500 w-full py-2.5 px-3.5 rounded flex justify-between items-center">
-              <span className="font-medium bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
+              <span className="font-medium bg-gradient-to-r from-black to-black text-transparent bg-clip-text">
                 View Portfolio
               </span>
               <ArrowRight size={16} />
@@ -210,10 +210,9 @@ export default function PricingPackage() {
       </div>
 
       <div className="grid grid-cols-3 max-w-5xl w-full gap-2">
-
         <div className="space-y-2.5">
           <div className="bg-white rounded-3xl p-4 flex-1">
-            <p className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text font-medium mb-1">
+            <p className="bg-gradient-to-r from-black to-black text-transparent bg-clip-text font-medium mb-1">
               Package #1
             </p>
             <h2 className="text-2xl font-bold mb-1">
@@ -227,7 +226,7 @@ export default function PricingPackage() {
             </p>
 
             <div className="flex items-baseline mb-5">
-              <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text text-3xl font-bold">
+              <span className="bg-gradient-to-r from-black to-black text-transparent bg-clip-text text-3xl font-bold">
                 $249
               </span>
               <span className="text-gray-400 line-through ml-2">$399</span>
@@ -252,20 +251,20 @@ export default function PricingPackage() {
             </p>
           </div>
           <div className="space-y-2.5">
-            <button className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED]  text-white w-full py-2.5 px-3.5 rounded flex justify-between items-center">
+            <button className="bg-gradient-to-r from-black to-black  text-white w-full py-2.5 px-3.5 rounded flex justify-between items-center">
               <span className="font-medium">Book Now</span>
               <ArrowRight size={16} />
             </button>
 
             <button className="border-4 border-teal-500 text-teal-500 w-full py-2.5 px-3.5 rounded flex justify-between items-center">
-              <span className="font-medium bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
-                +1 (804) 574 5376
+              <span className="font-medium bg-gradient-to-r from-black to-black text-transparent bg-clip-text">
+                +92 3282371639
               </span>
               <ArrowRight size={16} />
             </button>
 
             <button className="border-4 border-teal-500 text-teal-500 w-full py-2.5 px-3.5 rounded flex justify-between items-center">
-              <span className="font-medium bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
+              <span className="font-medium bg-gradient-to-r from-black to-black text-transparent bg-clip-text">
                 View Portfolio
               </span>
               <ArrowRight size={16} />
@@ -281,11 +280,11 @@ export default function PricingPackage() {
 
             <div className="flex-1">
               <h3 className="text-xl font-extrabold  mb-1">
-                <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-black to-black text-transparent bg-clip-text">
                   What's Included:
                 </span>
               </h3>
-              <p className="text-gray-700 text-xs">
+              <p className="text-black text-xs">
                 This package includes 2 high-quality stock images and a 3-page
                 custom-designed website. It features a dynamic jQuery slider
                 banner and a functional contact or query form. The website will
@@ -321,11 +320,11 @@ export default function PricingPackage() {
 
             <div className="flex-1">
               <h3 className="text-xl font-extrabold  mb-1">
-                <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-black to-black text-transparent bg-clip-text">
                   What's Included:
                 </span>
               </h3>
-              <p className="text-gray-700 text-xs">
+              <p className="text-black text-xs">
                 This package includes 2 high-quality stock images and a 3-page
                 custom-designed website. It features a dynamic jQuery slider
                 banner and a functional contact or query form. The website will
@@ -353,7 +352,7 @@ export default function PricingPackage() {
 
         <div className="space-y-2.5">
           <div className="bg-white rounded-3xl p-4 flex-1">
-            <p className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text font-medium mb-1">
+            <p className="bg-gradient-to-r from-black to-black text-transparent bg-clip-text font-medium mb-1">
               Package #1
             </p>
             <h2 className="text-2xl font-bold mb-1">
@@ -367,7 +366,7 @@ export default function PricingPackage() {
             </p>
 
             <div className="flex items-baseline mb-5">
-              <span className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text text-3xl font-bold">
+              <span className="bg-gradient-to-r from-black to-black text-transparent bg-clip-text text-3xl font-bold">
                 $249
               </span>
               <span className="text-gray-400 line-through ml-2">$399</span>
@@ -392,20 +391,20 @@ export default function PricingPackage() {
             </p>
           </div>
           <div className="space-y-2.5">
-            <button className="bg-gradient-to-r from-[#65CF5F] to-[#1F9BED]  text-white w-full py-2.5 px-3.5 rounded flex justify-between items-center">
+            <button className="bg-gradient-to-r from-black to-black  text-white w-full py-2.5 px-3.5 rounded flex justify-between items-center">
               <span className="font-medium">Book Now</span>
               <ArrowRight size={16} />
             </button>
 
             <button className="border-4 border-teal-500 text-teal-500 w-full py-2.5 px-3.5 rounded flex justify-between items-center">
-              <span className="font-medium bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
-                +1 (804) 574 5376
+              <span className="font-medium bg-gradient-to-r from-black to-black text-transparent bg-clip-text">
+                +92 3282371639
               </span>
               <ArrowRight size={16} />
             </button>
 
             <button className="border-4 border-teal-500 text-teal-500 w-full py-2.5 px-3.5 rounded flex justify-between items-center">
-              <span className="font-medium bg-gradient-to-r from-[#65CF5F] to-[#1F9BED] text-transparent bg-clip-text">
+              <span className="font-medium bg-gradient-to-r from-black to-black text-transparent bg-clip-text">
                 View Portfolio
               </span>
               <ArrowRight size={16} />

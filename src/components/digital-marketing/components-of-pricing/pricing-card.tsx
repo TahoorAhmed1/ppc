@@ -1,24 +1,24 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { StarRating } from "./star-rating"
-import { ServiceBadges } from "./service-badges"
-import { FeatureList } from "./feature-list"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { StarRating } from "./star-rating";
+import { ServiceBadges } from "./service-badges";
+import { FeatureList } from "./feature-list";
 
 interface PricingCardProps {
-  title: string
-  rating: number
-  description: string
-  currentPrice: string
-  originalPrice: string
-  services: string[]
+  title: string;
+  rating: number;
+  description: string;
+  currentPrice: string;
+  originalPrice: string;
+  services: string[];
   features: Array<{
-    title: string
-    description: string
-  }>
-  showSilverStartupPlus?: boolean
+    title: string;
+    description: string;
+  }>;
+  showSilverStartupPlus?: boolean;
 }
 
 export function PricingCard({
@@ -40,7 +40,7 @@ export function PricingCard({
     >
       <Card className="bg-[#0e2330] border border-gray-700 rounded-lg overflow-hidden text-white relative">
         <motion.div
-          className="absolute inset-0 opacity-0 bg-gradient-to-r from-[#5ce0c6]/10 to-[#65CF5F]/10"
+          className="absolute inset-0 opacity-0 bg-gradient-to-r from-[#5ce0c6]/10 to-black/10"
           initial={{ opacity: 0 }}
           whileHover={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
@@ -50,7 +50,12 @@ export function PricingCard({
           className="absolute inset-0 border-2 border-transparent rounded-lg"
           initial={{ borderColor: "rgba(92,224,198,0)" }}
           whileHover={{
-            borderColor: ["rgba(92,224,198,0)", "rgba(92,224,198,0.3)", "rgba(101,207,95,0.3)", "rgba(92,224,198,0.3)"],
+            borderColor: [
+              "rgba(92,224,198,0)",
+              "rgba(92,224,198,0.3)",
+              "rgba(101,207,95,0.3)",
+              "rgba(92,224,198,0.3)",
+            ],
             boxShadow: "0 0 15px rgba(92,224,198,0.3)",
           }}
           transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
@@ -75,10 +80,13 @@ export function PricingCard({
               <p className="text-sm text-gray-300">{description}</p>
             </div>
             <div className="flex items-center gap-5">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button className="bg-gradient-to-r w-30 cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2 relative overflow-hidden group">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button className="bg-gradient-to-r w-30 cursor-pointer from-black/80 to-black hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2 relative overflow-hidden group">
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-[#5ce0c6] to-[#65CF5F] opacity-0 group-hover:opacity-100"
+                    className="absolute inset-0 bg-gradient-to-r from-[#5ce0c6] to-black opacity-0 group-hover:opacity-100"
                     transition={{ duration: 0.3 }}
                   />
                   <span className="relative z-10">Order Now</span>
@@ -92,8 +100,12 @@ export function PricingCard({
                 }}
                 transition={{ duration: 0.2 }}
               >
-                <span className="text-3xl font-bold text-[#5ce0c6]">{currentPrice}</span>
-                <span className="ml-2 text-gray-400 line-through">{originalPrice}</span>
+                <span className="text-3xl font-bold text-[#5ce0c6]">
+                  {currentPrice}
+                </span>
+                <span className="ml-2 text-gray-400 line-through">
+                  {originalPrice}
+                </span>
               </motion.div>
             </div>
           </div>
@@ -110,10 +122,13 @@ export function PricingCard({
               Included services
             </motion.h3>
             <ServiceBadges services={services} />
-            <FeatureList features={features} showSilverStartupPlus={showSilverStartupPlus} />
+            <FeatureList
+              features={features}
+              showSilverStartupPlus={showSilverStartupPlus}
+            />
           </div>
         </div>
       </Card>
     </motion.div>
-  )
+  );
 }

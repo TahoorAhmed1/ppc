@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 export function PricingHeader() {
   return (
@@ -15,7 +15,7 @@ export function PricingHeader() {
         >
           Our Pricing
           <motion.span
-            className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-[#65CF5F] to-[#1F9BED]"
+            className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-black to-black"
             initial={{ width: "0%" }}
             whileHover={{ width: "100%" }}
             transition={{ duration: 0.3 }}
@@ -43,7 +43,9 @@ export function PricingHeader() {
               transition: { duration: 0.2 },
             }}
           >
-            <span className="text-[#5ce0c6] text-2xl font-bold">Features You Need,</span>
+            <span className="text-[#5ce0c6] text-2xl font-bold">
+              Features You Need,
+            </span>
           </motion.div>
           <motion.div
             whileHover={{
@@ -52,10 +54,12 @@ export function PricingHeader() {
               transition: { duration: 0.2 },
             }}
           >
-            <span className="text-[#5ce0c6] text-2xl font-bold">Budget You Love.</span>
+            <span className="text-[#5ce0c6] text-2xl font-bold">
+              Budget You Love.
+            </span>
           </motion.div>
         </div>
       </div>
     </div>
-  )
+  );
 }

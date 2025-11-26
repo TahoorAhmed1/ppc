@@ -57,12 +57,11 @@ const services = [
   { icon: instagramIcon.src, title: "INSTAGRAM", subtitle: "MARKETING" },
   { icon: youtubeIcon.src, title: "YOUTUBE", subtitle: "MARKETING" },
   { icon: snapchatIcon.src, title: "SNAPCHAT", subtitle: "MARKETING" },
-  { icon: tiktokIcon.src, title: "TIKTOK", subtitle: "MARKETING", },
+  { icon: tiktokIcon.src, title: "TIKTOK", subtitle: "MARKETING" },
   { icon: pinterestIcon.src, title: "PINTEREST", subtitle: "MARKETING" },
   { icon: discordIcon.src, title: "DISCORD", subtitle: "MARKETING" },
   { icon: twitterIcon.src, title: "TWITTER", subtitle: "MARKETING" },
 ];
-
 
 export default function WebsiteDevelopmentHeroSection({
   backgroundImage = heroSectionImage3.src,
@@ -127,14 +126,12 @@ export default function WebsiteDevelopmentHeroSection({
       className="relative w-full text-white bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-
-
       <div className="relative z-10 container py-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mt-10">
           <div className="w-full">
             <h1 className=" text-[41px] md:text-[46px] lg:text-[60px] font-bold leading-tight md:h-[350px] h-[320px] ">
               <span className="inline-block bg-white rounded-xl py-1 px-2 mb-2">
-                <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-black/80 to-black bg-clip-text text-transparent">
                   Not Just Websites
                 </span>
               </span>
@@ -158,7 +155,7 @@ export default function WebsiteDevelopmentHeroSection({
               <div>
                 <Button
                   onClick={() => setIsOpen(true)}
-                  className="bg-gradient-to-r cursor-pointer h-13 from-[#65CF5F]/80 to-[#1F9BED] text-white px-8 py-3 text-base rounded-lg"
+                  className="bg-gradient-to-r cursor-pointer h-13 from-black/80 to-black text-white px-8 py-3 text-base rounded-lg"
                 >
                   Get a Quote
                 </Button>
@@ -309,7 +306,7 @@ export default function WebsiteDevelopmentHeroSection({
 
                     <Button
                       type="submit"
-                      className="bg-gradient-to-r w-full hover:scale-105 transition-all cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2"
+                      className="bg-gradient-to-r w-full hover:scale-105 transition-all cursor-pointer from-black/80 to-black hover:opacity-90 text-white rounded-lg border-none text-sm md:text-base px-3 py-2"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
@@ -328,7 +325,6 @@ export default function WebsiteDevelopmentHeroSection({
               </div>
             </div>
           </div>
-
         </div>
       </div>
 

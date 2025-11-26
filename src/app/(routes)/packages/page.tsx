@@ -1,44 +1,29 @@
-"use client"
+"use client";
 
-import ServicesHeroSection from "@/components/digital-marketing/services-hero-section"
-import HireUsHeroSection from "@/components/packages/hire-us-hero-section"
-import ContactForm from "@/components/packages/package-contact-form"
-import AllPackagesSection from "@/components/pricing/all-packages-section"
-import { motion } from "framer-motion"
-import { ChevronDown } from "lucide-react"
-import { useEffect, useState } from "react"
+import ServicesHeroSection from "@/components/digital-marketing/services-hero-section";
+import HireUsHeroSection from "@/components/packages/hire-us-hero-section";
+import ContactForm from "@/components/packages/package-contact-form";
+import AllPackagesSection from "@/components/pricing/all-packages-section";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function Page() {
-  const [scrollOpacity, setScrollOpacity] = useState(1)
-
-  // Handle scroll opacity effect
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY
-      const newOpacity = Math.max(1 - scrollY / 300, 0)
-      setScrollOpacity(newOpacity)
-    }
+      const scrollY = window.scrollY;
+      const newOpacity = Math.max(1 - scrollY / 300, 0);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  const scrollToPackages = () => {
-    const packagesSection = document.getElementById("packages-section")
-    if (packagesSection) {
-      packagesSection.scrollIntoView({ behavior: "smooth" })
-    }
-  }
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
       <div className="relative">
         <ServicesHeroSection heading="PACKAGES" />
-
-      
       </div>
 
-      {/* Packages Section with scroll animation */}
       <motion.div
         id="packages-section"
         initial={{ opacity: 0, y: 50 }}
@@ -49,7 +34,6 @@ export default function Page() {
         <AllPackagesSection />
       </motion.div>
 
-      {/* Hire Us Section with scroll animation */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +43,6 @@ export default function Page() {
         <HireUsHeroSection />
       </motion.div>
 
-      {/* Contact Form with scroll animation */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -69,5 +52,5 @@ export default function Page() {
         <ContactForm />
       </motion.div>
     </>
-  )
+  );
 }

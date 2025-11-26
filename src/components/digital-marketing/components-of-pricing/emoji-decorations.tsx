@@ -1,8 +1,14 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { coolEmoji, laughEmoji, loveEmoji, loveEmoji2, wowEmoji } from "@/assets"
-import Image from "next/image"
+import { motion } from "framer-motion";
+import {
+  coolEmoji,
+  laughEmoji,
+  loveEmoji,
+  loveEmoji2,
+  wowEmoji,
+} from "@/assets";
+import Image from "next/image";
 
 export function EmojiDecorations() {
   // Floating animation variants
@@ -10,7 +16,7 @@ export function EmojiDecorations() {
     y: [0, -15, -5, -20, -10, 0],
     x: [0, 5, -5, 8, -8, 0],
     rotate: [0, 5, -3, 5, -5, 0],
-  }
+  };
 
   // Different timing for each emoji
   const transitionOptions = {
@@ -18,7 +24,7 @@ export function EmojiDecorations() {
     ease: "easeInOut",
     repeat: Number.POSITIVE_INFINITY,
     repeatType: "loop" as const,
-  }
+  };
 
   return (
     <>
@@ -142,7 +148,11 @@ export function EmojiDecorations() {
                 x: [(i - 2) * 5, (i - 2) * 20],
                 y: [-5, -30],
                 scale: [1, 0],
-                transition: { duration: 1, repeat: Number.POSITIVE_INFINITY, delay: i * 0.1 },
+                transition: {
+                  duration: 1,
+                  repeat: Number.POSITIVE_INFINITY,
+                  delay: i * 0.1,
+                },
               }}
             />
           ))}
@@ -162,7 +172,7 @@ export function EmojiDecorations() {
         }}
         whileHover={{
           scale: 1.3,
-          rotate: [0, 360],
+          rotate: [0],
           transition: { duration: 0.8 },
         }}
         whileTap={{ scale: 0.9 }}
@@ -285,8 +295,16 @@ export function EmojiDecorations() {
               whileHover={{
                 scale: [0, 1, 0],
                 opacity: [0, 1, 0],
-                x: [0, 10 * Math.cos((i * Math.PI) / 3), 20 * Math.cos((i * Math.PI) / 3)],
-                y: [0, 10 * Math.sin((i * Math.PI) / 3), 20 * Math.sin((i * Math.PI) / 3)],
+                x: [
+                  0,
+                  10 * Math.cos((i * Math.PI) / 3),
+                  20 * Math.cos((i * Math.PI) / 3),
+                ],
+                y: [
+                  0,
+                  10 * Math.sin((i * Math.PI) / 3),
+                  20 * Math.sin((i * Math.PI) / 3),
+                ],
               }}
               transition={{
                 duration: 1,
@@ -298,5 +316,5 @@ export function EmojiDecorations() {
         </div>
       </motion.div>
     </>
-  )
+  );
 }

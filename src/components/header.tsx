@@ -42,7 +42,7 @@ export default function Header() {
       href: "#services",
       hasDropdown: true,
     },
-        { label: "Packages", href: "/packages" },
+    { label: "Packages", href: "/packages" },
 
     { label: "Contact Us", href: "#contactus" },
     { label: "Web Hosting", href: "/web-hosting" },
@@ -52,15 +52,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background transition-all duration-100 ease-in-out">
       <div className="container py-5 flex items-center justify-between">
         <div className="flex items-center gap-x-2">
-          <a href="/" className="flex items-center">
-            <Image
-              src={logo || "/placeholder.svg"}
-              alt="logo"
-              width={1000}
-              height={1000}
-              priority
-              className="lg:w-[155px] w-[135px]"
-            />
+          <a href="/" className="flex font-bold text-3xl items-center">
+            Nexuz Global
           </a>
         </div>
 
@@ -68,7 +61,7 @@ export default function Header() {
           {navItems.map((item) =>
             item.hasDropdown ? (
               <DropdownMenu key={item.label}>
-                <DropdownMenuTrigger className="flex items-center text-sm font-medium text-gray-500 underline-offset-4 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-transparent bg-clip-text">
+                <DropdownMenuTrigger className="flex items-center text-sm font-medium text-gray-500 underline-offset-4 hover:bg-gradient-to-r from-black/80 to-black hover:text-transparent bg-clip-text">
                   {item.label}
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </DropdownMenuTrigger>
@@ -86,7 +79,7 @@ export default function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium text-gray-500 underline-offset-4 hover:bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] hover:text-transparent bg-clip-text"
+                className="text-sm font-medium text-gray-500 underline-offset-4 hover:bg-gradient-to-r from-black/80 to-black hover:text-transparent bg-clip-text"
               >
                 {item.label}
               </a>
@@ -96,7 +89,7 @@ export default function Header() {
 
         <div className="flex items-center md:gap-4 gap-2">
           <a href="#contactus" className="">
-            <Button className="bg-gradient-to-r cursor-pointer from-[#65CF5F]/80 to-[#1F9BED] hover:opacity-90 text-white rounded-lg border-none sm:text-sm text-xs md:px-4 px-2 py-2">
+            <Button className="bg-gradient-to-r cursor-pointer from-black/80 to-black hover:opacity-90 text-white rounded-lg border-none sm:text-sm text-xs md:px-4 px-2 py-2">
               Get Free Consultation
             </Button>
           </a>

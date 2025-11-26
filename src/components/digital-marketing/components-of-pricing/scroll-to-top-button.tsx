@@ -1,30 +1,30 @@
-"use client"
+"use client";
 
-import { motion, useScroll } from "framer-motion"
-import { useEffect, useState } from "react"
+import { motion, useScroll } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function ScrollToTopButton() {
-  const { scrollYProgress } = useScroll()
-  const [isVisible, setIsVisible] = useState(false)
+  const { scrollYProgress } = useScroll();
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const unsubscribe = scrollYProgress.onChange((value) => {
-      setIsVisible(value > 0.2)
-    })
+      setIsVisible(value > 0.2);
+    });
 
-    return () => unsubscribe()
-  }, [scrollYProgress])
+    return () => unsubscribe();
+  }, [scrollYProgress]);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-    })
-  }
+    });
+  };
 
   return (
     <motion.button
-      className="fixed bottom-6 right-6 p-3 rounded-full bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-white shadow-lg z-50"
+      className="fixed bottom-6 right-6 p-3 rounded-full bg-gradient-to-r from-black/80 to-black text-white shadow-lg z-50"
       initial={{ opacity: 0, scale: 0 }}
       animate={{
         opacity: isVisible ? 1 : 0,
@@ -49,5 +49,5 @@ export default function ScrollToTopButton() {
         <path d="M12 19V5M5 12l7-7 7 7" />
       </svg>
     </motion.button>
-  )
+  );
 }

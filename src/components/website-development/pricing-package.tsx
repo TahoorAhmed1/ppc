@@ -1,21 +1,29 @@
-"use client"
-import { useState, useEffect } from "react"
-import React from "react"
+"use client";
+import { useState, useEffect } from "react";
+import React from "react";
 
-import Image from "next/image"
-import { ArrowRight } from "lucide-react"
-import { motion, useAnimation, useInView } from "framer-motion"
-import { favicon, package2, package3, package4, package1, package6, package5 } from "@/assets"
-import { BookingModal } from "./booking-modal"
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import {
+  favicon,
+  package2,
+  package3,
+  package4,
+  package1,
+  package6,
+  package5,
+} from "@/assets";
+import { BookingModal } from "./booking-modal";
 
 interface PricingPackage {
-  id: string
-  name: string
-  description: string
-  price: string
-  image: any
-  originalPrice: string
-  features: string[]
+  id: string;
+  name: string;
+  description: string;
+  price: string;
+  image: any;
+  originalPrice: string;
+  features: string[];
 }
 
 const pricingPackages: PricingPackage[] = [
@@ -76,7 +84,8 @@ const pricingPackages: PricingPackage[] = [
     id: "business",
     name: "Business",
     image: package3,
-    description: "A comprehensive solution for growing businesses that need more content and enhanced functionality.",
+    description:
+      "A comprehensive solution for growing businesses that need more content and enhanced functionality.",
     price: "532",
     originalPrice: "1064",
     features: [
@@ -206,28 +215,36 @@ const pricingPackages: PricingPackage[] = [
       "100% Money Back Guarantee",
     ],
   },
-]
+];
 
 export default function PricingPackage() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [selectedPackage, setSelectedPackage] = useState<PricingPackage | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState<PricingPackage | null>(
+    null
+  );
 
   const handleBookNow = (pkg: PricingPackage) => {
-    setSelectedPackage(pkg)
-    setIsModalOpen(true)
-  }
+    setSelectedPackage(pkg);
+    setIsModalOpen(true);
+  };
 
   // Animation component for scroll-triggered animations
-  const AnimateOnScroll = ({ children, index }: { children: React.ReactNode; index: number }) => {
-    const controls = useAnimation()
-    const ref = React.useRef(null)
-    const inView = useInView(ref, { once: true, amount: 0.3 })
+  const AnimateOnScroll = ({
+    children,
+    index,
+  }: {
+    children: React.ReactNode;
+    index: number;
+  }) => {
+    const controls = useAnimation();
+    const ref = React.useRef(null);
+    const inView = useInView(ref, { once: true, amount: 0.3 });
 
     useEffect(() => {
       if (inView) {
-        controls.start("visible")
+        controls.start("visible");
       }
-    }, [controls, inView])
+    }, [controls, inView]);
 
     return (
       <motion.div
@@ -249,29 +266,40 @@ export default function PricingPackage() {
       >
         {children}
       </motion.div>
-    )
-  }
+    );
+  };
 
   return (
     <div className="bg-gray-900 min-h-screen items-center py-10 sm:py-14 md:py-16">
       <div className="container flex flex-col gap-8 sm:gap-10 md:gap-14">
         {pricingPackages.map((pkg, idx) => (
           <AnimateOnScroll key={pkg.id} index={idx}>
-            <div id={pkg.id} className="grid grid-cols-1 lg:grid-cols-3 w-full lg:gap-6 gap-0 gap-y-4">
-              <div className={`space-y-4 ${idx % 2 === 0 ? "order-2 md:order-1" : "order-2"}`}>
+            <div
+              id={pkg.id}
+              className="grid grid-cols-1 lg:grid-cols-3 w-full lg:gap-6 gap-0 gap-y-4"
+            >
+              <div
+                className={`space-y-4 ${
+                  idx % 2 === 0 ? "order-2 md:order-1" : "order-2"
+                }`}
+              >
                 <div className="bg-white rounded-3xl p-4 sm:p-6 flex-1">
-                  <p className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text font-medium mb-2 text-base sm:text-lg">
+                  <p className="bg-gradient-to-r from-black/80 to-black text-transparent bg-clip-text font-medium mb-2 text-base sm:text-lg">
                     Package #{pkg.id}
                   </p>
                   <h2 className="text-2xl sm:text-3xl font-bold mb-2">
                     {pkg.name} <span className="font-normal">Package</span>
                   </h2>
-                  <p className="text-gray-600 text-sm sm:text-base mb-4 sm:mb-6 max-w-sm">{pkg.description}</p>
+                  <p className="text-gray-600 text-sm sm:text-base mb-4 sm:mb-6 max-w-sm">
+                    {pkg.description}
+                  </p>
                   <div className="flex items-baseline mb-4 sm:mb-6">
-                    <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text text-3xl sm:text-4xl font-bold">
+                    <span className="bg-gradient-to-r from-black/80 to-black text-transparent bg-clip-text text-3xl sm:text-4xl font-bold">
                       ${pkg.price}
                     </span>
-                    <span className="text-gray-400 line-through ml-3 text-base sm:text-lg">${pkg.originalPrice}</span>
+                    <span className="text-gray-400 line-through ml-3 text-base sm:text-lg">
+                      ${pkg.originalPrice}
+                    </span>
                     <div className="ml-auto">
                       <div className="h-6 w-6 text-teal-500">
                         <svg
@@ -280,7 +308,10 @@ export default function PricingPackage() {
                           xmlns="http://www.w3.org/2000/svg"
                           className="w-full h-full"
                         >
-                          <path d="M12 16L7 11L8.4 9.55L12 13.15L19.6 5.5L21 7L12 16Z" fill="currentColor" />
+                          <path
+                            d="M12 16L7 11L8.4 9.55L12 13.15L19.6 5.5L21 7L12 16Z"
+                            fill="currentColor"
+                          />
                         </svg>
                       </div>
                     </div>
@@ -291,7 +322,7 @@ export default function PricingPackage() {
                 </div>
                 <div className="">
                   <motion.button
-                    className="mb-5 bg-gradient-to-r hover:scale-105 transition-all duration-300 cursor-pointer hover:from-[#1F9BED]/80 hover:to-[#65CF5F] from-[#65CF5F]/80 to-[#1F9BED] text-white w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded-lg flex justify-between items-center text-base sm:text-lg"
+                    className="mb-5 bg-gradient-to-r hover:scale-105 transition-all duration-300 cursor-pointer hover:from-black/80 hover:to-black from-black/80 to-black text-white w-full py-3 sm:py-3.5 px-4 sm:px-5 rounded-lg flex justify-between items-center text-base sm:text-lg"
                     onClick={() => handleBookNow(pkg)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -305,8 +336,8 @@ export default function PricingPackage() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <span className="font-medium bg-gradient-to-r group-hover:from-[#1F9BED]/80 group-hover:to-[#65CF5F] transition-colors from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
-                        +1 (804) 574 5376
+                      <span className="font-medium bg-gradient-to-r group-hover:from-black/80 group-hover:to-black transition-colors from-black/80 to-black text-transparent bg-clip-text">
+                        +92 3282371639
                       </span>
                       <ArrowRight size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
                     </motion.button>
@@ -318,7 +349,7 @@ export default function PricingPackage() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <span className="font-medium bg-gradient-to-r group-hover:from-[#1F9BED]/80 group-hover:to-[#65CF5F] transition-colors from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
+                      <span className="font-medium bg-gradient-to-r group-hover:from-black/80 group-hover:to-black transition-colors from-black/80 to-black text-transparent bg-clip-text">
                         View Portfolio
                       </span>
                       <ArrowRight size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -349,12 +380,12 @@ export default function PricingPackage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl sm:text-3xl font-extrabold mb-2">
-                      <span className="bg-gradient-to-r from-[#65CF5F]/80 to-[#1F9BED] text-transparent bg-clip-text">
+                      <span className="bg-gradient-to-r from-black/80 to-black text-transparent bg-clip-text">
                         What&apos;s Included:
                       </span>
                     </h3>
 
-                    <ul className="text-gray-700 text-base grid grid-cols-1 sm:grid-cols-2 gap-x-6 list-disc pl-4 mb-2">
+                    <ul className="text-black text-base grid grid-cols-1 sm:grid-cols-2 gap-x-6 list-disc pl-4 mb-2">
                       {pkg.features.map((feature, index) => (
                         <li key={index}>{feature}</li>
                       ))}
@@ -388,5 +419,5 @@ export default function PricingPackage() {
         />
       )}
     </div>
-  )
+  );
 }

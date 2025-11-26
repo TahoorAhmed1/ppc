@@ -1,31 +1,33 @@
-"use client"
-import { useState, useRef, useEffect } from "react"
-import { motion, useInView, useAnimation } from "framer-motion"
-import { BookingModal } from "./booking-modal"
+"use client";
+import { useState, useRef, useEffect } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
+import { BookingModal } from "./booking-modal";
 
 interface PricingPackage {
-  id: string
-  name: string
-  description: string
-  price: string
-  originalPrice: string
-  features: string[]
-  additionalFeatures: string[]
+  id: string;
+  name: string;
+  description: string;
+  price: string;
+  originalPrice: string;
+  features: string[];
+  additionalFeatures: string[];
 }
 
 const ServicesCombo = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [selectedPackage, setSelectedPackage] = useState<PricingPackage | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState<PricingPackage | null>(
+    null
+  );
 
-  const controls = useAnimation()
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, amount: 0.2 })
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.2 });
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible")
+      controls.start("visible");
     }
-  }, [controls, inView])
+  }, [controls, inView]);
 
   // Animation variants
   const containerVariants = {
@@ -38,7 +40,7 @@ const ServicesCombo = () => {
         duration: 0.5,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -47,7 +49,7 @@ const ServicesCombo = () => {
       opacity: 1,
       transition: { type: "spring", stiffness: 300, damping: 24 },
     },
-  }
+  };
 
   const listItemVariants = {
     hidden: { opacity: 0, x: -10 },
@@ -56,7 +58,7 @@ const ServicesCombo = () => {
       x: 0,
       transition: { type: "spring", stiffness: 300, damping: 24 },
     },
-  }
+  };
 
   const handleBookNow = () => {
     const combo: PricingPackage = {
@@ -67,10 +69,10 @@ const ServicesCombo = () => {
       originalPrice: "3,599",
       features: [],
       additionalFeatures: [],
-    }
-    setSelectedPackage(combo)
-    setIsModalOpen(true)
-  }
+    };
+    setSelectedPackage(combo);
+    setIsModalOpen(true);
+  };
 
   return (
     <motion.div
@@ -82,11 +84,18 @@ const ServicesCombo = () => {
     >
       <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-3">
         <motion.div className="lg:col-span-2" variants={itemVariants}>
-          <motion.h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-4" variants={itemVariants}>
-            ALL IN ONE <span className="text-[#3DB1B1]">COMBO</span>
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-4"
+            variants={itemVariants}
+          >
+            ALL IN ONE <span className="text-black">COMBO</span>
           </motion.h1>
-          <motion.p className="text-black text-base sm:text-lg mb-6 sm:mb-10" variants={itemVariants}>
-            Our services are suitable for potential super-startups and brands to revamp for company
+          <motion.p
+            className="text-black text-base sm:text-lg mb-6 sm:mb-10"
+            variants={itemVariants}
+          >
+            Our services are suitable for potential super-startups and brands to
+            revamp for company
           </motion.p>
 
           <motion.div
@@ -95,7 +104,10 @@ const ServicesCombo = () => {
           >
             <motion.div className="space-y-8" variants={itemVariants}>
               <motion.div variants={itemVariants}>
-                <motion.h2 className="text-[#3DB1B1] text-lg sm:text-xl font-bold mb-3 sm:mb-4" variants={itemVariants}>
+                <motion.h2
+                  className="text-black text-lg sm:text-xl font-bold mb-3 sm:mb-4"
+                  variants={itemVariants}
+                >
                   LOGO DESIGN SERVICES
                 </motion.h2>
                 <motion.ul
@@ -111,25 +123,35 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">5 Custom Logo Design Concepts</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      5 Custom Logo Design Concepts
+                    </span>
                   </motion.li>
-                    <motion.li
-                    className="flex items-start"
-                    variants={listItemVariants}
-                    custom={(index: number) => index * 0.1}
-                    whileHover={{ x: 5, transition: { duration: 0.2 } }}
-                    >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">Dedicated Designer Team</span>
-                    </motion.li>
                   <motion.li
                     className="flex items-start"
                     variants={listItemVariants}
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      Dedicated Designer Team
+                    </span>
+                  </motion.li>
+                  <motion.li
+                    className="flex items-start"
+                    variants={listItemVariants}
+                    custom={(index: number) => index * 0.1}
+                    whileHover={{ x: 5, transition: { duration: 0.2 } }}
+                  >
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
                     <span className="text-sm sm:text-base">Icon Design</span>
                   </motion.li>
                   <motion.li
@@ -138,14 +160,21 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">File Formats (PSD, PDF, AI, JPEG, PNG)</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      File Formats (PSD, PDF, AI, JPEG, PNG)
+                    </span>
                   </motion.li>
                 </motion.ul>
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <motion.h2 className="text-[#3DB1B1] text-lg sm:text-xl font-bold mb-3 sm:mb-4" variants={itemVariants}>
+                <motion.h2
+                  className="text-black text-lg sm:text-xl font-bold mb-3 sm:mb-4"
+                  variants={itemVariants}
+                >
                   STATIONARY SERVICES
                 </motion.h2>
                 <motion.ul
@@ -161,8 +190,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">MS Word Letterhead</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      MS Word Letterhead
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -170,7 +203,9 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
                     <span className="text-sm sm:text-base">Business Card</span>
                   </motion.li>
                   <motion.li
@@ -179,7 +214,9 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
                     <span className="text-sm sm:text-base">Letterhead</span>
                   </motion.li>
                   <motion.li
@@ -188,14 +225,21 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">Envelop, Fax Template</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      Envelop, Fax Template
+                    </span>
                   </motion.li>
                 </motion.ul>
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <motion.h2 className="text-[#3DB1B1] text-lg sm:text-xl font-bold mb-3 sm:mb-4" variants={itemVariants}>
+                <motion.h2
+                  className="text-black text-lg sm:text-xl font-bold mb-3 sm:mb-4"
+                  variants={itemVariants}
+                >
                   SOCIAL MEDIA SERVICES
                 </motion.h2>
                 <motion.ul
@@ -211,8 +255,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">Facebook Page Design</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      Facebook Page Design
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -220,8 +268,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">Twitter Page Design</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      Twitter Page Design
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -229,8 +281,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">YouTube Page Design</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      YouTube Page Design
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -238,8 +294,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">Google+ Page Design</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      Google+ Page Design
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -247,8 +307,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">Instagram Page Design</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      Instagram Page Design
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -256,8 +320,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">All Final File Formats</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      All Final File Formats
+                    </span>
                   </motion.li>
                 </motion.ul>
               </motion.div>
@@ -265,7 +333,10 @@ const ServicesCombo = () => {
 
             <motion.div className="space-y-8" variants={itemVariants}>
               <motion.div variants={itemVariants}>
-                <motion.h2 className="text-[#3DB1B1] text-lg sm:text-xl font-bold mb-3 sm:mb-4" variants={itemVariants}>
+                <motion.h2
+                  className="text-black text-lg sm:text-xl font-bold mb-3 sm:mb-4"
+                  variants={itemVariants}
+                >
                   WEBSITE SERVICES
                 </motion.h2>
                 <motion.ul
@@ -281,8 +352,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">10 Pages Website Design</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      10 Pages Website Design
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -290,8 +365,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">CMS / Admin Panel</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      CMS / Admin Panel
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -299,8 +378,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">Mobile Responsive</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      Mobile Responsive
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -308,8 +391,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">Team of Expert Web Designer & Developer</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      Team of Expert Web Designer & Developer
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -317,7 +404,9 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
                     <span className="text-sm sm:text-base">8 Stock Images</span>
                   </motion.li>
                   <motion.li
@@ -326,8 +415,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">5 Banner Design</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      5 Banner Design
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -335,7 +428,9 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
                     <span className="text-sm sm:text-base">Jquery Sliders</span>
                   </motion.li>
                   <motion.li
@@ -344,8 +439,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">Free Google Friendly Sitemap</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      Free Google Friendly Sitemap
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -353,8 +452,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">Complete W3C Certified HTML</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      Complete W3C Certified HTML
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -362,14 +465,21 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">Complete Deployment</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      Complete Deployment
+                    </span>
                   </motion.li>
                 </motion.ul>
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <motion.h2 className="text-[#3DB1B1] text-lg sm:text-xl font-bold mb-3 sm:mb-4" variants={itemVariants}>
+                <motion.h2
+                  className="text-black text-lg sm:text-xl font-bold mb-3 sm:mb-4"
+                  variants={itemVariants}
+                >
                   VALUE-ADDED SERVICES
                 </motion.h2>
                 <motion.ul
@@ -385,8 +495,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">All Final File Formats</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      All Final File Formats
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -394,8 +508,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">Dedicated Account Manager</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      Dedicated Account Manager
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -403,8 +521,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">100% Ownership Rights</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      100% Ownership Rights
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -412,8 +534,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">100% Satisfaction Guarantee</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      100% Satisfaction Guarantee
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -421,8 +547,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">100% Unique Design Guarantee</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      100% Unique Design Guarantee
+                    </span>
                   </motion.li>
                   <motion.li
                     className="flex items-start"
@@ -430,8 +560,12 @@ const ServicesCombo = () => {
                     custom={(index: number) => index * 0.1}
                     whileHover={{ x: 5, transition: { duration: 0.2 } }}
                   >
-                    <span className="text-[#3DB1B1] mr-2 flex-shrink-0 font-medium">›</span>
-                    <span className="text-sm sm:text-base">100% Money-Back Guarantee</span>
+                    <span className="text-black mr-2 flex-shrink-0 font-medium">
+                      ›
+                    </span>
+                    <span className="text-sm sm:text-base">
+                      100% Money-Back Guarantee
+                    </span>
                   </motion.li>
                 </motion.ul>
               </motion.div>
@@ -439,7 +573,7 @@ const ServicesCombo = () => {
           </motion.div>
         </motion.div>
         <motion.div
-          className="bg-gradient-to-r from-[#65CF5F]/90 to-[#1F9BED]/90 rounded-2xl px-8 py-10 sm:px-10 sm:py-12 shadow-2xl text-white flex flex-col items-center mt-10 space-y-6 sm:space-y-8 max-w-lg mx-auto h-120"
+          className="bg-gradient-to-r from-black/90 to-black/90 rounded-2xl px-8 py-10 sm:px-10 sm:py-12 shadow-2xl text-white flex flex-col items-center mt-10 space-y-6 sm:space-y-8 max-w-lg mx-auto h-120"
           variants={itemVariants}
           whileHover={{
             scale: 1.03,
@@ -447,7 +581,10 @@ const ServicesCombo = () => {
             transition: { duration: 0.3 },
           }}
         >
-          <motion.h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-center" variants={itemVariants}>
+          <motion.h2
+            className="text-3xl sm:text-4xl font-bold tracking-tight text-center"
+            variants={itemVariants}
+          >
             Combo Packages
           </motion.h2>
 
@@ -455,10 +592,14 @@ const ServicesCombo = () => {
             className="text-base sm:text-lg text-center text-white/90 font-medium max-w-sm"
             variants={itemVariants}
           >
-            A complete company branding solution tailored for growth-focused businesses.
+            A complete company branding solution tailored for growth-focused
+            businesses.
           </motion.p>
 
-          <motion.div className="flex items-start justify-center space-x-4 sm:space-x-5" variants={itemVariants}>
+          <motion.div
+            className="flex items-start justify-center space-x-4 sm:space-x-5"
+            variants={itemVariants}
+          >
             <motion.span
               className="text-5xl sm:text-6xl font-extrabold"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -467,9 +608,16 @@ const ServicesCombo = () => {
             >
               $1799
             </motion.span>
-            <motion.div className="flex flex-col leading-snug" variants={itemVariants}>
-              <span className="line-through text-sm sm:text-base text-white/70">$2599</span>
-              <span className="text-xs sm:text-sm font-medium">Limited Time Only</span>
+            <motion.div
+              className="flex flex-col leading-snug"
+              variants={itemVariants}
+            >
+              <span className="line-through text-sm sm:text-base text-white/70">
+                $2599
+              </span>
+              <span className="text-xs sm:text-sm font-medium">
+                Limited Time Only
+              </span>
             </motion.div>
           </motion.div>
 
@@ -483,9 +631,12 @@ const ServicesCombo = () => {
 
           <motion.button
             onClick={handleBookNow}
-            className="bg-white text-[#3DB1B1] hover:text-[#3DB1B1] cursor-pointer px-7 py-3 rounded-xl text-base sm:text-lg font-semibold transition-all shadow-md hover:shadow-lg hover:scale-105 duration-200"
+            className="bg-white text-black hover:text-black cursor-pointer px-7 py-3 rounded-xl text-base sm:text-lg font-semibold transition-all shadow-md hover:shadow-lg hover:scale-105 duration-200"
             variants={itemVariants}
-            whileHover={{ scale: 1.1, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+            whileHover={{
+              scale: 1.1,
+              boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
+            }}
             whileTap={{ scale: 0.95 }}
           >
             Order Now
@@ -503,7 +654,7 @@ const ServicesCombo = () => {
         />
       )}
     </motion.div>
-  )
-}
+  );
+};
 
-export default ServicesCombo
+export default ServicesCombo;

@@ -221,7 +221,7 @@ export default function AnimatedFaqSection2({
               >
                 <AccordionTrigger className="md:text-lg text-base font-medium text-white group  text-left  w-full">
                   How long does it take to build a website?
-                  <div className="ml-auto md:flex  hidden  h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
+                  <div className="ml-auto md:flex  hidden  h-6 w-6 items-center justify-center rounded-full border border-black/60 text-black shrink-0">
                     <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />
                   </div>
                 </AccordionTrigger>
@@ -246,7 +246,7 @@ export default function AnimatedFaqSection2({
               >
                 <AccordionTrigger className="md:text-lg text-base font-medium text-white group w-full text-left ">
                   Can I make changes to the website after it's live?
-                  <div className="ml-auto  md:flex  hidden h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
+                  <div className="ml-auto  md:flex  hidden h-6 w-6 items-center justify-center rounded-full border border-black/60 text-black shrink-0">
                     <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />
                   </div>
                 </AccordionTrigger>
@@ -271,7 +271,7 @@ export default function AnimatedFaqSection2({
               >
                 <AccordionTrigger className="md:text-lg text-base font-medium text-white group w-full text-left ">
                   Do you only build new websites, or can you redesign mine?
-                  <div className="ml-auto md:flex  hidden h-6 w-6 items-center justify-center rounded-full border border-teal-500/50 text-teal-500 shrink-0">
+                  <div className="ml-auto md:flex  hidden h-6 w-6 items-center justify-center rounded-full border border-black/60 text-black shrink-0">
                     <Plus className="h-4 w-4 group-data-[state=open]:rotate-45 transition-transform" />
                   </div>
                 </AccordionTrigger>
@@ -382,8 +382,6 @@ export default function AnimatedFaqSection2({
                       "Lets Talk"
                     )}
                   </MotionButton>
-
-                 
                 </motion.form>
               </MotionCardContent>
             </MotionCard>
