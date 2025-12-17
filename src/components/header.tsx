@@ -61,7 +61,7 @@ export default function Header() {
           {navItems.map((item) =>
             item.hasDropdown ? (
               <DropdownMenu key={item.label}>
-                <DropdownMenuTrigger className="flex items-center text-sm font-medium text-gray-500 underline-offset-4 hover:bg-gradient-to-r from-black/80 to-black hover:text-transparent bg-clip-text">
+                <DropdownMenuTrigger className="flex items-center text-[15px] font-semibold text-gray-700 underline-offset-4 hover:bg-gradient-to-r from-black/80 to-black hover:text-transparent bg-clip-text">
                   {item.label}
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </DropdownMenuTrigger>
