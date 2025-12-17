@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function StatsBar() {
   return (
-    <div className="flex   max-w-3xl border border-black mx-auto items-center justify-between rounded-[1.6vw] bg-gradient-to-r from-black/40 via-slate-200 to-slate-100 p-[1.6vw]">
+    <div className="flex   max-w-3xl border border-black mx-auto items-center justify-between rounded-[1.6vw] bg-gradient-to-r from-slate-300/80 via-slate-200 to-slate-100 p-[1.6vw]">
       {[
         { value: "300M+", label: "Global Impressions\nAcross Platforms" },
         { value: "1,250+", label: "Fresh Content\nCreated Daily" },

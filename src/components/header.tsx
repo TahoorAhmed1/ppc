@@ -79,7 +79,7 @@ export default function Header() {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium text-gray-500 underline-offset-4 hover:bg-gradient-to-r from-black/80 to-black hover:text-transparent bg-clip-text"
+                className="text-[15px] font-semibold text-gray-700 underline-offset-4 hover:bg-gradient-to-r from-black/80 to-black hover:text-transparent bg-clip-text"
               >
                 {item.label}
               </a>
