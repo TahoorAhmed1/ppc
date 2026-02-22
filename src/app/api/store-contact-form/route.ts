@@ -24,7 +24,6 @@ export async function POST(req: Request) {
       );
     }
 
-    // Save to database using Prisma
     const inquiry = await prisma.packageInquiry.create({
       data: {
         name,
@@ -49,4 +48,4 @@ export async function POST(req: Request) {
       { status: 500 }
     );
   }
-}
+}               
