@@ -68,7 +68,7 @@ export default function ContactFormPopup({ isOpen, setIsOpen }: any) {
       }
 
       const response = await fetch(
-        "https://demo7.obistest.online/api/store-contact-us-form",
+        "/api/store-contact-us-form",
         {
           method: "POST",
           body: formData,
@@ -165,7 +165,7 @@ export default function ContactFormPopup({ isOpen, setIsOpen }: any) {
 
                 <p className="text-[10px] text-gray-300 mt-2 text-left">
                   <span className="font-medium">Disclaimer</span> : You agree to
-                  receive conversation messages from CreativeAgency360...{" "}
+                  receive conversation messages from NexuzGlobal...{" "}
                   <a
                     target="_blank"
                     href={"/privacy"}

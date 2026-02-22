@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView, useAnimation, type Variants } from "framer-motion";
 import { mailIcon, girlWithPhone } from "@/assets";
+import { Mail, Phone } from "lucide-react";
 
 // Create motion components
 const MotionDiv = motion.div;
@@ -136,30 +137,34 @@ export default function MarketingSection() {
               variants={itemVariants}
               whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
             >
-              <MotionDiv
-                variants={itemVariants}
-                whileHover={{
-                  rotate: [0, -10, 10, -10, 0],
-                  transition: { duration: 0.5 },
-                }}
-              >
-                <Image
-                  src={mailIcon || "/placeholder.svg"}
-                  alt="mail-icon"
-                  width={100}
-                  height={100}
-                  className="w-10 h-16"
-                />
-              </MotionDiv>
+            
               <MotionDiv variants={itemVariants}>
+               <div>
+              <div className="flex gap-2 text-[#1a3d7c]">
+                <div className="flex-shrink-0 flex items-center gap-2">
+                  <Phone className=" w-4 h-4" />
+                  <p>
+                    <a
+                      className="font-medium  text-sm sm:text-base text-black"
+                      href="tel:+18045745376"
+                    >
+                      +92 3282371639
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4" />
                 <p>
-                  <a className="font-semibold text-lg" href="tel:+18045745376">
-                    +92 3282371639
+                  <a
+                    className="text-sm sm:text-base"
+                    href="mailto:support@nexuzglobal.com"
+                  >
+                    support@nexuzglobal.com
                   </a>
                 </p>
-                <a className="text-xs" href="mailto:support@nexuzglobal.com">
-                  support@nexuzglobal.com
-                </a>
+              </div>
+            </div>
               </MotionDiv>
             </MotionDiv>
             <a href="#contactus">

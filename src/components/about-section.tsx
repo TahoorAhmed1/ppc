@@ -93,7 +93,7 @@ export default function AboutSection() {
     <motion.section
       id="aboutus"
       ref={sectionRef}
-      className="py-8 md:py-50 bg-white text-black flex flex-col justify-center "
+      className="py-8 md:py-30 bg-white text-black flex flex-col justify-center "
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}

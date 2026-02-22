@@ -152,7 +152,7 @@ export default function EnhancedCtaSection() {
 
     try {
       const response = await fetch(
-        "https://demo7.obistest.online/api/store-subscribtion",
+        "/api/store-subscribtion",
         {
           method: "POST",
           headers: {

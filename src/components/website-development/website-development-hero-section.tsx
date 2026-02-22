@@ -130,7 +130,7 @@ export default function WebsiteDevelopmentHeroSection({
       }
 
       const response = await fetch(
-        "https://demo7.obistest.online/api/store-contact-us-form",
+        "/api/store-contact-us-form",
         {
           method: "POST",
           body: formData,
@@ -345,7 +345,7 @@ export default function WebsiteDevelopmentHeroSection({
                       transition={{ delay: 1, duration: 0.5 }}
                     >
                       <span className="font-medium">Disclaimer</span>: You agree
-                      to receive messages from CreativeAgency360. This includes
+                      to receive messages from NexuzGlobal. This includes
                       SMS messages for appointment scheduling, reminders, and
                       billing. Message frequency may vary. Text STOP to opt out.
                       See our{" "}

@@ -3,7 +3,7 @@
 import { logo } from "@/assets";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, ChevronDown } from "lucide-react";
+import { Mail, MapPin, Phone, ChevronDown, Map, MapIcon, MapPinIcon } from "lucide-react";
 
 export default function Footer() {
   const containerVariants = {
@@ -122,42 +122,9 @@ export default function Footer() {
             world."
           </motion.p>
           <div className="flex gap-4 mt-4">
+           
             <motion.a
-              href="https://x.com/creative_a360"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:scale-105"
-              whileHover={{
-                scale: 1.15,
-                transition: { type: "spring", stiffness: 400 },
-              }}
-            >
-              <svg
-                width="36"
-                height="36"
-                viewBox="0 0 36 36"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g clipPath="url(#clip0_498_627)">
-                  <path
-                    d="M18.6957 16.9259L26.5827 28.2071H23.3459L16.9099 19.0016V19.0011L15.965 17.6497L8.44678 6.89551H11.6836L17.7508 15.5746L18.6957 16.9259Z"
-                    fill="black"
-                  />
-                  <path
-                    d="M31.2607 0H3.78697C1.69554 0 0 1.69554 0 3.78697V31.2607C0 33.3521 1.69554 35.0476 3.78697 35.0476H31.2607C33.3521 35.0476 35.0476 33.3521 35.0476 31.2607V3.78697C35.0476 1.69554 33.3521 0 31.2607 0ZM22.3545 29.7211L15.8417 20.2425L7.68763 29.7211H5.5802L14.9059 18.8812L5.5802 5.30856H12.6931L18.8603 14.2841L26.5816 5.30856H28.6891L19.7963 15.6457H19.7958L29.4674 29.7211H22.3545Z"
-                    fill="black"
-                  />
-                </g>
-                <defs>
-                  <clipPath id="clip0_498_627">
-                    <rect width="35.0476" height="35.0476" fill="white" />
-                  </clipPath>
-                </defs>
-              </svg>
-            </motion.a>
-            <motion.a
-              href="https://www.instagram.com/creativeagency360"
+              href="https://www.instagram.com/NexuzGlobal"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:scale-105"
@@ -200,7 +167,7 @@ export default function Footer() {
               </svg>
             </motion.a>
             <motion.a
-              href="https://www.facebook.com/profile.php?id=100077438044422"
+              href="https://www.facebook.com/profile.php?id=2312312"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:scale-105"
@@ -235,7 +202,7 @@ export default function Footer() {
               </svg>
             </motion.a>
             <motion.a
-              href="https://www.linkedin.com/company/creativeagency360/?viewAsMember=true"
+              href="https://www.linkedin.com/company/NexuzGlobal/?viewAsMember=true"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:scale-105"
@@ -424,8 +391,8 @@ export default function Footer() {
               whileHover={{ x: 5 }}
               transition={{ type: "spring", stiffness: 400 }}
             >
-              <MapPin className="w-8 h-8 text-black" />
-              <p className="text-sm">Karachi DHA BLOCK 8</p>
+              <MapPinIcon className="w-5 h-5 text-black" />
+              <p className="text-sm">Pakistan Karachi</p>
             </motion.div>
           </div>
         </motion.div>

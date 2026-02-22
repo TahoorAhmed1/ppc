@@ -16,7 +16,6 @@ export default function page() {
       <WhyChooseSection />
       <SupportSection />
       <TestimonialsSection />
-      <Footer />
     </div>
   );
 }

@@ -64,7 +64,7 @@ export function BookingModal({
 
     try {
       const response = await fetch(
-        "https://demo7.obistest.online/api/store-contact-form",
+        "/api/store-contact-form",
         {
           method: "POST",
           headers: {
@@ -164,7 +164,7 @@ export function BookingModal({
 
             <p className="text-xs text-gray-300 mt-2 mb-5 text-left">
               <span className="font-medium">Disclaimer</span> : You agree to
-              receive conversation messages from CreativeAgency360. This
+              receive conversation messages from NexuzGlobal. This
               includes SMS messages for appointment scheduling, appointment
               reminders, post-visit instructions, and billing notifications...
               <a

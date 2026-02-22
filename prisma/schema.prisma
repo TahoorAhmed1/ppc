@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" 
+  url      = env("DATABASE_URL")
+}
+
+model PackageInquiry {
+  id           String   @id @default(uuid())
+  name         String
+  email        String
+  phone        String
+  message      String
+  packageId    Int
+  package_name String
+  package_price Float
+  createdAt    DateTime @default(now())
+}
+
+model Subscription {
+  id        String   @id @default(uuid())
+  email     String
+  number    String
+  createdAt DateTime @default(now())
+}
+
+model QuoteRequest {
+  id          String   @id @default(uuid())
+  fullName    String
+  email       String
+  phone       String?
+  description String
+  createdAt   DateTime @default(now())
+}
+
+model ContactForm {
+  id           String   @id @default(uuid())
+  name         String
+  email        String
+  phone        String?
+  website_url  String?
+  message      String
+  package_price Float?
+  ip_address   String?
+  createdAt    DateTime @default(now())
+}

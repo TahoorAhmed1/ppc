@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Star, X } from "lucide-react";
+import { Mail, Phone, PhoneCall, Sparkles, Star, X } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   firmsLogos,
@@ -301,28 +301,22 @@ export default function HeroSection() {
               </motion.div>
             </div>
 
-            <div className="flex gap-2 text-[#1a3d7c]">
-              <div className="flex-shrink-0">
-                <Image
-                  src={
-                    mailIcon ||
-                    "/placeholder.svg?height=100&width=100&query=mail icon"
-                  }
-                  alt="Contact us"
-                  width={100}
-                  height={100}
-                  className="w-11 h-12 sm:w-15 sm:h-16 object-contain"
-                />
+            <div>
+              <div className="flex gap-2 text-[#1a3d7c]">
+                <div className="flex-shrink-0 flex items-center gap-2">
+                  <Phone className=" w-4 h-4" />
+                  <p>
+                    <a
+                      className="font-medium text-base text-sm sm:text-base text-black"
+                      href="tel:+18045745376"
+                    >
+                      +92 3282371639
+                    </a>
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col gap-1">
-                <p>
-                  <a
-                    className="font-medium text-base sm:text-lg md:text-xl text-black"
-                    href="tel:+18045745376"
-                  >
-                    +92 3282371639
-                  </a>
-                </p>
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4" />
                 <p>
                   <a
                     className="text-sm sm:text-base"

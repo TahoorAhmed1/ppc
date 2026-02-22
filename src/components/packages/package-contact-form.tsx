@@ -207,7 +207,7 @@ export default function ContactSection() {
       }
 
       const response = await fetch(
-        "https://demo7.obistest.online/api/store-contact-us-form",
+        "/api/store-contact-us-form",
         {
           method: "POST",
           body: formData,
@@ -440,7 +440,7 @@ export default function ContactSection() {
 
                   <p className="text-xs text-gray-800 mt-2 mb-5 text-left">
                     <span className="font-medium">Disclaimer</span> : You agree
-                    to receive conversation messages from CreativeAgency360.
+                    to receive conversation messages from NexuzGlobal.
                     This includes SMS messages for appointment scheduling,
                     appointment reminders, post-visit instructions, and billing
                     notifications. You may receive up to 2 messages per day;

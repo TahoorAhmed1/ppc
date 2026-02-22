@@ -3,7 +3,7 @@
 import { logo } from "@/assets";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, ChevronDown } from "lucide-react";
+import { Mail, MapPin, Phone, ChevronDown, Map, MapPinIcon } from "lucide-react";
 import { useState } from "react";
 
 // Define service items
@@ -179,7 +179,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com/creativeagency360"
+              href="https://www.instagram.com/NexuzGlobal"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:scale-105 "
@@ -249,7 +249,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://www.linkedin.com/company/creativeagency360/?viewAsMember=true"
+              href="https://www.linkedin.com/company/NexuzGlobal/?viewAsMember=true"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:scale-105 "
@@ -333,8 +333,8 @@ export default function Footer() {
             </div>
 
             <div className="flex items-center gap-2">
-              <MapPin className="w-8 h-8 text-black" />
-              <p className="text-sm">Karachi DHA BLOCK 8</p>
+              <MapPinIcon className="w-8 h-8 text-black" />
+              <p className="text-sm">Pakistan</p>
             </div>
           </div>
         </motion.div>
